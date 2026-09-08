@@ -14,7 +14,13 @@ scalar-pencil lemma. The general finite-length activated-pencil and original-U
 source-selection bridges remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion
 paper. The source-selection, filtered-localization, assembly, and terminal
-Phase I/II gates remain open in `PLAN.md`.
+Phase I/II gates remain open in `PLAN.md`; the corresponding files are
+conditional scaffolds rather than producer proofs.
+
+The map labels these three interfaces LEAN-SCAFFOLD: filtered chart/power
+clearing, divisor-indexed assembly from supplied cofactors, and strong
+finite-test induction contracts with integer bounds. Their precise hypotheses
+appear in the linked claim register; M02–M11 remain open.
 
 ## Reproducible setup
 
@@ -64,8 +70,9 @@ updated terminal instructions at `e3c7077d3d51772d97d8e72bb219a8fc36765682`.
 paper's M01–M11 obligations to parallel lanes. Both recursive calls use P_h
 to prove P_(h+1); every finite local test is retained. Phase I discharges all
 project-owned obligations, and Phase II also discharges registered literature
-leaves. The final target is all-dimensional SS-all; the historical fourfold
-class in `Contract.lean` is not yet its actual structural encoding.
+leaves. The final target is all-dimensional SS-all; `Contract.lean` contains
+only a dimension-parametric semantic scaffold with historical B2 fields, not
+the paper's full filtered-algebra encoding.
 
 ## Palomar and release status
 

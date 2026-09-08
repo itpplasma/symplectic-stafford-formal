@@ -12,9 +12,19 @@ palomar_registration: not-submitted
 This file owns formal status. Semantic modules implement right ideals,
 literal membership, quotient right action and opposite orientation. Ordered
 modules implement affine identities and conditional constant-right-denominator
-clearing. The finite-pencil module treats finitely many division-ring
-coordinates; this does not yet establish the paper's arbitrary finite-length
-module, activated-pencil or original-U simultaneous-source theorem.
+clearing. Filtered, source-assembly and strong P_h modules are explicit
+conditional scaffolds only. The finite-pencil module treats finitely many
+division-ring coordinates; this does not yet establish the paper's arbitrary
+finite-length module, activated-pencil or original-U simultaneous-source
+theorem.
+
+The conditional checkpoints consume supplied data:
+`Filtered/Localization.lean` uses filtration/map and power-clearing fields;
+`Source/Assembly.lean` extracts S1 from divisor-indexed original certificates;
+`Induction/StrongPh.lean` records finite tests, integer bounds, lower-index
+calls, supplied successor output and conditional terminal extraction. Their
+LEAN-SCAFFOLD map nodes mark consumers, not constructions of the required
+data. M02–M11 remain open.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
@@ -43,9 +53,9 @@ activated pencils; common-colon support union; strong finite-test P_h;
 the two-call dimension induction; and original cofactors/opposite/package.
 The controller integrates checked changes and owns phase promotion.
 The existing `AdmissibleSymplecticClass` in `Contract.lean` is a historical
-fourfold scaffold with dimension-four/B2 fields and proposition labels; it
-does not encode the final all-dimensional algebra class. M01 must supply the
-actual structural semantics before any terminal endpoint is certified.
+dimension-parametric scaffold with B2 fields and proposition labels; it does
+not encode the final all-dimensional filtered-algebra class. M01 must supply
+the actual structural semantics before any terminal endpoint is certified.
 
 `Challenge.lean` and `Solution.lean` currently compare the definitional
 membership contract alone. The name `universalStatement` does not identify

@@ -1,6 +1,6 @@
 \section{Claim register}\label{sec:claims}
 \subsection{Right-ideal semantics}\hypertarget{claim:semantics}{}\backmap
-\textbf{LEAN.} Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical fourfold class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.
+\textbf{LEAN.} Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical dimension-parametric B2/Prop-label class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.
 
 \emph{Source:} SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean.
 \emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
@@ -18,6 +18,27 @@ No incoming claim dependency in this graph.
 
 \emph{Source:} SymplecticStafford/FiniteLength/Pencil.lean.
 \emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
+
+No incoming claim dependency in this graph.
+\subsection{Chart contract}\hypertarget{claim:local-scaffold}{}\backmap
+\textbf{LEAN-SCAFFOLD.} A supplied exhaustive multiplicative filtration and map preserve degree bounds; assuming chart-wide power right-clearability gives finite common right clearance. This constructs no full-symbol Ore set, Rees algebra, support theory or faithful localization.
+
+\emph{Source:} SymplecticStafford/Filtered/Localization.lean.
+\emph{Review:} Conditional checkpoint consumer; right\_clearable is an input field. M02–M05 remain open.
+
+Dependencies: \hyperlink{claim:ordered}{Ordered utilities}.
+\subsection{Divisor-indexed assembly}\hypertarget{claim:assembly-scaffold}{}\backmap
+\textbf{LEAN-SCAFFOLD.} Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.
+
+\emph{Source:} SymplecticStafford/Source/Assembly.lean.
+\emph{Review:} Conditional checkpoint consumer of supplied identity fields; M06 and M08–M11 remain open.
+
+Dependencies: \hyperlink{claim:semantics}{Right-ideal semantics}.
+\subsection{Strong P\_h contracts}\hypertarget{claim:ph-scaffold}{}\backmap
+\textbf{LEAN-SCAFFOLD.} Record affine source membership, finite lists of abstract generation tests, integer defect bounds, both lower-index calls and supplied successor output. Prove D-(D+1)=-1 and conditionally extract original cofactors from a supplied terminal StrongPh and zero\_extraction interface.
+
+\emph{Source:} SymplecticStafford/Induction/StrongPh.lean.
+\emph{Review:} Conditional checkpoint: localization/module specifications, defect and generation predicates, successor output and zero\_extraction are supplied. M09–M11 are not proved.
 
 No incoming claim dependency in this graph.
 \subsection{Algebraic localization}\hypertarget{claim:local}{}\backmap

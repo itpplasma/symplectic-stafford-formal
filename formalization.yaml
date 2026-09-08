@@ -87,12 +87,14 @@ verification:
 
 status:
   scope: >-
-    Partial checkpoint. The semantic, ordered, and division-coordinate declarations
-    listed in the project plan compile and have independent consumers. The
-    source-selection, filtered-localization, assembly, and terminal
-    higher-dimensional same-divisor theorem remain unimplemented. The one
-    intentional placeholder is confined to the Mathlib-only Challenge.lean;
-    Solution.lean has no placeholder.
+    Partial checkpoint. The semantic, ordered, division-coordinate, filtered,
+    source-assembly, and strong-P_h declarations listed in the project plan
+    compile and have independent consumers where recorded. The filtered,
+    source-selection, assembly, and induction files are conditional scaffolds;
+    the proof map labels these consumers LEAN-SCAFFOLD and keeps M02–M11 open;
+    the full higher-dimensional same-divisor producer and terminal extraction
+    remain unimplemented. The one intentional placeholder is confined to the
+    Mathlib-only Challenge.lean; Solution.lean has no placeholder.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0
@@ -154,10 +156,11 @@ fidelity:
     order but stops before the paper's source producer and induction. The paper
     source is Markdown, so the TeX dossier is a comparison supplement, not a
     manuscript transcription.
-    Contract.AdmissibleSymplecticClass is a historical fourfold scaffold with
-    dimension-four/B2 fields and placeholder proposition labels; it is not
-    the final all-dimensional filtered-algebra class. That semantic bridge
-    remains part of M01.
+    Contract.AdmissibleSymplecticClass is a historical dimension-parametric
+    scaffold with B2 fields and placeholder proposition labels; it is not the
+    final all-dimensional filtered-algebra class. That semantic bridge remains
+    part of M01. Filtered/Localization uses a single-denominator power-clearing
+    contract and therefore is not the paper's full symbol-set Ore theorem.
 
 review:
   status: "agent-reviewed"

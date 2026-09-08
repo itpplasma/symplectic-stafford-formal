@@ -7,13 +7,13 @@
     "instructions_commit": "e3c7077d3d51772d97d8e72bb219a8fc36765682",
     "paper_graph": "docs/proof-graph-all-dimensional-2026-09-08.yaml"
   },
-  "status_note": "NOVEL means the complete self-audited paper candidate; independent mathematical review and corresponding general Lean proofs remain pending. LEAN nodes record only their explicit utility scope. No paper edge becomes a formal proof by appearing in this map.",
+  "status_note": "NOVEL means the complete self-audited paper candidate; independent mathematical review and corresponding general Lean proofs remain pending. LEAN nodes record only their explicit utility scope. No paper edge becomes a formal proof by appearing in this map. LEAN-SCAFFOLD nodes prove only conditional projections/consumers of supplied certificates; M02–M11 remain open.",
   "nodes": [
     {
       "id": "semantics",
       "kind": "LEAN",
       "label": "Right-ideal semantics",
-      "statement": "Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical fourfold class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.",
+      "statement": "Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical dimension-parametric B2/Prop-label class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.",
       "source": "SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean",
       "depends_on": [],
       "position": [
@@ -47,6 +47,49 @@
         20
       ],
       "review": "Implemented checkpoint; replay logs and precise types govern its scope."
+    },
+    {
+      "id": "local-scaffold",
+      "kind": "LEAN-SCAFFOLD",
+      "label": "Chart contract",
+      "statement": "A supplied exhaustive multiplicative filtration and map preserve degree bounds; assuming chart-wide power right-clearability gives finite common right clearance. This constructs no full-symbol Ore set, Rees algebra, support theory or faithful localization.",
+      "source": "SymplecticStafford/Filtered/Localization.lean",
+      "depends_on": [
+        "ordered"
+      ],
+      "position": [
+        0,
+        18.5
+      ],
+      "review": "Conditional checkpoint consumer; right_clearable is an input field. M02–M05 remain open."
+    },
+    {
+      "id": "assembly-scaffold",
+      "kind": "LEAN-SCAFFOLD",
+      "label": "Divisor-indexed assembly",
+      "statement": "Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.",
+      "source": "SymplecticStafford/Source/Assembly.lean",
+      "depends_on": [
+        "semantics"
+      ],
+      "position": [
+        -5,
+        18.5
+      ],
+      "review": "Conditional checkpoint consumer of supplied identity fields; M06 and M08–M11 remain open."
+    },
+    {
+      "id": "ph-scaffold",
+      "kind": "LEAN-SCAFFOLD",
+      "label": "Strong P_h contracts",
+      "statement": "Record affine source membership, finite lists of abstract generation tests, integer defect bounds, both lower-index calls and supplied successor output. Prove D-(D+1)=-1 and conditionally extract original cofactors from a supplied terminal StrongPh and zero_extraction interface.",
+      "source": "SymplecticStafford/Induction/StrongPh.lean",
+      "depends_on": [],
+      "position": [
+        5,
+        18.5
+      ],
+      "review": "Conditional checkpoint: localization/module specifications, defect and generation predicates, successor output and zero_extraction are supplied. M09–M11 are not proved."
     },
     {
       "id": "local",
@@ -212,6 +255,16 @@
     }
   ],
   "edges": [
+    {
+      "from": "semantics",
+      "to": "assembly-scaffold",
+      "mechanism": "supplied cofactors"
+    },
+    {
+      "from": "ordered",
+      "to": "local-scaffold",
+      "mechanism": "supplied clearing"
+    },
     {
       "from": "local",
       "to": "length",

@@ -16,6 +16,7 @@
  mapnode/.style={draw,rounded corners,align=center,text width=3.6cm,
    minimum height=0.85cm,font=\small},
  lean/.style={mapnode,fill=blue!12,very thick},
+ lean-scaffold/.style={mapnode,fill=blue!5,densely dotted,very thick,font=\footnotesize},
  novel/.style={mapnode,fill=violet!8,double},
  gap/.style={mapnode,fill=orange!10,dashed,very thick},
  edge/.style={->,thick},
@@ -112,12 +113,12 @@ construct the right ideal
 its quotient right action and the opposite orientation. The current
 Mathlib-only challenge isolates membership in this displayed carrier.
 
-The current \lean{AdmissibleSymplecticClass} is a historical fourfold
-scaffold: it fixes associated graded dimension four and includes B2 fields
-and placeholder proposition labels. It does not yet encode the final
-all-dimensional filtered-algebra class. The actual structural semantics
-remain an M01 obligation; the proved ring-level membership lemmas do not
-depend on this scaffold.
+The current \lean{AdmissibleSymplecticClass} is a historical,
+dimension-parametric scaffold: it retains B2 fields and placeholder
+proposition labels but does not yet encode the final all-dimensional
+filtered-algebra class. The actual structural semantics remain an M01
+obligation; the proved ring-level membership lemmas do not depend on this
+scaffold.
 
 \begin{center}
 \begin{tabular}{@{}p{3.6cm}p{5.6cm}p{6.0cm}@{}}
@@ -156,6 +157,28 @@ right-denominator clearance. The existing finite-pencil theorem treats
 finitely many division-ring coordinates; general semisimple tops can have
 repeated simple factors and matrix blocks. The arbitrary finite-length
 activated-pencil and original-\(U\) source-selection bridges are still required.
+
+Three \textbf{LEAN-SCAFFOLD} nodes record additional conditional interfaces.
+\lean{Filtered/Localization.lean} preserves degree bounds under supplied
+filtration and map data, and combines power right-clearability already
+supplied by the certificate. It constructs no full-symbol Ore localization,
+Rees algebra or support theory. \lean{Source/Assembly.lean} now includes
+\lean{DivisorIndexedAssembly}: each nonzero divisor may have its own source,
+with original cofactors supplied in an \lean{AssemblyWitness}. Its
+\lean{sameDivisor} consumer extracts those witnesses; it does not construct
+the assembly data. Finite-candidate and uniform-source variants remain
+separate optional toy contracts.
+
+\lean{Induction/StrongPh.lean} records affine membership, finite test lists,
+integer defect bounds, both lower-index calls and a supplied successor
+output. The equation \(D-(D+1)=-1\) is proved. Its
+\lean{strongPh_succ} selects the output of a supplied successor rule, while
+\lean{terminal_extraction} requires both terminal \lean{StrongPh} and a
+\lean{zero_extraction} interface. Local-test specification propositions,
+generation predicates and defect data are still abstract inputs. The
+geometric semantics, successor producer and zero-support-to-cofactor bridge
+remain to be proved. These checkpoints leave M02--M11 open and do not
+advance the release gates.
 
 \section{Phase instructions and evidence}\label{sec:phases}\backmap
 

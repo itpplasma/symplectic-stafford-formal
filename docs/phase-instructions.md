@@ -58,6 +58,15 @@ consume M11 only at proved scopes. Workers return exact declarations, their
 hypotheses, builds, independent consumer evidence and remaining gaps.
 The controller alone integrates and promotes authoritative status.
 
+The conditional scaffolds now provide API starting points:
+`Filtered/Localization.lean` consumes an assumed power-clearing certificate;
+`Source/Assembly.lean` has divisor-indexed witness assembly; and
+`Induction/StrongPh.lean` records the integer bound, two lower-index calls,
+supplied successor output and terminal extraction interface. Preserve their
+LEAN-SCAFFOLD classification. A proof field containing successor output or
+cofactors is an input to a conditional consumer, not a proof that the paper's
+producer exists. M02–M11 remain open.
+
 The current coordinatewise `finite_pencil_exceptions` theorem is a reusable
 scalar utility. General semisimple tops may have repeated simple factors and
 matrix endomorphism blocks; a product of division-ring coordinates does not
