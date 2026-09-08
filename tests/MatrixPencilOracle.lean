@@ -18,6 +18,15 @@ def C₀ : Block := !![0, 1; 1, 0]
 def A₁ : Block := !![2, 0; 0, 1]
 def C₁ : Block := !![1, 1; 0, 1]
 
+example : MatrixTopGenerator A₀ := by
+  apply (matrix_top_generator_iff _).2
+  norm_num [A₀]
+
+example : ¬ MatrixTopGenerator (!![1, 0; 0, 0] : Block) := by
+  intro h
+  apply (matrix_top_generator_iff _).1 h
+  norm_num
+
 example : Matrix.det A₀ ≠ 0 := by
   norm_num [A₀]
 

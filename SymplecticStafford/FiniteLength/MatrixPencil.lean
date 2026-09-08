@@ -23,6 +23,27 @@ section MatrixBlocks
 variable {K : Type*} [Field K] [Infinite K]
 variable {r : Nat}
 
+/-! A matrix block is a repeated simple factor at the level of its regular
+right module.  We keep the multiplication order explicit: the generator is
+on the left and its coefficient is on the right. -/
+
+/-- Right generation of a square matrix block by one matrix. -/
+def MatrixTopGenerator (x : Matrix (Fin r) (Fin r) K) : Prop :=
+  ∀ y : Matrix (Fin r) (Fin r) K, ∃ z, x * z = y
+
+/-- A matrix block right-generates its full matrix ring exactly when it is
+invertible, equivalently when its determinant is nonzero. -/
+theorem matrix_top_generator_iff (x : Matrix (Fin r) (Fin r) K) :
+    MatrixTopGenerator x ↔ Matrix.det x ≠ 0 := by
+  constructor
+  · intro hx
+    obtain ⟨z, hz⟩ := hx 1
+    exact Matrix.det_ne_zero_of_right_inverse hz
+  · intro hx y
+    have hunit : IsUnit (Matrix.det x) := (isUnit_iff_ne_zero).2 hx
+    refine ⟨x⁻¹ * y, ?_⟩
+    rw [← Matrix.mul_assoc, Matrix.mul_nonsing_inv x hunit, one_mul]
+
 /-- The determinant polynomial attached to a central-field matrix pencil. -/
 noncomputable def matrixPencilPolynomial
     (A C : Matrix (Fin r) (Fin r) K) : Polynomial K :=
@@ -83,6 +104,21 @@ theorem exists_simultaneous_matrix_pencil_avoiding
     right
     exact Set.mem_iUnion.2 ⟨j, hzero⟩
 
+/-- The determinant-avoidance result in the generation language needed by a
+finite repeated-block top. -/
+theorem exists_simultaneous_matrix_top_generator_avoiding
+    {J : Type*} [Fintype J] [DecidableEq J]
+    (A C : J → Matrix (Fin r) (Fin r) K)
+    (hA : ∀ j, Matrix.det (A j) ≠ 0)
+    (forbidden : Set K) (hforbidden : forbidden.Finite) :
+    ∃ k : K, k ∉ forbidden ∧
+      ∀ j, MatrixTopGenerator (A j + k • C j) := by
+  obtain ⟨k, hk, hdet⟩ := exists_simultaneous_matrix_pencil_avoiding
+    A C hA forbidden hforbidden
+  refine ⟨k, hk, ?_⟩
+  intro j
+  exact (matrix_top_generator_iff _).2 (hdet j)
+
 end MatrixBlocks
 
 end SymplecticStafford.FiniteLength
@@ -90,3 +126,5 @@ end SymplecticStafford.FiniteLength
 #print axioms SymplecticStafford.FiniteLength.matrixPencilPolynomial_eval
 #print axioms SymplecticStafford.FiniteLength.finite_matrix_pencil_exceptions
 #print axioms SymplecticStafford.FiniteLength.exists_simultaneous_matrix_pencil_avoiding
+#print axioms SymplecticStafford.FiniteLength.matrix_top_generator_iff
+#print axioms SymplecticStafford.FiniteLength.exists_simultaneous_matrix_top_generator_avoiding
