@@ -19,3 +19,11 @@ rev = "e77e176c381ca2d6b20c030f9227f1b031415d2e"
 
 [[lean_lib]]
 name = "SymplecticStafford"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

@@ -44,7 +44,19 @@ lake env lean --trust=0 -o .lake/build/lib/lean/Solution.olean \
 ./scripts/check-import-closure.sh Challenge
 ./scripts/check-import-closure.sh Solution
 
-PALOMAR_LANDRUN_BIN="$(cd "$bin_root" && pwd)/landrun" COMPARATOR_LANDRUN="$repo_root/scripts/landrun-wrapper.sh" COMPARATOR_LEAN4EXPORT="$(cd "$bin_root" && pwd)/lean4export" COMPARATOR_NANODA="$(cd "$bin_root" && pwd)/nanoda" lake env "$bin_root/comparator" comparator.json   > .lake/verification/comparator.log 2>&1
+# The Stafford38 dependency also exports a module named `Challenge`.  Lake's
+# normal dependency-first `LEAN_PATH` therefore resolves that module before our
+# local semantic challenge.  Run the comparator directly with the project
+# artifact directory prepended, while retaining Lake's dependency paths and
+# executable search path.
+lake_path=$(lake env bash -c 'printf "%s" "$PATH"')
+lake_lean_path=$(lake env bash -c 'printf "%s" "$LEAN_PATH"')
+PATH="$lake_path" LEAN_PATH="$repo_root/.lake/build/lib/lean:$lake_lean_path" \
+  PALOMAR_LANDRUN_BIN="$(cd "$bin_root" && pwd)/landrun" \
+  COMPARATOR_LANDRUN="$repo_root/scripts/landrun-wrapper.sh" \
+  COMPARATOR_LEAN4EXPORT="$(cd "$bin_root" && pwd)/lean4export" \
+  COMPARATOR_NANODA="$(cd "$bin_root" && pwd)/nanoda" \
+  "$bin_root/comparator" comparator.json > .lake/verification/comparator.log 2>&1
 
 grep -Fq 'nanoda kernel accepts the solution' .lake/verification/comparator.log
 grep -Fq 'Lean default kernel accepts the solution' .lake/verification/comparator.log

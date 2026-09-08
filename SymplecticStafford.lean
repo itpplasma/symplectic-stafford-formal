@@ -6,6 +6,8 @@ import SymplecticStafford.FiniteLength.PencilBridge
 import SymplecticStafford.FiniteLength.ActivatedPencil
 import SymplecticStafford.FiniteLength.MatrixPencil
 import SymplecticStafford.FiniteLength.RadicalLift
+import SymplecticStafford.FiniteLength.JacobsonTop
+import SymplecticStafford.FiniteLength.RightFiltration
 import SymplecticStafford.Source.OriginalTestContract
 import SymplecticStafford.Package.Opposite
 import SymplecticStafford.Package.TerminalBoundary
@@ -17,7 +19,10 @@ import SymplecticStafford.Filtered.ReesBasic
 import SymplecticStafford.Filtered.ReesQuotient
 import SymplecticStafford.Filtered.ReesAlgebra
 import SymplecticStafford.Filtered.ReesModule
+import SymplecticStafford.Filtered.GoodFiltration
 import SymplecticStafford.Filtered.PowerOre
+import SymplecticStafford.Filtered.FinitePowerOre
+import SymplecticStafford.Filtered.CharacteristicSupport
 import SymplecticStafford.Filtered.WeightedDetection
 import SymplecticStafford.Filtered.FiniteSupportDetection
 import SymplecticStafford.Filtered.FiniteSupportQuotient
