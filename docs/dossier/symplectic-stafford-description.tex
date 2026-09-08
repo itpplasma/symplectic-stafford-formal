@@ -129,9 +129,11 @@ needs.
 The current \lean{AdmissibleSymplecticClass} is a historical,
 dimension-parametric scaffold: it retains B2 fields and placeholder
 proposition labels but does not yet encode the final all-dimensional
-filtered-algebra class. The actual structural semantics remain an M01
-obligation; the proved ring-level membership lemmas do not depend on this
-scaffold.
+filtered-algebra class. \lean{Filtered/CharacteristicSupport.lean} now
+constructs a finite associated-layer support proxy directly from nonzero
+quotient classes, but the Rees-spectrum characteristic support and its global
+zero-detection theorem remain M01 obligations. The proved ring-level
+membership lemmas do not depend on this scaffold.
 
 \begin{center}
 \begin{tabularx}{\textwidth}{@{}Y Y Y@{}}
@@ -189,8 +191,17 @@ required.
 quotient scalar-action laws in the kernel. \lean{Filtered/PowerOre.lean}
 packages an explicit algebraic fraction evaluation and ordered multiplication
 formula from supplied original-ring power-Ore witnesses; it is not the
-full-symbol Ore theorem. \lean{Filtered/FiniteSupportQuotient.lean} turns a
-finite separated submodule filtration into a nonzero quotient witness.
+full-symbol Ore theorem. \lean{Filtered/FinitePowerOre.lean} normalizes
+finite chart families and ordered products to one original-\(U\) denominator
+power. \lean{Filtered/GoodFiltration.lean} constructs bounded-generator
+module layers from an explicit span hypothesis, and
+\lean{Filtered/FiniteSupportQuotient.lean} turns a finite separated
+submodule filtration into a nonzero quotient witness.
+\lean{Filtered/CharacteristicSupport.lean} records the resulting finite
+layer-support proxy without claiming a spectrum. \lean{FiniteLength/RightFiltration.lean}
+supplies explicit right-module composition filtrations, while
+\lean{FiniteLength/JacobsonTop.lean} proves actual radical-quotient
+generation reflection for finitely generated right modules.
 \lean{Ordered/M08SupportUnion.lean} derives a conditional finite-generator
 support cover while retaining the exact common-colon pencil certificate.
 \lean{Source/DivisionLLD.lean} includes a concrete finite affine
@@ -206,7 +217,10 @@ The remaining checked slices are listed explicitly in the claim register:
 \lean{Filtered/WeightedDetection.lean}, \lean{Source/DivisionLLD.lean},
 \lean{Source/DifferentialOreDescent.lean},
 \lean{FiniteLength/MinimalPrimeLength.lean},
+\lean{FiniteLength/RightFiltration.lean}, \lean{FiniteLength/JacobsonTop.lean},
 \lean{FiniteLength/MatrixPencil.lean}, \lean{FiniteLength/RadicalLift.lean},
+\lean{Filtered/GoodFiltration.lean}, \lean{Filtered/FinitePowerOre.lean},
+\lean{Filtered/CharacteristicSupport.lean},
 \lean{Ordered/SupportUnion.lean},
 \lean{Ordered/FiniteGenerationBridge.lean},
 \lean{Induction/TestRetention.lean},
