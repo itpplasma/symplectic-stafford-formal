@@ -153,3 +153,15 @@ force a one-step successor decrease. Both lanes passed trust-disabled source
 and independent-oracle checks. These are boundary evidence, not producer
 theorems; the universal faithful associated-graded construction and the actual
 support-removal/scalar-avoidance successor remain open.
+
+## Final controller replay at integrated boundary checkpoint
+
+The integrated checkpoint is `0286e583d1a44ea3344d93c77ae16dd6e4b4c895`.
+At this commit, the resource guard passed, `lake build SymplecticStafford`
+completed 3069 jobs, both phase scripts passed their documented
+semantic/ordered checkpoint, and `verify-palomar.sh` passed the pinned
+compatibility build, import-closure audits, comparator, NanoDa and Lean
+kernel replay. The release gate remains intentionally pending: the new
+weighted, support-union and successor-obstruction files are boundary evidence,
+and the universal producer plus the M01--M11 Phase I/II endpoints are still
+absent.
