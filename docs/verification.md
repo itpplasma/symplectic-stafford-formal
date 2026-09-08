@@ -4,18 +4,19 @@ The current checkout records a partial, reproducible checkpoint rather than a
 terminal theorem. `PLAN.md` is authoritative for scope. The implemented
 declarations compile under the exact Lean, Mathlib, AlgebraicAnalysis, and
 Stafford38 pins in `formalization.yaml`; independent consumers exercise the
-semantic/support-boundary, ordered/common-colon, raw Rees, finite
-division-coordinate scalar-pencil, finite-index, terminal zero-quotient
-extraction, and explicit opposite transport interfaces. Conditional original-U
-finite-test and cyclic-pencil
+semantic/support-boundary/right-ideal bridge, ordered/common-colon and finite
+generation, algebraic bounded Rees, finite associated-top and matrix-pencil
+detection, finite-index/successor, terminal zero-quotient extraction, explicit
+opposite transport, and a differential-Ore finite-cover boundary. Conditional
+original-U finite-test and cyclic-pencil
 bridge contracts are also checked. They do not yet prove arbitrary
 finite-length activated pencils or an original-U simultaneous source
 selection.
 
 The localization, divisor-indexed assembly and strong-P_h files are
 conditional scaffold checkpoints. Their checks verify the stated consumers;
-concrete full-symbol localization, actual local-test semantics, successor
-construction, support union and final cofactor extraction remain open M02–M11
+concrete full-symbol localization, actual local-test semantics, source/chart
+algebraization, support union and final producer-derived cofactor extraction remain open M02–M11
 obligations.
 The proof map labels these nodes LEAN-SCAFFOLD.
 

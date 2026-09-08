@@ -114,6 +114,10 @@ construct the right ideal
 \]
 its relation-respecting quotient right-action operation and the opposite orientation. The current
 Mathlib-only challenge isolates membership in this displayed carrier.
+\lean{Semantics/RightIdealBridge.lean} supplies the ring-level wrapper only
+after an explicit negation-closure proof and checks the quotient unit, zero,
+multiplication, and action-respect laws; it does not turn arbitrary semiring
+right ideals into ring ideals automatically.
 \lean{Package/Opposite.lean} separately transports a supplied left certificate
 to right S1 in the opposite ring (and conversely); a right certificate alone is
 not silently treated as a left one.  \lean{Package/TerminalBoundary.lean}
@@ -173,15 +177,25 @@ test/source witness shape. \lean{Filtered/ReesBasic.lean} proves only raw
 bounded-term coherence, \lean{Ordered/CommonColon.lean} keeps the K/J factor
 order and central pencil identity explicit, and
 \lean{Semantics/SupportDimension.lean} makes the bottom-support-to-quotient
-boundary an input. All are conditional consumers: arbitrary finite-length
+boundary an input. \lean{Filtered/ReesAlgebra.lean} packages bounded
+coefficient polynomials as a genuine subsemiring, while
+\lean{Filtered/FiniteSupportDetection.lean} proves finite associated-top
+extraction from supplied separatedness and exhaustion. All are conditional
+consumers: arbitrary finite-length
 activation, localization, support union and source-production proofs are still
 required.
 
 The remaining checked slices are listed explicitly in the claim register:
-\lean{Filtered/ReesQuotient.lean}, \lean{Filtered/WeightedDetection.lean},
-\lean{Source/DivisionLLD.lean}, \lean{FiniteLength/MinimalPrimeLength.lean},
-\lean{FiniteLength/RadicalLift.lean}, \lean{Ordered/SupportUnion.lean},
-\lean{Induction/TestRetention.lean}, and
+\lean{Semantics/RightIdealBridge.lean}, \lean{Filtered/ReesQuotient.lean},
+\lean{Filtered/ReesAlgebra.lean}, \lean{Filtered/FiniteSupportDetection.lean},
+\lean{Filtered/WeightedDetection.lean}, \lean{Source/DivisionLLD.lean},
+\lean{Source/DifferentialOreDescent.lean},
+\lean{FiniteLength/MinimalPrimeLength.lean},
+\lean{FiniteLength/MatrixPencil.lean}, \lean{FiniteLength/RadicalLift.lean},
+\lean{Ordered/SupportUnion.lean},
+\lean{Ordered/FiniteGenerationBridge.lean},
+\lean{Induction/TestRetention.lean},
+\lean{Induction/ConcreteSuccessor.lean}, and
 \lean{Package/TerminalBoundary.lean}.  Each is a conditional utility or
 terminal boundary; none constructs the missing universal producer.
 
@@ -195,6 +209,14 @@ with original cofactors supplied in an \lean{AssemblyWitness}. Its
 \lean{sameDivisor} consumer extracts those witnesses; it does not construct
 the assembly data. Finite-candidate and uniform-source variants remain
 separate optional toy contracts.
+
+\lean{Source/DifferentialOreDescent.lean} records the differential chart
+hypotheses and proves a finite powered-cover clearing consumer in the original
+ring, preserving the factor order.  Its chart-to-global bridge, central
+parameter-field S1, and all source-selection hypotheses are supplied inputs.
+Likewise, \lean{Induction/ConcreteSuccessor.lean} makes the old/new test
+families and carried-list obligations finite and explicit, but its two lower
+\(P_h\) calls and output remain supplied data.
 
 \lean{Induction/StrongPh.lean} records affine membership, finite test lists,
 integer defect bounds, both lower-index calls and a supplied successor

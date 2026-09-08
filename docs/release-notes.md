@@ -1,9 +1,10 @@
 # Symplectic Stafford formalization
 
-This prepared checkpoint contains the checked semantic/support-boundary,
-ordered/common-colon, raw filtered/Rees, finite-pencil-coordinate,
-finite-index, terminal zero-quotient/cofactor, and explicit opposite-transport
-slices together with their Lean oracles, the Palomar-shaped Challenge/Solution
+This prepared checkpoint contains the checked semantic/right-ideal bridge and
+support-boundary, ordered/common-colon/finite-generation, raw and algebraic
+filtered/Rees, finite-support and matrix-pencil, finite-index/successor,
+differential-Ore finite-cover, terminal zero-quotient/cofactor, and explicit
+opposite-transport slices together with their Lean oracles, the Palomar-shaped Challenge/Solution
 pair, and the companion proof-map dossier. The exact theorem scope and the remaining source-selection
 and universal-theorem gates are recorded in `PLAN.md` and
 `formalization.yaml`.

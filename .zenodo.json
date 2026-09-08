@@ -2,7 +2,7 @@
   "title": "Symplectic Stafford: Lean 4 formalization checkpoint",
   "upload_type": "software",
   "version": "0.1.0",
-  "description": "Lean 4 formalization checkpoint for the symplectic Stafford same-divisor programme. The repository proves original-ring semantic and support-boundary interfaces, explicit opposite transport, ordered common-colon identities, raw filtered/Rees term coherence, finite right-denominator clearing, finite division-coordinate pencil avoidance, conditional finite-index P_h composition, and the terminal zero-quotient/cofactor boundary, with a Mathlib-only Challenge/Solution pair. It does not claim the universal higher-dimensional source-selection or same-divisor theorem; Phase I and Phase II release gates remain explicit.",
+  "description": "Lean 4 formalization checkpoint for the symplectic Stafford same-divisor programme. The repository proves the original-ring right-ideal bridge/action laws and support-boundary interfaces, explicit opposite transport, ordered common-colon/finite-generation identities, raw and algebraic bounded filtered/Rees operations, finite-support and matrix-pencil detection, conditional differential-Ore/right-denominator clearing and finite-index successor contracts, and the terminal zero-quotient/cofactor boundary, with a Mathlib-only Challenge/Solution pair. It does not claim the universal higher-dimensional source-selection or same-divisor theorem; Phase I and Phase II release gates remain explicit.",
   "creators": [
     {
       "name": "Albert, Christopher",

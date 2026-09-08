@@ -7,11 +7,11 @@ working tree.
 
 ## Executive finding
 
-The formal checkpoint faithfully fixes the ordered right-certificate syntax
-and proves elementary semantic consumers.  It does not yet formalize the
-paper's all-dimensional producer, finite-test induction, localization, or
-terminal extraction.  Phase I, Phase II, and public-release status must remain
-pending.
+The formal checkpoint faithfully fixes the ordered right-certificate syntax,
+the ring-right-ideal/quotient boundary, and several finite algebraic
+consumers. It does not yet formalize the paper's all-dimensional producer,
+full localization/support theory, or producer-derived terminal extraction.
+Phase I, Phase II, and public-release status must remain pending.
 
 ## Exact correspondence
 
@@ -19,12 +19,12 @@ pending.
 | --- | --- | --- |
 | `1 = d * R + (F * d) * S` for every nonzero original `d` | `OriginalSameDivisor` in `SymplecticStafford/Semantics/Contract.lean`; `SameDivisorIdentity` in `Statement.lean` | The proposition's product order matches. No theorem derives it from the paper's filtered/symplectic hypotheses. |
 | Strong affine target `1 = d*R + ((B + H*a)*d)*S` | `Ordered/Affine.lean` | Only ring identities are proved. There is no affine source-existence theorem, and centrality of the scalar parameter is not encoded. |
-| M01 right ideals and right-module quotients | `RightIdeal`, `RingRightIdeal`, `RightQuotient` | The semiring right ideal and ring quotient structures are separate. No constructor connects `twoGeneratedRightIdeal d f` to a `RingRightIdeal`, so the quotient API is not instantiated at the target carrier. `quotientRightAction` is a relation-respecting operation; unit and associativity laws for a right action/module are not proved. |
-| M02--M05 filtered/Rees localization, detection, and minimal-prime length | `Filtered/ReesBasic.lean`, `Filtered/Localization.lean` | Raw bounded-term coherence and a conditional power-clearing consumer are checked. The paper's algebraic Rees quotient, full-symbol Ore/localization, faithful detection and minimal-prime length remain open. |
-| M06--M07 finite tests and activated pencils | `FiniteLength/Pencil.lean`, `FiniteLength/PencilBridge.lean`, `FiniteLength/ActivatedPencil.lean`, `Source/OriginalTestContract.lean` | Finite division-coordinate avoidance and conditional top-to-cyclic consumers are checked. Division-coefficient LLD, composition-length lifting, `vL=0`, `e=vB+uL`, and one original-U source remain open. |
-| M08 common colon and support-union assembly | `Ordered/CommonColon.lean`, `Ordered/RightClear.lean` | Ordered K/J definitions, right-ideal closure, central pencil identity and conditional affine inclusion are checked. Finite generators, polynomial localization and the support-union theorem remain open. |
-| M09--M10 strong `P_h` and successor induction | `Induction/StrongPh.lean`, `Induction/FiniteIndex.lean` | The abstract predicate and supplied two-call rule are recorded, and finite-index composition is proved. The admissible tests, base, successor construction, support removal and retention are not formalized. |
-| M11 original cofactors, opposite hypotheses, and Stafford package | `Semantics/SupportDimension.lean`, `Package/TerminalBoundary.lean`, `Package/Opposite.lean` | A supplied bottom-support datum or zero-quotient witness yields literal original-U cofactors in the paper's order, and left/right S1 transport is explicit. Actual characteristic support, filtered-class opposite preservation and the banked package consumers remain open. |
+| M01 right ideals and right-module quotients | `RightIdeal`, `RingRightIdeal`, `RightQuotient`, `Semantics/RightIdealBridge.lean` | The bridge connects `twoGeneratedRightIdeal d f` to a `RingRightIdeal` using a proved negation-closure lemma, then proves quotient unit/zero/multiplication and action-respect laws. Arbitrary semiring right ideals still require an explicit negation-closure premise; the filtered-class semantics remain open. |
+| M02--M05 filtered/Rees localization, detection, and minimal-prime length | `Filtered/ReesBasic.lean`, `Filtered/ReesQuotient.lean`, `Filtered/ReesAlgebra.lean`, `Filtered/FiniteSupportDetection.lean`, `Filtered/WeightedDetection.lean`, `Filtered/Localization.lean` | Raw bounded-term coherence, an actual bounded coefficient `Subsemiring`, finite associated-top extraction and a supplied weighted detector are checked. The paper's Noetherian Rees quotient, full-symbol Ore/localization, faithful detection and minimal-prime length remain open. |
+| M06--M07 finite tests and activated pencils | `FiniteLength/Pencil.lean`, `FiniteLength/PencilBridge.lean`, `FiniteLength/ActivatedPencil.lean`, `FiniteLength/MatrixPencil.lean`, `FiniteLength/RadicalLift.lean`, `Source/OriginalTestContract.lean` | Finite division-coordinate and central matrix-block avoidance, plus conditional top-to-cyclic/lifting consumers, are checked. Division-coefficient LLD, composition-length lifting, `vL=0`, `e=vB+uL`, and one original-U source remain open. |
+| M08 common colon and support-union assembly | `Ordered/CommonColon.lean`, `Ordered/RightClear.lean`, `Ordered/SupportUnion.lean`, `Ordered/FiniteGenerationBridge.lean` | Ordered K/J definitions, right-ideal closure, central pencil identity, finite generator membership and conditional affine inclusion are checked. Polynomial localization and the support-union theorem remain open. |
+| M09--M10 strong `P_h` and successor induction | `Induction/StrongPh.lean`, `Induction/FiniteIndex.lean`, `Induction/TestRetention.lean`, `Induction/ConcreteSuccessor.lean` | The abstract predicate, finite-index composition, explicit old/new families, carried-list obligations and defect arithmetic are checked. The admissible tests, base, successor construction and support removal are not formalized. |
+| M11 original cofactors, opposite hypotheses, and Stafford package | `Semantics/SupportDimension.lean`, `Package/TerminalBoundary.lean`, `Package/Opposite.lean`, `Source/DifferentialOreDescent.lean` | A supplied bottom-support datum or zero-quotient witness yields literal original-U cofactors in the paper's order; left/right S1 transport and a finite-cover differential-Ore clearance consumer are explicit. The chart-to-global bridge, actual characteristic support, filtered-class opposite preservation and banked package consumers remain open. |
 | Palomar challenge | `Challenge.lean`, `Solution.lean` | Correctly isolated. The challenge is the definitional membership contract; its one `sorry` is deliberate, and the solution proves the same proposition without importing the challenge. It is not the paper theorem. |
 
 ## Status and pin discrepancies

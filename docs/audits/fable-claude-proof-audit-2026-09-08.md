@@ -47,11 +47,12 @@ records the recommendations without modifying the paper source.
 
 ## Controller addendum
 
-The later formal slices (raw Rees terms, support boundary, activated-coordinate
-pencil, common-colon algebra, finite-index composition, and explicit opposite
-transport) compile under the newer AlgebraicAnalysis head.  They remain
-conditional utilities; this addendum does not alter the paper-level verdict or
-promote any release gate.
+The later formal slices (right-ideal bridge/action laws, algebraic bounded Rees,
+finite-support and matrix-pencil detection, differential-Ore finite-cover
+clearing, common-colon finite generation, concrete finite-index composition,
+terminal boundary, and explicit opposite transport) compile under the newer
+AlgebraicAnalysis head. They remain conditional utilities; this addendum does
+not alter the paper-level verdict or promote any release gate.
 
 Safe public wording is limited to: a self-audited written paper candidate,
 the checked semantic/ordered/scalar Lean utilities, and a definitional

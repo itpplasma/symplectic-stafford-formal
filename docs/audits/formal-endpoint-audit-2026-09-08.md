@@ -79,3 +79,15 @@ axiom audit, and all 21 `tests/*.lean` consumers passed. Only linter warnings
 and the deliberate statement-only `Challenge.lean` placeholder remain. This
 is independent checkpoint evidence, not Phase I/II completion or release
 evidence.
+
+## Second parallel formalization wave
+
+The subsequent disjoint lanes were committed and replayed in the controller's
+worktree: `db9074e` (M01 right-ideal bridge), `857f945` (M02 algebraic Rees
+subsemiring), `527e8c3` (finite associated-top detection), `4b50d51` (matrix
+pencil avoidance), `3f6b776` (M08 finite-generation bridge), `f77a4cc`
+(concrete M09--M10 successor contract), and `51a4632` (differential-Ore
+finite-cover boundary). After importing these modules, `lake build
+SymplecticStafford` completed 3046 jobs and the trust-disabled checkpoint
+consumer replay passed. Every new declaration keeps its producer hypotheses
+explicit; none promotes a universal source theorem or a release gate.

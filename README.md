@@ -8,11 +8,12 @@ keeps the target in the exact noncommutative order
 ```
 
 The current checked checkpoint formalizes the original-ring semantic contract,
-right-ideal quotient action, opposite transport, ordered common-colon
-identities, raw filtered/Rees term coherence, conditional right-denominator
-clearing, finite division-coordinate scalar-pencil avoidance, a conditional
-finite-index P_h composition, and an explicit terminal zero-quotient/cofactor
-boundary. The
+the right-ideal bridge and quotient-action laws, opposite transport, ordered
+common-colon and finite-generation identities, raw and algebraic bounded
+filtered/Rees operations, finite-support top and matrix-pencil detection,
+conditional right-denominator/differential-Ore clearing, a conditional
+finite-index P_h successor contract, and an explicit terminal
+zero-quotient/cofactor boundary. The
 general finite-length activated-pencil and original-U source-selection bridges
 remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion
