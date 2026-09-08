@@ -7,27 +7,27 @@
     "instructions_commit": "e3c7077d3d51772d97d8e72bb219a8fc36765682",
     "paper_graph": "docs/proof-graph-all-dimensional-2026-09-08.yaml"
   },
-  "status_note": "NOVEL means the complete self-audited paper candidate; independent mathematical review and corresponding general Lean proofs remain pending. LEAN nodes record only their explicit utility scope. No paper edge becomes a formal proof by appearing in this map. LEAN-SCAFFOLD nodes prove only conditional projections/consumers of supplied certificates; M02–M11 remain open.",
+  "status_note": "NOVEL means the complete paper candidate with the bounded Fable/Claude paper-level audit recorded on 2026-09-08; human review and corresponding general Lean proofs remain pending. LEAN nodes record only their explicit utility scope. No paper edge becomes a formal proof by appearing in this map. LEAN-SCAFFOLD nodes prove only conditional projections/consumers of supplied certificates; M01–M11 remain open at full paper scope.",
   "nodes": [
     {
       "id": "semantics",
       "kind": "LEAN",
       "label": "Right-ideal semantics",
-      "statement": "Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical dimension-parametric B2/Prop-label class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.",
-      "source": "SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean",
+      "statement": "Literal ordered membership and quotient right-action operation in the original ring. SupportDimension proves zero-quotient/membership equivalence and consumes explicit bottom-dimension/support/zero equivalences. TerminalBoundary extracts literal original-U cofactors from a supplied zero quotient or membership witness, while Package/Opposite transports left S1 to right S1 in the opposite ring and conversely. The actual filtered-class encoding and characteristic-support construction remain open M01 work.",
+      "source": "SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean; SymplecticStafford/Semantics/SupportDimension.lean; SymplecticStafford/Package/TerminalBoundary.lean; SymplecticStafford/Package/Opposite.lean",
       "depends_on": [],
       "position": [
         -5,
         20
       ],
-      "review": "Implemented checkpoint; replay logs and precise types govern its scope."
+      "review": "Implemented semantic checkpoint and explicit opposite transport; the filtered-class and universal producer hypotheses remain open. Replay logs and precise types govern scope."
     },
     {
       "id": "ordered",
       "kind": "LEAN",
       "label": "Ordered utilities",
-      "statement": "Affine expansion and conditional finite constant-right-denominator clearing; no claim of an Ore structure or support theorem.",
-      "source": "SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean",
+      "statement": "Affine expansion, conditional finite constant-right-denominator clearing, and actual ordered common-colon sets K and J with right-ideal closure. CommonColon and SupportUnion prove the central pencil identity, finite-span algebra and conditional inclusion/support-union interfaces. Finite generators, polynomial localization and the stated support theorem remain M08 obligations.",
+      "source": "SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean; SymplecticStafford/Ordered/CommonColon.lean; SymplecticStafford/Ordered/SupportUnion.lean",
       "depends_on": [],
       "position": [
         0,
@@ -39,8 +39,8 @@
       "id": "scalar",
       "kind": "LEAN",
       "label": "Scalar-pencil utility",
-      "statement": "Finite exceptional scalars for finitely many division-ring coordinates; PencilBridge conditionally transfers this through a supplied top comparison/reflection. Constructing that comparison and the general activated finite-length bridge remains open.",
-      "source": "SymplecticStafford/FiniteLength/Pencil.lean; SymplecticStafford/FiniteLength/PencilBridge.lean",
+      "statement": "Finite exceptional scalars and simultaneous forbidden-set avoidance for finite division-ring coordinates with nonzero starting coordinates. PencilBridge, ActivatedPencil, DivisionLLD and RadicalLift conditionally infer top-to-cyclic, finite affine-source or finite top-lifting consequences from supplied data. Repeated simple factors, matrix blocks, radical construction and the arbitrary finite-length activation theorem remain open M06–M07 work.",
+      "source": "SymplecticStafford/FiniteLength/Pencil.lean; SymplecticStafford/FiniteLength/PencilBridge.lean; SymplecticStafford/FiniteLength/ActivatedPencil.lean; SymplecticStafford/Source/DivisionLLD.lean; SymplecticStafford/FiniteLength/RadicalLift.lean",
       "depends_on": [],
       "position": [
         5,
@@ -52,8 +52,8 @@
       "id": "local-scaffold",
       "kind": "LEAN-SCAFFOLD",
       "label": "Chart contract",
-      "statement": "A supplied exhaustive multiplicative filtration and map preserve degree bounds; assuming chart-wide power right-clearability gives finite common right clearance. This constructs no full-symbol Ore set, Rees algebra, support theory or faithful localization.",
-      "source": "SymplecticStafford/Filtered/Localization.lean",
+      "statement": "A supplied exhaustive multiplicative filtration and map preserve degree bounds; assumed chart-wide power right-clearability gives finite common right clearance. ReesBasic and ReesQuotient prove raw bounded-term reindexing, quotient operations and coherence, while WeightedDetection handles a supplied finite integer-weighted triangular system. These do not yet construct the algebraic Rees ring, full-symbol Ore localization, characteristic support or faithful good-module detection.",
+      "source": "SymplecticStafford/Filtered/Localization.lean; SymplecticStafford/Filtered/ReesBasic.lean; SymplecticStafford/Filtered/ReesQuotient.lean; SymplecticStafford/Filtered/WeightedDetection.lean",
       "depends_on": [
         "ordered"
       ],
@@ -82,14 +82,27 @@
       "id": "ph-scaffold",
       "kind": "LEAN-SCAFFOLD",
       "label": "Strong P_h contracts",
-      "statement": "Record affine source membership, finite lists of abstract generation tests, integer defect bounds, both lower-index calls and supplied successor output. Prove D-(D+1)=-1 and conditionally extract original cofactors from a supplied terminal StrongPh and zero_extraction interface.",
-      "source": "SymplecticStafford/Induction/StrongPh.lean",
+      "statement": "Record affine source membership, abstract finite generation tests, integer defect bounds, both lower-index calls and supplied successor output. TestRetention makes carried lists, old/new component bookkeeping and defect arithmetic explicit; FiniteIndex composes supplied P_1 and successor rules to P_(D+1), including D=0. Terminal cofactors still require supplied zero extraction; actual support, the base and the two-call successor remain open.",
+      "source": "SymplecticStafford/Induction/StrongPh.lean; SymplecticStafford/Induction/FiniteIndex.lean; SymplecticStafford/Induction/TestRetention.lean",
       "depends_on": [],
       "position": [
         5,
         18.5
       ],
       "review": "Conditional checkpoint: localization/module specifications, defect and generation predicates, successor output and zero_extraction are supplied. M09–M11 are not proved."
+    },
+    {
+      "id": "length-scaffold",
+      "kind": "LEAN-SCAFFOLD",
+      "label": "Finite-length boundary",
+      "statement": "MinimalPrimeLength wraps composition-series and finite-length closure facts and, given a supplied local model with Noetherian and Artinian hypotheses at a minimal support point, derives finite length and finite generation. It constructs no characteristic support, localization or minimal-prime theorem.",
+      "source": "SymplecticStafford/FiniteLength/MinimalPrimeLength.lean",
+      "depends_on": [],
+      "position": [
+        5,
+        14
+      ],
+      "review": "Conditional checkpoint: local support point, surjective model, Noetherianity and Artinianity are supplied; M05 construction remains open."
     },
     {
       "id": "local",
@@ -102,7 +115,7 @@
         -5,
         17
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "tests",
@@ -115,7 +128,7 @@
         0,
         17
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "pencil",
@@ -128,7 +141,7 @@
         5,
         17
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "length",
@@ -143,7 +156,7 @@
         -5,
         14
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "colon",
@@ -158,7 +171,7 @@
         0,
         14
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "induction",
@@ -176,7 +189,7 @@
         0,
         10.5
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "terminal",
@@ -191,7 +204,7 @@
         0,
         7.5
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "package",
@@ -206,7 +219,7 @@
         5,
         7.5
       ],
-      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "phasei",

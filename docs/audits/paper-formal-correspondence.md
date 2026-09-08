@@ -24,7 +24,7 @@ pending.
 | M06--M07 finite tests and activated pencils | `FiniteLength/Pencil.lean`, `FiniteLength/PencilBridge.lean`, `FiniteLength/ActivatedPencil.lean`, `Source/OriginalTestContract.lean` | Finite division-coordinate avoidance and conditional top-to-cyclic consumers are checked. Division-coefficient LLD, composition-length lifting, `vL=0`, `e=vB+uL`, and one original-U source remain open. |
 | M08 common colon and support-union assembly | `Ordered/CommonColon.lean`, `Ordered/RightClear.lean` | Ordered K/J definitions, right-ideal closure, central pencil identity and conditional affine inclusion are checked. Finite generators, polynomial localization and the support-union theorem remain open. |
 | M09--M10 strong `P_h` and successor induction | `Induction/StrongPh.lean`, `Induction/FiniteIndex.lean` | The abstract predicate and supplied two-call rule are recorded, and finite-index composition is proved. The admissible tests, base, successor construction, support removal and retention are not formalized. |
-| M11 original cofactors, opposite hypotheses, and Stafford package | `Semantics/SupportDimension.lean`, `Package/Opposite.lean` | A supplied bottom-support datum yields original quotient cofactors, and left/right S1 transport is explicit. Actual characteristic support, filtered-class opposite preservation and the banked package consumers remain open. |
+| M11 original cofactors, opposite hypotheses, and Stafford package | `Semantics/SupportDimension.lean`, `Package/TerminalBoundary.lean`, `Package/Opposite.lean` | A supplied bottom-support datum or zero-quotient witness yields literal original-U cofactors in the paper's order, and left/right S1 transport is explicit. Actual characteristic support, filtered-class opposite preservation and the banked package consumers remain open. |
 | Palomar challenge | `Challenge.lean`, `Solution.lean` | Correctly isolated. The challenge is the definitional membership contract; its one `sorry` is deliberate, and the solution proves the same proposition without importing the challenge. It is not the paper theorem. |
 
 ## Status and pin discrepancies
@@ -36,9 +36,9 @@ still identify `502b65a1dea53cac52220a08e321bfba525bc72e`.  Either retain
 record together after the final paper commit is selected; a mixed source
 boundary is not reproducible correspondence evidence.
 
-The checked Stafford38 formal repository at `784b59925beb9a480519142336bd6434f6eeef16`
-pins AlgebraicAnalysis at
-`dfdd2da091a9d67e7a29cc7914f192d746a2400d`, whereas this formal checkout
+The checked Stafford38 formal repository at `e77e176c381ca2d6b20c030f9227f1b031415d2e`
+pins AlgebraicAnalysis at its released v0.3.0 commit
+`4aae47967f6ba02ffe2f639ab06564c9a9d1ecc8`, whereas this formal checkout
 pins the newer public AlgebraicAnalysis main head
 `46f2c819deca0e9735a436bed94ebed03ae35090` in both `lakefile.toml` and
 `lake-manifest.json`.  The newer checkout uses the same Lean/Mathlib pins and

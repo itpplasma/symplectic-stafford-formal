@@ -39,11 +39,19 @@ records the recommendations without modifying the paper source.
 - Only `check-release-readiness.sh` is a publication gate.  The checkpoint
   Phase-II and Palomar commands are not, by themselves, phase completion or
   release evidence.
-- Public pins observed by the audit are Lean/Mathlib
-  `v4.33.0`/`db584cd...`, latest AlgebraicAnalysis
-  `44921f5914c5dbd40d2d532c2867adce0f519cb9`, and Stafford38
-  `784b599...`.  The formal lock and downstream checkpoint now use that
-  latest AlgebraicAnalysis commit; the exact rebuild is recorded separately.
+- Public pins observed by the one-shot audit were Lean/Mathlib
+  `v4.33.0`/`db584cd...`, AlgebraicAnalysis `44921f5...`, and Stafford38
+  `784b599...`.  The public AlgebraicAnalysis main head subsequently advanced
+  to `46f2c819deca0e9735a436bed94ebed03ae35090`; the controller checked that
+  isolated clone and reran the downstream root and phase-I checkpoint replay.
+
+## Controller addendum
+
+The later formal slices (raw Rees terms, support boundary, activated-coordinate
+pencil, common-colon algebra, finite-index composition, and explicit opposite
+transport) compile under the newer AlgebraicAnalysis head.  They remain
+conditional utilities; this addendum does not alter the paper-level verdict or
+promote any release gate.
 
 Safe public wording is limited to: a self-audited written paper candidate,
 the checked semantic/ordered/scalar Lean utilities, and a definitional

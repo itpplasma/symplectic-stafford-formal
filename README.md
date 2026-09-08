@@ -8,19 +8,23 @@ keeps the target in the exact noncommutative order
 ```
 
 The current checked checkpoint formalizes the original-ring semantic contract,
-right-ideal quotient action, opposite transport, ordered affine identities,
-conditional right-denominator clearing, and a finite division-coordinate
-scalar-pencil lemma. The general finite-length activated-pencil and original-U
-source-selection bridges remain open. It deliberately
+right-ideal quotient action, opposite transport, ordered common-colon
+identities, raw filtered/Rees term coherence, conditional right-denominator
+clearing, finite division-coordinate scalar-pencil avoidance, a conditional
+finite-index P_h composition, and an explicit terminal zero-quotient/cofactor
+boundary. The
+general finite-length activated-pencil and original-U source-selection bridges
+remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion
 paper. The source-selection, filtered-localization, assembly, and terminal
 Phase I/II gates remain open in `PLAN.md`; the corresponding files are
 conditional scaffolds rather than producer proofs.
 
-The map labels these three interfaces LEAN-SCAFFOLD: filtered chart/power
-clearing, divisor-indexed assembly from supplied cofactors, and strong
-finite-test induction contracts with integer bounds. Their precise hypotheses
-appear in the linked claim register; M02–M11 remain open.
+The map labels the conditional filtered chart/power-clearing, divisor-indexed
+assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
+Rees, common-colon, finite-pencil, support-boundary, and opposite-transport
+modules are checked utilities, but their missing producer hypotheses keep
+M01–M11 open. Precise scopes appear in the linked claim register.
 
 ## Reproducible setup
 
@@ -31,8 +35,8 @@ formal project. Exact build revisions are in the lock files:
 | --- | --- |
 | Lean | `leanprover/lean4:v4.33.0` |
 | Mathlib | `db584cd6d46c92f209a44c0f1c829460d327499d` |
-| AlgebraicAnalysis | `44921f5914c5dbd40d2d532c2867adce0f519cb9` |
-| Stafford38 formal | `784b59925beb9a480519142336bd6434f6eeef16` |
+| AlgebraicAnalysis | `46f2c819deca0e9735a436bed94ebed03ae35090` |
+| Stafford38 formal | `e77e176c381ca2d6b20c030f9227f1b031415d2e` |
 
 With Lean and Lake installed, run the checkpoint build and consumers:
 

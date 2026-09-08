@@ -7,18 +7,19 @@
   "lean_toolchain": "leanprover/lean4:v4.33.0",
   "dependencies": {
     "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
-    "algebraicAnalysis": "44921f5914c5dbd40d2d532c2867adce0f519cb9",
-    "stafford38Formal": "784b59925beb9a480519142336bd6434f6eeef16"
+    "algebraicAnalysis": "46f2c819deca0e9735a436bed94ebed03ae35090",
+    "stafford38Formal": "e77e176c381ca2d6b20c030f9227f1b031415d2e"
   },
-  "scope": "C01-C03/P01-P03 plus conditional cyclic-pencil and original-U finite-test contracts; no universal source producer",
+  "scope": "C01-C03/P01-P03 plus checked raw Rees, common-colon, support-boundary, opposite-transport, terminal zero-quotient/cofactor, finite-index, activated-pencil-coordinate, cyclic-pencil and original-U finite-test contracts; no universal source producer",
   "phase_i": {
     "status": "partial",
     "command": "./scripts/verify.sh --phase-i",
     "evidence": "not a Phase I completion record"
   },
   "phase_ii": {
-    "status": "not-started",
-    "command": "./scripts/verify.sh --phase-ii"
+    "status": "partial",
+    "command": "./scripts/verify.sh --phase-ii",
+    "evidence": "checkpoint replay passed; not Phase II completion evidence"
   },
   "palomar": {
     "status": "pending",
@@ -27,5 +28,5 @@
   "allowed_axioms": ["propext", "Classical.choice", "Quot.sound"],
   "challenge_sorry_count": 1,
   "solution_sorry_count": 0,
-  "notes": "The exact latest public AlgebraicAnalysis commit is used and the isolated SymplecticStafford semantic build passed. This record is intentionally not release evidence; replace it with a fresh-clone replay record only after the complete endpoint set exists."
+  "notes": "The remote AlgebraicAnalysis main head 46f2c819deca0e9735a436bed94ebed03ae35090 was checked by isolated clone and downstream root build. This record is intentionally not release evidence; replace it with a fresh-clone replay record only after the complete endpoint set exists."
 }

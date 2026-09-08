@@ -19,6 +19,9 @@ right U/opposite transport.
 
 Use integer or bottom-extended support dimension with delta(0)=-1. Natural
 truncated subtraction at D-(D+1) cannot express the terminal argument.
+The current `SupportDimension = WithBot Nat` and integer-valued `StrongPh`
+defect are separate interfaces: prove their correspondence for the actual
+characteristic support before using them together at termination.
 
 ## Project-owned obligations
 
@@ -58,19 +61,27 @@ consume M11 only at proved scopes. Workers return exact declarations, their
 hypotheses, builds, independent consumer evidence and remaining gaps.
 The controller alone integrates and promotes authoritative status.
 
-The conditional scaffolds now provide API starting points:
-`Filtered/Localization.lean` consumes an assumed power-clearing certificate;
-`Source/Assembly.lean` has divisor-indexed witness assembly; and
-`Induction/StrongPh.lean` records the integer bound, two lower-index calls,
-supplied successor output and terminal extraction interface. Preserve their
-LEAN-SCAFFOLD classification. A proof field containing successor output or
-cofactors is an input to a conditional consumer, not a proof that the paper's
-producer exists. M02–M11 remain open.
+The checked modules provide the following starting points. Every M01–M11
+obligation remains open at its full paper scope; each row records only the
+proved portion and the construction its consumer still needs.
 
-The current coordinatewise `finite_pencil_exceptions` theorem is a reusable
-scalar utility. General semisimple tops may have repeated simple factors and
-matrix endomorphism blocks; a product of division-ring coordinates does not
-by itself model them. M06 and M07 require that bridge and finite-length lifting.
+| Obligation | Checked module and scope | Required continuation |
+| --- | --- | --- |
+| M01 | `Semantics/SupportDimension.lean` uses `WithBot Nat`, extracts zero from supplied support/dimension equivalences, and proves that a zero original right quotient is equivalent to membership of `1`. | Construct characteristic support and its zero-detection theorem, encode the actual filtered class, and connect bottom dimension to the integer defect. |
+| M02–M05 | `Filtered/ReesBasic.lean` and `ReesQuotient.lean` prove closure, reindexing, quotient operations and coherence for raw bounded terms; `WeightedDetection.lean` proves a supplied finite integer-weighted triangular detection lemma; `FiniteLength/MinimalPrimeLength.lean` wraps supplied local Noetherian/Artinian composition-length data. `Filtered/Localization.lean` still consumes supplied filtration/map data and power right-clearability. | Construct the actual algebraic Rees and associated graded objects, prove Noetherianity, and establish full-symbol Ore localization, faithful good-module detection and minimal-prime length. These raw/conditional utilities do not provide those objects or the localization theorem. |
+| M06 | `Source/OriginalTestContract.lean` records original-U test lists and affine-source witnesses; `Source/DivisionLLD.lean` proves finite exceptional-root avoidance and a conditional source with retained offsets/tails. `Source/Assembly.lean` extracts same-divisor S1 from a supplied divisor-indexed producer with original cofactors. | Prove the actual division-coefficient LLD and construct one multiplier satisfying all paper tests for the admissible class. |
+| M07 | `FiniteLength/Pencil.lean`, `ActivatedPencil.lean`, and `RadicalLift.lean` prove finite simultaneous scalar avoidance and finite top-lifting/ordered pencil consequences under supplied coordinates, actions and filtration steps. `PencilBridge.lean` and the right-cyclic consumer use supplied top maps and generation reflection. | Prove the arbitrary finite-length activated-pencil theorem with `vL=0` and `e=vB+uL`, including repeated simple factors, matrix blocks and lifting from the top. |
+| M08 | `Ordered/CommonColon.lean` defines the actual ordered sets K and J, proves right-ideal closure, the central pencil identity and affine inclusion. `Ordered/SupportUnion.lean` adds finite right spans, auxiliary-divisor relations, conditional support-union input and constant right clearing; `RightClear.lean` combines assumed right-power clearing. | Produce actual finite generators and polynomial/localization passage; prove the support-union theorem from characteristic-support theory and the auxiliary-divisor relation. |
+| M09–M10 | `Induction/StrongPh.lean` records abstract tests, integer bounds, two lower-index calls and supplied successor output; `TestRetention.lean` makes carried lists, old/new bookkeeping and defect arithmetic explicit; `FiniteIndex.lean` composes supplied P_1 and successor rules to P_(D+1). | Construct the admissible local tests, the base and the two-call successor; prove the old/new component removal and retention of all carried tests. |
+| M11 | `FiniteIndex.lean` extracts cofactors using supplied zero extraction; `Package/TerminalBoundary.lean` makes the zero-quotient/membership boundary and literal original-U cofactor order explicit; `Package/Opposite.lean` proves equivalence of left S1 in U with right S1 in its opposite. | Derive original cofactors from actual characteristic support, prove opposite preservation of the filtered class, and check each claimed package consumer. |
+
+Preserve the LEAN-SCAFFOLD classification of conditional localization,
+assembly and induction nodes. A successor rule with output fields or an
+assembly with cofactor fields proves a consumer only. In particular,
+`strongPh_fin_index` assumes P_1 even when D=0, and does not construct the
+paper's base case. The current top-pencil theorem assumes every exposed
+coordinate of the starting vector is nonzero; its name does not establish
+the activation hypotheses of M07.
 
 ## Phase I
 
@@ -98,8 +109,19 @@ against another copy of a weakened contract.
 Retain exact Lean 4.33.0, Mathlib v4.33.0 and public dependency commits from
 the verified lock files. Replay from a clean checkout and record invocations,
 theorem types, imports, axiom reports and independent kernel results.
+The current locks are Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`,
+AlgebraicAnalysis `46f2c819deca0e9735a436bed94ebed03ae35090`, and Stafford38
+`e77e176c381ca2d6b20c030f9227f1b031415d2e`. Any dependency update requires a
+fresh downstream replay; an upstream version or release name is not that
+evidence.
 A semantic Challenge/Solution success does not release SS-all. Publication
 remains controlled by release-gates.yaml and the release runbook.
+
+The independent Fable/Claude audit recorded in
+`docs/audits/fable-claude-proof-audit-2026-09-08.md` found no invalid bridge
+in the frozen written candidate. That verdict covers the paper-level
+dependency reconstruction; human review, complete formal correspondence and
+the Phase I, Phase II and Palomar gates remain open.
 
 ## Historical and concrete branches
 

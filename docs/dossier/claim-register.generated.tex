@@ -1,29 +1,29 @@
 \section{Claim register}\label{sec:claims}
 \subsection{Right-ideal semantics}\hypertarget{claim:semantics}{}\backmap
-\textbf{LEAN.} Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical dimension-parametric B2/Prop-label class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.
+\textbf{LEAN.} Literal ordered membership and quotient right-action operation in the original ring. SupportDimension proves zero-quotient/membership equivalence and consumes explicit bottom-dimension/support/zero equivalences. TerminalBoundary extracts literal original-U cofactors from a supplied zero quotient or membership witness, while Package/Opposite transports left S1 to right S1 in the opposite ring and conversely. The actual filtered-class encoding and characteristic-support construction remain open M01 work.
 
-\emph{Source:} SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean.
-\emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
+\emph{Source:} SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean; SymplecticStafford/Semantics/SupportDimension.lean; SymplecticStafford/Package/TerminalBoundary.lean; SymplecticStafford/Package/Opposite.lean.
+\emph{Review:} Implemented semantic checkpoint and explicit opposite transport; the filtered-class and universal producer hypotheses remain open. Replay logs and precise types govern scope.
 
 No incoming claim dependency in this graph.
 \subsection{Ordered utilities}\hypertarget{claim:ordered}{}\backmap
-\textbf{LEAN.} Affine expansion and conditional finite constant-right-denominator clearing; no claim of an Ore structure or support theorem.
+\textbf{LEAN.} Affine expansion, conditional finite constant-right-denominator clearing, and actual ordered common-colon sets K and J with right-ideal closure. CommonColon and SupportUnion prove the central pencil identity, finite-span algebra and conditional inclusion/support-union interfaces. Finite generators, polynomial localization and the stated support theorem remain M08 obligations.
 
-\emph{Source:} SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean.
+\emph{Source:} SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean; SymplecticStafford/Ordered/CommonColon.lean; SymplecticStafford/Ordered/SupportUnion.lean.
 \emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
 
 No incoming claim dependency in this graph.
 \subsection{Scalar-pencil utility}\hypertarget{claim:scalar}{}\backmap
-\textbf{LEAN.} Finite exceptional scalars for finitely many division-ring coordinates; PencilBridge conditionally transfers this through a supplied top comparison/reflection. Constructing that comparison and the general activated finite-length bridge remains open.
+\textbf{LEAN.} Finite exceptional scalars and simultaneous forbidden-set avoidance for finite division-ring coordinates with nonzero starting coordinates. PencilBridge, ActivatedPencil, DivisionLLD and RadicalLift conditionally infer top-to-cyclic, finite affine-source or finite top-lifting consequences from supplied data. Repeated simple factors, matrix blocks, radical construction and the arbitrary finite-length activation theorem remain open M06–M07 work.
 
-\emph{Source:} SymplecticStafford/FiniteLength/Pencil.lean; SymplecticStafford/FiniteLength/PencilBridge.lean.
+\emph{Source:} SymplecticStafford/FiniteLength/Pencil.lean; SymplecticStafford/FiniteLength/PencilBridge.lean; SymplecticStafford/FiniteLength/ActivatedPencil.lean; SymplecticStafford/Source/DivisionLLD.lean; SymplecticStafford/FiniteLength/RadicalLift.lean.
 \emph{Review:} The coordinate theorem is implemented; CyclicTopBridge is a conditional consumer. Replay logs and precise types govern both scopes.
 
 No incoming claim dependency in this graph.
 \subsection{Chart contract}\hypertarget{claim:local-scaffold}{}\backmap
-\textbf{LEAN-SCAFFOLD.} A supplied exhaustive multiplicative filtration and map preserve degree bounds; assuming chart-wide power right-clearability gives finite common right clearance. This constructs no full-symbol Ore set, Rees algebra, support theory or faithful localization.
+\textbf{LEAN-SCAFFOLD.} A supplied exhaustive multiplicative filtration and map preserve degree bounds; assumed chart-wide power right-clearability gives finite common right clearance. ReesBasic and ReesQuotient prove raw bounded-term reindexing, quotient operations and coherence, while WeightedDetection handles a supplied finite integer-weighted triangular system. These do not yet construct the algebraic Rees ring, full-symbol Ore localization, characteristic support or faithful good-module detection.
 
-\emph{Source:} SymplecticStafford/Filtered/Localization.lean.
+\emph{Source:} SymplecticStafford/Filtered/Localization.lean; SymplecticStafford/Filtered/ReesBasic.lean; SymplecticStafford/Filtered/ReesQuotient.lean; SymplecticStafford/Filtered/WeightedDetection.lean.
 \emph{Review:} Conditional checkpoint consumer; right\_clearable is an input field. M02–M05 remain open.
 
 Dependencies: \hyperlink{claim:ordered}{Ordered utilities}.
@@ -35,66 +35,73 @@ Dependencies: \hyperlink{claim:ordered}{Ordered utilities}.
 
 Dependencies: \hyperlink{claim:semantics}{Right-ideal semantics}.
 \subsection{Strong P\_h contracts}\hypertarget{claim:ph-scaffold}{}\backmap
-\textbf{LEAN-SCAFFOLD.} Record affine source membership, finite lists of abstract generation tests, integer defect bounds, both lower-index calls and supplied successor output. Prove D-(D+1)=-1 and conditionally extract original cofactors from a supplied terminal StrongPh and zero\_extraction interface.
+\textbf{LEAN-SCAFFOLD.} Record affine source membership, abstract finite generation tests, integer defect bounds, both lower-index calls and supplied successor output. TestRetention makes carried lists, old/new component bookkeeping and defect arithmetic explicit; FiniteIndex composes supplied P\_1 and successor rules to P\_(D+1), including D=0. Terminal cofactors still require supplied zero extraction; actual support, the base and the two-call successor remain open.
 
-\emph{Source:} SymplecticStafford/Induction/StrongPh.lean.
+\emph{Source:} SymplecticStafford/Induction/StrongPh.lean; SymplecticStafford/Induction/FiniteIndex.lean; SymplecticStafford/Induction/TestRetention.lean.
 \emph{Review:} Conditional checkpoint: localization/module specifications, defect and generation predicates, successor output and zero\_extraction are supplied. M09–M11 are not proved.
+
+No incoming claim dependency in this graph.
+\subsection{Finite-length boundary}\hypertarget{claim:length-scaffold}{}\backmap
+\textbf{LEAN-SCAFFOLD.} MinimalPrimeLength wraps composition-series and finite-length closure facts and, given a supplied local model with Noetherian and Artinian hypotheses at a minimal support point, derives finite length and finite generation. It constructs no characteristic support, localization or minimal-prime theorem.
+
+\emph{Source:} SymplecticStafford/FiniteLength/MinimalPrimeLength.lean.
+\emph{Review:} Conditional checkpoint: local support point, surjective model, Noetherianity and Artinianity are supplied; M05 construction remains open.
 
 No incoming claim dependency in this graph.
 \subsection{Algebraic localization}\hypertarget{claim:local}{}\backmap
 \textbf{NOVEL.} Full homogeneous-symbol Ore localization, algebraic Noetherian Rees ring, good subquotients and faithful detection including negative degrees.
 
 \emph{Source:} paper part I.1–I.4 (M02–M04).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 No incoming claim dependency in this graph.
 \subsection{Original-U finite tests}\hypertarget{claim:tests}{}\backmap
 \textbf{NOVEL.} One source in B+Ua satisfies every prescribed finite local cyclic-generation test with arbitrary offsets and nonzero right tails.
 
 \emph{Source:} paper part II.1–II.4 (M06).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 No incoming claim dependency in this graph.
 \subsection{Activated pencil}\hypertarget{claim:pencil}{}\backmap
 \textbf{NOVEL.} In a fixed finite-length cyclic module, vL=0 and e=vB+uL imply generic central-scalar cyclicity of v+lambda*u, over noncommuting endomorphism division rings.
 
 \emph{Source:} paper part II.5 (M07).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 No incoming claim dependency in this graph.
 \subsection{Minimal-prime length}\hypertarget{claim:length}{}\backmap
 \textbf{NOVEL.} Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime.
 
 \emph{Source:} paper part I.5 (M05).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 Dependencies: \hyperlink{claim:local}{Algebraic localization}.
 \subsection{Common-colon support}\hypertarget{claim:colon}{}\backmap
 \textbf{NOVEL.} For FdL0=dC0, K=\{s:Gds in dU\} and J=dU+FdK, polynomial pencil containment and constant right clearing yield Z(U/J) contained in Z\_d(F) union Z\_(dL0)(G).
 
 \emph{Source:} paper main 1 (M08).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 Dependencies: \hyperlink{claim:local}{Algebraic localization}.
 \subsection{Strong finite-test P\_h}\hypertarget{claim:induction}{}\backmap
 \textbf{NOVEL.} For every divisor, affine source space and finite test list, P\_h gives defect dimension at most D-h. The successor uses only P\_h twice, on d and dL0, removes all common minimal components and retains all carried tests.
 
 \emph{Source:} paper main 2–4 (M09–M10).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 Dependencies: \hyperlink{claim:length}{Minimal-prime length}, \hyperlink{claim:tests}{Original-U finite tests}, \hyperlink{claim:pencil}{Activated pencil}, \hyperlink{claim:colon}{Common-colon support}.
 \subsection{Original affine identity}\hypertarget{claim:terminal}{}\backmap
 \textbf{NOVEL.} P\_(D+1) gives empty support, hence actual original-algebra cofactors with 1=dR+(B+Ha)dS for every nonzero d and a and arbitrary B.
 
 \emph{Source:} paper main 5 (M11).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 Dependencies: \hyperlink{claim:induction}{Strong finite-test P\_h}.
 \subsection{Opposite and package}\hypertarget{claim:package}{}\backmap
 \textbf{NOVEL.} Automatic opposite hypotheses and the banked two-sided generation, rank, splitting and rank-at-least-two cancellation implications.
 
 \emph{Source:} paper main 6; part III.1; same-divisor-consequences.md; rank-splitting-and-cancellation-2026-09-07.md (M11).
-\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+\emph{Review:} Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending.
 
 Dependencies: \hyperlink{claim:terminal}{Original affine identity}.
 \subsection{SS-all Phase I}\hypertarget{claim:phasei}{}\backmap

@@ -37,8 +37,9 @@ The final paper gives a self-audited all-dimensional candidate for the
 original-algebra identity \(1=dR+(B+Ha)dS\). This dossier records that proof's
 dependencies, the partial Lean implementation, and the exact scope of the
 current Challenge/Solution pair. The pair proves a definitional right-ideal
-membership contract. Formalization of the universal source producer and
-independent mathematical review remain open.
+membership contract. A bounded independent paper-level audit found no invalid
+bridge; formalization of the universal source producer and human review remain
+open.
 \end{abstract}
 
 \section{Paper source and hypotheses}\label{sec:scope}\backmap
@@ -111,8 +112,15 @@ construct the right ideal
 \[
  dU+(fd)U=\{x:\exists r,s,\ x=dr+(fd)s\},
 \]
-its quotient right action and the opposite orientation. The current
+its relation-respecting quotient right-action operation and the opposite orientation. The current
 Mathlib-only challenge isolates membership in this displayed carrier.
+\lean{Package/Opposite.lean} separately transports a supplied left certificate
+to right S1 in the opposite ring (and conversely); a right certificate alone is
+not silently treated as a left one.  \lean{Package/TerminalBoundary.lean}
+records the exact terminal boundary: a supplied zero quotient or membership
+witness yields literal original-\(U\) cofactors in the order
+\(1=dR+(fd)S\), without constructing the support witness that the paper
+needs.
 
 The current \lean{AdmissibleSymplecticClass} is a historical,
 dimension-parametric scaffold: it retains B2 fields and placeholder
@@ -157,12 +165,25 @@ The ordered modules give affine identities and conditional finite
 right-denominator clearance. The existing finite-pencil theorem treats
 finitely many division-ring coordinates; general semisimple tops can have
 repeated simple factors and matrix blocks. The new
-\lean{FiniteLength/PencilBridge.lean} records a handed cyclic-module top bridge
+\lean{FiniteLength/PencilBridge.lean} and
+\lean{FiniteLength/ActivatedPencil.lean} record handed top-to-cyclic bridges
 and finite forbidden-scalar avoidance, while
 \lean{Source/OriginalTestContract.lean} records the exact original-\(U\) finite
-test/source witness shape. Both are conditional consumers: the arbitrary
-finite-length activated-pencil, localization, and source-production proofs are
-still required.
+test/source witness shape. \lean{Filtered/ReesBasic.lean} proves only raw
+bounded-term coherence, \lean{Ordered/CommonColon.lean} keeps the K/J factor
+order and central pencil identity explicit, and
+\lean{Semantics/SupportDimension.lean} makes the bottom-support-to-quotient
+boundary an input. All are conditional consumers: arbitrary finite-length
+activation, localization, support union and source-production proofs are still
+required.
+
+The remaining checked slices are listed explicitly in the claim register:
+\lean{Filtered/ReesQuotient.lean}, \lean{Filtered/WeightedDetection.lean},
+\lean{Source/DivisionLLD.lean}, \lean{FiniteLength/MinimalPrimeLength.lean},
+\lean{FiniteLength/RadicalLift.lean}, \lean{Ordered/SupportUnion.lean},
+\lean{Induction/TestRetention.lean}, and
+\lean{Package/TerminalBoundary.lean}.  Each is a conditional utility or
+terminal boundary; none constructs the missing universal producer.
 
 Three \textbf{LEAN-SCAFFOLD} nodes record additional conditional interfaces.
 \lean{Filtered/Localization.lean} preserves degree bounds under supplied
@@ -178,7 +199,8 @@ separate optional toy contracts.
 \lean{Induction/StrongPh.lean} records affine membership, finite test lists,
 integer defect bounds, both lower-index calls and a supplied successor
 output. The equation \(D-(D+1)=-1\) is proved. Its
-\lean{strongPh_succ} selects the output of a supplied successor rule, while
+\lean{Induction/FiniteIndex.lean} composes supplied \(P_1\) and successor rules
+to \(P_{D+1}\). \lean{strongPh_succ} selects the output of a supplied successor rule, while
 \lean{terminal_extraction} requires both terminal \lean{StrongPh} and a
 \lean{zero_extraction} interface. Local-test specification propositions,
 generation predicates and defect data are still abstract inputs. The
@@ -213,9 +235,10 @@ The dependency family uses Lean \lean{leanprover/lean4:v4.33.0} and
 Mathlib's v4.33.0 revision
 \lean{db584cd6d46c92f209a44c0f1c829460d327499d}.
 The Stafford38 public main revision checked on 8 September 2026 is
-\lean{784b59925beb9a480519142336bd6434f6eeef16}.
-AlgebraicAnalysis public main was
-\lean{44921f5914c5dbd40d2d532c2867adce0f519cb9} at that inspection.
+\lean{e77e176c381ca2d6b20c030f9227f1b031415d2e}.
+AlgebraicAnalysis public main is pinned at
+\lean{46f2c819deca0e9735a436bed94ebed03ae35090}; this head was checked from
+an isolated clone before the downstream replay.
 The actual build pins are included below directly from the lock configuration;
 dependency migration is complete only when manifest consistency and downstream
 builds pass.

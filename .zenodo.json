@@ -2,7 +2,7 @@
   "title": "Symplectic Stafford: Lean 4 formalization checkpoint",
   "upload_type": "software",
   "version": "0.1.0",
-  "description": "Lean 4 formalization checkpoint for the symplectic Stafford same-divisor programme. The repository proves the original-ring semantic and ordered-algebra interfaces, finite right-denominator clearing, and a finite-length pencil lemma, with a Mathlib-only Challenge/Solution pair. It does not claim the universal higher-dimensional source-selection or same-divisor theorem; Phase I and Phase II release gates remain explicit.",
+  "description": "Lean 4 formalization checkpoint for the symplectic Stafford same-divisor programme. The repository proves original-ring semantic and support-boundary interfaces, explicit opposite transport, ordered common-colon identities, raw filtered/Rees term coherence, finite right-denominator clearing, finite division-coordinate pencil avoidance, conditional finite-index P_h composition, and the terminal zero-quotient/cofactor boundary, with a Mathlib-only Challenge/Solution pair. It does not claim the universal higher-dimensional source-selection or same-divisor theorem; Phase I and Phase II release gates remain explicit.",
   "creators": [
     {
       "name": "Albert, Christopher",
@@ -23,12 +23,12 @@
   "language": "eng",
   "related_identifiers": [
     {
-      "identifier": "https://github.com/itpplasma/stafford38-formal/tree/784b59925beb9a480519142336bd6434f6eeef16",
+      "identifier": "https://github.com/itpplasma/stafford38-formal/tree/e77e176c381ca2d6b20c030f9227f1b031415d2e",
       "relation": "requires",
       "resource_type": "software"
     },
     {
-      "identifier": "https://github.com/itpplasma/algebraic-analysis/tree/44921f5914c5dbd40d2d532c2867adce0f519cb9",
+      "identifier": "https://github.com/itpplasma/algebraic-analysis/tree/46f2c819deca0e9735a436bed94ebed03ae35090",
       "relation": "requires",
       "resource_type": "software"
     }

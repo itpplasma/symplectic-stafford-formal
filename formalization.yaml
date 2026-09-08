@@ -6,11 +6,14 @@ project:
   description: >-
     Lean 4 formalization of the original-ring semantic and ordered-algebra
     interfaces for the symplectic Stafford same-divisor programme. The
-    checkpoint proves right-ideal membership/extraction, quotient right
-    action, opposite transport, ordered affine identities, finite right
-    denominator clearing, a finite division-coordinate scalar-pencil lemma,
-    and conditional original-U finite-test/cyclic-pencil bridges. General
-    finite-length activated pencils remain open. It does not claim
+    checkpoint proves right-ideal membership/extraction, the relation-respecting
+    quotient right-action operation, support-boundary extraction, explicit
+    opposite transport, ordered affine/common-colon identities, raw
+    filtered/Rees term coherence, finite
+    right denominator clearing, finite division-coordinate scalar-pencil
+    avoidance, conditional finite-index P_h composition, and conditional
+    original-U finite-test/cyclic-pencil bridges. General finite-length
+    activated pencils remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
     from the companion paper; those are explicit Phase I and Phase II gates.
   authors:
@@ -67,7 +70,7 @@ sources:
     authors:
       - "Christopher Albert"
     type: "software"
-    id: "https://github.com/itpplasma/stafford38-formal/tree/784b59925beb9a480519142336bd6434f6eeef16"
+    id: "https://github.com/itpplasma/stafford38-formal/tree/e77e176c381ca2d6b20c030f9227f1b031415d2e"
     relationship: "builds-on"
     note: "Pinned public dependency used for the shared formal environment."
 
@@ -88,14 +91,17 @@ verification:
 
 status:
   scope: >-
-    Partial checkpoint. The semantic, ordered, division-coordinate,
-    conditional cyclic-pencil, original-U finite-test, filtered, source-assembly,
-    and strong-P_h declarations listed in the project plan
+    Partial checkpoint. The semantic, support-boundary, opposite-transport,
+    ordered/common-colon, raw Rees, division-coordinate,
+    conditional cyclic-pencil, finite-index, terminal-boundary, original-U
+    finite-test, filtered, source-assembly, and strong-P_h declarations listed
+    in the project plan
     compile and have independent consumers where recorded. The filtered,
     source-selection, assembly, and induction files are conditional scaffolds;
     the proof map labels these consumers LEAN-SCAFFOLD and keeps M02–M11 open;
-    the full higher-dimensional same-divisor producer and terminal extraction
-    remain unimplemented. The one intentional placeholder is confined to the
+    the full higher-dimensional same-divisor producer; producer-derived
+    terminal extraction remains unimplemented. The one intentional placeholder
+    is confined to the
     Mathlib-only Challenge.lean; Solution.lean has no placeholder.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
@@ -138,6 +144,7 @@ automation:
     - method: "agent"
       models:
         - "gpt-5.6-luna"
+        - "gpt-6-astra"
       framework: "Codex"
       tool_setup: >-
         Bounded parallel agents supplied disjoint proof slices and audits; the
@@ -170,8 +177,9 @@ review:
   reviewers: []
   notes: >-
     Kernel builds, endpoint axiom reports, and independent consumers cover the
-    implemented checkpoint. Human expert review and the universal theorem's
-    statement correspondence remain open.
+    implemented checkpoint. The bounded Fable/Claude paper audit found no
+    invalid bridge in the written candidate; human expert review and the
+    universal theorem's statement correspondence remain open.
 
 alignment:
   namespace: "SymplecticStafford"
