@@ -88,7 +88,7 @@ related_formalizations:
     relationship: "builds-on"
 
 verification:
-  commit: "development-checkpoint"
+  commit: "d08fcfbfbc20a69486b725dfb0f586a977ab4436"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"

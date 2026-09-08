@@ -130,3 +130,14 @@ project artifact path for the direct comparator invocation. At this checkpoint
 lean4export comparison, NanoDa replay and Lean's default kernel replay. This
 is evidence only for the elementary semantic Challenge/Solution pair; the
 universal source producer and the Phase I/II/release gates remain open.
+
+## Final controller replay at the recorded checkpoint
+
+The exact controller commit is `d08fcfbfbc20a69486b725dfb0f586a977ab4436`.
+At that clean commit, `lake build SymplecticStafford` completed 3066 jobs,
+both `verify.sh --phase-i` and `verify.sh --phase-ii` passed their documented
+semantic/ordered checkpoint, and `verify-palomar.sh` passed the pinned
+compatibility build, import-closure audits, comparator, NanoDa and Lean
+default-kernel checks. These are reproducible checkpoint results only: the
+release manifest remains pending because the actual all-dimensional producer
+and the M01--M11 Phase I/II endpoint proofs are not present.
