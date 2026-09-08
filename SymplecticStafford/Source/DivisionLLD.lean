@@ -26,6 +26,73 @@ universe u v
 variable {U : Type u} [DivisionRing U]
 variable {K : Type v} [Field K] [Infinite K]
 
+/-!
+The abstract family above deliberately accepts a local generation bridge.  The
+following concrete family is the finite test/source result that does not need
+that bridge: its tests record the source's nonvanishing together with their
+literal offset and right-tail fields.  The source-zero pencil is included in
+the forbidden set, so the result also works for an empty test family.
+-/
+
+structure NonzeroAffineTestFamily (U : Type u) (K : Type v)
+    [DivisionRing U] [Field K] where
+  Index : Type*
+  fintype : Fintype Index
+  ι : K →+* U
+  ι_injective : Function.Injective ι
+  offset : Index → Int
+  rightTail : Index → U
+  rightTail_ne_zero : ∀ i, rightTail i ≠ 0
+
+namespace NonzeroAffineTestFamily
+
+variable (T : NonzeroAffineTestFamily U K)
+
+/-- The concrete generation predicate carried by each finite test. -/
+def generation (i : T.Index) (source : U) (offset : Int) (rightTail : U) : Prop :=
+  source ≠ 0 ∧ offset = T.offset i ∧ rightTail = T.rightTail i
+
+theorem exists_original_affine_source
+    (B a : U) (ha : a ≠ 0) :
+    ∃ (H source : U),
+      source = B + H * a ∧
+      (∀ i, T.generation i source (T.offset i) (T.rightTail i)) ∧
+      (∀ i, T.rightTail i ≠ 0) := by
+  classical
+  have hroot : Set.Finite {z : K | B + T.ι z * a = 0} := by
+    have hone : ∀ ⦃z w : K⦄,
+        B + T.ι z * a = 0 → B + T.ι w * a = 0 → z = w := by
+      intro z w hz hw
+      apply T.ι_injective
+      apply mul_right_cancel₀ ha
+      calc
+        T.ι z * a = (B + T.ι z * a) - B := by noncomm_ring
+        _ = 0 - B := by rw [hz]
+        _ = (B + T.ι w * a) - B := by rw [hw]
+        _ = T.ι w * a := by noncomm_ring
+    by_cases hne : ({z : K | B + T.ι z * a = 0} : Set K).Nonempty
+    · obtain ⟨z, hz⟩ := hne
+      apply Set.Finite.subset (Set.finite_singleton z)
+      intro w hw
+      have hwz : w = z := hone hw hz
+      simpa [hwz]
+    · rw [Set.not_nonempty_iff_eq_empty.mp hne]
+      exact Set.finite_empty
+  obtain ⟨z, -, hz⟩ := Set.infinite_univ.exists_notMem_finite hroot
+  let H : U := T.ι z
+  let source : U := B + H * a
+  have hsource : source ≠ 0 := by
+    intro hs
+    apply hz
+    change B + T.ι z * a = 0
+    simpa [source, H] using hs
+  refine ⟨H, source, ?_, ?_, T.rightTail_ne_zero⟩
+  · rfl
+  · intro i
+    exact ⟨hsource, rfl, rfl⟩
+
+end NonzeroAffineTestFamily
+
 /-- A finite family of already-activated local tests.
 
 `generation` retains the integer offset and the nonzero right tail.  The

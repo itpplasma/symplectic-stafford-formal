@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Field.Defs
 import Mathlib.Data.Finset.Basic
 import SymplecticStafford.Semantics.S1Consequences
 
@@ -43,6 +44,16 @@ structure AssemblyWitness (d f : R) where
   right₁ : R
   right₂ : R
   identity : (1 : R) = d * right₁ + (f * d) * right₂
+
+/-- In a division ring the original-ring cofactors are explicit.  This is a
+concrete assembly consumer for finite source tests, not a source producer:
+the source `f` is arbitrary and both cofactors are elements of the same ring.
+-/
+def AssemblyWitness.of_divisionRing
+    {R : Type u} [DivisionRing R] {d f : R} (hd : d ≠ 0) :
+    AssemblyWitness d f := by
+  refine ⟨d⁻¹, 0, ?_⟩
+  simp [hd]
 
 def AssemblyWitness.certificate {d f : R} (w : AssemblyWitness d f) :
     SymplecticStafford.RightCertificate (R := R) d f 1 :=
@@ -105,5 +116,6 @@ theorem DivisorSelection.sameDivisor
 end SymplecticStafford.Source
 
 #print axioms SymplecticStafford.Source.selected_source_nonzero
+#print axioms SymplecticStafford.Source.AssemblyWitness.of_divisionRing
 #print axioms SymplecticStafford.Source.SingleSourceAssembly.sameDivisor
 #print axioms SymplecticStafford.Source.DivisorIndexedAssembly.sameDivisor
