@@ -10,7 +10,7 @@
     "algebraicAnalysis": "46f2c819deca0e9735a436bed94ebed03ae35090",
     "stafford38Formal": "e77e176c381ca2d6b20c030f9227f1b031415d2e"
   },
-  "scope": "C01-C03/P01-P03 plus checked right-ideal bridge/action laws, bounded Rees subsemiring and quotient-module actions, explicit power-Ore fractions, finite-support quotient/top detection, common-colon finite-generation and conditional support union, matrix-pencil/activated bridges, differential-Ore finite-cover, original-affine source selection, constructive successor, opposite-transport and terminal zero-quotient/cofactor contracts; no universal source producer",
+  "scope": "C01-C03/P01-P03 plus checked right-ideal bridge/action laws, bounded Rees subsemiring and quotient-module actions, finite bounded-generator filtrations, explicit power-Ore fractions and finite power-Ore normal forms, finite-support quotient/top detection and associated-layer support proxy, explicit right-module composition filtrations and Jacobson-top generation reflection, common-colon finite-generation and conditional support union, matrix-pencil/activated bridges, differential-Ore finite-cover, original-affine source selection, constructive successor, opposite-transport and terminal zero-quotient/cofactor contracts; no universal source producer",
   "phase_i": {
     "status": "partial",
     "command": "./scripts/verify.sh --phase-i",
@@ -22,11 +22,12 @@
     "evidence": "checkpoint replay passed; not Phase II completion evidence"
   },
   "palomar": {
-    "status": "pending",
-    "command": "./scripts/verify-palomar.sh"
+    "status": "checkpoint-passed",
+    "command": "./scripts/verify-palomar.sh",
+    "evidence": "Local comparator, NanoDa and Lean-kernel replay passed for the semantic Challenge/Solution pair after fixing the Stafford38 Challenge-module name collision; this is not universal-theorem or release evidence."
   },
   "allowed_axioms": ["propext", "Classical.choice", "Quot.sound"],
   "challenge_sorry_count": 1,
   "solution_sorry_count": 0,
-  "notes": "The remote AlgebraicAnalysis main head 46f2c819deca0e9735a436bed94ebed03ae35090 was checked by isolated clone and downstream root build. The third parallel wave also passed targeted trust-disabled module/oracle checks. This record is intentionally not release evidence; replace it with a fresh-clone replay record only after the complete endpoint set exists."
+  "notes": "The remote AlgebraicAnalysis main head 46f2c819deca0e9735a436bed94ebed03ae35090 was checked by isolated clone and downstream root build. The third and fourth parallel waves passed targeted trust-disabled module/oracle checks. The local Palomar-compatible semantic replay passes, but this record is intentionally not release evidence; replace it with a fresh-clone replay record only after the complete endpoint set exists."
 }

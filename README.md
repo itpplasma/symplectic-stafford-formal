@@ -11,7 +11,10 @@ The current checked checkpoint formalizes the original-ring semantic contract,
 the right-ideal bridge and quotient-action laws, opposite transport, ordered
 common-colon and finite-generation identities, raw and algebraic bounded
 filtered/Rees operations, a quotient Rees-module action, an algebraic
-power-Ore fraction boundary, finite-support top and matrix-pencil detection,
+power-Ore fraction boundary and finite power-Ore normal forms, finite
+bounded-generator filtrations, associated-layer support, explicit right-module
+composition filtrations and Jacobson-top generation reflection, finite-support
+top and matrix-pencil detection,
 conditional right-denominator/differential-Ore clearing, a constructive
 finite-index P_h successor contract, original-affine source selection, and a
 conditional support-union consumer. The
@@ -24,7 +27,8 @@ conditional scaffolds rather than producer proofs.
 
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
-Rees, Rees-module, power-Ore, common-colon, finite-pencil, support-boundary,
+Rees, Rees-module, power-Ore, finite-filtration/support, common-colon,
+finite-pencil, support-boundary,
 source-selection, constructive-successor, and opposite-transport modules are
 checked utilities, but their missing producer hypotheses keep M01–M11 open.
 Precise scopes appear in the linked claim register.
@@ -90,8 +94,10 @@ the paper's full filtered-algebra encoding.
 `Challenge.lean` is a Mathlib-only semantic challenge with one intentional
 statement placeholder. `Solution.lean` repeats the proposition without
 importing the challenge and proves that semantic contract. The comparator
-configuration and import-closure audit are present, but passing them is not a
-proof of the paper's universal source theorem.
+configuration and import-closure audit are present; the local comparator,
+NanoDa and Lean-kernel replay pass for this semantic pair. Passing them is not
+a proof of the paper's universal source theorem, and the release gate remains
+disabled.
 
 The exact Zenodo/Palomar procedure is documented in
 [`docs/release-runbook.md`](docs/release-runbook.md). The repository carries

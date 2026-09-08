@@ -10,7 +10,10 @@ project:
     quotient right-action laws, support-boundary extraction, explicit opposite
     transport, ordered affine/common-colon/finite-generation identities, raw
     and algebraic filtered/Rees operations, quotient Rees-module actions,
-    explicit power-Ore fractions, finite-support and matrix-pencil detection,
+    explicit power-Ore fractions and finite power-Ore normal forms,
+    finite bounded-generator filtrations, finite-support and matrix-pencil
+    detection, an associated-layer support proxy, explicit right-module
+    composition filtrations and Jacobson-top generation reflection,
     conditional differential-Ore/right-denominator clearing, constructive
     finite-index successor contracts, original-affine source selection,
     conditional support-union, and conditional original-U finite-test/cyclic-
@@ -94,9 +97,12 @@ verification:
 status:
   scope: >-
     Partial checkpoint. The semantic, support-boundary, opposite-transport,
-    ordered/common-colon, raw and module-side Rees, power-Ore fraction,
-    division-coordinate, conditional cyclic-pencil, finite-index and
-    constructive successor, terminal-boundary, differential-Ore,
+    ordered/common-colon, raw and module-side Rees, power-Ore fraction and
+    finite power-Ore normal forms, finite bounded-generator filtrations,
+    finite associated-layer support, explicit right-module composition
+    filtrations and Jacobson-top generation reflection, division-coordinate,
+    conditional cyclic-pencil, finite-index and constructive successor,
+    terminal-boundary, differential-Ore,
     original-affine source-selection, filtered, source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
@@ -181,11 +187,15 @@ review:
   notes: >-
     Kernel builds, endpoint axiom reports, and independent consumers cover the
     implemented checkpoint, including the right-ideal bridge, bounded
-    Rees-module/power-Ore boundaries, finite-support/matrix detection,
+    Rees-module/power-Ore boundaries, finite filtration/support proxies,
+    finite-support/matrix detection and Jacobson-top generation reflection,
     finite-generation/constructive-successor, original-affine source and
-    differential-Ore boundary utilities. The bounded Fable/Claude paper audit
-    found no invalid bridge in the written candidate; human expert review and
-    the universal theorem's statement correspondence remain open.
+    differential-Ore boundary utilities. The local Palomar comparator,
+    NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
+    pair, but is not universal-theorem or release evidence. The bounded
+    Fable/Claude paper audit found no invalid bridge in the written candidate;
+    human expert review and the universal theorem's statement correspondence
+    remain open.
 
 alignment:
   namespace: "SymplecticStafford"

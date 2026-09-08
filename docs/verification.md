@@ -7,6 +7,9 @@ Stafford38 pins in `formalization.yaml`; independent consumers exercise the
 semantic/support-boundary/right-ideal bridge, ordered/common-colon and finite
 generation, algebraic bounded Rees and quotient-module actions, explicit
 power-Ore fractions, finite associated-top and matrix-pencil detection,
+finite bounded-generator filtrations, finite power-Ore normal forms, a finite
+associated-layer support proxy, explicit right-module composition filtrations,
+and Jacobson-top generation reflection,
 finite-index/constructive successor, original-affine source selection,
 conditional support union, terminal zero-quotient extraction, explicit
 opposite transport, and a differential-Ore finite-cover boundary. Conditional
@@ -33,8 +36,10 @@ Run the checks sequentially from the repository root:
 The phase-I command is meaningful for the current C01--C03/P01--P03
 checkpoint, not a completed SS-all Phase I. The final-paper M01–M11
 obligations and exact target are in `docs/phase-instructions.md`. The
-checkpoint Phase-II and Palomar commands can audit the displayed challenge,
-but they are not phase-completion or publication evidence; only
+checkpoint Phase-II command and the Palomar comparator now pass for the
+displayed semantic challenge (the comparator run is recorded in
+`.lake/verification/comparator.log`), but they are not phase-completion or
+publication evidence; only
 `check-release-readiness.sh` enforces the release gates. The complete
 source-selection/assembly endpoints and evidence files do not yet exist.
 This is intentional: a successful Lean build of a semantic contract is not

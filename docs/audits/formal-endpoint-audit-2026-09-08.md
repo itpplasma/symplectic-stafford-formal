@@ -106,3 +106,23 @@ base/successor assembly with carried-test and original-cofactor fields),
 trust-disabled module/oracle checks passed for each lane. The aggregate import
 and universal producer remain conditional; these commits do not promote
 Phase I, Phase II, Palomar, or publication status.
+
+## Fourth parallel formalization wave and Palomar compatibility
+
+The controller integrated the finite bounded-generator filtration, finite
+right-module composition filtration, Jacobson-top generation reflection,
+finite power-Ore normal-form and associated-layer support lanes at commit
+`3ab82b3`. Each lane supplied an independent concrete oracle and trust-disabled
+checks; the aggregate `SymplecticStafford` build completed 3056 jobs. The
+phase-I and phase-II scripts pass their implemented semantic/ordered
+checkpoint, while the ledger remains partial.
+
+The Palomar tools were bootstrapped at their pinned revisions. The initial
+comparator exposed a real module-name collision: Stafford38 also provides a
+`Challenge` module, and Lake's dependency-first `LEAN_PATH` selected it. The
+verifier now declares local Challenge/Solution library targets and prepends the
+project artifact path for the direct comparator invocation. At this checkpoint
+`scripts/verify-palomar.sh` passes the compatibility build, import closures,
+lean4export comparison, NanoDa replay and Lean's default kernel replay. This
+is evidence only for the elementary semantic Challenge/Solution pair; the
+universal source producer and the Phase I/II/release gates remain open.

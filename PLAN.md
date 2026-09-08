@@ -16,11 +16,14 @@ explicit opposite orientation. Ordered modules implement affine identities,
 the common-colon algebra and finite-generation/conditional constant-right-
 denominator clearing. Raw and algebraic filtered/Rees terms, a quotient Rees
 module with scalar-action laws, an explicit power-Ore fraction boundary,
-finite associated-top and matrix pencils, differential-Ore finite-cover
-clearing, concrete finite-index successor contracts, constructive successor
-assembly, original-affine source selection, and a conditional support-union
-consumer are now checked utilities, while filtered, source-assembly and strong
-P_h producer modules remain explicit conditional scaffolds. These utilities do
+finite associated-top and matrix pencils, finite bounded-generator
+filtrations, finite power-Ore normal forms, a finite associated-layer support
+proxy, explicit right-module composition filtrations and Jacobson-top
+generation reflection, differential-Ore finite-cover clearing, concrete
+finite-index successor contracts, constructive successor assembly,
+original-affine source selection, and a conditional support-union consumer are
+now checked utilities, while filtered, source-assembly and strong P_h producer
+modules remain explicit conditional scaffolds. These utilities do
 not yet establish the paper's arbitrary finite-length module, activated-pencil,
 support-union, or original-U simultaneous-source theorem.
 
@@ -31,10 +34,12 @@ The conditional checkpoints consume supplied data:
 calls, supplied successor output and conditional terminal extraction; and
 `Induction/FiniteIndex.lean` composes supplied P_1 and successor rules. Their
 LEAN-SCAFFOLD map nodes mark consumers, not constructions of the required
-data. `SupportDimension`, `RightIdealBridge`, `ActivatedPencil`,
+data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
+`ActivatedPencil`,
 `MatrixPencil`, `CommonColon`, `FiniteGenerationBridge`,
 `M08SupportUnion`, `ReesBasic`, `ReesAlgebra`, `ReesModule`,
-`PowerOre`, `FiniteSupportDetection`, `FiniteSupportQuotient`,
+`GoodFiltration`, `PowerOre`, `FinitePowerOre`, `FiniteSupportDetection`,
+`FiniteSupportQuotient`, `RightFiltration`, `JacobsonTop`,
 `ConcreteSuccessor`, `ConstructiveSuccessor`, `DifferentialOreDescent`,
 `Package/TerminalBoundary`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.
