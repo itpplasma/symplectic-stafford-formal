@@ -15,6 +15,9 @@ power-Ore fraction boundary and finite power-Ore normal forms, finite
 bounded-generator filtrations, associated-layer support, explicit right-module
 composition filtrations and Jacobson-top generation reflection, finite-support
 top and matrix-pencil detection,
+explicit spectrum-support, full-symbol and filtered-Noetherianity boundaries,
+list-indexed division-LLD source selection, and activated finite-length pencil
+consumption,
 conditional right-denominator/differential-Ore clearing, a constructive
 finite-index P_h successor contract, original-affine source selection, and a
 conditional support-union consumer. The

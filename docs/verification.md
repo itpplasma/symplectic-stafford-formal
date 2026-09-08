@@ -19,9 +19,12 @@ original-U simultaneous source selection.
 
 The localization, divisor-indexed assembly and strong-P_h files are
 conditional scaffold checkpoints. Their checks verify the stated consumers;
-concrete full-symbol localization, actual local-test semantics, source/chart
-algebraization, characteristic-support-driven support union and final
-producer-derived cofactor extraction remain open M02–M11 obligations.
+the newly added spectrum-support, full-symbol, Noetherianity, local-length,
+list-indexed division-LLD and activated-pencil files make their missing
+hypotheses explicit but do not construct them. Concrete full-symbol
+localization, actual local-test semantics, source/chart algebraization,
+characteristic-support-driven support union and final producer-derived
+cofactor extraction remain open M02–M11 obligations.
 The proof map labels these nodes LEAN-SCAFFOLD.
 
 Run the checks sequentially from the repository root:

@@ -134,6 +134,9 @@ constructs a finite associated-layer support proxy directly from nonzero
 quotient classes, but the Rees-spectrum characteristic support and its global
 zero-detection theorem remain M01 obligations. The proved ring-level
 membership lemmas do not depend on this scaffold.
+\lean{Filtered/SpecCharacteristicSupport.lean} states the genuine
+\(\operatorname{Spec}\)-valued support and annihilator zero-locus boundary for
+a supplied commutative associated module, with an explicit filtered-class map.
 
 \begin{center}
 \begin{tabularx}{\textwidth}{@{}Y Y Y@{}}
@@ -202,10 +205,18 @@ layer-support proxy without claiming a spectrum. \lean{FiniteLength/RightFiltrat
 supplies explicit right-module composition filtrations, while
 \lean{FiniteLength/JacobsonTop.lean} proves actual radical-quotient
 generation reflection for finitely generated right modules.
+\lean{Filtered/FullSymbolOre.lean} names the injective algebraic chart
+boundary and bijective finite fraction passage; \lean{Filtered/NoetherianBoundary.lean}
+records why raw filtration data alone cannot imply Noetherianity.
+\lean{FiniteLength/GoodLocalBridge.lean} derives local finite generation,
+Noetherianity and finite length from explicit surjective and Artinian inputs,
+and \lean{FiniteLength/ActivatedFiniteLength.lean} consumes the actual
+Jacobson criterion for supplied noncommutative top blocks while retaining the
+ordered pencil identity.
 \lean{Ordered/M08SupportUnion.lean} derives a conditional finite-generator
 support cover while retaining the exact common-colon pencil certificate.
-\lean{Source/DivisionLLD.lean} includes a concrete finite affine
-source-avoidance family with arbitrary offsets and nonzero tails and an
+\lean{Source/DivisionLLD.lean} and \lean{Source/DivisionLLDList.lean} include
+concrete finite affine source-avoidance families with arbitrary offsets and nonzero tails and an
 explicit division-ring cofactor boundary. \lean{Induction/ConstructiveSuccessor.lean}
 derives a successor witness from explicit base and two-call construction data.
 These additions narrow the formal boundaries but leave their producer
@@ -221,6 +232,9 @@ The remaining checked slices are listed explicitly in the claim register:
 \lean{FiniteLength/MatrixPencil.lean}, \lean{FiniteLength/RadicalLift.lean},
 \lean{Filtered/GoodFiltration.lean}, \lean{Filtered/FinitePowerOre.lean},
 \lean{Filtered/CharacteristicSupport.lean},
+\lean{Filtered/SpecCharacteristicSupport.lean}, \lean{Filtered/FullSymbolOre.lean},
+\lean{Filtered/NoetherianBoundary.lean}, \lean{FiniteLength/GoodLocalBridge.lean},
+\lean{FiniteLength/ActivatedFiniteLength.lean}, \lean{Source/DivisionLLDList.lean},
 \lean{Ordered/SupportUnion.lean},
 \lean{Ordered/FiniteGenerationBridge.lean},
 \lean{Induction/TestRetention.lean},

@@ -21,9 +21,10 @@ filtrations, finite power-Ore normal forms, a finite associated-layer support
 proxy, explicit right-module composition filtrations and Jacobson-top
 generation reflection, differential-Ore finite-cover clearing, concrete
 finite-index successor contracts, constructive successor assembly,
-original-affine source selection, and a conditional support-union consumer are
-now checked utilities, while filtered, source-assembly and strong P_h producer
-modules remain explicit conditional scaffolds. These utilities do
+original-affine source selection, list-indexed division-LLD source selection,
+activated finite-length pencil consumption, and a conditional support-union
+consumer are now checked utilities, while filtered, source-assembly and strong
+P_h producer modules remain explicit conditional scaffolds. These utilities do
 not yet establish the paper's arbitrary finite-length module, activated-pencil,
 support-union, or original-U simultaneous-source theorem.
 
@@ -39,7 +40,9 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `MatrixPencil`, `CommonColon`, `FiniteGenerationBridge`,
 `M08SupportUnion`, `ReesBasic`, `ReesAlgebra`, `ReesModule`,
 `GoodFiltration`, `PowerOre`, `FinitePowerOre`, `FiniteSupportDetection`,
-`FiniteSupportQuotient`, `RightFiltration`, `JacobsonTop`,
+`FiniteSupportQuotient`, `SpecCharacteristicSupport`, `FullSymbolOre`,
+`NoetherianBoundary`, `RightFiltration`, `GoodLocalBridge`, `JacobsonTop`,
+`ActivatedFiniteLength`, `DivisionLLDList`,
 `ConcreteSuccessor`, `ConstructiveSuccessor`, `DifferentialOreDescent`,
 `Package/TerminalBoundary`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.

@@ -14,6 +14,9 @@ project:
     finite bounded-generator filtrations, finite-support and matrix-pencil
     detection, an associated-layer support proxy, explicit right-module
     composition filtrations and Jacobson-top generation reflection,
+    a spectrum-support boundary, a filtered Noetherianity boundary, a
+    full-symbol algebraic localization boundary, a list-indexed division-LLD
+    source selector, and activated finite-length pencil consumption,
     conditional differential-Ore/right-denominator clearing, constructive
     finite-index successor contracts, original-affine source selection,
     conditional support-union, and conditional original-U finite-test/cyclic-
@@ -100,7 +103,9 @@ status:
     ordered/common-colon, raw and module-side Rees, power-Ore fraction and
     finite power-Ore normal forms, finite bounded-generator filtrations,
     finite associated-layer support, explicit right-module composition
-    filtrations and Jacobson-top generation reflection, division-coordinate,
+    filtrations and Jacobson-top generation reflection, spectrum-support and
+    full-symbol/Noetherianity boundaries, list-indexed division-LLD source
+    selection, activated finite-length pencil consumption, division-coordinate,
     conditional cyclic-pencil, finite-index and constructive successor,
     terminal-boundary, differential-Ore,
     original-affine source-selection, filtered, source-assembly, support-union,
@@ -188,9 +193,11 @@ review:
     Kernel builds, endpoint axiom reports, and independent consumers cover the
     implemented checkpoint, including the right-ideal bridge, bounded
     Rees-module/power-Ore boundaries, finite filtration/support proxies,
-    finite-support/matrix detection and Jacobson-top generation reflection,
-    finite-generation/constructive-successor, original-affine source and
-    differential-Ore boundary utilities. The local Palomar comparator,
+    spectrum-support/full-symbol/Noetherianity boundaries, finite-support/
+    matrix detection and Jacobson-top generation reflection,
+    finite-generation/constructive-successor, list-indexed division-LLD,
+    activated finite-length, original-affine source and differential-Ore
+    boundary utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
     Fable/Claude paper audit found no invalid bridge in the written candidate;

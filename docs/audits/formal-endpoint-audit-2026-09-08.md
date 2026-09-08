@@ -111,11 +111,15 @@ Phase I, Phase II, Palomar, or publication status.
 
 The controller integrated the finite bounded-generator filtration, finite
 right-module composition filtration, Jacobson-top generation reflection,
-finite power-Ore normal-form and associated-layer support lanes at commit
-`3ab82b3`. Each lane supplied an independent concrete oracle and trust-disabled
-checks; the aggregate `SymplecticStafford` build completed 3056 jobs. The
-phase-I and phase-II scripts pass their implemented semantic/ordered
-checkpoint, while the ledger remains partial.
+finite power-Ore normal-form and associated-layer support lanes in
+`3ab82b3`, then added the spectrum-support boundary (`4cbbe1b`), filtered
+Noetherianity boundary (`a83f37e`), list-indexed division-LLD source selector
+(`793d6e2`), full-symbol algebraic localization boundary (`e59a8da`), good
+local finite-length bridge (`70bd608`) and activated finite-length pencil
+consumer (`df95cb8`). Each lane supplied an independent concrete oracle and
+trust-disabled checks; the aggregate `SymplecticStafford` build completed
+3066 jobs. The phase-I and phase-II scripts pass their implemented
+semantic/ordered checkpoint, while the ledger remains partial.
 
 The Palomar tools were bootstrapped at their pinned revisions. The initial
 comparator exposed a real module-name collision: Stafford38 also provides a
