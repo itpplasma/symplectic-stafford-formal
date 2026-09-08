@@ -5,3 +5,4 @@ import SymplecticStafford.FiniteLength.Pencil
 import SymplecticStafford.Semantics.Contract
 import SymplecticStafford.Filtered.Localization
 import SymplecticStafford.Source.Assembly
+import SymplecticStafford.Induction.StrongPh
