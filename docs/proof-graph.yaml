@@ -1,0 +1,271 @@
+{
+  "schema_version": 2,
+  "title": "Final paper dependency graph and formal checkpoint",
+  "source": {
+    "paper_repository": "itpplasma/symplectic-stafford",
+    "paper_commit": "502b65a1dea53cac52220a08e321bfba525bc72e",
+    "instructions_commit": "e3c7077d3d51772d97d8e72bb219a8fc36765682",
+    "paper_graph": "docs/proof-graph-all-dimensional-2026-09-08.yaml"
+  },
+  "status_note": "NOVEL means the complete self-audited paper candidate; independent mathematical review and corresponding general Lean proofs remain pending. LEAN nodes record only their explicit utility scope. No paper edge becomes a formal proof by appearing in this map.",
+  "nodes": [
+    {
+      "id": "semantics",
+      "kind": "LEAN",
+      "label": "Right-ideal semantics",
+      "statement": "Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical fourfold class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.",
+      "source": "SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean",
+      "depends_on": [],
+      "position": [
+        -5,
+        20
+      ],
+      "review": "Implemented checkpoint; replay logs and precise types govern its scope."
+    },
+    {
+      "id": "ordered",
+      "kind": "LEAN",
+      "label": "Ordered utilities",
+      "statement": "Affine expansion and conditional finite constant-right-denominator clearing; no claim of an Ore structure or support theorem.",
+      "source": "SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean",
+      "depends_on": [],
+      "position": [
+        0,
+        20
+      ],
+      "review": "Implemented checkpoint; replay logs and precise types govern its scope."
+    },
+    {
+      "id": "scalar",
+      "kind": "LEAN",
+      "label": "Scalar-pencil utility",
+      "statement": "Finite exceptional scalars for finitely many division-ring coordinates; the general activated finite-length module bridge remains open.",
+      "source": "SymplecticStafford/FiniteLength/Pencil.lean",
+      "depends_on": [],
+      "position": [
+        5,
+        20
+      ],
+      "review": "Implemented checkpoint; replay logs and precise types govern its scope."
+    },
+    {
+      "id": "local",
+      "kind": "NOVEL",
+      "label": "Algebraic localization",
+      "statement": "Full homogeneous-symbol Ore localization, algebraic Noetherian Rees ring, good subquotients and faithful detection including negative degrees.",
+      "source": "paper part I.1–I.4 (M02–M04)",
+      "depends_on": [],
+      "position": [
+        -5,
+        17
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "tests",
+      "kind": "NOVEL",
+      "label": "Original-U finite tests",
+      "statement": "One source in B+Ua satisfies every prescribed finite local cyclic-generation test with arbitrary offsets and nonzero right tails.",
+      "source": "paper part II.1–II.4 (M06)",
+      "depends_on": [],
+      "position": [
+        0,
+        17
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "pencil",
+      "kind": "NOVEL",
+      "label": "Activated pencil",
+      "statement": "In a fixed finite-length cyclic module, vL=0 and e=vB+uL imply generic central-scalar cyclicity of v+lambda*u, over noncommuting endomorphism division rings.",
+      "source": "paper part II.5 (M07)",
+      "depends_on": [],
+      "position": [
+        5,
+        17
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "length",
+      "kind": "NOVEL",
+      "label": "Minimal-prime length",
+      "statement": "Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime.",
+      "source": "paper part I.5 (M05)",
+      "depends_on": [
+        "local"
+      ],
+      "position": [
+        -5,
+        14
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "colon",
+      "kind": "NOVEL",
+      "label": "Common-colon support",
+      "statement": "For FdL0=dC0, K={s:Gds in dU} and J=dU+FdK, polynomial pencil containment and constant right clearing yield Z(U/J) contained in Z_d(F) union Z_(dL0)(G).",
+      "source": "paper main 1 (M08)",
+      "depends_on": [
+        "local"
+      ],
+      "position": [
+        0,
+        14
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "induction",
+      "kind": "NOVEL",
+      "label": "Strong finite-test P_h",
+      "statement": "For every divisor, affine source space and finite test list, P_h gives defect dimension at most D-h. The successor uses only P_h twice, on d and dL0, removes all common minimal components and retains all carried tests.",
+      "source": "paper main 2–4 (M09–M10)",
+      "depends_on": [
+        "length",
+        "tests",
+        "pencil",
+        "colon"
+      ],
+      "position": [
+        0,
+        10.5
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "terminal",
+      "kind": "NOVEL",
+      "label": "Original affine identity",
+      "statement": "P_(D+1) gives empty support, hence actual original-algebra cofactors with 1=dR+(B+Ha)dS for every nonzero d and a and arbitrary B.",
+      "source": "paper main 5 (M11)",
+      "depends_on": [
+        "induction"
+      ],
+      "position": [
+        0,
+        7.5
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "package",
+      "kind": "NOVEL",
+      "label": "Opposite and package",
+      "statement": "Automatic opposite hypotheses and the banked two-sided generation, rank, splitting and rank-at-least-two cancellation implications.",
+      "source": "paper main 6; part III.1; same-divisor-consequences.md; rank-splitting-and-cancellation-2026-09-07.md (M11)",
+      "depends_on": [
+        "terminal"
+      ],
+      "position": [
+        5,
+        7.5
+      ],
+      "review": "Self-audited paper candidate; independent mathematical and human review pending."
+    },
+    {
+      "id": "phasei",
+      "kind": "GAP",
+      "label": "SS-all Phase I",
+      "statement": "All project-owned M01–M11 steps proved in the actual terminal type; only precise audited literature leaves may remain.",
+      "source": "docs/phase-instructions.md",
+      "depends_on": [
+        "terminal"
+      ],
+      "position": [
+        0,
+        4.5
+      ],
+      "review": "Open gate; no completion evidence claimed."
+    },
+    {
+      "id": "phaseii",
+      "kind": "GAP",
+      "label": "SS-all Phase II",
+      "statement": "All remaining literature leaves discharged; terminal axiom closure contained in propext, Classical.choice and Quot.sound.",
+      "source": "docs/phase-instructions.md",
+      "depends_on": [
+        "phasei"
+      ],
+      "position": [
+        0,
+        1.5
+      ],
+      "review": "Open gate; no completion evidence claimed."
+    },
+    {
+      "id": "publication",
+      "kind": "GAP",
+      "label": "Release evidence",
+      "statement": "Complete independent semantic/kernel replay and separately authorized publication at an immutable commit.",
+      "source": "release-gates.yaml; docs/release-runbook.md",
+      "depends_on": [
+        "phaseii"
+      ],
+      "position": [
+        5,
+        1.5
+      ],
+      "review": "Open gate; no completion evidence claimed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "local",
+      "to": "length",
+      "mechanism": "good localization"
+    },
+    {
+      "from": "local",
+      "to": "colon",
+      "mechanism": "right clearance"
+    },
+    {
+      "from": "length",
+      "to": "induction",
+      "mechanism": "finite local length"
+    },
+    {
+      "from": "tests",
+      "to": "induction",
+      "mechanism": "carried tests"
+    },
+    {
+      "from": "pencil",
+      "to": "induction",
+      "mechanism": "scalar avoidance"
+    },
+    {
+      "from": "colon",
+      "to": "induction",
+      "mechanism": "support union"
+    },
+    {
+      "from": "induction",
+      "to": "terminal",
+      "mechanism": "D+1 termination"
+    },
+    {
+      "from": "terminal",
+      "to": "package",
+      "mechanism": "opposite + consumers"
+    },
+    {
+      "from": "terminal",
+      "to": "phasei",
+      "mechanism": "prove M01–M11"
+    },
+    {
+      "from": "phasei",
+      "to": "phaseii",
+      "mechanism": "discharge leaves"
+    },
+    {
+      "from": "phaseii",
+      "to": "publication",
+      "mechanism": "independent replay"
+    }
+  ]
+}

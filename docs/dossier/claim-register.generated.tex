@@ -1,0 +1,104 @@
+\section{Claim register}\label{sec:claims}
+\subsection{Right-ideal semantics}\hypertarget{claim:semantics}{}\backmap
+\textbf{LEAN.} Literal ordered membership, quotient right action and opposite orientation in the original ring. The historical fourfold class scaffold is not the final all-dimensional class; its structural M01 encoding remains open.
+
+\emph{Source:} SymplecticStafford/Semantics/Contract.lean; SymplecticStafford/Semantics/S1Consequences.lean.
+\emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
+
+No incoming claim dependency in this graph.
+\subsection{Ordered utilities}\hypertarget{claim:ordered}{}\backmap
+\textbf{LEAN.} Affine expansion and conditional finite constant-right-denominator clearing; no claim of an Ore structure or support theorem.
+
+\emph{Source:} SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean.
+\emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
+
+No incoming claim dependency in this graph.
+\subsection{Scalar-pencil utility}\hypertarget{claim:scalar}{}\backmap
+\textbf{LEAN.} Finite exceptional scalars for finitely many division-ring coordinates; the general activated finite-length module bridge remains open.
+
+\emph{Source:} SymplecticStafford/FiniteLength/Pencil.lean.
+\emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
+
+No incoming claim dependency in this graph.
+\subsection{Algebraic localization}\hypertarget{claim:local}{}\backmap
+\textbf{NOVEL.} Full homogeneous-symbol Ore localization, algebraic Noetherian Rees ring, good subquotients and faithful detection including negative degrees.
+
+\emph{Source:} paper part I.1–I.4 (M02–M04).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+No incoming claim dependency in this graph.
+\subsection{Original-U finite tests}\hypertarget{claim:tests}{}\backmap
+\textbf{NOVEL.} One source in B+Ua satisfies every prescribed finite local cyclic-generation test with arbitrary offsets and nonzero right tails.
+
+\emph{Source:} paper part II.1–II.4 (M06).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+No incoming claim dependency in this graph.
+\subsection{Activated pencil}\hypertarget{claim:pencil}{}\backmap
+\textbf{NOVEL.} In a fixed finite-length cyclic module, vL=0 and e=vB+uL imply generic central-scalar cyclicity of v+lambda*u, over noncommuting endomorphism division rings.
+
+\emph{Source:} paper part II.5 (M07).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+No incoming claim dependency in this graph.
+\subsection{Minimal-prime length}\hypertarget{claim:length}{}\backmap
+\textbf{NOVEL.} Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime.
+
+\emph{Source:} paper part I.5 (M05).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+Dependencies: \hyperlink{claim:local}{Algebraic localization}.
+\subsection{Common-colon support}\hypertarget{claim:colon}{}\backmap
+\textbf{NOVEL.} For FdL0=dC0, K=\{s:Gds in dU\} and J=dU+FdK, polynomial pencil containment and constant right clearing yield Z(U/J) contained in Z\_d(F) union Z\_(dL0)(G).
+
+\emph{Source:} paper main 1 (M08).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+Dependencies: \hyperlink{claim:local}{Algebraic localization}.
+\subsection{Strong finite-test P\_h}\hypertarget{claim:induction}{}\backmap
+\textbf{NOVEL.} For every divisor, affine source space and finite test list, P\_h gives defect dimension at most D-h. The successor uses only P\_h twice, on d and dL0, removes all common minimal components and retains all carried tests.
+
+\emph{Source:} paper main 2–4 (M09–M10).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+Dependencies: \hyperlink{claim:length}{Minimal-prime length}, \hyperlink{claim:tests}{Original-U finite tests}, \hyperlink{claim:pencil}{Activated pencil}, \hyperlink{claim:colon}{Common-colon support}.
+\subsection{Original affine identity}\hypertarget{claim:terminal}{}\backmap
+\textbf{NOVEL.} P\_(D+1) gives empty support, hence actual original-algebra cofactors with 1=dR+(B+Ha)dS for every nonzero d and a and arbitrary B.
+
+\emph{Source:} paper main 5 (M11).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+Dependencies: \hyperlink{claim:induction}{Strong finite-test P\_h}.
+\subsection{Opposite and package}\hypertarget{claim:package}{}\backmap
+\textbf{NOVEL.} Automatic opposite hypotheses and the banked two-sided generation, rank, splitting and rank-at-least-two cancellation implications.
+
+\emph{Source:} paper main 6; part III.1; same-divisor-consequences.md; rank-splitting-and-cancellation-2026-09-07.md (M11).
+\emph{Review:} Self-audited paper candidate; independent mathematical and human review pending.
+
+Dependencies: \hyperlink{claim:terminal}{Original affine identity}.
+\subsection{SS-all Phase I}\hypertarget{claim:phasei}{}\backmap
+\textbf{GAP.} All project-owned M01–M11 steps proved in the actual terminal type; only precise audited literature leaves may remain.
+
+\emph{Source:} docs/phase-instructions.md.
+\emph{Review:} Open gate; no completion evidence claimed.
+
+Dependencies: \hyperlink{claim:terminal}{Original affine identity}.
+\subsection{SS-all Phase II}\hypertarget{claim:phaseii}{}\backmap
+\textbf{GAP.} All remaining literature leaves discharged; terminal axiom closure contained in propext, Classical.choice and Quot.sound.
+
+\emph{Source:} docs/phase-instructions.md.
+\emph{Review:} Open gate; no completion evidence claimed.
+
+Dependencies: \hyperlink{claim:phasei}{SS-all Phase I}.
+\subsection{Release evidence}\hypertarget{claim:publication}{}\backmap
+\textbf{GAP.} Complete independent semantic/kernel replay and separately authorized publication at an immutable commit.
+
+\emph{Source:} release-gates.yaml; docs/release-runbook.md.
+\emph{Review:} Open gate; no completion evidence claimed.
+
+Dependencies: \hyperlink{claim:phaseii}{SS-all Phase II}.
+
+Paper statements follow the graph component at mathematical source commit
+\nolinkurl{502b65a1dea53cac52220a08e321bfba525bc72e}.
+The current instruction snapshot is
+\nolinkurl{e3c7077d3d51772d97d8e72bb219a8fc36765682}.

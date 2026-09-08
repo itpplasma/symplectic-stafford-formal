@@ -1,0 +1,225 @@
+% Generated map data comes from ../proof-graph.yaml; source listings are live.
+\providecommand{\srcroot}{../..}
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}[Scale=0.78]
+\usepackage{amsmath,amssymb,booktabs,array,fvextra,tikz,xcolor,xurl,hyperref}
+\usetikzlibrary{arrows.meta,positioning}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,
+ pdftitle={Symplectic Stafford: final paper and Lean correspondence},
+ pdfauthor={Christopher Albert}}
+\sloppy
+\tikzset{
+ >={Latex[length=2mm]},
+ mapnode/.style={draw,rounded corners,align=center,text width=3.6cm,
+   minimum height=0.85cm,font=\small},
+ lean/.style={mapnode,fill=blue!12,very thick},
+ novel/.style={mapnode,fill=violet!8,double},
+ gap/.style={mapnode,fill=orange!10,dashed,very thick},
+ edge/.style={->,thick},
+}
+\newcommand{\backmap}{\hfill\hyperlink{proofmap}{[map]}}
+\newcommand{\lean}[1]{\nolinkurl{#1}}
+\title{Symplectic Stafford formalization\\[0.3em]
+ \large Final-paper proof map and Challenge/Solution comparison}
+\author{Christopher Albert}
+\date{8 September 2026}
+\begin{document}
+\input{proof-map.generated.tex}
+\maketitle
+
+\begin{abstract}
+The final paper gives a self-audited all-dimensional candidate for the
+original-algebra identity \(1=dR+(B+Ha)dS\). This dossier records that proof's
+dependencies, the partial Lean implementation, and the exact scope of the
+current Challenge/Solution pair. The pair proves a definitional right-ideal
+membership contract. Formalization of the universal source producer and
+independent mathematical review remain open.
+\end{abstract}
+
+\section{Paper source and hypotheses}\label{sec:scope}\backmap
+
+The mathematical source is the Markdown paper
+\lean{docs/all-dimensional-symplectic-stafford-2026-09-08.md},
+its parts I--III, and the two banked consequence documents in
+\href{https://github.com/itpplasma/symplectic-stafford/tree/502b65a1dea53cac52220a08e321bfba525bc72e}
+{the research repository at the frozen mathematical commit}.
+The paper commit is
+\lean{502b65a1dea53cac52220a08e321bfba525bc72e}; the terminal index,
+roadmap and work ledger were refreshed at
+\lean{e3c7077d3d51772d97d8e72bb219a8fc36765682}.
+This TeX file is a comparison supplement, not a TeX transcription of a
+manuscript. The map's structure follows the all-dimensional graph component,
+with separate utility nodes for the actual Lean checkpoint.
+
+Let \(k\) be an infinite characteristic-zero field and \(U\) a simple,
+infinite-dimensional unital \(k\)-algebra with central scalar embedding.
+Require an exhaustive separated nonnegative multiplicative filtration with
+finite-dimensional pieces, \(U_0=k\), and commutative affine-domain
+associated graded ring of finite Krull dimension \(D\). The final candidate
+states that for every \(d\ne0\), arbitrary \(B\), and \(a\ne0\), there are
+\(H,R,S\in U\) with
+\[
+  1=dR+\bigl((B+Ha)d\bigr)S.
+\]
+Setting \(B=0,a=1\) gives the same-divisor statement. Both occurrences of
+\(d\) and every cofactor belong to the original \(U\). The symplectic class is
+a subclass; no DL/Bn support lower bound or automatic tensor simplicity is
+assumed by the core.
+
+\section{The paper induction}\label{sec:architecture}\backmap
+
+The predicate \(P_h\) quantifies over every divisor, every affine source
+space \(B+Ua\), and every finite list of admissible local cyclic-generation
+tests. It supplies a source passing those tests whose characteristic defect
+dimension is at most \(D-h\), with the zero module assigned dimension \(-1\).
+
+To prove \(P_{h+1}\), invoke only \(P_h\): first on \(d\), then on
+\(d_1=dL_0\) after obtaining an actual relation \(FdL_0=dC_0\). The second
+call carries the old minimal-module tests. The fixed right ideals are
+\[
+ K=\{s\in U:Gds\in dU\},\qquad J=dU+FdK.
+\]
+For an actual generator \(k\) and cofactor \(c\) satisfying \(Gdk=dc\), and
+a central scalar \(t\), the ordered identity
+\[
+ Fdk=d(-tc)+(F+tG)dk
+\]
+places \(J\) in every member of the source pencil. Constant \emph{right}
+denominator clearance yields
+\(Z(U/J)\subseteq Z_d(F)\cup Z_{dL_0}(G)\).
+Both lower-index bounds therefore control the common quotient. At its
+minimal support primes the actual local modules have finite composition
+length. The old/new split and one scalar avoiding all finitely many
+exceptions remove every common minimal component while retaining the tests.
+At \(P_{D+1}\), empty support gives zero quotient and literal original
+cofactors \(R,S\). The recursion is on the index, not divisor degree.
+
+Faithful algebraic Rees localization, local length, original-\(U\) finite
+tests and the two-call successor remain project-owned proof obligations.
+A theorem conditional on these constructions does not discharge them.
+
+\section{Exact paper-to-Lean correspondence}\label{sec:comparison}\backmap
+
+The formal statement vocabulary includes \lean{SameDivisorIdentity}; its
+existence as a definition does not supply a producer. The semantic files
+construct the right ideal
+\[
+ dU+(fd)U=\{x:\exists r,s,\ x=dr+(fd)s\},
+\]
+its quotient right action and the opposite orientation. The current
+Mathlib-only challenge isolates membership in this displayed carrier.
+
+The current \lean{AdmissibleSymplecticClass} is a historical fourfold
+scaffold: it fixes associated graded dimension four and includes B2 fields
+and placeholder proposition labels. It does not yet encode the final
+all-dimensional filtered-algebra class. The actual structural semantics
+remain an M01 obligation; the proved ring-level membership lemmas do not
+depend on this scaffold.
+
+\begin{center}
+\begin{tabular}{@{}p{3.6cm}p{5.6cm}p{6.0cm}@{}}
+\toprule
+Paper requirement & Current Challenge & Current Solution\\
+\midrule
+Original carrier and order & Arbitrary Mathlib ring \(R\);
+ \lean{generatedRightSet} & Identical definition;
+ \(x=dr+(fd)s\)\\
+Ordered membership & \lean{UniversalStatement} quantifies \(R,d,f,x\) &
+ \lean{universalStatement} proves the equivalence by \lean{rfl}\\
+Simple filtered-domain class & Absent from semantic challenge &
+ No universal theorem supplied\\
+Every nonzero divisor; affine source \(B+Ua\) & No source-existence
+ quantifier & No \(H,R,S\) construction\\
+Strong \(P_h\), localization and induction & Absent &
+ Mandatory M02--M10 work remains\\
+Opposite Stafford package & Absent & Orientation utility only;
+ package requires its own endpoints\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The identifier \lean{universalStatement} is universal over a
+\emph{membership equivalence}, not the paper's source-existence theorem.
+\lean{Challenge.lean} has one intentional statement placeholder.
+\lean{Solution.lean} repeats its definitions without importing Challenge
+and proves the membership statement. The configured Comparator can check
+that pair's exact type and proof closure; it cannot establish correspondence
+with the stronger paper target merely because both definitions have the
+same name. A future terminal challenge must independently state the actual
+class hypotheses and existential conclusion.
+
+The ordered modules give affine identities and conditional finite
+right-denominator clearance. The existing finite-pencil theorem treats
+finitely many division-ring coordinates; general semisimple tops can have
+repeated simple factors and matrix blocks. The arbitrary finite-length
+activated-pencil and original-\(U\) source-selection bridges are still required.
+
+\section{Phase instructions and evidence}\label{sec:phases}\backmap
+
+\lean{docs/phase-instructions.md} gives the final-paper M01--M11 ledger.
+Phase I discharges every project-owned step in the selected terminal
+declaration's transitive closure. Individually audited literature leaves
+alone may remain, each with its exact statement, source, wrapper and axiom
+entry. Phase II replaces these leaves too, with transitive logical axioms
+contained in \(\{\mathsf{propext},\mathsf{Classical.choice},\mathsf{Quot.sound}\}\).
+
+The short-algebra, finite-module, filtered-localization, assembly and
+package/model lanes may run concurrently on disjoint files. The controller
+owns integration and phase promotion. Audit dependent definitions, instances,
+wrapper hypotheses and imports; compare the exact terminal type independently.
+Record the base commit and patch digest for uncommitted frozen review inputs.
+
+Historical fourfold assembly, DL/Bn lower bounds and singularity catalogues
+are optional for this terminal proof unless a named consumer uses them.
+Concrete models still require their actual hypotheses, and physical Morita
+applications require an actual algebraic progenerator. Arbitrary-projective
+freeness and rank-one cancellation are outside the claimed package.
+
+\section{Dependency and release record}\label{sec:release}\backmap
+
+The dependency family uses Lean \lean{leanprover/lean4:v4.33.0} and
+Mathlib's v4.33.0 revision
+\lean{db584cd6d46c92f209a44c0f1c829460d327499d}.
+The Stafford38 public main revision checked on 8 September 2026 is
+\lean{784b59925beb9a480519142336bd6434f6eeef16}.
+AlgebraicAnalysis public main was
+\lean{44921f5914c5dbd40d2d532c2867adce0f519cb9} at that inspection.
+The actual build pins are included below directly from the lock configuration;
+dependency migration is complete only when manifest consistency and downstream
+builds pass.
+
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,breakanywhere=true,
+ frame=lines]{\srcroot/lakefile.toml}
+
+The companion follows the Stafford38 and Global Stafford dossier pattern:
+a claim map, explicit object/statement comparison, live Challenge/Solution
+listings and replay evidence. It does not inherit either project's
+verification status. In this workspace,
+\lean{scripts/verify.sh --phase-i} checks the implemented checkpoint only.
+Its name does not certify the terminal Phase-I gate.
+
+Publication remains disabled in \lean{release-gates.yaml}. The release
+runbook requires an immutable clean source commit, complete endpoint and
+axiom evidence, independent semantic and kernel replay, and the separate
+publication decision. The source and future release artifacts use the
+repository's Apache-2.0 license; no DOI, public visibility change or Palomar
+registration is claimed here.
+
+\input{claim-register.generated.tex}
+
+\appendix
+\clearpage
+\section{Challenge source}\label{sec:challenge}\backmap
+The listing is read directly from the current file at build time.
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,breakanywhere=true,
+ frame=lines,numbers=left]{\srcroot/Challenge.lean}
+
+\section{Solution and Comparator configuration}\label{sec:solution}\backmap
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,breakanywhere=true,
+ frame=lines,numbers=left]{\srcroot/Solution.lean}
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,breakanywhere=true,
+ frame=lines]{\srcroot/comparator.json}
+\end{document}

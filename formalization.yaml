@@ -1,0 +1,193 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Symplectic Stafford (semantic checkpoint)"
+  description: >-
+    Lean 4 formalization of the original-ring semantic and ordered-algebra
+    interfaces for the symplectic Stafford same-divisor programme. The
+    checkpoint proves right-ideal membership/extraction, quotient right
+    action, opposite transport, ordered affine identities, finite right
+    denominator clearing, and a finite division-coordinate scalar-pencil
+    lemma. General finite-length activated pencils remain open. It does not claim
+    the universal higher-dimensional source-selection or same-divisor theorem
+    from the companion paper; those are explicit Phase I and Phase II gates.
+  authors:
+    - name: "Christopher Albert"
+      orcid: "0000-0003-4773-416X"
+  responsible_maintainers:
+    - name: "Christopher Albert"
+      orcid: "0000-0003-4773-416X"
+  license: "Apache-2.0"
+
+repository:
+  role: "substantive-development"
+  url: "https://github.com/itpplasma/symplectic-stafford-formal"
+  registration_status: "private-development-not-registered"
+  note: >-
+    This is a development checkpoint. Visibility, Palomar submission, and
+    any Zenodo deposit are separate human release decisions after the gates in
+    release-gates.yaml pass.
+
+classification:
+  arxiv:
+    - "math.RA"
+    - "math.AG"
+  msc2020:
+    - "16S32"
+    - "16S38"
+
+sources:
+  - title: "Symplectic Stafford: all-dimensional paper candidate"
+    authors:
+      - name: "Christopher Albert"
+        orcid: "0000-0003-4773-416X"
+    type: "original-proof"
+    relationship: "formalizes"
+    location: "itpplasma/symplectic-stafford, commit 502b65a1dea53cac52220a08e321bfba525bc72e"
+    note: >-
+      The authoritative research source is Markdown in a private repository;
+      this formal checkpoint records only the semantic contracts currently
+      implemented in Lean.
+    license: "unknown"
+    author_endorsement: "participated"
+  - title: "Module structure of Weyl algebras"
+    authors:
+      - "J. T. Stafford"
+    type: "paper"
+    location: >-
+      Journal of the London Mathematical Society (2) 18 (1978), 429--442,
+      Conjecture 3.8
+    relationship: "background"
+    note: >-
+      Historical source for the same-divisor target. The universal symplectic
+      extension is not imported as a theorem by this checkpoint.
+  - title: "Stafford38 formal"
+    authors:
+      - "Christopher Albert"
+    type: "software"
+    id: "https://github.com/itpplasma/stafford38-formal/tree/784b59925beb9a480519142336bd6434f6eeef16"
+    relationship: "builds-on"
+    note: "Pinned public dependency used for the shared formal environment."
+
+related_formalizations:
+  - name: "Stafford 3.8"
+    url: "https://github.com/itpplasma/stafford38-formal"
+    relationship: "builds-on"
+
+verification:
+  commit: "development-checkpoint"
+  report: "not-yet-issued"
+  machine_readable_report: "docs/verification-results.json"
+  statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
+  source_commit: "502b65a1dea53cac52220a08e321bfba525bc72e"
+  instructions_commit: "e3c7077d3d51772d97d8e72bb219a8fc36765682"
+  phase_instructions: "docs/phase-instructions.md"
+  allowed_axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+status:
+  scope: >-
+    Partial checkpoint. The semantic, ordered, and division-coordinate declarations
+    listed in the project plan compile and have independent consumers. The
+    source-selection, filtered-localization, assembly, and terminal
+    higher-dimensional same-divisor theorem remain unimplemented. The one
+    intentional placeholder is confined to the Mathlib-only Challenge.lean;
+    Solution.lean has no placeholder.
+  sorry_count: 1
+  sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
+  sorry_in_definitions: 0
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+  main_results:
+    - declaration: "SymplecticStafford.original_membership_extraction"
+      file: "SymplecticStafford/Semantics/Contract.lean"
+      sorry_count: 0
+      axioms: ["propext"]
+      literature_dependencies: []
+    - declaration: "SymplecticStafford.FiniteLength.finite_pencil_exceptions"
+      file: "SymplecticStafford/FiniteLength/Pencil.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      literature_dependencies: []
+    - declaration: "SymplecticStaffordChallenge.universalStatement"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "manual"
+      framework: "Lean 4 and Mathlib"
+      tool_setup: >-
+        Human controller owns the plan, source comparison, integration, and
+        release decision; Lean performs kernel checking and replay scripts
+        provide independent behavioral consumers.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local workstation"
+      prompting_notes: "n/a"
+    - method: "agent"
+      models:
+        - "gpt-5.6-luna"
+      framework: "Codex"
+      tool_setup: >-
+        Bounded parallel agents supplied disjoint proof slices and audits; the
+        controller integrated only checked changes.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local workstation"
+      prompting_notes: >-
+        Workers returned evidence; they did not promote phase status or release
+        metadata.
+  spend_usd: "not tracked"
+  notes: "Automation assistance does not assign authorship of mathematical ideas."
+
+fidelity:
+  divergences: >-
+    The formal checkpoint freezes the paper's original-ring right-sided product
+    order but stops before the paper's source producer and induction. The paper
+    source is Markdown, so the TeX dossier is a comparison supplement, not a
+    manuscript transcription.
+    Contract.AdmissibleSymplecticClass is a historical fourfold scaffold with
+    dimension-four/B2 fields and placeholder proposition labels; it is not
+    the final all-dimensional filtered-algebra class. That semantic bridge
+    remains part of M01.
+
+review:
+  status: "agent-reviewed"
+  reviewers: []
+  notes: >-
+    Kernel builds, endpoint axiom reports, and independent consumers cover the
+    implemented checkpoint. Human expert review and the universal theorem's
+    statement correspondence remain open.
+
+alignment:
+  namespace: "SymplecticStafford"
+  statements:
+    - source: "Paper target: ordered same-divisor certificate"
+      lean: "SymplecticStafford.SameDivisorIdentity"
+      module: "SymplecticStafford.Statement"
+      status: "target-only"
+      note: "The target is declared; no universal producer theorem is claimed."
+    - source: "Semantic contract C01--C03"
+      lean: "SymplecticStafford.original_membership_extraction"
+      module: "SymplecticStafford.Semantics.Contract"
+      status: "proved"
+      note: "Original-ring membership and one-generation equivalences."
+    - source: "Palomar semantic challenge"
+      lean: "SymplecticStaffordChallenge.universalStatement"
+      module: "Solution"
+      status: "proved"
+      note: "Mathlib-only definitional contract; not the paper theorem."
+
+acknowledgements: >-
+  The workspace builds on Lean, Mathlib, AlgebraicAnalysis, and the pinned
+  Stafford38 formal project. Comparator, lean4export, NanoDa, and Landrun
+  provide the independent submission-checking path when the complete endpoint
+  exists.
