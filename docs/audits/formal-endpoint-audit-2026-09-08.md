@@ -141,3 +141,15 @@ compatibility build, import-closure audits, comparator, NanoDa and Lean
 default-kernel checks. These are reproducible checkpoint results only: the
 release manifest remains pending because the actual all-dimensional producer
 and the M01--M11 Phase I/II endpoint proofs are not present.
+
+## Fifth parallel formalization wave
+
+The filtered lane then added `2e156d2` (`WeightedFaithfulBoundary`), making
+finite nonempty coordinates, injective encoding and negative integer weights
+explicit and recording the equal-weight off-diagonal failure boundary. The
+induction lane added `b69a747` (`SuccessorObstruction`), a kernel-checked
+flat-defect counterexample showing that the lower (P_h) contract alone cannot
+force a one-step successor decrease. Both lanes passed trust-disabled source
+and independent-oracle checks. These are boundary evidence, not producer
+theorems; the universal faithful associated-graded construction and the actual
+support-removal/scalar-avoidance successor remain open.

@@ -65,6 +65,15 @@ The checked modules provide the following starting points. Every M01–M11
 obligation remains open at its full paper scope; each row records only the
 proved portion and the construction its consumer still needs.
 
+The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
+coordinates, injective encoding and negative integer weights explicit, while
+its `Fin 2` oracle records the off-diagonal failure boundary. The ordered
+`SupportUnionBoundary.lean` gives a kernel-checked finite-ring counterexample
+to promoting finite generation and an auxiliary-divisor relation into a
+support union. `Induction/SuccessorObstruction.lean` gives a flat-defect
+counterexample to deriving the one-step successor decrease from the lower
+`P_h` contract alone. These are boundary evidence, not producer proofs.
+
 | Obligation | Checked module and scope | Required continuation |
 | --- | --- | --- |
 | M01 | `Semantics/SupportDimension.lean` uses `WithBot Nat`, extracts zero from supplied support/dimension equivalences, and proves that a zero original right quotient is equivalent to membership of `1`. `Semantics/RightIdealBridge.lean` bridges the displayed two-generator semiring carrier to a `RingRightIdeal` under explicit negation closure and proves quotient action laws. `Filtered/CharacteristicSupport.lean` constructs a finite associated-layer support proxy from actual quotient classes, while `Filtered/SpecCharacteristicSupport.lean` states the genuine `Module.support`/annihilator zero-locus boundary for a supplied commutative associated module and an explicit filtered class map. | Construct the full characteristic support in `Spec(gr U)` and its zero-detection theorem, encode the actual filtered class and associated module, and connect bottom dimension to the integer defect without assuming negation closure as a hidden instance. |

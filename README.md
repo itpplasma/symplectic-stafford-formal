@@ -20,7 +20,8 @@ list-indexed division-LLD source selection, and activated finite-length pencil
 consumption,
 conditional right-denominator/differential-Ore clearing, a constructive
 finite-index P_h successor contract, original-affine source selection, and a
-conditional support-union consumer. The
+conditional support-union consumer, a faithful weighted-detection boundary,
+and a kernel-checked strong-P_h successor obstruction. The
 general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

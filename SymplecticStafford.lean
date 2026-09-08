@@ -29,6 +29,7 @@ import SymplecticStafford.Filtered.SpecCharacteristicSupport
 import SymplecticStafford.Filtered.NoetherianBoundary
 import SymplecticStafford.Filtered.FullSymbolOre
 import SymplecticStafford.Filtered.WeightedDetection
+import SymplecticStafford.Filtered.WeightedFaithfulBoundary
 import SymplecticStafford.Filtered.FiniteSupportDetection
 import SymplecticStafford.Filtered.FiniteSupportQuotient
 import SymplecticStafford.Source.Assembly
@@ -41,7 +42,9 @@ import SymplecticStafford.Induction.FiniteIndex
 import SymplecticStafford.Induction.TestRetention
 import SymplecticStafford.Induction.ConcreteSuccessor
 import SymplecticStafford.Induction.ConstructiveSuccessor
+import SymplecticStafford.Induction.SuccessorObstruction
 import SymplecticStafford.Ordered.CommonColon
 import SymplecticStafford.Ordered.SupportUnion
 import SymplecticStafford.Ordered.FiniteGenerationBridge
 import SymplecticStafford.Ordered.M08SupportUnion
+import SymplecticStafford.Ordered.SupportUnionBoundary

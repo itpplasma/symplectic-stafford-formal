@@ -208,6 +208,10 @@ generation reflection for finitely generated right modules.
 \lean{Filtered/FullSymbolOre.lean} names the injective algebraic chart
 boundary and bijective finite fraction passage; \lean{Filtered/NoetherianBoundary.lean}
 records why raw filtration data alone cannot imply Noetherianity.
+\lean{Filtered/WeightedFaithfulBoundary.lean} makes finite nonempty
+coordinates, injective encoding and negative integer weights explicit, and its
+oracle records the off-diagonal failure boundary. This does not construct the
+faithful associated-graded module required by the paper.
 \lean{FiniteLength/GoodLocalBridge.lean} derives local finite generation,
 Noetherianity and finite length from explicit surjective and Artinian inputs,
 and \lean{FiniteLength/ActivatedFiniteLength.lean} consumes the actual
@@ -219,6 +223,10 @@ support cover while retaining the exact common-colon pencil certificate.
 concrete finite affine source-avoidance families with arbitrary offsets and nonzero tails and an
 explicit division-ring cofactor boundary. \lean{Induction/ConstructiveSuccessor.lean}
 derives a successor witness from explicit base and two-call construction data.
+\lean{Induction/SuccessorObstruction.lean} supplies a kernel-checked
+flat-defect counterexample: the lower \(P_h\) contract alone cannot imply the
+required one-step decrease. An actual support-removal/scalar-avoidance theorem
+remains the missing successor producer.
 These additions narrow the formal boundaries but leave their producer
 hypotheses visible.
 
