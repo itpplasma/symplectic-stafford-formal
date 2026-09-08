@@ -3,7 +3,7 @@ import Mathlib.Data.Finset.Basic
 import SymplecticStafford.Semantics.S1Consequences
 
 /-!
-# Original-ring source selection and assembly contracts
+# Original-ring source selection and assembly contract scaffolds
 
 The paper needs one source in the original algebra before local calculations
 can be recombined.  This module exposes that boundary explicitly.  Its

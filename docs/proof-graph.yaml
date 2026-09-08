@@ -39,14 +39,14 @@
       "id": "scalar",
       "kind": "LEAN",
       "label": "Scalar-pencil utility",
-      "statement": "Finite exceptional scalars for finitely many division-ring coordinates; the general activated finite-length module bridge remains open.",
-      "source": "SymplecticStafford/FiniteLength/Pencil.lean",
+      "statement": "Finite exceptional scalars for finitely many division-ring coordinates; PencilBridge conditionally transfers this through a supplied top comparison/reflection. Constructing that comparison and the general activated finite-length bridge remains open.",
+      "source": "SymplecticStafford/FiniteLength/Pencil.lean; SymplecticStafford/FiniteLength/PencilBridge.lean",
       "depends_on": [],
       "position": [
         5,
         20
       ],
-      "review": "Implemented checkpoint; replay logs and precise types govern its scope."
+      "review": "The coordinate theorem is implemented; CyclicTopBridge is a conditional consumer. Replay logs and precise types govern both scopes."
     },
     {
       "id": "local-scaffold",
@@ -67,8 +67,8 @@
       "id": "assembly-scaffold",
       "kind": "LEAN-SCAFFOLD",
       "label": "Divisor-indexed assembly",
-      "statement": "Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.",
-      "source": "SymplecticStafford/Source/Assembly.lean",
+      "statement": "Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. OriginalTestContract records the M06 original-U finite-test/source witness shape and routes only a supplied composite producer to this consumer. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.",
+      "source": "SymplecticStafford/Source/Assembly.lean; SymplecticStafford/Source/OriginalTestContract.lean",
       "depends_on": [
         "semantics"
       ],

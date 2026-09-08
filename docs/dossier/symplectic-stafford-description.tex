@@ -5,7 +5,7 @@
 \usepackage{fontspec}
 \setmainfont{DejaVu Serif}
 \setmonofont{DejaVu Sans Mono}[Scale=0.78]
-\usepackage{amsmath,amssymb,booktabs,array,fvextra,tikz,xcolor,xurl,hyperref}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx,fvextra,tikz,xcolor,xurl,hyperref}
 \usetikzlibrary{arrows.meta,positioning}
 \hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,
  pdftitle={Symplectic Stafford: final paper and Lean correspondence},
@@ -23,6 +23,7 @@
 }
 \newcommand{\backmap}{\hfill\hyperlink{proofmap}{[map]}}
 \newcommand{\lean}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Symplectic Stafford formalization\\[0.3em]
  \large Final-paper proof map and Challenge/Solution comparison}
 \author{Christopher Albert}
@@ -121,7 +122,7 @@ obligation; the proved ring-level membership lemmas do not depend on this
 scaffold.
 
 \begin{center}
-\begin{tabular}{@{}p{3.6cm}p{5.6cm}p{6.0cm}@{}}
+\begin{tabularx}{\textwidth}{@{}Y Y Y@{}}
 \toprule
 Paper requirement & Current Challenge & Current Solution\\
 \midrule
@@ -139,7 +140,7 @@ Strong \(P_h\), localization and induction & Absent &
 Opposite Stafford package & Absent & Orientation utility only;
  package requires its own endpoints\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{center}
 
 The identifier \lean{universalStatement} is universal over a
@@ -155,8 +156,13 @@ class hypotheses and existential conclusion.
 The ordered modules give affine identities and conditional finite
 right-denominator clearance. The existing finite-pencil theorem treats
 finitely many division-ring coordinates; general semisimple tops can have
-repeated simple factors and matrix blocks. The arbitrary finite-length
-activated-pencil and original-\(U\) source-selection bridges are still required.
+repeated simple factors and matrix blocks. The new
+\lean{FiniteLength/PencilBridge.lean} records a handed cyclic-module top bridge
+and finite forbidden-scalar avoidance, while
+\lean{Source/OriginalTestContract.lean} records the exact original-\(U\) finite
+test/source witness shape. Both are conditional consumers: the arbitrary
+finite-length activated-pencil, localization, and source-production proofs are
+still required.
 
 Three \textbf{LEAN-SCAFFOLD} nodes record additional conditional interfaces.
 \lean{Filtered/Localization.lean} preserves degree bounds under supplied

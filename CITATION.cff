@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: Symplectic Stafford formalization
+message: >-
+  If you use this formalization, please cite the repository and the
+  accompanying Symplectic Stafford paper.
+type: software
+authors:
+  - family-names: Albert
+    given-names: Christopher
+    orcid: https://orcid.org/0000-0003-4773-416X
+repository-code: https://github.com/itpplasma/symplectic-stafford-formal
+license: Apache-2.0
+version: 0.1.0
+abstract: >-
+  Lean 4 formalization of the ordered semantic, filtered, and symplectic
+  interfaces for the same-divisor programme. This development checkpoint
+  does not claim the universal higher-dimensional theorem.
+keywords:
+  - symplectic quantization
+  - Stafford conjecture
+  - noncommutative algebra
+  - Lean 4
+  - Mathlib
+  - formal verification

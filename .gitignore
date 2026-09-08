@@ -4,3 +4,11 @@
 *.ilean
 *.trace
 __pycache__/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+docs/dossier/*.pdf
+docs/dossier/*.build-manifest.json

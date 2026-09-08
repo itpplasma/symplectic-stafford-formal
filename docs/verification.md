@@ -5,8 +5,9 @@ terminal theorem. `PLAN.md` is authoritative for scope. The implemented
 declarations compile under the exact Lean, Mathlib, AlgebraicAnalysis, and
 Stafford38 pins in `formalization.yaml`; independent consumers exercise the
 semantic, ordered, and finite division-coordinate scalar-pencil interfaces.
-The scalar utility does not yet prove arbitrary finite-length activated
-pencils or original-U simultaneous source selection.
+Conditional original-U finite-test and cyclic-pencil bridge contracts are also
+checked; they do not yet prove arbitrary finite-length activated pencils or an
+original-U simultaneous source selection.
 
 The localization, divisor-indexed assembly and strong-P_h files are
 conditional scaffold checkpoints. Their checks verify the stated consumers;

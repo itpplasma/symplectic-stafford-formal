@@ -1,6 +1,6 @@
 name = "symplecticStaffordFormal"
 version = "0.1.0"
-defaultTargets = ["SymplecticStafford"]
+defaultTargets = ["SymplecticStafford", "Challenge", "Solution"]
 
 [[require]]
 name = "mathlib"
@@ -10,7 +10,7 @@ rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
 [[require]]
 name = "algebraicAnalysis"
 git = "https://github.com/itpplasma/algebraic-analysis.git"
-rev = "faa64814d5a310dc925e330af58e000f129f1098"
+rev = "44921f5914c5dbd40d2d532c2867adce0f519cb9"
 
 [[require]]
 name = "stafford38Formal"

@@ -9,4 +9,5 @@ command -v lualatex >/dev/null || { echo 'dossier build: lualatex is required' >
 latexmk -lualatex -interaction=nonstopmode -halt-on-error \
   symplectic-stafford-description.tex
 test -s symplectic-stafford-description.pdf
+python3 build-manifest.py
 echo "built $here/symplectic-stafford-description.pdf"

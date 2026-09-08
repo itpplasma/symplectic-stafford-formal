@@ -1,0 +1,37 @@
+{
+  "title": "Symplectic Stafford: Lean 4 formalization checkpoint",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "description": "Lean 4 formalization checkpoint for the symplectic Stafford same-divisor programme. The repository proves the original-ring semantic and ordered-algebra interfaces, finite right-denominator clearing, and a finite-length pencil lemma, with a Mathlib-only Challenge/Solution pair. It does not claim the universal higher-dimensional source-selection or same-divisor theorem; Phase I and Phase II release gates remain explicit.",
+  "creators": [
+    {
+      "name": "Albert, Christopher",
+      "affiliation": "Graz University of Technology",
+      "orcid": "0000-0003-4773-416X"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "symplectic quantization",
+    "Stafford conjecture",
+    "noncommutative algebra",
+    "Lean 4",
+    "Mathlib",
+    "formal verification"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/itpplasma/stafford38-formal/tree/784b59925beb9a480519142336bd6434f6eeef16",
+      "relation": "requires",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/itpplasma/algebraic-analysis/tree/44921f5914c5dbd40d2d532c2867adce0f519cb9",
+      "relation": "requires",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "A Zenodo DOI is intentionally absent until an authorized GitHub release is archived and Zenodo issues the identifiers. Machine checks and human mathematical review are separate gates."
+}

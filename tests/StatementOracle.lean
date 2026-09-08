@@ -1,6 +1,6 @@
-/-! A tiny independent consumer for the scaffold's ordered statement. -/
-
 import SymplecticStafford.Statement
+
+/-! A tiny independent consumer for the scaffold's ordered statement. -/
 
 namespace SymplecticStaffordTest
 

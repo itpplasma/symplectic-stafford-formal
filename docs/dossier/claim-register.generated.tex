@@ -14,10 +14,10 @@ No incoming claim dependency in this graph.
 
 No incoming claim dependency in this graph.
 \subsection{Scalar-pencil utility}\hypertarget{claim:scalar}{}\backmap
-\textbf{LEAN.} Finite exceptional scalars for finitely many division-ring coordinates; the general activated finite-length module bridge remains open.
+\textbf{LEAN.} Finite exceptional scalars for finitely many division-ring coordinates; PencilBridge conditionally transfers this through a supplied top comparison/reflection. Constructing that comparison and the general activated finite-length bridge remains open.
 
-\emph{Source:} SymplecticStafford/FiniteLength/Pencil.lean.
-\emph{Review:} Implemented checkpoint; replay logs and precise types govern its scope.
+\emph{Source:} SymplecticStafford/FiniteLength/Pencil.lean; SymplecticStafford/FiniteLength/PencilBridge.lean.
+\emph{Review:} The coordinate theorem is implemented; CyclicTopBridge is a conditional consumer. Replay logs and precise types govern both scopes.
 
 No incoming claim dependency in this graph.
 \subsection{Chart contract}\hypertarget{claim:local-scaffold}{}\backmap
@@ -28,9 +28,9 @@ No incoming claim dependency in this graph.
 
 Dependencies: \hyperlink{claim:ordered}{Ordered utilities}.
 \subsection{Divisor-indexed assembly}\hypertarget{claim:assembly-scaffold}{}\backmap
-\textbf{LEAN-SCAFFOLD.} Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.
+\textbf{LEAN-SCAFFOLD.} Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. OriginalTestContract records the M06 original-U finite-test/source witness shape and routes only a supplied composite producer to this consumer. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.
 
-\emph{Source:} SymplecticStafford/Source/Assembly.lean.
+\emph{Source:} SymplecticStafford/Source/Assembly.lean; SymplecticStafford/Source/OriginalTestContract.lean.
 \emph{Review:} Conditional checkpoint consumer of supplied identity fields; M06 and M08–M11 remain open.
 
 Dependencies: \hyperlink{claim:semantics}{Right-ideal semantics}.

@@ -8,8 +8,9 @@ project:
     interfaces for the symplectic Stafford same-divisor programme. The
     checkpoint proves right-ideal membership/extraction, quotient right
     action, opposite transport, ordered affine identities, finite right
-    denominator clearing, and a finite division-coordinate scalar-pencil
-    lemma. General finite-length activated pencils remain open. It does not claim
+    denominator clearing, a finite division-coordinate scalar-pencil lemma,
+    and conditional original-U finite-test/cyclic-pencil bridges. General
+    finite-length activated pencils remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
     from the companion paper; those are explicit Phase I and Phase II gates.
   authors:
@@ -87,8 +88,9 @@ verification:
 
 status:
   scope: >-
-    Partial checkpoint. The semantic, ordered, division-coordinate, filtered,
-    source-assembly, and strong-P_h declarations listed in the project plan
+    Partial checkpoint. The semantic, ordered, division-coordinate,
+    conditional cyclic-pencil, original-U finite-test, filtered, source-assembly,
+    and strong-P_h declarations listed in the project plan
     compile and have independent consumers where recorded. The filtered,
     source-selection, assembly, and induction files are conditional scaffolds;
     the proof map labels these consumers LEAN-SCAFFOLD and keeps M02–M11 open;
@@ -153,7 +155,8 @@ automation:
 fidelity:
   divergences: >-
     The formal checkpoint freezes the paper's original-ring right-sided product
-    order but stops before the paper's source producer and induction. The paper
+    order but stops before the paper's source producer and induction. It records
+    M06/M07-shaped contracts only as conditional consumers. The paper
     source is Markdown, so the TeX dossier is a comparison supplement, not a
     manuscript transcription.
     Contract.AdmissibleSymplecticClass is a historical dimension-parametric

@@ -31,7 +31,7 @@ formal project. Exact build revisions are in the lock files:
 | --- | --- |
 | Lean | `leanprover/lean4:v4.33.0` |
 | Mathlib | `db584cd6d46c92f209a44c0f1c829460d327499d` |
-| AlgebraicAnalysis | `faa64814d5a310dc925e330af58e000f129f1098` |
+| AlgebraicAnalysis | `44921f5914c5dbd40d2d532c2867adce0f519cb9` |
 | Stafford38 formal | `784b59925beb9a480519142336bd6434f6eeef16` |
 
 With Lean and Lake installed, run the checkpoint build and consumers:
@@ -58,6 +58,10 @@ interfaces, and verbatim Challenge/Solution listings. Build it with:
 ```sh
 docs/dossier/build.sh
 ```
+
+The build also writes an ignored `symplectic-stafford-description.build-manifest.json`
+with input hashes, engine versions, source commit, and the PDF hash; the release
+runbook archives it beside the PDF and checksum file.
 
 The paper source is Markdown in the private research repository, not TeX; the
 dossier records that boundary explicitly rather than fabricating a source

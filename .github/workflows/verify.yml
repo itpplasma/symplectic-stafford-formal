@@ -1,0 +1,30 @@
+name: Verify formalization
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the pinned Lean toolchain
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          elan toolchain install "$(cat lean-toolchain)"
+          lake --version
+      - name: Check disk and temporary filesystem headroom
+        run: ./scripts/check-resources.sh
+      - name: Replay implemented checkpoint
+        run: ./scripts/verify.sh --phase-i
+      - name: Check publication evidence (fail closed)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: ./scripts/check-release-readiness.sh

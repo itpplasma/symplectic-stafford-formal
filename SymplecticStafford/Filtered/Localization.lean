@@ -4,11 +4,12 @@ import Mathlib.Data.Set.Defs
 import SymplecticStafford.Ordered.RightClear
 
 /-!
-# Filtered localization contract
+# Filtered localization contract scaffold
 
-This file records the hypotheses needed when a filtered or localized chart is
-used as an intermediate calculation.  It is deliberately a contract rather
-than a theorem about the paper's admissible class: in particular, the
+This file records a small contract for a filtered or localized chart.  It is
+deliberately not the paper's M03 theorem: the single-denominator power
+clearing here is only a checkpoint utility, while the paper requires a full
+homogeneous-symbol Ore set and algebraic Rees/module transfer.  The
 right-clearing field is supplied by a future source theorem and does not
 assert the same-divisor statement in the original ring.
 -/
@@ -64,7 +65,8 @@ section Localization
 variable {R : Type u} [Semiring R]
 variable {S : Type v} [Semiring S]
 
-/-- A certificate for a filtered chart and its algebraic right localization.
+/-- A checkpoint certificate for a filtered chart and a single-denominator
+power clearing operation.  It is not the paper's full symbol localization.
 
 The map is a ring homomorphism, the denominator is an element of the
 original ring, and every *specified* chart element must be right-clearable.
