@@ -18,6 +18,7 @@ import SymplecticStafford.Filtered.ReesQuotient
 import SymplecticStafford.Filtered.ReesAlgebra
 import SymplecticStafford.Filtered.WeightedDetection
 import SymplecticStafford.Filtered.FiniteSupportDetection
+import SymplecticStafford.Filtered.FiniteSupportQuotient
 import SymplecticStafford.Source.Assembly
 import SymplecticStafford.Source.DifferentialOreDescent
 import SymplecticStafford.Source.DivisionLLD
