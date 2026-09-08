@@ -10,12 +10,13 @@ keeps the target in the exact noncommutative order
 The current checked checkpoint formalizes the original-ring semantic contract,
 the right-ideal bridge and quotient-action laws, opposite transport, ordered
 common-colon and finite-generation identities, raw and algebraic bounded
-filtered/Rees operations, finite-support top and matrix-pencil detection,
-conditional right-denominator/differential-Ore clearing, a conditional
-finite-index P_h successor contract, and an explicit terminal
-zero-quotient/cofactor boundary. The
-general finite-length activated-pencil and original-U source-selection bridges
-remain open. It deliberately
+filtered/Rees operations, a quotient Rees-module action, an algebraic
+power-Ore fraction boundary, finite-support top and matrix-pencil detection,
+conditional right-denominator/differential-Ore clearing, a constructive
+finite-index P_h successor contract, original-affine source selection, and a
+conditional support-union consumer. The
+general finite-length activated-pencil and universal original-U source
+producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion
 paper. The source-selection, filtered-localization, assembly, and terminal
 Phase I/II gates remain open in `PLAN.md`; the corresponding files are
@@ -23,9 +24,10 @@ conditional scaffolds rather than producer proofs.
 
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
-Rees, common-colon, finite-pencil, support-boundary, and opposite-transport
-modules are checked utilities, but their missing producer hypotheses keep
-M01–M11 open. Precise scopes appear in the linked claim register.
+Rees, Rees-module, power-Ore, common-colon, finite-pencil, support-boundary,
+source-selection, constructive-successor, and opposite-transport modules are
+checked utilities, but their missing producer hypotheses keep M01–M11 open.
+Precise scopes appear in the linked claim register.
 
 ## Reproducible setup
 

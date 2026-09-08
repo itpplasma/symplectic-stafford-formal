@@ -58,3 +58,13 @@ Safe public wording is limited to: a self-audited written paper candidate,
 the checked semantic/ordered/scalar Lean utilities, and a definitional
 Challenge/Solution contract.  It is not safe to claim formal verification,
 Phase I/II completion, a DOI, or a universal Lean theorem.
+
+## Third-wave formalization note
+
+The later parallel Lean lanes add quotient Rees-module actions, an explicit
+power-Ore fraction boundary, finite filtered-module quotient detection,
+original-affine source avoidance, activated/repeated matrix-pencil bridges,
+constructive successor assembly, and conditional support-union. Their
+trust-disabled consumer checks pass, but they remain conditional interfaces;
+the paper-level audit above does not certify these as a universal producer or
+as Phase-I/Phase-II completion.

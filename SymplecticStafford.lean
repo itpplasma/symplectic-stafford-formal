@@ -16,6 +16,8 @@ import SymplecticStafford.Filtered.Localization
 import SymplecticStafford.Filtered.ReesBasic
 import SymplecticStafford.Filtered.ReesQuotient
 import SymplecticStafford.Filtered.ReesAlgebra
+import SymplecticStafford.Filtered.ReesModule
+import SymplecticStafford.Filtered.PowerOre
 import SymplecticStafford.Filtered.WeightedDetection
 import SymplecticStafford.Filtered.FiniteSupportDetection
 import SymplecticStafford.Filtered.FiniteSupportQuotient
@@ -27,6 +29,8 @@ import SymplecticStafford.Induction.StrongPh
 import SymplecticStafford.Induction.FiniteIndex
 import SymplecticStafford.Induction.TestRetention
 import SymplecticStafford.Induction.ConcreteSuccessor
+import SymplecticStafford.Induction.ConstructiveSuccessor
 import SymplecticStafford.Ordered.CommonColon
 import SymplecticStafford.Ordered.SupportUnion
 import SymplecticStafford.Ordered.FiniteGenerationBridge
+import SymplecticStafford.Ordered.M08SupportUnion

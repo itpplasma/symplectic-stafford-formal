@@ -14,13 +14,15 @@ literal membership, a conditional semiring-to-ring right-ideal bridge with
 relation-respecting quotient-action laws, support-boundary extraction and
 explicit opposite orientation. Ordered modules implement affine identities,
 the common-colon algebra and finite-generation/conditional constant-right-
-denominator clearing. Raw and algebraic filtered/Rees terms, finite
-associated-top and matrix pencils, differential-Ore finite-cover clearing,
-and concrete finite-index successor contracts are now checked utilities,
-while filtered, source-assembly and strong P_h producer modules remain
-explicit conditional scaffolds. These utilities do not yet establish the
-paper's arbitrary finite-length module, activated-pencil, support-union, or
-original-U simultaneous-source theorem.
+denominator clearing. Raw and algebraic filtered/Rees terms, a quotient Rees
+module with scalar-action laws, an explicit power-Ore fraction boundary,
+finite associated-top and matrix pencils, differential-Ore finite-cover
+clearing, concrete finite-index successor contracts, constructive successor
+assembly, original-affine source selection, and a conditional support-union
+consumer are now checked utilities, while filtered, source-assembly and strong
+P_h producer modules remain explicit conditional scaffolds. These utilities do
+not yet establish the paper's arbitrary finite-length module, activated-pencil,
+support-union, or original-U simultaneous-source theorem.
 
 The conditional checkpoints consume supplied data:
 `Filtered/Localization.lean` uses filtration/map and power-clearing fields;
@@ -30,11 +32,12 @@ calls, supplied successor output and conditional terminal extraction; and
 `Induction/FiniteIndex.lean` composes supplied P_1 and successor rules. Their
 LEAN-SCAFFOLD map nodes mark consumers, not constructions of the required
 data. `SupportDimension`, `RightIdealBridge`, `ActivatedPencil`,
-`MatrixPencil`, `CommonColon`, `FiniteGenerationBridge`, `ReesBasic`,
-`ReesAlgebra`, `FiniteSupportDetection`, `ConcreteSuccessor`,
-`DifferentialOreDescent`, `Package/TerminalBoundary`, and
-`Package/Opposite` expose explicit hypotheses and preserve the same boundary.
-M01–M11 remain open.
+`MatrixPencil`, `CommonColon`, `FiniteGenerationBridge`,
+`M08SupportUnion`, `ReesBasic`, `ReesAlgebra`, `ReesModule`,
+`PowerOre`, `FiniteSupportDetection`, `FiniteSupportQuotient`,
+`ConcreteSuccessor`, `ConstructiveSuccessor`, `DifferentialOreDescent`,
+`Package/TerminalBoundary`, and `Package/Opposite` expose explicit
+hypotheses and preserve the same boundary. M01–M11 remain open.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper

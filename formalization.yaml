@@ -9,11 +9,13 @@ project:
     checkpoint proves right-ideal membership/extraction, the relation-respecting
     quotient right-action laws, support-boundary extraction, explicit opposite
     transport, ordered affine/common-colon/finite-generation identities, raw
-    and algebraic filtered/Rees operations, finite-support and matrix-pencil
-    detection, conditional differential-Ore/right-denominator clearing,
-    finite-index successor contracts, and conditional original-U
-    finite-test/cyclic-pencil bridges. General finite-length
-    activated pencils remain open. It does not claim
+    and algebraic filtered/Rees operations, quotient Rees-module actions,
+    explicit power-Ore fractions, finite-support and matrix-pencil detection,
+    conditional differential-Ore/right-denominator clearing, constructive
+    finite-index successor contracts, original-affine source selection,
+    conditional support-union, and conditional original-U finite-test/cyclic-
+    pencil bridges. General finite-length activated pencils and the universal
+    source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
     from the companion paper; those are explicit Phase I and Phase II gates.
   authors:
@@ -92,13 +94,13 @@ verification:
 status:
   scope: >-
     Partial checkpoint. The semantic, support-boundary, opposite-transport,
-    ordered/common-colon, raw Rees, division-coordinate,
-    conditional cyclic-pencil, finite-index/successor, terminal-boundary,
-    differential-Ore, original-U finite-test, filtered, source-assembly, and
-    strong-P_h declarations listed
-    in the project plan
-    compile and have independent consumers where recorded. The filtered,
-    source-selection, assembly, and induction files are conditional scaffolds;
+    ordered/common-colon, raw and module-side Rees, power-Ore fraction,
+    division-coordinate, conditional cyclic-pencil, finite-index and
+    constructive successor, terminal-boundary, differential-Ore,
+    original-affine source-selection, filtered, source-assembly, support-union,
+    and strong-P_h declarations listed in the project plan compile and have
+    independent consumers where recorded. The filtered, source-selection,
+    assembly, support-union, and induction files are conditional scaffolds;
     the proof map labels these consumers LEAN-SCAFFOLD and keeps M02–M11 open;
     the full higher-dimensional same-divisor producer; producer-derived
     terminal extraction remains unimplemented. The one intentional placeholder
@@ -163,8 +165,8 @@ automation:
 fidelity:
   divergences: >-
     The formal checkpoint freezes the paper's original-ring right-sided product
-    order but stops before the paper's source producer and induction. It records
-    M06/M07-shaped contracts only as conditional consumers. The paper
+    order but stops before the paper's universal source producer and induction.
+    It records M06/M07/M08-shaped contracts only as conditional consumers. The paper
     source is Markdown, so the TeX dossier is a comparison supplement, not a
     manuscript transcription.
     Contract.AdmissibleSymplecticClass is a historical dimension-parametric
@@ -178,8 +180,9 @@ review:
   reviewers: []
   notes: >-
     Kernel builds, endpoint axiom reports, and independent consumers cover the
-    implemented checkpoint, including the right-ideal bridge, bounded Rees,
-    finite-support/matrix detection, finite-generation/successor, and
+    implemented checkpoint, including the right-ideal bridge, bounded
+    Rees-module/power-Ore boundaries, finite-support/matrix detection,
+    finite-generation/constructive-successor, original-affine source and
     differential-Ore boundary utilities. The bounded Fable/Claude paper audit
     found no invalid bridge in the written candidate; human expert review and
     the universal theorem's statement correspondence remain open.

@@ -185,6 +185,21 @@ consumers: arbitrary finite-length
 activation, localization, support union and source-production proofs are still
 required.
 
+\lean{Filtered/ReesModule.lean} adds bounded module terms and checks the
+quotient scalar-action laws in the kernel. \lean{Filtered/PowerOre.lean}
+packages an explicit algebraic fraction evaluation and ordered multiplication
+formula from supplied original-ring power-Ore witnesses; it is not the
+full-symbol Ore theorem. \lean{Filtered/FiniteSupportQuotient.lean} turns a
+finite separated submodule filtration into a nonzero quotient witness.
+\lean{Ordered/M08SupportUnion.lean} derives a conditional finite-generator
+support cover while retaining the exact common-colon pencil certificate.
+\lean{Source/DivisionLLD.lean} includes a concrete finite affine
+source-avoidance family with arbitrary offsets and nonzero tails and an
+explicit division-ring cofactor boundary. \lean{Induction/ConstructiveSuccessor.lean}
+derives a successor witness from explicit base and two-call construction data.
+These additions narrow the formal boundaries but leave their producer
+hypotheses visible.
+
 The remaining checked slices are listed explicitly in the claim register:
 \lean{Semantics/RightIdealBridge.lean}, \lean{Filtered/ReesQuotient.lean},
 \lean{Filtered/ReesAlgebra.lean}, \lean{Filtered/FiniteSupportDetection.lean},
@@ -226,8 +241,8 @@ to \(P_{D+1}\). \lean{strongPh_succ} selects the output of a supplied successor 
 \lean{terminal_extraction} requires both terminal \lean{StrongPh} and a
 \lean{zero_extraction} interface. Local-test specification propositions,
 generation predicates and defect data are still abstract inputs. The
-geometric semantics, successor producer and zero-support-to-cofactor bridge
-remain to be proved. These checkpoints leave M02--M11 open and do not
+geometric semantics, universal source producer and zero-support-to-cofactor
+bridge remain to be proved. These checkpoints leave M02--M11 open and do not
 advance the release gates.
 
 \section{Phase instructions and evidence}\label{sec:phases}\backmap

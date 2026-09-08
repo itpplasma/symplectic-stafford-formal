@@ -26,8 +26,8 @@
       "id": "ordered",
       "kind": "LEAN",
       "label": "Ordered utilities",
-      "statement": "Affine expansion, conditional finite constant-right-denominator clearing, and actual ordered common-colon sets K and J with right-ideal closure. CommonColon and SupportUnion prove the central pencil identity, finite-span algebra and conditional inclusion/support-union interfaces; FiniteGenerationBridge connects finite generator data to actual right-ideal membership and affine-pencil containment. Polynomial localization and the stated support theorem remain M08 obligations.",
-      "source": "SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean; SymplecticStafford/Ordered/CommonColon.lean; SymplecticStafford/Ordered/SupportUnion.lean; SymplecticStafford/Ordered/FiniteGenerationBridge.lean",
+      "statement": "Affine expansion, conditional finite constant-right-denominator clearing, and actual ordered common-colon sets K and J with right-ideal closure. CommonColon and SupportUnion prove the central pencil identity, finite-span algebra and conditional inclusion/support-union interfaces; FiniteGenerationBridge connects finite generator data to actual right-ideal membership and affine-pencil containment; M08SupportUnion derives a conditional finite-generator support cover and preserves the exact pencil certificate. Polynomial localization and the stated support theorem remain M08 obligations.",
+      "source": "SymplecticStafford/Ordered/Affine.lean; SymplecticStafford/Ordered/RightClear.lean; SymplecticStafford/Ordered/CommonColon.lean; SymplecticStafford/Ordered/SupportUnion.lean; SymplecticStafford/Ordered/FiniteGenerationBridge.lean; SymplecticStafford/Ordered/M08SupportUnion.lean",
       "depends_on": [],
       "position": [
         0,
@@ -52,8 +52,8 @@
       "id": "local-scaffold",
       "kind": "LEAN-SCAFFOLD",
       "label": "Chart contract",
-      "statement": "A supplied exhaustive multiplicative filtration and map preserve degree bounds; assumed chart-wide power right-clearability gives finite common right clearance. ReesBasic and ReesQuotient prove raw bounded-term reindexing, quotient operations and coherence, ReesAlgebra packages bounded coefficient polynomials as an actual Subsemiring, FiniteSupportDetection proves finite associated-top extraction, and WeightedDetection handles a supplied finite integer-weighted triangular system. These do not yet construct the full-symbol Ore localization, characteristic support or faithful good-module detection.",
-      "source": "SymplecticStafford/Filtered/Localization.lean; SymplecticStafford/Filtered/ReesBasic.lean; SymplecticStafford/Filtered/ReesQuotient.lean; SymplecticStafford/Filtered/ReesAlgebra.lean; SymplecticStafford/Filtered/FiniteSupportDetection.lean; SymplecticStafford/Filtered/WeightedDetection.lean",
+      "statement": "A supplied exhaustive multiplicative filtration and map preserve degree bounds; assumed chart-wide power right-clearability gives finite common right clearance. ReesBasic and ReesQuotient prove raw bounded-term reindexing, quotient operations and coherence, ReesAlgebra packages bounded coefficient polynomials as an actual Subsemiring, ReesModule adds bounded module terms and a kernel-checked quotient scalar action, PowerOre packages an explicit original-ring fraction boundary under supplied right-Ore witnesses, FiniteSupportDetection and FiniteSupportQuotient prove finite associated-top and nonzero quotient extraction, and WeightedDetection handles a supplied finite integer-weighted triangular system. These do not yet construct the full-symbol Ore localization, characteristic support or faithful good-module detection.",
+      "source": "SymplecticStafford/Filtered/Localization.lean; SymplecticStafford/Filtered/ReesBasic.lean; SymplecticStafford/Filtered/ReesQuotient.lean; SymplecticStafford/Filtered/ReesAlgebra.lean; SymplecticStafford/Filtered/ReesModule.lean; SymplecticStafford/Filtered/PowerOre.lean; SymplecticStafford/Filtered/FiniteSupportDetection.lean; SymplecticStafford/Filtered/FiniteSupportQuotient.lean; SymplecticStafford/Filtered/WeightedDetection.lean",
       "depends_on": [
         "ordered"
       ],
@@ -67,8 +67,8 @@
       "id": "assembly-scaffold",
       "kind": "LEAN-SCAFFOLD",
       "label": "Divisor-indexed assembly",
-      "statement": "Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. OriginalTestContract records the M06 original-U finite-test/source witness shape and routes only a supplied composite producer to this consumer. DifferentialOreDescent adds a finite-cover clearance consumer under explicit commutative-coefficient, filtration-lowering, power-Ore and whole-chart central-S1 hypotheses. This supplies no instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.",
-      "source": "SymplecticStafford/Source/Assembly.lean; SymplecticStafford/Source/OriginalTestContract.lean; SymplecticStafford/Source/DifferentialOreDescent.lean",
+      "statement": "Given DivisorIndexedAssembly with a source and literal original cofactors for every nonzero divisor, extract SameDivisorS1. Sources may depend on d. OriginalTestContract records the M06 original-U finite-test/source witness shape; DivisionLLD adds a concrete finite affine source-avoidance family with arbitrary offsets and nonzero tails; Assembly still routes only a supplied composite producer to this consumer. DifferentialOreDescent adds a finite-cover clearance consumer under explicit commutative-coefficient, filtration-lowering, power-Ore and whole-chart central-S1 hypotheses. This supplies no general instance or producer; finite CandidateFamily and uniform SingleSourceAssembly are optional toy contracts.",
+      "source": "SymplecticStafford/Source/Assembly.lean; SymplecticStafford/Source/OriginalTestContract.lean; SymplecticStafford/Source/DivisionLLD.lean; SymplecticStafford/Source/DifferentialOreDescent.lean",
       "depends_on": [
         "semantics"
       ],
@@ -82,8 +82,8 @@
       "id": "ph-scaffold",
       "kind": "LEAN-SCAFFOLD",
       "label": "Strong P_h contracts",
-      "statement": "Record affine source membership, abstract finite generation tests, integer defect bounds, both lower-index calls and supplied successor output. TestRetention makes carried lists, old/new component bookkeeping and defect arithmetic explicit; ConcreteSuccessor makes the old/new families and carried-list obligations Fin-indexed; FiniteIndex composes supplied P_1 and successor rules to P_(D+1), including D=0. Terminal cofactors still require supplied zero extraction; actual support, the base and the two-call successor remain open.",
-      "source": "SymplecticStafford/Induction/StrongPh.lean; SymplecticStafford/Induction/FiniteIndex.lean; SymplecticStafford/Induction/TestRetention.lean; SymplecticStafford/Induction/ConcreteSuccessor.lean",
+      "statement": "Record affine source membership, abstract finite generation tests, integer defect bounds, both lower-index calls and supplied successor output. TestRetention makes carried lists, old/new component bookkeeping and defect arithmetic explicit; ConcreteSuccessor makes the old/new families and carried-list obligations Fin-indexed; ConstructiveSuccessor derives a successor witness from explicit base/two-call construction data and composes constructive base/successor rules to P_(D+1); FiniteIndex composes supplied P_1 and successor rules, including D=0. Terminal cofactors still require supplied zero extraction; actual support, the base and the universal two-call successor remain open.",
+      "source": "SymplecticStafford/Induction/StrongPh.lean; SymplecticStafford/Induction/FiniteIndex.lean; SymplecticStafford/Induction/TestRetention.lean; SymplecticStafford/Induction/ConcreteSuccessor.lean; SymplecticStafford/Induction/ConstructiveSuccessor.lean",
       "depends_on": [],
       "position": [
         5,
