@@ -2,6 +2,8 @@ import SymplecticStafford.Filtered.Localization
 import SymplecticStafford.Source.Assembly
 import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.NormNum
+import Mathlib.Data.ZMod.Basic
+import Mathlib.Tactic.FinCases
 
 namespace SymplecticStafford.FilteredSourceOracle
 
@@ -19,13 +21,18 @@ def natFiltration : Filtered.FiltrationData ℕ where
   exhaustive := by intro x; exact ⟨0, by simp⟩
 
 example : Filtered.HasDegreeAtMost natFiltration 4 (2 + 2) := by
-  apply Filtered.degreeAtMost_add
-  · simp [Filtered.HasDegreeAtMost, natFiltration]
-  · simp [Filtered.HasDegreeAtMost, natFiltration]
+  have h := Filtered.degreeAtMost_add (F := natFiltration)
+    (i := 4) (j := 4) (a := 2) (b := 2)
+    (by simp [Filtered.HasDegreeAtMost, natFiltration])
+    (by simp [Filtered.HasDegreeAtMost, natFiltration])
+  simpa using h
 
 example : Filtered.HasDegreeAtMost natFiltration (3 + 5) (2 * 3) := by
-  apply Filtered.degreeAtMost_mul <;>
-    simp [Filtered.HasDegreeAtMost, natFiltration]
+  have h := Filtered.degreeAtMost_mul (F := natFiltration)
+    (i := 4) (j := 4) (a := 2) (b := 3)
+    (by simp [Filtered.HasDegreeAtMost, natFiltration])
+    (by simp [Filtered.HasDegreeAtMost, natFiltration])
+  simpa using h
 
 def natLocalization : Filtered.FilteredLocalizationCertificate ℕ ℕ where
   sourceFiltration := natFiltration
@@ -45,21 +52,25 @@ example : ∃ n : ℕ, ∀ x ∈ [2, 5], ∃ y : ℕ,
 
 open SymplecticStafford.Source
 
-def unitCandidates : CandidateFamily ℕ where
+def unitCandidates : CandidateFamily (ZMod 2) where
   candidates := {1}
   candidate_nonzero := by
     intro f hf
     simp at hf
-    omega
+    simpa [hf]
 
 def unitSelection : DivisorSelection unitCandidates where
   select := by
     intro d hd
-    refine ⟨1, by simp, ?_⟩
-    refine ⟨⟨1, 0, ?_⟩⟩
-    simp
+    have hd1 : d = 1 := by
+      fin_cases d
+      · exact (hd rfl).elim
+      · rfl
+    subst d
+    refine ⟨1, Finset.mem_singleton_self 1, ?_⟩
+    exact ⟨⟨1, 0, by simp⟩⟩
 
-example : SameDivisorS1 (R := ℕ) :=
+example : SameDivisorS1 (R := ZMod 2) :=
   unitSelection.sameDivisor
 
 end SymplecticStafford.FilteredSourceOracle
