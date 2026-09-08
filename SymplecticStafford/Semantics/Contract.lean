@@ -36,6 +36,37 @@ structure RingRightIdeal (R : Type u) [Ring R] where
 instance : Membership R (RingRightIdeal (R := R)) :=
   ⟨fun I a => a ∈ I.carrier⟩
 
+/- The ring-specific constructor is intentionally separate from the semiring
+   interface: it adds additive inverses, while retaining exactly the same
+   ordered carrier `d * r + (f * d) * s`. -/
+def twoGeneratedRingRightIdeal (d f : R) : RingRightIdeal (R := R) where
+  carrier := {a | ∃ r s : R, a = d * r + (f * d) * s}
+  zero_mem := by
+    exact ⟨0, 0, by simp⟩
+  add_mem := by
+    rintro a b ⟨r₁, s₁, ha⟩ ⟨r₂, s₂, hb⟩
+    refine ⟨r₁ + r₂, s₁ + s₂, ?_⟩
+    rw [ha, hb]
+    simp only [mul_add, add_assoc, add_left_comm]
+  neg_mem := by
+    rintro a ⟨r, s, ha⟩
+    refine ⟨-r, -s, ?_⟩
+    rw [ha]
+    simp only [mul_neg, neg_add]
+  right_mul_mem := by
+    rintro a ⟨r, s, ha⟩ q
+    refine ⟨r * q, s * q, ?_⟩
+    rw [ha]
+    simp only [add_mul, mul_assoc]
+
+theorem mem_twoGeneratedRingRightIdeal_iff (d f a : R) :
+    a ∈ twoGeneratedRingRightIdeal d f ↔
+      ∃ r s : R, a = d * r + (f * d) * s := Iff.rfl
+
+theorem twoGeneratedRingRightIdeal_carrier_eq (d f : R) :
+    (twoGeneratedRingRightIdeal d f).carrier =
+      (twoGeneratedRightIdeal d f).carrier := rfl
+
 def rightIdealRelation (I : RingRightIdeal (R := R)) (a b : R) : Prop := a - b ∈ I
 
 theorem rightIdealRelation_refl (I : RingRightIdeal (R := R)) (a : R) :
@@ -99,6 +130,34 @@ theorem quotientRightAction_respects (I : RingRightIdeal (R := R))
   rw [quotientRightAction_mk, quotientRightAction_mk]
   exact Quotient.sound (rightIdealRelation_mul_right I h r)
 
+theorem quotientRightAction_one (I : RingRightIdeal (R := R))
+    (q : RightQuotient I) :
+    quotientRightAction I q 1 = q := by
+  induction q using Quotient.inductionOn with
+  | _ a =>
+    change Quotient.mk (rightIdealSetoid I) (a * 1) =
+      Quotient.mk (rightIdealSetoid I) a
+    simp
+
+theorem quotientRightAction_mul (I : RingRightIdeal (R := R))
+    (q : RightQuotient I) (r s : R) :
+    quotientRightAction I (quotientRightAction I q r) s =
+      quotientRightAction I q (r * s) := by
+  induction q using Quotient.inductionOn with
+  | _ a =>
+    change Quotient.mk (rightIdealSetoid I) ((a * r) * s) =
+      Quotient.mk (rightIdealSetoid I) (a * (r * s))
+    rw [mul_assoc]
+
+theorem quotientRightAction_zero (I : RingRightIdeal (R := R))
+    (q : RightQuotient I) :
+    quotientRightAction I q 0 = Quotient.mk (rightIdealSetoid I) 0 := by
+  induction q using Quotient.inductionOn with
+  | _ a =>
+    change Quotient.mk (rightIdealSetoid I) (a * 0) =
+      Quotient.mk (rightIdealSetoid I) 0
+    simp
+
 end Quotient
 
 section Admissible
@@ -124,8 +183,9 @@ structure AdmissibleSymplecticClass (R : Type u) [Ring R] where
   infiniteDimensional : Prop
   nonnegativeSeparatedLocallyFiniteFiltration : Prop
   associatedGradedCommAffineDomain : Prop
+  /- The semantic contract is dimension-parametric.  Fourfold hypotheses,
+     when needed, belong to a separate target wrapper rather than this class. -/
   associatedGradedDimension : Nat
-  associatedGradedDimension_eq_four : associatedGradedDimension = 4
   rightCharacteristicDimension : CharacteristicDimensionData R
   leftCharacteristicDimension : CharacteristicDimensionData Rᵐᵒᵖ
   right_B2 : B2 rightCharacteristicDimension
