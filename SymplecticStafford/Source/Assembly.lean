@@ -9,7 +9,9 @@ The paper needs one source in the original algebra before local calculations
 can be recombined.  This module exposes that boundary explicitly.  Its
 structures package supplied witnesses; they do not manufacture a source,
 prove existence for the admissible class, or identify a completed/localized
-element with an element of the original ring.
+element with an element of the original ring.  The finite-candidate structures
+below are deliberately toy scaffolds: the paper's source is allowed to depend
+on the divisor and is not obtained from a fixed finite family.
 -/
 
 namespace SymplecticStafford.Source
@@ -18,7 +20,10 @@ universe u
 
 variable {R : Type u} [Semiring R]
 
-/-- A finite, original-ring list of possible source elements. -/
+/-- A finite, original-ring list of possible source elements.
+
+This is a small test harness, not the paper's finite-test selection theorem.
+-/
 structure CandidateFamily (R : Type u) [Semiring R] where
   candidates : Finset R
   candidate_nonzero : ∀ f ∈ candidates, f ≠ 0
@@ -43,7 +48,10 @@ def AssemblyWitness.certificate {d f : R} (w : AssemblyWitness d f) :
     SymplecticStafford.RightCertificate (R := R) d f 1 :=
   ⟨w.right₁, w.right₂, w.identity⟩
 
-/-- A selected source together with the exact original-ring assembly field.
+/-- A stronger optional contract with one source shared by every divisor.
+
+The all-dimensional paper does not require this uniform-in-`d` source, so this
+structure must not be counted as the paper's producer theorem.
 
 This is a terminal *contract* for a future producer proof.  The field
 `assemble` is not an axiom or a theorem: any concrete instance must provide
@@ -66,9 +74,24 @@ theorem SingleSourceAssembly.sameDivisor
   obtain ⟨w⟩ := A.assembled_certificate hd
   exact ⟨A.source, w.right₁, w.right₂, w.identity⟩
 
-/-- A weaker selection input: each nonzero divisor may select a candidate.
-It is kept separate from `SingleSourceAssembly`, since a divisor-dependent
-choice is not by itself a single global source. -/
+/- A paper-shaped conditional interface: the source may depend on the
+   divisor, while every returned cofactor remains in the original ring. -/
+structure DivisorIndexedAssembly (R : Type u) [Semiring R] where
+  source : ∀ ⦃d : R⦄, d ≠ 0 → R
+  assemble : ∀ ⦃d : R⦄ (hd : d ≠ 0),
+    AssemblyWitness d (source hd)
+
+theorem DivisorIndexedAssembly.sameDivisor
+    (A : DivisorIndexedAssembly R) :
+    SymplecticStafford.SameDivisorS1 (R := R) := by
+  intro d hd
+  obtain ⟨w⟩ := Nonempty.intro (A.assemble hd)
+  exact ⟨A.source hd, w.right₁, w.right₂, w.identity⟩
+
+/-- A weaker finite-candidate selection input: each nonzero divisor may select
+one candidate.  It is kept separate from `SingleSourceAssembly`, since a
+divisor-dependent choice is not by itself a single global source.  This is
+still only a supplied witness contract, not the paper's producer. -/
 structure DivisorSelection (F : CandidateFamily R) where
   select : ∀ ⦃d : R⦄, d ≠ 0 → ∃ f ∈ F.candidates, Nonempty (AssemblyWitness d f)
 
@@ -83,3 +106,4 @@ end SymplecticStafford.Source
 
 #print axioms SymplecticStafford.Source.selected_source_nonzero
 #print axioms SymplecticStafford.Source.SingleSourceAssembly.sameDivisor
+#print axioms SymplecticStafford.Source.DivisorIndexedAssembly.sameDivisor

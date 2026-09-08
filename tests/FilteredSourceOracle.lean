@@ -73,4 +73,15 @@ def unitSelection : DivisorSelection unitCandidates where
 example : SameDivisorS1 (R := ZMod 2) :=
   unitSelection.sameDivisor
 
+def indexedUnitAssembly : DivisorIndexedAssembly (ZMod 2) where
+  source := fun _ => 1
+  assemble := by
+    intro d hd
+    fin_cases d
+    · exact (hd rfl).elim
+    · exact ⟨1, 0, by simp⟩
+
+example : SameDivisorS1 (R := ZMod 2) :=
+  indexedUnitAssembly.sameDivisor
+
 end SymplecticStafford.FilteredSourceOracle
