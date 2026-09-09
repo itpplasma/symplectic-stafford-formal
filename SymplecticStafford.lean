@@ -25,6 +25,7 @@ import SymplecticStafford.FiniteLength.ActualRadicalTop
 import SymplecticStafford.FiniteLength.RepeatedDivisionBlockBoundary
 import SymplecticStafford.Source.OriginalTestContract
 import SymplecticStafford.Package.Opposite
+import SymplecticStafford.Package.FilteredOpposite
 import SymplecticStafford.Package.TerminalBoundary
 import SymplecticStafford.Package.TerminalObstruction
 import SymplecticStafford.Semantics.Contract
