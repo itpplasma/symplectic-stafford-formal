@@ -45,6 +45,8 @@ noncomputable def oneTop : N →+
     map_zero' := by ext j i; simp
     map_add' := by intro x y; ext j i; simp }
 
+def action : R → N → N := fun r x => MulOpposite.op (x.unop * r)
+
 theorem rightCyclic_iff_ne_zero (m : N) :
     RightCyclic (R := R) m ↔ m ≠ 0 := by
   constructor
@@ -72,7 +74,8 @@ theorem one_top_li_iff (m : N) (j : Unit) :
 
 example (u : N) :
     ∃ z : K, z ∉ (∅ : Set K) ∧
-      RightCyclic (R := R) ((1 : N) + z • u) := by
+      RightCyclic (R := R) ((1 : N) + z • u) ∧
+      action 0 ((1 : N) + z • u) + z • action 1 (1 : N) = z • (1 : N) := by
   let ι : (j : Unit) → K →+* K := fun _ => RingHom.id K
   have hmap : ∀ (z : K) (m : N) (j : Unit) (i : Fin 1),
       oneTop (z • m) j i = (ι j z) • oneTop m j i := by
@@ -99,7 +102,7 @@ example (u : N) :
   have hv : ∀ j : Unit, LinearIndependent K (oneTop (1 : N) j) := by
     intro j
     exact (one_top_li_iff _ _).mpr (by simp)
-  obtain ⟨z, hz, hcyc, _⟩ :=
+  obtain ⟨z, hz, hcyc, hrel⟩ :=
     exists_activated_right_cyclic_of_minimalPrime_local_finite_central_isotypic
       localInput (ι := ι) oneTop hmap
       (central_coeff := by
@@ -112,14 +115,18 @@ example (u : N) :
         intro j k v
         simp [Algebra.smul_def])
       (fun _ x => LinearIndependent K x) (by intro j x; rfl) htop
-      (fun r x => MulOpposite.op (x.unop * r))
-      (by intro r x y; apply MulOpposite.unop_injective; simp [add_mul])
+      action
+      (by intro r x y; apply MulOpposite.unop_injective; simp [action, add_mul])
       (by
         intro k m r
         apply MulOpposite.unop_injective
-        simp [Algebra.smul_def, mul_comm, mul_assoc])
-      (1 : N) u 1 1 0 (by simp) (by simp) hv ∅ Set.finite_empty
-  exact ⟨z, hz, hcyc⟩
+        simp [action, Algebra.smul_def, mul_comm, mul_assoc])
+      (1 : N) u 1 1 0 (by simp [action]) (by simp [action]) hv ∅
+      Set.finite_empty
+  have hordered :
+      action 0 ((1 : N) + z • u) + z • action 1 (1 : N) = z • (1 : N) := by
+    simpa [action, Algebra.smul_def] using hrel
+  exact ⟨z, hz, hcyc, hordered⟩
 
 end SymplecticStafford.FiniteLength.MinimalPrimeCentralActivatedOracle
 

@@ -28,8 +28,10 @@ variable {α : Type v} [Preorder α]
 
 /-- An M05 local certificate yields the explicit finite right composition
 filtration needed by the M07 consumers.  Its levels are the composition
-series supplied by the proved finite-length endpoint, and its support labels
-are exactly those in the local certificate.
+series supplied by the proved finite-length endpoint.  The current activated
+consumer is label-independent and fixes its filtration label type to `Unit`,
+so the local certificate's support labels remain explicit input data but are
+collapsed to the canonical singleton support in the returned filtration.
 -/
 theorem right_filtration_of_minimalPrime_local
     (W : MinimalPrimeLocalInput (R := Rᵐᵒᵖ) G N α) :
