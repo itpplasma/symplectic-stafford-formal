@@ -200,6 +200,10 @@ power. \lean{Filtered/GoodFiltration.lean} constructs bounded-generator
 module layers from an explicit span hypothesis, and
 \lean{Filtered/FiniteSupportQuotient.lean} turns a finite separated
 submodule filtration into a nonzero quotient witness.
+\lean{Filtered/RingFiltrationBridge.lean} constructs actual additive
+associated layers and least-degree nonzero classes, while preserving the
+counterexample showing that the older filtration API does not imply
+submodule closure.
 \lean{Filtered/CharacteristicSupport.lean} records the resulting finite
 layer-support proxy without claiming a spectrum. \lean{FiniteLength/RightFiltration.lean}
 supplies explicit right-module composition filtrations, while
@@ -213,6 +217,9 @@ arbitrary-submonoid Mathlib Ore localization, while
 \lean{Filtered/ReesNoetherianCriterion.lean} proves Noetherianity from an
 explicit terminating leading-term reduction certificate. These APIs still
 require the paper's actual Rees construction and reduction certificate.
+\lean{Filtered/FullSymbolRightModuleLocalization.lean} proves finite common
+denominators for right-localized modules once the full-symbol Ore certificate
+is supplied.
 \lean{Filtered/OriginalCentralSupport.lean} gives the original-ring quotient
 and central-support zero bridge; it does not construct the full
 \(\operatorname{Spec}(\operatorname{gr}U)\) characteristic module.
@@ -225,7 +232,10 @@ faithful associated-graded module required by the paper.
 negative-degree/unit and finite-length obstructions, respectively.
 \lean{FiniteLength/GoodLocalBridge.lean} derives local finite generation,
 Noetherianity and finite length from explicit surjective and Artinian inputs,
-and \lean{FiniteLength/ActivatedFiniteLength.lean} consumes the actual
+and \lean{FiniteLength/MinimalPrimeLocalTheorem.lean} derives finite length
+from a finite module whose maximal ideal is minimal over its actual
+annihilator in the commutative local case. \lean{FiniteLength/ActivatedFiniteLength.lean}
+consumes the actual
 Jacobson criterion for supplied noncommutative top blocks while retaining the
 ordered pencil identity.
 \lean{Ordered/M08SupportUnion.lean} derives a conditional finite-generator
@@ -233,10 +243,15 @@ support cover while retaining the exact common-colon pencil certificate.
 \lean{Ordered/CommonColonProducer.lean} adds the ordered ambient producer and
 returns literal original-\(U\) common-colon data under simultaneous
 right-clearance and an injective ambient map. Its hypotheses remain explicit.
+\lean{Ordered/CharacteristicSupportProducer.lean} consumes that producer at
+actual module-support primes and proves the corresponding support inclusion
+from an explicit localized-zero bridge.
 \lean{Source/DivisionLLD.lean} and \lean{Source/DivisionLLDList.lean} include
 concrete finite affine source-avoidance families with arbitrary offsets and nonzero tails and an
 explicit division-ring cofactor boundary. \lean{Induction/ConstructiveSuccessor.lean}
 derives a successor witness from explicit base and two-call construction data.
+\lean{Source/OriginalDivisionProducer.lean} constructs one original-\(U\)
+affine source from a finite list carrying division-coefficient pencil bridges.
 \lean{Source/OriginalTestProducerBoundary.lean} gives an independent
 admissibility counterexample for the current source contract, and
 \lean{FiniteLength/FiniteOrbitPencil.lean} derives finite pencil exceptions
@@ -245,6 +260,9 @@ from a supplied finite orbit basis while retaining the ordered identity.
 flat-defect counterexample: the lower \(P_h\) contract alone cannot imply the
 required one-step decrease. An actual support-removal/scalar-avoidance theorem
 remains the missing successor producer.
+\lean{Induction/SupportRemovalArithmetic.lean} proves the successor defect
+bound once strict support removal has been established, without assuming the
+old/new support-intersection arithmetic as an input.
 \lean{Package/TerminalObstruction.lean} gives the matching terminal
 counterexample: a defect bound alone cannot supply original cofactors.
 These additions narrow the formal boundaries but leave their producer
@@ -335,8 +353,10 @@ freeness and rank-one cancellation are outside the claimed package.
 The dependency family uses Lean \lean{leanprover/lean4:v4.33.0} and
 Mathlib's v4.33.0 revision
 \lean{db584cd6d46c92f209a44c0f1c829460d327499d}.
-The Stafford38 public main revision checked on 8 September 2026 is
-\lean{e77e176c381ca2d6b20c030f9227f1b031415d2e}.
+The Stafford38 code revision used by this checkout is
+\lean{e77e176c381ca2d6b20c030f9227f1b031415d2e}. The newer public main head
+\lean{914d6ad0c8ac9851e782fa61302ba340996d9472} was checked as metadata-only
+release/documentation change, so the audited code pin remains unchanged.
 AlgebraicAnalysis public main is pinned at
 \lean{46f2c819deca0e9735a436bed94ebed03ae35090}; this head was checked from
 an isolated clone before the downstream replay.

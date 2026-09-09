@@ -187,3 +187,26 @@ their documented semantic/ordered checkpoint; and
 audits, comparator, NanoDa and Lean kernel replay. This remains checkpoint
 evidence only: the release manifest is still fail-closed because the universal
 M01--M11 producer endpoints and phase evidence files have not been proved.
+
+## Seventh parallel formalization wave and exact controller replay
+
+The next disjoint lanes added support-removal defect arithmetic (`b1b994c`),
+a right-oriented full-symbol localization boundary (`d6d4dda`), an
+original-U division-test source selector (`06d76a0`), a minimal-prime local
+finite-length theorem (`5154b98`), actual module-support consumption
+(`fe14d0e`), additive ring-filtration layers and associated classes
+(`b0899aa`), and finite common denominators for right-localized modules
+(`65e5f71`). Each source and independent oracle passed trust-disabled Lean
+checking with only `propext`, `Classical.choice`, and `Quot.sound`. The
+controller imported the modules and refreshed the plan, phase instructions,
+proof graph, dependency audit and verification record in `b03cb622`.
+
+At exact commit `b03cb6220b2ec36072f99a8cb005ead7efd5c475`, the resource guard
+reported approximately 75 GB free in the workspace and 17.6 GB in `/tmp`;
+the root `lake build SymplecticStafford` completed 8777 jobs; both phase
+scripts passed their documented semantic/ordered checkpoint; and
+`verify-palomar.sh` passed its compatibility build, import-closure audits,
+comparator, NanoDa and Lean kernel replay. These checks remain checkpoint
+evidence only. The universal higher-dimensional producer and complete M01--M11
+Phase I/Phase II endpoint proofs are still open, so release gates remain
+fail-closed.
