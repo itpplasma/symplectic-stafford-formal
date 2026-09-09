@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-09",
+  "base_commit": "5dace7c4f48c5dd99ca65d02fa1efce063b1b34f",
+  "tracked_binary_patch_sha256": "43e00542d11d4b76a59703881e797198b3ee445d2319c67be40f8024af2175a7",
+  "new_source_sha256": {
+    "SymplecticStafford/Filtered/SymbolFractionFiltration.lean": "52d0df16eb6bc4c629c7872250805fea2f8443794fc55b68ae3888d2561648b0",
+    "SymplecticStafford/Filtered/SymbolFractionJacobson.lean": "5ce41a7dc46e29767d005cf839426bccfa2389fc0c1f5f4219352dc1d2ed41e9",
+    "tests/SymbolFractionJacobsonOracle.lean": "976d25c75bd429b1810a258cba43b819c7b0983067a7e88a3fe7c0d9d917c85b"
+  },
+  "scope": "Actual integer-indexed right-fraction filtration, degree-zero subring, explicit two-sided inverse for one minus a negative-degree element, and degree-minus-one ideal containment in the Jacobson radical. Selected-symbol Ore and layer regularity remain hypotheses.",
+  "review": "Independent Luna-xhigh PASS for both production files; controller reviewed the independent polynomial oracle.",
+  "checks": {
+    "targeted_sources_and_root": "PASS, direct cached Lean trust=0",
+    "axiom_closure": "PASS, all 17 registered phase-II endpoints foundations only",
+    "oracle": "PASS at final tests path; nonzero 1/X, both subtype inverse orientations and Jacobson plus-sign calibration",
+    "dossier": "PASS; all build-manifest input hashes match; 80 link annotations; first page inspected",
+    "full_phase_ii_verifier": "NOT RUN for this wave: available checkout bytes below the 20 GiB build reserve. Previous commit had 171 consumer checks; this wave adds one targeted oracle.",
+    "git diff --check": "PASS"
+  },
+  "log_sha256": {
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-source.log": "f7c1cd62540d752d27aac38592f3bf333ad805bfa574142fee8800c13c7c6329",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-root.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-axioms.log": "d241f2c51488b31d8ff5c898293e61f494870833709ef27b17db9208e3d4acf7",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-oracle.log": "7a88debf6f39aab7fd1e6f55d5e8e2e0f5a115e8b1d6d0ae28a86df16e150bce",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-dossier.log": "f6d88a8762642ca20ab32b6398e7450ca8e7e05ee5176b91edebfe4eec2b0341"
+  },
+  "nonclaims": "No Noetherian Rees/localization comparison, universal M01-M11 closure, or new submission-readiness claim.",
+  "freeze_note": "Receipt excluded from tracked patch digest. Independently reviewed SymbolFractionRees remains outside this checkpoint pending its separate oracle and integration.",
+  "next": "Construct actual homogeneous Rees localization comparison and its Noetherian transfer prerequisites."
+}

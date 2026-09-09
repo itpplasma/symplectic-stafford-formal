@@ -19,8 +19,8 @@ PLAN remains the sole status authority.
 
 ### Model ladder and ownership
 
-Sol low prepares bounded task statements and file ownership. Luna xhigh is the
-default proof worker. Escalate the same frozen task in this order:
+Start every fresh task, including scaffolding and review, with Luna xhigh.
+The controller assigns bounded statements and disjoint file ownership. Escalate the same frozen task in this order:
 **Luna xhigh → Sol low → Sol medium → Astra low → Astra medium**.
 After two failed substantive proof approaches, the 15-minute attempt limit,
 or one identified mathematical obstruction, return the exact statement, first
@@ -47,9 +47,15 @@ Use at most three concurrent targeted Lean processes and one full verifier acros
 all three repositories. Store bounded logs under the existing `.lake` tree;
 limit each task's scratch/log output to 64 MiB and 15 minutes per attempt. Before
 starting a build, check available bytes and inodes on both the checkout and
-`/tmp`; pause new builds below 20 GiB free on the checkout, 8 GiB on `/tmp`, or
-100,000 free inodes. Remove only scratch created by this wave. A toolchain port
-is a separately budgeted task, not an automatic cache download.
+`/tmp`; pause dependency-aware builds below 20 GiB free on the checkout,
+8 GiB on `/tmp`, or 100,000 free inodes. Direct `lake env lean` checks may
+continue against already present pinned artifacts while both filesystems
+retain at least 8 GiB and 100,000 free inodes. Such checks must not fetch
+packages or materialize dependencies, must omit C/IR outputs, and share the
+three-process/64-MiB-per-task limits above. This permits bounded proof
+checking; it does not count as completion of the full repository gate.
+Remove only scratch created by this wave. A toolchain port is a separately
+budgeted task, not an automatic cache download.
 
 Freeze review inputs as the exact base commit plus SHA-256 of the binary tracked
 diff and a sorted SHA-256 manifest of every untracked candidate source. Keep
@@ -73,11 +79,11 @@ release and registration follow the concrete final release review.
 
 ### Current dispatch
 
-Dispatch base: `2d02f41508515390f92880d191be7ef629f37180`.
+Dispatch base: `5dace7c4f48c5dd99ca65d02fa1efce063b1b34f`.
 
-Prioritize a real M05 repair at homogeneous-symbol localization, including the strictness and actual filtered/localized comparison needed for length transfer. In parallel, construct the structural associated-graded/Rees producer needed by that repair. M06–M07 arbitrary division-block activation and M09–M10 original-U source/test retention need separate proofs. Stop recycling conditional interfaces or Weyl calibrations as universal advances.
+The symbol-selected denominator, inverse and regular-symbol degree producers are committed and verified. The working-tree continuation constructs the actual integer fraction filtration, degree-zero subring and degree-minus-one Jacobson inclusion; targeted kernel checks and independent reviews passed, with the concrete nonzero polynomial subtype/orientation oracle compiled and full replay still pending. Next prioritize the actual homogeneous Rees localization comparison, Noetherianity/strictness and filtered/localized length transfer for M05. In parallel, construct the structural associated-graded/Rees producer needed by that repair. M06–M07 arbitrary division-block activation and M09–M10 original-U source/test retention need separate proofs. Stop recycling conditional interfaces or Weyl calibrations as universal advances.
 
-The selected Challenge/Solution now targets the finite-central division-pencil theorem; its fresh verification is pending. The former comparison was only a definitional membership contract. Neither states the universal Stafford theorem. The paper has an unresolved filtered-to-graded localized-length bridge; all M01–M11 remain open at full scope. The accepted-toolchain checkpoint and passing comparator do not close those gaps. The finite-central division-pencil theorem is the first bounded submission candidate because its toolchain and independent proof are already available; research interest and provenance still need review. The current Weyl transfer reproduces the pinned Stafford38 result and is not a new submission claim.
+The selected Challenge/Solution now targets the finite-central division-pencil theorem; its scoped Comparator, NanoDa, Lean-kernel and import-closure checks passed at the finite-pencil checkpoint. Public clean replay and release review remain pending. The former comparison was only a definitional membership contract. Neither states the universal Stafford theorem. The paper has an unresolved filtered-to-graded localized-length bridge; all M01–M11 remain open at full scope. The accepted-toolchain checkpoint and passing comparator do not close those gaps. The finite-central division-pencil theorem is the first bounded submission candidate because its toolchain and independent proof are already available; research interest and provenance still need review. The current Weyl transfer reproduces the pinned Stafford38 result and is not a new submission claim.
 
 This file owns formal status. Semantic modules implement right ideals,
 literal membership, a conditional semiring-to-ring right-ideal bridge with
@@ -520,3 +526,23 @@ filtration degree and a nonzero quotient class. A polynomial degree
 oracle verifies regular symbols and the nonzero boundary. This does not
 yet construct paper-specific regularity or the fraction-filtration
 closure; it is included in the same fraction-inverse wave receipt.
+
+## Integer fraction filtration and degree-zero Jacobson boundary
+
+`Filtered/SymbolFractionFiltration.lean` constructs the actual integer-indexed
+additive fraction pieces, proves additive and multiplicative closure using
+Ore cofactor degree estimates, and builds the degree-zero subring. Its
+hypotheses retain the actual selected-symbol Ore localization and associated
+layer left regularity; closure is proved rather than assumed.
+
+`Filtered/SymbolFractionJacobson.lean` constructs the explicit inverse of
+`1-q` inside that subring for every degree-minus-one element and proves the
+degree-minus-one left ideal lies in its Jacobson radical. Both multiplication
+orders and the noncommutative Jacobson criterion are explicit.
+
+The sources passed targeted kernel checks and independent Luna-xhigh review.
+The combined nonzero polynomial-fraction oracle now also compiles and
+independently checks both subtype inverse orders and the Jacobson sign.
+Full repository replay remains pending; these working-tree modules are not a verified main checkpoint.
+The paper-specific symbol/Ore/regularity construction, homogeneous Rees
+comparison, Noetherianity, strictness and localized-length transfer remain open.
