@@ -3,10 +3,11 @@
 This audit records the disjoint Luna lanes integrated by the controller on the
 shared `main` branch. It is a checkpoint provenance record, not a Phase I,
 Phase II, Palomar, or publication certificate. The paper source remains frozen
-at `502b65a1dea53cac52220a08e321bfba525bc72e`; the exact dependency pins are
-Lean 4.33.0, Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`,
+at `502b65a1dea53cac52220a08e321bfba525bc72e`; the wave's integration snapshot
+used Lean 4.33.0, Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`,
 AlgebraicAnalysis `46f2c819deca0e9735a436bed94ebed03ae35090`, and Stafford38
-formal `e77e176c381ca2d6b20c030f9227f1b031415d2e`.
+formal `e77e176c381ca2d6b20c030f9227f1b031415d2e`. The later promotion
+addendum below records the current exact latest-tag lock.
 
 ## Integrated lanes
 
