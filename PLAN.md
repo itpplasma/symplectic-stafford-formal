@@ -212,6 +212,23 @@ support removal on non-exceptional scalars before deriving the output defect
 bound. The corrected source/oracle set remains conditional and does not alter
 the universal obstruction or any release gate.
 
+The seventh frontier wave then tested the first unsupported producers with
+distinct discovery, falsification, repair, and abstraction lanes. It adds a
+one-way finite-dimensional original-U source selector
+(`FiniteDimensionalOneWayProducer`) and records three independent boundaries:
+central-field scalar avoidance does not imply source-dependent strict support
+removal (`CentralFieldSupportObstruction`), finite generation does not imply
+finite bad sets for arbitrary repeated division-ring pencils
+(`RepeatedDivisionBlockBoundary`), and torsion modules need not admit finite
+faithful weighted coordinate detectors (`FiniteCoordinateDetectorBoundary`).
+The structural lane also identified the missing finite-support associated-ring
+assembly and compatible quotient-module presentation; the Rees lane isolated
+the homogeneous ideal-lifting certificate; and the Ore lane rechecked the A1
+power-Ore counterexample. Every new source/oracle pair passed
+`lake env lean --trust=0`. These results sharpen the hypotheses but do not
+construct the universal algebraic source, so Phase I, Phase II, Palomar and
+publication remain fail-closed.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

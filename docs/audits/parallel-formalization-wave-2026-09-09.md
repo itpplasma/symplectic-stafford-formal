@@ -373,3 +373,47 @@ The corrected source/oracle set passed trust-disabled replay and the root build
 completed 8,859 jobs. These reviews improve contract evidence only; the
 universal algebraization, source producer, Phase I/II, Palomar and release
 gates remain open.
+
+## Seventh frontier wave
+
+The next bounded math-frontier pass deliberately separated discovery,
+falsification, repair, and abstraction.  Its purpose was to test the first
+unsupported bridges rather than to manufacture a Phase-I/II completion claim.
+The checked results are:
+
+- `84092d0` — `FiniteDimensionalOneWayProducer`, a finite-list original-
+  algebra source selector from the one-way implication “injective pencil
+  implies local test passes”.  It retains admissibility, ordered offsets and
+  every nonzero right tail.  The independent rational oracle also records that
+  the converse implication is false.
+- `e993001` — `CentralFieldSupportObstruction`, a two-layer scalar-module
+  boundary showing that finite filtered support plus central-field scalar
+  avoidance does not imply source-dependent strict support removal.  The
+  support is parameter-independent, so strict removal fails by
+  `ssubset_irrefl`.
+- `0caa201` — `RepeatedDivisionBlockBoundary`, the arbitrary-division-ring
+  zero-pencil obstruction: `E × E` is finite as an `E`-module, but its repeated
+  zero block is dependent for every parameter, giving an infinite bad set.
+  Thus finite generation cannot replace an independent block or determinant-
+  free witness hypothesis.
+- `af4f362` — `FiniteCoordinateDetectorBoundary`, the torsion boundary for
+  weighted finite-coordinate detection.  The bounded one-generator module
+  `ZMod 2` over the constant filtered ring `ℤ` admits no finite faithful
+  `ℤ`-coordinate detector, since `2 • 1 = 0` forces every coordinate to vanish.
+
+The structural discovery lane identified the first formal producer gap: the
+paper assumptions are not yet encoded as a finite-support graded-ring
+assembly with a compatible filtered quotient-module presentation.  The Rees
+falsification lane independently exhibited non-Noetherian sequence-ring
+filtrations and isolated the missing homogeneous ideal-lifting certificate.
+The Ore repair lane rechecked the `A₁` example `H = x p`: despite a
+commutative PBW symbol algebra, powers of `H` are not a right Ore set.  The
+missing bridge is therefore an explicit saturated regular Ore submonoid (or a
+terminating leading-term division theorem), not a principal-symbol or
+completion argument.
+
+All new source/oracle pairs passed `lake env lean --trust=0`; their printed
+axioms are limited to `propext`, `Classical.choice`, and `Quot.sound`.  These
+results sharpen the exact producer and support/decomposition hypotheses while
+leaving the universal higher-dimensional source theorem open.  Phase I,
+Phase II, Palomar registration, and publication remain fail-closed.

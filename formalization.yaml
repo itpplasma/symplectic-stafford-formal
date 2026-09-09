@@ -81,7 +81,12 @@ project:
     General finite-length activated pencils and the universal source producer
     remain open. It does not claim the universal higher-dimensional
     source-selection or same-divisor theorem in the internal all-dimensional
-    proof candidate; those are explicit Phase I and Phase II gates.
+    proof candidate; those are explicit Phase I and Phase II gates. The latest
+    frontier wave adds a one-way finite-dimensional original-U source selector
+    and checked boundaries for source-dependent support removal, repeated
+    division-ring pencil finiteness, and torsion-sensitive weighted detection;
+    these sharpen the missing producer hypotheses without closing the
+    universal theorem.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -145,7 +150,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "7791ed6c10604bb06019e0da31454024aa57003b"
+  commit: "d92288037d4ab489accce6c0ba75b4bb1421ecca"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -217,7 +222,10 @@ status:
     The full higher-dimensional same-divisor producer and producer-derived
     terminal extraction remain unimplemented. The one intentional placeholder
     is confined to the
-    Mathlib-only Challenge.lean; Solution.lean has no placeholder.
+    Mathlib-only Challenge.lean; Solution.lean has no placeholder. The latest
+    frontier wave also includes a finite-list one-way source producer and
+    checked central-field support, repeated-division-block, and torsion
+    detector boundaries; none is a universal producer.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0
