@@ -1,0 +1,45 @@
+import Stafford38.FoundationClosure
+import SymplecticStafford.Semantics.S1Consequences
+
+/-!
+# Transfer of the all-rank Weyl endpoint through an actual algebra equivalence
+
+`Stafford38.universalStatement` proves the ordered same-divisor identity in
+the presented Weyl algebra.  This file records the exact transport to any
+ring which is *actually* algebra-isomorphic to that Weyl algebra.  The
+equivalence is an input, so this is a concrete family closure and not an
+algebraization theorem for the general filtered class.
+-/
+
+namespace SymplecticStafford.Source
+
+universe u v
+
+variable {k : Type u} [Field k] [CharZero k]
+variable {U : Type v} [Ring U] [Algebra k U]
+
+theorem sameDivisor_of_weylAlg_algEquiv
+    {n : ℕ} (e : Stafford38.WeylAlg k n ≃ₐ[k] U) :
+    SymplecticStafford.SameDivisorS1 (R := U) := by
+  intro d hd
+  let d₀ : Stafford38.WeylAlg k n := e.symm d
+  have hd₀ : d₀ ≠ 0 := by
+    intro hzero
+    apply hd
+    change d = 0
+    rw [← e.apply_symm_apply d, hzero]
+    simp
+  obtain ⟨F₀, R₀, S₀, h₀⟩ := Stafford38.universalStatement k n d₀ hd₀
+  refine ⟨e F₀, e R₀, e S₀, ?_⟩
+  have h := congrArg e h₀
+  simpa only [map_one, map_add, map_mul] using h
+
+theorem originalSameDivisor_of_weylAlg_algEquiv
+    {n : ℕ} (e : Stafford38.WeylAlg k n ≃ₐ[k] U) :
+    SymplecticStafford.OriginalSameDivisor U :=
+  sameDivisor_of_weylAlg_algEquiv e
+
+end SymplecticStafford.Source
+
+#print axioms SymplecticStafford.Source.sameDivisor_of_weylAlg_algEquiv
+#print axioms SymplecticStafford.Source.originalSameDivisor_of_weylAlg_algEquiv
