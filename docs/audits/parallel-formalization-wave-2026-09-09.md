@@ -168,3 +168,33 @@ completed 8,804 jobs. The phase-I, phase-II and Palomar scripts were also
 rerun and passed their documented checkpoint replays. These lanes sharpen the
 first missing hypotheses but do not supply the universal M01–M11 producer or
 authorize release.
+
+## Continued structural-boundary lanes
+
+The next parallel pass attempted the actual structural implications and added
+these checked commits:
+
+- `cd1846e` — strengthens `PowerOreA1Obstruction` to the exact opposite-ring
+  `OreSet` required by the full-symbol localization API.
+- `2859f93` — `CentralFieldFiltrationBoundary`, proving that a degree-zero
+  field/submodule interface of the attempted shape forces a surjective field
+  image and therefore cannot model a proper infinite-dimensional extension.
+- `f7727af` — `M01AssociatedGradedBoundary`, using a constant `Mat₂(ℚ)`
+  filtration to show generic ring-filtration data need not have commutative
+  associated layers.
+- `2efc726` — `FullSymbolFilteredWeightedBoundary`, combining supplied chart
+  control with a checked negative-degree unit obstruction.
+- `abef6fb` — `ActualRadicalTop`, extracting finite generation, finite length,
+  and Jacobson-top cyclicity from a genuine right composition filtration.
+- `a7861dd` — `DivisionEigenBoundary`, isolating the explicit finite
+  central-bad-set witness still required for noncommutative division-ring
+  blocks.
+- `5ac4520` — a checked strong-P_h base-failure obstruction showing that lower
+  contracts alone cannot produce the initial `P₁` defect bound.
+
+The controller imported the new source modules into `SymplecticStafford.lean`
+and reran all 14 source/oracle files under `lake env lean --trust=0`; every
+replay passed with the permitted logical closure. At integration commit
+`743d376251f3e9da1b9c7b5e4f0aa43fc988b2bb`, the aggregate root build completed
+8,809 jobs. These lanes expose genuine missing structural hypotheses; they do
+not close M01–M11 or authorize Phase I/II promotion.
