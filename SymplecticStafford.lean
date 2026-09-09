@@ -18,6 +18,7 @@ import SymplecticStafford.FiniteLength.CentralFinitePencil
 import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
 import SymplecticStafford.FiniteLength.FiniteCentralDivisionActivated
 import SymplecticStafford.FiniteLength.ActualRadicalTop
+import SymplecticStafford.FiniteLength.RepeatedDivisionBlockBoundary
 import SymplecticStafford.Source.OriginalTestContract
 import SymplecticStafford.Package.Opposite
 import SymplecticStafford.Package.TerminalBoundary
@@ -71,6 +72,7 @@ import SymplecticStafford.Filtered.PolynomialGoodModuleCalibration
 import SymplecticStafford.Filtered.WeightedMatrixInverse
 import SymplecticStafford.Filtered.WeightedDetectionComposition
 import SymplecticStafford.Filtered.GoodWeightedModule
+import SymplecticStafford.Filtered.FiniteCoordinateDetectorBoundary
 import SymplecticStafford.Filtered.GoodWeightedSupportBridge
 import SymplecticStafford.Filtered.CorrectedGoodWeightedSupportBridge
 import SymplecticStafford.Filtered.WeightedInverseBoundary
@@ -88,6 +90,7 @@ import SymplecticStafford.Source.DifferentialOreDescent
 import SymplecticStafford.Source.DivisionLLD
 import SymplecticStafford.Source.DivisionLLDList
 import SymplecticStafford.Source.FiniteDimensionalProducer
+import SymplecticStafford.Source.FiniteDimensionalOneWayProducer
 import SymplecticStafford.Source.FiniteDimensionalAssembly
 import SymplecticStafford.Source.LocalizedDivisorAssembly
 import SymplecticStafford.Source.FiniteTestFamilyAssembly
@@ -112,6 +115,7 @@ import SymplecticStafford.Induction.FiniteScalarAvoidance
 import SymplecticStafford.Induction.CentralFieldSupportRemoval
 import SymplecticStafford.Induction.CentralFieldTwoCallSuccessor
 import SymplecticStafford.Induction.CentralFieldFiniteIndex
+import SymplecticStafford.Induction.CentralFieldSupportObstruction
 import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
 import SymplecticStafford.Induction.LayerSupportObstruction
 import SymplecticStafford.Induction.BaseTwoCallAssembly
