@@ -158,6 +158,22 @@ source and oracle is trust-disabled checked. These are model calibrations or
 conditional consumers, not the universal filtered-class, arbitrary-block,
 support-removal, base or successor producer, so all gates remain pending.
 
+The third continuation wave adds bounded bridges aimed at the first universal
+interfaces: `M01StructuralClass` supplies additive-subgroup filtered-ring
+layers, degree-zero field action and least-layer detection; `BoundedReesBridge`
+decomposes actual bounded Rees elements into homogeneous lifts and gives a
+conditional Noetherian criterion; `FullSymbolOriginalCofactor` recombines one
+localized two-generator identity into literal original-ring cofactors;
+`GoodWeightedModule` constructs generic finite weighted detection over a
+`RingFiltrationData`; `FiniteCentralDivisionPencil` handles
+finite-dimensional-over-the-center division blocks; `FiniteDimensionalProducer`
+selects one original-U source from split finite-dimensional test pencils; and
+`CentralFieldSupportRemoval` supplies central-field polynomial exceptional-set
+avoidance plus support-removal/test-retention consumption. Every source and
+oracle is trust-disabled checked. These interfaces still require the actual
+filtered quantum algebraization, finite local-pass/support bridges, and
+producer hypotheses, so M01–M11 and both phase gates remain open.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

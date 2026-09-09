@@ -63,6 +63,13 @@ a good polynomial-module calibration, split central finite-pencil activation,
 a Weyl A₁ original-ring identity, and a concrete Nat support-removal step.
 These calibrations narrow the remaining hypotheses without closing the
 all-dimensional theorem.
+The third continuation adds an additive structural filtered-ring class, finite
+homogeneous Rees decomposition, localized-to-original cofactor recombination,
+generic weighted good-module detection, finite-central division-block pencils,
+a split finite-dimensional original-U source selector, and central-field
+support-removal/test-retention bridges. These are checked conditional
+interfaces and finite-model consumers; the universal producer and release
+gates remain pending.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

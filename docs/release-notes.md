@@ -25,3 +25,11 @@ Rees-Noetherian calibrations, finite actual-Ore clearing, a good polynomial
 module with negative-weight detection, split central finite pencils, a Weyl A₁
 original-ring identity, and a concrete support-removal successor. These remain
 scoped model evidence rather than universal phase completion.
+
+The third continuation replay adds an additive structural filtered-ring class,
+finite homogeneous Rees decomposition, localized-to-original cofactor
+recombination, generic weighted good-module detection, finite-central
+division-block pencils, a split finite-dimensional original-U source selector,
+and central-field support-removal/test-retention bridges. These remain checked
+conditional interfaces and finite-model consumers; the universal producer and
+publication gates stay disabled.
