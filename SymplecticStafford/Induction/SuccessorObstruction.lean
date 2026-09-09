@@ -48,6 +48,14 @@ theorem base_impossible : StrongPh 0 1 baseFlatDefect → False := by
   have hb := w.defect_bound
   norm_num [baseFlatDefect, defectBound] at hb
 
+/- The same countermodel can be stated at the pointwise producer boundary.
+   This is the precise M09 obstruction: the `BaseProducer` interface is not
+   derivable from the induction plumbing, because its advertised `P₁` bound
+   is already inconsistent with the flat defect. -/
+theorem no_base_producer_flat : BaseProducer 0 baseFlatDefect → False := by
+  intro producer
+  exact base_impossible (base_producer_strongPh producer)
+
 /-- The next index is impossible in the same model, independently of any
 choice of source. -/
 theorem flat_next_impossible : StrongPh 0 2 flatDefect → False := by

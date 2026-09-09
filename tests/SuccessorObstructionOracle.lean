@@ -18,6 +18,9 @@ example : StrongPh 0 1 flatDefect := flatLower
 
 example (h : StrongPh 0 1 baseFlatDefect) : False := base_impossible h
 
+example (producer : BaseProducer 0 baseFlatDefect) : False := by
+  exact no_base_producer_flat producer
+
 example (h : StrongPh 0 2 flatDefect) : False := flat_next_impossible h
 
 def parameters : CentralParameters Nat (ZMod 1) where
