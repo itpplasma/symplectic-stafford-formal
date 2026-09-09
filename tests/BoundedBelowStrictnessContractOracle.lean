@@ -8,7 +8,7 @@ open SymplecticStafford.FiniteLength
 example
     (F : NatFiltration (R := ℚ) (M := ℚ →₀ ℚ))
     {A B : Submodule ℚ (ℚ →₀ ℚ)}
-    (h : layerSurjective F A B) : A = B :=
+    (h : natLayerSurjective F A B) : A = B :=
   layerSurjective_eq_of_boundedBelow F h
 
 example

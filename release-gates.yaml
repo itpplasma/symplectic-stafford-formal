@@ -4,9 +4,11 @@ paper_commit: 502b65a1dea53cac52220a08e321bfba525bc72e
 instructions_commit: e3c7077d3d51772d97d8e72bb219a8fc36765682
 project_owned_obligations: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11]
 checkpoint_comparator_is_terminal_evidence: false
-# These lists specify the evidence required by the human release review.
-# The current readiness script checks phase/evidence labels only; it does not
-# verify these checks, terminal correspondence, or publication.enabled.
+# These lists specify the evidence required by the human release review. The
+# readiness script fail-closes on publication.enabled, the target, matching
+# phase/result labels, and a pass result for every listed check. Human review
+# of terminal correspondence, source identity and comparator scope remains
+# required even when the executable metadata gate passes.
 phases:
   phase_i:
     status: pending

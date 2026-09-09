@@ -5,13 +5,14 @@ not authorization to change repository visibility, sign tags, submit to
 Palomar, or publish a Zenodo deposit. The current `release-gates.yaml` is
 intentionally pending.
 
-The current readiness script checks that the declared phase statuses are
-`verified` and that their evidence files contain matching `phase` and
-`result: pass` labels. It does not validate `publication.enabled`, the
-`required_checks` lists, source commits, proof closure, or comparator scope.
-Treat its output as a metadata consistency check. A release maintainer must
-independently review the evidence below and obtain the publication decision;
-changing status labels cannot satisfy those requirements.
+The readiness script fail-closes unless `publication.enabled` is true, the
+target is `SS-all-original-affine`, every required phase is `verified`, and
+each evidence file has matching `phase`/`result: pass` labels plus a `checks`
+mapping with every declared check marked `pass`. It still does not replace
+human review of source commits, proof closure, terminal correspondence, or
+comparator scope. A release maintainer must review the evidence below and
+obtain the publication decision; changing status labels cannot satisfy those
+requirements.
 
 ## Select an evidence-bearing commit
 

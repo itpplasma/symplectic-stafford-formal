@@ -17,19 +17,32 @@ required = data.get("publication", {}).get("required_phases", [])
 if not required:
     raise SystemExit("release gate: no required phases declared")
 errors = []
+publication = data.get("publication", {})
+if publication.get("enabled") is not True:
+    errors.append("publication: enabled is not true")
+target = data.get("target")
+if target != "SS-all-original-affine":
+    errors.append(f"target: expected SS-all-original-affine, got {target!r}")
 for name in required:
     phase = phases.get(name)
     if not isinstance(phase, dict) or phase.get("status") != "verified":
         errors.append(f"{name}: status is not verified")
         continue
     evidence_name = phase.get("evidence")
-    evidence = pathlib.Path(evidence_name) if evidence_name else None
+    evidence = (manifest_path.parent / evidence_name) if evidence_name else None
     if evidence is None or not evidence.is_file():
         errors.append(f"{name}: missing evidence file {evidence_name!r}")
         continue
     record = yaml.safe_load(evidence.read_text()) or {}
     if record.get("phase") != name or record.get("result") != "pass":
         errors.append(f"{name}: evidence must declare phase and result: pass")
+    checks = record.get("checks")
+    if not isinstance(checks, dict):
+        errors.append(f"{name}: evidence must provide a checks mapping")
+    else:
+        for check in phase.get("required_checks", []):
+            if checks.get(check) != "pass":
+                errors.append(f"{name}: required check {check!r} is not pass")
 if errors:
     print("release gate: publication is NOT ready")
     for error in errors: print(f" - {error}")

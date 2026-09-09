@@ -95,7 +95,11 @@ project:
     action, a finite-length/source-map boundary, and higher-dimensional Weyl
     monicization with original-ring remainder factorization; these remain
     conditional or calibration results and do not close the universal source
-    producer.
+    producer. The tenth frontier adds a bounded-below strictness criterion,
+    degree-shifted filtered Rees maps, finite-orbit original-source selection,
+    higher-rank Weyl evolutionary calibration, and degree-one Weyl monic
+    remainder assembly. These remain conditional/calibration results and do
+    not close the universal M01--M11 producer.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -159,7 +163,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "e603845dc20d23b1a5b09c4a196bce640fa77494"
+  commit: "e550fae1b342f65eac6f782f385595dbcc31ebd0"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"

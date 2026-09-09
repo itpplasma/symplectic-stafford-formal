@@ -79,9 +79,11 @@ or publication authorization. The fixture was isolated under
 
 The runbook now requires a terminal Challenge/Solution pair before terminal
 submission and describes the current semantic pair as checkpoint evidence.
-The release manifest records the required evidence checks without claiming
-that its current script enforces them. Strengthening that executable gate is
-separate implementation work; no release approval follows from this audit.
+The release manifest records the required evidence checks, and the readiness
+script now fail-closes on `publication.enabled`, the target, and every listed
+check result in addition to the phase/result labels. Human review of terminal
+correspondence, source identity, proof closure and comparator scope remains
+required; no release approval follows from the metadata gate.
 
 ## Documentation validation
 

@@ -258,6 +258,21 @@ All five source/oracle pairs are conditional or boundary evidence; they do
 not supply the universal original-U producer, close M01--M11, or promote any
 phase or release gate.
 
+The tenth frontier wave adds three bounded advances. `BoundedBelowStrictnessContract`
+proves that an exhaustive monotone finite-below filtration with zero bottom
+layer makes layer-surjectivity force equality, giving a precise sufficient
+strictness hypothesis (without asserting it for `T_p`). `ReesModuleShift`
+records degree-shifted filtered linear maps and their induced quotient maps,
+including the existing single-term Rees action, while refusing to infer a
+full Rees/associated action. `OriginalOrbitProducer` uses an explicit finite
+orbit basis for each local cyclic image to select one original-U affine source
+for a finite test list. The Weyl calibration is also extended by
+`WeylHigherDimensionalEvolutionary` and the degree-one assembly theorem to a
+literal original-ring certificate for bounded finite-potential families.
+These results remain conditional/calibration evidence; arbitrary source maps,
+the homogeneous localization, and the universal M01--M11 producer remain
+unproved, so all phase and release gates stay closed.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

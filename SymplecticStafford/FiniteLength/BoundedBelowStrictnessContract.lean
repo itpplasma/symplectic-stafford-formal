@@ -40,14 +40,14 @@ Every layer of `B` is represented in `A`, with the error in the preceding
 layer.  This is the quotient-free formulation of surjectivity on associated
 layers for induced filtrations.
 -/
-def layerSurjective (F : NatFiltration (R := R) (M := M))
+def natLayerSurjective (F : NatFiltration (R := R) (M := M))
     (A B : Submodule R M) : Prop :=
   A ≤ B ∧ ∀ n : ℕ, ∀ x ∈ B, x ∈ F.carrier n →
     ∃ y, y ∈ A ∧ y ∈ F.carrier n ∧ x - y ∈ previousLayer F n
 
 theorem layerSurjective_eq_of_boundedBelow
     (F : NatFiltration (R := R) (M := M))
-    {A B : Submodule R M} (h : layerSurjective F A B) : A = B := by
+    {A B : Submodule R M} (h : natLayerSurjective F A B) : A = B := by
   rcases h with ⟨hAB, hsurj⟩
   apply le_antisymm hAB
   intro x hx

@@ -503,3 +503,31 @@ and a Weyl-only division calibration. They do not construct the universal
 homogeneous localization, the finite-length block theorem, strict support
 removal, or the single original-U producer. Phase I, Phase II, Palomar
 registration, and publication therefore remain fail-closed.
+
+## Tenth frontier wave: bounded strictness, shifted actions, and source-facing calibrations
+
+The next parallel lanes added six bounded commits:
+
+- `087050a` — `BoundedBelowStrictnessContract`, where an exhaustive monotone
+  `Nat`-indexed filtration with zero bottom layer makes layer-surjectivity
+  force equality, so a proper inclusion has a non-surjective associated layer.
+- `e550fae` — `StrictFiniteGradedChain`, constructing the intersection
+  filtration on a finite filtered submodule and proving that a proper
+  inclusion is detected by a non-surjective layer map.
+- `55fa0c0` — `ReesModuleShift`, an explicit degree-shifted filtered linear
+  map with a kernel-checked quotient map preserving the existing single-term
+  Rees action.
+- `3db1802` — `OriginalOrbitProducer`, selecting one affine original-U source
+  for a finite test list from supplied finite orbit bases of cyclic images.
+- `dd83093` — `WeylHigherDimensionalEvolutionary`, a bounded finite-potential
+  same-divisor certificate in the original higher-rank Weyl tower.
+- `f422824` — degree-one Weyl monic remainder plus literal original-ring
+  `AssemblyWitness` assembly, checked at rank two by an independent oracle.
+
+The new source/oracle files pass `lake env lean --trust=0`; the strictness,
+shifted-action, source-selection and Weyl endpoint closures use only
+`propext`, `Classical.choice`, and `Quot.sound`. These lanes provide exact
+conditional bridges and concrete calibrations, not the missing homogeneous
+localization, arbitrary finite-length block theorem, universal source map, or
+M01--M11 producer. Phase I, Phase II, Palomar registration, and publication
+remain fail-closed.

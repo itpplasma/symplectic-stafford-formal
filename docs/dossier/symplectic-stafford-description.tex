@@ -468,6 +468,11 @@ AlgebraicAnalysis public main is pinned at
 \lean{add0a80d865c88fe9cbc6901bda08a636ce188f9} (v0.3.1). A clean isolated
 clone replayed the root build, Challenge/Solution checks, and all 136
 trust-disabled oracle files under this exact triple.
+The subsequent tenth frontier integration adds bounded-below strictness,
+degree-shifted Rees maps, finite-orbit source selection, and higher-rank Weyl
+calibrations; the authoritative checkout replays all 146 oracle files and
+the aggregate root build under the same lock. These are conditional or
+calibration results and do not close the universal M01--M11 producer.
 The actual build pins are included below directly from the lock configuration;
 dependency migration is complete only when manifest consistency and downstream
 builds pass.
@@ -493,12 +498,12 @@ axiom evidence, independent semantic and kernel replay, and the separate
 publication decision. The source and future release artifacts use the
 repository's Apache-2.0 license; no DOI, public visibility change or Palomar
 registration is claimed here.
-The current readiness script checks status and evidence labels only. It
-does not check \lean{publication.enabled}, the required-check results,
-source hashes, or the terminal statement. A passing script is therefore a
-metadata consistency check, not proof or publication evidence. Terminal
-submission requires a separate comparator configuration for the actual
-filtered-algebra theorem.
+The current readiness script fail-closes on \lean{publication.enabled}, the
+target, phase/evidence labels, and every declared required-check result. It
+does not replace human review of source hashes, proof closure, or the terminal
+statement. A passing script is therefore release metadata evidence, not by
+itself proof or publication authorization. Terminal submission requires a
+separate comparator configuration for the actual filtered-algebra theorem.
 
 \input{claim-register.generated.tex}
 
