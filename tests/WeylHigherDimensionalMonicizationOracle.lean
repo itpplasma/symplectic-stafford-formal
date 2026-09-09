@@ -18,6 +18,10 @@ open Stafford38.WeylIteratedEquivalence
 open Stafford38.WeylMonicNormalization
 open Stafford38.WeylPBWMonicBridge
 open Stafford38.WeylOuterOreMonic
+open Stafford38.WeylPBW
+open Stafford38.WeylEulerRemainder
+open Stafford38.WeylFiltration
+open SymplecticStafford.Source
 open Stafford38.OreCoordinateStage
 open AlgebraicAnalysis.OreRightQuotient
 
@@ -79,6 +83,32 @@ example :
       ⟨d', hd'⟩
     exact ⟨N, d', hN, hd', presentedOuterPolynomial_monic ℚ 1 N hd'⟩
 
+set_option maxHeartbeats 1000000 in
+private theorem newest_momentum_is_degree_one_monic :
+    IsPBWMonicAt ℚ (.inr (0 : Fin 2)) 1 (presentedMomentum ℚ 1) := by
+  have hpiece : presentedMomentum ℚ 1 ∈ bernsteinPiece ℚ 2 1 := by
+    rw [bernsteinPiece, mem_presentedWeightPiece,
+      presentedMomentum, presentedNormalFormLinearEquiv_generator]
+    intro m hm
+    simp only [MvPolynomial.coeff_X', ne_eq, ite_eq_right_iff] at hm
+    by_contra hweight
+    exact hm (by
+      intro h
+      subst m
+      simp [monomialWeight, bernsteinWeight] at hweight)
+  refine ⟨hpiece, ?_⟩
+  simp [presentedMomentum, presentedNormalFormLinearEquiv_generator]
+
+example :
+    (∃ sigma,
+      presentedToIterated ℚ 2 (presentedMomentum ℚ 1) =
+          stageMomentum ℚ 1 ^ 1 + sigma ∧
+        HasPositiveCoordinateFactor (IteratedPairStage ℚ 1) 1 sigma) ∧
+      Nonempty (AssemblyWitness (presentedMomentum ℚ 1)
+        (presentedCoordinate ℚ 1)) := by
+  exact degree_one_monic_remainder_and_assembly ℚ
+    newest_momentum_is_degree_one_monic
+
 example :
     ∃ c : ℚ, c ≠ 0 ∧
       (1 : PresentedWeyl ℚ 2) = algebraMap ℚ (PresentedWeyl ℚ 2) c := by
@@ -86,5 +116,6 @@ example :
 
 #print axioms momentum_ne_zero
 #print axioms momentum_not_scalar
+#print axioms newest_momentum_is_degree_one_monic
 
 end SymplecticStafford.WeylHigherDimensionalMonicizationOracle

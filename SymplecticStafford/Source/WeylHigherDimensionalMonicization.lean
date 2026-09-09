@@ -1,4 +1,6 @@
 import Stafford38.Weyl.EulerRemainder
+import Stafford38.Characteristic.CanonicalMonicSaturation
+import SymplecticStafford.Source.Assembly
 
 /-!
 # Higher-dimensional Weyl monicization
@@ -63,8 +65,28 @@ theorem outer_monicization_remainder_factor
   refine ⟨sigma, hdecomp, ?_⟩
   exact presentedRemainder_hasPositiveCoordinateFactor k n N hd
 
+/- The degree-one filtered endpoint is already constructive: the upstream
+canonical saturation theorem turns a monic newest-momentum operator into a
+literal right-ideal certificate.  Combining it with the remainder factor
+keeps the exact division output and the actual original-ring certificate in
+one bounded statement.  This is intentionally restricted to degree one. -/
+theorem degree_one_monic_remainder_and_assembly
+    [Algebra ℚ k]
+    {n : ℕ} {d : PresentedWeyl k (n + 1)}
+    (hd : IsPBWMonicAt k (.inr (0 : Fin (n + 1))) 1 d) :
+    (∃ sigma,
+      presentedToIterated k (n + 1) d = stageMomentum k n ^ 1 + sigma ∧
+        HasPositiveCoordinateFactor (IteratedPairStage k n) 1 sigma) ∧
+      Nonempty (AssemblyWitness d (presentedCoordinate k n)) := by
+  refine ⟨outer_monicization_remainder_factor k hd, ?_⟩
+  obtain ⟨R, S, h⟩ :=
+    Stafford38.CanonicalMonicSaturation.exists_fixedSource_certificate_degree_one
+      k n hd
+  exact ⟨⟨R, S, h⟩⟩
+
 #print axioms exists_scalar_or_outer_monicization
 #print axioms outer_monicization_remainder_factor
+#print axioms degree_one_monic_remainder_and_assembly
 
 end
 end SymplecticStafford.Source
