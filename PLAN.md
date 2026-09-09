@@ -302,6 +302,16 @@ are replayed under trust-disabled Lean. These remain conditional, boundary, or
 Weyl-family results; no universal M01--M11 producer or phase/release gate is
 promoted.
 
+The thirteenth frontier wave adds a pinned AlgebraicAnalysis/Stafford38 API
+bridge, a concrete Weyl M01 filtration/associated-symbol calibration and
+all-rank algebra-equivalence transfer, a bounded quantized-slice-to-original-U
+consumer interface, a stronger homogeneous-versus-ordinary localization
+finite-length boundary, and a central-eigenvalue independence lemma over a
+division ring with an independent oracle. The end-to-end paper audit records
+the first invalid bridge at the filtered-to-graded localized-length step;
+these checked interfaces and concrete calibrations therefore remain conditional
+and do not promote M01--M11, either phase, Palomar registration, or publication.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

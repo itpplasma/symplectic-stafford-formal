@@ -196,6 +196,20 @@ support union. `Induction/SuccessorObstruction.lean` gives a flat-defect
 counterexample to deriving the one-step successor decrease from the lower
 `P_h` contract alone. These are boundary evidence, not producer proofs.
 
+The thirteenth frontier wave adds a pinned dependency API audit and bridge
+(`Dependency/AlgebraicAnalysisStafford38Bridge`), a bounded
+quantized-slice-to-original-U consumer (`Source/QuantizedSliceAlgebraization`),
+concrete Weyl M01 filtration/associated-symbol calibration and all-rank
+algebra-equivalence transfer (`Filtered/WeylM01Calibration` and
+`Source/WeylUniversalTransfer`), a stronger homogeneous-versus-ordinary
+localization length boundary (`FiniteLength/PrimeVsHomogeneousLocalizationBoundary`),
+and central-eigenvalue independence over a division ring
+(`FiniteLength/CentralEigenPencil`). Each has an independent trust-disabled
+oracle. The end-to-end paper audit records the first invalid bridge at the
+filtered-to-graded localized-length comparison. These additions remain
+conditional, boundary, audit, or concrete-family evidence: the universal
+M01--M11 producer and both phase gates stay open.
+
 | Obligation | Checked module and scope | Required continuation |
 | --- | --- | --- |
 | M01 | `Semantics/SupportDimension.lean` uses `WithBot Nat`, extracts zero from supplied support/dimension equivalences, and proves that a zero original right quotient is equivalent to membership of `1`. `Semantics/RightIdealBridge.lean` bridges the displayed two-generator semiring carrier to a `RingRightIdeal` under explicit negation closure and proves quotient action laws. `Filtered/OriginalCentralSupport.lean` gives the actual original-ring quotient and central-support zero bridge. `Filtered/CharacteristicSupport.lean` constructs a finite associated-layer support proxy from actual quotient classes, while `Filtered/SpecCharacteristicSupport.lean` states the genuine `Module.support`/annihilator zero-locus boundary for a supplied commutative associated module and an explicit filtered class map. `Filtered/ActualClassSupport.lean` connects a genuine filtered-layer quotient to that support boundary and records the `WithBot Nat`/integer-defect correspondence under explicit class-map data. `Filtered/M01StructuralBoundary.lean` independently shows that the historical proposition-only class labels do not imply even `Nontrivial`. `Filtered/M01StructuralClass.lean` supplies additive filtered-ring layers, degree-zero field action, representative-independent multiplication and least-layer detection, while retaining the missing commutative-affine/domain and support bridge as hypotheses. `Ordered/CharacteristicSupportProducer.lean` consumes an actual per-prime producer and localized common-quotient zero bridge to prove the corresponding support inclusion. | Construct the full characteristic support in `Spec(gr U)` and its zero-detection theorem, encode the actual filtered class and associated module, and connect bottom dimension to the integer defect without assuming negation closure as a hidden instance. |
@@ -244,9 +258,9 @@ The current locks are Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`,
 AlgebraicAnalysis `add0a80d865c88fe9cbc6901bda08a636ce188f9` (v0.3.1), and
 Stafford38 `213ae2073030c8a897087152a616b8f8c1292df2` (v1.1.1). A clean
 downstream replay completed the root build, Challenge/Solution checks, and all
-136 trust-disabled oracle files under this exact triple; after the ninth
-frontier integration, the authoritative checkout replays all 141 oracle files
-and the 8,887-job root build under the same lock. Any future dependency update
+136 trust-disabled oracle files under this exact triple; after the thirteenth
+frontier integration, the authoritative checkout replays all 160 oracle files
+and the 9,161-job root build under the same lock. Any future dependency update
 still requires a fresh downstream replay; an upstream version or release name
 is not that evidence.
 A semantic Challenge/Solution success does not release SS-all. Publication

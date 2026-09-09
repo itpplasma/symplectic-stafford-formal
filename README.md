@@ -115,6 +115,16 @@ and finite-coefficient divisor assembly, and a coordinate-affine Weyl
 same-divisor calibration. These remain conditional or model-family results;
 the universal producer and release gates are still pending.
 
+The thirteenth frontier adds an exact pinned AlgebraicAnalysis/Stafford38 API
+bridge, bounded quantized-slice algebraization consumer, concrete Weyl M01
+filtration and all-rank equivalence transfer, a strengthened localization
+length boundary, and central-eigenvalue independence over a division ring.
+The integrated library builds 9,161 jobs; the new source/oracle pairs are
+trust-disabled checked. An independent end-to-end audit identifies the
+filtered-to-graded localized-length comparison as the first invalid paper
+bridge, so these additions remain conditional, boundary, audit, or
+concrete-family evidence and do not promote M01--M11 or either phase gate.
+
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
 Rees, Rees-module, power-Ore, finite-filtration/support, common-colon,
