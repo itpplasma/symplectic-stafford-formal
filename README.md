@@ -109,6 +109,11 @@ fail-closed transitive axiom/dependency-checkout audits. The integrated
 checkpoint currently builds 8,911 jobs and replays 150 trust-disabled oracle
 files, but these results remain conditional or Weyl-only and do not close the
 universal producer or either phase gate.
+The next continuation composes a quantitative filtered-chain length bound,
+prime-versus-homogeneous-localization boundary evidence, finite Rees cofactor
+and finite-coefficient divisor assembly, and a coordinate-affine Weyl
+same-divisor calibration. These remain conditional or model-family results;
+the universal producer and release gates are still pending.
 
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw

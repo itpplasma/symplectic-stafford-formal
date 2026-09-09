@@ -566,3 +566,26 @@ transitive axioms and checks every direct and transitive Lake checkout against
 the locked revision, URL and clean-worktree state. These additions remain
 conditional or Weyl-only and do not discharge the universal quantum
 algebraization/source producer or promote either phase gate.
+
+## Twelfth frontier wave: quantitative chain bounds and concrete Weyl/source assembly
+
+Five further disjoint lanes were integrated:
+
+- `e344459` — `FilteredChainLengthBound`, composing the conditional filtered
+  localization and strictness interfaces into an explicit quantitative bound
+  by localized graded module length.
+- `4617418` — `PrimeVsHomogeneousLocalizationBoundary`, a kernel-checked
+  Laurent-versus-fraction-field model distinguishing homogeneous-symbol from
+  ordinary prime localization without asserting S1 failure.
+- `48299f4` — `ReesFiniteAssembly`, composing finite evaluation-at-one with
+  supplied right-denominator and original-cofactor data.
+- `6961937` — `OriginalFiniteCoefficientAssembly`, composing finite source
+  selection with divisor-indexed retained tests and literal cofactors.
+- `e2903de` — `WeylCoordinateAffineCalibration`, a higher-rank Weyl
+  coordinate-affine same-divisor certificate with noncommuting transverse
+  coefficients.
+
+After root-import integration, `lake build SymplecticStafford` completes
+8,916 jobs and all five source/oracle pairs pass trust-disabled replay. These
+results are conditional, boundary, or Weyl-family evidence; they do not
+construct the universal quantum algebraization or promote Phase I/II.

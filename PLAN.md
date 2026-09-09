@@ -289,6 +289,19 @@ or Weyl-only and do not supply the universal quantum algebraization/source
 producer; Phase I, Phase II, Palomar registration and publication remain
 fail-closed.
 
+The twelfth frontier wave composes the repaired Part I.5 interfaces. It adds a
+quantitative filtered-chain length bound
+(`FilteredChainLengthBound`), a kernel-checked distinction between
+homogeneous-symbol and ordinary prime localization
+(`PrimeVsHomogeneousLocalizationBoundary`), finite Rees-to-original cofactor
+assembly (`ReesFiniteAssembly`), divisor-indexed finite-coefficient assembly
+(`OriginalFiniteCoefficientAssembly`), and a coordinate-affine higher-rank
+Weyl same-divisor calibration (`WeylCoordinateAffineCalibration`). The
+integrated library build completes 8,916 jobs and the new source/oracle pairs
+are replayed under trust-disabled Lean. These remain conditional, boundary, or
+Weyl-family results; no universal M01--M11 producer or phase/release gate is
+promoted.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

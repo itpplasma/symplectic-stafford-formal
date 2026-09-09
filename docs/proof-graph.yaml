@@ -62,6 +62,12 @@
         18.5
       ],
       "review": "Conditional checkpoint consumer; right_clearable is an input field. M02–M05 remain open."
+      ,"continuation_sources": [
+        "SymplecticStafford/Filtered/ReesFiniteAssembly.lean",
+        "SymplecticStafford/FiniteLength/FilteredChainLengthBound.lean",
+        "SymplecticStafford/FiniteLength/PrimeVsHomogeneousLocalizationBoundary.lean"
+      ],
+      "continuation_scope": "Twelfth-wave conditional finite Rees cofactor assembly, quantitative filtered-chain length, and prime-versus-homogeneous localization boundary."
     },
     {
       "id": "assembly-scaffold",
@@ -77,6 +83,11 @@
         18.5
       ],
       "review": "Conditional checkpoint consumer of supplied identity fields; M06 and M08–M11 remain open."
+      ,"continuation_sources": [
+        "SymplecticStafford/Source/OriginalFiniteCoefficientAssembly.lean",
+        "SymplecticStafford/Source/WeylCoordinateAffineCalibration.lean"
+      ],
+      "continuation_scope": "Twelfth-wave finite-coefficient divisor assembly and coordinate-affine Weyl same-divisor calibration."
     },
     {
       "id": "ph-scaffold",
@@ -115,7 +126,7 @@
         -5,
         17
       ],
-      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded in docs/audits/fable-claude-proof-audit-2026-09-08.md. Human review and the corresponding full Lean proof remain pending."
+      "review": "Paper-level dependency reconstruction passed the bounded Fable/Claude audit recorded on 2026-09-08. Human review and the corresponding full Lean proof remain pending."
     },
     {
       "id": "tests",
@@ -149,6 +160,11 @@
       "label": "Minimal-prime length",
       "statement": "Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime. FilteredLocalizedGradedBridge packages the exact filtered/localized associated-graded and strict-chain hypotheses needed to transfer finite filtered chains to a localized graded length bound; it remains conditional on those algebraic equivalences and survival witnesses.",
       "source": "paper part I.5 (M05); SymplecticStafford/FiniteLength/FilteredLocalizedGradedBridge.lean",
+      "continuation_sources": [
+        "SymplecticStafford/FiniteLength/FilteredChainLengthBound.lean",
+        "SymplecticStafford/FiniteLength/PrimeVsHomogeneousLocalizationBoundary.lean"
+      ],
+      "continuation_scope": "Twelfth-wave quantitative filtered-chain length and prime-versus-homogeneous localization boundary evidence.",
       "depends_on": [
         "local"
       ],

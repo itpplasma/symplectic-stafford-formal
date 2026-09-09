@@ -84,6 +84,12 @@ for node in nodes:
         rf"\emph{{Review:}} {tex(node['review'])}",
         "",
     ])
+    if node.get("continuation_sources"):
+        details.extend([
+            rf"\emph{{Continuation sources:}} {tex('; '.join(node['continuation_sources']))}.",
+            rf"\emph{{Continuation scope:}} {tex(node.get('continuation_scope', ''))}",
+            "",
+        ])
     if node["depends_on"]:
         details.append("Dependencies: " + ", ".join(
             rf"\hyperlink{{claim:{dep}}}{{{tex(by_id[dep]['label'])}}}"

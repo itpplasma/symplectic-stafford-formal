@@ -104,7 +104,12 @@ project:
     package, and arbitrary outer-monic Weyl division with a finite remainder
     bound. The verifier also checks the complete transitive axiom allowlist
     and all locked Lake checkouts. These remain conditional/calibration results
-    and do not close the universal M01--M11 producer.
+    and do not close the universal M01--M11 producer. The twelfth frontier
+    composes a quantitative filtered-chain length bound, a
+    prime-versus-homogeneous-localization boundary, finite Rees cofactor and
+    finite-coefficient divisor assembly, and a coordinate-affine Weyl
+    same-divisor calibration. These likewise remain conditional or
+    Weyl-family results.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -251,7 +256,11 @@ status:
     original-coefficient source package, and arbitrary outer-monic Weyl
     division; it also hardens transitive axiom and dependency-checkout audits.
     These remain conditional or calibration results and do not close the
-    universal producer.
+    universal producer. The twelfth wave adds quantitative filtered-chain
+    length, prime-versus-homogeneous localization boundary evidence, finite
+    Rees cofactor assembly, finite-coefficient divisor assembly, and a
+    coordinate-affine Weyl calibration; these remain conditional, boundary,
+    or Weyl-family results.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0
