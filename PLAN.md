@@ -14,9 +14,11 @@ literal membership, a conditional semiring-to-ring right-ideal bridge with
 relation-respecting quotient-action laws, original-ring quotient/central-support
 zero detection, support-boundary extraction and explicit opposite orientation.
 Ordered modules implement affine identities, the common-colon algebra, an
-ordered ambient producer with simultaneous right-clearance, and
+ordered ambient producer with simultaneous right-clearance, actual finite
+right-generation from the opposite-ring Noetherian hypothesis, and
 finite-generation/conditional constant-right-denominator clearing. Raw and
-algebraic filtered/Rees terms, a quotient Rees module with scalar-action laws,
+algebraic filtered/Rees terms, a ring-valued bounded-polynomial Rees object,
+a quotient Rees module with scalar-action laws,
 an explicit power-Ore fraction boundary, full arbitrary-submonoid Ore
 localization, a strict Rees Noetherianity reduction certificate, finite
 associated-top and matrix pencils, finite bounded-generator filtrations,
@@ -47,6 +49,7 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `ActivatedPencil`,
 `MatrixPencil`, `CommonColon`, `FiniteGenerationBridge`,
 `M08SupportUnion`, `ReesBasic`, `ReesAlgebra`, `ReesModule`,
+`ReesRing`, `CommutativeFullSymbol`, `AssociatedLayerRing`,
 `GoodFiltration`, `PowerOre`, `FinitePowerOre`, `FiniteSupportDetection`,
 `FiniteSupportQuotient`, `SpecCharacteristicSupport`, `OriginalCentralSupport`,
 `FullSymbolOre`, `FullSymbolRightLocalization`,
@@ -54,11 +57,13 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `ReesNoetherianCriterion`,
 `NoetherianBoundary`, `RingFiltrationBridge`, `RightFiltration`,
 `GoodLocalBridge`, `JacobsonTop`,
-`ActivatedFiniteLength`, `FiniteOrbitPencil`, `DivisionLLDList`,
+`ActivatedFiniteLength`, `FiniteOrbitPencil`, `DerivedOrbitPencil`,
+`FilteredMinimalPrimeBridge`, `DivisionLLDList`,
 `WeightedFaithfulBoundary`, `WeightedInverseBoundary`,
 `InfiniteMultiplicityBoundary`, `MinimalPrimeLocalTheorem`,
 `SupportUnionBoundary`,
 `CommonColonProducer`, `ConcreteSuccessor`, `ConstructiveSuccessor`,
+`ActualM08Producer`, `TwoCallAffineProducer`,
 `SuccessorObstruction`, `SupportRemovalArithmetic`, `DifferentialOreDescent`,
 `OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
 `Package/TerminalBoundary`,

@@ -11,25 +11,31 @@ project:
     support-boundary extraction, explicit opposite transport, ordered
     affine/common-colon/finite-generation identities and an ambient ordered
     common-colon producer, raw
-    and algebraic filtered/Rees operations, quotient Rees-module actions,
+    and algebraic filtered/Rees operations including a ring-valued bounded
+    Rees object, quotient Rees-module actions,
     explicit power-Ore fractions and finite power-Ore normal forms,
     finite bounded-generator filtrations, finite-support and matrix-pencil
     detection, an associated-layer support proxy, explicit additive
-    ring-filtration layers and associated classes, explicit right-module
+    ring-filtration layers and associated classes with multiplication,
+    a commutative regular-element full-symbol calibration, explicit right-module
     composition filtrations and Jacobson-top generation reflection, a
     spectrum-support boundary, a filtered Noetherianity boundary, a
     full-symbol algebraic localization and right-localized-module
     common-denominator boundary, and Rees-Noetherianity boundaries, a
-    minimal-prime local finite-length core, an actual module-support
+    minimal-prime local finite-length core including an `AtPrime` support-
+    dimension bridge, an actual module-support
     producer consumer, a list-indexed division-LLD source selector, an
     original-test producer
-    boundary, and activated finite-length/finite-orbit pencil consumption,
+    boundary, activated finite-length/finite-orbit pencil consumption and a
+    finite-central-dimension orbit-basis producer,
     a faithful weighted-detection boundary, an M08 support-union boundary,
     and strong-P_h and terminal obstructions,
     conditional differential-Ore/right-denominator clearing, constructive
     finite-index successor contracts, original-affine source selection,
-    conditional support-union, support-removal defect arithmetic, and
-    conditional original-U finite-test/cyclic-pencil bridges. General
+    conditional support-union, an actual M08 right-Noetherian finite-generator
+    producer, support-removal defect arithmetic, and
+    conditional original-U finite-test/cyclic-pencil bridges, including a
+    two-call affine-source constructor. General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
@@ -112,19 +118,24 @@ status:
     Partial checkpoint. The semantic, support-boundary, opposite-transport,
     ordered/common-colon, raw and module-side Rees, power-Ore fraction and
     finite power-Ore normal forms, finite bounded-generator filtrations,
-    finite associated-layer support, explicit additive ring-filtration layers,
+    finite associated-layer support, explicit additive ring-filtration layers
+    and associated-layer multiplication, a ring-valued Rees object,
     explicit right-module composition filtrations and Jacobson-top generation
     reflection, spectrum-support and full-symbol/Noetherianity boundaries,
+    a commutative full-symbol Ore calibration,
     right-localized-module common denominators, original-central-support and
+    an AtPrime finite-local-length bridge,
     original-test-producer boundaries, list-indexed division-LLD source
     selection, an original-U division-test source selector, activated
-    finite-length/finite-orbit pencil consumption,
+    finite-length/finite-orbit pencil consumption and a finite-central-
+    dimension orbit-basis producer,
     division-coordinate, faithful weighted detection, negative-degree and
     infinite-multiplicity boundaries, the M08 support-union boundary, and the
     strong-P_h/terminal obstructions, support-removal defect arithmetic,
     conditional cyclic-pencil, finite-index and constructive successor,
     terminal-boundary, differential-Ore,
-    original-affine source-selection, filtered, source-assembly, support-union,
+    original-affine source-selection, actual M08 finite right-generation,
+    two-call affine-source construction, filtered, source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
     assembly, support-union, and induction files are conditional scaffolds;
