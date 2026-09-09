@@ -4,6 +4,8 @@ import SymplecticStafford.Filtered.BoundedReesBridge
 import SymplecticStafford.Filtered.ReesGoodSubquotient
 import Mathlib.RingTheory.FiniteType
 import Mathlib.RingTheory.GradedAlgebra.Basic
+import Mathlib.Algebra.MonoidAlgebra.ToDirectSum
+import Mathlib.LinearAlgebra.Quotient.Basic
 
 /-!
 # Exact coefficient symbols for the Rees filtration
@@ -321,6 +323,348 @@ theorem coefficientSymbol_mul_shiftedHomogeneousLift
     rw [hprod, associatedClass_zero]
     simp [AddMonoidAlgebra.coeff_single_apply, hv]
 
+/- The coefficient formula is additive before passing to the quotient. -/
+noncomputable def coefficientLayerAddHom (n : ℕ) :
+    (coefficientFiltration F).carrier n →+
+      AddMonoidAlgebra (associatedLayer F n) ℕ where
+  toFun p := coefficientSymbolPolynomial F n p.1 p.2
+  map_zero' := by
+    apply AddMonoidAlgebra.coeff_injective
+    intro r
+    simp [coefficientSymbolPolynomial_coeff, associatedClass_zero]
+  map_add' p q := by
+    apply AddMonoidAlgebra.coeff_injective
+    intro r
+    simp only [coefficientSymbolPolynomial_coeff, AddMonoidAlgebra.coeff_add]
+    rfl
+
+/- The preceding layer is precisely the kernel, so the formula descends to
+the actual quotient used in the associated graded ring. -/
+noncomputable def degreeSymbolLinearMap (n : ℕ) :
+    associatedLayer (coefficientFiltration F) n →ₗ[ℤ]
+      AddMonoidAlgebra (associatedLayer F n) ℕ :=
+  (layerSubmodule (coefficientFiltration F) n).liftQ
+    (coefficientLayerAddHom F n).toIntLinearMap (by
+      intro p hp
+      change coefficientSymbolPolynomial F n p.1 p.2 = 0
+      apply coefficientSymbol_unique F n
+      · exact coefficientSymbol_exists F n p.1 p.2
+      · exact coefficientSymbol_zero_of_lower F n hp)
+
+@[simp] theorem degreeSymbolLinearMap_mk (n : ℕ)
+    (p : (coefficientFiltration F).carrier n) :
+    degreeSymbolLinearMap F n (Submodule.Quotient.mk p) =
+      coefficientSymbolPolynomial F n p.1 p.2 := rfl
+
+theorem degreeSymbolLinearMap_injective (n : ℕ) :
+    Function.Injective (degreeSymbolLinearMap F n) := by
+  intro x y hxy
+  apply sub_eq_zero.mp
+  have hz : degreeSymbolLinearMap F n (x - y) = 0 := by
+    rw [map_sub, hxy, sub_self]
+  induction x - y using Quotient.inductionOn with
+  | _ p =>
+      rw [degreeSymbolLinearMap_mk] at hz
+      rw [Submodule.Quotient.mk_eq_zero]
+      have hs := coefficientSymbol_exists F n p.1 p.2
+      rw [hz] at hs
+      exact lower_of_coefficientSymbol_zero F n hs
+
+theorem degreeSymbolLinearMap_surjective (n : ℕ) :
+    Function.Surjective (degreeSymbolLinearMap F n) := by
+  intro q
+  induction q using Finsupp.induction with
+  | zero => exact ⟨0, map_zero _⟩
+  | @single_add r x q _ _ ih =>
+      obtain ⟨z, hz⟩ := ih
+      let p : (coefficientFiltration F).carrier n :=
+        ⟨shiftedHomogeneousLift F n r x,
+          shiftedHomogeneousLift_mem_layer F n r x⟩
+      refine ⟨Submodule.Quotient.mk p + z, ?_⟩
+      rw [map_add, hz, degreeSymbolLinearMap_mk]
+      have hs := coefficientSymbol_shiftedHomogeneousLift F n r x
+      exact congrArg (fun a => a + q)
+        (coefficientSymbol_unique F n
+          (coefficientSymbol_exists F n p.1 p.2) hs)
+
+/- Exact degreewise quotient-symbol equivalence. -/
+noncomputable def degreeSymbolEquiv (n : ℕ) :
+    associatedLayer (coefficientFiltration F) n ≃ₗ[ℤ]
+      AddMonoidAlgebra (associatedLayer F n) ℕ :=
+  LinearEquiv.ofBijective (degreeSymbolLinearMap F n)
+    ⟨degreeSymbolLinearMap_injective F n,
+      degreeSymbolLinearMap_surjective F n⟩
+
+private def sigmaSwap : (Σ _ : ℕ, ℕ) ≃ (Σ _ : ℕ, ℕ) where
+  toFun p := ⟨p.2, p.1⟩
+  invFun p := ⟨p.2, p.1⟩
+  left_inv p := by cases p; rfl
+  right_inv p := by cases p; rfl
+
+/- Finite direct sums commute with the finite residual-polynomial sum.  This
+is just the two finitely-supported coordinates transposed; all transports are
+made explicit by `sigmaSwap`. -/
+noncomputable def finiteDirectSumPolynomialEquiv :
+    (⨁ n : ℕ, AddMonoidAlgebra (associatedLayer F n) ℕ) ≃+
+      AddMonoidAlgebra (AdditiveFilteredRingData.actualAssociatedGraded F) ℕ :=
+  (DFinsupp.mapRange.addEquiv (fun _n =>
+      (AddMonoidAlgebra.addMonoidAlgebraAddEquivDirectSum))).trans
+    ((DirectSum.sigmaCurryEquiv).symm.trans
+      ((DirectSum.equivCongrLeft sigmaSwap).trans
+        (DirectSum.sigmaCurryEquiv.trans
+          AddMonoidAlgebra.addMonoidAlgebraAddEquivDirectSum.symm)))
+
+@[simp] theorem finiteDirectSumPolynomialEquiv_of_single
+    (n r : ℕ) (x : associatedLayer F n) :
+    finiteDirectSumPolynomialEquiv F
+        (DirectSum.of (fun n : ℕ =>
+          AddMonoidAlgebra (associatedLayer F n) ℕ) n
+          (AddMonoidAlgebra.single r x)) =
+      AddMonoidAlgebra.single r
+        (DirectSum.of (fun n : ℕ => associatedLayer F n) n x) := by
+  classical
+  ext s m
+  simp [finiteDirectSumPolynomialEquiv, sigmaSwap,
+    DirectSum.of_apply]
+
+noncomputable def coefficientGradedAddEquiv :
+    coefficientAssociatedGraded F ≃+
+      AddMonoidAlgebra (AdditiveFilteredRingData.actualAssociatedGraded F) ℕ :=
+  (DFinsupp.mapRange.addEquiv (fun n =>
+      (degreeSymbolEquiv F n).toAddEquiv)).trans
+    (finiteDirectSumPolynomialEquiv F)
+
+private theorem degreeSymbol_mul_single
+    (n m r s : ℕ) (x : associatedLayer F n) (y : associatedLayer F m) :
+    degreeSymbolLinearMap F (n + m)
+        (associatedLayerMul (coefficientFiltration F) n m
+          (Submodule.Quotient.mk
+            ⟨shiftedHomogeneousLift F n r x,
+              shiftedHomogeneousLift_mem_layer F n r x⟩)
+          (Submodule.Quotient.mk
+            ⟨shiftedHomogeneousLift F m s y,
+              shiftedHomogeneousLift_mem_layer F m s y⟩)) =
+      AddMonoidAlgebra.single (r + s) (associatedLayerMul F n m x y) := by
+  rw [associatedLayerMul_mk_mk, degreeSymbolLinearMap_mk]
+  apply coefficientSymbol_unique F (n + m)
+  · exact coefficientSymbol_exists F (n + m) _ _
+  · exact coefficientSymbol_mul_shiftedHomogeneousLift F n m r s x y
+
+theorem degreeSymbol_map_mul
+    (n m : ℕ) (x : associatedLayer (coefficientFiltration F) n)
+    (y : associatedLayer (coefficientFiltration F) m) :
+    degreeSymbolLinearMap F (n + m)
+        (associatedLayerMul (coefficientFiltration F) n m x y) =
+      degreeSymbolLinearMap F n x * degreeSymbolLinearMap F m y := by
+  classical
+  let en := degreeSymbolLinearMap F n
+  let em := degreeSymbolLinearMap F m
+  let enm := degreeSymbolLinearMap F (n + m)
+  have hn := degreeSymbolLinearMap_injective F n
+  have hm := degreeSymbolLinearMap_injective F m
+  generalize hqx : en x = qx
+  induction qx using Finsupp.induction generalizing x with
+  | zero =>
+      have hx : x = 0 := hn (by simpa [en] using hqx)
+      subst x
+      simp [associatedLayerMul_zero_left]
+  | @single_add r a q _ _ ih =>
+      let xr : associatedLayer (coefficientFiltration F) n :=
+        Submodule.Quotient.mk
+          ⟨shiftedHomogeneousLift F n r a,
+            shiftedHomogeneousLift_mem_layer F n r a⟩
+      have hxr : en xr = AddMonoidAlgebra.single r a := by
+        change degreeSymbolLinearMap F n xr = _
+        rw [degreeSymbolLinearMap_mk]
+        apply coefficientSymbol_unique F n
+        · exact coefficientSymbol_exists F n _ _
+        · exact coefficientSymbol_shiftedHomogeneousLift F n r a
+      have hxrest : en (x - xr) = q := by
+        rw [map_sub, hqx, hxr]
+        simp
+      have hix := ih (x - xr) hxrest
+      have hsingle :
+          enm (associatedLayerMul (coefficientFiltration F) n m xr y) =
+            AddMonoidAlgebra.single r a * em y := by
+        generalize hqy : em y = qy
+        induction qy using Finsupp.induction generalizing y with
+        | zero =>
+            have hy : y = 0 := hm (by simpa [em] using hqy)
+            subst y
+            simp [associatedLayerMul_zero_right]
+        | @single_add s b q _ _ ihy =>
+            let ys : associatedLayer (coefficientFiltration F) m :=
+              Submodule.Quotient.mk
+                ⟨shiftedHomogeneousLift F m s b,
+                  shiftedHomogeneousLift_mem_layer F m s b⟩
+            have hys : em ys = AddMonoidAlgebra.single s b := by
+              change degreeSymbolLinearMap F m ys = _
+              rw [degreeSymbolLinearMap_mk]
+              apply coefficientSymbol_unique F m
+              · exact coefficientSymbol_exists F m _ _
+              · exact coefficientSymbol_shiftedHomogeneousLift F m s b
+            have hyrest : em (y - ys) = q := by
+              rw [map_sub, hqy, hys]
+              simp
+            have hiy := ihy (y - ys) hyrest
+            rw [show y = ys + (y - ys) by abel,
+              associatedLayerMul_add_right, map_add, hiy, map_add, hys]
+            rw [degreeSymbol_mul_single F n m r s a b]
+            simp [AddMonoidAlgebra.single_mul_single, add_assoc]
+      rw [show x = xr + (x - xr) by abel,
+        associatedLayerMul_add_left, map_add, hsingle, hix, map_add, hxr]
+      rw [add_mul]
+
+theorem coefficientGradedAddEquiv_map_mul
+    (a b : coefficientAssociatedGraded F) :
+    coefficientGradedAddEquiv F (a * b) =
+      coefficientGradedAddEquiv F a * coefficientGradedAddEquiv F b := by
+  classical
+  induction a using DirectSum.induction_on with
+  | zero => simp [coefficientGradedAddEquiv]
+  | of n x =>
+      induction b using DirectSum.induction_on with
+      | zero => simp [coefficientGradedAddEquiv]
+      | of m y =>
+          rw [AdditiveFilteredRingData.actualAssociatedGraded_of_mul_of]
+          change finiteDirectSumPolynomialEquiv F
+              (DirectSum.of _ (n + m)
+                (degreeSymbolLinearMap F (n + m)
+                  (associatedLayerMul (coefficientFiltration F) n m x y))) = _
+          rw [degreeSymbol_map_mul F n m x y]
+          induction degreeSymbolLinearMap F n x using Finsupp.induction with
+          | zero => simp
+          | @single_add r c q _ _ ih =>
+              induction degreeSymbolLinearMap F m y using Finsupp.induction with
+              | zero => simp
+              | @single_add s d q' _ _ ih' =>
+                  simp [finiteDirectSumPolynomialEquiv_of_single,
+                    AddMonoidAlgebra.single_mul_single,
+                    AdditiveFilteredRingData.actualAssociatedGraded_of_mul_of,
+                    add_mul, mul_add, ih, ih']
+      | add x y hx hy => simp [mul_add, map_add, hx, hy]
+  | add x y hx hy => simp [add_mul, map_add, hx, hy]
+
+noncomputable def coefficientGradedRingEquiv :
+    coefficientAssociatedGraded F ≃+*
+      AddMonoidAlgebra (AdditiveFilteredRingData.actualAssociatedGraded F) ℕ :=
+  { coefficientGradedAddEquiv F with
+    map_mul' := coefficientGradedAddEquiv_map_mul F }
+
+private def centralSkewMonoidAlgebraEquiv (A : Type*) [Ring A] :
+    SkewMonoidAlgebra A (Multiplicative ℕ) ≃+*
+      MonoidAlgebra A (Multiplicative ℕ) :=
+  { toFun := fun p => ⟨p.coeff⟩
+    invFun := fun p => ⟨p.coeff⟩
+    left_inv := by intro p; cases p; rfl
+    right_inv := by intro p; cases p; rfl
+    map_add' := by intro p q; ext x; simp
+    map_mul' := by
+      intro p q
+      apply MonoidAlgebra.coeff_injective
+      ext x
+      simp [SkewMonoidAlgebra.coeff_mul, MonoidAlgebra.coeff_mul] }
+
+private def addMonoidAlgebraSkewPolynomialEquiv (A : Type*) [Ring A] :
+    AddMonoidAlgebra A ℕ ≃+* SkewPolynomial A :=
+  ((AddMonoidAlgebra.toMultiplicative A ℕ).trans
+    (centralSkewMonoidAlgebraEquiv A).symm)
+
+noncomputable def coefficientGradedPolynomialRingEquiv :
+    coefficientAssociatedGraded F ≃+*
+      SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F) :=
+  (coefficientGradedRingEquiv F).trans
+    (addMonoidAlgebraSkewPolynomialEquiv
+      (AdditiveFilteredRingData.actualAssociatedGraded F))
+
+private theorem rightNoetherian_iff_oppositeRing
+    (A : Type*) [Ring A] :
+    IsNoetherian Aᵐᵒᖘ A ↔ IsNoetherianRing Aᵐᵒᖘ := by
+  let e : A ≃ₗ[Aᵐᵒᖘ] Aᵐᵒᖘ := MulOpposite.opLinearEquiv Aᵐᵒᖘ
+  exact e.isNoetherian_iff
+
+theorem rightNoetherian_coefficientAssociatedGraded
+    [IsNoetherian
+      (AdditiveFilteredRingData.actualAssociatedGraded F)ᵐᵒᖘ
+      (AdditiveFilteredRingData.actualAssociatedGraded F)] :
+    IsNoetherian (coefficientAssociatedGraded F)ᵐᵒᖘ
+      (coefficientAssociatedGraded F) := by
+  letI : IsNoetherian
+      (SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F))ᵐᵒᖘ
+      (SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F)) :=
+    rightNoetherian_centralSkewPolynomial
+  letI : IsNoetherianRing
+      (SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F))ᵐᵒᖘ :=
+    (rightNoetherian_iff_oppositeRing _).mp inferInstance
+  letI : IsNoetherianRing (coefficientAssociatedGraded F)ᵐᵒᖘ :=
+    isNoetherianRing_of_ringEquiv
+      (SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F))ᵐᵒᖘ
+      (RingEquiv.op (coefficientGradedPolynomialRingEquiv F)).symm
+  exact (rightNoetherian_iff_oppositeRing _).mpr inferInstance
+
+/- The exact symbols form a right ideal without taking an additional span.
+The componentwise definition is what makes equality of these ideals give
+equality of the actual symbol ranges required by descending reduction. -/
+noncomputable def exactSymbolRightIdeal
+    (I : Submodule (Rees F)ᵐᵒᖘ (Rees F)) :
+    Submodule (coefficientAssociatedGraded F)ᵐᵒᖘ
+      (coefficientAssociatedGraded F) where
+  carrier := {x | ∀ n, x n ∈ symbols (coefficientFiltration F) I n}
+  zero_mem' := by
+    intro n
+    exact (symbolAddSubgroup (coefficientFiltration F) I n).zero_mem
+  add_mem' := by
+    intro x y hx hy n
+    exact (symbolAddSubgroup (coefficientFiltration F) I n).add_mem (hx n) (hy n)
+  smul_mem' := by
+    intro a x hx
+    change ∀ n, (x * a.unop) n ∈ symbols (coefficientFiltration F) I n
+    induction x using DirectSum.induction_on with
+    | zero => simp [symbolAddSubgroup]
+    | of i xi =>
+        induction a.unop using DirectSum.induction_on with
+        | zero => simp [symbolAddSubgroup]
+        | of j yj =>
+            intro n
+            by_cases h : i + j = n
+            · subst n
+              simpa [AdditiveFilteredRingData.actualAssociatedGraded_of_mul_of]
+                using mul_mem_symbols (coefficientFiltration F) I i j (hx i) yj
+            · simp [AdditiveFilteredRingData.actualAssociatedGraded_of_mul_of,
+                DirectSum.of_apply, h, symbolAddSubgroup]
+        | add y z hy hz =>
+            simpa [mul_add] using fun n =>
+              (symbolAddSubgroup (coefficientFiltration F) I n).add_mem (hy n) (hz n)
+    | add x y hxi hyi =>
+        intro n
+        simpa [add_mul] using
+          (symbolAddSubgroup (coefficientFiltration F) I n).add_mem
+            (hxi hx n) (hyi hx n)
+
+theorem exactSymbolRightIdeal_mono
+    {I J : Submodule (Rees F)ᵐᵒᖘ (Rees F)} (hIJ : I ≤ J) :
+    exactSymbolRightIdeal F I ≤ exactSymbolRightIdeal F J := by
+  intro x hx n
+  obtain ⟨p, hp, hpI, rfl⟩ := hx n
+  exact ⟨p, hp, hIJ hpI, rfl⟩
+
+theorem symbols_subset_of_exactSymbolRightIdeal_le
+    {I J : Submodule (Rees F)ᵐᵒᖘ (Rees F)}
+    (h : exactSymbolRightIdeal F I ≤ exactSymbolRightIdeal F J) (n : ℕ) :
+    symbols (coefficientFiltration F) I n ⊆
+      symbols (coefficientFiltration F) J n := by
+  intro x hx
+  let z := DirectSum.of (fun n : ℕ =>
+    associatedLayer (coefficientFiltration F) n) n x
+  have hzI : z ∈ exactSymbolRightIdeal F I := by
+    intro m
+    by_cases hmn : n = m
+    · subst m
+      simpa [z] using hx
+    · simpa [z, DirectSum.of_apply, hmn, symbolAddSubgroup]
+  have hzJ := h hzI
+  simpa [z] using hzJ n
+
 /- The exact symbol descent is now available for arbitrary nested right
    ideals.  It is the finite natural-number reduction from the producer,
    restated here as the transfer-facing theorem. -/
@@ -354,6 +698,41 @@ theorem rightNoetherian_associatedPolynomial
       (SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F))ᵐᵒᖘ
       (SkewPolynomial (AdditiveFilteredRingData.actualAssociatedGraded F)) := by
   exact rightNoetherian_centralSkewPolynomial
+
+/-- Right Noetherianity descends from the actual associated graded ring to
+the bounded Rees ring.  Stabilization of the exact symbol ideals followed by
+the natural-number symbol reduction gives stabilization of every ascending
+chain of right ideals. -/
+theorem rightNoetherian_rees
+    [IsNoetherian
+      (AdditiveFilteredRingData.actualAssociatedGraded F)ᵐᵒᖘ
+      (AdditiveFilteredRingData.actualAssociatedGraded F)] :
+    IsNoetherian (Rees F)ᵐᵒᖘ (Rees F) := by
+  letI : IsNoetherian (coefficientAssociatedGraded F)ᵐᵒᖘ
+      (coefficientAssociatedGraded F) :=
+    rightNoetherian_coefficientAssociatedGraded F
+  apply (monotone_stabilizes_iff_noetherian
+    (R := (Rees F)ᵐᵒᖘ) (M := Rees F)).mp
+  intro c
+  let sc : ℕ →o Submodule (coefficientAssociatedGraded F)ᵐᵒᖘ
+      (coefficientAssociatedGraded F) :=
+    { toFun := fun n => exactSymbolRightIdeal F (c n)
+      monotone' := fun i j hij => exactSymbolRightIdeal_mono F (c.monotone hij) }
+  obtain ⟨n, hn⟩ :=
+    (monotone_stabilizes_iff_noetherian
+      (R := (coefficientAssociatedGraded F)ᵐᵒᖘ)
+      (M := coefficientAssociatedGraded F)).mpr
+        (inferInstance : IsNoetherian
+          (coefficientAssociatedGraded F)ᵐᵒᖘ
+          (coefficientAssociatedGraded F)) sc
+  refine ⟨n, ?_⟩
+  intro m hnm
+  apply le_antisymm
+  · apply filteredLeadingSymbolDescent F (c m) (c n) (c.monotone hnm)
+    intro d
+    apply symbols_subset_of_exactSymbolRightIdeal_le F
+    rw [hn m hnm]
+  · exact c.monotone hnm
 
 end ReesNoetherianTransfer
 
@@ -452,24 +831,18 @@ theorem boundedReesModuleCertificate_of_affineGraded_surjective
 end AffineGradedCompatibility
 
 /-!
-## First residual
+## Exact transfer
 
 The preceding results produce the shifted symbol on every actual homogeneous
-Rees lift, prove its zero kernel is exactly the predecessor coefficient layer,
-prove uniqueness of the residual polynomial, and prove residual-degree
-multiplication on homogeneous lifts.  The first unproved bridge is the
-type-level assembly
+Rees lift, identify its kernel with the predecessor coefficient layer, and
+assemble the degreewise quotients and the two finite direct sums into
 
 `actualAssociatedGraded (ReesCoefficientFiltration.filtration F) ≃+*`
 `SkewPolynomial (actualAssociatedGraded F)`.
 
-Constructing that bridge requires defining the forward map on an arbitrary
-finite Rees polynomial, proving it independent of the quotient representative,
-and then proving its multiplication law after the exponent shift.  No such
-equivalence is postulated here.  Until that finite-support quotient assembly
-and the corresponding homogeneous symbol-lift theorem are supplied, the
-conditional polynomial Noetherianity result above cannot be transported to the
-actual Rees right ideals, so no right-Noetherian conclusion is asserted.
+The exact componentwise symbol right ideal then turns polynomial
+Noetherianity into stabilization of Rees right ideals by the finite descending
+reduction theorem.
 -/
 
 end
