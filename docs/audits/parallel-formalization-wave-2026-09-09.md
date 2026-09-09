@@ -227,3 +227,30 @@ hypotheses visible. In particular, they do not prove the universal filtered
 class, noncommutative finite-length witness construction, support removal, or
 the \(P_1\)/successor hypotheses, so Phase I, Phase II, Palomar and publication
 remain pending.
+
+## Second continuation wave
+
+The next disjoint positive-calibration pass produced and checked:
+
+- 5668c48 — M01PolynomialFiltrationBoundary, a genuine Q[X] filtration and a
+  proof that the older right-ideal layer interface cannot represent its
+  degree-zero scalar layer.
+- 8124fc2 — ReesPolynomialNoetherian, converting Mathlib's polynomial Rees
+  algebra into the explicit Noetherian reduction certificate.
+- f15afef — FullSymbolActualOreFinite, finite common-right-denominator
+  clearing for actual right localizations with exact noncommutative order.
+- adebbb8 — PolynomialGoodModuleCalibration, a genuine Q[X]-module with
+  negative-weight faithful detection.
+- 18191ec — CentralFinitePencil, split central finite-dimensional
+  realizations for repeated division-ring blocks and activated pencils.
+- 08697ad — WeylA1Calibration, literal original-ring A1 identity and a
+  Stafford38 finite-potential assembly adapter.
+- 8796a3b — NatSupportRemoval, a non-vacuous concrete support-removal
+  successor consumer with carried-test retention.
+
+All new source/oracle pairs passed trust-disabled Lean replay; the root import
+was extended to expose the modules. These are concrete calibrations,
+consumers, or API boundaries with explicit hypotheses. They do not supply the
+general filtered-class identification, arbitrary noncommutative block
+decomposition, universal support-removal law, or P1/successor producer, so the
+phase and publication statuses remain unchanged.

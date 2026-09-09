@@ -57,6 +57,12 @@ calibration, finite weighted-faithful detection, a zero-pencil division-ring
 obstruction, finite-direction original-U source selection, and explicit
 base/two-call endpoint assembly. Each is independently checked and remains
 conditional or diagnostic; the release gates stay fail-closed.
+The second continuation adds a genuine polynomial filtration boundary,
+polynomial Rees Noetherian certificate, finite clearing for actual Ore charts,
+a good polynomial-module calibration, split central finite-pencil activation,
+a Weyl A₁ original-ring identity, and a concrete Nat support-removal step.
+These calibrations narrow the remaining hypotheses without closing the
+all-dimensional theorem.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

@@ -125,6 +125,17 @@ two-call endpoint assembly (`BaseTwoCallAssembly`). Their hypotheses remain
 visible and none supplies the universal filtered, block, support-removal,
 base/successor or terminal producer required for Phase I/II.
 
+The second continuation lanes add concrete positive calibrations: a genuine
+ℚ[X] filtration boundary (`M01PolynomialFiltrationBoundary`), a polynomial
+Rees Noetherian certificate (`ReesPolynomialNoetherian`), finite clearing for
+actual right Ore charts (`FullSymbolActualOreFinite`), a good polynomial
+module with negative-weight detection (`PolynomialGoodModuleCalibration`),
+split central finite-dimensional pencil activation (`CentralFinitePencil`), a
+literal Weyl A₁ original-ring identity (`WeylA1Calibration`), and a concrete
+Nat support-removal successor (`NatSupportRemoval`). Each has an independent
+trust-disabled oracle; none generalizes the result to the paper's arbitrary
+filtered noncommutative class, so no phase gate is promoted.
+
 The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, while
 `WeightedInverseBoundary.lean` records the independent negative-degree unit

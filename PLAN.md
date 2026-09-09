@@ -143,6 +143,21 @@ negative-degree unit obstruction. The strong-P_h base obstruction and the
 typed A₁ `OreSet` obstruction are also retained. These results narrow the
 first missing universal hypotheses; they do not close M01–M11.
 
+The second continuation wave adds positive calibrations and consumers:
+`M01PolynomialFiltrationBoundary` gives a genuine ℚ[X] filtration together
+with the right-ideal-layer incompatibility; `ReesPolynomialNoetherian` gives
+an explicit Noetherian certificate for Mathlib's polynomial Rees algebra;
+`FullSymbolActualOreFinite` clears finite families in an actual right Ore
+localization; `PolynomialGoodModuleCalibration` supplies a genuine good
+polynomial module with negative-weight detection; `CentralFinitePencil`
+handles split finite-dimensional central realizations of repeated
+division-ring blocks; `WeylA1Calibration` records the literal A₁ original-ring
+identity and Stafford38 finite-potential adapter; and `NatSupportRemoval`
+checks a non-vacuous concrete successor with carried-test retention. Each
+source and oracle is trust-disabled checked. These are model calibrations or
+conditional consumers, not the universal filtered-class, arbitrary-block,
+support-removal, base or successor producer, so all gates remain pending.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

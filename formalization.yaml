@@ -57,7 +57,11 @@ project:
     equivalence, strict good-subquotient Noetherian consumers, a polynomial
     full-symbol calibration, finite weighted-faithful calibration, a
     zero-pencil division-ring obstruction, finite-direction original-U source
-    selection, and explicit base/two-call endpoint assembly.
+    selection, explicit base/two-call endpoint assembly, a polynomial
+    filtration boundary, polynomial Rees-Noetherian certificate, finite
+    actual-Ore clearing, a good polynomial-module calibration, split central
+    finite-pencil activation, a Weyl A1 original-ring calibration, and a
+    concrete Nat support-removal successor.
     General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
@@ -127,7 +131,7 @@ related_formalizations:
     relationship: "builds-on"
 
 verification:
-  commit: "acd7560fe729a8aaa4c41f6eecb0215796e8015b"
+  commit: "74566b13893dc530531a00094e610f71a0551910"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -175,7 +179,10 @@ status:
     degree-zero associated-layer equivalence, strict Rees good-subquotient
     consumers, polynomial full-symbol calibration, weighted-faithful
     calibration, zero-pencil division obstruction, finite-direction original-U
-    source selection, and base/two-call endpoint assembly, filtered,
+    source selection, and base/two-call endpoint assembly, polynomial
+    filtration/Rees-Noetherian and actual-Ore finite-clearing calibrations,
+    good polynomial-module and split central-pencil consumers, Weyl A1
+    original-ring calibration, and concrete Nat support-removal, filtered,
     source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,

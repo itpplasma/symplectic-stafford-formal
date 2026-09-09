@@ -19,3 +19,9 @@ polynomial full-symbol, weighted-faithful, division-pencil, source-selection
 and base/two-call assembly consumers. These are recorded as checkpoint
 evidence only; Phase I/II and publication remain disabled until the universal
 M01--M11 producer is proved.
+
+The second continuation replay additionally checks polynomial filtration and
+Rees-Noetherian calibrations, finite actual-Ore clearing, a good polynomial
+module with negative-weight detection, split central finite pencils, a Weyl A₁
+original-ring identity, and a concrete support-removal successor. These remain
+scoped model evidence rather than universal phase completion.
