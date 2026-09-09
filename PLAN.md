@@ -174,6 +174,22 @@ oracle is trust-disabled checked. These interfaces still require the actual
 filtered quantum algebraization, finite local-pass/support bridges, and
 producer hypotheses, so M01–M11 and both phase gates remain open.
 
+The fourth continuation wave composes those interfaces further:
+`AssociatedGradedSpecBridge` maps actual filtered layers to a commutative
+associated module and derives support/annihilator zero-locus consequences;
+`ReesNoetherianTransfer` transfers Noetherianity to the bounded Rees ring under
+finite homogeneous lifting; `FullSymbolOriginalCofactor` is consumed by
+`LocalizedDivisorAssembly` to recombine localized divisor certificates into
+original-U assembly; `GoodWeightedSupportBridge` turns weighted detection into
+a nonzero filtered class and support witness; `FiniteCentralDivisionActivated`
+composes finite-central division blocks with the Jacobson-top pencil consumer;
+`FiniteDimensionalAssembly` packages per-divisor split finite-dimensional source
+selection into SameDivisorS1; and `CentralFieldTwoCallSuccessor` composes
+central-field polynomial avoidance with the two-call successor. All are
+trust-disabled checked consumers with explicit hypotheses. The general quantum
+algebraization, denominator construction, local module bridges, and universal
+producer remain open; no phase gate is promoted.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

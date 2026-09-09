@@ -70,6 +70,13 @@ a split finite-dimensional original-U source selector, and central-field
 support-removal/test-retention bridges. These are checked conditional
 interfaces and finite-model consumers; the universal producer and release
 gates remain pending.
+The fourth continuation composes these interfaces into an associated-graded
+support bridge, a Rees Noetherian transfer criterion, localized-to-original
+divisor assembly, weighted detection-to-support linkage, finite-central
+activated pencils, finite-dimensional same-divisor assembly, and a central-field
+two-call successor. These remain conditional consumers with explicit local,
+chart, and coefficient hypotheses; the universal producer and release gates
+remain pending.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

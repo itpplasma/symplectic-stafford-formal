@@ -383,23 +383,40 @@ class, arbitrary-block decomposition, support-removal law, or base/successor
 producer.
 
 The third continuation replay adds an additive structural filtered-ring class
-in \\lean{Filtered/M01StructuralClass.lean}, with consecutive associated
+in \lean{Filtered/M01StructuralClass.lean}, with consecutive associated
 layers, degree-zero field action and least-layer detection. The bounded Rees
-bridge in \\lean{Filtered/BoundedReesBridge.lean} gives finite homogeneous
+bridge in \lean{Filtered/BoundedReesBridge.lean} gives finite homogeneous
 decomposition and a conditional Noetherian criterion for the actual Rees ring.
-\\lean{Filtered/FullSymbolOriginalCofactor.lean} recombines a localized
+\lean{Filtered/FullSymbolOriginalCofactor.lean} recombines a localized
 two-generator identity into literal original-ring cofactors after one common
 right denominator. The generic weighted good-module detector is recorded in
-\\lean{Filtered/GoodWeightedModule.lean}. On the finite-length/source side,
-\\lean{FiniteLength/FiniteCentralDivisionPencil.lean} handles
+\lean{Filtered/GoodWeightedModule.lean}. On the finite-length/source side,
+\lean{FiniteLength/FiniteCentralDivisionPencil.lean} handles
 finite-dimensional-over-center division blocks,
-\\lean{Source/FiniteDimensionalProducer.lean} selects one original-U source
+\lean{Source/FiniteDimensionalProducer.lean} selects one original-U source
 from split finite-dimensional pencils, and
-\\lean{Induction/CentralFieldSupportRemoval.lean} supplies central-field
+\lean{Induction/CentralFieldSupportRemoval.lean} supplies central-field
 polynomial exceptional-set avoidance with support-removal and carried-test
 retention inputs. Every source and independent oracle is trust-disabled
 checked; these remain conditional bridges and finite-model consumers rather
 than a proof of the universal filtered quantum producer.
+
+The fourth continuation composes these APIs. \lean{Filtered/AssociatedGradedSpecBridge.lean}
+maps actual quotient layers to a commutative associated module and derives
+the \lean{Module.support} annihilator zero-locus consequences.
+\lean{Filtered/ReesNoetherianTransfer.lean} transfers Noetherianity to the
+bounded Rees ring under finite homogeneous ideal lifting.
+\lean{Source/LocalizedDivisorAssembly.lean} combines actual right-chart
+clearing with original-\(U\) divisor assembly, while
+\lean{Filtered/GoodWeightedSupportBridge.lean} links weighted detection to
+nonzero filtered classes and support. The finite-length and induction
+compositions \lean{FiniteLength/FiniteCentralDivisionActivated.lean},
+\lean{Source/FiniteDimensionalAssembly.lean}, and
+\lean{Induction/CentralFieldTwoCallSuccessor.lean} provide explicit
+finite-central pencil, finite-dimensional source, and two-call successor
+consumers. Their local, chart, denominator, and coefficient hypotheses remain
+visible; independent trust-disabled oracles pass, but no universal producer is
+claimed.
 
 \section{Phase instructions and evidence}\label{sec:phases}\backmap
 

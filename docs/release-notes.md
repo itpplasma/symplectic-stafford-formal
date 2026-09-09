@@ -33,3 +33,10 @@ division-block pencils, a split finite-dimensional original-U source selector,
 and central-field support-removal/test-retention bridges. These remain checked
 conditional interfaces and finite-model consumers; the universal producer and
 publication gates stay disabled.
+
+The fourth continuation replay composes the preceding interfaces into an
+associated-graded support bridge, a Rees Noetherian transfer criterion,
+localized-to-original divisor assembly, weighted detection-to-support linkage,
+finite-central activated pencils, finite-dimensional same-divisor assembly,
+and a central-field two-call successor. Their local, chart, and coefficient
+hypotheses remain explicit; no universal phase or publication gate is enabled.

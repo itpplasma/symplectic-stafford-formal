@@ -66,7 +66,11 @@ project:
     localized-to-original cofactor recombination, generic weighted
     good-module detection, finite-central division-block pencils, a split
     finite-dimensional original-U source selector, and central-field
-    support-removal/test-retention bridges.
+    support-removal/test-retention bridges, an associated-graded spectrum
+    support bridge, a filtered-to-Rees Noetherian transfer criterion,
+    localized divisor assembly, weighted support linkage, finite-central
+    activated pencils, finite-dimensional same-divisor assembly, and a
+    central-field two-call successor.
     General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
@@ -136,7 +140,7 @@ related_formalizations:
     relationship: "builds-on"
 
 verification:
-  commit: "a04b5cba8c4807a1a287a51c3b2cb8aa24c28d4e"
+  commit: "5f8ef9f24caecd211083129611cb5fe25b883f60"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -191,7 +195,11 @@ status:
     structural filtered-ring class, bounded homogeneous Rees bridge,
     localized-to-original cofactor recombination, generic good weighted
     module, finite-central division pencil, finite-dimensional source
-    producer, and central-field support-removal bridge, filtered,
+    producer, and central-field support-removal bridge, associated-graded
+    spectrum support bridge, Rees Noetherian transfer, localized divisor
+    assembly, weighted support linkage, finite-central activated pencils,
+    finite-dimensional same-divisor assembly, and central-field two-call
+    successor, filtered,
     source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,

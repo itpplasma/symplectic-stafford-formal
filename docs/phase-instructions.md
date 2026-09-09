@@ -151,6 +151,19 @@ test-retention inputs. Their independent trust-disabled oracles pass, but the
 filtered algebraization, local module bridges, and universal source/induction
 producers remain unproved. No Phase I/II or publication status changes.
 
+The fourth continuation composes these APIs: `AssociatedGradedSpecBridge`
+connects filtered quotient layers to an actual commutative associated module
+and its support; `ReesNoetherianTransfer` transfers Noetherianity under finite
+homogeneous lifting; `LocalizedDivisorAssembly` combines actual right-chart
+clearing with original-U divisor assembly; `GoodWeightedSupportBridge` links
+weighted detection to nonzero filtered classes and support; and
+`FiniteCentralDivisionActivated`, `FiniteDimensionalAssembly`, and
+`CentralFieldTwoCallSuccessor` compose the finite-central pencil, source, and
+two-call successor consumers. Every premise remains explicit and every
+independent oracle is trust-disabled checked. These compositions do not prove
+the universal quantum algebraization or producer, so both phases and release
+remain pending.
+
 The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, while
 `WeightedInverseBoundary.lean` records the independent negative-degree unit

@@ -286,3 +286,33 @@ not establish the arbitrary higher-dimensional algebraization, filtered
 Noetherian/Ore identification, block decomposition, universal source
 producer, or P1/successor construction. Phase I, Phase II, Palomar, and
 publication therefore remain fail-closed.
+
+## Fourth continuation wave
+
+The next Luna pass composed the preceding interfaces into seven further
+consumers:
+
+- `48dca76` — `AssociatedGradedSpecBridge`, an actual quotient-layer map to a
+  commutative associated module with surjectivity, exact predecessor kernel,
+  and `Module.support`/annihilator zero-locus consequences.
+- `6d13834` — `ReesNoetherianTransfer`, a finite homogeneous ideal-lifting
+  contract transferring Noetherianity to the concrete bounded `ReesRing`.
+- `72d2999` — `LocalizedDivisorAssembly`, localized divisor certificates
+  recombined into original-U `DivisorIndexedAssembly` data using an explicit
+  right inverse for the cleared denominator.
+- `f79ec68` — `GoodWeightedSupportBridge`, detector/class compatibility that
+  turns a nonzero weighted coordinate into a nonzero filtered class and
+  nonempty module support.
+- `dbbb763` — `FiniteCentralDivisionActivated`, composition of finite-central
+  division-block bounds with the Jacobson-top activated-pencil consumer.
+- `ffb6e11` — `FiniteDimensionalAssembly`, per-divisor split finite-dimensional
+  source selection packaged into `SameDivisorS1`.
+- `092b028` — `CentralFieldTwoCallSuccessor`, central-field polynomial
+  avoidance composed with the two-call descent successor witness.
+
+All seven source files and seven independent oracles passed
+`lake env lean --trust=0`; the integrated root build completed 8,852 jobs.
+The bridges still require explicit algebraic charts, quotient-layer maps,
+finite-dimensional/local-pass data, denominator inverses, and support/removal
+certificates. They therefore do not prove the universal higher-dimensional
+filtered producer or promote Phase I, Phase II, Palomar, or publication.
