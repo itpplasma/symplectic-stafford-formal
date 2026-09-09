@@ -1,5 +1,8 @@
 import SymplecticStafford.Filtered.BoundedReesBridge
 import SymplecticStafford.Filtered.M01StructuralClass
+import Mathlib.RingTheory.FiniteType
+import Mathlib.RingTheory.GradedAlgebra.Basic
+import SymplecticStafford.Filtered.ReesGoodSubquotient
 
 /-!
 # Explicit filtered-to-Rees Noetherian transfer
@@ -62,6 +65,105 @@ theorem isNoetherianRing_of_homogeneous_lifting
   exact H.component_mem_span I
 
 end AdditiveFilteredRingData
+
+/-!
+## A genuine affine-graded presentation
+
+The preceding criterion is phrased in terms of homogeneous generators of each
+actual ideal of the bounded Rees ring.  A different, useful way to discharge
+that criterion is to give an actual affine commutative graded source and an
+actual surjection onto the bounded Rees ring.  The surjection is essential:
+the filtration alone does not construct it, and a completed or merely
+associated-graded object cannot be substituted for its codomain.
+
+`locallyFinite` records the finite-dimensional graded pieces needed for a
+locally finite affine graded chart.  Noetherianity itself uses the affine
+finite-type field; this is intentional, since finite type over a Noetherian
+field is the precise Noetherian input.  `homogeneous_lift` records that the
+surjection really respects the specified bounded homogeneous terms rather
+than being an unrelated quotient map.
+-/
+
+structure LocallyFiniteAffineGradedRing
+    (K : Type u) (G : Type v) [Field K] [CommRing G] [Algebra K G] where
+  pieces : ℕ → Submodule K G
+  graded : GradedAlgebra pieces
+  locallyFinite : ∀ n : ℕ, Module.Finite K (pieces n)
+  affine : Algebra.FiniteType K G
+
+namespace LocallyFiniteAffineGradedRing
+
+variable {K : Type u} {G : Type v} [Field K] [CommRing G] [Algebra K G]
+
+theorem isNoetherianRing (C : LocallyFiniteAffineGradedRing K G) :
+    IsNoetherianRing G := by
+  letI : Algebra.FiniteType K G := C.affine
+  exact Algebra.FiniteType.isNoetherianRing K G
+
+end LocallyFiniteAffineGradedRing
+
+section AffineGradedPresentation
+
+variable {K : Type u} {G : Type v} [Field K] [CommRing G] [Algebra K G]
+variable {R : Type w} [Ring R]
+
+/-- An actual affine-graded presentation of the bounded Rees ring. -/
+structure BoundedReesRingPresentation
+    (C : LocallyFiniteAffineGradedRing K G)
+    (F : NegFiltrationData R) where
+  toRingHom : G →+* ReesRing F
+  surjective : Function.Surjective toRingHom
+  /-- Every homogeneous source element has a bounded homogeneous lift. -/
+  homogeneous_lift : ∀ n : ℕ, ∀ x : C.pieces n,
+    ∃ (a : R) (ha : a ∈ F.carrier n),
+      toRingHom (x : G) = ReesRing.homogeneousLift F n a ha
+
+theorem BoundedReesRingPresentation.isNoetherianRing
+    (C : LocallyFiniteAffineGradedRing K G)
+    (F : NegFiltrationData R)
+    (P : BoundedReesRingPresentation C F) :
+    IsNoetherianRing (ReesRing F) := by
+  letI : IsNoetherianRing G := C.isNoetherianRing
+  exact isNoetherianRing_of_surjective G (ReesRing F)
+    P.toRingHom P.surjective
+
+end AffineGradedPresentation
+
+section AffineGradedModulePresentation
+
+variable {K : Type u} {G : Type v} [Field K] [CommRing G] [Algebra K G]
+variable {R : Type w} [Ring R]
+variable {P M : Type w} [AddCommGroup P] [AddCommGroup M] [Module G P]
+
+/--
+Noetherianity transfer for an actual bounded-Rees module.  The target module
+structure and the semilinear map are parameters because the current bounded
+module-term construction has only a `ReesQuotient` action, not an action of
+`ReesRing`.  An application must therefore supply the actual target module
+and its surjective semilinear presentation.
+-/
+theorem isNoetherianModule_of_affineGraded_surjective
+    (C : LocallyFiniteAffineGradedRing K G)
+    (F : NegFiltrationData R)
+    (σ : G →+* ReesRing F) [RingHomSurjective σ]
+    [Module (ReesRing F) M] [Module.Finite G P]
+    (f : P →ₛₗ[σ] M) (hf : LinearMap.range f = ⊤) :
+    IsNoetherian (ReesRing F) M := by
+  letI : IsNoetherianRing G := C.isNoetherianRing
+  exact isNoetherian_of_surjective f hf
+
+theorem boundedReesModuleCertificate_of_affineGraded_surjective
+    (C : LocallyFiniteAffineGradedRing K G)
+    (F : NegFiltrationData R)
+    (σ : G →+* ReesRing F) [RingHomSurjective σ]
+    [Module (ReesRing F) M] [Module.Finite G P]
+    (f : P →ₛₗ[σ] M) (hf : LinearMap.range f = ⊤) :
+    Nonempty (ReesModuleNoetherianCertificate (ReesRing F) M) := by
+  letI : IsNoetherian (ReesRing F) M :=
+    isNoetherianModule_of_affineGraded_surjective C F σ f hf
+  exact ⟨noetherianModuleCertificate⟩
+
+end AffineGradedModulePresentation
 
 end
 
