@@ -34,6 +34,20 @@ example : support 1 5 [] = ({0, 1} : Finset κ) := by
 example : finiteSupportDefect (support 1 5 []) = 1 := by
   norm_num [support, finiteSupportDefect]
 
+example
+    (lower : StrongPh 2 1 defect)
+    (d : ℚ) (hd : d ≠ 0) (A : AffineSource ℚ)
+    (Ω : List (LocalTest ℚ Unit Unit))
+    (hΩ : AdmissibleTestList d Ω)
+    (step : CentralFieldTwoCallStep (P := parameters) (κ := κ)
+      (D := 2) (h := 1) (defect := defect) (lower := lower)
+      (d := d) (hd := hd) (A := A) (Ω := Ω) (hΩ := hΩ)) :
+    ∀ z : ℚ,
+      (∀ p, p ∈ step.oldSupport →
+        (step.certificate.componentPolynomial p).eval z ≠ 0) →
+      finiteSupportDefect (step.outputSupport z) ≤ defectBound 2 (1 + 1) := by
+  exact step.output_bound
+
 noncomputable example
     (base : BaseProducer 2 defect)
     (family : CentralFieldTwoCallFamily parameters κ 2 defect) :

@@ -36,6 +36,71 @@ structure CentralFieldTwoCallStep
     {hΩ : AdmissibleTestList d Ω} where
   data : TwoCallDescentData (κ := κ) P D h defect lower d hd A Ω hΩ
   certificate : CentralFieldTwoCallData (κ := κ) data
+  /-- Explicit old/new/output support representatives for the two calls. -/
+  oldSupport : Finset κ
+  newSupport : Finset κ
+  outputSupport : K → Finset κ
+  oldSupport_eq : oldSupport =
+    data.support d (lower d hd A Ω hΩ).source Ω
+  newSupport_eq : newSupport =
+    data.support data.auxiliaryDivisor
+      (lower data.auxiliaryDivisor data.auxiliaryDivisor_nonzero
+        (homogeneousAffine A.a A.a_nonzero) data.newInput
+        data.newInput_admissible).source data.newInput
+  outputSupport_eq : ∀ z : K, outputSupport z =
+    data.support d
+      (pencilMember P (lower d hd A Ω hΩ).source
+        (lower data.auxiliaryDivisor data.auxiliaryDivisor_nonzero
+          (homogeneousAffine A.a A.a_nonzero) data.newInput
+          data.newInput_admissible).source z) Ω
+  output_subset_old : ∀ z : K,
+    (∀ p, p ∈ oldSupport →
+      (certificate.componentPolynomial p).eval z ≠ 0) →
+      outputSupport z ⊆ oldSupport
+  output_subset_new : ∀ z : K,
+    (∀ p, p ∈ oldSupport →
+      (certificate.componentPolynomial p).eval z ≠ 0) →
+      outputSupport z ⊆ newSupport
+  output_strict_old : ∀ z : K,
+    (∀ p, p ∈ oldSupport →
+      (certificate.componentPolynomial p).eval z ≠ 0) →
+      outputSupport z ⊂ oldSupport
+  output_strict_new : ∀ z : K,
+    (∀ p, p ∈ oldSupport →
+      (certificate.componentPolynomial p).eval z ≠ 0) →
+      outputSupport z ⊂ newSupport
+  old_bound : finiteSupportDefect oldSupport ≤ defectBound D h
+  new_bound : finiteSupportDefect newSupport ≤ defectBound D h
+
+theorem CentralFieldTwoCallStep.output_bound
+    {K : Type v} [Field K] [Infinite K]
+    {κ : Type w} [DecidableEq κ]
+    {T : Type x} {V : Type y}
+    {P : CentralParameters U K} {D h : Nat}
+    {defect : U → U → List (LocalTest U T V) → Int}
+    {lower : StrongPh D h defect}
+    {d : U} {hd : d ≠ 0} {A : AffineSource U}
+    {Ω : List (LocalTest U T V)}
+    {hΩ : AdmissibleTestList d Ω}
+    (step : CentralFieldTwoCallStep (κ := κ) (P := P) (D := D)
+      (h := h) (defect := defect) (lower := lower) (d := d)
+      (hd := hd) (A := A) (Ω := Ω) (hΩ := hΩ)) :
+    ∀ z : K,
+      (∀ p, p ∈ step.oldSupport →
+        (step.certificate.componentPolynomial p).eval z ≠ 0) →
+      finiteSupportDefect (step.outputSupport z) ≤
+        defectBound D (h + 1) := by
+  intro z hz
+  exact SupportRemovalArithmetic.output_bound {
+    oldSupport := step.oldSupport
+    newSupport := step.newSupport
+    outputSupport := step.outputSupport z
+    output_subset_old := step.output_subset_old z hz
+    output_subset_new := step.output_subset_new z hz
+    output_strict_old := step.output_strict_old z hz
+    output_strict_new := step.output_strict_new z hz
+    old_bound := step.old_bound
+    new_bound := step.new_bound }
 
 /-- A family of explicit central-field steps at every index and target datum.
 The base and all local support/test inputs remain caller-supplied. -/
