@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Polynomial.Degree.Units
 import Mathlib.Algebra.Polynomial.Monic
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Tactic
 
 /-!
 # A strict-negative-degree inverse boundary
@@ -50,6 +52,30 @@ theorem negativeDegree_does_not_force_one_sub_unit :
     h Polynomial.X polynomial_X_negativeDegree
   exact polynomial_one_sub_X_not_isUnit hc
 
+/- The same missing unit criterion already obstructs a finite matrix inverse.
+   This diagonal example avoids any determinant or commutativity argument:
+   a matrix inverse would provide a one-sided polynomial inverse in the
+   `(0,0)` entry. -/
+noncomputable def diagonalNegativeCorrection :
+    Matrix (Fin 2) (Fin 2) ℤ[X] :=
+  !![Polynomial.X, 0; 0, Polynomial.X]
+
+theorem one_sub_diagonalNegativeCorrection_not_isUnit :
+    ¬ IsUnit (1 - diagonalNegativeCorrection) := by
+  intro hM
+  rcases hM with ⟨u, hu⟩
+  let N : Matrix (Fin 2) (Fin 2) ℤ[X] := ↑(u⁻¹)
+  have hMN : (1 - diagonalNegativeCorrection) * N = 1 := by
+    rw [← hu]
+    exact u.val_inv
+  have hentry := congrFun (congrFun hMN 0) 0
+  have hscalar : ((1 : ℤ[X]) - Polynomial.X) * N 0 0 = 1 := by
+    simpa [diagonalNegativeCorrection, Matrix.mul_apply, Fin.sum_univ_succ] using hentry
+  have hunit : IsUnit ((1 : ℤ[X]) - Polynomial.X) :=
+    IsUnit.of_mul_eq_one (N 0 0) hscalar
+  exact polynomial_one_sub_X_not_isUnit hunit
+
 end SymplecticStafford.Filtered
 
 #print axioms SymplecticStafford.Filtered.negativeDegree_does_not_force_one_sub_unit
+#print axioms SymplecticStafford.Filtered.one_sub_diagonalNegativeCorrection_not_isUnit

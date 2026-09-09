@@ -30,6 +30,38 @@ open scoped BigOperators
 variable {ι : Type u} {R : Type v}
 variable [Fintype ι] [DecidableEq ι] [Ring R]
 
+/-!
+The scalar hypothesis used by a finite Schur argument is stronger than a
+strict degree drop.  This record names the exact bounded chart input without
+pretending to derive it from an arbitrary filtration.  In particular,
+`below_one_inverse` supplies both an actual inverse and the nonpositive degree
+bound needed to preserve strictness after Schur complementation.
+-/
+structure BoundedBelowOneData (A : Type*) [Ring A] where
+  /-- `⊥` is the degree of zero, so multiplication by zero is harmless. -/
+  degree : A → WithBot Int
+  degree_zero : degree 0 = ⊥
+  degree_one : degree 1 = 0
+  degree_add_le_max : ∀ a b, degree (a + b) ≤ max (degree a) (degree b)
+  degree_mul_le_add : ∀ a b, degree (a * b) ≤ degree a + degree b
+  below_one_inverse : ∀ c, degree c < 0 →
+    ∃ u, (1 - c) * u = 1 ∧ u * (1 - c) = 1 ∧ degree u ≤ 0
+
+namespace BoundedBelowOneData
+
+variable {A : Type*} [Ring A] (D : BoundedBelowOneData A)
+
+theorem isUnit_one_sub_of_negative {c : A} (hc : D.degree c < 0) :
+    IsUnit (1 - c) := by
+  rcases D.below_one_inverse c hc with ⟨u, hleft, hright, _⟩
+  exact ⟨⟨1 - c, u, hleft, hright⟩, rfl⟩
+
+theorem exists_bounded_inverse {c : A} (hc : D.degree c < 0) :
+    ∃ u, (1 - c) * u = 1 ∧ u * (1 - c) = 1 ∧ D.degree u ≤ 0 :=
+  D.below_one_inverse c hc
+
+end BoundedBelowOneData
+
 private theorem geom_left (C : Matrix ι ι R) (n : ℕ) :
     (1 - C) * (∑ k ∈ Finset.range n, C ^ k) = 1 - C ^ n := by
   induction n with
@@ -101,3 +133,4 @@ end SymplecticStafford.Filtered
 #print axioms SymplecticStafford.Filtered.WeightedMatrixInverse.isUnit_one_sub_of_pow_eq_zero
 #print axioms SymplecticStafford.Filtered.WeightedMatrixInverse.finite_inverse_of_pow_eq_zero
 #print axioms SymplecticStafford.Filtered.WeightedMatrixInverse.vecMul_eq_zero_of_mul_one_sub_eq_zero
+#print axioms SymplecticStafford.Filtered.WeightedMatrixInverse.BoundedBelowOneData.isUnit_one_sub_of_negative

@@ -14,4 +14,7 @@ example :
     ¬ (∀ c : ℤ[X], PolynomialNegativeDegree c → IsUnit (1 - c)) :=
   negativeDegree_does_not_force_one_sub_unit
 
+example : ¬ IsUnit (1 - diagonalNegativeCorrection) :=
+  one_sub_diagonalNegativeCorrection_not_isUnit
+
 end SymplecticStafford.Filtered.WeightedInverseBoundaryOracle
