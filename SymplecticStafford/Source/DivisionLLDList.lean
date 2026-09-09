@@ -109,6 +109,80 @@ theorem exists_scalar_avoiding_affine (ι : K →+* U)
     (finite_affineExceptional ι hι tests)
   exact ⟨z, hz⟩
 
+/-- The zero members of an affine line with nonzero right tail form at most
+one central scalar.  This is the source-level companion to the division
+coefficient pencil calculation above.  In particular, the proof does not
+commute `ι z` past `a`: cancellation is on the right, in the displayed
+order `ι z * a`. -/
+theorem finite_affine_source_roots (ι : K →+* U)
+    (hι : Function.Injective ι) (B a : U) (ha : a ≠ 0) :
+    Set.Finite {z : K | B + ι z * a = 0} := by
+  have hsingle : Set.Subsingleton ({z : K | B + ι z * a = 0} : Set K) := by
+    intro z hz w hw
+    apply hι
+    apply mul_right_cancel₀ ha
+    calc
+      ι z * a = (B + ι z * a) - B := by noncomm_ring
+      _ = 0 - B := by rw [hz]
+      _ = (B + ι w * a) - B := by rw [hw]
+      _ = ι w * a := by noncomm_ring
+  by_cases hne : ({z : K | B + ι z * a = 0} : Set K).Nonempty
+  · obtain ⟨z, hz⟩ := hne
+    apply Set.Finite.subset (Set.finite_singleton z)
+    intro w hw
+    have hwz : w = z := hsingle hz hw |>.symm
+    simpa [hwz]
+  · rw [Set.not_nonempty_iff_eq_empty.mp hne]
+    exact Set.finite_empty
+
+/-- Simultaneous scalar avoidance for all local division pencils, the affine
+source-zero set, and any previously accumulated finite exceptional set. -/
+theorem exists_scalar_avoiding_affine_and_source
+    (ι : K →+* U) (hι : Function.Injective ι)
+    (tests : List (AffineDivisionTest U K)) (B a : U) (ha : a ≠ 0)
+    (forbidden : Set K) (hforbidden : forbidden.Finite) :
+    ∃ z : K, z ∉ forbidden ∧ z ∉ affineExceptional ι tests ∧
+      B + ι z * a ≠ 0 := by
+  have hsource : Set.Finite {z : K | B + ι z * a = 0} :=
+    finite_affine_source_roots ι hι B a ha
+  have hpencils : Set.Finite (affineExceptional ι tests) :=
+    finite_affineExceptional ι hι tests
+  have hall : (forbidden ∪ affineExceptional ι tests ∪
+      {z : K | B + ι z * a = 0}).Finite :=
+    (hforbidden.union hpencils).union hsource
+  obtain ⟨z, hz⟩ := Set.infinite_univ.exists_notMem_finite hall
+  refine ⟨z, ?_, ?_, ?_⟩
+  · exact fun h => hz.2 (Or.inl (Or.inl h))
+  · exact fun h => hz.2 (Or.inl (Or.inr h))
+  · exact fun h => hz.2 (Or.inr h)
+
+/-- One original-U affine source simultaneously passes a finite list of
+division-coefficient tests and is itself nonzero.  The latter condition is
+not inferred from the local predicates: it is enforced by adding the actual
+source-zero set to the same finite exceptional set. -/
+theorem exists_original_affine_source_of_list_nonzero
+    (ι : K →+* U) (hι : Function.Injective ι)
+    (tests : List (AffineDivisionTest U K)) (B a : U) (ha : a ≠ 0) :
+    ∃ (H source : U),
+      source = B + H * a ∧ source ≠ 0 ∧
+      (∀ t, t ∈ tests →
+        t.passes source t.offset t.rightTail) ∧
+      (∀ t, t ∈ tests → t.rightTail ≠ 0) := by
+  obtain ⟨z, _hnotzero_forbidden, hnotpencil, hnotzero⟩ :=
+    exists_scalar_avoiding_affine_and_source ι hι tests B a ha ∅
+      Set.finite_empty
+  let H : U := ι z
+  let source : U := B + H * a
+  have hp : ∀ t, t ∈ tests → t.vCoeff + ι z * t.uCoeff ≠ 0 :=
+    fun t ht hp => hnotpencil ⟨t, ht, hp⟩
+  refine ⟨H, source, ?_, ?_, ?_, ?_⟩
+  · rfl
+  · simpa [H, source] using hnotzero
+  · intro t ht
+    simpa [H, source] using t.passes_of_pencil_ne_zero ι B a z (hp t ht)
+  · intro t ht
+    exact t.rightTail_ne_zero
+
 theorem selected_pencils_ne_zero (ι : K →+* U)
     {tests : List (AffineDivisionTest U K)} {z : K}
     (hz : z ∉ affineExceptional ι tests) :
@@ -143,4 +217,6 @@ end SymplecticStafford.Source
 
 #print axioms SymplecticStafford.Source.AffineDivisionTest.left_linear_detection
 #print axioms SymplecticStafford.Source.finite_affineExceptional
+#print axioms SymplecticStafford.Source.finite_affine_source_roots
+#print axioms SymplecticStafford.Source.exists_original_affine_source_of_list_nonzero
 #print axioms SymplecticStafford.Source.exists_original_affine_source_of_list

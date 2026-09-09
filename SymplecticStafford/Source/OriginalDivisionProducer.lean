@@ -110,8 +110,50 @@ theorem exists_original_affine_source_of_bridged_list
     have htail := htails (OriginalDivisionTest.toAffineDivisionTest t) hmem
     exact htail
 
+/-- Certified original-U source production with the source-zero exception
+explicitly removed.  Every list member carries its own admissibility proof,
+so callers cannot accidentally pass a test for a different divisor or omit
+one of the localization/finite-length/canonical-generator certificates.
+The conclusion retains the exact local predicates, offsets and right tails. -/
+structure CertifiedOriginalDivisionTest
+    (d : U) (LocalizationData : Type w) (CyclicModuleData : Type*)
+    [DivisionRing U] [Field K] where
+  test : OriginalDivisionTest U K LocalizationData CyclicModuleData
+  admissible : test.localTest.Admissible d
+
+theorem exists_original_affine_source_of_certified_list
+    {LocalizationData : Type w} {CyclicModuleData : Type*}
+    (ι : K →+* U) (hι : Function.Injective ι)
+    (d : U)
+    (tests : List (CertifiedOriginalDivisionTest
+      (U := U) (K := K) d LocalizationData CyclicModuleData))
+    (B a : U) (ha : a ≠ 0) :
+    ∃ (H source : U),
+      source = B + H * a ∧ source ≠ 0 ∧
+      (∀ t, t ∈ tests → t.test.localTest.Admissible d) ∧
+      (∀ t, t ∈ tests → t.test.localTest.Passes source) ∧
+      (∀ t, t ∈ tests → t.test.localTest.rightTail ≠ 0) := by
+  let rawTests : List (OriginalDivisionTest U K LocalizationData CyclicModuleData) :=
+    tests.map (fun t => t.test)
+  obtain ⟨H, source, hsource, hne, hpasses, htails⟩ :=
+    exists_original_affine_source_of_list_nonzero ι hι
+      (rawTests.map OriginalDivisionTest.toAffineDivisionTest) B a ha
+  refine ⟨H, source, hsource, hne, ?_, ?_, ?_⟩
+  · intro t ht
+    exact t.admissible
+  · intro t ht
+    have hraw : t.test ∈ rawTests := List.mem_map_of_mem ht
+    have hp := hpasses (OriginalDivisionTest.toAffineDivisionTest t.test)
+      (List.mem_map_of_mem hraw)
+    exact (OriginalDivisionTest.toAffineDivisionTest_passes t.test source).mp hp
+  · intro t ht
+    have hraw : t.test ∈ rawTests := List.mem_map_of_mem ht
+    exact htails (OriginalDivisionTest.toAffineDivisionTest t.test)
+      (List.mem_map_of_mem hraw)
+
 end SymplecticStafford.Source
 
 #print axioms
   SymplecticStafford.Source.OriginalDivisionTest.toAffineDivisionTest_passes
 #print axioms SymplecticStafford.Source.exists_original_affine_source_of_bridged_list
+#print axioms SymplecticStafford.Source.exists_original_affine_source_of_certified_list
