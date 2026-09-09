@@ -67,11 +67,10 @@ project:
     good-module detection, finite-central division-block pencils, a split
     finite-dimensional original-U source selector, and central-field
     support-removal/test-retention bridges.
-    General
-    finite-length activated pencils and the universal
-    source producer remain open. It does not claim
-    the universal higher-dimensional source-selection or same-divisor theorem
-    from the companion paper; those are explicit Phase I and Phase II gates.
+    General finite-length activated pencils and the universal source producer
+    remain open. It does not claim the universal higher-dimensional
+    source-selection or same-divisor theorem in the internal all-dimensional
+    proof candidate; those are explicit Phase I and Phase II gates.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -98,17 +97,20 @@ classification:
     - "16S38"
 
 sources:
-  - title: "Symplectic Stafford: all-dimensional paper candidate"
+  - title: "Original Symplectic Stafford proof development"
     authors:
       - name: "Christopher Albert"
         orcid: "0000-0003-4773-416X"
     type: "original-proof"
-    relationship: "formalizes"
+    relationship: "other"
     location: "itpplasma/symplectic-stafford, commit 502b65a1dea53cac52220a08e321bfba525bc72e"
     note: >-
-      The authoritative research source is Markdown in a private repository;
-      this formal checkpoint records only the semantic contracts currently
-      implemented in Lean.
+      The private Markdown exposition, working notes, and this Lean checkpoint
+      are records of the same internal research development. The exposition is
+      not a separately published or presented prior source being formalized.
+      Its dated chronology is retained for provenance and mathematical review.
+      This checkpoint makes no publication or priority claim and does not yet
+      establish the universal theorem.
     license: "unknown"
     author_endorsement: "participated"
   - title: "Module structure of Weyl algebras"
@@ -122,18 +124,14 @@ sources:
     note: >-
       Historical source for the same-divisor target. The universal symplectic
       extension is not imported as a theorem by this checkpoint.
-  - title: "Stafford38 formal"
-    authors:
-      - "Christopher Albert"
-    type: "software"
-    id: "https://github.com/itpplasma/stafford38-formal/tree/e77e176c381ca2d6b20c030f9227f1b031415d2e"
-    relationship: "builds-on"
-    note: "Pinned public dependency used for the shared formal environment."
 
 related_formalizations:
   - name: "Stafford 3.8"
     url: "https://github.com/itpplasma/stafford38-formal"
     relationship: "builds-on"
+    note: >-
+      Pinned public formal dependency used for the shared environment; it is
+      not a mathematical source for the new symplectic proof development.
 
 verification:
   commit: "a04b5cba8c4807a1a287a51c3b2cb8aa24c28d4e"
@@ -259,20 +257,20 @@ automation:
 
 fidelity:
   divergences: >-
-    The formal checkpoint freezes the paper's original-ring right-sided product
-    order but stops before the paper's universal source producer and induction.
-    It records M06/M07/M08-shaped contracts only as conditional consumers. The paper
-    source is Markdown, so the TeX dossier is a comparison supplement, not a
-    manuscript transcription.
+    The formal checkpoint freezes the internal candidate's original-ring
+    right-sided product order but stops before its universal source producer
+    and induction. It records M06/M07/M08-shaped contracts only as conditional
+    consumers. The internal proof source is Markdown, so the TeX dossier is a
+    comparison supplement, not a manuscript transcription.
     Contract.AdmissibleSymplecticClass is a historical dimension-parametric
     scaffold with B2 fields and placeholder proposition labels; it is not the
     final all-dimensional filtered-algebra class. That semantic bridge remains
     part of M01. Filtered/Localization uses a single-denominator power-clearing
-    contract and therefore is not the paper's full symbol-set Ore theorem;
+    contract and therefore is not the candidate's full symbol-set Ore theorem;
     FullSymbolRightPowerBridge derives that power boundary only from an
     already supplied right localization. FullSymbolLocalization and
     ReesNoetherianCriterion expose exact algebraic APIs but still require the
-    paper's Rees construction and leading-term certificate. WeightedMatrixInverse
+    candidate's Rees construction and leading-term certificate. WeightedMatrixInverse
     proves only the finite nilpotent matrix inverse step; strict weighted
     degree bounds still need to be connected to an original finite inverse.
     The follow-up `FullSymbolRightLocalization.common_right_clear` theorem
@@ -307,14 +305,14 @@ review:
     certified-source and removal/retention boundary utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
-    Fable/Claude paper audit found no invalid bridge in the written candidate;
-    human expert review and the universal theorem's statement correspondence
-    remain open.
+    Fable/Claude internal-proof audit found no invalid bridge in the written
+    candidate; human expert review and the universal theorem's statement
+    correspondence remain open.
 
 alignment:
   namespace: "SymplecticStafford"
   statements:
-    - source: "Paper target: ordered same-divisor certificate"
+    - source: "Internal proof target: ordered same-divisor certificate"
       lean: "SymplecticStafford.SameDivisorIdentity"
       module: "SymplecticStafford.Statement"
       status: "target-only"
@@ -328,7 +326,7 @@ alignment:
       lean: "SymplecticStaffordChallenge.universalStatement"
       module: "Solution"
       status: "proved"
-      note: "Mathlib-only definitional contract; not the paper theorem."
+      note: "Mathlib-only definitional contract; not the universal theorem."
 
 acknowledgements: >-
   The workspace builds on Lean, Mathlib, AlgebraicAnalysis, and the pinned
