@@ -51,6 +51,12 @@ filtrations, noncommutative associated layers, finite-length Jacobson tops,
 noncommutative division-ring pencil exceptions, filtered full-symbol weighting,
 the strong-P_h base, and the exact A₁ OreSet obstruction. These are evidence
 about the remaining hypotheses, not a terminal theorem.
+The latest continuation adds a degree-zero associated-layer equivalence,
+strict Rees good-subquotient consumers, a commutative polynomial full-symbol
+calibration, finite weighted-faithful detection, a zero-pencil division-ring
+obstruction, finite-direction original-U source selection, and explicit
+base/two-call endpoint assembly. Each is independently checked and remains
+conditional or diagnostic; the release gates stay fail-closed.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

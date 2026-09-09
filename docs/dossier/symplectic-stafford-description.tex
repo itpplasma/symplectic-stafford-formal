@@ -345,6 +345,26 @@ geometric semantics, universal source producer and zero-support-to-cofactor
 bridge remain to be proved. These checkpoints leave M01--M11 open and do not
 advance the release gates.
 
+The latest continuation replay adds several calibrated consumers and sharp
+boundaries. \lean{Filtered/M01DegreeZeroBridge.lean} constructs the additive
+degree-zero equivalence with the central field once the stronger filtered
+interface is supplied. \lean{Filtered/ReesGoodSubquotient.lean} derives strict
+Noetherian module and quotient consumers from explicit Noetherian instances.
+\lean{Filtered/FullSymbolPolynomialCalibration.lean} is a complete
+commutative \(\mathbb{Q}[X]\) full-symbol/Ore and finite-chart calibration, while
+\lean{Filtered/WeightedFaithfulCalibration.lean} checks finite weighted
+identity detection and nilpotent-correction preservation over a domain.
+\lean{FiniteLength/DivisionEigenObstruction.lean} proves that a zero pencil has
+an infinite bad set even with division-ring coefficients, isolating the
+missing witness hypothesis. On the source and induction sides,
+\lean{Source/OriginalDivisionProducer.lean} now includes a finite-direction
+original-\(U\) source constructor, and
+\lean{Induction/BaseTwoCallAssembly.lean} assembles an endpoint from explicit
+base, two-call and terminal extraction data. Every item is independently
+checked, but each remains a calibration, consumer or obstruction; none proves
+the universal filtered class, arbitrary noncommutative top decomposition,
+support removal, or the \(P_1\) and successor producers.
+
 \section{Phase instructions and evidence}\label{sec:phases}\backmap
 
 \lean{docs/phase-instructions.md} gives the final-paper M01--M11 ledger.

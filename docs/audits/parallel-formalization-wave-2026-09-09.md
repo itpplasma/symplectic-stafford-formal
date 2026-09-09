@@ -198,3 +198,32 @@ replay passed with the permitted logical closure. At integration commit
 `743d376251f3e9da1b9c7b5e4f0aa43fc988b2bb`, the aggregate root build completed
 8,809 jobs. These lanes expose genuine missing structural hypotheses; they do
 not close M01–M11 or authorize Phase I/II promotion.
+
+## Latest continuation lanes
+
+The controller then dispatched a further disjoint pass, whose checked commits
+are now present on `main`:
+
+- `b9ddb6e` — `M01DegreeZeroBridge`, an actual additive equivalence between
+  the central field and the degree-zero associated layer under the explicit
+  central-field interface.
+- `ed7ee22` — `ReesGoodSubquotient`, strict Noetherian module and quotient
+  consumers from supplied ring/module Noetherianity.
+- `9caca21` — `FullSymbolPolynomialCalibration`, a genuine commutative
+  `ℚ[X]` full-symbol/Ore and finite-chart calibration.
+- `f246686` — `WeightedFaithfulCalibration`, finite weighted identity
+  detection and nilpotent-correction preservation over a domain.
+- `1b52f9a` — `DivisionEigenObstruction`, the zero-pencil infinite-bad-set
+  obstruction even with division-ring coefficients.
+- `360a8ac` — finite-direction original-U source selection with explicit
+  division-pencil bridges, nonzero-source avoidance and retained tests.
+- `8e81055` — `BaseTwoCallAssembly`, endpoint assembly from explicit base,
+  two-call descent and terminal original-U extraction hypotheses.
+
+Every new source and independent oracle passed `lake env lean --trust=0`; the
+aggregate root build after importing the new modules completed 8,815 jobs.
+The results are calibrations, consumers, or obstructions with their producer
+hypotheses visible. In particular, they do not prove the universal filtered
+class, noncommutative finite-length witness construction, support removal, or
+the \(P_1\)/successor hypotheses, so Phase I, Phase II, Palomar and publication
+remain pending.

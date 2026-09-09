@@ -13,3 +13,9 @@ remaining universal source-producer and theorem gates are recorded in `PLAN.md` 
 
 The source archive is Apache-2.0. The dossier PDF is a generated companion
 artifact; its SHA-256 is listed in `SHA256SUMS` when a release is prepared.
+
+The latest formalization replay adds checked degree-zero, Rees-subquotient,
+polynomial full-symbol, weighted-faithful, division-pencil, source-selection
+and base/two-call assembly consumers. These are recorded as checkpoint
+evidence only; Phase I/II and publication remain disabled until the universal
+M01--M11 producer is proved.

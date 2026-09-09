@@ -53,7 +53,11 @@ project:
     repeated-block data, and a source-dependent support-removal obstruction,
     degree-zero central-field and noncommutative associated-graded boundaries,
     finite-length radical-top extraction, division-ring eigenvalue boundaries,
-    and filtered full-symbol weighted boundaries.
+    filtered full-symbol weighted boundaries, a degree-zero associated-layer
+    equivalence, strict good-subquotient Noetherian consumers, a polynomial
+    full-symbol calibration, finite weighted-faithful calibration, a
+    zero-pencil division-ring obstruction, finite-direction original-U source
+    selection, and explicit base/two-call endpoint assembly.
     General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
@@ -123,7 +127,7 @@ related_formalizations:
     relationship: "builds-on"
 
 verification:
-  commit: "743d376251f3e9da1b9c7b5e4f0aa43fc988b2bb"
+  commit: "acd7560fe729a8aaa4c41f6eecb0215796e8015b"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -167,7 +171,11 @@ status:
     structural labels, the A1 power-Ore obstruction, full-symbol weighted
     boundary, isotypic blocks, layer-support obstruction, degree-zero
     central-field and associated-graded boundaries, actual radical-top and
-    division-eigen consumers, filtered full-symbol weighted boundary, filtered,
+    division-eigen consumers, filtered full-symbol weighted boundary,
+    degree-zero associated-layer equivalence, strict Rees good-subquotient
+    consumers, polynomial full-symbol calibration, weighted-faithful
+    calibration, zero-pencil division obstruction, finite-direction original-U
+    source selection, and base/two-call endpoint assembly, filtered,
     source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,

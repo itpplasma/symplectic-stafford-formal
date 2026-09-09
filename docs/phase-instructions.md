@@ -113,6 +113,18 @@ obstruction). It also records the strong-P_h base obstruction and the typed
 power-Ore boundary. These remain checked boundary evidence; no phase gate is
 promoted.
 
+The latest continuation lanes add seven further checked scopes: an actual
+degree-zero additive equivalence (`M01DegreeZeroBridge`), strict Noetherian
+module/subquotient consumers (`ReesGoodSubquotient`), a commutative
+polynomial full-symbol/Ore calibration (`FullSymbolPolynomialCalibration`),
+finite weighted faithful detection with nilpotent correction
+(`WeightedFaithfulCalibration`), a zero-pencil division-ring obstruction
+(`DivisionEigenObstruction`), finite-direction original-U source selection
+(`exists_original_affine_source_of_actual_directions`), and explicit base plus
+two-call endpoint assembly (`BaseTwoCallAssembly`). Their hypotheses remain
+visible and none supplies the universal filtered, block, support-removal,
+base/successor or terminal producer required for Phase I/II.
+
 The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, while
 `WeightedInverseBoundary.lean` records the independent negative-degree unit
