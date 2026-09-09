@@ -14,6 +14,7 @@ import SymplecticStafford.FiniteLength.ExplicitBlocks
 import SymplecticStafford.FiniteLength.IsotypicBlocks
 import SymplecticStafford.FiniteLength.DivisionEigenBoundary
 import SymplecticStafford.FiniteLength.DivisionEigenObstruction
+import SymplecticStafford.FiniteLength.CentralFinitePencil
 import SymplecticStafford.FiniteLength.ActualRadicalTop
 import SymplecticStafford.Source.OriginalTestContract
 import SymplecticStafford.Package.Opposite
