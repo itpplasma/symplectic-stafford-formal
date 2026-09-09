@@ -167,3 +167,6 @@ noncomputable def strongPh_succ_of_finite_removal_retention
 end Producer
 
 end SymplecticStafford.Induction
+
+#print axioms SymplecticStafford.Induction.FiniteRemovalRetentionData.witness
+#print axioms SymplecticStafford.Induction.strongPh_succ_of_finite_removal_retention
