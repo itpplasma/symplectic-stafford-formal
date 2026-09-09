@@ -45,11 +45,9 @@ def retentionBoundary :
   carried_in_first := by
     intro t ht
     simp at ht ⊢
-    exact ht
   carried_in_second := by
     intro t ht
     simp at ht ⊢
-    exact ht
   first_passes := by
     intro t ht
     simp [retentionBoundaryPass]
