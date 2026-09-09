@@ -84,6 +84,7 @@ import SymplecticStafford.Induction.TwoCallDescentProducer
 import SymplecticStafford.Induction.FiniteScalarAvoidance
 import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
 import SymplecticStafford.Induction.LayerSupportObstruction
+import SymplecticStafford.Induction.BaseTwoCallAssembly
 import SymplecticStafford.Induction.SupportRemovalArithmetic
 import SymplecticStafford.Induction.SuccessorObstruction
 import SymplecticStafford.Ordered.CommonColon
