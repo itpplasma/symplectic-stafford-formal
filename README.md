@@ -119,8 +119,8 @@ formal project. Exact build revisions are in the lock files:
 | --- | --- |
 | Lean | `leanprover/lean4:v4.33.0` |
 | Mathlib | `db584cd6d46c92f209a44c0f1c829460d327499d` |
-| AlgebraicAnalysis | `46f2c819deca0e9735a436bed94ebed03ae35090` |
-| Stafford38 formal | `e77e176c381ca2d6b20c030f9227f1b031415d2e` |
+| AlgebraicAnalysis | `add0a80d865c88fe9cbc6901bda08a636ce188f9` (v0.3.1) |
+| Stafford38 formal | `213ae2073030c8a897087152a616b8f8c1292df2` (v1.1.1) |
 
 With Lean and Lake installed, run the checkpoint build and consumers:
 

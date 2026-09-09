@@ -460,7 +460,8 @@ The dependency check also found newer upstream tags: AlgebraicAnalysis
 be documentation/version updates and Stafford38 retains its AlgebraicAnalysis
 pin. A clean downstream clone with those two tags and the pinned Mathlib
 completed the 8864-job root build, and the new Rees/pencil source and oracle
-files replayed under `lake env lean --trust=0`; this establishes compatibility
-but is not yet the complete phase/release evidence. The authoritative project
-lock remains the audited Mathlib/AlgebraicAnalysis/Stafford38 triple in
-`lake-manifest.json` until the full downstream replay is frozen.
+files replayed under `lake env lean --trust=0`; the full latest-tag replay
+then completed all 136 trust-disabled oracle files and the Challenge/Solution
+checks. The exact latest triple is now recorded in `lakefile.toml` and
+`lake-manifest.json`; this dependency promotion does not change the open
+universal producer or any phase/release gate.

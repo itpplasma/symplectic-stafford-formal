@@ -463,12 +463,11 @@ The dependency family uses Lean \lean{leanprover/lean4:v4.33.0} and
 Mathlib's v4.33.0 revision
 \lean{db584cd6d46c92f209a44c0f1c829460d327499d}.
 The Stafford38 code revision used by this checkout is
-\lean{e77e176c381ca2d6b20c030f9227f1b031415d2e}. The newer public main head
-\lean{914d6ad0c8ac9851e782fa61302ba340996d9472} was checked as metadata-only
-release/documentation change, so the audited code pin remains unchanged.
+\lean{213ae2073030c8a897087152a616b8f8c1292df2} (v1.1.1), and
 AlgebraicAnalysis public main is pinned at
-\lean{46f2c819deca0e9735a436bed94ebed03ae35090}; this head was checked from
-an isolated clone before the downstream replay.
+\lean{add0a80d865c88fe9cbc6901bda08a636ce188f9} (v0.3.1). A clean isolated
+clone replayed the root build, Challenge/Solution checks, and all 136
+trust-disabled oracle files under this exact triple.
 The actual build pins are included below directly from the lock configuration;
 dependency migration is complete only when manifest consistency and downstream
 builds pass.

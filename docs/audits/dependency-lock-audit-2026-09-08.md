@@ -32,3 +32,15 @@ manifest both record the full 40-hex revisions; no floating branch is used.
 
 This is dependency reproducibility evidence only. It does not assert that the
 paper's M01–M11 producer or the release gates are complete.
+
+## Promotion addendum — 9 September 2026
+
+The later public tags are AlgebraicAnalysis v0.3.1
+(`add0a80d865c88fe9cbc6901bda08a636ce188f9`) and Stafford38-formal v1.1.1
+(`213ae2073030c8a897087152a616b8f8c1292df2`). A disposable clone using those
+tags with the pinned Mathlib revision completed the 8864-job root build,
+Challenge/Solution checks, and all 136 trust-disabled oracle files. The
+authoritative `lakefile.toml`, `lake-manifest.json`, README, phase instructions
+and dossier now record this exact triple. The original 8 September snapshot
+above is retained as historical evidence; neither dependency promotion nor
+the replay promotes Phase I, Phase II, Palomar, or publication.

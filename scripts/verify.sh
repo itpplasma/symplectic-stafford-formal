@@ -23,9 +23,9 @@ expected = {
     'mathlib': ('https://github.com/leanprover-community/mathlib4',
                 'db584cd6d46c92f209a44c0f1c829460d327499d'),
     'algebraicAnalysis': ('https://github.com/itpplasma/algebraic-analysis.git',
-                          '46f2c819deca0e9735a436bed94ebed03ae35090'),
+                          'add0a80d865c88fe9cbc6901bda08a636ce188f9'),
     'stafford38Formal': ('https://github.com/itpplasma/stafford38-formal.git',
-                         'e77e176c381ca2d6b20c030f9227f1b031415d2e'),
+                         '213ae2073030c8a897087152a616b8f8c1292df2'),
 }
 if Path('lean-toolchain').read_text().strip() != expected_toolchain:
     raise SystemExit('Lean toolchain pin mismatch')

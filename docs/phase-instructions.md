@@ -241,10 +241,12 @@ Retain exact Lean 4.33.0, Mathlib v4.33.0 and public dependency commits from
 the verified lock files. Replay from a clean checkout and record invocations,
 theorem types, imports, axiom reports and independent kernel results.
 The current locks are Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`,
-AlgebraicAnalysis `46f2c819deca0e9735a436bed94ebed03ae35090`, and Stafford38
-`e77e176c381ca2d6b20c030f9227f1b031415d2e`. Any dependency update requires a
-fresh downstream replay; an upstream version or release name is not that
-evidence.
+AlgebraicAnalysis `add0a80d865c88fe9cbc6901bda08a636ce188f9` (v0.3.1), and
+Stafford38 `213ae2073030c8a897087152a616b8f8c1292df2` (v1.1.1). A clean
+downstream replay completed the root build, Challenge/Solution checks, and all
+136 trust-disabled oracle files under this exact triple. Any future dependency
+update still requires a fresh downstream replay; an upstream version or
+release name is not that evidence.
 A semantic Challenge/Solution success does not release SS-all. Publication
 remains controlled by release-gates.yaml and the release runbook.
 The current endpoint files contain two semantic membership/generation
