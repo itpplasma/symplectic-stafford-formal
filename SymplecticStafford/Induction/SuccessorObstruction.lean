@@ -34,6 +34,20 @@ def flatLower : StrongPh 0 1 flatDefect := by
   intro t ht
   exact nomatch t.cyclicModule
 
+/- A separate defect model shows that the base is not supplied by the
+   induction plumbing either.  M01--M08 module and finite-generation facts do
+   not mention this defect, so they cannot establish the required `P₁` bound
+   without an additional base theorem. -/
+def baseFlatDefect : Nat → Nat → List (LocalTest Nat Unit Empty) → Int :=
+  fun _ _ _ => 0
+
+theorem base_impossible : StrongPh 0 1 baseFlatDefect → False := by
+  intro base
+  let A : AffineSource Nat := ⟨0, 1, by decide⟩
+  have w := base 1 (by decide) A [] (admissibleTestList_nil 1)
+  have hb := w.defect_bound
+  norm_num [baseFlatDefect, defectBound] at hb
+
 /-- The next index is impossible in the same model, independently of any
 choice of source. -/
 theorem flat_next_impossible : StrongPh 0 2 flatDefect → False := by
@@ -68,5 +82,6 @@ theorem flat_no_constructive_data
 end SymplecticStafford.Induction
 
 #print axioms SymplecticStafford.Induction.flat_next_impossible
+#print axioms SymplecticStafford.Induction.base_impossible
 #print axioms SymplecticStafford.Induction.flat_no_successor_rule
 #print axioms SymplecticStafford.Induction.flat_no_constructive_data

@@ -16,6 +16,8 @@ open SymplecticStafford.Induction
 
 example : StrongPh 0 1 flatDefect := flatLower
 
+example (h : StrongPh 0 1 baseFlatDefect) : False := base_impossible h
+
 example (h : StrongPh 0 2 flatDefect) : False := flat_next_impossible h
 
 def parameters : CentralParameters Nat (ZMod 1) where
