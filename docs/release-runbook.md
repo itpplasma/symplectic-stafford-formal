@@ -5,6 +5,14 @@ not authorization to change repository visibility, sign tags, submit to
 Palomar, or publish a Zenodo deposit. The current `release-gates.yaml` is
 intentionally pending.
 
+The current readiness script checks that the declared phase statuses are
+`verified` and that their evidence files contain matching `phase` and
+`result: pass` labels. It does not validate `publication.enabled`, the
+`required_checks` lists, source commits, proof closure, or comparator scope.
+Treat its output as a metadata consistency check. A release maintainer must
+independently review the evidence below and obtain the publication decision;
+changing status labels cannot satisfy those requirements.
+
 ## Select an evidence-bearing commit
 
 Release only a clean immutable commit for which a fresh, credential-free clone
@@ -12,8 +20,10 @@ has replayed all project checks. The selected commit must have:
 
 1. Phase I evidence, followed by Phase II evidence, with no hidden source or
    completion assumption;
-2. a successful `scripts/verify-palomar.sh` run using the exact comparator,
-   lean4export, NanoDa, Landrun, and Lean revisions recorded by the verifier;
+2. an independently stated terminal Challenge/Solution pair expressing the
+   full filtered-class hypotheses and original affine cofactor conclusion,
+   followed by a successful `scripts/verify-palomar.sh` run using the exact
+   comparator, lean4export, NanoDa, Landrun, and Lean revisions;
 3. the corresponding `docs/verification-results.json`, `formalization.yaml`,
    and `release-gates.yaml` committed; and
 4. human review of the paper/Lean correspondence and the proof architecture.
@@ -48,13 +58,19 @@ cp docs/dossier/symplectic-stafford-description.build-manifest.json "$release_di
 
 ## Palomar
 
-After the repository is public and submission is explicitly authorized, submit
-the exact selected commit through the Palomar form. Use repository
-`itpplasma/symplectic-stafford-formal`, project directory `.` (or blank),
-`comparator.json`, `formalization.yaml`, and the compared declaration
-`SymplecticStaffordChallenge.universalStatement`. Retain the returned status
-page and record it in the evidence file. A passing semantic challenge is not a
-passing universal theorem gate.
+The current `comparator.json` compares
+`SymplecticStaffordChallenge.universalStatement`, which is only definitional
+membership in a two-generated right set. Its local replay is checkpoint
+evidence and cannot serve as the terminal submission configuration.
+
+Before terminal submission, supply and independently audit the actual
+filtered-algebra statement and its proof, then configure the comparator for
+that exact declaration. Record the declaration, import closure, pinned tools
+and compared source commit in the evidence file. After the repository is
+public and submission is explicitly authorized, submit that selected commit
+under `itpplasma/symplectic-stafford-formal`, project directory `.` (or blank),
+with its audited `comparator.json` and `formalization.yaml`. Retain the returned
+status page. The terminal configuration and submission remain pending.
 
 ## Signed GitHub release
 

@@ -185,8 +185,8 @@ order and central pencil identity explicit, and
 boundary an input. \lean{Filtered/ReesAlgebra.lean} packages bounded
 coefficient polynomials as a genuine subsemiring, while
 \lean{Filtered/FiniteSupportDetection.lean} proves finite associated-top
-extraction from supplied separatedness and exhaustion. All are conditional
-consumers: arbitrary finite-length
+extraction from supplied separatedness and exhaustion. Their displayed
+constructions are checked; arbitrary finite-length
 activation, localization, support union and source-production proofs are still
 required.
 
@@ -216,7 +216,14 @@ records why raw filtration data alone cannot imply Noetherianity.
 arbitrary-submonoid Mathlib Ore localization, while
 \lean{Filtered/ReesNoetherianCriterion.lean} proves Noetherianity from an
 explicit terminating leading-term reduction certificate. These APIs still
-require the paper's actual Rees construction and reduction certificate.
+require the paper's leading-term reduction and Ore certificates.
+\lean{Filtered/ReesRing.lean} constructs the bounded-polynomial Rees subring
+when the filtration is closed under negation. Its Noetherianity, good
+subquotient theory and identification with the paper's associated graded
+objects remain to be proved. \lean{Filtered/CommutativeFullSymbol.lean}
+constructs the regular-element Ore localization in the commutative case;
+this does not establish the full inverse-symbol Ore set in noncommutative
+\(U\).
 \lean{Filtered/FullSymbolRightModuleLocalization.lean} proves finite common
 denominators for right-localized modules once the full-symbol Ore certificate
 is supplied.
@@ -234,12 +241,20 @@ negative-degree/unit and finite-length obstructions, respectively.
 Noetherianity and finite length from explicit surjective and Artinian inputs,
 and \lean{FiniteLength/MinimalPrimeLocalTheorem.lean} derives finite length
 from a finite module whose maximal ideal is minimal over its actual
-annihilator in the commutative local case. \lean{FiniteLength/ActivatedFiniteLength.lean}
+annihilator in the commutative local case.
+\lean{FiniteLength/FilteredMinimalPrimeBridge.lean} derives finite length
+over an actual \lean{Localization.AtPrime} from support dimension zero.
+The filtered comparison with the right module over \(T_p\) remains open.
+\lean{FiniteLength/ActivatedFiniteLength.lean}
 consumes the actual
 Jacobson criterion for supplied noncommutative top blocks while retaining the
 ordered pencil identity.
 \lean{Ordered/M08SupportUnion.lean} derives a conditional finite-generator
 support cover while retaining the exact common-colon pencil certificate.
+\lean{Ordered/ActualM08Producer.lean} constructs finite right generators
+from right Noetherianity by identifying the right ideal with an
+opposite-ring submodule. Deriving right Noetherianity from the filtered
+hypotheses remains a separate obligation.
 \lean{Ordered/CommonColonProducer.lean} adds the ordered ambient producer and
 returns literal original-\(U\) common-colon data under simultaneous
 right-clearance and an injective ambient map. Its hypotheses remain explicit.
@@ -250,6 +265,9 @@ from an explicit localized-zero bridge.
 concrete finite affine source-avoidance families with arbitrary offsets and nonzero tails and an
 explicit division-ring cofactor boundary. \lean{Induction/ConstructiveSuccessor.lean}
 derives a successor witness from explicit base and two-call construction data.
+\lean{Induction/TwoCallAffineProducer.lean} constructs the pencil's affine
+coefficient from two lower witnesses. Its successor still consumes the
+defect-removal bound and carried-test generation implications.
 \lean{Source/OriginalDivisionProducer.lean} constructs one original-\(U\)
 affine source from a finite list carrying division-coefficient pencil bridges.
 \lean{Source/OriginalTestProducerBoundary.lean} gives an independent
@@ -282,7 +300,7 @@ The remaining checked slices are listed explicitly in the claim register:
 \lean{Filtered/FullSymbolLocalization.lean},
 \lean{Filtered/ReesNoetherianCriterion.lean},
 \lean{Filtered/OriginalCentralSupport.lean},
-\lean{Filtered/NoetherianBoundary.lean}, \lean{Filtered/GoodLocalBridge.lean},
+\lean{Filtered/NoetherianBoundary.lean}, \lean{FiniteLength/GoodLocalBridge.lean},
 \lean{FiniteLength/ActivatedFiniteLength.lean}, \lean{Source/DivisionLLDList.lean},
 \lean{FiniteLength/FiniteOrbitPencil.lean},
 \lean{FiniteLength/InfiniteMultiplicityBoundary.lean},
@@ -324,7 +342,7 @@ to \(P_{D+1}\). \lean{strongPh_succ} selects the output of a supplied successor 
 \lean{zero_extraction} interface. Local-test specification propositions,
 generation predicates and defect data are still abstract inputs. The
 geometric semantics, universal source producer and zero-support-to-cofactor
-bridge remain to be proved. These checkpoints leave M02--M11 open and do not
+bridge remain to be proved. These checkpoints leave M01--M11 open and do not
 advance the release gates.
 
 \section{Phase instructions and evidence}\label{sec:phases}\backmap
@@ -373,6 +391,11 @@ listings and replay evidence. It does not inherit either project's
 verification status. In this workspace,
 \lean{scripts/verify.sh --phase-i} checks the implemented checkpoint only.
 Its name does not certify the terminal Phase-I gate.
+The Phase-II endpoint list adds the definitional Challenge/Solution theorem
+to the two semantic endpoints. Neither list enumerates the universal
+theorem's M01--M11 proof closure. Verification records identify the exact
+historical commit replayed; subsequent committed modules require their own
+integration replay.
 
 Publication remains disabled in \lean{release-gates.yaml}. The release
 runbook requires an immutable clean source commit, complete endpoint and
@@ -380,6 +403,12 @@ axiom evidence, independent semantic and kernel replay, and the separate
 publication decision. The source and future release artifacts use the
 repository's Apache-2.0 license; no DOI, public visibility change or Palomar
 registration is claimed here.
+The current readiness script checks status and evidence labels only. It
+does not check \lean{publication.enabled}, the required-check results,
+source hashes, or the terminal statement. A passing script is therefore a
+metadata consistency check, not proof or publication evidence. Terminal
+submission requires a separate comparator configuration for the actual
+filtered-algebra theorem.
 
 \input{claim-register.generated.tex}
 

@@ -1,5 +1,11 @@
 # Paper and formal correspondence audit
 
+Historical record: the observations below predate subsequent implementation
+and metadata corrections. The [9 September instruction and release
+audit](phase-instructions-release-audit-2026-09-09.md) records the later frozen
+scope; descriptions of the graph or missing substeps below are not current
+status instructions.
+
 Audit date: 8 September 2026.  Reader: a referee or release maintainer who
 needs to distinguish the final paper candidate from the checked Lean
 checkpoint.  The paper repository was inspected at `e3c7077d3d51772d97d8e72bb219a8fc36765682`; the formal checkout was inspected at its current

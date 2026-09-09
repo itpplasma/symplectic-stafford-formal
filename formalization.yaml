@@ -128,9 +128,9 @@ status:
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
     assembly, support-union, and induction files are conditional scaffolds;
-    the proof map labels these consumers LEAN-SCAFFOLD and keeps M02–M11 open;
-    the full higher-dimensional same-divisor producer; producer-derived
-    terminal extraction remains unimplemented. The one intentional placeholder
+    the proof map labels these consumers LEAN-SCAFFOLD and keeps M01–M11 open.
+    The full higher-dimensional same-divisor producer and producer-derived
+    terminal extraction remain unimplemented. The one intentional placeholder
     is confined to the
     Mathlib-only Challenge.lean; Solution.lean has no placeholder.
   sorry_count: 1

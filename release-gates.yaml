@@ -4,19 +4,22 @@ paper_commit: 502b65a1dea53cac52220a08e321bfba525bc72e
 instructions_commit: e3c7077d3d51772d97d8e72bb219a8fc36765682
 project_owned_obligations: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11]
 checkpoint_comparator_is_terminal_evidence: false
+# These lists specify the evidence required by the human release review.
+# The current readiness script checks phase/evidence labels only; it does not
+# verify these checks, terminal correspondence, or publication.enabled.
 phases:
   phase_i:
     status: pending
     evidence: evidence/phase-i.yaml
-    required_checks: [lean-build, independent-behavioral-tests]
+    required_checks: [terminal-statement-correspondence, project-owned-obligation-closure, literature-leaf-audit, clean-independent-replay, lean-build, independent-behavioral-tests]
   phase_ii:
     status: pending
     evidence: evidence/phase-ii.yaml
-    required_checks: [lean-build, independent-behavioral-tests]
+    required_checks: [terminal-statement-correspondence, allowed-axiom-closure, clean-independent-replay, lean-build, independent-behavioral-tests, independent-kernel-replay]
   palomar:
     status: pending
     evidence: evidence/palomar.yaml
-    required_checks: [compatibility-build, compatibility-tests]
+    required_checks: [terminal-statement-comparison, compatibility-build, compatibility-tests, independent-kernel-replay]
 publication:
   enabled: false
   required_phases: [phase_i, phase_ii, palomar]
