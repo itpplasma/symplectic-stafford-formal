@@ -33,6 +33,7 @@ import SymplecticStafford.Filtered.FullSymbolOre
 import SymplecticStafford.Filtered.FullSymbolRightLocalization
 import SymplecticStafford.Filtered.FullSymbolRightPowerBridge
 import SymplecticStafford.Filtered.FullSymbolRightModuleLocalization
+import SymplecticStafford.Filtered.FullSymbolFilteredChart
 import SymplecticStafford.Filtered.FullSymbolLocalization
 import SymplecticStafford.Filtered.CommutativeFullSymbol
 import SymplecticStafford.Filtered.ReesNoetherianCriterion
@@ -67,6 +68,7 @@ import SymplecticStafford.Induction.ConstructiveSuccessor
 import SymplecticStafford.Induction.TwoCallAffineProducer
 import SymplecticStafford.Induction.TwoCallDescentProducer
 import SymplecticStafford.Induction.FiniteScalarAvoidance
+import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
 import SymplecticStafford.Induction.SupportRemovalArithmetic
 import SymplecticStafford.Induction.SuccessorObstruction
 import SymplecticStafford.Ordered.CommonColon

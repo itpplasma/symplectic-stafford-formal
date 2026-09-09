@@ -1,4 +1,5 @@
 import SymplecticStafford.Induction.TwoCallDescentProducer
+import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
 import Mathlib.Tactic
 
 /-!
@@ -82,6 +83,39 @@ example : data.witness.source = affine.B + data.witness.H * affine.a := by
 
 example : defect 1 data.witness.source [] ≤ defectBound 1 (1 + 1) := by
   exact data.witness.defect_bound
+
+/- The stronger bridge chooses the scalar through indexed component/test
+   exceptions.  Its strictness field is proved from the raw datum only after
+   deriving avoidance of the raw exceptional set from the component index. -/
+def indexed : FiniteRemovalRetentionData data where
+  componentBad := fun _ z => z ∈ data.exceptional
+  testBad := fun _ _ => False
+  component_finite := by
+    intro a ha
+    simpa only [Set.ofPred_mem_eq] using data.exceptional_finite
+  test_finite := by
+    intro t ht
+    simp
+  strict_support_of_good := by
+    intro z hgood
+    have hold : () ∈ data.support 1 5 [] := by
+      change () ∈ support 1 5 []
+      simp [support]
+    have hz : z ∉ data.exceptional := by
+      intro hzbad
+      exact hgood () hold hzbad
+    exact data.strict_support z hz
+  pencil_generation_of_good := by
+    intro z hgood htests t ht hF hG
+    have hold : () ∈ data.support 1 5 [] := by
+      change () ∈ support 1 5 []
+      simp [support]
+    exact data.pencil_generation z t (by
+      intro hz
+      exact hgood () hold hz) ht hF hG
+
+noncomputable example : StrongPhWitness (D := 1) (h := 2) defect 1 affine [] :=
+  indexed.witness
 
 /- The finite-index endpoint also composes a raw descent family.  This
    subsingleton ring replay is only for the recursion plumbing: its producer
