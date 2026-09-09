@@ -7,6 +7,13 @@ keeps the target in the exact noncommutative order
 1 = d * R + F * d * S
 ```
 
+The private `itpplasma/symplectic-stafford` exposition, its working notes, and
+this Lean development are records of the same internal research project. The
+private exposition is not a separately published or presented prior source;
+its dated chronology is retained for provenance and mathematical review. This
+checkpoint does not make a priority claim and does not yet claim the universal
+theorem.
+
 The current checked checkpoint formalizes the original-ring semantic contract,
 the right-ideal bridge and quotient-action laws, opposite transport, ordered
 common-colon and finite-generation identities, raw and algebraic bounded
@@ -78,11 +85,11 @@ two-call successor. These remain conditional consumers with explicit local,
 chart, and coefficient hypotheses; the universal producer and release gates
 remain pending.
 The general finite-length activated-pencil and universal original-U source
-producer remain open. It deliberately
-does not claim the universal higher-dimensional theorem from the companion
-paper. The source-selection, filtered-localization, assembly, and terminal
-Phase I/II gates remain open in `PLAN.md`; the corresponding files are
-conditional scaffolds rather than producer proofs.
+producer remain open. It deliberately does not claim the universal
+higher-dimensional theorem in the internal all-dimensional proof candidate.
+The source-selection, filtered-localization, assembly, and terminal Phase I/II
+gates remain open in `PLAN.md`; the corresponding files are conditional
+scaffolds rather than producer proofs.
 
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
@@ -122,8 +129,9 @@ checkout; do not commit `.lake` or generated `.olean` files.
 
 [`docs/dossier/symplectic-stafford-description.tex`](docs/dossier/symplectic-stafford-description.tex)
 is a standalone LuaLaTeX dossier. It contains a clickable TikZ proof map,
-the paper-to-`Challenge.lean` comparison, the principal proof-architecture
-interfaces, and verbatim Challenge/Solution listings. Build it with:
+the internal-proof-to-`Challenge.lean` comparison, the principal
+proof-architecture interfaces, and verbatim Challenge/Solution listings.
+Build it with:
 
 ```sh
 docs/dossier/build.sh
@@ -133,20 +141,21 @@ The build also writes an ignored `symplectic-stafford-description.build-manifest
 with input hashes, engine versions, source commit, and the PDF hash; the release
 runbook archives it beside the PDF and checksum file.
 
-The paper source is Markdown in the private research repository, not TeX; the
-dossier records that boundary explicitly rather than fabricating a source
-correspondence. `docs/proof-graph.yaml` is the machine-readable status graph;
-the build regenerates the map and linked claim register from it. The paper
-source is frozen at `502b65a1dea53cac52220a08e321bfba525bc72e`, with its
-updated terminal instructions at `e3c7077d3d51772d97d8e72bb219a8fc36765682`.
+The internal proof source is Markdown in the private research repository, not
+TeX; the dossier records that provenance boundary explicitly rather than
+fabricating a source correspondence. `docs/proof-graph.yaml` is the
+machine-readable status graph; the build regenerates the map and linked claim
+register from it. The internal source snapshot is frozen at
+`502b65a1dea53cac52220a08e321bfba525bc72e`, with its updated terminal
+instructions at `e3c7077d3d51772d97d8e72bb219a8fc36765682`.
 
-[`docs/phase-instructions.md`](docs/phase-instructions.md) assigns the final
-paper's M01–M11 obligations to parallel lanes. Both recursive calls use P_h
-to prove P_(h+1); every finite local test is retained. Phase I discharges all
-project-owned obligations, and Phase II also discharges registered literature
-leaves. The final target is all-dimensional SS-all; `Contract.lean` contains
-only a dimension-parametric semantic scaffold with historical B2 fields, not
-the paper's full filtered-algebra encoding.
+[`docs/phase-instructions.md`](docs/phase-instructions.md) assigns the internal
+all-dimensional candidate's M01–M11 obligations to parallel lanes. Both
+recursive calls use P_h to prove P_(h+1); every finite local test is retained.
+Phase I discharges all project-owned obligations, and Phase II also discharges
+registered literature leaves. The final target is all-dimensional SS-all;
+`Contract.lean` contains only a dimension-parametric semantic scaffold with
+historical B2 fields, not the candidate's full filtered-algebra encoding.
 
 ## Palomar and release status
 
@@ -155,8 +164,8 @@ statement placeholder. `Solution.lean` repeats the proposition without
 importing the challenge and proves that semantic contract. The comparator
 configuration and import-closure audit are present; the local comparator,
 NanoDa and Lean-kernel replay pass for this semantic pair. Passing them is not
-a proof of the paper's universal source theorem, and the release gate remains
-disabled.
+a proof of the internal candidate's universal source theorem, and the release
+gate remains disabled.
 
 The exact Zenodo/Palomar procedure is documented in
 [`docs/release-runbook.md`](docs/release-runbook.md). The repository carries
