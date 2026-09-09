@@ -102,6 +102,17 @@ genuine finite top bridges; and `LayerSupportObstruction` rejects
 source-independent strict support removal. None of these closes a universal
 M01–M11 obligation.
 
+The continuation wave adds `CentralFieldFiltrationBoundary` (degree-zero
+field-image surjectivity obstruction), `M01AssociatedGradedBoundary` (a
+constant `Mat₂(ℚ)` filtration with noncommutative associated layer),
+`ActualRadicalTop` (finite-length/Jacobson-top extraction from genuine right
+composition data), `DivisionEigenBoundary` (the remaining noncommutative
+finite-bad-set witness contract), and
+`FullSymbolFilteredWeightedBoundary` (chart-control plus bounded-inverse
+obstruction). It also records the strong-P_h base obstruction and the typed
+power-Ore boundary. These remain checked boundary evidence; no phase gate is
+promoted.
+
 The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, while
 `WeightedInverseBoundary.lean` records the independent negative-degree unit

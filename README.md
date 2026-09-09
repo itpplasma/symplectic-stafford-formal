@@ -46,6 +46,11 @@ gap from genuine Ore localization to bounded inverse degrees; it also adds an
 isotypic repeated-division-ring block contract, a source theorem from genuine
 finite top bridges, and a source-dependent support-removal obstruction. These
 commitments sharpen the missing hypotheses without claiming universal closure.
+The continuation wave adds checked boundaries for degree-zero central-field
+filtrations, noncommutative associated layers, finite-length Jacobson tops,
+noncommutative division-ring pencil exceptions, filtered full-symbol weighting,
+the strong-P_h base, and the exact A₁ OreSet obstruction. These are evidence
+about the remaining hypotheses, not a terminal theorem.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

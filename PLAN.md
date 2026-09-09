@@ -73,6 +73,8 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
 `M01StructuralBoundary`, `PowerOreA1Obstruction`,
 `FullSymbolWeightedBoundary`, `IsotypicBlocks`, `LayerSupportObstruction`,
+`M01AssociatedGradedBoundary`, `CentralFieldFiltrationBoundary`,
+`FullSymbolFilteredWeightedBoundary`, `ActualRadicalTop`, `DivisionEigenBoundary`,
 `Package/TerminalBoundary`,
 `Package/TerminalObstruction`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.
@@ -128,6 +130,18 @@ derives a single source from genuine finite top bridges; and
 `LayerSupportObstruction` isolates the missing source-dependent strict support
 removal. These are independently checked obstructions or conditional
 consumers, not a universal producer or phase promotion.
+
+The current continuation wave adds further checked boundaries: the
+degree-zero central-field filtration interface is shown to force a surjective
+field image, a constant `Mat₂(ℚ)` filtration demonstrates that generic
+filtration data need not have commutative associated layers,
+`ActualRadicalTop` extracts finite-length/Jacobson-top consequences from a
+genuine right composition filtration, `DivisionEigenBoundary` isolates the
+noncommutative finite-bad-set witness requirement, and
+`FullSymbolFilteredWeightedBoundary` combines supplied chart control with the
+negative-degree unit obstruction. The strong-P_h base obstruction and the
+typed A₁ `OreSet` obstruction are also retained. These results narrow the
+first missing universal hypotheses; they do not close M01–M11.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
