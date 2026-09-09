@@ -1,4 +1,5 @@
 import Mathlib.RingTheory.Noetherian.Defs
+import SymplecticStafford.Semantics.Contract
 import SymplecticStafford.Filtered.ReesNoetherianCriterion
 import SymplecticStafford.Filtered.ReesRing
 
@@ -100,8 +101,43 @@ theorem no_sequence_module_noetherian_certificate :
   exact sequenceRing_not_noetherian
     ((isNoetherianRing_iff).2 C.isNoetherianModule)
 
+/- The historical `AdmissibleSymplecticClass` stores the geometric labels as
+unconnected propositions.  Consequently those labels can all be inhabited
+on this counterexample (including the B2 labels), so they cannot be a source
+of the missing Rees certificate. -/
+def constantCharacteristicDimensionData (R : Type u) [Ring R] :
+    SymplecticStafford.CharacteristicDimensionData R where
+  charDim := fun _ => 2
+
+theorem constantCharacteristicDimensionData_B2 (R : Type u) [Ring R] :
+    SymplecticStafford.B2 (constantCharacteristicDimensionData R) := by
+  intro M _ _ _
+  exact le_rfl
+
+def historicalClassOnSequenceRing :
+    SymplecticStafford.AdmissibleSymplecticClass SequenceRing where
+  noetherian := True
+  simple := True
+  infiniteDimensional := True
+  nonnegativeSeparatedLocallyFiniteFiltration := True
+  associatedGradedCommAffineDomain := True
+  associatedGradedDimension := 2
+  rightCharacteristicDimension := constantCharacteristicDimensionData SequenceRing
+  leftCharacteristicDimension :=
+    constantCharacteristicDimensionData SequenceRingᵐᵒᵖ
+  right_B2 := constantCharacteristicDimensionData_B2 SequenceRing
+  left_B2 := constantCharacteristicDimensionData_B2 SequenceRingᵐᵒᵖ
+
+theorem no_certificate_from_historical_class_labels :
+    ¬ (SymplecticStafford.AdmissibleSymplecticClass SequenceRing →
+      Nonempty (ReesModuleNoetherianCertificate SequenceRing SequenceRing)) := by
+  intro producer
+  exact no_sequence_module_noetherian_certificate
+    (producer historicalClassOnSequenceRing)
+
 end SymplecticStafford.Filtered
 
 #print axioms SymplecticStafford.Filtered.sequencePrefixIdeal_strict
 #print axioms SymplecticStafford.Filtered.sequenceRing_not_noetherian
 #print axioms SymplecticStafford.Filtered.no_sequence_module_noetherian_certificate
+#print axioms SymplecticStafford.Filtered.no_certificate_from_historical_class_labels

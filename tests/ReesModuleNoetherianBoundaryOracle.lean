@@ -24,4 +24,13 @@ example :
     ¬ Nonempty (ReesModuleNoetherianCertificate SequenceRing SequenceRing) :=
   no_sequence_module_noetherian_certificate
 
+example :
+    ¬ (SymplecticStafford.AdmissibleSymplecticClass SequenceRing →
+      Nonempty (ReesModuleNoetherianCertificate SequenceRing SequenceRing)) :=
+  no_certificate_from_historical_class_labels
+
+example :
+    SymplecticStafford.AdmissibleSymplecticClass SequenceRing :=
+  historicalClassOnSequenceRing
+
 end SymplecticStaffordTest.ReesModuleNoetherianBoundary
