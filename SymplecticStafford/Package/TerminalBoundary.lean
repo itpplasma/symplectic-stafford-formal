@@ -17,7 +17,7 @@ is asserted here.  In particular, every terminal witness below is an input.
 
 namespace SymplecticStafford
 
-universe u
+universe u v w v₂ w₂
 
 open SymplecticStafford.Induction
 
@@ -82,6 +82,33 @@ theorem terminal_zero_quotient_iff_membership (d f : R) :
 
 end TerminalExtraction
 
+section TerminalAssembly
+
+variable {U : Type u} [Ring U]
+
+/- The terminal extraction theorem is useful only after its output is
+   assembled into the endpoint proposition.  Choosing the homogeneous affine
+   source space with tail `1` is legal because the empty test list is
+   admissible; the actual source may still depend on `d`.  In particular this
+   theorem does not assert that the source is fixed, localized, or nonzero. -/
+theorem terminal_sameDivisor
+    {D : Nat} {T : Type v} {V : Type w}
+    {defect : U → U → List (LocalTest U T V) → Int}
+    (termination : TerminationInterface D defect)
+    (terminal : StrongPh D (D + 1) defect) :
+    OriginalSameDivisor U := by
+  intro d hd
+  let A : AffineSource U := homogeneousAffine d hd
+  let Ω : List (LocalTest U T V) := []
+  have hΩ : AdmissibleTestList d Ω := by
+    exact admissibleTestList_nil d
+  have c : OriginalCofactors d
+      (terminal d hd A Ω hΩ).source :=
+    terminal_extraction termination terminal d hd A Ω hΩ
+  exact ⟨(terminal d hd A Ω hΩ).source, c.R, c.S, c.identity⟩
+
+end TerminalAssembly
+
 section HandedPackage
 
 variable {R : Type u} [Ring R]
@@ -125,6 +152,25 @@ def TerminalPackage.of_rights
       exact rightSameDivisorS1_opposite (R := R)
         ((originalSameDivisor_iff R).mp right) }
 
+/- Build the two-sided package directly from endpoint data on the original
+   ring and on its opposite.  The two endpoint contracts are intentionally
+   independent: automatic transport supplies only the corresponding left
+   statements, not the missing right statement on the opposite ring. -/
+theorem TerminalPackage.of_terminal_endpoints
+    {T : Type v} {V : Type w}
+    {T' : Type v₂} {V' : Type w₂}
+    {D D' : Nat}
+    {defect : R → R → List (LocalTest R T V) → Int}
+    {defect' : Rᵐᵒᵖ → Rᵐᵒᵖ → List (LocalTest Rᵐᵒᵖ T' V') → Int}
+    (termination : TerminationInterface (U := R) D defect)
+    (terminal : StrongPh (U := R) D (D + 1) defect)
+    (termination' : TerminationInterface (U := Rᵐᵒᵖ) D' defect')
+    (terminal' : StrongPh (U := Rᵐᵒᵖ) D' (D' + 1) defect') :
+    TerminalPackage R := by
+  apply TerminalPackage.of_rights
+  · exact terminal_sameDivisor termination terminal
+  · exact terminal_sameDivisor termination' terminal'
+
 theorem TerminalPackage.opposite_right
     (p : TerminalPackage R) :
     OriginalSameDivisor Rᵐᵒᵖ :=
@@ -141,5 +187,7 @@ end SymplecticStafford
 
 #print axioms SymplecticStafford.TerminalMembershipWitness.toOriginalCofactors
 #print axioms SymplecticStafford.TerminalZeroQuotientWitness.toOriginalCofactors
+#print axioms SymplecticStafford.terminal_sameDivisor
 #print axioms SymplecticStafford.TerminalPackage.of_handed
 #print axioms SymplecticStafford.TerminalPackage.of_rights
+#print axioms SymplecticStafford.TerminalPackage.of_terminal_endpoints

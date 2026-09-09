@@ -60,6 +60,20 @@ theorem rightSameDivisorS1_opposite_left
     MulOpposite.unop_mul, MulOpposite.unop_op] using
     congrArg MulOpposite.unop hs
 
+theorem leftSameDivisorS1_opposite_left
+    (h : LeftSameDivisorS1 (R := Rᵐᵒᵖ)) :
+    SameDivisorS1 (R := R) := by
+  intro d hd
+  have hd' : (MulOpposite.op d : Rᵐᵒᵖ) ≠ 0 := by
+    intro hzero
+    apply hd
+    simpa using congrArg MulOpposite.unop hzero
+  rcases h hd' with ⟨f, r, s, hs⟩
+  refine ⟨MulOpposite.unop f, MulOpposite.unop r, MulOpposite.unop s, ?_⟩
+  simpa only [MulOpposite.unop_one, MulOpposite.unop_add,
+    MulOpposite.unop_mul, MulOpposite.unop_op] using
+    congrArg MulOpposite.unop hs
+
 theorem leftSameDivisorS1_iff_rightSameDivisorS1_opposite :
     LeftSameDivisorS1 (R := R) ↔
       SameDivisorS1 (R := Rᵐᵒᵖ) := by
@@ -67,8 +81,16 @@ theorem leftSameDivisorS1_iff_rightSameDivisorS1_opposite :
   · exact leftSameDivisorS1_opposite
   · exact rightSameDivisorS1_opposite_left
 
+theorem rightSameDivisorS1_iff_leftSameDivisorS1_opposite :
+    SameDivisorS1 (R := R) ↔
+      LeftSameDivisorS1 (R := Rᵐᵒᵖ) := by
+  constructor
+  · exact rightSameDivisorS1_opposite
+  · exact leftSameDivisorS1_opposite_left
+
 end SymplecticStafford
 
 #print axioms SymplecticStafford.leftSameDivisorS1_opposite
 #print axioms SymplecticStafford.rightSameDivisorS1_opposite
 #print axioms SymplecticStafford.rightSameDivisorS1_opposite_left
+#print axioms SymplecticStafford.leftSameDivisorS1_opposite_left
