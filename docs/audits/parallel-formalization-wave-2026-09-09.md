@@ -90,12 +90,14 @@ commits:
   generator expansions to produce a Module.support union while retaining the
   original-ring pencil certificates.
 
-Each follow-up source and its independent oracle was checked with
+At the controller integration commit `814dee5b47d6366eb218f9e72c72a41a7a977237`,
+the follow-up source and its independent oracle were checked with
 `lake env lean --trust=0`; the source and oracle closures use only
 `propext`, `Classical.choice`, and `Quot.sound`, with no new `sorry`. These are
 conditional consumers: they do not construct the full-symbol Ore set, the
 noncommutative finite-length block decomposition, the characteristic-support
 producer, strict support removal, the universal base/successor, or the
-original-U simultaneous source. The controller must replay the aggregate root
-build and phase/Palomar checkpoint scripts after documentation integration;
-release-gates.yaml remains fail-closed.
+original-U simultaneous source. The integrated replay produced a successful
+`lake build SymplecticStafford` (8,792 jobs), and both phase scripts plus
+`verify-palomar.sh` passed their documented checkpoint checks after the
+integration. `release-gates.yaml` remains fail-closed.

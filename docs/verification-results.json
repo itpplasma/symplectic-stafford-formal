@@ -3,7 +3,7 @@
   "status": "checkpoint",
   "paper_repository": "itpplasma/symplectic-stafford",
   "paper_commit": "502b65a1dea53cac52220a08e321bfba525bc72e",
-  "formal_commit": "0cb83aaab4d214a5f47b66257d0bf6b9b08e3022",
+  "formal_commit": "814dee5b47d6366eb218f9e72c72a41a7a977237",
   "lean_toolchain": "leanprover/lean4:v4.33.0",
   "dependencies": {
     "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
