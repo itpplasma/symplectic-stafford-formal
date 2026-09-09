@@ -31,6 +31,7 @@ import SymplecticStafford.Filtered.SpecCharacteristicSupport
 import SymplecticStafford.Filtered.NoetherianBoundary
 import SymplecticStafford.Filtered.FullSymbolOre
 import SymplecticStafford.Filtered.FullSymbolRightLocalization
+import SymplecticStafford.Filtered.FullSymbolRightPowerBridge
 import SymplecticStafford.Filtered.FullSymbolRightModuleLocalization
 import SymplecticStafford.Filtered.FullSymbolLocalization
 import SymplecticStafford.Filtered.CommutativeFullSymbol
