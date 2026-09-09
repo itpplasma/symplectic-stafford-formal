@@ -124,6 +124,20 @@ theorem selected_actual_source (a : U) (ha : a ≠ 0) :
     (fun _ => Function.injective_id) (1 : U) tests 1 a ha
     tests_admissible initial_tops_nonzero
 
+theorem selected_finite_direction_source :
+    ∃ (H source : U) (coefficients : List K),
+      source = 1 + H * 2 ∧ source ≠ 0 ∧
+      coefficients.length = ([1, -2, 3] : List U).length ∧
+      H = weightedCombination (RingHom.id K) ([1, -2, 3] : List U) coefficients ∧
+      (∀ t, t ∈ tests → t.localTest.Passes source) := by
+  obtain ⟨H, source, coefficients, hsource, hne, hlen, hcomb, -, hpasses, -⟩ :=
+    exists_original_affine_source_of_actual_directions
+      (RingHom.id K) Function.injective_id
+      (fun _ => RingHom.id K) (fun _ => Function.injective_id)
+      (1 : U) tests ([1, -2, 3] : List U) 1 2 (by norm_num) (by norm_num)
+      tests_admissible initial_tops_nonzero
+  exact ⟨H, source, coefficients, hsource, hne, hlen, hcomb, hpasses⟩
+
 example : ∃ H source : U, source = 1 + H * 2 ∧ source ≠ 0 := by
   obtain ⟨H, source, hsource, hne, -, -, -⟩ :=
     selected_actual_source 2 (by norm_num)
@@ -133,3 +147,5 @@ end SymplecticStafford.ActualOriginalDivisionProducerOracle
 
 #print axioms
   SymplecticStafford.ActualOriginalDivisionProducerOracle.selected_actual_source
+#print axioms
+  SymplecticStafford.ActualOriginalDivisionProducerOracle.selected_finite_direction_source

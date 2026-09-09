@@ -50,6 +50,13 @@ structure ActualOriginalDivisionTest
       SymplecticStafford.FiniteLength.RightCyclic
         (R := R) (sourceMap source)
 
+/- A finite central-linear combination of original-U directions.  The
+coefficient is always on the left of each direction, matching the paper's
+right-action convention. -/
+def weightedCombination (ι : K →+* U) (directions : List U)
+    (coefficients : List K) : U :=
+  (directions.zipWith (fun h z => ι z * h) coefficients).sum
+
 namespace ActualOriginalDivisionTest
 
 variable {LocalizationData : Type w} {CyclicModuleData : Type*}
@@ -170,6 +177,149 @@ theorem exists_original_affine_source_of_actual_list
   · intro t ht
     apply (t.passes_iff_cyclic source).2
     exact hcyclic t ht
+  · intro t ht
+    exact t.localTest.rightTail_nonzero
+
+/-!
+The one-pencil theorem above is sufficient for a single affine direction.  A
+finite direction list is the paper's actual LLD shape: at each stage one
+central scalar is selected from the original field, and the resulting
+coefficient is an explicit finite sum in `U`.  No source witness is supplied;
+only the exposed top coordinates and original-U maps are used.
+-/
+
+theorem exists_original_affine_source_of_actual_directions
+    {LocalizationData : Type w} {CyclicModuleData : Type*}
+    {R M I : Type*} {D : I → Type*}
+    [Ring R] [AddCommGroup M] [Module Rᵐᵒᵖ M] [Module K M]
+    [∀ i, DivisionRing (D i)] [Fintype I] [DecidableEq I]
+    (ι : K →+* U) (hι : Function.Injective ι)
+    (ιmap : (i : I) → K →+* D i)
+    (hιmap : ∀ i, Function.Injective (ιmap i))
+    (d : U)
+    (tests : List (ActualOriginalDivisionTest U K LocalizationData
+      CyclicModuleData R M I D ι ιmap))
+    (directions : List U) (B a : U) (hB : B ≠ 0) (ha : a ≠ 0)
+    (hadmissible : ∀ t, t ∈ tests → t.localTest.Admissible d)
+    (hinitial : ∀ t, t ∈ tests →
+      ∀ i, t.bridge.top (t.sourceMap B) i ≠ 0) :
+    ∃ (H source : U) (coefficients : List K),
+      source = B + H * a ∧ source ≠ 0 ∧
+      coefficients.length = directions.length ∧
+      H = weightedCombination ι directions coefficients ∧
+      (∀ t, t ∈ tests → t.localTest.Admissible d) ∧
+      (∀ t, t ∈ tests → t.localTest.Passes source) ∧
+      (∀ t, t ∈ tests → t.localTest.rightTail ≠ 0) := by
+  let topGood : U → Prop := fun x =>
+    ∀ t, t ∈ tests → ∀ i, t.bridge.top (t.sourceMap x) i ≠ 0
+  let topBad : ActualOriginalDivisionTest U K LocalizationData
+      CyclicModuleData R M I D ι ιmap → U → U → Set K := fun t x q =>
+    {z | ∃ i, t.bridge.top (t.sourceMap x) i +
+      ιmap i z * t.bridge.top (t.sourceMap q) i = 0}
+  have finite_bad_union : ∀
+      (xs : List (ActualOriginalDivisionTest U K LocalizationData
+        CyclicModuleData R M I D ι ιmap)) (x q : U),
+      (∀ t, t ∈ xs → ∀ i, t.bridge.top (t.sourceMap x) i ≠ 0) →
+      Set.Finite {z : K | ∃ t ∈ xs, z ∈ topBad t x q} := by
+    intro xs
+    induction xs with
+    | nil => intro x q _; simp
+    | cons t ts ih =>
+        intro x q hgood
+        have ht : (topBad t x q).Finite := by
+          exact SymplecticStafford.FiniteLength.finite_pencil_exceptions
+            (fun i => ιmap i)
+            (fun i => t.bridge.top (t.sourceMap x) i)
+            (fun i => t.bridge.top (t.sourceMap q) i)
+            (hgood t (by simp) ) (fun i => hιmap i)
+        have hts : Set.Finite {z : K | ∃ t' ∈ ts, z ∈ topBad t' x q} :=
+          ih x q (fun t' ht' => hgood t' (by simp [ht']))
+        have hsplit : {z : K | ∃ t' ∈ t :: ts, z ∈ topBad t' x q} =
+            topBad t x q ∪ {z : K | ∃ t' ∈ ts, z ∈ topBad t' x q} := by
+          ext z
+          simp [topBad]
+        rw [hsplit]
+        exact ht.union hts
+  have go : ∀ (dirs : List U) (H x : U),
+      x = B + H * a → x ≠ 0 → topGood x →
+      ∃ (coefficients : List K) (H' x' : U),
+        coefficients.length = dirs.length ∧ x' = B + H' * a ∧
+        x' ≠ 0 ∧ topGood x' ∧
+        H' = H + weightedCombination ι dirs coefficients := by
+    intro dirs
+    induction dirs with
+    | nil =>
+        intro H x hx hxne hgood
+        refine ⟨[], H, x, by simp, hx, hxne, hgood, ?_⟩
+        simp [weightedCombination]
+    | cons h hs ih =>
+        intro H x hx hxne hgood
+        let q : U := h * a
+        have htopbad : Set.Finite {z : K | ∃ t ∈ tests, z ∈ topBad t x q} :=
+          finite_bad_union tests x q (fun t ht => hgood t ht)
+        have hroots : Set.Finite {z : K | x + ι z * q = 0} := by
+          by_cases hq : q = 0
+          · have hempty : {z : K | x + ι z * q = 0} = (∅ : Set K) := by
+              ext z
+              simp [hq, hxne]
+            rw [hempty]
+            exact Set.finite_empty
+          · exact finite_affine_source_roots ι hι x q hq
+        have hall : ({z : K | ∃ t ∈ tests, z ∈ topBad t x q} ∪
+            {z : K | x + ι z * q = 0}).Finite := htopbad.union hroots
+        obtain ⟨z, hz⟩ := Set.infinite_univ.exists_notMem_finite hall
+        let H1 : U := H + ι z * h
+        let x1 : U := x + ι z * q
+        have hx1 : x1 = B + H1 * a := by
+          dsimp [x1, H1, q]
+          rw [hx]
+          noncomm_ring
+        have hx1ne : x1 ≠ 0 := by
+          intro hzero
+          apply hz.2
+          right
+          exact hzero
+        have hgood1 : topGood x1 := by
+          intro t ht i
+          have htop : t.bridge.top (t.sourceMap x1) i =
+              t.bridge.top (t.sourceMap x) i +
+                ιmap i z * t.bridge.top (t.sourceMap q) i := by
+            rw [show t.sourceMap x1 = t.sourceMap x + z • t.sourceMap q by
+              dsimp [x1]
+              rw [map_add, t.sourceMap_scalar]]
+            calc
+              t.bridge.top (t.sourceMap x + z • t.sourceMap q) i =
+                  (t.bridge.top (t.sourceMap x) +
+                    t.bridge.top (z • t.sourceMap q)) i := by rw [map_add]
+              _ = t.bridge.top (t.sourceMap x) i +
+                    t.bridge.top (z • t.sourceMap q) i := rfl
+              _ = t.bridge.top (t.sourceMap x) i +
+                    ιmap i z * t.bridge.top (t.sourceMap q) i := by
+                rw [t.bridge.map_smul]
+          rw [htop]
+          intro hzero
+          apply hz.2
+          left
+          exact ⟨t, ht, ⟨i, hzero⟩⟩
+        obtain ⟨coefficients, H', x', hlen, hx', hx'ne, hgood', hrel⟩ :=
+          ih H1 x1 hx1 hx1ne hgood1
+        refine ⟨z :: coefficients, H', x', ?_, hx', hx'ne, hgood', ?_⟩
+        · simp [hlen]
+        · rw [hrel]
+          simp [weightedCombination]
+          dsimp [H1]
+          abel
+  obtain ⟨coefficients, H, source, hlen, hsource, hsourcene, hgood, hrel⟩ :=
+    go directions 0 B (by simp) hB (by
+      intro t ht
+      exact hinitial t ht)
+  refine ⟨H, source, coefficients, hsource, hsourcene, hlen, ?_, hadmissible, ?_, ?_⟩
+  · simpa using hrel
+  · intro t ht
+    apply (t.passes_iff_cyclic source).2
+    apply t.bridge.reflects_generation
+    apply SymplecticStafford.FiniteLength.semisimple_top_criterion _ |>.2
+    exact hgood t ht
   · intro t ht
     exact t.localTest.rightTail_nonzero
 
@@ -307,5 +457,6 @@ end SymplecticStafford.Source
 #print axioms SymplecticStafford.Source.ActualOriginalDivisionTest.sourceMap_affine
 #print axioms SymplecticStafford.Source.ActualOriginalDivisionTest.actual_bad_subset_top_bad
 #print axioms SymplecticStafford.Source.exists_original_affine_source_of_actual_list
+#print axioms SymplecticStafford.Source.exists_original_affine_source_of_actual_directions
 #print axioms SymplecticStafford.Source.exists_original_affine_source_of_bridged_list
 #print axioms SymplecticStafford.Source.exists_original_affine_source_of_certified_list
