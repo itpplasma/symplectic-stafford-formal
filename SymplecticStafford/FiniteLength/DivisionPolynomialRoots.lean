@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.LinearAlgebra.Dual
+import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Tactic
 
 /-!
@@ -29,25 +29,23 @@ theorem projectCoefficients_coeff (φ : Module.Dual k D) (p : D[X]) (n : ℕ) :
     (projectCoefficients φ p).coeff n = φ (p.coeff n) := by
   classical
   by_cases hn : n ∈ p.support
-  · simp [projectCoefficients, Polynomial.finset_sum_coeff,
-      Polynomial.coeff_monomial, hn]
-  · have hz : p.coeff n = 0 := Polynomial.not_mem_support_iff.mp hn
-    simp [projectCoefficients, Polynomial.finset_sum_coeff,
-      Polynomial.coeff_monomial, hn, hz]
+  · simp [projectCoefficients, Polynomial.coeff_monomial, hn]
+  · have hz : p.coeff n = 0 := Polynomial.notMem_support_iff.mp hn
+    simp [projectCoefficients, Polynomial.coeff_monomial, hn, hz]
 
 /-- Only central scalar evaluation is transported through the functional. -/
 theorem projectCoefficients_eval (φ : Module.Dual k D) (p : D[X]) (a : k) :
     φ (p.eval (algebraMap k D a)) = (projectCoefficients φ p).eval a := by
   classical
   conv_lhs => rw [Polynomial.eval_eq_sum, Polynomial.sum_def]
-  simp only [projectCoefficients, Polynomial.eval_finset_sum,
+  simp only [projectCoefficients, Polynomial.eval_finsetSum,
     Polynomial.eval_monomial, map_sum]
   apply Finset.sum_congr rfl
   intro n hn
   have hmul : p.coeff n * (algebraMap k D a) ^ n =
       (a ^ n) • p.coeff n := by
     rw [← map_pow, Algebra.smul_def]
-    exact (Algebra.commutes (a ^ n) (p.coeff n)).eq.symm
+    exact (Algebra.commutes (a ^ n) (p.coeff n)).symm
   rw [hmul, map_smul]
   exact mul_comm _ _
 
@@ -86,7 +84,9 @@ theorem finite_bad_scalars {ι : Type*} (s : Finset ι) (p : ι → D[X])
   have h : (⋃ i ∈ (s : Set ι),
       {a : k | (p i).eval (algebraMap k D a) = 0}).Finite :=
     s.finite_toSet.biUnion (fun i hi => finite_central_roots (p i) (hp i hi))
-  simpa only [Set.mem_iUnion, Set.mem_setOf_eq, Finset.mem_coe] using h
+  convert h using 1
+  ext a
+  simp
 
 end
 end SymplecticStafford.FiniteLength.DivisionPolynomialRoots
