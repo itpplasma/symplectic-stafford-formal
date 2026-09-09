@@ -61,6 +61,7 @@ import SymplecticStafford.Induction.TestRetention
 import SymplecticStafford.Induction.ConcreteSuccessor
 import SymplecticStafford.Induction.ConstructiveSuccessor
 import SymplecticStafford.Induction.TwoCallAffineProducer
+import SymplecticStafford.Induction.TwoCallDescentProducer
 import SymplecticStafford.Induction.SupportRemovalArithmetic
 import SymplecticStafford.Induction.SuccessorObstruction
 import SymplecticStafford.Ordered.CommonColon
