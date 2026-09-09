@@ -177,6 +177,14 @@ two-call endpoint. Their hypotheses and endpoint inputs remain explicit, each
 source/oracle is trust-disabled checked, and no M01--M11, Phase I, Phase II,
 Palomar, or publication status is promoted.
 
+The sixth review wave audited these adapters for hidden hypotheses and factor
+order. It corrected the bounded-layer calibration description, added explicit
+negative checks for altered finite-test offsets/tails, strengthened the
+activated-block oracle to consume its ordered identity, and made central-field
+support-removal/defect arithmetic conditional on non-exceptional scalars.
+These changes tighten evidence only; all M01--M11 and both phase gates remain
+open.
+
 The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, while
 `WeightedInverseBoundary.lean` records the independent negative-degree unit

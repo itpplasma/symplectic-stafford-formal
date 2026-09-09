@@ -91,6 +91,10 @@ finite-central activation, retained finite-test assembly, and a central-field
 finite-index endpoint adapter. These are independently trust-disabled checked
 and remain conditional on their displayed maps, local certificates, chart
 data, and producer hypotheses.
+The subsequent independent review corrected the bounded-layer calibration,
+strengthened retained-test and activated-block oracles, and conditioned the
+central-field support-removal arithmetic on non-exceptional scalars. These
+are evidence-strengthening fixes, not universal theorem or release claims.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately does not claim the universal
 higher-dimensional theorem in the internal all-dimensional proof candidate.

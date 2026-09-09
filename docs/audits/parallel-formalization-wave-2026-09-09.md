@@ -346,3 +346,30 @@ on explicit associated-layer maps, bounded reindexings, Ore/chart certificates,
 local finite-length data, finite test producers, and base/successor inputs.
 They do not close the universal producer or promote Phase I, Phase II,
 Palomar, or publication.
+
+## Sixth-wave independent review
+
+Each fifth-wave adapter was then audited independently against its source and
+oracle. `M01AssociatedSpecAdapter` and `CorrectedGoodWeightedSupportBridge`
+needed no changes; the reviewers confirmed explicit associated-spectrum maps,
+annihilator hypotheses, right-oriented matrix correction, negative weights and
+support nonvanishing. `FullSymbolFiniteAssembly` likewise retained one common
+denominator and the exact right-factor order without inferring Ore data.
+
+Four review commits strengthened evidence without changing the universal
+scope:
+
+- `737c18b` corrected the bounded-layer oracle description (only the middle
+  quotient layer is nonzero in its Q[X] calibration);
+- `17a96d7` added negative oracle checks for altered offsets and right tails in
+  retained finite-test assembly;
+- `82377eb` strengthened the minimal-prime activation oracle to consume the
+  returned ordered identity and documented the singleton support-label input;
+- `7791ed6` fixed `CentralFieldFiniteIndex`: support strictness/inclusions are
+  now conditional on the non-exceptional polynomial scalar, and the output
+  defect bound explicitly consumes both support-removal bounds.
+
+The corrected source/oracle set passed trust-disabled replay and the root build
+completed 8,859 jobs. These reviews improve contract evidence only; the
+universal algebraization, source producer, Phase I/II, Palomar and release
+gates remain open.

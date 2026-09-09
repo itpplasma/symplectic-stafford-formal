@@ -205,6 +205,13 @@ endpoint. Each remains conditional on its displayed algebraic, local, chart,
 or producer data, so the universal higher-dimensional source theorem and phase
 gates remain open.
 
+An independent review of this fifth wave corrected the bounded-layer oracle
+description, strengthened retained-test negative checks, made the activated
+block oracle consume its ordered identity, and conditioned central-field
+support removal on non-exceptional scalars before deriving the output defect
+bound. The corrected source/oracle set remains conditional and does not alter
+the universal obstruction or any release gate.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

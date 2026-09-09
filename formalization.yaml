@@ -76,6 +76,8 @@ project:
     assembly with one common denominator, correction-aware weighted support
     detection, minimal-prime finite-central activation, retained finite-test
     assembly, and a central-field finite-index endpoint adapter.
+    A subsequent independent review corrected calibration evidence and made
+    support-removal arithmetic conditional on non-exceptional scalars.
     General finite-length activated pencils and the universal source producer
     remain open. It does not claim the universal higher-dimensional
     source-selection or same-divisor theorem in the internal all-dimensional
@@ -143,7 +145,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "8bb3b02c2cfbaf0cdd99cd2f5d5767d324dea83d"
+  commit: "7791ed6c10604bb06019e0da31454024aa57003b"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -205,7 +207,8 @@ status:
     successor, M01 associated-spectrum adaptation, bounded-layer support
     invariance, finite localized assembly, corrected weighted support,
     minimal-prime finite-central activation, retained finite-test assembly,
-    and central-field finite-index endpoint adaptation, filtered,
+    and central-field finite-index endpoint adaptation, plus reviewed
+    scalar-condition and calibration corrections, filtered,
     source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,

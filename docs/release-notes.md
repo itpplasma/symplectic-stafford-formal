@@ -47,3 +47,8 @@ denominator, correction-aware weighted support detection, minimal-prime
 finite-central activation, retained finite-test assembly, and a central-field
 finite-index endpoint adapter. These conditional consumers pass independent
 trust-disabled replay; universal phase and publication gates remain disabled.
+
+The sixth review wave corrected the bounded-layer calibration text, added
+negative retained-test checks, strengthened the activated-block oracle, and
+conditioned central-field support-removal arithmetic on non-exceptional
+scalars. The root replay still passes; no phase or publication gate changes.
