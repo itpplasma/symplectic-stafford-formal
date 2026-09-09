@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.RingTheory.Localization.FractionRing
+import Mathlib.RingTheory.HopkinsLevitzki
 
 /-!
 # Ordinary-prime versus homogeneous-symbol localization
@@ -32,6 +33,64 @@ private noncomputable def evalAtOne : LaurentPolynomial ℚ →+* ℚ :=
 
 private noncomputable def evalAtTwo : LaurentPolynomial ℚ →+* ℚ :=
   LaurentPolynomial.eval₂ (RingHom.id ℚ) (Units.mk0 2 (by norm_num))
+
+/- The kernel of evaluation at one is a prime (in fact maximal) ideal.  We
+   keep it separate from `homogeneousLaurentIdeal`: the latter is the
+   concrete principal ideal used above, while the kernel gives a short,
+   independent proof that the homogeneous localization is not Artinian. -/
+private noncomputable def evalAtOneKernel : Ideal (LaurentPolynomial ℚ) :=
+  RingHom.ker evalAtOne
+
+private theorem evalAtOneKernel_ne_bot :
+    evalAtOneKernel ≠ (⊥ : Ideal (LaurentPolynomial ℚ)) := by
+  intro hbot
+  have hmem : LaurentPolynomial.T 1 - LaurentPolynomial.C (1 : ℚ) ∈
+      evalAtOneKernel := by
+    change evalAtOne (LaurentPolynomial.T 1 - LaurentPolynomial.C (1 : ℚ)) = 0
+    norm_num [evalAtOne]
+  rw [hbot] at hmem
+  have hz : LaurentPolynomial.T 1 - LaurentPolynomial.C (1 : ℚ) = 0 :=
+    Ideal.mem_bot.mp hmem
+  have he := congrArg evalAtTwo hz
+  norm_num [evalAtTwo] at he
+
+private theorem evalAtOneKernel_ne_top :
+    evalAtOneKernel ≠ (⊤ : Ideal (LaurentPolynomial ℚ)) := by
+  intro htop
+  have hmem : (1 : LaurentPolynomial ℚ) ∈ evalAtOneKernel := by
+    rw [htop]
+    trivial
+  change evalAtOne (1 : LaurentPolynomial ℚ) = 0 at hmem
+  norm_num [evalAtOne] at hmem
+
+private theorem evalAtOneKernel_isPrime : evalAtOneKernel.IsPrime := by
+  exact RingHom.ker_isPrime evalAtOne
+
+/- The homogeneous-symbol localization in the A1 model has a genuine prime
+   strictly above zero.  Hence it cannot be Artinian: in an Artinian
+   commutative ring every prime ideal is maximal, so the zero prime would
+   already be maximal and could not lie strictly below this kernel. -/
+theorem homogeneousLaurent_not_isArtinianRing :
+    ¬ IsArtinianRing (LaurentPolynomial ℚ) := by
+  intro hArt
+  letI : IsArtinianRing (LaurentPolynomial ℚ) := hArt
+  have hbotPrime : (⊥ : Ideal (LaurentPolynomial ℚ)).IsPrime := by
+    infer_instance
+  letI : (⊥ : Ideal (LaurentPolynomial ℚ)).IsPrime := hbotPrime
+  have hbotMax : (⊥ : Ideal (LaurentPolynomial ℚ)).IsMaximal := by
+    infer_instance
+  have hEq : (⊥ : Ideal (LaurentPolynomial ℚ)) = evalAtOneKernel :=
+    hbotMax.eq_of_le evalAtOneKernel_ne_top bot_le
+  exact evalAtOneKernel_ne_bot hEq.symm
+
+/- By Hopkins--Levitzki, finite length of the regular module would make the
+   coefficient ring Artinian.  This is the exact length obstruction needed
+   for the Part I.5 warning, rather than merely exhibiting one proper ideal. -/
+theorem homogeneousLaurent_not_isFiniteLength :
+    ¬ IsFiniteLength (LaurentPolynomial ℚ) (LaurentPolynomial ℚ) := by
+  intro hLength
+  exact homogeneousLaurent_not_isArtinianRing
+    ((isArtinianRing_iff_isFiniteLength (R := LaurentPolynomial ℚ)).mpr hLength)
 
 theorem homogeneousLaurentIdeal_ne_top :
     homogeneousLaurentIdeal ≠ (⊤ : Ideal (LaurentPolynomial ℚ)) := by
