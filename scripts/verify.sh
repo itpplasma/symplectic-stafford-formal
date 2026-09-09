@@ -43,6 +43,7 @@ for name, (url, rev) in expected.items():
         raise SystemExit(f'{name}: revision is not a full commit')
 print('pins: exact Lean, Mathlib, AlgebraicAnalysis, and Stafford38 revisions')
 PY
+python3 scripts/check-dependency-checkouts.py
 
 python3 - <<'PY'
 import re
@@ -107,6 +108,9 @@ lake env lean --trust=0 .lake/verification/AxiomAudit.lean > .lake/verification/
 if grep -Eq 'sorryAx|admitAx|Lean\.ofReduceBool|(^|:) error:' .lake/verification/axioms.log; then
   echo 'axiom audit failed; see .lake/verification/axioms.log' >&2
   exit 1
+fi
+if [[ "$mode" == "--phase-ii" ]]; then
+  python3 scripts/check-axiom-closure.py --phase-ii .lake/verification/axioms.log
 fi
 
 : > .lake/verification/consumers.log
