@@ -125,6 +125,14 @@ filtered-to-graded localized-length comparison as the first invalid paper
 bridge, so these additions remain conditional, boundary, audit, or
 concrete-family evidence and do not promote M01--M11 or either phase gate.
 
+The fourteenth frontier adds an exact-sequence M08 support-union consumer and
+actual-support boundary, source-dependent test-retention and base-producer
+obstructions for M09--M10, an unstructured repeated-block M07 boundary, and a
+nontrivial integral-domain false positive for the proposition-only historical
+class. The independent global audit confirms that the filtered/Rees
+localized-length comparison remains the first unsupported bridge. These are
+kernel-checked boundaries and audits; release remains fail-closed.
+
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
 Rees, Rees-module, power-Ore, finite-filtration/support, common-colon,

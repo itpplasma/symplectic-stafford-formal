@@ -6,6 +6,7 @@ import SymplecticStafford.FiniteLength.Pencil
 import SymplecticStafford.FiniteLength.CentralEigenPencil
 import SymplecticStafford.FiniteLength.PencilBridge
 import SymplecticStafford.FiniteLength.ActivatedPencil
+import SymplecticStafford.FiniteLength.ActivatedPencilBoundary
 import SymplecticStafford.FiniteLength.MatrixPencil
 import SymplecticStafford.FiniteLength.RadicalLift
 import SymplecticStafford.FiniteLength.JacobsonTop
@@ -144,6 +145,7 @@ import SymplecticStafford.Ordered.CommonColonProducer
 import SymplecticStafford.Ordered.SupportUnion
 import SymplecticStafford.Ordered.FiniteGenerationBridge
 import SymplecticStafford.Ordered.M08SupportUnion
+import SymplecticStafford.Ordered.M08ExactSupportBridge
 import SymplecticStafford.Ordered.CharacteristicSupportProducer
 import SymplecticStafford.Ordered.SupportUnionBoundary
 import SymplecticStafford.Ordered.ActualM08Producer

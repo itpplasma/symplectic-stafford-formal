@@ -210,6 +210,18 @@ filtered-to-graded localized-length comparison. These additions remain
 conditional, boundary, audit, or concrete-family evidence: the universal
 M01--M11 producer and both phase gates stay open.
 
+The fourteenth frontier adds an exact-sequence support-union consumer and an
+actual-support counterexample for M08 (`Ordered/M08ExactSupportBridge`), a
+source-dependent test-retention and pointwise base-producer obstruction for
+M09--M10 (`Induction/TestRetentionObstruction` and
+`Induction/SuccessorObstruction`), an unstructured repeated-block M07
+activated-pencil boundary (`FiniteLength/ActivatedPencilBoundary`), and a
+nontrivial integral-domain false positive for the proposition-only historical
+class (`Filtered/AdmissibleLabelsFalsePositive`). The independent global audit
+confirms that the first unsupported bridge remains the filtered/Rees
+localized-length comparison. These are kernel-checked boundaries and audits;
+the universal producer and both phase/release gates remain open.
+
 | Obligation | Checked module and scope | Required continuation |
 | --- | --- | --- |
 | M01 | `Semantics/SupportDimension.lean` uses `WithBot Nat`, extracts zero from supplied support/dimension equivalences, and proves that a zero original right quotient is equivalent to membership of `1`. `Semantics/RightIdealBridge.lean` bridges the displayed two-generator semiring carrier to a `RingRightIdeal` under explicit negation closure and proves quotient action laws. `Filtered/OriginalCentralSupport.lean` gives the actual original-ring quotient and central-support zero bridge. `Filtered/CharacteristicSupport.lean` constructs a finite associated-layer support proxy from actual quotient classes, while `Filtered/SpecCharacteristicSupport.lean` states the genuine `Module.support`/annihilator zero-locus boundary for a supplied commutative associated module and an explicit filtered class map. `Filtered/ActualClassSupport.lean` connects a genuine filtered-layer quotient to that support boundary and records the `WithBot Nat`/integer-defect correspondence under explicit class-map data. `Filtered/M01StructuralBoundary.lean` independently shows that the historical proposition-only class labels do not imply even `Nontrivial`. `Filtered/M01StructuralClass.lean` supplies additive filtered-ring layers, degree-zero field action, representative-independent multiplication and least-layer detection, while retaining the missing commutative-affine/domain and support bridge as hypotheses. `Ordered/CharacteristicSupportProducer.lean` consumes an actual per-prime producer and localized common-quotient zero bridge to prove the corresponding support inclusion. | Construct the full characteristic support in `Spec(gr U)` and its zero-detection theorem, encode the actual filtered class and associated module, and connect bottom dimension to the integer defect without assuming negation closure as a hidden instance. |

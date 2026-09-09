@@ -312,6 +312,16 @@ the first invalid bridge at the filtered-to-graded localized-length step;
 these checked interfaces and concrete calibrations therefore remain conditional
 and do not promote M01--M11, either phase, Palomar registration, or publication.
 
+The fourteenth frontier wave adds an exact-sequence support-union consumer and
+an actual-support counterexample for M08, a source-dependent test-retention
+boundary and pointwise base-producer obstruction for M09--M10, an
+unstructured repeated-block activated-pencil boundary for M07, and a
+nontrivial integral-domain false positive for the proposition-only historical
+class. The independent global audit confirms that the first unsupported
+bridge remains the filtered/Rees localized-length comparison. These are
+kernel-checked boundaries and audits, not a universal producer or phase/release
+promotion.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.
