@@ -78,6 +78,121 @@ theorem isFiniteLength_of_atPrime_supportDim_zero
 
 end AtPrime
 
+section CanonicalLocalization
+
+variable {A : Type u} [CommRing A] [IsNoetherianRing A]
+variable {G : Type v} [AddCommGroup G] [Module A G]
+variable [Module.Finite A G]
+
+/-- The canonical localization of a finite module is nonzero at a minimal
+prime of its actual annihilator.  This is the support half of M05, stated
+without a filtered/Rees presentation. -/
+theorem localizedModule_nontrivial_of_mem_annihilator_minimalPrimes
+    (P : Ideal A) [P.IsPrime]
+    (hP : P ∈ (Module.annihilator A G).minimalPrimes) :
+    Nontrivial (LocalizedModule P.primeCompl G) := by
+  let p : PrimeSpectrum A := ⟨P, inferInstance⟩
+  have hp : p ∈ Module.support A G :=
+    Module.mem_support_iff_of_finite.mpr hP.1.2
+  simpa [p] using (Module.mem_support_iff.mp hp)
+
+/-- The annihilator of the original finite module maps into the annihilator
+of its canonical localization.  The proof clears no denominators and uses
+the actual `LocalizedModule` quotient. -/
+private theorem map_annihilator_le_localizedModule_annihilator
+    (P : Ideal A) [P.IsPrime] :
+    Ideal.map (algebraMap A (Localization.AtPrime P))
+        (Module.annihilator A G) ≤
+      Module.annihilator (Localization.AtPrime P)
+        (LocalizedModule P.primeCompl G) := by
+  rw [Ideal.map_le_iff_le_comap]
+  intro c hc
+  rw [Ideal.mem_comap, Module.mem_annihilator]
+  intro z
+  induction z using LocalizedModule.induction_on with
+  | _ g s =>
+      rw [IsLocalizedModule.mk_eq_mk']
+      rw [← IsLocalization.mk'_one (M := P.primeCompl),
+        IsLocalizedModule.mk'_smul_mk', Module.mem_annihilator.mp hc g]
+      simp
+
+/-- A minimal annihilator prime gives the local finite-length module required
+by M05.  Both nontriviality and finite length refer to the same canonical
+`Localization.AtPrime`/`LocalizedModule` pair; no support-dimension or
+filtered producer is hidden in this theorem. -/
+theorem localizedModule_nontrivial_and_isFiniteLength_of_mem_annihilator_minimalPrimes
+    (P : Ideal A) [P.IsPrime]
+    (hP : P ∈ (Module.annihilator A G).minimalPrimes) :
+    Nontrivial (LocalizedModule P.primeCompl G) ∧
+      IsFiniteLength (Localization.AtPrime P)
+        (LocalizedModule P.primeCompl G) := by
+  classical
+  let R := Localization.AtPrime P
+  letI : IsNoetherianRing R :=
+    IsLocalization.isNoetherianRing P.primeCompl R inferInstance
+  letI : Module.Finite R (LocalizedModule P.primeCompl G) :=
+    Module.Finite.of_isLocalizedModule P.primeCompl
+      (LocalizedModule.mkLinearMap P.primeCompl G)
+  have hnontrivial : Nontrivial (LocalizedModule P.primeCompl G) :=
+    localizedModule_nontrivial_of_mem_annihilator_minimalPrimes P hP
+  letI : Nontrivial (LocalizedModule P.primeCompl G) := hnontrivial
+  have hmap := map_annihilator_le_localizedModule_annihilator (G := G) P
+  have hradmap :
+      (Ideal.map (algebraMap A R) (Module.annihilator A G)).radical =
+        P.map (algebraMap A R) := by
+    exact IsLocalization.AtPrime.radical_map_of_mem_minimalPrimes
+      R P (Module.annihilator A G) hP
+  have hmaxrad : IsLocalRing.maximalIdeal R ≤
+      (Module.annihilator R (LocalizedModule P.primeCompl G)).radical := by
+    rw [← Localization.AtPrime.map_eq_maximalIdeal, ← hradmap]
+    exact Ideal.radical_mono hmap
+  have hannle : Module.annihilator R (LocalizedModule P.primeCompl G) ≤
+      IsLocalRing.maximalIdeal R :=
+    Module.annihilator_le_of_mem_support
+      (IsLocalRing.closedPoint_mem_support R
+        (LocalizedModule P.primeCompl G))
+  have hmin : IsLocalRing.maximalIdeal R ∈
+      (Module.annihilator R (LocalizedModule P.primeCompl G)).minimalPrimes := by
+    have hmaxprime : (IsLocalRing.maximalIdeal R).IsPrime :=
+      Ideal.IsMaximal.isPrime (IsLocalRing.maximalIdeal.isMaximal R)
+    refine ⟨⟨hmaxprime, hannle⟩, ?_⟩
+    intro q hq hqle
+    have hradq :
+        (Module.annihilator R (LocalizedModule P.primeCompl G)).radical ≤ q :=
+      hq.1.radical_le_iff.mpr hq.2
+    exact hmaxrad.trans hradq
+  exact ⟨hnontrivial, isFiniteLength_of_local_minimal_annihilator hmin⟩
+
+/-- The same endpoint using the actual Mathlib module support.  A minimal
+support point is first converted to a minimal prime over the actual
+annihilator; this is the source-independent interface needed by a future
+filtered/Rees support producer. -/
+theorem localizedModule_nontrivial_and_isFiniteLength_of_minimal_support
+    (P : PrimeSpectrum A)
+    (hP : P ∈ Module.support A G)
+    (hmin : ∀ Q : PrimeSpectrum A, Q ∈ Module.support A G →
+      Q ≤ P → P ≤ Q) :
+    Nontrivial (LocalizedModule P.asIdeal.primeCompl G) ∧
+      IsFiniteLength (Localization.AtPrime P.asIdeal)
+        (LocalizedModule P.asIdeal.primeCompl G) := by
+  have hann : Module.annihilator A G ≤ P.asIdeal :=
+    Module.annihilator_le_of_mem_support hP
+  have hminann : P.asIdeal ∈ (Module.annihilator A G).minimalPrimes := by
+    refine ⟨⟨P.isPrime, hann⟩, ?_⟩
+    intro q hq hqle
+    have hqsupport :
+        (⟨q, hq.1⟩ : PrimeSpectrum A) ∈ Module.support A G :=
+      Module.mem_support_iff_of_finite.mpr hq.2
+    exact hmin _ hqsupport hqle
+  exact localizedModule_nontrivial_and_isFiniteLength_of_mem_annihilator_minimalPrimes
+    P.asIdeal hminann
+
+end CanonicalLocalization
+
 end SymplecticStafford.FiniteLength
 
 #print axioms SymplecticStafford.FiniteLength.isFiniteLength_of_atPrime_supportDim_zero
+#print axioms
+  SymplecticStafford.FiniteLength.localizedModule_nontrivial_and_isFiniteLength_of_mem_annihilator_minimalPrimes
+#print axioms
+  SymplecticStafford.FiniteLength.localizedModule_nontrivial_and_isFiniteLength_of_minimal_support
