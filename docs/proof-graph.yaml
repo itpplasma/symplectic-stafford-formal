@@ -39,9 +39,10 @@
       ],
       "review": "Implemented checkpoint; replay logs and precise types govern its scope. The latest indexed-generator expansions remain conditional on right Noetherianity."
       ,"continuation_sources": [
-        "SymplecticStafford/Ordered/M08ExactSupportBridge.lean"
+        "SymplecticStafford/Ordered/M08ExactSupportBridge.lean",
+        "SymplecticStafford/Ordered/M08IdealQuotientExact.lean"
       ],
-      "continuation_scope": "Fourteenth-wave exact-sequence support-union consumer and actual-support boundary for M08."
+      "continuation_scope": "The ideal-chain producer constructs J/I -> A/I -> A/J for every commutative ring and I <= J, proves injectivity, exactness and surjectivity, and derives Module.support equality. The integer (6) <= (2) oracle checks nonzero left image, right-map killing and nonzero survival. The identification with paper common-colon characteristic modules remains open; universal M08 is not promoted."
     },
     {
       "id": "scalar",

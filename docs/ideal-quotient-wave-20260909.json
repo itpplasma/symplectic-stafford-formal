@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-09",
+  "base_commit": "4f1443c73388b8fa28be3d3d4be564a8a63dd277",
+  "tracked_binary_patch_sha256": "f945ed0117814e56aa922c2b00013816e357e1cd20aa55f0e148168409899405",
+  "new_source_sha256": {
+    "SymplecticStafford/Ordered/M08IdealQuotientExact.lean": "9e6865baf332ca8cede84f1c6ebd5c8c356e35d0e6c0c64acbe3fcbad6a32502",
+    "tests/M08IdealQuotientExactOracle.lean": "f14c715c8d936ff915bc7f7a16692b41865994109f5d87fc286e894ec5622116"
+  },
+  "implementation": "Luna xhigh; independent Sol-low review and oracle repair",
+  "scope": "Canonical J/I -> A/I -> A/J for any commutative ring and ideals I<=J, injectivity/exactness/surjectivity proved, support equality derived. Paper common-colon characteristic-module identification remains open.",
+  "review": "PASS. Formal source unchanged after audit; oracle now proves right map kills class2 and preserves nonzero class1 in Z/(2), with independent divisibility arguments.",
+  "checks": {
+    "scripts/verify.sh --phase-ii": "PASS: root build, exact dependency/source audits, five endpoint closures, all 168 trust-zero behavioral files",
+    "axioms": "propext, Classical.choice, Quot.sound",
+    "dossier": "build PASS; first page inspected; 80 links including78 internal; no undefined references",
+    "git diff --check": "PASS"
+  },
+  "palomar": "Challenge/Solution unchanged from 4f1443c and prior successful official comparator; not rerun for this unrelated source addition. Universal release gates unchanged and pending.",
+  "log_sha256": {
+    ".lake/luna-wave-20260909/ideal-quotient-phase-ii.log": "5bcce21742727ea2c740949d65fd05cd7b8473d8723581a528f414596bfb368f",
+    ".lake/luna-wave-20260909/ideal-quotient-axioms.log": "5633f98ac66e3588445921b5e7da34ef6b916bf5c8d6bbcafd872b094fe74dd4",
+    ".lake/luna-wave-20260909/ideal-quotient-consumers.log": "58e57d298815554b0149241154e5a0816526903a5aaafb9f760ed0162e4bf404",
+    ".lake/luna-wave-20260909/ideal-quotient-dossier.log": "d6dbfcd6f212deb145ffa6216a71faef9aabbd4c35fcee0f359ec9acef919feb"
+  },
+  "freeze_note": "Receipt itself excluded from patch hash; controller commits exact tested source and explicit paths.",
+  "nonblocking_adjacent": "Whole-PLAN prose checker reports pre-existing load-bearing at line306; new section has no finding. Historical prose left unchanged."
+}

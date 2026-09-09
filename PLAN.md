@@ -466,3 +466,19 @@ independent Sol-low statement review and targeted compilation. Fresh full
 verification is recorded in the current wave receipt; previous comparator
 receipts concern the former membership definition and cannot certify this
 new pair. No universal phase or release gate is promoted.
+
+## Canonical ideal-quotient support producer
+
+`Ordered/M08IdealQuotientExact.lean` now constructs the canonical exact
+sequence `J/I -> A/I -> A/J` for a commutative ring and ideals `I <= J`.
+Injectivity, exactness, and surjectivity are proved from representatives,
+and the existing exact-support theorem yields the support union. Luna
+xhigh implemented it; independent Sol-low review passed after the integer
+`(6) <= (2)` oracle was strengthened to prove that the right map kills
+class 2 and preserves a nonzero class 1.
+
+The producer is imported by the root and included in both endpoint lists.
+Its current replay evidence is `docs/ideal-quotient-wave-20260909.json`.
+The next M08 step is the actual identification of common-colon
+characteristic modules with these quotients. No universal M08 obligation,
+project phase, or public release gate is promoted.
