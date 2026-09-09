@@ -125,8 +125,12 @@ The continued 2026-09-09 run added these further bounded commits:
 
 The controller imported the new modules into `SymplecticStafford.lean` and
 ran every new source/oracle with `lake env lean --trust=0`; all passed with
-axioms restricted to `propext`, `Classical.choice`, and `Quot.sound`. The new
-Noetherian sequence-ring file is deliberately an obstruction, not a project
-axiom. None of these lanes supplies the universal Rees/Ore construction,
-noncommutative block theorem, characteristic-support producer, source
-selection from the paper hypotheses, or terminal Phase-I/II evidence.
+axioms restricted to `propext`, `Classical.choice`, and `Quot.sound`. At
+integration commit `57a8b631c54cc5454ad68608732fde2630a8618f`, the aggregate
+root build completed 8,797 jobs; the phase-I, phase-II and Palomar scripts
+also passed their documented checkpoint replays. The dossier rebuilt as a
+13-page qpdf-clean PDF. The new Noetherian sequence-ring file is deliberately
+an obstruction, not a project axiom. None of these lanes supplies the
+universal Rees/Ore construction, noncommutative block theorem,
+characteristic-support producer, source selection from the paper hypotheses,
+or terminal Phase-I/II evidence.
