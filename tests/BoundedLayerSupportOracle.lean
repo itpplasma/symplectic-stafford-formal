@@ -4,11 +4,12 @@ import SymplecticStafford.Filtered.BoundedLayerSupport
 /-!
 # Q[X] oracle for bounded layer support transport
 
-The finite filtration has two nonzero top layers followed by the zero
-terminal layer.  It is deliberately concrete and easy to audit: both
-presentations are the same filtration, transported by the identity index
-equivalence.  The oracle checks an actual polynomial class at layer zero and
-the transported support/defect conclusions.
+The finite filtration has two top layers followed by the zero terminal layer;
+only the second top layer contributes a nonzero successive quotient.  It is
+deliberately concrete and easy to audit: both presentations are the same
+filtration, transported by the identity index equivalence.  The oracle
+checks an actual polynomial class at layer one and the transported
+support/defect conclusions.
 -/
 
 namespace SymplecticStafford.Filtered
