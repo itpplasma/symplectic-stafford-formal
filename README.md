@@ -21,7 +21,12 @@ consumption,
 conditional right-denominator/differential-Ore clearing, a constructive
 finite-index P_h successor contract, original-affine source selection, and a
 conditional support-union consumer, a faithful weighted-detection boundary,
-and a kernel-checked strong-P_h successor obstruction. The
+and a kernel-checked strong-P_h successor obstruction. The latest parallel
+wave also adds an actual-right-localization power-Ore bridge, a finite
+weighted-matrix inverse/row-action lemma, scalar-extension orbit-pencil
+activation, stronger M08 generator expansion, a two-call descent successor
+consumer, and terminal/opposite package assembly. These remain conditional
+utilities with explicit hypotheses. The
 general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

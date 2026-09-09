@@ -35,7 +35,10 @@ project:
     conditional support-union, an actual M08 right-Noetherian finite-generator
     producer, support-removal defect arithmetic, and
     conditional original-U finite-test/cyclic-pencil bridges, including a
-    two-call affine-source constructor. General
+    two-call affine-source constructor, a two-call descent successor
+    constructor, an actual-right-localization power-Ore bridge, a finite
+    weighted-matrix inverse/row-action lemma, and terminal/opposite package
+    assembly. General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
@@ -122,7 +125,8 @@ status:
     and associated-layer multiplication, a ring-valued Rees object,
     explicit right-module composition filtrations and Jacobson-top generation
     reflection, spectrum-support and full-symbol/Noetherianity boundaries,
-    a commutative full-symbol Ore calibration,
+    an actual right-localization power-Ore bridge, a commutative full-symbol
+    Ore calibration,
     right-localized-module common denominators, original-central-support and
     an AtPrime finite-local-length bridge,
     original-test-producer boundaries, list-indexed division-LLD source
@@ -133,9 +137,11 @@ status:
     infinite-multiplicity boundaries, the M08 support-union boundary, and the
     strong-P_h/terminal obstructions, support-removal defect arithmetic,
     conditional cyclic-pencil, finite-index and constructive successor,
-    terminal-boundary, differential-Ore,
+    two-call descent successor, terminal-boundary and terminal/opposite
+    package assembly, differential-Ore,
     original-affine source-selection, actual M08 finite right-generation,
-    two-call affine-source construction, filtered, source-assembly, support-union,
+    two-call affine-source construction, two-call descent successor,
+    weighted-matrix inverse, filtered, source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
     assembly, support-union, and induction files are conditional scaffolds;
@@ -212,9 +218,12 @@ fidelity:
     final all-dimensional filtered-algebra class. That semantic bridge remains
     part of M01. Filtered/Localization uses a single-denominator power-clearing
     contract and therefore is not the paper's full symbol-set Ore theorem;
-    FullSymbolLocalization and ReesNoetherianCriterion expose exact algebraic
-    APIs but still require the paper's Rees construction and leading-term
-    certificate.
+    FullSymbolRightPowerBridge derives that power boundary only from an
+    already supplied right localization. FullSymbolLocalization and
+    ReesNoetherianCriterion expose exact algebraic APIs but still require the
+    paper's Rees construction and leading-term certificate. WeightedMatrixInverse
+    proves only the finite nilpotent matrix inverse step; strict weighted
+    degree bounds still need to be connected to an original finite inverse.
 
 review:
   status: "agent-reviewed"
@@ -229,7 +238,8 @@ review:
     activated finite-length/finite-orbit, original-affine source, original-
     test-producer, original-U division-test source, actual module-support,
     ring-filtration-layer, right-module localization, ordered common-colon-
-    producer and differential-Ore boundary utilities. The local Palomar comparator,
+    producer, two-call descent, weighted-matrix inverse, terminal assembly and
+    differential-Ore boundary utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
     Fable/Claude paper audit found no invalid bridge in the written candidate;

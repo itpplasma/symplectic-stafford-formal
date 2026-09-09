@@ -38,6 +38,7 @@ import SymplecticStafford.Filtered.CommutativeFullSymbol
 import SymplecticStafford.Filtered.ReesNoetherianCriterion
 import SymplecticStafford.Filtered.WeightedDetection
 import SymplecticStafford.Filtered.WeightedFaithfulBoundary
+import SymplecticStafford.Filtered.WeightedMatrixInverse
 import SymplecticStafford.Filtered.WeightedInverseBoundary
 import SymplecticStafford.Filtered.FiniteSupportDetection
 import SymplecticStafford.Filtered.FiniteSupportQuotient

@@ -63,12 +63,27 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `InfiniteMultiplicityBoundary`, `MinimalPrimeLocalTheorem`,
 `SupportUnionBoundary`,
 `CommonColonProducer`, `ConcreteSuccessor`, `ConstructiveSuccessor`,
-`ActualM08Producer`, `TwoCallAffineProducer`,
+`ActualM08Producer`, `TwoCallAffineProducer`, `TwoCallDescentProducer`,
+`FullSymbolRightPowerBridge`, `WeightedMatrixInverse`,
 `SuccessorObstruction`, `SupportRemovalArithmetic`, `DifferentialOreDescent`,
 `OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
 `Package/TerminalBoundary`,
 `Package/TerminalObstruction`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.
+
+The 2026-09-09 parallel wave is integrated on the shared branch. It adds an
+actual-right-localization-to-power-Ore bridge (`FullSymbolRightPowerBridge`),
+a finite nilpotent weighted-matrix inverse and faithful row-action lemma
+(`WeightedMatrixInverse`), minimal-support to finite-length consumers
+(`FilteredMinimalPrimeBridge`), scalar-extension orbit-pencil activation
+(`FiniteOrbitPencil`), stronger right-Noetherian colon-generator expansion
+(`ActualM08Producer`), a two-call descent successor constructor
+(`TwoCallDescentProducer`), and terminal same-divisor/opposite package
+assembly (`terminal_sameDivisor`, `TerminalPackage` and `Package/Opposite`).
+Each item is a checked conditional utility with an independent consumer; the
+universal filtered chart, finite-length block decomposition, support removal,
+and original-U source producer are still supplied hypotheses rather than
+proved constructions.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
