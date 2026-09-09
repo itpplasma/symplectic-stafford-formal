@@ -497,3 +497,26 @@ paper's particular symbol family, Ore property, degree-controlled fraction
 filtration, and degree-zero inverse membership remain open. No M05 or
 universal release gate is promoted. Review and replay evidence are recorded
 in `docs/symbol-denominator-wave-20260909.json`.
+
+## Lower-perturbation inverse with degree-zero witness
+
+`Filtered/SymbolFractionInverse.lean` proves every selected symbol witness
+has the least selected degree and that lower perturbations preserve it.
+For an actual right Ore localization with exactly the selected denominator
+set, it constructs the right fractions and proves both inverse identities
+for `1-a/s`, with inverse `s/(s-a)` in the degree-zero fraction predicate.
+
+That predicate is not yet a subring or a complete localized filtration.
+The next step is degree-controlled Ore clearance from regular leading
+symbols, followed by additive and multiplicative closure. The particular
+paper localization, Rees Noetherianity, and the M05 comparison remain open.
+Review and replay are recorded in `docs/fraction-inverse-wave-20260909.json`.
+
+`Filtered/RegularSymbolDegree.lean` now supplies the degree-control
+prerequisite: if the actual degree-i symbol of `s` is left regular on
+every associated layer and `s*x` lies in degree n, then x lies in degree
+`n-i` when `i <= n`, and x is zero otherwise. The proof uses the least
+filtration degree and a nonzero quotient class. A polynomial degree
+oracle verifies regular symbols and the nonzero boundary. This does not
+yet construct paper-specific regularity or the fraction-filtration
+closure; it is included in the same fraction-inverse wave receipt.

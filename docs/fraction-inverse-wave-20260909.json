@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-09",
+  "base_commit": "d2b6af2c28850529c7e4d7b93cc034bacb7fe8d0",
+  "tracked_binary_patch_sha256": "357626541dc1450ec1ac32f7f3a240e68e0e4bec8dcbd29450e6f2b58f64e1fe",
+  "new_source_sha256": {
+    "SymplecticStafford/Filtered/SymbolFractionInverse.lean": "fbc4d11c0902e257e54a7e07ad2a42c4183bb3f86e946455eb2996c8a7913b29",
+    "SymplecticStafford/Filtered/RegularSymbolDegree.lean": "5d990721b2faec5c87ac990353c842f3707c8abd3785f7209faed070093c94e1",
+    "tests/SymbolFractionInverseOracle.lean": "cf778e00121deabac2810c016bd41e14205c53fde6d46aebe2878d8706dd3957",
+    "tests/RegularSymbolDegreeOracle.lean": "0637202804f942a7569957e7df4bd118a34cf005ab48af359560419527d20e5f"
+  },
+  "implementation": "Luna xhigh; independent Luna-xhigh review PASS; polynomial inverse oracle strengthened with independent evaluation/nontriviality checks",
+  "scope": "Actual right-fraction inverse identities for lower perturbations and degree-zero witness; selected-witness degree uniqueness; regular associated-symbol multiplication gives genuine filtered degree control. No paper-specific Ore or regularity construction, filtration closure, Jacobson, Rees, or M05 conclusion in this committed scope.",
+  "review": "PASS for both sources and strengthened independent polynomial oracles. Both inverse orientations and below-degree zero branch checked.",
+  "checks": {
+    "scripts/verify.sh --phase-ii": "All verification stages PASS across resumed execution: root build9172jobs, Challenge/Solution, eleven foundation-only endpoints, source/pin recheck, and all171 trust=0 consumer files. Original full command exited124 during consumer loop; exact project_lean consumer calls completed in hashed20-file batches. No one-shot exit0 claimed.",
+    "consumer_replay": "171/171 PASS, exact source manifest matched after final batch; no forbidden axioms or Lean errors",
+    "axioms": "propext, Classical.choice, Quot.sound",
+    "dossier": "Build PASS; final graph digest matched build manifest; first page inspected;80link annotations including78internal; no undefined references",
+    "git diff --check": "PASS"
+  },
+  "freeze_note": "Receipt excluded from tracked patch hash. Unregistered SymbolFractionFiltration and later worker candidates excluded. No dependency copies or toolchain changes.",
+  "palomar": "Selected finite-central-pencil Challenge/Solution unchanged; full universal release remains pending.",
+  "interruptions": "Two initial shared dependency-cache availability failures; targeted existing-cache repair and third full build succeeded.20-minute timeout interrupted consumers. First consumer-only retry exited137 without Lean error. Short resumable batches completed all171 checks; no test skipped.",
+  "log_sha256": {
+    ".lake/luna-wave-20260909/fraction-inverse-phase-ii.log": "35ee6db4f55354713f2a8c64fee6c6f9ca834ceb5dff841637489b75713404e8",
+    ".lake/luna-wave-20260909/fraction-inverse-build.log": "0370d9a7b92c3582a91af4c3612347eb631272094596cc26ea340dc29f9462da",
+    ".lake/luna-wave-20260909/fraction-inverse-axioms.log": "6b5335bc04f8d83e30675651b6a0be72a4ec98761cb0c41eb4435594a653b4d2",
+    ".lake/luna-wave-20260909/fraction-inverse-challenge-build.log": "3bf6797fe43582e0b442d622d477c8ac1c2948f2f282c202b25c09ac090e69d4",
+    ".lake/luna-wave-20260909/fraction-inverse-solution-build.log": "163bf16271add81bab20343d2f56d5607a784604cc7e96ffd05430bcb02c034a",
+    ".lake/luna-wave-20260909/fraction-inverse-consumers.log": "23cb9806c13b0084d532d385dbbc115b362409fc2eedd903c07a8ba71f954065",
+    ".lake/luna-wave-20260909/fraction-inverse-consumer-replay-state.json": "4ade1de9510b29b672853ffa27e7412868161d6dd784d0f938ada67ca31ca4c1",
+    ".lake/luna-wave-20260909/replay-consumers.py": "70f5e12a5e6c02a6a99485ef0c9bcfa4e825abf902b9a334c6f16498cd727b87",
+    ".lake/luna-wave-20260909/fraction-inverse-source-recheck.log": "513719fd82b3bff12bc6fadf5adf70eeaeaaca80e72315c1d100d78df79f2504",
+    ".lake/luna-wave-20260909/fraction-inverse-dossier.log": "a24e0f9d73367767803a20789f94b3f43fdf1c17ef595d386beabd5ec4142220"
+  }
+}

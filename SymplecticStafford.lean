@@ -169,3 +169,5 @@ import SymplecticStafford.Filtered.FiniteFiltrationLength
 
 import SymplecticStafford.Ordered.M08IdealQuotientExact
 import SymplecticStafford.Filtered.SymbolDenominatorSubmonoid
+import SymplecticStafford.Filtered.SymbolFractionInverse
+import SymplecticStafford.Filtered.RegularSymbolDegree
