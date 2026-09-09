@@ -1,17 +1,20 @@
-# Dependency lock audit — 8 September 2026
+# Dependency lock audit — 9 September 2026
 
 The repository locks Lean `leanprover/lean4:v4.33.0`, Mathlib
 `db584cd6d46c92f209a44c0f1c829460d327499d`, AlgebraicAnalysis
 `46f2c819deca0e9735a436bed94ebed03ae35090`, and Stafford38 formal
 `e77e176c381ca2d6b20c030f9227f1b031415d2e`.
 
-The public remote heads were queried directly:
+The public remote heads were queried directly.  The Stafford38 code pin is
+kept at the audited `e77e176` revision because the newer public `main` head
+`914d6ad0c8ac9851e782fa61302ba340996d9472` contains metadata/release-document
+changes only; no Lean source changed between those revisions.
 
 ```text
 https://github.com/itpplasma/algebraic-analysis.git refs/heads/main
 46f2c819deca0e9735a436bed94ebed03ae35090
 https://github.com/itpplasma/stafford38-formal.git refs/heads/main
-e77e176c381ca2d6b20c030f9227f1b031415d2e
+914d6ad0c8ac9851e782fa61302ba340996d9472
 ```
 
 Both public heads were cloned into isolated temporary checkouts and were

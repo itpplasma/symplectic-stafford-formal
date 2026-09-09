@@ -14,18 +14,23 @@ project:
     and algebraic filtered/Rees operations, quotient Rees-module actions,
     explicit power-Ore fractions and finite power-Ore normal forms,
     finite bounded-generator filtrations, finite-support and matrix-pencil
-    detection, an associated-layer support proxy, explicit right-module
-    composition filtrations and Jacobson-top generation reflection,
-    a spectrum-support boundary, a filtered Noetherianity boundary, a
-    full-symbol algebraic localization and Rees-Noetherianity boundaries, a
-    list-indexed division-LLD source selector, an original-test producer
+    detection, an associated-layer support proxy, explicit additive
+    ring-filtration layers and associated classes, explicit right-module
+    composition filtrations and Jacobson-top generation reflection, a
+    spectrum-support boundary, a filtered Noetherianity boundary, a
+    full-symbol algebraic localization and right-localized-module
+    common-denominator boundary, and Rees-Noetherianity boundaries, a
+    minimal-prime local finite-length core, an actual module-support
+    producer consumer, a list-indexed division-LLD source selector, an
+    original-test producer
     boundary, and activated finite-length/finite-orbit pencil consumption,
     a faithful weighted-detection boundary, an M08 support-union boundary,
     and strong-P_h and terminal obstructions,
     conditional differential-Ore/right-denominator clearing, constructive
     finite-index successor contracts, original-affine source selection,
-    conditional support-union, and conditional original-U finite-test/cyclic-
-    pencil bridges. General finite-length activated pencils and the universal
+    conditional support-union, support-removal defect arithmetic, and
+    conditional original-U finite-test/cyclic-pencil bridges. General
+    finite-length activated pencils and the universal
     source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
     from the companion paper; those are explicit Phase I and Phase II gates.
@@ -107,14 +112,16 @@ status:
     Partial checkpoint. The semantic, support-boundary, opposite-transport,
     ordered/common-colon, raw and module-side Rees, power-Ore fraction and
     finite power-Ore normal forms, finite bounded-generator filtrations,
-    finite associated-layer support, explicit right-module composition
-    filtrations and Jacobson-top generation reflection, spectrum-support and
-    full-symbol/Noetherianity boundaries, original-central-support and
+    finite associated-layer support, explicit additive ring-filtration layers,
+    explicit right-module composition filtrations and Jacobson-top generation
+    reflection, spectrum-support and full-symbol/Noetherianity boundaries,
+    right-localized-module common denominators, original-central-support and
     original-test-producer boundaries, list-indexed division-LLD source
-    selection, activated finite-length/finite-orbit pencil consumption,
+    selection, an original-U division-test source selector, activated
+    finite-length/finite-orbit pencil consumption,
     division-coordinate, faithful weighted detection, negative-degree and
     infinite-multiplicity boundaries, the M08 support-union boundary, and the
-    strong-P_h/terminal obstructions,
+    strong-P_h/terminal obstructions, support-removal defect arithmetic,
     conditional cyclic-pencil, finite-index and constructive successor,
     terminal-boundary, differential-Ore,
     original-affine source-selection, filtered, source-assembly, support-union,
@@ -209,8 +216,9 @@ review:
     matrix detection and Jacobson-top generation reflection,
     finite-generation/constructive-successor, list-indexed division-LLD,
     activated finite-length/finite-orbit, original-affine source, original-
-    test-producer, ordered common-colon-producer and differential-Ore boundary
-    utilities. The local Palomar comparator,
+    test-producer, original-U division-test source, actual module-support,
+    ring-filtration-layer, right-module localization, ordered common-colon-
+    producer and differential-Ore boundary utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
     Fable/Claude paper audit found no invalid bridge in the written candidate;

@@ -21,13 +21,16 @@ an explicit power-Ore fraction boundary, full arbitrary-submonoid Ore
 localization, a strict Rees Noetherianity reduction certificate, finite
 associated-top and matrix pencils, finite bounded-generator filtrations,
 finite power-Ore normal forms, a finite associated-layer support proxy,
-explicit right-module composition filtrations and Jacobson-top generation
-reflection, differential-Ore finite-cover clearing, concrete finite-index
+explicit additive ring-filtration layers and associated classes, explicit
+right-module composition filtrations and Jacobson-top generation
+reflection, a minimal-prime local finite-length core, actual module-support
+consumption, differential-Ore finite-cover clearing, concrete finite-index
 successor contracts, constructive successor assembly, original-affine source
 selection, list-indexed division-LLD source selection, an original-test
-producer boundary, finite-orbit-basis activated pencils, infinite-
-multiplicity and negative-degree inverse boundaries, faithful weighted
-detection, explicit M08 support-union boundary, and strong-P_h/terminal
+producer boundary, an original-U division-test source selector, finite-
+orbit-basis activated pencils, infinite-multiplicity and negative-degree
+inverse boundaries, faithful weighted detection, explicit M08 support-union
+boundary, support-removal defect arithmetic, and strong-P_h/terminal
 obstructions are now checked utilities, while filtered, source-assembly and
 strong P_h producer modules remain explicit conditional scaffolds. These
 utilities do not yet establish the paper's arbitrary finite-length module,
@@ -46,14 +49,19 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `M08SupportUnion`, `ReesBasic`, `ReesAlgebra`, `ReesModule`,
 `GoodFiltration`, `PowerOre`, `FinitePowerOre`, `FiniteSupportDetection`,
 `FiniteSupportQuotient`, `SpecCharacteristicSupport`, `OriginalCentralSupport`,
-`FullSymbolOre`, `FullSymbolLocalization`, `ReesNoetherianCriterion`,
-`NoetherianBoundary`, `RightFiltration`, `GoodLocalBridge`, `JacobsonTop`,
+`FullSymbolOre`, `FullSymbolRightLocalization`,
+`FullSymbolRightModuleLocalization`, `FullSymbolLocalization`,
+`ReesNoetherianCriterion`,
+`NoetherianBoundary`, `RingFiltrationBridge`, `RightFiltration`,
+`GoodLocalBridge`, `JacobsonTop`,
 `ActivatedFiniteLength`, `FiniteOrbitPencil`, `DivisionLLDList`,
 `WeightedFaithfulBoundary`, `WeightedInverseBoundary`,
-`InfiniteMultiplicityBoundary`, `SupportUnionBoundary`,
+`InfiniteMultiplicityBoundary`, `MinimalPrimeLocalTheorem`,
+`SupportUnionBoundary`,
 `CommonColonProducer`, `ConcreteSuccessor`, `ConstructiveSuccessor`,
-`SuccessorObstruction`, `DifferentialOreDescent`,
-`OriginalTestProducerBoundary`, `Package/TerminalBoundary`,
+`SuccessorObstruction`, `SupportRemovalArithmetic`, `DifferentialOreDescent`,
+`OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
+`Package/TerminalBoundary`,
 `Package/TerminalObstruction`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.
 
