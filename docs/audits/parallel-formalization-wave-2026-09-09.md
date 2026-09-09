@@ -134,3 +134,37 @@ an obstruction, not a project axiom. None of these lanes supplies the
 universal Rees/Ore construction, noncommutative block theorem,
 characteristic-support producer, source selection from the paper hypotheses,
 or terminal Phase-I/II evidence.
+
+## Bounded universal-attempt lanes
+
+After the checkpoint push, seven further lanes attempted the first missing
+universal bridges. Their checked commits are:
+
+- `8a785b0` — `M01StructuralBoundary`, with a `ZMod 1` inhabitant of the
+  historical proposition-only class labels showing that those labels do not
+  imply `Nontrivial` or an actual filtered algebra.
+- `f762277` — an extension of the sequence-ring boundary showing that the
+  historical labels cannot yield a Rees-module Noetherian certificate.
+- `e8c67cd` — `PowerOreA1Obstruction`, proving in the coefficient-left Weyl
+  model that powers of `H=x*p` do not satisfy the conventional right-Ore
+  clearing equation.
+- `2200548` — `FullSymbolWeightedBoundary`, constructing genuine Ore
+  localization data for `ℤ[X]` while proving that `1-X` remains noninvertible,
+  so Ore data alone does not provide bounded inverse degrees.
+- `fc39d7b` — `IsotypicBlocks`, consuming repeated simple-factor data over
+  arbitrary division rings and exposing the missing finite central-bad-set
+  theorem.
+- `b07fc74` — `OriginalDivisionProducer`, deriving one nonzero original-U
+  source from genuine finite top/division bridges while leaving those bridges
+  explicit.
+- `33d39d5` — `LayerSupportObstruction`, showing on an actual filtered-module
+  example that source-independent strict support removal is false.
+
+The controller imported the new source files into `SymplecticStafford.lean`
+and reran all 14 source/oracle files under `lake env lean --trust=0`; every
+replay passed with the permitted logical closure. At integration commit
+`058c6cbec0c84cea5f53cc51799ecd809cfd62a8`, the aggregate root build
+completed 8,804 jobs. The phase-I, phase-II and Palomar scripts were also
+rerun and passed their documented checkpoint replays. These lanes sharpen the
+first missing hypotheses but do not supply the universal M01–M11 producer or
+authorize release.

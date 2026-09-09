@@ -47,7 +47,11 @@ project:
     with a sequence-ring obstruction, bounded below-one inverse data and a
     diagonal negative-degree matrix boundary, explicit finite composition and
     block consumers, certified nonzero original-U source selection, and indexed
-    support-removal/test-retention consumption. General
+    support-removal/test-retention consumption, proposition-only M01 and
+    sequence-ring Noetherianity boundaries, the A1 principal-open/power-Ore
+    obstruction, the full-symbol bounded-inverse boundary, explicit isotypic
+    repeated-block data, and a source-dependent support-removal obstruction.
+    General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
@@ -116,7 +120,7 @@ related_formalizations:
     relationship: "builds-on"
 
 verification:
-  commit: "57a8b631c54cc5454ad68608732fde2630a8618f"
+  commit: "058c6cbec0c84cea5f53cc51799ecd809cfd62a8"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -156,7 +160,9 @@ status:
     finite-colon characteristic support, actual filtered class support,
     finite full-symbol chart control, module Noetherian descent and its
     sequence-ring boundary, bounded inverse-degree data, explicit finite blocks,
-    certified nonzero source selection, indexed removal/retention, filtered,
+    certified nonzero source selection, indexed removal/retention, M01
+    structural labels, the A1 power-Ore obstruction, full-symbol weighted
+    boundary, isotypic blocks, and layer-support obstruction, filtered,
     source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
