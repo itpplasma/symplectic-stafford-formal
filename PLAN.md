@@ -122,5 +122,8 @@ The current executable checks are:
 ```
 
 The first command covers the implemented checkpoint only; the latter two are
-not release evidence until their complete endpoint sets exist. Publication is
-fail-closed by `release-gates.yaml` and `scripts/check-release-readiness.sh`.
+not release evidence until their complete endpoint sets exist. Publication
+remains disabled in `release-gates.yaml`; the readiness script is a status and
+evidence-label smoke check, not a proof of the terminal theorem. Release also
+requires every listed independent replay/comparator and explicit human
+authorization.
