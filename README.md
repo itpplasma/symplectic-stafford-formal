@@ -27,6 +27,12 @@ weighted-matrix inverse/row-action lemma, scalar-extension orbit-pencil
 activation, stronger M08 generator expansion, a two-call descent successor
 consumer, and terminal/opposite package assembly. These remain conditional
 utilities with explicit hypotheses. The
+follow-up wave adds finite common-denominator clearing for right-localized
+families, a central-field filtered-algebra interface, weighted-detection
+composition after nilpotent correction, Jacobson scalar-extension top
+comparison, finite scalar bad-set avoidance, and an indexed finite-colon
+characteristic-support consumer. These too remain conditional utilities with
+explicit hypotheses. The
 general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

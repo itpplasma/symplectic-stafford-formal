@@ -39,10 +39,12 @@ import SymplecticStafford.Filtered.ReesNoetherianCriterion
 import SymplecticStafford.Filtered.WeightedDetection
 import SymplecticStafford.Filtered.WeightedFaithfulBoundary
 import SymplecticStafford.Filtered.WeightedMatrixInverse
+import SymplecticStafford.Filtered.WeightedDetectionComposition
 import SymplecticStafford.Filtered.WeightedInverseBoundary
 import SymplecticStafford.Filtered.FiniteSupportDetection
 import SymplecticStafford.Filtered.FiniteSupportQuotient
 import SymplecticStafford.Filtered.OriginalCentralSupport
+import SymplecticStafford.Filtered.CentralField
 import SymplecticStafford.Filtered.RingFiltrationBridge
 import SymplecticStafford.Filtered.AssociatedLayerRing
 import SymplecticStafford.Source.Assembly
@@ -56,6 +58,7 @@ import SymplecticStafford.FiniteLength.FilteredMinimalPrimeBridge
 import SymplecticStafford.FiniteLength.InfiniteMultiplicityBoundary
 import SymplecticStafford.FiniteLength.FiniteOrbitPencil
 import SymplecticStafford.FiniteLength.DerivedOrbitPencil
+import SymplecticStafford.FiniteLength.JacobsonScalarExtension
 import SymplecticStafford.Induction.StrongPh
 import SymplecticStafford.Induction.FiniteIndex
 import SymplecticStafford.Induction.TestRetention
@@ -63,6 +66,7 @@ import SymplecticStafford.Induction.ConcreteSuccessor
 import SymplecticStafford.Induction.ConstructiveSuccessor
 import SymplecticStafford.Induction.TwoCallAffineProducer
 import SymplecticStafford.Induction.TwoCallDescentProducer
+import SymplecticStafford.Induction.FiniteScalarAvoidance
 import SymplecticStafford.Induction.SupportRemovalArithmetic
 import SymplecticStafford.Induction.SuccessorObstruction
 import SymplecticStafford.Ordered.CommonColon
@@ -73,4 +77,5 @@ import SymplecticStafford.Ordered.M08SupportUnion
 import SymplecticStafford.Ordered.CharacteristicSupportProducer
 import SymplecticStafford.Ordered.SupportUnionBoundary
 import SymplecticStafford.Ordered.ActualM08Producer
+import SymplecticStafford.Ordered.CharacteristicSupportFiniteProducer
 import SymplecticStafford.Source.OriginalDivisionProducer

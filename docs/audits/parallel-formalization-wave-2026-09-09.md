@@ -66,3 +66,36 @@ audits, comparator, NanoDa and Lean-kernel replay. The expected
 `./scripts/check-release-readiness.sh` result is exit 1 because all three
 release statuses remain unverified. The workspace and `/tmp` headroom stayed
 above their configured minimums throughout the replay.
+
+## Follow-up lanes
+
+The same-day follow-up wave extends the checkpoint with these disjoint worker
+commits:
+
+- `f14670b7318dddc535c1aa74f9ad7e6eb20788a9` —
+  `FullSymbolRightLocalization.common_right_clear`, clearing any finite family
+  of right-localized terms after an actual common denominator is supplied.
+- `461e0a0e2a4b69e98f9c31bb84e4fcfc44449863` —
+  `WeightedDetectionComposition`, composing finite weighted detection with a
+  nilpotent right correction.
+- `3a9526c7e5f1f618de5f5281b24c7f6274ad9922` — `CentralField`, an explicit
+  degree-zero central-field/filtered-algebra interface.
+- `4431dc92b525b2c3300c473922aaf18a8b0d9db7` —
+  `JacobsonScalarExtension`, connecting Jacobson-top generation reflection to a
+  supplied commutative scalar-extension orbit basis.
+- `8a17e8a1df2fbda20476468ff405ea07ac064513` — `FiniteScalarAvoidance`, finite
+  bad-set union and scalar-avoidance arithmetic for the two-call interface.
+- `426c26826e1f6637cd57ab336c7b564dbf56c3e6` —
+  `CharacteristicSupportFiniteProducer`, consuming indexed finite-colon
+  generator expansions to produce a Module.support union while retaining the
+  original-ring pencil certificates.
+
+Each follow-up source and its independent oracle was checked with
+`lake env lean --trust=0`; the source and oracle closures use only
+`propext`, `Classical.choice`, and `Quot.sound`, with no new `sorry`. These are
+conditional consumers: they do not construct the full-symbol Ore set, the
+noncommutative finite-length block decomposition, the characteristic-support
+producer, strict support removal, the universal base/successor, or the
+original-U simultaneous source. The controller must replay the aggregate root
+build and phase/Palomar checkpoint scripts after documentation integration;
+release-gates.yaml remains fail-closed.

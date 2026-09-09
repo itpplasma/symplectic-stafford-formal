@@ -65,6 +65,8 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `CommonColonProducer`, `ConcreteSuccessor`, `ConstructiveSuccessor`,
 `ActualM08Producer`, `TwoCallAffineProducer`, `TwoCallDescentProducer`,
 `FullSymbolRightPowerBridge`, `WeightedMatrixInverse`,
+`WeightedDetectionComposition`, `CentralField`, `JacobsonScalarExtension`,
+`FiniteScalarAvoidance`, `CharacteristicSupportFiniteProducer`,
 `SuccessorObstruction`, `SupportRemovalArithmetic`, `DifferentialOreDescent`,
 `OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
 `Package/TerminalBoundary`,
@@ -84,6 +86,18 @@ Each item is a checked conditional utility with an independent consumer; the
 universal filtered chart, finite-length block decomposition, support removal,
 and original-U source producer are still supplied hypotheses rather than
 proved constructions.
+
+The follow-up 2026-09-09 wave adds finite common denominators for arbitrary
+right-localized families (`FullSymbolRightLocalization.common_right_clear`),
+composed weighted detection after a nilpotent correction
+(`WeightedDetectionComposition`), an explicit central-field filtered-algebra
+record (`CentralField`), a Jacobson-top scalar-extension consumer
+(`JacobsonScalarExtension`), finite bad-set union/avoidance for the two-call
+step (`FiniteScalarAvoidance`), and a finite-colon characteristic-support
+consumer with indexed original-ring expansions
+(`CharacteristicSupportFiniteProducer`). These declarations remain
+conditional on the corresponding geometric/localization inputs and do not
+promote any M01–M11 gate.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper

@@ -38,7 +38,11 @@ project:
     two-call affine-source constructor, a two-call descent successor
     constructor, an actual-right-localization power-Ore bridge, a finite
     weighted-matrix inverse/row-action lemma, and terminal/opposite package
-    assembly. General
+    assembly, finite common-denominator clearing for right-localized families,
+    weighted-detection composition after a nilpotent correction, a concrete
+    central-field filtered-algebra interface, Jacobson scalar-extension top
+    comparison, finite scalar bad-set avoidance, and indexed finite-colon
+    characteristic-support consumption. General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
@@ -141,7 +145,10 @@ status:
     package assembly, differential-Ore,
     original-affine source-selection, actual M08 finite right-generation,
     two-call affine-source construction, two-call descent successor,
-    weighted-matrix inverse, filtered, source-assembly, support-union,
+    weighted-matrix inverse, finite right-localized common denominators,
+    weighted-detection composition, central-field filtered algebra,
+    Jacobson scalar extension, finite scalar avoidance,
+    finite-colon characteristic support, filtered, source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
     assembly, support-union, and induction files are conditional scaffolds;
@@ -224,6 +231,13 @@ fidelity:
     paper's Rees construction and leading-term certificate. WeightedMatrixInverse
     proves only the finite nilpotent matrix inverse step; strict weighted
     degree bounds still need to be connected to an original finite inverse.
+    The follow-up `FullSymbolRightLocalization.common_right_clear` theorem
+    consumes, rather than constructs, the supplied right localization;
+    `CentralField` is an explicit interface for the degree-zero field;
+    `WeightedDetectionComposition`, `JacobsonScalarExtension`,
+    `FiniteScalarAvoidance`, and `CharacteristicSupportFiniteProducer` remain
+    conditional consumers of their geometric, top-comparison, finite-set, and
+    indexed-generator hypotheses.
 
 review:
   status: "agent-reviewed"
@@ -239,7 +253,9 @@ review:
     test-producer, original-U division-test source, actual module-support,
     ring-filtration-layer, right-module localization, ordered common-colon-
     producer, two-call descent, weighted-matrix inverse, terminal assembly and
-    differential-Ore boundary utilities. The local Palomar comparator,
+    differential-Ore, finite common-denominator, weighted-composition,
+    central-field, Jacobson scalar-extension, finite-scalar-avoidance and
+    finite-colon characteristic-support boundary utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
     Fable/Claude paper audit found no invalid bridge in the written candidate;
