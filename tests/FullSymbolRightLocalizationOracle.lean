@@ -30,4 +30,15 @@ example (s : powersData.denominators) :
     IsUnit (powersData.numerator (s : ℚ)) :=
   powersData.denominator_unit s
 
+example (q₁ q₂ : powersData.Localization) :
+    ∃ s : powersData.denominators, ∀ q ∈ [q₁, q₂], ∃ a : ℚ,
+      q * powersData.numerator (s : ℚ) = powersData.numerator a :=
+  powersData.common_right_clear [q₁, q₂]
+
+example : ∃ s : powersData.denominators, ∀ q ∈
+    [powersData.numerator (3 : ℚ), powersData.numerator (5 : ℚ)],
+    ∃ a : ℚ, q * powersData.numerator (s : ℚ) = powersData.numerator a := by
+  exact powersData.common_right_clear
+    [powersData.numerator (3 : ℚ), powersData.numerator (5 : ℚ)]
+
 end SymplecticStaffordTest.FullSymbolRightLocalization
