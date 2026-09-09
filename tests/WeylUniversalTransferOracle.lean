@@ -19,7 +19,3 @@ example {n : ℕ} (e : Stafford38.WeylAlg k n ≃ₐ[k] U)
   exact (SymplecticStafford.Source.sameDivisor_of_weylAlg_algEquiv e) hd
 
 end SymplecticStafford.Source.WeylUniversalTransferOracle
-
-#print axioms
-  SymplecticStafford.Source.WeylUniversalTransferOracle
-
