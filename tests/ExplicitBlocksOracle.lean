@@ -1,4 +1,5 @@
 import SymplecticStafford.FiniteLength.ExplicitBlocks
+import SymplecticStafford.FiniteLength.IsotypicBlocks
 import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic
 
@@ -91,6 +92,115 @@ noncomputable def matrixTop : M →+ (Unit → Matrix (Fin 2) (Fin 2) K) :=
   { toFun := fun m _ => !![m.unop, 0; 0, m.unop]
     map_zero' := by ext j i k <;> fin_cases i <;> fin_cases k <;> simp
     map_add' := by intro x y; ext j i k <;> fin_cases i <;> fin_cases k <;> simp }
+
+noncomputable def scaleMap (c : K) :
+    (Fin 2 → K) →ₗ[K] (Fin 2 → K) :=
+  { toFun := fun x => c • x
+    map_add' := by intro x y; rw [smul_add]
+    map_smul' := by intro a x; ext i; change c * (a * x i) = a * (c * x i); ring }
+
+noncomputable def isotypicTop : M →+
+    (Unit → (Fin 2 → (Fin 2 → K))) :=
+  { toFun := fun m _ i => scaleMap m.unop (Pi.basisFun K (Fin 2) i)
+    map_zero' := by ext j i k; simp [scaleMap]
+    map_add' := by intro x y; ext j i k; simp [scaleMap, add_smul] }
+
+theorem scaleMap_injective {c : K} (hc : c ≠ 0) :
+    Function.Injective (scaleMap c) := by
+  intro x y hxy
+  ext i
+  have hi := congrFun hxy i
+  change c * x i = c * y i at hi
+  exact mul_left_cancel₀ hc hi
+
+theorem isotypic_top_li_iff (m : M) :
+    LinearIndependent K (isotypicTop m ()) ↔ m.unop ≠ 0 := by
+  constructor
+  · intro h hm
+    have hz := h.ne_zero (0 : Fin 2)
+    simp [isotypicTop, scaleMap, hm] at hz
+  · intro hm
+    have hb := (Pi.basisFun K (Fin 2)).linearIndependent
+    have hi : (scaleMap m.unop).ker = ⊥ :=
+      LinearMap.ker_eq_bot.mpr (scaleMap_injective hm)
+    have hmap := hb.map' (scaleMap m.unop) hi
+    simpa [isotypicTop, Function.comp_def] using hmap
+
+example (u : M) :
+    ∃ z : K, z ∉ (∅ : Set K) ∧
+      RightCyclic (R := R) ((1 : M) + z • u) := by
+  letI : Module.Finite Rᵐᵒᵖ M := regularFiltration.moduleFinite
+  let ι : (j : Unit) → K →+* K := fun _ => RingHom.id K
+  have hmap : ∀ (z : K) (m : M) (j : Unit) (i : Fin 2),
+      isotypicTop (z • m) j i = (ι j z) • isotypicTop m j i := by
+    intro z m j i
+    simp [isotypicTop, scaleMap, ι, Algebra.smul_def, mul_comm]
+    ring
+  have hbad : ∀ (x y : M),
+      (∀ j : Unit, LinearIndependent K (isotypicTop x j)) →
+        Set.Finite {z : K | ¬ ∀ j : Unit,
+          LinearIndependent K (fun i =>
+            isotypicTop x j i + (ι j z) • isotypicTop y j i)} := by
+    intro x y hx
+    have hx0 : x.unop ≠ 0 := (isotypic_top_li_iff x).mp (hx ())
+    have hfin := finite_pencil_exceptions
+      (fun _ : Unit => RingHom.id K)
+      (fun _ : Unit => x.unop) (fun _ : Unit => y.unop)
+      (fun _ => hx0) (fun _ => RingHom.injective (RingHom.id K))
+    apply hfin.subset
+    intro z hz
+    refine ⟨(), ?_⟩
+    by_contra hne
+    apply hz
+    intro j
+    have hzero : (x + z • y).unop ≠ 0 := by
+      intro hzero
+      apply hne
+      simpa [ι, Algebra.smul_def, mul_comm] using hzero
+    have hli := (isotypic_top_li_iff (x + z • y)).mpr hzero
+    have heq : isotypicTop (x + z • y) j =
+        (fun i => isotypicTop x j i + (ι j z) • isotypicTop y j i) := by
+      funext i
+      calc
+        isotypicTop (x + z • y) j i =
+            (isotypicTop x + isotypicTop (z • y)) j i := by rw [map_add]
+        _ = isotypicTop x j i + isotypicTop (z • y) j i := rfl
+        _ = isotypicTop x j i + (ι j z) • isotypicTop y j i := by rw [hmap]
+    rw [← heq]
+    exact hli
+  have htop : ∀ m : M,
+      (∀ j : Unit, LinearIndependent K (isotypicTop m j)) ↔
+        RightCyclic (R := R)
+          ((Module.jacobson Rᵐᵒᵖ M).mkQ m) := by
+    intro m
+    rw [← rightCyclic_iff_jacobson_quotient (R := R) m]
+    constructor
+    · intro h
+      have hm : m.unop ≠ 0 := (isotypic_top_li_iff m).mp (h ())
+      exact (rightCyclic_iff_ne_zero m).mpr (by
+        intro hm0
+        exact hm (congrArg MulOpposite.unop hm0))
+    · intro hm j
+      apply (isotypic_top_li_iff m).mpr
+      intro hm0
+      apply (rightCyclic_iff_ne_zero m).mp hm
+      apply MulOpposite.unop_injective
+      simpa using hm0
+  have hv : ∀ j : Unit, LinearIndependent K (isotypicTop (1 : M) j) := by
+    intro j
+    exact (isotypic_top_li_iff _).mpr (by simp)
+  obtain ⟨z, hz, hcyc, _⟩ :=
+    exists_activated_right_cyclic_of_explicit_isotypic_blocks
+      regularFiltration ι isotypicTop hmap
+      (fun _ x => LinearIndependent K x) (by intro j x; rfl) hbad htop
+      (fun r x => MulOpposite.op (x.unop * r))
+      (by intro r x y; apply MulOpposite.unop_injective; simp [add_mul])
+      (by
+        intro k m r
+        apply MulOpposite.unop_injective
+        simp [Algebra.smul_def, mul_comm, mul_assoc])
+      (1 : M) u 1 1 0 (by simp) (by simp) hv ∅ Set.finite_empty
+  exact ⟨z, hz, hcyc⟩
 
 example (u : M) :
     ∃ z : K, z ∉ (∅ : Set K) ∧

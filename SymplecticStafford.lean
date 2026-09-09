@@ -11,6 +11,7 @@ import SymplecticStafford.FiniteLength.RightFiltration
 import SymplecticStafford.FiniteLength.GoodLocalBridge
 import SymplecticStafford.FiniteLength.ActivatedFiniteLength
 import SymplecticStafford.FiniteLength.ExplicitBlocks
+import SymplecticStafford.FiniteLength.IsotypicBlocks
 import SymplecticStafford.Source.OriginalTestContract
 import SymplecticStafford.Package.Opposite
 import SymplecticStafford.Package.TerminalBoundary
