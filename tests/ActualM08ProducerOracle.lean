@@ -33,6 +33,40 @@ example : ∀ x : ZMod 5, x ∈ commonRightIdeal 2 1 3 ↔
   intro x
   exact (witness.mem_iff x)
 
+/- An explicit colon witness lets the oracle exercise the paper's indexed
+   expansion of J, rather than only the abstract Noetherian generator. -/
+def integerColonGeneration : FiniteRightGeneration (R := ℤ)
+    (commonColonRightIdeal 2 3) where
+  generators := {1}
+  mem_iff := by
+    intro x
+    constructor
+    · intro hx
+      refine ⟨fun _ => x, ?_⟩
+      simp [Finset.sum_singleton]
+    · intro hx
+      rcases hx with ⟨c, hc⟩
+      refine ⟨3 * x, ?_⟩
+      rw [hc]
+      ring
+
+example (x : ℤ) : x ∈ commonIdeal 2 5 3 ↔
+    ∃ r : ℤ, ∃ c : ℤ → ℤ,
+      x = 2 * r + ∑ k ∈ integerColonGeneration.generators,
+        (5 * 2) * k * c k := by
+  constructor
+  · exact commonIdeal_mem_from_colon_generators 2 5 3
+      integerColonGeneration
+  · exact commonIdeal_of_colon_generator_expansion 2 5 3
+      integerColonGeneration
+
+example : ∀ k ∈ integerColonGeneration.generators, ∃ c : ℤ,
+    3 * 2 * k = 2 * c ∧
+      5 * 2 * k = 2 * (-7 * c) + (5 + 7 * 3) * 2 * k := by
+  intro k hk
+  exact finite_colon_generators_have_pencil_certificates 2 5 3 7
+    integerColonGeneration (by intro t; omega) k hk
+
 example : commonIdeal (2 : ZMod 5) 1 3 ⊆
     (twoGeneratedRightIdeal 2 (1 + 4 * 3)).carrier := by
   exact finite_commonIdeal_is_contained_in_every_affine_ideal 2 1 3 4

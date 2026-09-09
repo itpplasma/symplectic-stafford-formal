@@ -115,6 +115,77 @@ theorem finiteCommonRightGeneration_of_rightNoetherian
       (commonRightIdeal d F G)) :=
   finiteRightGeneration_of_rightNoetherian (commonRightIdeal d F G)
 
+/- The paper first chooses generators of the colon K and then uses the
+   corresponding terms `(F*d)*k` together with `d` to control J.  This
+   indexed expansion keeps the colon-generator index, so no information is
+   lost when two different colon generators have the same image in R. -/
+theorem commonIdeal_mem_from_colon_generators
+    (d F G : R)
+    (Kgen : FiniteRightGeneration (R := R) (commonColonRightIdeal d G))
+    {x : R} (hx : x ∈ commonIdeal d F G) :
+    ∃ r : R, ∃ c : R → R,
+      x = d * r +
+        ∑ k ∈ Kgen.generators, (F * d) * k * c k := by
+  classical
+  rcases hx with ⟨r, k, hk, hx⟩
+  obtain ⟨c, hc⟩ := (Kgen.mem_iff k).mp hk
+  refine ⟨r, c, ?_⟩
+  rw [hx, hc]
+  simp only [Finset.mul_sum, mul_assoc]
+
+/- Conversely, every indexed colon-generator expansion is an element of J.
+   This makes the preceding representation an actual finite-generation
+   statement, rather than merely a one-way normal form. -/
+theorem commonIdeal_of_colon_generator_expansion
+    (d F G : R)
+    (Kgen : FiniteRightGeneration (R := R) (commonColonRightIdeal d G))
+    {x : R}
+    (h : ∃ r : R, ∃ c : R → R,
+      x = d * r +
+        ∑ k ∈ Kgen.generators, (F * d) * k * c k) :
+    x ∈ commonIdeal d F G := by
+  classical
+  rcases h with ⟨r, c, hx⟩
+  have hsum : ∀ (s : Finset R), s ⊆ Kgen.generators →
+      (∑ k ∈ s, (F * d) * k * c k) ∈ commonIdeal d F G := by
+    intro s
+    induction s using Finset.induction_on with
+    | empty =>
+        intro _
+        simp only [Finset.sum_empty, Finset.sum_const_zero]
+        exact commonIdeal_zero_mem d F G
+    | @insert a s ha ih =>
+        intro hs
+        rw [Finset.sum_insert ha]
+        apply commonIdeal_add_mem
+        · apply commonIdeal_right_mul_mem
+          apply correction_mem_commonIdeal
+          exact (finiteRightGeneration_generator_mem Kgen) a
+            (hs (by simp))
+        · apply ih
+          intro k hk
+          exact hs (by simp [hk])
+  rw [hx]
+  apply commonIdeal_add_mem
+  · exact principal_mem_commonIdeal
+  · apply hsum Kgen.generators
+    intro k hk
+    exact hk
+
+/- Every actual colon generator carries the ordered affine-pencil
+   certificate.  The relation `G*d*k=d*c` is retained in the original ring,
+   and the only commutation required is the explicit centrality of `t`. -/
+theorem finite_colon_generators_have_pencil_certificates
+    (d F G t : R)
+    (Kgen : FiniteRightGeneration (R := R) (commonColonRightIdeal d G))
+    (hcentral : ∀ x : R, t * x = x * t) :
+    ∀ k ∈ Kgen.generators, ∃ c : R,
+      G * d * k = d * c ∧
+        F * d * k = d * (-t * c) + (F + t * G) * d * k := by
+  intro k hk
+  exact common_colon_pencil_certificate d F G k t
+    ((finiteRightGeneration_generator_mem Kgen) k hk) hcentral
+
 end RightNoetherian
 
 section Pencil
@@ -147,4 +218,7 @@ end SymplecticStafford.Ordered
 
 #print axioms SymplecticStafford.Ordered.finiteRightGeneration_of_rightNoetherian
 #print axioms SymplecticStafford.Ordered.finiteCommonRightGeneration_of_rightNoetherian
+#print axioms SymplecticStafford.Ordered.commonIdeal_mem_from_colon_generators
+#print axioms SymplecticStafford.Ordered.commonIdeal_of_colon_generator_expansion
+#print axioms SymplecticStafford.Ordered.finite_colon_generators_have_pencil_certificates
 #print axioms SymplecticStafford.Ordered.finite_commonIdeal_is_contained_in_every_affine_ideal
