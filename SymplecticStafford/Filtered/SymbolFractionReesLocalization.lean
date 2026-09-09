@@ -63,14 +63,10 @@ private theorem shift_mem
     a z ∈ (SymbolFractionReesMap.SourceFiltration C).carrier
       (Int.toNat (z + Int.ofNat (C.inverse.denominator_degree s))) := by
   have hnonneg := shift_nonneg C s a d S hdeg hz
-  have hcast : Int.ofNat (d z) ≤
-      Int.ofNat (Int.toNat (z + Int.ofNat
-        (C.inverse.denominator_degree s))) := by
-    rw [Int.toNat_of_nonneg hnonneg]
-    exact hdeg z hz
   have hnat : d z ≤ Int.toNat (z + Int.ofNat
       (C.inverse.denominator_degree s)) := by
-    exact Int.ofNat_le.mp hcast
+    rw [Int.le_toNat hnonneg]
+    exact hdeg z hz
   change a z ∈ C.inverse.filtration.carrier
     (Int.toNat (z + Int.ofNat (C.inverse.denominator_degree s)))
   exact C.inverse.filtration.monotone hnat (ha z hz)
@@ -79,17 +75,19 @@ private theorem mul_single_right
     (C : SymbolFractionFiltration.Data R)
     (q : SymbolFractionRees.LaurentPolynomial C) (e : ℤ) (b : T C) :
     q * AddMonoidAlgebra.single e b =
-      ∑ z in q.coeff.support,
+      ∑ z ∈ q.coeff.support,
         AddMonoidAlgebra.single (z + e) (q.coeff z * b) := by
-  rw [← AddMonoidAlgebra.sum_coeff_single q]
-  change
-    (∑ z in q.coeff.support,
-      AddMonoidAlgebra.single z (q.coeff z)) *
-        AddMonoidAlgebra.single e b = _
-  rw [Finset.sum_mul]
-  apply Finset.sum_congr rfl
-  intro z hz
-  rw [AddMonoidAlgebra.single_mul_single]
+  calc
+    q * AddMonoidAlgebra.single e b =
+        (∑ z ∈ q.coeff.support, AddMonoidAlgebra.single z (q.coeff z)) *
+          AddMonoidAlgebra.single e b := by
+            congr 1
+            exact (AddMonoidAlgebra.sum_coeff_single q).symm
+    _ = _ := by
+      rw [Finset.sum_mul]
+      apply Finset.sum_congr rfl
+      intro z hz
+      rw [AddMonoidAlgebra.single_mul_single]
 
 /-- Every Laurent Rees element becomes the image of an original nonnegative
 Rees element after multiplication by one selected homogeneous denominator. -/
@@ -106,48 +104,66 @@ theorem exists_source_multiple
   obtain ⟨s, hs⟩ := SymbolFractionRees.Clearance.support_right_clear C p
   choose a d ha hclear hdeg using hs
   let e : ℕ := C.inverse.denominator_degree s
-  have hdeg' : ∀ z, z ∈ S → Int.ofNat (d z) ≤ z + Int.ofNat e := by
+  let a' : S → R := fun z => a z.1 (by simpa [S] using z.2)
+  let d' : S → ℕ := fun z => d z.1 (by simpa [S] using z.2)
+  have ha' (z : S) : a' z ∈ C.inverse.filtration.carrier (d' z) :=
+    ha z.1 (by simpa [S] using z.2)
+  have hdeg' (z : S) : Int.ofNat (d' z) ≤ z.1 + Int.ofNat e := by
+    simpa [a', d', S, e] using hdeg z.1 (by simpa [S] using z.2)
+  have hshift_nonneg : ∀ (z : ℤ) (hz : z ∈ S), 0 ≤ z + Int.ofNat e := by
     intro z hz
-    simpa [S, e] using hdeg z hz
-  have hshift_nonneg : ∀ z, z ∈ S → 0 ≤ z + Int.ofNat e := by
-    intro z hz
-    exact shift_nonneg C s a d S (by simpa [e] using hdeg') hz
-  have hshift_mem : ∀ z, z ∈ S →
-      a z ∈ (SymbolFractionReesMap.SourceFiltration C).carrier
+    exact le_trans (Int.ofNat_nonneg (d' ⟨z, hz⟩)) (hdeg' ⟨z, hz⟩)
+  have hshift_mem : ∀ (z : ℤ) (hz : z ∈ S),
+      a' ⟨z, hz⟩ ∈ (SymbolFractionReesMap.SourceFiltration C).carrier
         (Int.toNat (z + Int.ofNat e)) := by
     intro z hz
-    apply shift_mem C s a d S ha
-    · intro w hw
-      simpa [e] using hdeg' w hw
-    · exact hz
+    change a' ⟨z, hz⟩ ∈ C.inverse.filtration.carrier _
+    apply C.inverse.filtration.monotone _ (ha' ⟨z, hz⟩)
+    rw [Int.le_toNat (hshift_nonneg z hz)]
+    exact hdeg' ⟨z, hz⟩
   let r : SymbolFractionReesMap.SourceReesRing C :=
-    ∑ z in S.attach,
+    ∑ z ∈ S.attach,
       ReesRing.monomial (SymbolFractionReesMap.SourceFiltration C)
-        (Int.toNat (z.1 + Int.ofNat e)) (a z.1)
+        (Int.toNat (z.1 + Int.ofNat e)) (a' z)
         (hshift_mem z.1 z.2)
   have hmap_shift :
       ((SymbolFractionReesMap.map C r : SymbolFractionRees.ReesRing C) :
           SymbolFractionRees.LaurentPolynomial C) =
-        ∑ z in S,
-          AddMonoidAlgebra.single (z + Int.ofNat e)
-            (C.inverse.localization.numerator (a z)) := by
+        ∑ z ∈ S.attach,
+          AddMonoidAlgebra.single (z.1 + Int.ofNat e)
+            (C.inverse.localization.numerator (a' z)) := by
     dsimp [r]
-    simp only [map_sum, SymbolFractionReesMap.map_homogeneous,
-      SymbolFractionRees.coe_homogeneous]
-    rw [Finset.sum_attach]
+    rw [map_sum]
+    change (SymbolFractionRees.ReesRing C).subtype
+      (∑ z ∈ S.attach,
+        SymbolFractionReesMap.map C
+          (ReesRing.monomial (SymbolFractionReesMap.SourceFiltration C)
+            (Int.toNat (z.1 + Int.ofNat e)) (a' z)
+            (hshift_mem z.1 z.2))) = _
+    rw [map_sum]
     apply Finset.sum_congr rfl
     intro z hz
-    rw [Int.toNat_of_nonneg (hshift_nonneg z hz)]
+    rw [congrArg (SymbolFractionRees.ReesRing C).subtype
+      (SymbolFractionReesMap.map_homogeneous C
+        (Int.toNat (z.1 + Int.ofNat e)) (a' z)
+        (hshift_mem z.1 z.2))]
+    change AddMonoidAlgebra.single
+      (Int.ofNat (Int.toNat (z.1 + Int.ofNat e)))
+      (C.inverse.localization.numerator (a' z)) = _
+    congr 1
+    exact Int.toNat_of_nonneg (hshift_nonneg z.1 z.2)
   have hproduct :
       ((p : SymbolFractionRees.ReesRing C) :
           SymbolFractionRees.LaurentPolynomial C) *
           (SymbolFractionRees.homogeneousDenominator C s :
             SymbolFractionRees.LaurentPolynomial C) =
-        ∑ z in S,
+        ∑ z ∈ S,
           AddMonoidAlgebra.single (z + Int.ofNat e)
             ((p : SymbolFractionRees.LaurentPolynomial C).coeff z *
               C.inverse.localization.numerator (s : R)) := by
-    rw [SymbolFractionRees.coe_homogeneous]
+    change (p : SymbolFractionRees.LaurentPolynomial C) *
+      AddMonoidAlgebra.single (Int.ofNat e)
+        (C.inverse.localization.numerator (s : R)) = _
     simpa [S] using
       (mul_single_right C (p : SymbolFractionRees.LaurentPolynomial C)
         (Int.ofNat e) (C.inverse.localization.numerator (s : R)))
@@ -160,10 +176,34 @@ theorem exists_source_multiple
       ((p * SymbolFractionRees.homogeneousDenominator C s :
         SymbolFractionRees.ReesRing C) :
           SymbolFractionRees.LaurentPolynomial C)
-    rw [hmap_shift, hproduct]
-    apply Finset.sum_congr rfl
-    intro z hz
-    rw [hclear z hz]
+    rw [hmap_shift]
+    calc
+      (∑ z ∈ S.attach,
+          AddMonoidAlgebra.single (z.1 + Int.ofNat e)
+            (C.inverse.localization.numerator (a' z))) =
+          ∑ z ∈ S.attach,
+            AddMonoidAlgebra.single (z.1 + Int.ofNat e)
+              ((p : SymbolFractionRees.LaurentPolynomial C).coeff z.1 *
+                C.inverse.localization.numerator (s : R)) := by
+        apply Finset.sum_congr rfl
+        intro z hz
+        congr 1
+        exact (hclear z.1 (by simpa [S] using z.2)).symm
+      _ = ∑ z ∈ S,
+          AddMonoidAlgebra.single (z + Int.ofNat e)
+            ((p : SymbolFractionRees.LaurentPolynomial C).coeff z *
+              C.inverse.localization.numerator (s : R)) := by
+        exact Finset.sum_attach S (fun z =>
+          AddMonoidAlgebra.single (z + Int.ofNat e)
+            ((p : SymbolFractionRees.LaurentPolynomial C).coeff z *
+              C.inverse.localization.numerator (s : R)))
+      _ = ((p : SymbolFractionRees.ReesRing C) :
+          SymbolFractionRees.LaurentPolynomial C) *
+          (SymbolFractionRees.homogeneousDenominator C s :
+            SymbolFractionRees.LaurentPolynomial C) := hproduct.symm
+      _ = (((p * SymbolFractionRees.homogeneousDenominator C s) :
+          SymbolFractionRees.ReesRing C) :
+            SymbolFractionRees.LaurentPolynomial C) := rfl
   exact ⟨r, s, hshift⟩
 
 /-- Multiplying the source multiple by the unit inverse gives a right
@@ -189,16 +229,16 @@ theorem exists_source_factorization
           (u.inv : SymbolFractionRees.ReesRing C) = 1 := by
     rw [← hu]
     exact Units.mul_inv u
-  change p = SymbolFractionReesMap.map C r *
-    (u.inv : SymbolFractionRees.ReesRing C)
+  refine ⟨r, s, ?_⟩
+  change p = SymbolFractionReesMap.map C r * (u.inv : SymbolFractionRees.ReesRing C)
   calc
-    p = p * 1 := by simp
+    p = p * 1 := (mul_one p).symm
     _ = p * (SymbolFractionRees.homogeneousDenominator C s *
         (u.inv : SymbolFractionRees.ReesRing C)) := by rw [huinv]
     _ = (p * SymbolFractionRees.homogeneousDenominator C s) *
         (u.inv : SymbolFractionRees.ReesRing C) := by rw [mul_assoc]
     _ = SymbolFractionReesMap.map C r *
-        (u.inv : SymbolFractionRees.ReesRing C) := by rw [← hshift]
+        (u.inv : SymbolFractionRees.ReesRing C) := by simpa using congrArg (fun x => x * (u.inv : SymbolFractionRees.ReesRing C)) hshift.symm
 
 /- The source denominator submonoid is the range of the selected source
    homogeneous-denominator monoid map.  Its opposite is the denominator set
@@ -206,7 +246,8 @@ theorem exists_source_factorization
 noncomputable def sourceDenominators
     (C : SymbolFractionFiltration.Data R) :
     Submonoid (SymbolFractionReesMap.SourceReesRing C) :=
-  (SymbolFractionReesMap.sourceHomogeneousDenominatorMonoidHom C).range
+  (⊤ : Submonoid C.inverse.localization.denominators).map
+    (SymbolFractionReesMap.sourceHomogeneousDenominatorMonoidHom C)
 
 abbrev sourceOppositeDenominators
     (C : SymbolFractionFiltration.Data R) :=
@@ -218,9 +259,9 @@ private theorem source_opp_unit
     IsUnit (SymbolFractionReesMap.map C
       ((q : (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ).unop)) := by
   have hq : ((q : (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ).unop) ∈
-      (SymbolFractionReesMap.sourceHomogeneousDenominatorMonoidHom C).range :=
+      sourceDenominators C :=
     q.property
-  rcases hq with ⟨s, hs⟩
+  rcases hq with ⟨s, _hs_top, hs⟩
   have hs' : ((q : (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ).unop) =
       SymbolFractionReesMap.sourceHomogeneousDenominator C s := hs.symm
   rw [hs', SymbolFractionReesMap.map_sourceHomogeneousDenominator]
@@ -235,13 +276,20 @@ private theorem source_right_ore
       a * (t : SymbolFractionReesMap.SourceReesRing C) =
         (s : SymbolFractionReesMap.SourceReesRing C) * c := by
   have hs : (s : SymbolFractionReesMap.SourceReesRing C) ∈
-      (SymbolFractionReesMap.sourceHomogeneousDenominatorMonoidHom C).range :=
+      sourceDenominators C :=
     s.property
-  rcases hs with ⟨s0, hs0⟩
+  rcases hs with ⟨s0, _hs0_top, hs0⟩
   have hmaps : SymbolFractionReesMap.map C (s :
       SymbolFractionReesMap.SourceReesRing C) =
       SymbolFractionRees.homogeneousDenominator C s0 := by
-    rw [hs0.symm, SymbolFractionReesMap.map_sourceHomogeneousDenominator]
+    calc
+      SymbolFractionReesMap.map C (s :
+          SymbolFractionReesMap.SourceReesRing C) =
+          SymbolFractionReesMap.map C
+            (SymbolFractionReesMap.sourceHomogeneousDenominator C s0) :=
+        congrArg (SymbolFractionReesMap.map C) hs0.symm
+      _ = SymbolFractionRees.homogeneousDenominator C s0 :=
+        SymbolFractionReesMap.map_sourceHomogeneousDenominator C s0
   let us : Units (SymbolFractionRees.ReesRing C) :=
     IsUnit.unit (SymbolFractionRees.homogeneousDenominator_isUnit C s0)
   have hus : (us : SymbolFractionRees.ReesRing C) =
@@ -274,11 +322,29 @@ private theorem source_right_ore
           ((ut.inv : SymbolFractionRees.ReesRing C) *
             SymbolFractionRees.homogeneousDenominator C t) := by
               rw [mul_assoc]
-      _ = SymbolFractionReesMap.map C c := by rw [hutinv, mul_one]
+      _ = SymbolFractionReesMap.map C c * 1 :=
+        congrArg (fun x => SymbolFractionReesMap.map C c * x) hutinv
+      _ = SymbolFractionReesMap.map C c :=
+        mul_one (SymbolFractionReesMap.map C c :
+          SymbolFractionRees.ReesRing C)
   have hleft : SymbolFractionReesMap.map C (s :
       SymbolFractionReesMap.SourceReesRing C) * q =
       SymbolFractionReesMap.map C a := by
-    rw [q, ← mul_assoc, ← hus, Units.mul_inv, one_mul]
+    change SymbolFractionReesMap.map C (s : SymbolFractionReesMap.SourceReesRing C) *
+      ((us.inv : SymbolFractionRees.ReesRing C) * SymbolFractionReesMap.map C a) = _
+    have husinv : (us : SymbolFractionRees.ReesRing C) *
+        (us.inv : SymbolFractionRees.ReesRing C) = 1 := Units.mul_inv us
+    calc
+      SymbolFractionReesMap.map C (s :
+          SymbolFractionReesMap.SourceReesRing C) *
+          ((us.inv : SymbolFractionRees.ReesRing C) *
+            SymbolFractionReesMap.map C a) =
+          ((us : SymbolFractionRees.ReesRing C) * us.inv) *
+            SymbolFractionReesMap.map C a := by rw [hmaps, ← hus, mul_assoc]
+      _ = SymbolFractionReesMap.map C a := by
+        rw [husinv]
+        exact one_mul (SymbolFractionReesMap.map C a :
+          SymbolFractionRees.ReesRing C)
   have htarget : SymbolFractionReesMap.map C a *
       SymbolFractionReesMap.map C
         (SymbolFractionReesMap.sourceHomogeneousDenominator C t) =
@@ -312,7 +378,7 @@ private theorem source_right_ore
     apply SymbolFractionReesMap.map_injective C
     simpa only [map_mul] using htarget
   refine ⟨⟨SymbolFractionReesMap.sourceHomogeneousDenominator C t,
-    ⟨t, rfl⟩⟩, c, hsource⟩
+      ⟨t, trivial, rfl⟩⟩, c, hsource⟩
 
 /- The actual Ore witness is obtained by applying the preceding right Ore
    equation and reversing products in the opposite ring. -/
@@ -334,8 +400,13 @@ noncomputable def sourceOreSet
     refine ⟨MulOpposite.op c,
       ⟨MulOpposite.op (t : SymbolFractionReesMap.SourceReesRing C),
         t.property⟩, ?_⟩
-    apply MulOpposite.op_injective
-    exact h
+    have hq : (⟨MulOpposite.op (s : SymbolFractionReesMap.SourceReesRing C),
+        s.property⟩ : sourceOppositeDenominators C) = q := by
+      apply Subtype.ext
+      rfl
+    rw [← hq]
+    simpa only [MulOpposite.op_mul, MulOpposite.op_unop] using
+      congrArg MulOpposite.op h
   choose n d hnd using hright
   refine
     { ore_right_cancel := ?_
@@ -396,11 +467,10 @@ private theorem source_opp_regular
       ((y : (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ).unop) = 0 := by
     apply hu.mul_right_cancel
     simpa only [map_mul, map_zero, zero_mul] using hmap
-  apply MulOpposite.unop_injective
-  apply SymbolFractionReesMap.map_injective C
-  simpa using hmap'
+  exact MulOpposite.unop_injective
+    (SymbolFractionReesMap.map_injective C (by simpa using hmap'))
 
-theorem sourceNumerator_injective :
+theorem sourceNumerator_injective (C : SymbolFractionFiltration.Data R) :
     Function.Injective (sourceNumerator C) := by
   intro a b hab
   apply MulOpposite.op_injective
@@ -537,9 +607,17 @@ noncomputable def sourceLocalizationMap
     sourceLocalization C →+* SymbolFractionRees.ReesRing C := by
   letI : OreLocalization.OreSet (sourceOppositeDenominators C) :=
     sourceOreSet C
-  exact
-    (OreLocalization.universalHom (sourceOppositeMap C)
-      (sourceOppositeUnits C) (sourceOppositeUnits_spec C)).unop
+  let f : (sourceLocalization C)ᵐᵒᵖ →+*
+      (SymbolFractionRees.ReesRing C)ᵐᵒᵖ :=
+    (OreLocalization.universalHom
+        (R := (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ)
+        (S := sourceOppositeDenominators C)
+        (T := (SymbolFractionRees.ReesRing C)ᵐᵒᵖ)
+        (sourceOppositeMap C)
+        (sourceOppositeUnits C) (sourceOppositeUnits_spec C)).comp
+      (RingEquiv.opOp (OreLocalization (sourceOppositeDenominators C)
+        (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ)).symm.toRingHom
+  exact RingHom.unop f
 
 theorem sourceLocalizationMap_commutes
     (C : SymbolFractionFiltration.Data R)
@@ -548,12 +626,20 @@ theorem sourceLocalizationMap_commutes
       SymbolFractionReesMap.map C a := by
   letI : OreLocalization.OreSet (sourceOppositeDenominators C) :=
     sourceOreSet C
-  apply MulOpposite.unop_injective
-  change OreLocalization.universalHom (sourceOppositeMap C)
+  rw [sourceLocalizationMap, sourceNumerator]
+  change MulOpposite.unop
+      (OreLocalization.universalHom (sourceOppositeMap C)
       (sourceOppositeUnits C) (sourceOppositeUnits_spec C)
-      (OreLocalization.numeratorRingHom (MulOpposite.op a)) =
-    sourceOppositeMap C (MulOpposite.op a)
-  exact OreLocalization.universalHom_commutes
+        (OreLocalization.numeratorRingHom (MulOpposite.op a))) =
+    SymbolFractionReesMap.map C a
+  have h := OreLocalization.universalHom_commutes
+    (R := (SymbolFractionReesMap.SourceReesRing C)ᵐᵒᵖ)
+    (S := sourceOppositeDenominators C)
+    (T := (SymbolFractionRees.ReesRing C)ᵐᵒᵖ)
+    (r := MulOpposite.op a)
+    (sourceOppositeMap C) (sourceOppositeUnits C)
+      (sourceOppositeUnits_spec C)
+  exact congrArg MulOpposite.unop h
 
 theorem sourceLocalizationMap_fraction_clear
     (C : SymbolFractionFiltration.Data R)
@@ -590,7 +676,6 @@ theorem sourceLocalizationMap_injective
   have hmapclear := congrArg (sourceLocalizationMap C) hclear
   have hmapa : SymbolFractionReesMap.map C a = 0 := by
     rw [map_mul, hz, zero_mul,
-      sourceLocalizationMap_commutes,
       sourceLocalizationMap_commutes] at hmapclear
     exact hmapclear.symm
   have ha : a = 0 := SymbolFractionReesMap.map_injective C hmapa
@@ -606,7 +691,7 @@ theorem sourceLocalizationMap_surjective
   obtain ⟨r, s, hfac⟩ := exists_source_factorization C p
   let sd : sourceDenominators C :=
     ⟨SymbolFractionReesMap.sourceHomogeneousDenominator C s,
-      ⟨s, rfl⟩⟩
+      ⟨s, trivial, rfl⟩⟩
   have hmapsd : SymbolFractionReesMap.map C (sd :
       SymbolFractionReesMap.SourceReesRing C) =
       SymbolFractionRees.homogeneousDenominator C s := by
@@ -635,7 +720,11 @@ theorem sourceLocalizationMap_surjective
           ((u.inv : SymbolFractionRees.ReesRing C) *
             SymbolFractionRees.homogeneousDenominator C s) := by
               rw [mul_assoc]
-      _ = SymbolFractionReesMap.map C r := by rw [huinv, mul_one]
+      _ = SymbolFractionReesMap.map C r * 1 :=
+        congrArg (fun x => SymbolFractionReesMap.map C r * x) huinv
+      _ = SymbolFractionReesMap.map C r :=
+        mul_one (SymbolFractionReesMap.map C r :
+          SymbolFractionRees.ReesRing C)
   refine ⟨sourceFraction C r sd, ?_⟩
   apply (SymbolFractionRees.homogeneousDenominator_isUnit C s).mul_right_cancel
   calc
