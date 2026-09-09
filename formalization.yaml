@@ -2,114 +2,17 @@
 version: "v0.4"
 
 project:
-  name: "Symplectic Stafford (semantic checkpoint)"
+  name: "Finite central division pencils (Symplectic Stafford checkpoint)"
   description: >-
-    Lean 4 formalization of the original-ring semantic and ordered-algebra
-    interfaces for the symplectic Stafford same-divisor programme. The
-    checkpoint proves right-ideal membership/extraction, the relation-respecting
-    quotient right-action laws, original-ring central-support zero detection,
-    support-boundary extraction, explicit opposite transport, ordered
-    affine/common-colon/finite-generation identities and an ambient ordered
-    common-colon producer, raw
-    and algebraic filtered/Rees operations including a ring-valued bounded
-    Rees object, quotient Rees-module actions,
-    explicit power-Ore fractions and finite power-Ore normal forms,
-    finite bounded-generator filtrations, finite-support and matrix-pencil
-    detection, an associated-layer support proxy, explicit additive
-    ring-filtration layers and associated classes with multiplication,
-    a commutative regular-element full-symbol calibration, explicit right-module
-    composition filtrations and Jacobson-top generation reflection, a
-    spectrum-support boundary, a filtered Noetherianity boundary, a
-    full-symbol algebraic localization and right-localized-module
-    common-denominator boundary, and Rees-Noetherianity boundaries, a
-    minimal-prime local finite-length core including an `AtPrime` support-
-    dimension bridge, an actual module-support
-    producer consumer, a list-indexed division-LLD source selector, an
-    original-test producer
-    boundary, activated finite-length/finite-orbit pencil consumption and a
-    finite-central-dimension orbit-basis producer,
-    a faithful weighted-detection boundary, an M08 support-union boundary,
-    and strong-P_h and terminal obstructions,
-    conditional differential-Ore/right-denominator clearing, constructive
-    finite-index successor contracts, original-affine source selection,
-    conditional support-union, an actual M08 right-Noetherian finite-generator
-    producer, support-removal defect arithmetic, and
-    conditional original-U finite-test/cyclic-pencil bridges, including a
-    two-call affine-source constructor, a two-call descent successor
-    constructor, an actual-right-localization power-Ore bridge, a finite
-    weighted-matrix inverse/row-action lemma, and terminal/opposite package
-    assembly, finite common-denominator clearing for right-localized families,
-    weighted-detection composition after a nilpotent correction, a concrete
-    central-field filtered-algebra interface, Jacobson scalar-extension top
-    comparison, finite scalar bad-set avoidance, and indexed finite-colon
-    characteristic-support consumption, an actual filtered-layer class/support
-    bridge, finite full-symbol chart control, a module Noetherianity criterion
-    with a sequence-ring obstruction, bounded below-one inverse data and a
-    diagonal negative-degree matrix boundary, explicit finite composition and
-    block consumers, certified nonzero original-U source selection, and indexed
-    support-removal/test-retention consumption, proposition-only M01 and
-    sequence-ring Noetherianity boundaries, the A1 principal-open/power-Ore
-    obstruction, the full-symbol bounded-inverse boundary, explicit isotypic
-    repeated-block data, and a source-dependent support-removal obstruction,
-    degree-zero central-field and noncommutative associated-graded boundaries,
-    finite-length radical-top extraction, division-ring eigenvalue boundaries,
-    filtered full-symbol weighted boundaries, a degree-zero associated-layer
-    equivalence, strict good-subquotient Noetherian consumers, a polynomial
-    full-symbol calibration, finite weighted-faithful calibration, a
-    zero-pencil division-ring obstruction, finite-direction original-U source
-    selection, explicit base/two-call endpoint assembly, a polynomial
-    filtration boundary, polynomial Rees-Noetherian certificate, finite
-    actual-Ore clearing, a good polynomial-module calibration, split central
-    finite-pencil activation, a Weyl A1 original-ring calibration, and a
-    concrete Nat support-removal successor, an additive structural
-    filtered-ring class, finite homogeneous Rees decomposition,
-    localized-to-original cofactor recombination, generic weighted
-    good-module detection, finite-central division-block pencils, a split
-    finite-dimensional original-U source selector, and central-field
-    support-removal/test-retention bridges, an associated-graded spectrum
-    support bridge, a filtered-to-Rees Noetherian transfer criterion,
-    localized divisor assembly, weighted support linkage, finite-central
-    activated pencils, finite-dimensional same-divisor assembly, and a
-    central-field two-call successor.
-    The fifth continuation adds an M01 associated-spectrum adapter,
-    bounded-layer support/dimension/defect invariance, finite localized
-    assembly with one common denominator, correction-aware weighted support
-    detection, minimal-prime finite-central activation, retained finite-test
-    assembly, and a central-field finite-index endpoint adapter.
-    A subsequent independent review corrected calibration evidence and made
-    support-removal arithmetic conditional on non-exceptional scalars.
-    General finite-length activated pencils and the universal source producer
-    remain open. It does not claim the universal higher-dimensional
-    source-selection or same-divisor theorem in the internal all-dimensional
-    proof candidate; those are explicit Phase I and Phase II gates. The latest
-    frontier wave adds a one-way finite-dimensional original-U source selector
-    and checked boundaries for source-dependent support removal, repeated
-    division-ring pencil finiteness, and torsion-sensitive weighted detection;
-    these sharpen the missing producer hypotheses without closing the
-    universal theorem. The subsequent frontier adds an explicit affine-graded
-    Rees presentation and a determinant-free finite-central pencil theorem;
-    an independent audit identifies the homogeneous-localization versus
-    prime-localization length bridge in Part I.5 as the first load-bearing
-    formal gap. The ninth frontier adds exact one-step graded-to-filtered
-    length and strict-chain boundaries, an evaluation-at-one Rees module
-    action, a finite-length/source-map boundary, and higher-dimensional Weyl
-    monicization with original-ring remainder factorization; these remain
-    conditional or calibration results and do not close the universal source
-    producer. The tenth frontier adds a bounded-below strictness criterion,
-    degree-shifted filtered Rees maps, finite-orbit original-source selection,
-    higher-rank Weyl evolutionary calibration, and degree-one Weyl monic
-    remainder assembly. The eleventh frontier adds a conditional
-    filtered/localized associated-graded chain-transfer package, finite
-    algebraic Rees specialization, a finite original-coefficient source
-    package, and arbitrary outer-monic Weyl division with a finite remainder
-    bound. The verifier also checks the complete transitive axiom allowlist
-    and all locked Lake checkouts. These remain conditional/calibration results
-    and do not close the universal M01--M11 producer. The twelfth frontier
-    composes a quantitative filtered-chain length bound, a
-    prime-versus-homogeneous-localization boundary, finite Rees cofactor and
-    finite-coefficient divisor assembly, and a coordinate-affine Weyl
-    same-divisor calibration. These likewise remain conditional or
-    Weyl-family results.
+    The selected Challenge/Solution states that an affine pencil beginning
+    at a linearly independent finite tuple over a division ring has only
+    finitely many bad central scalars, when the division ring is finite
+    dimensional over the infinite central field. Scalar compatibility is
+    explicit. The solution uses the checked finite-spectrum proof in
+    FiniteCentralDivisionLLD. The surrounding repository develops the
+    symplectic Stafford programme; its universal same-divisor theorem and
+    all-dimensional project-owned producers remain open. This bounded
+    comparison does not assert their completion or claim research novelty.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -173,10 +76,10 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "c0e50a39963987c2013ce647f4373bba43f1bfaa"
-  report: "not-yet-issued"
-  machine_readable_report: "docs/verification-results.json"
-  statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
+  base_commit: "2d02f41508515390f92880d191be7ef629f37180"
+  report: "docs/pencil-submission-scope.md"
+  machine_readable_report: "docs/luna-wave-20260909.json"
+  statement_correspondence: "docs/pencil-submission-scope.md"
   source_commit: "502b65a1dea53cac52220a08e321bfba525bc72e"
   instructions_commit: "e3c7077d3d51772d97d8e72bb219a8fc36765682"
   phase_instructions: "docs/phase-instructions.md"
@@ -184,83 +87,16 @@ verification:
 
 status:
   scope: >-
-    Partial checkpoint. The semantic, support-boundary, opposite-transport,
-    ordered/common-colon, raw and module-side Rees, power-Ore fraction and
-    finite power-Ore normal forms, finite bounded-generator filtrations,
-    finite associated-layer support, explicit additive ring-filtration layers
-    and associated-layer multiplication, a ring-valued Rees object,
-    explicit right-module composition filtrations and Jacobson-top generation
-    reflection, spectrum-support and full-symbol/Noetherianity boundaries,
-    an actual right-localization power-Ore bridge, a commutative full-symbol
-    Ore calibration,
-    right-localized-module common denominators, original-central-support and
-    an AtPrime finite-local-length bridge,
-    original-test-producer boundaries, list-indexed division-LLD source
-    selection, an original-U division-test source selector, activated
-    finite-length/finite-orbit pencil consumption and a finite-central-
-    dimension orbit-basis producer,
-    division-coordinate, faithful weighted detection, negative-degree and
-    infinite-multiplicity boundaries, the M08 support-union boundary, and the
-    strong-P_h/terminal obstructions, support-removal defect arithmetic,
-    conditional cyclic-pencil, finite-index and constructive successor,
-    two-call descent successor, terminal-boundary and terminal/opposite
-    package assembly, differential-Ore,
-    original-affine source-selection, actual M08 finite right-generation,
-    two-call affine-source construction, two-call descent successor,
-    weighted-matrix inverse, finite right-localized common denominators,
-    weighted-detection composition, central-field filtered algebra,
-    Jacobson scalar extension, finite scalar avoidance,
-    finite-colon characteristic support, actual filtered class support,
-    finite full-symbol chart control, module Noetherian descent and its
-    sequence-ring boundary, bounded inverse-degree data, explicit finite blocks,
-    certified nonzero source selection, indexed removal/retention, M01
-    structural labels, the A1 power-Ore obstruction, full-symbol weighted
-    boundary, isotypic blocks, layer-support obstruction, degree-zero
-    central-field and associated-graded boundaries, actual radical-top and
-    division-eigen consumers, filtered full-symbol weighted boundary,
-    degree-zero associated-layer equivalence, strict Rees good-subquotient
-    consumers, polynomial full-symbol calibration, weighted-faithful
-    calibration, zero-pencil division obstruction, finite-direction original-U
-    source selection, and base/two-call endpoint assembly, polynomial
-    filtration/Rees-Noetherian and actual-Ore finite-clearing calibrations,
-    good polynomial-module and split central-pencil consumers, Weyl A1
-    original-ring calibration, and concrete Nat support-removal, additive
-    structural filtered-ring class, bounded homogeneous Rees bridge,
-    localized-to-original cofactor recombination, generic good weighted
-    module, finite-central division pencil, finite-dimensional source
-    producer, and central-field support-removal bridge, associated-graded
-    spectrum support bridge, Rees Noetherian transfer, localized divisor
-    assembly, weighted support linkage, finite-central activated pencils,
-    finite-dimensional same-divisor assembly, and central-field two-call
-    successor, M01 associated-spectrum adaptation, bounded-layer support
-    invariance, finite localized assembly, corrected weighted support,
-    minimal-prime finite-central activation, retained finite-test assembly,
-    and central-field finite-index endpoint adaptation, plus reviewed
-    scalar-condition and calibration corrections, filtered,
-    source-assembly, support-union,
-    and strong-P_h declarations listed in the project plan compile and have
-    independent consumers where recorded. The filtered, source-selection,
-    assembly, support-union, and induction files are conditional scaffolds;
-    the proof map labels these consumers LEAN-SCAFFOLD and keeps M01–M11 open.
-    The full higher-dimensional same-divisor producer and producer-derived
-    terminal extraction remain unimplemented. The one intentional placeholder
-    is confined to the
-    Mathlib-only Challenge.lean; Solution.lean has no placeholder. The latest
-    frontier wave also includes a finite-list one-way source producer and
-    checked central-field support, repeated-division-block, and torsion
-    detector boundaries; none is a universal producer. The next wave adds
-    explicit affine-graded Rees and finite-central spectrum consumers while
-    retaining M05's unresolved graded-to-filtered length bridge. The eleventh
-    wave adds the conditional filtered/localized associated-graded
-    chain-transfer bridge, finite algebraic Rees specialization, finite
-    original-coefficient source package, and arbitrary outer-monic Weyl
-    division; it also hardens transitive axiom and dependency-checkout audits.
-    These remain conditional or calibration results and do not close the
-    universal producer. The twelfth wave adds quantitative filtered-chain
-    length, prime-versus-homogeneous localization boundary evidence, finite
-    Rees cofactor assembly, finite-coefficient divisor assembly, and a
-    coordinate-affine Weyl calibration; these remain conditional, boundary,
-    or Weyl-family results.
+    Bounded finite-central division-pencil candidate. The new comparison
+    replaces the former definitional right-set-membership checkpoint.
+    Independent Sol-low review and the local statement Comparator, NanoDa,
+    and Lean-kernel replay passed for the new pair. The current wave receipt
+    freezes the base commit and uncommitted patch; historical receipts do
+    not certify this change. Public clean replay and release review remain
+    outstanding.
+    The broader filtered, localization, support, source-selection, and
+    induction interfaces remain conditional as recorded in PLAN.md.
+    The universal M01--M11 obligations and both terminal phases remain open.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0
@@ -302,6 +138,7 @@ automation:
     - method: "agent"
       models:
         - "gpt-5.6-luna"
+        - "gpt-5.6-sol"
         - "gpt-6-astra"
       framework: "Codex"
       tool_setup: >-
@@ -350,26 +187,14 @@ review:
   status: "agent-reviewed"
   reviewers: []
   notes: >-
-    Kernel builds, endpoint axiom reports, and independent consumers cover the
-    implemented checkpoint, including the right-ideal bridge, bounded
-    Rees-module/power-Ore boundaries, finite filtration/support proxies,
-    spectrum-support/full-symbol/Noetherianity boundaries, finite-support/
-    matrix detection and Jacobson-top generation reflection,
-    finite-generation/constructive-successor, list-indexed division-LLD,
-    activated finite-length/finite-orbit, original-affine source, original-
-    test-producer, original-U division-test source, actual module-support,
-    ring-filtration-layer, right-module localization, ordered common-colon-
-    producer, two-call descent, weighted-matrix inverse, terminal assembly and
-    differential-Ore, finite common-denominator, weighted-composition,
-    central-field, Jacobson scalar-extension, finite-scalar-avoidance,
-    finite-colon characteristic-support, actual-class-support,
-    full-symbol-chart, module-Noetherian, bounded-inverse, explicit-block,
-    certified-source and removal/retention boundary utilities. The local Palomar comparator,
-    NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
-    pair, but is not universal-theorem or release evidence. The bounded
-    Fable/Claude internal-proof audit found no invalid bridge in the written
-    candidate; human expert review and the universal theorem's statement
-    correspondence remain open.
+    Earlier checkpoint reviews and comparator receipts are historical.
+    The selected finite-central-pencil comparison passed independent Sol-low
+    statement review, its independent behavioral oracle, import-closure
+    checks, Comparator, Lean kernel, and NanoDa locally. The current wave
+    receipt records full checkpoint results separately.
+    Research interest, source attribution, and human release review remain
+    pending. The broader paper has an unresolved homogeneous-localization
+    versus prime-localization length bridge; no universal theorem is claimed.
 
 alignment:
   namespace: "SymplecticStafford"
@@ -384,11 +209,11 @@ alignment:
       module: "SymplecticStafford.Semantics.Contract"
       status: "proved"
       note: "Original-ring membership and one-generation equivalences."
-    - source: "Palomar semantic challenge"
+    - source: "Finite central division-pencil theorem"
       lean: "SymplecticStaffordChallenge.universalStatement"
       module: "Solution"
       status: "proved"
-      note: "Mathlib-only definitional contract; not the universal theorem."
+      note: "Finite bad central parameters for an initially independent tuple; bounded comparison, not the universal Stafford theorem."
 
 acknowledgements: >-
   The workspace builds on Lean, Mathlib, AlgebraicAnalysis, and the pinned

@@ -1,32 +1,36 @@
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Data.Set.Defs
+import Mathlib.LinearAlgebra.Dimension.Finite
+import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 
 /-!
-# Symplectic Stafford semantic challenge
+# Finite central division-pencil challenge
 
-This small Palomar-shaped challenge freezes the first semantic contract of the
-project: membership in the *right* two-generator set is exactly the ordered
-certificate `a = d * r + (f * d) * s`.  It is deliberately independent of the
-substantive project imports.  The one `sorry` is the challenge hole that
-`Solution.lean` fills; it is not a claim about the unproved universal
-symplectic theorem.
+This Palomar-shaped challenge asks for the finite bad-parameter theorem for a
+finite affine pencil over a division ring that is finite-dimensional over its
+central field. It is independent of the project library. The single `sorry`
+is the challenge hole filled by `Solution.lean`.
 -/
 
 namespace SymplecticStaffordChallenge
 
-universe u
+universe u v w
 
-/-- The carrier described by two ordered right generators in an arbitrary ring. -/
-def generatedRightSet (R : Type u) [Ring R] (d f : R) : Set R :=
-  {a | ∃ r s : R, a = d * r + (f * d) * s}
-
-/-- First semantic contract: set membership and the literal right certificate. -/
-def UniversalStatement : Prop :=
-  ∀ (R : Type u) [Ring R] (d f a : R),
-    a ∈ generatedRightSet R d f ↔ ∃ r s : R, a = d * r + (f * d) * s
+/-- The exact finite-central division-pencil statement submitted for comparison. -/
+def FiniteCentralPencilStatement : Prop :=
+  ∀ (K : Type u) (E : Type v) (V : Type w) (ι : Type*)
+    [Field K] [Infinite K] [DivisionRing E]
+    [AddCommGroup V] [Module K V] [Module E V] [Module K E]
+    [FiniteDimensional K E] [Fintype ι]
+    (ιmap : K →+* E)
+    (central_coeff : ∀ (k : K) (e : E), k • e = ιmap k * e)
+    (central_embedding : ∀ (k : K) (e : E), ιmap k * e = e * ιmap k)
+    (central_vector : ∀ (k : K) (x : V), k • x = (ιmap k) • x)
+    (x y : ι → V),
+    LinearIndependent E x →
+      Set.Finite {z : K | ¬ LinearIndependent E
+        (fun i => x i + (ιmap z) • y i)}
 
 /-- The compared challenge theorem. -/
-theorem universalStatement : UniversalStatement := by
+theorem universalStatement : FiniteCentralPencilStatement := by
   sorry
 
 end SymplecticStaffordChallenge

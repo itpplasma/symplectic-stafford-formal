@@ -36,10 +36,11 @@
 The final paper gives a self-audited all-dimensional candidate for the
 original-algebra identity \(1=dR+(B+Ha)dS\). This dossier records that proof's
 dependencies, the partial Lean implementation, and the exact scope of the
-current Challenge/Solution pair. The pair proves a definitional right-ideal
-membership contract. A bounded independent paper-level audit found no invalid
-bridge; formalization of the universal source producer and human review remain
-open.
+current Challenge/Solution pair. The selected bounded pair proves finiteness
+of bad central parameters in a finite division-ring pencil under explicit
+finite-dimensionality and scalar-compatibility hypotheses. The universal
+source producer and the homogeneous-localization length bridge remain open;
+a passing bounded comparison does not prove the paper's terminal theorem.
 \end{abstract}
 
 \section{Paper source and hypotheses}\label{sec:scope}\backmap
@@ -112,8 +113,8 @@ construct the right ideal
 \[
  dU+(fd)U=\{x:\exists r,s,\ x=dr+(fd)s\},
 \]
-its relation-respecting quotient right-action operation and the opposite orientation. The current
-Mathlib-only challenge isolates membership in this displayed carrier.
+its relation-respecting quotient right-action operation and the opposite orientation. The previous Mathlib-only challenge isolated membership in this carrier.
+The selected challenge now states the bounded finite-central-pencil theorem.
 \lean{Semantics/RightIdealBridge.lean} supplies the ring-level wrapper only
 after an explicit negation-closure proof and checks the quotient unit, zero,
 multiplication, and action-respect laws; it does not turn arbitrary semiring
@@ -141,34 +142,31 @@ a supplied commutative associated module, with an explicit filtered-class map.
 \begin{center}
 \begin{tabularx}{\textwidth}{@{}Y Y Y@{}}
 \toprule
-Paper requirement & Current Challenge & Current Solution\\
+Requirement & Current Challenge & Current Solution\\
 \midrule
-Original carrier and order & Arbitrary Mathlib ring \(R\);
- \lean{generatedRightSet} & Identical definition;
- \(x=dr+(fd)s\)\\
-Ordered membership & \lean{UniversalStatement} quantifies \(R,d,f,x\) &
- \lean{universalStatement} proves the equivalence by \lean{rfl}\\
-Simple filtered-domain class & Absent from semantic challenge &
- No universal theorem supplied\\
-Every nonzero divisor; affine source \(B+Ua\) & No source-existence
- quantifier & No \(H,R,S\) construction\\
-Strong \(P_h\), localization and induction & Absent &
- Mandatory M02--M10 work remains\\
-Opposite Stafford package & Absent & Orientation utility only;
- package requires its own endpoints\\
+Finite central field extension & Division ring \(E\), infinite field \(K\),
+ \(\dim_K E<\infty\), explicit central action laws & Identical hypotheses\\
+Initially independent pencil & Finite tuple \(x\), \(E\)-linearly independent,
+ arbitrary tuple \(y\) & Injective synthesis map and a \(K\)-linear retraction\\
+Finite exceptional parameters & Only finitely many \(z\in K\) make
+ \(x+\iota(z)y\) dependent & Finite spectrum of the retracted direction map\\
+Simple filtered-domain class & Absent from bounded pencil claim &
+ No universal Stafford theorem supplied\\
+Every divisor and affine source \(B+Ua\) & No source-existence conclusion &
+ Mandatory M01--M11 producers remain open\\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-The identifier \lean{universalStatement} is universal over a
-\emph{membership equivalence}, not the paper's source-existence theorem.
+The identifier \lean{universalStatement} is retained for comparator
+compatibility; its type is now \lean{FiniteCentralPencilStatement}.
 \lean{Challenge.lean} has one intentional statement placeholder.
-\lean{Solution.lean} repeats its definitions without importing Challenge
-and proves the membership statement. The configured Comparator can check
-that pair's exact type and proof closure; it cannot establish correspondence
-with the stronger paper target merely because both definitions have the
-same name. A future terminal challenge must independently state the actual
-class hypotheses and existential conclusion.
+\lean{Solution.lean} repeats the exact bounded statement without importing
+Challenge and applies the finite-spectrum proof. The independently checked
+rational one-dimensional oracle identifies the bad set as \(\{-1\}\).
+Earlier comparator receipts concern the superseded membership equivalence.
+A new replay certifies only the finite-central-pencil scope; research interest,
+provenance review, and the universal theorem remain separate obligations.
 
 The ordered modules give affine identities and conditional finite
 right-denominator clearance. The existing finite-pencil theorem treats
@@ -494,8 +492,8 @@ listings and replay evidence. It does not inherit either project's
 verification status. In this workspace,
 \lean{scripts/verify.sh --phase-i} checks the implemented checkpoint only.
 Its name does not certify the terminal Phase-I gate.
-The Phase-II endpoint list adds the definitional Challenge/Solution theorem
-to the two semantic endpoints. Neither list enumerates the universal
+The endpoint lists include the bounded finite-filtration producer.
+The Phase-II list also checks the selected finite-central-pencil solution. Neither list enumerates the universal
 theorem's M01--M11 proof closure. Verification records identify the exact
 historical commit replayed; subsequent committed modules require their own
 integration replay.

@@ -9,6 +9,76 @@ public_release: false
 palomar_registration: not-submitted
 ```
 
+## Luna-first execution policy (2026-09-09)
+
+The reader of this section is the next controller or proof worker. Finish real
+producer obligations quickly while keeping phase and submission claims tied to
+replayable evidence. The task packets in [docs/luna-work-packets.md](docs/luna-work-packets.md)
+contain source context, owned files, exact goals, and independent oracles; this
+PLAN remains the sole status authority.
+
+### Model ladder and ownership
+
+Sol low prepares bounded task statements and file ownership. Luna xhigh is the
+default proof worker. Escalate the same frozen task in this order:
+**Luna xhigh → Sol low → Sol medium → Astra low → Astra medium**.
+After two failed substantive proof approaches, the 15-minute attempt limit,
+or one identified mathematical obstruction, return the exact statement, first
+unsupported inference, attempted proof, and compiler output to the controller for the next rung. A stronger model
+must repair the same claim or identify its obstruction. Routine compiler
+feedback stays on the same rung within the attempt budget; additional hypotheses,
+weaker conclusions, and renamed consumer packages do not count as closure.
+
+Run independent tasks in parallel, with at most seven workers across these three
+repositories and one controller. Each worker owns disjoint source/test files;
+only the controller changes root imports, PLAN, proof graphs, evidence receipts,
+and release gates. Workers return source and evidence without committing,
+pushing, publishing, or promoting state. Integrate each checked producer promptly.
+Use Sol low for the first independent mathematical/statement review; escalate a
+suspect inference through the remaining ladder, with Astra low or medium for
+unresolved mathematical composition. Drafting may precede review, but integration
+and readiness require the checks below.
+
+### Resource budget and verification
+
+Reuse each checkout's pinned dependency cache. Do not clone dependencies, create
+build worktrees, download new toolchains, or duplicate build trees for this wave.
+Use at most three concurrent targeted Lean processes and one full verifier across
+all three repositories. Store bounded logs under the existing `.lake` tree;
+limit each task's scratch/log output to 64 MiB and 15 minutes per attempt. Before
+starting a build, check available bytes and inodes on both the checkout and
+`/tmp`; pause new builds below 20 GiB free on the checkout, 8 GiB on `/tmp`, or
+100,000 free inodes. Remove only scratch created by this wave. A toolchain port
+is a separately budgeted task, not an automatic cache download.
+
+Freeze review inputs as the exact base commit plus SHA-256 of the binary tracked
+diff and a sorted SHA-256 manifest of every untracked candidate source. Keep
+unrelated edits outside the candidate manifest. A hashed uncommitted patch is
+reproducible review input. Every returned theorem needs its actual carrier,
+quantifiers, hypotheses, dependency closure, and an independently motivated
+behavioral oracle. No proof holes, new project axioms, or circular existence
+fields may enter the live closure. Run the repository's required full verifier
+after integration; targeted Lean success is inner-loop evidence only.
+
+### Submission order
+
+Audit already proved, independently meaningful statements before scheduling a
+large terminal completion. A bounded submission has its own exact Challenge,
+Solution, approved axiom closure, provenance, accepted toolchain, and independent
+kernel replay. It does not change the terminal Phase I/II status. Report a result
+as ready immediately after those gates pass, naming its precise scope and any
+remaining publication step. No percentage estimate, build count, conditional
+wrapper, or comparator for a different statement establishes readiness. Public
+release and registration follow the concrete final release review.
+
+### Current dispatch
+
+Dispatch base: `2d02f41508515390f92880d191be7ef629f37180`.
+
+Prioritize a real M05 repair at homogeneous-symbol localization, including the strictness and actual filtered/localized comparison needed for length transfer. In parallel, construct the structural associated-graded/Rees producer needed by that repair. M06–M07 arbitrary division-block activation and M09–M10 original-U source/test retention need separate proofs. Stop recycling conditional interfaces or Weyl calibrations as universal advances.
+
+The selected Challenge/Solution now targets the finite-central division-pencil theorem; its fresh verification is pending. The former comparison was only a definitional membership contract. Neither states the universal Stafford theorem. The paper has an unresolved filtered-to-graded localized-length bridge; all M01–M11 remain open at full scope. The accepted-toolchain checkpoint and passing comparator do not close those gaps. The finite-central division-pencil theorem is the first bounded submission candidate because its toolchain and independent proof are already available; research interest and provenance still need review. The current Weyl transfer reproduces the pinned Stafford38 result and is not a new submission claim.
+
 This file owns formal status. Semantic modules implement right ideals,
 literal membership, a conditional semiring-to-ring right-ideal bridge with
 relation-respecting quotient-action laws, original-ring quotient/central-support
@@ -353,9 +423,11 @@ dimension-parametric scaffold with B2 fields and proposition labels; it does
 not encode the final all-dimensional filtered-algebra class. M01 must supply
 the actual structural semantics before any terminal endpoint is certified.
 
-`Challenge.lean` and `Solution.lean` currently compare the definitional
-membership contract alone. The name `universalStatement` does not identify
-the universal Stafford theorem. The dossier states their exact correspondence.
+`Challenge.lean` and `Solution.lean` now compare the finite-central
+division-pencil theorem. The existing identifier `universalStatement` is
+retained for comparator compatibility and does not identify the universal
+Stafford theorem. `docs/pencil-submission-scope.md` states the exact new
+correspondence; older dossier listings describe the superseded checkpoint.
 
 ## Gates
 
@@ -379,3 +451,18 @@ remains disabled in `release-gates.yaml`; the readiness script is a status and
 evidence-label smoke check, not a proof of the terminal theorem. Release also
 requires every listed independent replay/comparator and explicit human
 authorization.
+
+## Finite-filtration producer and bounded comparison
+
+`FiniteFilteredModule.isFiniteLength_of_layers` now constructs finite length
+of a module from a genuine finite descending filtration and finite length of
+each successive quotient. Its rational-plane oracle has a nonzero proper
+intermediate submodule. Luna xhigh implemented the proof; independent Sol-low
+review passed. This closes the bounded finite-filtration subtask, while M05
+still requires the actual localized filtration and comparison theorem.
+
+The selected finite-central-pencil Challenge/Solution pair also passed
+independent Sol-low statement review and targeted compilation. Fresh full
+verification is recorded in the current wave receipt; previous comparator
+receipts concern the former membership definition and cannot certify this
+new pair. No universal phase or release gate is promoted.

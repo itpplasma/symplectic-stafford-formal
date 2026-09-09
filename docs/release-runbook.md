@@ -60,9 +60,14 @@ cp docs/dossier/symplectic-stafford-description.build-manifest.json "$release_di
 ## Palomar
 
 The current `comparator.json` compares
-`SymplecticStaffordChallenge.universalStatement`, which is only definitional
-membership in a two-generated right set. Its local replay is checkpoint
-evidence and cannot serve as the terminal submission configuration.
+`SymplecticStaffordChallenge.universalStatement`, now the finite-central
+division-pencil theorem specified in `pencil-submission-scope.md`. The name
+is retained for comparator compatibility. Earlier receipts concern the
+superseded definitional membership claim. Even a fresh passing replay of the
+pencil theorem is bounded evidence and cannot serve as the universal
+Stafford submission configuration. A separate scoped release decision must
+assess its research interest and provenance; the universal release gates
+remain pending.
 
 Before terminal submission, supply and independently audit the actual
 filtered-algebra statement and its proof, then configure the comparator for

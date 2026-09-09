@@ -1,28 +1,36 @@
-import SymplecticStafford
+import SymplecticStafford.FiniteLength.FiniteCentralDivisionLLD
 
 /-!
-# Solution of the semantic challenge
+# Solution of the finite central division-pencil challenge
 
-The solution repeats the challenge definitions so the compared proposition is
-definitionally identical, then proves it by unfolding the displayed set.
-The imported project module supplies the audited right-ideal implementation;
-this first challenge is intentionally the elementary C01 contract, not the
-terminal same-divisor theorem.
+The definition below is repeated independently from `Challenge.lean` for the
+statement comparator. The proof applies the project's determinant-free
+finite-spectrum theorem and does not import the challenge module.
 -/
 
 namespace SymplecticStaffordChallenge
 
-universe u
+universe u v w
 
-def generatedRightSet (R : Type u) [Ring R] (d f : R) : Set R :=
-  {a | ∃ r s : R, a = d * r + (f * d) * s}
+def FiniteCentralPencilStatement : Prop :=
+  ∀ (K : Type u) (E : Type v) (V : Type w) (ι : Type*)
+    [Field K] [Infinite K] [DivisionRing E]
+    [AddCommGroup V] [Module K V] [Module E V] [Module K E]
+    [FiniteDimensional K E] [Fintype ι]
+    (ιmap : K →+* E)
+    (central_coeff : ∀ (k : K) (e : E), k • e = ιmap k * e)
+    (central_embedding : ∀ (k : K) (e : E), ιmap k * e = e * ιmap k)
+    (central_vector : ∀ (k : K) (x : V), k • x = (ιmap k) • x)
+    (x y : ι → V),
+    LinearIndependent E x →
+      Set.Finite {z : K | ¬ LinearIndependent E
+        (fun i => x i + (ιmap z) • y i)}
 
-def UniversalStatement : Prop :=
-  ∀ (R : Type u) [Ring R] (d f a : R),
-    a ∈ generatedRightSet R d f ↔ ∃ r s : R, a = d * r + (f * d) * s
-
-theorem universalStatement : UniversalStatement := by
-  intro R _ d f a
-  rfl
+theorem universalStatement : FiniteCentralPencilStatement := by
+  intro K E V ι _ _ _ _ _ _ _ _ _ ιmap central_coeff central_embedding
+    central_vector x y hx
+  exact
+    SymplecticStafford.FiniteLength.finite_bad_of_finite_central_division_pencil_spectrum
+      ιmap central_coeff central_embedding central_vector x y hx
 
 end SymplecticStaffordChallenge

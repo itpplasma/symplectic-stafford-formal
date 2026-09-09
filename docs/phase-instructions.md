@@ -278,7 +278,7 @@ is not that evidence.
 A semantic Challenge/Solution success does not release SS-all. Publication
 remains controlled by release-gates.yaml and the release runbook.
 The current endpoint files contain two semantic membership/generation
-declarations, with the definitional Challenge/Solution theorem additionally
+declarations, with the selected bounded Challenge/Solution theorem additionally
 checked by the Phase II script. They do not enumerate the terminal M01–M11
 closure. The current source audit rejects every project axiom, and no
 registered literature-assumption workflow is implemented by these scripts.

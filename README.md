@@ -201,13 +201,13 @@ historical B2 fields, not the candidate's full filtered-algebra encoding.
 
 ## Palomar and release status
 
-`Challenge.lean` is a Mathlib-only semantic challenge with one intentional
-statement placeholder. `Solution.lean` repeats the proposition without
-importing the challenge and proves that semantic contract. The comparator
-configuration and import-closure audit are present; the local comparator,
-NanoDa and Lean-kernel replay pass for this semantic pair. Passing them is not
-a proof of the internal candidate's universal source theorem, and the release
-gate remains disabled.
+`Challenge.lean` now states the finite-central division-pencil theorem using
+Mathlib alone, with one intentional placeholder. `Solution.lean` proves that
+same statement from the finite-spectrum proof without importing the Challenge.
+The exact bounded claim and pending replay are described in
+[the submission scope](docs/pencil-submission-scope.md). The former definitional
+membership comparison and its receipts do not verify this new pair. The
+universal Stafford theorem remains open.
 
 The exact Zenodo/Palomar procedure is documented in
 [`docs/release-runbook.md`](docs/release-runbook.md). The repository carries

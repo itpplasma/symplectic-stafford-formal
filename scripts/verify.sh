@@ -9,6 +9,15 @@ case "$mode" in
   *) echo "usage: $0 [--phase-i|--phase-ii|full]" >&2; exit 2 ;;
 esac
 
+project_lean() {
+  lake env bash -c '
+    repo_root=$1
+    shift
+    export LEAN_PATH="$repo_root/.lake/build/lib/lean${LEAN_PATH:+:$LEAN_PATH}"
+    exec lean "$@"
+  ' bash "$repo_root" "$@"
+}
+
 ./scripts/check-resources.sh
 mkdir -p .lake/verification
 
@@ -92,7 +101,7 @@ lake build SymplecticStafford > .lake/verification/build.log 2>&1
 # with another checkout's cache; this still checks the exact Solution source
 # and keeps the import-closure audit below independent.
 lake build Challenge > .lake/verification/challenge-build.log 2>&1
-lake env lean --trust=0 -o .lake/build/lib/lean/Solution.olean \
+project_lean --trust=0 -o .lake/build/lib/lean/Solution.olean \
   Solution.lean > .lake/verification/solution-build.log 2>&1
 
 endpoint_file=docs/phase-i-endpoints.txt
@@ -104,7 +113,7 @@ fi
   [[ "$mode" == "full" || "$mode" == "--phase-ii" ]] && echo 'import Solution'
   sed 's/^/#print axioms /' "$endpoint_file"
 } > .lake/verification/AxiomAudit.lean
-lake env lean --trust=0 .lake/verification/AxiomAudit.lean > .lake/verification/axioms.log 2>&1
+project_lean --trust=0 .lake/verification/AxiomAudit.lean > .lake/verification/axioms.log 2>&1
 if grep -Eq 'sorryAx|admitAx|Lean\.ofReduceBool|(^|:) error:' .lake/verification/axioms.log; then
   echo 'axiom audit failed; see .lake/verification/axioms.log' >&2
   exit 1
@@ -115,7 +124,7 @@ fi
 
 : > .lake/verification/consumers.log
 for source in tests/*.lean; do
-  lake env lean --trust=0 "$source" >> .lake/verification/consumers.log 2>&1
+  project_lean --trust=0 "$source" >> .lake/verification/consumers.log 2>&1
 done
 if grep -Eq 'sorryAx|admitAx|Lean\.ofReduceBool|(^|:) error:' .lake/verification/consumers.log; then
   echo 'consumer audit failed; see .lake/verification/consumers.log' >&2
