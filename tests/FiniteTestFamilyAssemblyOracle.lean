@@ -123,6 +123,27 @@ theorem retained_fields (d : U) (hd : d ≠ 0) :
   exact ⟨(RetainedFiniteTestAssembly.of_certificate certificate).assembly.source hd,
     rfl, ⟨hgen, htail⟩⟩
 
+theorem retained_source (d : U) (hd : d ≠ 0) :
+    ∃ H source : U,
+      source = (RetainedFiniteTestAssembly.of_certificate certificate).assembly.source hd ∧
+      source = 1 + H * 1 ∧ source ≠ 0 := by
+  let A := RetainedFiniteTestAssembly.of_certificate certificate
+  exact ⟨A.multiplier d hd, A.assembly.source hd, rfl,
+    A.affine_source d hd, A.source_nonzero d hd⟩
+
+/- Altering either retained metadata field makes the local generation assertion
+false.  These checks prevent the oracle from succeeding by dropping offsets or
+right tails from the output contract. -/
+example (source : U) :
+    ¬ (finiteTest (1 : U) 7 2 (by norm_num)).localTest.generation
+      source 8 2 := by
+  simp [finiteTest, localTest]
+
+example (source : U) :
+    ¬ (finiteTest (1 : U) (-4) 3 (by norm_num)).localTest.generation
+      source (-4) 0 := by
+  simp [finiteTest, localTest]
+
 theorem same_divisor : SymplecticStafford.SameDivisorS1 (R := U) :=
   (RetainedFiniteTestAssembly.of_certificate certificate).same_divisor
 
@@ -137,4 +158,6 @@ end SymplecticStafford.FiniteTestFamilyAssemblyOracle
 
 #print axioms
   SymplecticStafford.FiniteTestFamilyAssemblyOracle.retained_fields
+#print axioms
+  SymplecticStafford.FiniteTestFamilyAssemblyOracle.retained_source
 #print axioms SymplecticStafford.FiniteTestFamilyAssemblyOracle.same_divisor
