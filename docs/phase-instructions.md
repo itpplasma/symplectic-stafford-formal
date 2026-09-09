@@ -164,6 +164,19 @@ independent oracle is trust-disabled checked. These compositions do not prove
 the universal quantum algebraization or producer, so both phases and release
 remain pending.
 
+The fifth continuation adds `M01AssociatedSpecAdapter` for attaching explicit
+commutative associated-spectrum data to the structural M01 class;
+`BoundedLayerSupport` for bounded reindexing invariance of quotient support,
+dimension and integer defect; `FullSymbolFiniteAssembly` for one common
+right-denominator finite assembly; `CorrectedGoodWeightedSupportBridge` for
+negative-weight detection through a nilpotent correction;
+`MinimalPrimeCentralActivated` for local minimal-prime length followed by
+finite-central activation; `FiniteTestFamilyAssembly` for retaining all finite
+offsets and nonzero tails; and `CentralFieldFiniteIndex` for the finite-index
+two-call endpoint. Their hypotheses and endpoint inputs remain explicit, each
+source/oracle is trust-disabled checked, and no M01--M11, Phase I, Phase II,
+Palomar, or publication status is promoted.
+
 The filtered lane's `WeightedFaithfulBoundary.lean` makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, while
 `WeightedInverseBoundary.lean` records the independent negative-degree unit

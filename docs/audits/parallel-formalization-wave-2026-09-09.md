@@ -316,3 +316,33 @@ The bridges still require explicit algebraic charts, quotient-layer maps,
 finite-dimensional/local-pass data, denominator inverses, and support/removal
 certificates. They therefore do not prove the universal higher-dimensional
 filtered producer or promote Phase I, Phase II, Palomar, or publication.
+
+## Fifth continuation wave
+
+The fifth Luna pass added seven further bounded compositions:
+
+- `cc02aa9` — `M01AssociatedSpecAdapter`, attaching supplied commutative
+  associated-ring/module data to the structural M01 class and exposing the
+  support/annihilator consequences.
+- `bf830e6` — `BoundedLayerSupport`, transporting quotient support,
+  characteristic dimension, and integer defect across an explicit bounded
+  layer reindexing.
+- `c9a007c` — `FullSymbolFiniteAssembly`, clearing a finite family of
+  localized identities with one supplied common right denominator and
+  original-U cofactors.
+- `f4d8784` — `CorrectedGoodWeightedSupportBridge`, retaining negative-weight
+  detection and nonzero support through a nilpotent correction.
+- `112f5f8` — `MinimalPrimeCentralActivated`, composing minimal-prime local
+  finite length with finite-central activated pencils.
+- `62c6bae` — `FiniteTestFamilyAssembly`, retaining every offset and nonzero
+  right tail through divisor-indexed original-U assembly.
+- `b87b56d` — `CentralFieldFiniteIndex`, packaging the central-field two-call
+  successor into the finite-index endpoint with explicit base and terminal
+  cofactor inputs.
+
+All fourteen source/oracle files passed `lake env lean --trust=0`; the
+integrated root build completed 8,859 jobs. These additions remain conditional
+on explicit associated-layer maps, bounded reindexings, Ore/chart certificates,
+local finite-length data, finite test producers, and base/successor inputs.
+They do not close the universal producer or promote Phase I, Phase II,
+Palomar, or publication.

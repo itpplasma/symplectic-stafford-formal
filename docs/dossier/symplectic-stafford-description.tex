@@ -418,6 +418,24 @@ consumers. Their local, chart, denominator, and coefficient hypotheses remain
 visible; independent trust-disabled oracles pass, but no universal producer is
 claimed.
 
+The fifth continuation adds explicit adapters around the remaining interfaces.
+\lean{Filtered/M01AssociatedSpecAdapter.lean} attaches supplied commutative
+associated-spectrum data to the structural M01 class, while
+\lean{Filtered/BoundedLayerSupport.lean} transports quotient support,
+characteristic dimension, and integer defect across a bounded layer
+reindexing. \lean{Filtered/FullSymbolFiniteAssembly.lean} clears a finite
+family of localized identities with one common right denominator, and
+\lean{Filtered/CorrectedGoodWeightedSupportBridge.lean} retains negative-weight
+detection through a nilpotent correction. On the finite-length/source side,
+\lean{FiniteLength/MinimalPrimeCentralActivated.lean} composes minimal-prime
+local length with finite-central activation, while
+\lean{Source/FiniteTestFamilyAssembly.lean} retains every offset and nonzero
+right tail through divisor assembly. Finally,
+\lean{Induction/CentralFieldFiniteIndex.lean} packages the central-field
+two-call successor into the finite-index endpoint. All fourteen source/oracle
+files pass trust-disabled replay; these remain conditional consumers with
+explicit maps, local certificates, chart data, and endpoint inputs.
+
 \section{Phase instructions and evidence}\label{sec:phases}\backmap
 
 \lean{docs/phase-instructions.md} gives the final-paper M01--M11 ledger.

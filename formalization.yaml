@@ -71,6 +71,11 @@ project:
     localized divisor assembly, weighted support linkage, finite-central
     activated pencils, finite-dimensional same-divisor assembly, and a
     central-field two-call successor.
+    The fifth continuation adds an M01 associated-spectrum adapter,
+    bounded-layer support/dimension/defect invariance, finite localized
+    assembly with one common denominator, correction-aware weighted support
+    detection, minimal-prime finite-central activation, retained finite-test
+    assembly, and a central-field finite-index endpoint adapter.
     General finite-length activated pencils and the universal source producer
     remain open. It does not claim the universal higher-dimensional
     source-selection or same-divisor theorem in the internal all-dimensional
@@ -138,7 +143,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "5f8ef9f24caecd211083129611cb5fe25b883f60"
+  commit: "8bb3b02c2cfbaf0cdd99cd2f5d5767d324dea83d"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -197,7 +202,10 @@ status:
     spectrum support bridge, Rees Noetherian transfer, localized divisor
     assembly, weighted support linkage, finite-central activated pencils,
     finite-dimensional same-divisor assembly, and central-field two-call
-    successor, filtered,
+    successor, M01 associated-spectrum adaptation, bounded-layer support
+    invariance, finite localized assembly, corrected weighted support,
+    minimal-prime finite-central activation, retained finite-test assembly,
+    and central-field finite-index endpoint adaptation, filtered,
     source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,

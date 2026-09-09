@@ -40,3 +40,10 @@ localized-to-original divisor assembly, weighted detection-to-support linkage,
 finite-central activated pencils, finite-dimensional same-divisor assembly,
 and a central-field two-call successor. Their local, chart, and coefficient
 hypotheses remain explicit; no universal phase or publication gate is enabled.
+
+The fifth continuation adds an M01 associated-spectrum adapter, bounded-layer
+support/dimension/defect invariance, finite localized assembly with one common
+denominator, correction-aware weighted support detection, minimal-prime
+finite-central activation, retained finite-test assembly, and a central-field
+finite-index endpoint adapter. These conditional consumers pass independent
+trust-disabled replay; universal phase and publication gates remain disabled.

@@ -190,6 +190,21 @@ trust-disabled checked consumers with explicit hypotheses. The general quantum
 algebraization, denominator construction, local module bridges, and universal
 producer remain open; no phase gate is promoted.
 
+The fifth continuation wave adds further explicit compositions:
+`M01AssociatedSpecAdapter` attaches a supplied commutative associated-ring/module
+map to the structural M01 class; `BoundedLayerSupport` transports quotient
+support, dimension, and integer defect across an explicit bounded layer
+reindexing; `FullSymbolFiniteAssembly` clears a finite family of localized
+identities with one supplied right denominator;
+`CorrectedGoodWeightedSupportBridge` retains negative-weight detection through
+a nilpotent correction; `MinimalPrimeCentralActivated` composes minimal-prime
+local length with finite-central activated pencils; `FiniteTestFamilyAssembly`
+retains all offsets and nonzero tails through divisor assembly; and
+`CentralFieldFiniteIndex` packages the two-call successor into the finite-index
+endpoint. Each remains conditional on its displayed algebraic, local, chart,
+or producer data, so the universal higher-dimensional source theorem and phase
+gates remain open.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

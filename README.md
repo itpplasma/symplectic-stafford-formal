@@ -84,6 +84,13 @@ activated pencils, finite-dimensional same-divisor assembly, and a central-field
 two-call successor. These remain conditional consumers with explicit local,
 chart, and coefficient hypotheses; the universal producer and release gates
 remain pending.
+The fifth continuation adds an M01 associated-spectrum adapter, bounded-layer
+support/dimension/defect invariance, finite localized assembly with one common
+denominator, correction-aware weighted support detection, minimal-prime
+finite-central activation, retained finite-test assembly, and a central-field
+finite-index endpoint adapter. These are independently trust-disabled checked
+and remain conditional on their displayed maps, local certificates, chart
+data, and producer hypotheses.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately does not claim the universal
 higher-dimensional theorem in the internal all-dimensional proof candidate.
