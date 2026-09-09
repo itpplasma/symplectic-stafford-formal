@@ -7,18 +7,21 @@ project:
     Lean 4 formalization of the original-ring semantic and ordered-algebra
     interfaces for the symplectic Stafford same-divisor programme. The
     checkpoint proves right-ideal membership/extraction, the relation-respecting
-    quotient right-action laws, support-boundary extraction, explicit opposite
-    transport, ordered affine/common-colon/finite-generation identities, raw
+    quotient right-action laws, original-ring central-support zero detection,
+    support-boundary extraction, explicit opposite transport, ordered
+    affine/common-colon/finite-generation identities and an ambient ordered
+    common-colon producer, raw
     and algebraic filtered/Rees operations, quotient Rees-module actions,
     explicit power-Ore fractions and finite power-Ore normal forms,
     finite bounded-generator filtrations, finite-support and matrix-pencil
     detection, an associated-layer support proxy, explicit right-module
     composition filtrations and Jacobson-top generation reflection,
     a spectrum-support boundary, a filtered Noetherianity boundary, a
-    full-symbol algebraic localization boundary, a list-indexed division-LLD
-    source selector, and activated finite-length pencil consumption,
+    full-symbol algebraic localization and Rees-Noetherianity boundaries, a
+    list-indexed division-LLD source selector, an original-test producer
+    boundary, and activated finite-length/finite-orbit pencil consumption,
     a faithful weighted-detection boundary, an M08 support-union boundary,
-    and a strong-P_h successor obstruction,
+    and strong-P_h and terminal obstructions,
     conditional differential-Ore/right-denominator clearing, constructive
     finite-index successor contracts, original-affine source selection,
     conditional support-union, and conditional original-U finite-test/cyclic-
@@ -106,10 +109,12 @@ status:
     finite power-Ore normal forms, finite bounded-generator filtrations,
     finite associated-layer support, explicit right-module composition
     filtrations and Jacobson-top generation reflection, spectrum-support and
-    full-symbol/Noetherianity boundaries, list-indexed division-LLD source
-    selection, activated finite-length pencil consumption, division-coordinate,
-    faithful weighted detection, the M08 support-union boundary, and the
-    strong-P_h successor obstruction,
+    full-symbol/Noetherianity boundaries, original-central-support and
+    original-test-producer boundaries, list-indexed division-LLD source
+    selection, activated finite-length/finite-orbit pencil consumption,
+    division-coordinate, faithful weighted detection, negative-degree and
+    infinite-multiplicity boundaries, the M08 support-union boundary, and the
+    strong-P_h/terminal obstructions,
     conditional cyclic-pencil, finite-index and constructive successor,
     terminal-boundary, differential-Ore,
     original-affine source-selection, filtered, source-assembly, support-union,
@@ -188,7 +193,10 @@ fidelity:
     scaffold with B2 fields and placeholder proposition labels; it is not the
     final all-dimensional filtered-algebra class. That semantic bridge remains
     part of M01. Filtered/Localization uses a single-denominator power-clearing
-    contract and therefore is not the paper's full symbol-set Ore theorem.
+    contract and therefore is not the paper's full symbol-set Ore theorem;
+    FullSymbolLocalization and ReesNoetherianCriterion expose exact algebraic
+    APIs but still require the paper's Rees construction and leading-term
+    certificate.
 
 review:
   status: "agent-reviewed"
@@ -200,8 +208,9 @@ review:
     spectrum-support/full-symbol/Noetherianity boundaries, finite-support/
     matrix detection and Jacobson-top generation reflection,
     finite-generation/constructive-successor, list-indexed division-LLD,
-    activated finite-length, original-affine source and differential-Ore
-    boundary utilities. The local Palomar comparator,
+    activated finite-length/finite-orbit, original-affine source, original-
+    test-producer, ordered common-colon-producer and differential-Ore boundary
+    utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
     Fable/Claude paper audit found no invalid bridge in the written candidate;

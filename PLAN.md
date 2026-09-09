@@ -11,23 +11,27 @@ palomar_registration: not-submitted
 
 This file owns formal status. Semantic modules implement right ideals,
 literal membership, a conditional semiring-to-ring right-ideal bridge with
-relation-respecting quotient-action laws, support-boundary extraction and
-explicit opposite orientation. Ordered modules implement affine identities,
-the common-colon algebra and finite-generation/conditional constant-right-
-denominator clearing. Raw and algebraic filtered/Rees terms, a quotient Rees
-module with scalar-action laws, an explicit power-Ore fraction boundary,
-finite associated-top and matrix pencils, finite bounded-generator
-filtrations, finite power-Ore normal forms, a finite associated-layer support
-proxy, explicit right-module composition filtrations and Jacobson-top
-generation reflection, differential-Ore finite-cover clearing, concrete
-finite-index successor contracts, constructive successor assembly,
-original-affine source selection, list-indexed division-LLD source selection,
-activated finite-length pencil consumption, faithful weighted detection,
-explicit M08 support-union boundary, and a strong-P_h successor obstruction
-are now checked utilities, while filtered, source-assembly and strong P_h
-producer modules remain explicit conditional scaffolds. These utilities do
-not yet establish the paper's arbitrary finite-length module, activated-pencil,
-support-union, or original-U simultaneous-source theorem.
+relation-respecting quotient-action laws, original-ring quotient/central-support
+zero detection, support-boundary extraction and explicit opposite orientation.
+Ordered modules implement affine identities, the common-colon algebra, an
+ordered ambient producer with simultaneous right-clearance, and
+finite-generation/conditional constant-right-denominator clearing. Raw and
+algebraic filtered/Rees terms, a quotient Rees module with scalar-action laws,
+an explicit power-Ore fraction boundary, full arbitrary-submonoid Ore
+localization, a strict Rees Noetherianity reduction certificate, finite
+associated-top and matrix pencils, finite bounded-generator filtrations,
+finite power-Ore normal forms, a finite associated-layer support proxy,
+explicit right-module composition filtrations and Jacobson-top generation
+reflection, differential-Ore finite-cover clearing, concrete finite-index
+successor contracts, constructive successor assembly, original-affine source
+selection, list-indexed division-LLD source selection, an original-test
+producer boundary, finite-orbit-basis activated pencils, infinite-
+multiplicity and negative-degree inverse boundaries, faithful weighted
+detection, explicit M08 support-union boundary, and strong-P_h/terminal
+obstructions are now checked utilities, while filtered, source-assembly and
+strong P_h producer modules remain explicit conditional scaffolds. These
+utilities do not yet establish the paper's arbitrary finite-length module,
+activated-pencil, support-union, or original-U simultaneous-source theorem.
 
 The conditional checkpoints consume supplied data:
 `Filtered/Localization.lean` uses filtration/map and power-clearing fields;
@@ -41,12 +45,16 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `MatrixPencil`, `CommonColon`, `FiniteGenerationBridge`,
 `M08SupportUnion`, `ReesBasic`, `ReesAlgebra`, `ReesModule`,
 `GoodFiltration`, `PowerOre`, `FinitePowerOre`, `FiniteSupportDetection`,
-`FiniteSupportQuotient`, `SpecCharacteristicSupport`, `FullSymbolOre`,
+`FiniteSupportQuotient`, `SpecCharacteristicSupport`, `OriginalCentralSupport`,
+`FullSymbolOre`, `FullSymbolLocalization`, `ReesNoetherianCriterion`,
 `NoetherianBoundary`, `RightFiltration`, `GoodLocalBridge`, `JacobsonTop`,
-`ActivatedFiniteLength`, `DivisionLLDList`, `WeightedFaithfulBoundary`,
-`SupportUnionBoundary`, `ConcreteSuccessor`, `ConstructiveSuccessor`,
+`ActivatedFiniteLength`, `FiniteOrbitPencil`, `DivisionLLDList`,
+`WeightedFaithfulBoundary`, `WeightedInverseBoundary`,
+`InfiniteMultiplicityBoundary`, `SupportUnionBoundary`,
+`CommonColonProducer`, `ConcreteSuccessor`, `ConstructiveSuccessor`,
 `SuccessorObstruction`, `DifferentialOreDescent`,
-`Package/TerminalBoundary`, and `Package/Opposite` expose explicit
+`OriginalTestProducerBoundary`, `Package/TerminalBoundary`,
+`Package/TerminalObstruction`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
