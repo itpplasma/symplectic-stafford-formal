@@ -229,6 +229,18 @@ power-Ore counterexample. Every new source/oracle pair passed
 construct the universal algebraic source, so Phase I, Phase II, Palomar and
 publication remain fail-closed.
 
+The eighth frontier wave adds an explicit affine-graded presentation for the
+bounded Rees ring (`LocallyFiniteAffineGradedRing` and
+`BoundedReesRingPresentation`) and a determinant-free finite-central pencil
+theorem (`FiniteCentralDivisionLLD`). Both are kernel-checked conditional
+bridges. An independent audit then located the first load-bearing gap in the
+paper's Part I.5: homogeneous-symbol localization gives `G_{Sigma_p}`, not
+the ordinary prime localization `G_p`, so the asserted ungraded local-length
+bound is unavailable. The proposed repair is a graded-length-to-filtered-chain
+theorem over `G_{Sigma_p}`; until that and the actual support/localization map
+are proved, M05 feeds no universal M09/M10 construction and both phase gates
+remain open.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

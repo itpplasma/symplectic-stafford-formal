@@ -3,7 +3,7 @@
   "status": "checkpoint",
   "paper_repository": "itpplasma/symplectic-stafford",
   "paper_commit": "502b65a1dea53cac52220a08e321bfba525bc72e",
-  "formal_commit": "d92288037d4ab489accce6c0ba75b4bb1421ecca",
+  "formal_commit": "465afeb5d141a788985b1f17e06d73774874acbd",
   "lean_toolchain": "leanprover/lean4:v4.33.0",
   "dependencies": {
     "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
@@ -14,6 +14,8 @@
   "fifth_wave": "M01AssociatedSpecAdapter, BoundedLayerSupport, FullSymbolFiniteAssembly, CorrectedGoodWeightedSupportBridge, MinimalPrimeCentralActivated, FiniteTestFamilyAssembly, and CentralFieldFiniteIndex; all fourteen source/oracle files passed lake env lean --trust=0 and the integrated root build completed 8859 jobs. These are conditional interfaces and do not provide the universal M01-M11 producer.",
   "sixth_wave_review": "Independent audits found no defects in M01AssociatedSpecAdapter, CorrectedGoodWeightedSupportBridge, or FullSymbolFiniteAssembly; corrected the bounded-layer oracle description (737c18b), strengthened retained-test checks (17a96d7), strengthened activated-block identity consumption (82377eb), and conditioned central-field support-removal/defect arithmetic on non-exceptional scalars (7791ed6). Corrected source/oracle replay and the 8859-job root build pass; universal M01-M11 production remains open.",
   "seventh_frontier_wave": "Distinct discovery/falsification/repair/abstraction lanes added FiniteDimensionalOneWayProducer (84092d0), CentralFieldSupportObstruction (e993001), RepeatedDivisionBlockBoundary (0caa201), and FiniteCoordinateDetectorBoundary (af4f362). All eight new source/oracle replays passed with lake env lean --trust=0 and the integrated root build completed 8863 jobs. The lanes identify missing graded-ring/module assembly, homogeneous Rees ideal lifting, explicit Ore/division, source-dependent support, and torsion-sensitive detector hypotheses; no universal producer or phase promotion follows.",
+  "eighth_frontier_wave": "Commit e62b087 adds an explicit LocallyFiniteAffineGradedRing and surjective bounded-Rees presentation with Noetherian and finite-module consumers; commit 465afeb adds determinant-free finite-central pencil finiteness via finite-spectrum eigenvalue control. Root build after integration completed 8864 jobs and both source/oracle replays passed with the allowed axioms. An independent Part I.5 audit found the first load-bearing gap: homogeneous-symbol localization gives G_{Sigma_p}, not G_p, so the paper's ungraded local-length bound is unproved; a graded-length-to-filtered-chain theorem is required before M05/M09/M10 can close.",
+  "latest_dependency_replay": "In disposable clone /tmp/ss-latest-replay.OkZtb8, AlgebraicAnalysis v0.3.1 (add0a80d865c88fe9cbc6901bda08a636ce188f9) and Stafford38-formal v1.1.1 (213ae2073030c8a897087152a616b8f8c1292df2) with pinned Mathlib db584cd6d46c92f209a44c0f1c829460d327499d completed the 8864-job SymplecticStafford build. ReesNoetherianTransfer and FiniteCentralDivisionLLD source/oracle pairs also passed lake env lean --trust=0. This is compatibility evidence only; the authoritative lock remains unchanged and no phase or release promotion follows.",
   "phase_i": {
     "status": "partial",
     "command": "./scripts/verify.sh --phase-i",

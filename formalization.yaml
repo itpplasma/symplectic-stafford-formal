@@ -86,7 +86,11 @@ project:
     and checked boundaries for source-dependent support removal, repeated
     division-ring pencil finiteness, and torsion-sensitive weighted detection;
     these sharpen the missing producer hypotheses without closing the
-    universal theorem.
+    universal theorem. The subsequent frontier adds an explicit affine-graded
+    Rees presentation and a determinant-free finite-central pencil theorem;
+    an independent audit identifies the homogeneous-localization versus
+    prime-localization length bridge in Part I.5 as the first load-bearing
+    formal gap.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -150,7 +154,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "d92288037d4ab489accce6c0ba75b4bb1421ecca"
+  commit: "465afeb5d141a788985b1f17e06d73774874acbd"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
@@ -225,7 +229,9 @@ status:
     Mathlib-only Challenge.lean; Solution.lean has no placeholder. The latest
     frontier wave also includes a finite-list one-way source producer and
     checked central-field support, repeated-division-block, and torsion
-    detector boundaries; none is a universal producer.
+    detector boundaries; none is a universal producer. The next wave adds
+    explicit affine-graded Rees and finite-central spectrum consumers while
+    retaining M05's unresolved graded-to-filtered length bridge.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0
