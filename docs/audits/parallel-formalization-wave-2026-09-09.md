@@ -524,10 +524,14 @@ The next parallel lanes added six bounded commits:
 - `f422824` — degree-one Weyl monic remainder plus literal original-ring
   `AssemblyWitness` assembly, checked at rank two by an independent oracle.
 
-The new source/oracle files pass `lake env lean --trust=0`; the strictness,
-shifted-action, source-selection and Weyl endpoint closures use only
-`propext`, `Classical.choice`, and `Quot.sound`. These lanes provide exact
-conditional bridges and concrete calibrations, not the missing homogeneous
-localization, arbitrary finite-length block theorem, universal source map, or
-M01--M11 producer. Phase I, Phase II, Palomar registration, and publication
-remain fail-closed.
+The six new source/oracle files pass `lake env lean --trust=0`; the integrated
+`lake build SymplecticStafford` completes 8,907 jobs, and all 146
+trust-disabled oracle files pass. `lake build Challenge`, the trust-disabled
+`Solution` check, the 314-assertion paper regression, and `verify-palomar.sh`
+also pass under the pinned lock. The strictness, shifted-action,
+source-selection and Weyl endpoint closures use only `propext`,
+`Classical.choice`, and `Quot.sound`. These lanes provide exact conditional
+bridges and concrete calibrations, not the missing homogeneous localization,
+arbitrary finite-length block theorem, universal source map, or M01--M11
+producer. Phase I, Phase II, Palomar registration, and publication remain
+fail-closed.
