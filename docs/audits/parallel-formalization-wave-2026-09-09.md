@@ -57,7 +57,12 @@ all-dimensional target. `release-gates.yaml` therefore remains fail-closed:
 Phase I and Phase II are not verified, Palomar is not submitted, and public
 visibility/Zenodo release are unchanged.
 
-The controller's final replay commit and command logs are recorded in
-`formalization.yaml` and `docs/verification-results.json` after the metadata
-integration commit. Resource guards are run before the long build and replay;
-the workspace and `/tmp` headroom remain above their configured minimums.
+The controller replay was run at integration commit `0cb83aa` with the
+resource guard first. `lake build SymplecticStafford` completed 8,787 jobs;
+`./scripts/verify.sh --phase-i` and `./scripts/verify.sh --phase-ii` both
+passed their documented semantic/ordered checkpoint; and
+`./scripts/verify-palomar.sh` passed the compatibility build, import-closure
+audits, comparator, NanoDa and Lean-kernel replay. The expected
+`./scripts/check-release-readiness.sh` result is exit 1 because all three
+release statuses remain unverified. The workspace and `/tmp` headroom stayed
+above their configured minimums throughout the replay.

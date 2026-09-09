@@ -107,7 +107,7 @@ related_formalizations:
     relationship: "builds-on"
 
 verification:
-  commit: "aebe8fee5100fb0a6482fecb632a1c67f63888cc"
+  commit: "0cb83aaab4d214a5f47b66257d0bf6b9b08e3022"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
