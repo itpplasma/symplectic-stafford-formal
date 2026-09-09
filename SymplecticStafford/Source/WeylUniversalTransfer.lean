@@ -26,13 +26,15 @@ theorem sameDivisor_of_weylAlg_algEquiv
   have hd₀ : d₀ ≠ 0 := by
     intro hzero
     apply hd
-    change d = 0
-    rw [← e.apply_symm_apply d, hzero]
-    simp
+    have hzero' : e d₀ = 0 := by
+      simpa using congrArg e hzero
+    simpa [d₀] using hzero'
   obtain ⟨F₀, R₀, S₀, h₀⟩ := Stafford38.universalStatement k n d₀ hd₀
   refine ⟨e F₀, e R₀, e S₀, ?_⟩
   have h := congrArg e h₀
-  simpa only [map_one, map_add, map_mul] using h
+  have hmap : (1 : U) = e d₀ * e R₀ + (e F₀ * e d₀) * e S₀ := by
+    simpa only [map_one, map_add, map_mul] using h
+  simpa [d₀] using hmap
 
 theorem originalSameDivisor_of_weylAlg_algEquiv
     {n : ℕ} (e : Stafford38.WeylAlg k n ≃ₐ[k] U) :
