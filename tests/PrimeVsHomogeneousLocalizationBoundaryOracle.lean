@@ -28,4 +28,15 @@ example :
     ¬ IsFiniteLength (LaurentPolynomial ℚ) (LaurentPolynomial ℚ) :=
   homogeneousLaurent_not_isFiniteLength
 
+example :
+    Module.length (FractionRing (Polynomial ℚ))
+        (FractionRing (Polynomial ℚ)) = 1 :=
+  fractionField_regular_module_length_eq_one
+
+example :
+    (¬ IsFiniteLength (LaurentPolynomial ℚ) (LaurentPolynomial ℚ)) ∧
+      Module.length (FractionRing (Polynomial ℚ))
+        (FractionRing (Polynomial ℚ)) = 1 :=
+  homogeneous_vs_ordinary_length_contrast
+
 end SymplecticStaffordTest.PrimeVsHomogeneousLocalizationBoundary

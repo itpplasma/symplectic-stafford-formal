@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.RingTheory.Localization.FractionRing
 import Mathlib.RingTheory.HopkinsLevitzki
+import Mathlib.RingTheory.Length
 
 /-!
 # Ordinary-prime versus homogeneous-symbol localization
@@ -153,6 +154,26 @@ theorem fractionField_no_strict_submodule
     exact (lt_irrefl _ h.1)
   · subst I
     exact (lt_irrefl _ h.2)
+
+/- The ordinary-prime coefficient model is a one-simple-factor regular
+   module: its scalar ring is a division ring.  Stating its exact length makes
+   the boundary quantitative, rather than merely saying that the two module
+   lattices have different strict inclusions. -/
+theorem fractionField_regular_module_length_eq_one :
+    Module.length (FractionRing (Polynomial ℚ))
+      (FractionRing (Polynomial ℚ)) = 1 := by
+  exact Module.length_eq_one _ _
+
+/- The model comparison used by the Part I.5 warning.  The ordinary prime
+   coefficient module has length one, whereas the homogeneous-symbol Laurent
+   coefficient module is not finite length.  No identification of either
+   model with a filtered quantum localization is asserted here. -/
+theorem homogeneous_vs_ordinary_length_contrast :
+    (¬ IsFiniteLength (LaurentPolynomial ℚ) (LaurentPolynomial ℚ)) ∧
+      Module.length (FractionRing (Polynomial ℚ))
+        (FractionRing (Polynomial ℚ)) = 1 := by
+  exact ⟨homogeneousLaurent_not_isFiniteLength,
+    fractionField_regular_module_length_eq_one⟩
 
 end SymplecticStafford.FiniteLength
 
