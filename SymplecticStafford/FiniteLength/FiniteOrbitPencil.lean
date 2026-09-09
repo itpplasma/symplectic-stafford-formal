@@ -98,6 +98,31 @@ private theorem finite_orbit_pencil_exceptions
     rintro x ⟨j, rfl⟩
     exact ⟨c j, rfl⟩)
 
+/-- The same finite-orbit calculation, exposed for a scalar subfield.
+
+The orbit basis is allowed to be finite over an auxiliary field `E` which is
+larger than the parameter field `K`.  This is the useful finite-length shape:
+the endomorphism division ring of a simple block need not be finite over the
+central field.  Only the restriction of the exceptional set along the
+injective map `ι : K →+* E` is taken, so no finite-dimensionality over `K` is
+being inferred.
+-/
+theorem finite_orbit_pencil_exceptions_of_scalar_extension
+    {E Q A : Type*} [Field E] [Infinite E] [AddCommGroup Q] [Module E Q]
+    {n : Nat} (b : Basis (Fin n) E Q)
+    (act : A → Q →ₗ[E] Q) (q q' : Q) (c : Fin n → A)
+    (hbc : ∀ i, act (c i) q = b i)
+    (ι : K →+* E) (hι : Function.Injective ι) :
+    Set.Finite {z : K |
+      ¬ OrbitSpanTop (K := E) act (q + ι z • q')} := by
+  have hbad : Set.Finite {w : E |
+      ¬ OrbitSpanTop (K := E) act (q + w • q')} :=
+    finite_orbit_pencil_exceptions (K := E) b act q q' c hbc
+  have hpre : (ι ⁻¹' {w : E |
+      ¬ OrbitSpanTop (K := E) act (q + w • q')}).Finite :=
+    hbad.preimage hι.injOn
+  exact hpre
+
 end Orbit
 
 section Activated
@@ -128,6 +153,42 @@ theorem finite_nongenerating_scalars_of_finite_orbit_basis
   apply hz
   apply (top_cyclic_iff (v + z • u)).2
   simpa only [map_add, map_smul] using hcyc
+
+/-- Finite exceptions from an auxiliary scalar field.
+
+This is a scalar-extension interface for a finite-length top.  The block may
+be finite over a *commutative* auxiliary field `E` while being
+infinite-dimensional over the central parameter field `K`; the latter
+dimension is never assumed.  The explicit `top_smul` equation is the
+centrality bridge, and `top_cyclic_iff` remains an actual comparison with the
+right-cyclic predicate rather than a completed or matrix surrogate.  A
+noncommutative endomorphism division ring still needs a separate determinant-
+free finite-pencil proof.
+-/
+theorem finite_nongenerating_scalars_of_scalar_extension_orbit_basis
+    {E Q : Type*} [Field E] [Infinite E] [AddCommGroup Q] [Module E Q]
+    (top : M →+ Q)
+    (act : (Rᵐᵒᵖ) → Q →ₗ[E] Q)
+    (ι : K →+* E) (hι : Function.Injective ι)
+    (top_smul : ∀ (z : K) (m : M), top (z • m) = ι z • top m)
+    (top_cyclic_iff : ∀ m : M,
+      RightCyclic (R := R) m ↔
+        OrbitSpanTop (K := E) act (top m))
+    (orbit_basis : ∀ m : M, RightCyclic (R := R) m →
+      ∃ n : Nat, ∃ b : Basis (Fin n) E Q,
+        ∃ c : Fin n → Rᵐᵒᵖ,
+          ∀ i, act (c i) (top m) = b i)
+    (v u : M) (hv : RightCyclic (R := R) v) :
+    Set.Finite {z : K | ¬ RightCyclic (R := R) (v + z • u)} := by
+  obtain ⟨n, b, c, hbc⟩ := orbit_basis v hv
+  have hfinite := finite_orbit_pencil_exceptions_of_scalar_extension
+    (K := K) b act (top v) (top u) c hbc ι hι
+  apply hfinite.subset
+  intro z hz hcyc
+  apply hz
+  apply (top_cyclic_iff (v + z • u)).2
+  rw [map_add, top_smul]
+  exact hcyc
 
 /-- Full activated conclusion from finite orbit data.  The last conjunct is
 the original ordered right-action identity; no commutation of `b` and `l` is
@@ -171,9 +232,65 @@ theorem exists_activated_right_cyclic_of_finite_orbit_basis
   · exact pencil_right_action_add rightAction rightAction_add
       central_smul_right v u e b l vL_zero e_decomp z
 
+/-- Activated finite-length pencil with a possibly larger block field.
+
+Unlike the central-dimension theorem in `DerivedOrbitPencil`, this theorem
+does not require `Module.Finite K M`.  Finite orbit bases are taken over the
+commutative auxiliary field `E` and restricted along the injective scalar map
+from `K`; this retains the valid infinite-over-`K` case without asserting
+that a simple module is finite-dimensional over `K`.  It does not yet remove
+the determinant-free gap for noncommutative endomorphism division rings.
+-/
+theorem exists_activated_right_cyclic_of_scalar_extension_orbit_basis
+    {E Q : Type*} [Field E] [Infinite E] [AddCommGroup Q] [Module E Q]
+    (top : M →+ Q)
+    (act : (Rᵐᵒᵖ) → Q →ₗ[E] Q)
+    (ι : K →+* E) (hι : Function.Injective ι)
+    (top_smul : ∀ (z : K) (m : M), top (z • m) = ι z • top m)
+    (top_cyclic_iff : ∀ m : M,
+      RightCyclic (R := R) m ↔
+        OrbitSpanTop (K := E) act (top m))
+    (orbit_basis : ∀ m : M, RightCyclic (R := R) m →
+      ∃ n : Nat, ∃ b : Basis (Fin n) E Q,
+        ∃ c : Fin n → Rᵐᵒᵖ,
+          ∀ i, act (c i) (top m) = b i)
+    (rightAction : R → M → M)
+    (rightAction_add : ∀ (r : R) (x y : M),
+      rightAction r (x + y) = rightAction r x + rightAction r y)
+    (central_smul_right : ∀ (k : K) (m : M) (r : R),
+      rightAction r (k • m) = k • rightAction r m)
+    (v u e : M) (b l : R) (vL_zero : rightAction l v = 0)
+    (e_decomp : e = rightAction b v + rightAction l u)
+    (hv : RightCyclic (R := R) v) (forbidden : Set K)
+    (hforbidden : forbidden.Finite) :
+    ∃ z : K, z ∉ forbidden ∧
+      RightCyclic (R := R) (v + z • u) ∧
+      rightAction l (v + z • u) + z • rightAction b v = z • e := by
+  have hbad := finite_nongenerating_scalars_of_scalar_extension_orbit_basis
+    (K := K) top act ι hι top_smul top_cyclic_iff orbit_basis v u hv
+  have hall : (forbidden ∪ {z : K |
+      ¬ RightCyclic (R := R) (v + z • u)}).Finite :=
+    hforbidden.union hbad
+  obtain ⟨z, hz⟩ := (Set.infinite_univ.sdiff hall).nonempty
+  have hzforbidden : z ∉ forbidden := by
+    intro h
+    exact hz.2 (Or.inl h)
+  have hzcyc : RightCyclic (R := R) (v + z • u) := by
+    by_contra h
+    exact hz.2 (Or.inr h)
+  refine ⟨z, hzforbidden, hzcyc, ?_⟩
+  exact pencil_right_action_add rightAction rightAction_add
+    central_smul_right v u e b l vL_zero e_decomp z
+
 end Activated
 
 end SymplecticStafford.FiniteLength
 
 #print axioms SymplecticStafford.FiniteLength.finite_nongenerating_scalars_of_finite_orbit_basis
+#print axioms
+  SymplecticStafford.FiniteLength.finite_orbit_pencil_exceptions_of_scalar_extension
+#print axioms
+  SymplecticStafford.FiniteLength.finite_nongenerating_scalars_of_scalar_extension_orbit_basis
 #print axioms SymplecticStafford.FiniteLength.exists_activated_right_cyclic_of_finite_orbit_basis
+#print axioms
+  SymplecticStafford.FiniteLength.exists_activated_right_cyclic_of_scalar_extension_orbit_basis
