@@ -138,4 +138,5 @@ import SymplecticStafford.Ordered.CharacteristicSupportFiniteProducer
 import SymplecticStafford.Source.OriginalDivisionProducer
 import SymplecticStafford.Source.FiniteLengthSourceMapBoundary
 import SymplecticStafford.Source.WeylA1Calibration
+import SymplecticStafford.Source.WeylHigherDimensionalEvolutionary
 import SymplecticStafford.Source.WeylHigherDimensionalMonicization
