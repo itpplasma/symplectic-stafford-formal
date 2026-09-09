@@ -102,6 +102,14 @@ The source-selection, filtered-localization, assembly, and terminal Phase I/II
 gates remain open in `PLAN.md`; the corresponding files are conditional
 scaffolds rather than producer proofs.
 
+The eleventh frontier adds a conditional filtered/localized associated-graded
+chain-transfer bridge, finite algebraic Rees specialization, a finite
+original-coefficient source package, arbitrary outer-monic Weyl division, and
+fail-closed transitive axiom/dependency-checkout audits. The integrated
+checkpoint currently builds 8,911 jobs and replays 150 trust-disabled oracle
+files, but these results remain conditional or Weyl-only and do not close the
+universal producer or either phase gate.
+
 The map labels the conditional filtered chart/power-clearing, divisor-indexed
 assembly, and strong finite-test induction interfaces LEAN-SCAFFOLD. The raw
 Rees, Rees-module, power-Ore, finite-filtration/support, common-colon,
