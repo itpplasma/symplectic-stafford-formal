@@ -535,3 +535,34 @@ bridges and concrete calibrations, not the missing homogeneous localization,
 arbitrary finite-length block theorem, universal source map, or M01--M11
 producer. Phase I, Phase II, Palomar registration, and publication remain
 fail-closed.
+
+## Eleventh frontier wave: algebraic specialization, filtered localization, and Weyl division
+
+Four further disjoint lanes were replayed under the pinned Lean 4.33.0,
+Mathlib, AlgebraicAnalysis and Stafford38 lock:
+
+- `93f99d9` — `FilteredLocalizedGradedBridge`, a conditional right-sided
+  filtered/localized associated-graded chain-transfer package. It names the
+  exact localization equivalences, induced filtrations, exactness, nonzero
+  graded witnesses and `AtPrime` survival data needed for the Part I.5
+  length bridge.
+- `183503a` — `ReesAlgebraicSpecialization`, finite bounded Rees lifting and
+  evaluation at one, including shifted module terms and conditional original
+  cofactor transport.
+- `0a5369a` — `OriginalFiniteCoefficientSource`, a finite coefficient-subring
+  package retaining algebraic membership, all offsets/tails and literal
+  original cofactors as explicit inputs.
+- `1be59b0` — `WeylHigherDimensionalArbitraryMonic`, arbitrary
+  coefficient-left outer-monic Weyl division with a finite remainder bound;
+  it makes no support-vanishing or universal S1 claim.
+
+The four source/oracle pairs pass targeted `lake env lean --trust=0` replay;
+after root-import integration the library build completes 8,911 jobs and all
+150 trust-disabled oracle files pass. `lake build Challenge`, the
+trust-disabled `Solution` check, the 314-assertion paper regression, and
+`verify-palomar.sh` (including its 10,702-module Solution replay) also pass.
+The verifier hardening in `4b34c08` additionally rejects unapproved
+transitive axioms and checks every direct and transitive Lake checkout against
+the locked revision, URL and clean-worktree state. These additions remain
+conditional or Weyl-only and do not discharge the universal quantum
+algebraization/source producer or promote either phase gate.

@@ -98,8 +98,13 @@ project:
     producer. The tenth frontier adds a bounded-below strictness criterion,
     degree-shifted filtered Rees maps, finite-orbit original-source selection,
     higher-rank Weyl evolutionary calibration, and degree-one Weyl monic
-    remainder assembly. These remain conditional/calibration results and do
-    not close the universal M01--M11 producer.
+    remainder assembly. The eleventh frontier adds a conditional
+    filtered/localized associated-graded chain-transfer package, finite
+    algebraic Rees specialization, a finite original-coefficient source
+    package, and arbitrary outer-monic Weyl division with a finite remainder
+    bound. The verifier also checks the complete transitive axiom allowlist
+    and all locked Lake checkouts. These remain conditional/calibration results
+    and do not close the universal M01--M11 producer.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -240,7 +245,13 @@ status:
     checked central-field support, repeated-division-block, and torsion
     detector boundaries; none is a universal producer. The next wave adds
     explicit affine-graded Rees and finite-central spectrum consumers while
-    retaining M05's unresolved graded-to-filtered length bridge.
+    retaining M05's unresolved graded-to-filtered length bridge. The eleventh
+    wave adds the conditional filtered/localized associated-graded
+    chain-transfer bridge, finite algebraic Rees specialization, finite
+    original-coefficient source package, and arbitrary outer-monic Weyl
+    division; it also hardens transitive axiom and dependency-checkout audits.
+    These remain conditional or calibration results and do not close the
+    universal producer.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0

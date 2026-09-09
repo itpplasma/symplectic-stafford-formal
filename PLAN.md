@@ -273,6 +273,22 @@ These results remain conditional/calibration evidence; arbitrary source maps,
 the homogeneous localization, and the universal M01--M11 producer remain
 unproved, so all phase and release gates stay closed.
 
+The eleventh frontier wave adds a conditional filtered/localized
+associated-graded chain-transfer package (`FilteredLocalizedGradedBridge`), a
+finite algebraic Rees specialization/evaluation bridge
+(`ReesAlgebraicSpecialization`), a finite original-coefficient source package
+(`OriginalFiniteCoefficientSource`), and arbitrary coefficient-left outer-monic
+Weyl division with an explicit remainder bound
+(`WeylHigherDimensionalArbitraryMonic`). The phase verifier now checks the
+complete transitive axiom allowlist and every direct/transitive Lake checkout
+against the locked revisions and origin URLs. Targeted source/oracle replay
+passes; the integrated root build completes 8,911 jobs and all 150
+trust-disabled oracle files pass, with the Challenge/Solution, paper
+regression and Palomar replay also green. These additions remain conditional
+or Weyl-only and do not supply the universal quantum algebraization/source
+producer; Phase I, Phase II, Palomar registration and publication remain
+fail-closed.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.
