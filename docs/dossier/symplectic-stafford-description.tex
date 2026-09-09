@@ -27,7 +27,7 @@
 \title{Symplectic Stafford formalization\\[0.3em]
  \large Final-paper proof map and Challenge/Solution comparison}
 \author{Christopher Albert}
-\date{8 September 2026}
+\date{9 September 2026}
 \begin{document}
 \input{proof-map.generated.tex}
 \maketitle
@@ -208,10 +208,21 @@ generation reflection for finitely generated right modules.
 \lean{Filtered/FullSymbolOre.lean} names the injective algebraic chart
 boundary and bijective finite fraction passage; \lean{Filtered/NoetherianBoundary.lean}
 records why raw filtration data alone cannot imply Noetherianity.
+\lean{Filtered/FullSymbolLocalization.lean} exposes the genuine
+arbitrary-submonoid Mathlib Ore localization, while
+\lean{Filtered/ReesNoetherianCriterion.lean} proves Noetherianity from an
+explicit terminating leading-term reduction certificate. These APIs still
+require the paper's actual Rees construction and reduction certificate.
+\lean{Filtered/OriginalCentralSupport.lean} gives the original-ring quotient
+and central-support zero bridge; it does not construct the full
+\(\operatorname{Spec}(\operatorname{gr}U)\) characteristic module.
 \lean{Filtered/WeightedFaithfulBoundary.lean} makes finite nonempty
 coordinates, injective encoding and negative integer weights explicit, and its
 oracle records the off-diagonal failure boundary. This does not construct the
 faithful associated-graded module required by the paper.
+\lean{Filtered/WeightedInverseBoundary.lean} and
+\lean{FiniteLength/InfiniteMultiplicityBoundary.lean} record independent
+negative-degree/unit and finite-length obstructions, respectively.
 \lean{FiniteLength/GoodLocalBridge.lean} derives local finite generation,
 Noetherianity and finite length from explicit surjective and Artinian inputs,
 and \lean{FiniteLength/ActivatedFiniteLength.lean} consumes the actual
@@ -219,14 +230,23 @@ Jacobson criterion for supplied noncommutative top blocks while retaining the
 ordered pencil identity.
 \lean{Ordered/M08SupportUnion.lean} derives a conditional finite-generator
 support cover while retaining the exact common-colon pencil certificate.
+\lean{Ordered/CommonColonProducer.lean} adds the ordered ambient producer and
+returns literal original-\(U\) common-colon data under simultaneous
+right-clearance and an injective ambient map. Its hypotheses remain explicit.
 \lean{Source/DivisionLLD.lean} and \lean{Source/DivisionLLDList.lean} include
 concrete finite affine source-avoidance families with arbitrary offsets and nonzero tails and an
 explicit division-ring cofactor boundary. \lean{Induction/ConstructiveSuccessor.lean}
 derives a successor witness from explicit base and two-call construction data.
+\lean{Source/OriginalTestProducerBoundary.lean} gives an independent
+admissibility counterexample for the current source contract, and
+\lean{FiniteLength/FiniteOrbitPencil.lean} derives finite pencil exceptions
+from a supplied finite orbit basis while retaining the ordered identity.
 \lean{Induction/SuccessorObstruction.lean} supplies a kernel-checked
 flat-defect counterexample: the lower \(P_h\) contract alone cannot imply the
 required one-step decrease. An actual support-removal/scalar-avoidance theorem
 remains the missing successor producer.
+\lean{Package/TerminalObstruction.lean} gives the matching terminal
+counterexample: a defect bound alone cannot supply original cofactors.
 These additions narrow the formal boundaries but leave their producer
 hypotheses visible.
 
@@ -241,13 +261,21 @@ The remaining checked slices are listed explicitly in the claim register:
 \lean{Filtered/GoodFiltration.lean}, \lean{Filtered/FinitePowerOre.lean},
 \lean{Filtered/CharacteristicSupport.lean},
 \lean{Filtered/SpecCharacteristicSupport.lean}, \lean{Filtered/FullSymbolOre.lean},
-\lean{Filtered/NoetherianBoundary.lean}, \lean{FiniteLength/GoodLocalBridge.lean},
+\lean{Filtered/FullSymbolLocalization.lean},
+\lean{Filtered/ReesNoetherianCriterion.lean},
+\lean{Filtered/OriginalCentralSupport.lean},
+\lean{Filtered/NoetherianBoundary.lean}, \lean{Filtered/GoodLocalBridge.lean},
 \lean{FiniteLength/ActivatedFiniteLength.lean}, \lean{Source/DivisionLLDList.lean},
+\lean{FiniteLength/FiniteOrbitPencil.lean},
+\lean{FiniteLength/InfiniteMultiplicityBoundary.lean},
+\lean{Filtered/WeightedInverseBoundary.lean},
+\lean{Source/OriginalTestProducerBoundary.lean},
+\lean{Ordered/CommonColonProducer.lean},
 \lean{Ordered/SupportUnion.lean},
 \lean{Ordered/FiniteGenerationBridge.lean},
 \lean{Induction/TestRetention.lean},
-\lean{Induction/ConcreteSuccessor.lean}, and
-\lean{Package/TerminalBoundary.lean}.  Each is a conditional utility or
+\lean{Induction/ConcreteSuccessor.lean}, \lean{Package/TerminalBoundary.lean},
+and \lean{Package/TerminalObstruction.lean}. Each is a conditional utility or
 terminal boundary; none constructs the missing universal producer.
 
 Three \textbf{LEAN-SCAFFOLD} nodes record additional conditional interfaces.

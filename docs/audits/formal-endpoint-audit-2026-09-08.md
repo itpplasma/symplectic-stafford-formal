@@ -165,3 +165,25 @@ kernel replay. The release gate remains intentionally pending: the new
 weighted, support-union and successor-obstruction files are boundary evidence,
 and the universal producer plus the M01--M11 Phase I/II endpoints are still
 absent.
+
+## Sixth parallel formalization wave and exact controller replay
+
+The next disjoint lanes added the original-ring central-support bridge and
+oracle (`1278288`), M04/M05 negative-degree and infinite-multiplicity boundary
+evidence (`cd7f6df`), the terminal cofactor obstruction (`747dbd6`), the
+original-test producer boundary (`dbb8d91`), full arbitrary-submonoid Ore
+localization plus a strict Rees Noetherianity criterion (`465bd3d`), a
+finite-orbit-basis activated pencil (`461e60c`), and the ordered ambient
+common-colon producer (`7d8a9e5`). Each source and independent oracle passed
+trust-disabled checking with only the permitted logical axioms. The controller
+then imported the verified modules into the public root and refreshed the
+phase instructions and proof graph in `d8a498f`.
+
+At exact commit `d8a498f`, the resource guard and dependency-pin audit passed;
+`lake build SymplecticStafford` completed 8770 jobs; both
+`./scripts/verify.sh --phase-i` and `./scripts/verify.sh --phase-ii` passed
+their documented semantic/ordered checkpoint; and
+`./scripts/verify-palomar.sh` passed the compatibility build, import-closure
+audits, comparator, NanoDa and Lean kernel replay. This remains checkpoint
+evidence only: the release manifest is still fail-closed because the universal
+M01--M11 producer endpoints and phase evidence files have not been proved.
