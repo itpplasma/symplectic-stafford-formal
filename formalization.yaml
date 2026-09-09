@@ -168,7 +168,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "e550fae1b342f65eac6f782f385595dbcc31ebd0"
+  commit: "c0e50a39963987c2013ce647f4373bba43f1bfaa"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"
