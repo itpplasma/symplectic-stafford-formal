@@ -1,5 +1,6 @@
 import AlgebraicAnalysis.Ore.Associativity
 import Mathlib.Algebra.Polynomial.Derivative
+import SymplecticStafford.Filtered.FullSymbolRightLocalization
 
 /-!
 # The fixed A₁ power-localization obstruction
@@ -216,6 +217,29 @@ theorem no_right_power_clear :
       exact H_mul_ne_x _ hcontra
   obtain ⟨n, b, hb⟩ := hclear
   exact no_clear_at n b hb
+
+/- The exact localization-level boundary: the opposite denominator monoid
+   required by `FullSymbolRightLocalization.Data` cannot carry an OreSet
+   instance for the powers of this quantum lift. -/
+theorem powers_H_not_right_ore :
+    ¬ Nonempty (OreLocalization.OreSet
+      (AlgebraicAnalysis.OreRightLocalization.oppositeSubmonoid
+        (Submonoid.powers H))) := by
+  intro hOre
+  letI : OreLocalization.OreSet
+      (AlgebraicAnalysis.OreRightLocalization.oppositeSubmonoid
+        (Submonoid.powers H)) := Classical.choice hOre
+  let t : AlgebraicAnalysis.OreRightLocalization.oppositeSubmonoid
+      (Submonoid.powers H) :=
+    ⟨MulOpposite.op H, Submonoid.mem_powers H⟩
+  rcases OreLocalization.oreCondition (MulOpposite.op x) t with ⟨u, v, huv⟩
+  rcases (Submonoid.mem_powers_iff (v : A1ᵐᵒᵖ).unop H).mp v.property with ⟨n, hn⟩
+  apply no_right_power_clear
+  refine ⟨n, u.unop, ?_⟩
+  have hu := congrArg MulOpposite.unop huv
+  change x * (v : A1ᵐᵒᵖ).unop = H * u.unop at hu
+  rw [← hn] at hu
+  exact hu
 
 end
 end SymplecticStafford.Filtered.PowerOreA1Obstruction
