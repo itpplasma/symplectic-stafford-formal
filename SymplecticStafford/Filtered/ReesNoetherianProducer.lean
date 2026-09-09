@@ -82,14 +82,28 @@ theorem associatedLayerMul_zero_left (i j : ℕ)
     associatedLayerMul F i j 0 y = 0 := by
   induction y using Quotient.inductionOn with
   | _ b =>
-      simp [associatedLayerMul, associatedClass]
+      change associatedClass F (i + j) (0 * b.1) _ = 0
+      change Submodule.Quotient.mk (⟨0 * b.1, _⟩ : F.carrier (i + j)) = 0
+      have hz : (⟨0 * b.1, by simpa using F.zero_mem (i + j)⟩ :
+          F.carrier (i + j)) = 0 := by
+        ext
+        simp
+      rw [hz]
+      exact Submodule.Quotient.mk_zero (F.layerSubmodule (i + j))
 
 theorem associatedLayerMul_zero_right (i j : ℕ)
     (x : associatedLayer F i) :
     associatedLayerMul F i j x 0 = 0 := by
   induction x using Quotient.inductionOn with
   | _ a =>
-      simp [associatedLayerMul, associatedClass]
+      change associatedClass F (i + j) (a.1 * 0) _ = 0
+      change Submodule.Quotient.mk (⟨a.1 * 0, _⟩ : F.carrier (i + j)) = 0
+      have hz : (⟨a.1 * 0, by simpa using F.zero_mem (i + j)⟩ :
+          F.carrier (i + j)) = 0 := by
+        ext
+        simp
+      rw [hz]
+      exact Submodule.Quotient.mk_zero (F.layerSubmodule (i + j))
 
 theorem associatedLayerMul_add_left (i j : ℕ)
     (x x' : associatedLayer F i) (y : associatedLayer F j) :
@@ -101,7 +115,14 @@ theorem associatedLayerMul_add_left (i j : ℕ)
       | _ c =>
           induction y using Quotient.inductionOn with
           | _ b =>
-              simp [associatedLayerMul, associatedClass, add_mul]
+              change associatedClass F (i + j) ((a + c).1 * b.1) _ =
+                associatedClass F (i + j) (a.1 * b.1) _ +
+                  associatedClass F (i + j) (c.1 * b.1) _
+              simp only [associatedClass]
+              rw [← Submodule.Quotient.mk_add]
+              congr 1
+              ext
+              simp [add_mul]
 
 theorem associatedLayerMul_add_right (i j : ℕ)
     (x : associatedLayer F i) (y y' : associatedLayer F j) :
@@ -113,7 +134,14 @@ theorem associatedLayerMul_add_right (i j : ℕ)
       | _ b =>
           induction y' using Quotient.inductionOn with
           | _ d =>
-              simp [associatedLayerMul, associatedClass, mul_add]
+              change associatedClass F (i + j) (a.1 * (b + d).1) _ =
+                associatedClass F (i + j) (a.1 * b.1) _ +
+                  associatedClass F (i + j) (a.1 * d.1) _
+              simp only [associatedClass]
+              rw [← Submodule.Quotient.mk_add]
+              congr 1
+              ext
+              simp [mul_add]
 
 private theorem associatedClass_sigma_eq {i j : ℕ} (hij : i = j)
     {a b : R} (hab : a = b) (ha : a ∈ F.carrier i)
@@ -171,6 +199,14 @@ theorem associatedLayerMul_assoc (i j k : ℕ)
 /- A genuine graded ring structure on the direct sum of the actual layers.
    `DirectSum.GRing` is noncommutative: its multiplication keeps the order
    `x` followed by `y`. -/
+instance actualAssociatedGradedGOne :
+    GradedMonoid.GOne (fun n : ℕ => associatedLayer F n) where
+  one := associatedOne F
+
+instance actualAssociatedGradedGMul :
+    GradedMonoid.GMul (fun n : ℕ => associatedLayer F n) where
+  mul := fun {i j} x y => associatedLayerMul F i j x y
+
 instance actualAssociatedGradedGRing :
     DirectSum.GRing (fun n : ℕ => associatedLayer F n) where
   mul := fun {i j} x y => associatedLayerMul F i j x y
@@ -200,6 +236,7 @@ instance actualAssociatedGradedGRing :
   natCast_zero := by simp
   natCast_succ := by
     intro n
+    rw [add_nsmul]
     simp [add_comm]
   intCast := fun z => z • associatedOne F
   intCast_ofNat := by
@@ -220,6 +257,7 @@ noncomputable instance actualAssociatedGradedRing :
       DirectSum.of (fun n : ℕ => associatedLayer F n) (i + j)
         (associatedLayerMul F i j x y) := by
   rw [DirectSum.of_mul_of]
+  rfl
 
 end AdditiveFilteredRingData
 
@@ -296,9 +334,11 @@ theorem exists_finset_homogeneous_generators
     apply Submodule.subset_span
     simp only [t, Finset.mem_biUnion, Finset.mem_image]
     have hxs : x ∈ s := by
+      change x ∈ (s : Set (Carrier F))
       rw [← hs]
       exact hx
-    exact ⟨x, hxs, n, hn, rfl⟩
+    exact Finset.mem_biUnion.mpr
+      ⟨x, hxs, Finset.mem_image.mpr ⟨n, hn, rfl⟩⟩
   refine ⟨t, ht_mem, le_antisymm hspan_le hgen_le⟩
 
 /- A chosen representative gives an honest bounded homogeneous Rees term.
@@ -318,8 +358,8 @@ noncomputable def homogeneousReesLift (n : ℕ) (x : associatedLayer F n) :
     (representative F n x) (representative F n x).property
 
 @[simp] theorem homogeneousReesLift_coeff (n : ℕ) (x : associatedLayer F n) :
-    ((homogeneousReesLift F n x : ReesRing
-      (AdditiveFilteredRingData.toNegFiltrationData F) : ReesPolynomial R).coeff n) =
+    (((homogeneousReesLift F n x : ReesRing
+      (AdditiveFilteredRingData.toNegFiltrationData F)) : ReesPolynomial R).coeff n) =
       (representative F n x : R) := by
   change (SkewPolynomial.monomial n (representative F n x : R)).coeff n =
     (representative F n x : R)
@@ -364,17 +404,17 @@ theorem layer_mul {i j : ℕ} {p q : Rees F}
     p * q ∈ layer F (i + j) := by
   intro k
   change SkewMonoidAlgebra.coeff
-    ((p : ReesPolynomial R) * q) (Multiplicative.ofAdd k) ∈ F.carrier (i + j)
+    ((p : ReesPolynomial R) * (q : ReesPolynomial R)) (Multiplicative.ofAdd k) ∈
+      F.carrier (i + j)
   rw [SkewMonoidAlgebra.coeff_mul]
   apply (F.carrier (i + j)).sum_mem
   intro a ha
   apply (F.carrier (i + j)).sum_mem
   intro b hb
-  split_ifs
-  · change (p : ReesPolynomial R).coeff a.toAdd *
-      (q : ReesPolynomial R).coeff b.toAdd ∈ F.carrier (i + j)
+  by_cases hab : a * b = Multiplicative.ofAdd k
+  · simp [hab]
     exact F.mul_mem (hp a.toAdd) (hq b.toAdd)
-  · exact F.zero_mem (i + j)
+  · simp [hab]
 
 /-- Finite polynomial support supplies an actual natural-number bound.
 No completeness or separatedness hypothesis is needed for this filtration. -/

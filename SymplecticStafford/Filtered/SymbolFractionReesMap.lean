@@ -23,6 +23,8 @@ universe u
 
 noncomputable section
 
+set_option maxRecDepth 2000
+
 open SymplecticStafford
 open SymbolDenominatorSubmonoid
 open SymbolFractionInverse
@@ -103,7 +105,9 @@ private def degreeMap (C : SymbolFractionFiltration.Data R) :
   map_one' := by simp
   map_mul' := by
     intro m n
-    simp [Int.natCast_add, AddMonoidAlgebra.single_mul_single]
+    rw [AddMonoidAlgebra.single_mul_single]
+    congr 1
+    simp [Int.natCast_add]
 
 /-- The ambient coefficient-and-degree map before restricting to bounded
     elements.  The `hcomm` proof uses only multiplication by coefficient `1`
@@ -212,11 +216,22 @@ private theorem ambientMap_coeff_nat
       simp [ambientMap]
   | ha k a q _hns _ha0 ih =>
       rw [(ambientMap C).map_add, ambientMap_monomial,
-        AddMonoidAlgebra.coeff_add, AddMonoidAlgebra.coeff_single_apply,
-        SkewPolynomial.coeff_add, SkewPolynomial.coeff_monomial]
+        AddMonoidAlgebra.coeff_add, SkewPolynomial.coeff_add,
+        SkewPolynomial.coeff_monomial]
+      rw [show
+        ((AddMonoidAlgebra.single (Int.ofNat k)
+              (C.inverse.localization.numerator a)).coeff +
+            (ambientMap C q).coeff) (Int.ofNat n) =
+          (AddMonoidAlgebra.single (Int.ofNat k)
+              (C.inverse.localization.numerator a)).coeff (Int.ofNat n) +
+            (ambientMap C q).coeff (Int.ofNat n) from rfl,
+        AddMonoidAlgebra.coeff_single_apply]
       by_cases hkn : k = n
-      · simp [hkn, ih, map_add]
-      · simp [hkn, ih, map_add]
+      · subst n
+        simp [map_add]
+        exact ih
+      · simp [hkn, map_add]
+        exact ih
 
 theorem ambientMap_injective
     (C : SymbolFractionFiltration.Data R) :
@@ -304,6 +319,7 @@ private theorem sourceHomogeneousDenominator_mul
       (Multiplicative.ofAdd (C.inverse.denominator_degree (s * t)))
       ((s * t : C.inverse.localization.denominators) : R)
   rw [SkewMonoidAlgebra.single_mul_single]
+  change SkewMonoidAlgebra.single _ ((s : R) * (t : R)) = _
   simp [denominator_degree_mul C s t]
 
 private theorem sourceHomogeneousDenominator_one
@@ -315,7 +331,7 @@ private theorem sourceHomogeneousDenominator_one
       (C.inverse.denominator_degree
         (1 : C.inverse.localization.denominators)) (1 : R) = 1
   rw [denominator_degree_one C]
-  simp
+  exact SkewPolynomial.C_1
 
 /- The selected source terms form a genuine monoid map.  Its multiplicativity
    uses the actual selected-degree theorem above, rather than a closure
@@ -325,7 +341,7 @@ noncomputable def sourceHomogeneousDenominatorMonoidHom
     C.inverse.localization.denominators →* SourceReesRing C where
   toFun := sourceHomogeneousDenominator C
   map_one' := sourceHomogeneousDenominator_one C
-  map_mul' := sourceHomogeneousDenominator_mul C
+  map_mul' := fun s t => (sourceHomogeneousDenominator_mul C s t).symm
 
 theorem map_sourceHomogeneousDenominator
     (C : SymbolFractionFiltration.Data R)
@@ -362,7 +378,7 @@ theorem map_homogeneous_coeff
   change (AddMonoidAlgebra.single (Int.ofNat n)
       (C.inverse.localization.numerator a)).coeff (Int.ofNat n) =
     C.inverse.localization.numerator a
-  simp
+  exact Finsupp.single_eq_same
 
 end SymbolFractionReesMap
 
