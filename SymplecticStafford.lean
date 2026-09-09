@@ -38,6 +38,7 @@ import SymplecticStafford.Filtered.FullSymbolFilteredChart
 import SymplecticStafford.Filtered.FullSymbolLocalization
 import SymplecticStafford.Filtered.CommutativeFullSymbol
 import SymplecticStafford.Filtered.ReesNoetherianCriterion
+import SymplecticStafford.Filtered.ReesModuleNoetherianBoundary
 import SymplecticStafford.Filtered.WeightedDetection
 import SymplecticStafford.Filtered.WeightedFaithfulBoundary
 import SymplecticStafford.Filtered.WeightedMatrixInverse
@@ -47,6 +48,7 @@ import SymplecticStafford.Filtered.FiniteSupportDetection
 import SymplecticStafford.Filtered.FiniteSupportQuotient
 import SymplecticStafford.Filtered.OriginalCentralSupport
 import SymplecticStafford.Filtered.CentralField
+import SymplecticStafford.Filtered.ActualClassSupport
 import SymplecticStafford.Filtered.RingFiltrationBridge
 import SymplecticStafford.Filtered.AssociatedLayerRing
 import SymplecticStafford.Source.Assembly
@@ -61,6 +63,7 @@ import SymplecticStafford.FiniteLength.InfiniteMultiplicityBoundary
 import SymplecticStafford.FiniteLength.FiniteOrbitPencil
 import SymplecticStafford.FiniteLength.DerivedOrbitPencil
 import SymplecticStafford.FiniteLength.JacobsonScalarExtension
+import SymplecticStafford.FiniteLength.ExplicitBlocks
 import SymplecticStafford.Induction.StrongPh
 import SymplecticStafford.Induction.FiniteIndex
 import SymplecticStafford.Induction.TestRetention

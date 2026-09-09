@@ -67,6 +67,8 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `FullSymbolRightPowerBridge`, `WeightedMatrixInverse`,
 `WeightedDetectionComposition`, `CentralField`, `JacobsonScalarExtension`,
 `FiniteScalarAvoidance`, `CharacteristicSupportFiniteProducer`,
+`ActualClassSupport`, `FullSymbolFilteredChart`, `ReesModuleNoetherianBoundary`,
+`ExplicitBlocks`, `FiniteRemovalRetentionBridge`,
 `SuccessorObstruction`, `SupportRemovalArithmetic`, `DifferentialOreDescent`,
 `OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
 `Package/TerminalBoundary`,
@@ -98,6 +100,19 @@ consumer with indexed original-ring expansions
 (`CharacteristicSupportFiniteProducer`). These declarations remain
 conditional on the corresponding geometric/localization inputs and do not
 promote any M01–M11 gate.
+
+The subsequent 2026-09-09 wave adds an actual filtered-layer class/support
+bridge (`ActualClassSupport`), finite full-symbol chart control
+(`FullSymbolFilteredChart`), a module Noetherianity criterion and explicit
+sequence-ring obstruction (`ReesModuleNoetherianCriterion` and
+`ReesModuleNoetherianBoundary`), bounded below-one inverse data and a diagonal
+negative-degree matrix obstruction (`WeightedMatrixInverse` and
+`WeightedInverseBoundary`), explicit finite composition/division/matrix block
+consumers (`ExplicitBlocks`), certified nonzero original-U source selection
+(`DivisionLLDList` and `OriginalDivisionProducer`), and indexed
+support-removal/test-retention consumption (`FiniteRemovalRetentionBridge`).
+Each is kernel-checked with an independent oracle; the universal geometric
+constructions and M01–M11 phase gates remain open.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper

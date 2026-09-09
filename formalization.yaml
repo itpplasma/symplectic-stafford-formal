@@ -42,7 +42,12 @@ project:
     weighted-detection composition after a nilpotent correction, a concrete
     central-field filtered-algebra interface, Jacobson scalar-extension top
     comparison, finite scalar bad-set avoidance, and indexed finite-colon
-    characteristic-support consumption. General
+    characteristic-support consumption, an actual filtered-layer class/support
+    bridge, finite full-symbol chart control, a module Noetherianity criterion
+    with a sequence-ring obstruction, bounded below-one inverse data and a
+    diagonal negative-degree matrix boundary, explicit finite composition and
+    block consumers, certified nonzero original-U source selection, and indexed
+    support-removal/test-retention consumption. General
     finite-length activated pencils and the universal
     source producer remain open. It does not claim
     the universal higher-dimensional source-selection or same-divisor theorem
@@ -148,7 +153,11 @@ status:
     weighted-matrix inverse, finite right-localized common denominators,
     weighted-detection composition, central-field filtered algebra,
     Jacobson scalar extension, finite scalar avoidance,
-    finite-colon characteristic support, filtered, source-assembly, support-union,
+    finite-colon characteristic support, actual filtered class support,
+    finite full-symbol chart control, module Noetherian descent and its
+    sequence-ring boundary, bounded inverse-degree data, explicit finite blocks,
+    certified nonzero source selection, indexed removal/retention, filtered,
+    source-assembly, support-union,
     and strong-P_h declarations listed in the project plan compile and have
     independent consumers where recorded. The filtered, source-selection,
     assembly, support-union, and induction files are conditional scaffolds;
@@ -237,7 +246,10 @@ fidelity:
     `WeightedDetectionComposition`, `JacobsonScalarExtension`,
     `FiniteScalarAvoidance`, and `CharacteristicSupportFiniteProducer` remain
     conditional consumers of their geometric, top-comparison, finite-set, and
-    indexed-generator hypotheses.
+    indexed-generator hypotheses. `ActualClassSupport`,
+    `FullSymbolFilteredChart`, and `ExplicitBlocks` likewise consume explicit
+    filtered-class, localization, or block data; the sequence-ring module
+    records a genuine obstruction rather than a universal hypothesis.
 
 review:
   status: "agent-reviewed"
@@ -254,8 +266,10 @@ review:
     ring-filtration-layer, right-module localization, ordered common-colon-
     producer, two-call descent, weighted-matrix inverse, terminal assembly and
     differential-Ore, finite common-denominator, weighted-composition,
-    central-field, Jacobson scalar-extension, finite-scalar-avoidance and
-    finite-colon characteristic-support boundary utilities. The local Palomar comparator,
+    central-field, Jacobson scalar-extension, finite-scalar-avoidance,
+    finite-colon characteristic-support, actual-class-support,
+    full-symbol-chart, module-Noetherian, bounded-inverse, explicit-block,
+    certified-source and removal/retention boundary utilities. The local Palomar comparator,
     NanoDa and Lean-kernel replay passes for the semantic Challenge/Solution
     pair, but is not universal-theorem or release evidence. The bounded
     Fable/Claude paper audit found no invalid bridge in the written candidate;

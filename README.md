@@ -32,8 +32,15 @@ families, a central-field filtered-algebra interface, weighted-detection
 composition after nilpotent correction, Jacobson scalar-extension top
 comparison, finite scalar bad-set avoidance, and an indexed finite-colon
 characteristic-support consumer. These too remain conditional utilities with
-explicit hypotheses. The
-general finite-length activated-pencil and universal original-U source
+explicit hypotheses.
+The next wave adds an actual filtered-layer class/support bridge, finite
+full-symbol chart control, a module Noetherianity criterion with a
+sequence-ring obstruction, bounded below-one inverse data and a diagonal
+negative-degree matrix boundary, explicit finite block consumers, certified
+nonzero original-U source selection, and indexed support-removal/test-retention
+consumption. These remain conditional utilities and independent boundary
+evidence; the universal M01–M11 producer is still open.
+The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion
 paper. The source-selection, filtered-localization, assembly, and terminal

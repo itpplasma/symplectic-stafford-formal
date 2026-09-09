@@ -101,3 +101,32 @@ original-U simultaneous source. The integrated replay produced a successful
 `lake build SymplecticStafford` (8,792 jobs), and both phase scripts plus
 `verify-palomar.sh` passed their documented checkpoint checks after the
 integration. `release-gates.yaml` remains fail-closed.
+
+## Second follow-up lanes
+
+The continued 2026-09-09 run added these further bounded commits:
+
+- `0bae355` — `ActualClassSupport`, linking a genuine filtered-layer quotient
+  to the `Module.support` boundary and the `WithBot`/integer-defect interface.
+- `c56af2e` — `FullSymbolFilteredChart`, combining supplied right-Ore
+  localization and finite Rees bounds into finite chart control and literal
+  original-ring cofactors.
+- `17acdc5` — a terminating filtered-module Noetherianity criterion;
+  `27b76ee` — `ReesModuleNoetherianBoundary`, an independent sequence-ring
+  obstruction showing why finite layers alone cannot provide that certificate.
+- `7f528a3` — bounded below-one inverse-degree data and a diagonal
+  negative-degree matrix obstruction for the weighted inverse boundary.
+- `3716891` — `ExplicitBlocks`, consuming explicit finite composition,
+  division-ring and repeated matrix block data for activated pencils.
+- `ca7d89e` — certified nonzero original-U affine source selection, including
+  explicit source-zero scalar avoidance and retained local tests.
+- `4c94659`, `8bff50a` — indexed support-removal/test-retention consumption
+  after one finite scalar choice, with explicit axiom audits.
+
+The controller imported the new modules into `SymplecticStafford.lean` and
+ran every new source/oracle with `lake env lean --trust=0`; all passed with
+axioms restricted to `propext`, `Classical.choice`, and `Quot.sound`. The new
+Noetherian sequence-ring file is deliberately an obstruction, not a project
+axiom. None of these lanes supplies the universal Rees/Ore construction,
+noncommutative block theorem, characteristic-support producer, source
+selection from the paper hypotheses, or terminal Phase-I/II evidence.
