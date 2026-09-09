@@ -272,9 +272,11 @@ closure. The current source audit rejects every project axiom, and no
 registered literature-assumption workflow is implemented by these scripts.
 Both phase commands therefore remain checkpoint verifiers.
 
-The release-readiness script currently validates status labels and the
-`phase`/`result` labels in evidence files. It does not validate the terminal
-statement, required-check results, source identity, or publication authorization.
+The release-readiness script currently validates `publication.enabled`, the
+target, phase/status labels, the `phase`/`result` labels in evidence files,
+and every declared required-check result. It does not validate the terminal
+statement, proof closure, source identity, comparator scope, or publication
+authorization.
 Its success alone cannot justify phase promotion or publication; those
 obligations require the independent evidence review in the release runbook.
 
