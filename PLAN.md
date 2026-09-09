@@ -241,6 +241,23 @@ theorem over `G_{Sigma_p}`; until that and the actual support/localization map
 are proved, M05 feeds no universal M09/M10 construction and both phase gates
 remain open.
 
+The ninth frontier wave records the exact interfaces exposed by that audit.
+`GradedFilteredLength` proves one-step length additivity only when an actual
+filtered quotient is linearly equivalent to the corresponding localized
+graded factor. `GradedLengthFilteredChainBoundary` gives a strict filtered
+submodule whose every induced layer map is surjective, so graded length alone
+cannot establish strict filtered-chain descent without a Zariskian/strictness
+hypothesis. `ReesModuleActionBridge` constructs the honest bounded-Rees module
+action by evaluation at the central value one and explicitly does not identify
+it with the filtered action. `FiniteLengthSourceMapBoundary` shows that finite
+length and a top bridge do not manufacture an original-U source map.
+`WeylHigherDimensionalMonicization` supplies a positive Weyl-only calibration:
+every nonzero presented Weyl element is scalar or has an original-ring monic
+outer representative with a positive-coordinate remainder factorization.
+All five source/oracle pairs are conditional or boundary evidence; they do
+not supply the universal original-U producer, close M01--M11, or promote any
+phase or release gate.
+
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
 claims until the corresponding Lean declarations and audits are complete.

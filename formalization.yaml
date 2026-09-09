@@ -90,7 +90,12 @@ project:
     Rees presentation and a determinant-free finite-central pencil theorem;
     an independent audit identifies the homogeneous-localization versus
     prime-localization length bridge in Part I.5 as the first load-bearing
-    formal gap.
+    formal gap. The ninth frontier adds exact one-step graded-to-filtered
+    length and strict-chain boundaries, an evaluation-at-one Rees module
+    action, a finite-length/source-map boundary, and higher-dimensional Weyl
+    monicization with original-ring remainder factorization; these remain
+    conditional or calibration results and do not close the universal source
+    producer.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -154,7 +159,7 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  commit: "465afeb5d141a788985b1f17e06d73774874acbd"
+  commit: "e603845dc20d23b1a5b09c4a196bce640fa77494"
   report: "not-yet-issued"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/dossier/symplectic-stafford-description.tex"

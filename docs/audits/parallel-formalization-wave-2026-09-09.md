@@ -466,3 +466,40 @@ then completed all 136 trust-disabled oracle files and the Challenge/Solution
 checks. The exact latest triple is now recorded in `lakefile.toml` and
 `lake-manifest.json`; this dependency promotion does not change the open
 universal producer or any phase/release gate.
+
+## Ninth frontier wave: exact length/action/source boundaries and Weyl calibration
+
+The next parallel pass followed the Part I.5 audit and separated the graded,
+Rees-action, source-map, and concrete Weyl questions:
+
+- `cc8e304` — `GradedFilteredLength` proves exact one-step length additivity
+  for an actual filtered submodule only after an `R`-linear equivalence from
+  its quotient to the corresponding (possibly homogeneous-localized) graded
+  factor.
+- `6e845b1` — `GradedLengthFilteredChainBoundary` formalizes a strict
+  upper-degree filtered inclusion whose every induced layer map is surjective.
+  This is a kernel-checked warning that graded length cannot imply strict
+  filtered-chain descent without an additional strictness/Zariskian theorem.
+- `9f642e5` — `ReesModuleActionBridge` constructs evaluation at the central
+  Rees value one and the resulting restriction-of-scalars module action. It
+  explicitly does not identify that action with the filtered action or supply
+  the missing quotient presentation.
+- `a72bfff` — `FiniteLengthSourceMapBoundary` gives a finite-length module and
+  top bridge with a zero original source map, proving that those data alone do
+  not produce a passing original-U affine source.
+- `e603845` — `WeylHigherDimensionalMonicization` supplies a positive
+  higher-dimensional Weyl calibration: every nonzero presented Weyl element is
+  scalar or has an original-ring monic representative in the newest outer
+  variable, with the exact positive-coordinate remainder factorization.
+
+The five source files and their independent oracles pass
+`lake env lean --trust=0`; the complete suite now has 141 passing oracle files,
+and the integrated `lake build SymplecticStafford` completes 8,887 jobs.
+`lake build Challenge`, the trust-disabled `Solution` check, the 314-assertion
+paper regression, and `verify-palomar.sh` (including the Lean-kernel replay)
+also pass. Their theorem closures use only `propext`, `Classical.choice`, and
+`Quot.sound`. These are exact conditional bridges, boundary counterexamples,
+and a Weyl-only division calibration. They do not construct the universal
+homogeneous localization, the finite-length block theorem, strict support
+removal, or the single original-U producer. Phase I, Phase II, Palomar
+registration, and publication therefore remain fail-closed.
