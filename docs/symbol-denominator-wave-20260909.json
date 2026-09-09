@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-09",
+  "base_commit": "6f6c3a063e17ccd622f0bd8447f9df3521d5a221",
+  "tracked_binary_patch_sha256": "a1e7a10198e3abd02a2eb80dac6437e1399c74077b570ac6847ea5e57baa9230",
+  "new_source_sha256": {
+    "SymplecticStafford/Filtered/SymbolDenominatorSubmonoid.lean": "3943cec45be94ae0a188476143e5ea54a476ddadc81a203b327be45923b30295",
+    "tests/SymbolDenominatorSubmonoidOracle.lean": "c6af62a251df8830a95f5ce12be5fcb600b8dc9e27627a712f5d240fdcb6a5f5"
+  },
+  "implementation": "Luna xhigh; independent Luna-xhigh review PASS",
+  "scope": "Construct symbol-selected original-ring submonoid, zero exclusion, least selected degree and degree additivity, and lower-order subtraction via quotient equality. Paper-specific symbols, Ore property, degree-controlled fraction filtration and Zariskian comparison remain open.",
+  "review": "PASS: no invalid bridge in stated generic scope. Arbitrary admissible-witness minimum and perturbation degree equality are derivable but not exported here.",
+  "checks": {
+    "scripts/verify.sh --phase-ii": "PASS: root build, source/dependency checks, seven foundation-only endpoints, all 169 behavioral files with trust=0",
+    "axioms": "propext, Classical.choice, Quot.sound",
+    "dossier": "Build PASS; first page inspected; 80 links,78 internal; no undefined references",
+    "git diff --check": "PASS"
+  },
+  "log_sha256": {
+    ".lake/luna-wave-20260909/symbol-denominator-phase-ii.log": "68401fb0f70ec0e82824b92feab5b8ae9c460eb8780a3c57f10619f7ecf395fc",
+    ".lake/luna-wave-20260909/symbol-denominator-axioms.log": "47a4304035b77d1056f988c607d62a9de3f93e6009324baa4c01b15e6995a3ec",
+    ".lake/luna-wave-20260909/symbol-denominator-consumers.log": "16993a57d9d0c93670a0e9dad6c86c54f2d5a14658e3aa155c5844c2b47728ba",
+    ".lake/luna-wave-20260909/symbol-denominator-dossier.log": "2352432bf034ded81f778bcb7f5f5f8f854c70901776ab34fd77ac6a10f31c72"
+  },
+  "freeze_note": "Receipt excluded from patch hash; later unregistered worker candidates excluded. Initial gate exited143 without compiler diagnostics; clean retry passed.",
+  "palomar": "Bounded Challenge/Solution unchanged from prior passing official comparator. Universal release gates remain pending; no publication."
+}

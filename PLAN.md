@@ -34,8 +34,8 @@ repositories and one controller. Each worker owns disjoint source/test files;
 only the controller changes root imports, PLAN, proof graphs, evidence receipts,
 and release gates. Workers return source and evidence without committing,
 pushing, publishing, or promoting state. Integrate each checked producer promptly.
-Use Sol low for the first independent mathematical/statement review; escalate a
-suspect inference through the remaining ladder, with Astra low or medium for
+Start fresh independent mathematical/statement reviews with Luna xhigh as well;
+escalate a suspect inference through Sol low, Sol medium, then Astra low or medium for
 unresolved mathematical composition. Drafting may precede review, but integration
 and readiness require the checks below.
 
@@ -482,3 +482,18 @@ Its current replay evidence is `docs/ideal-quotient-wave-20260909.json`.
 The next M08 step is the actual identification of common-colon
 characteristic modules with these quotients. No universal M08 obligation,
 project phase, or public release gate is promoted.
+
+## Symbol-selected denominator producer
+
+`Filtered/SymbolDenominatorSubmonoid.lean` constructs an original-ring
+submonoid from multiplicative, nonzero subsets of the actual associated
+layers of an additive filtered ring. It proves selected-degree additivity
+and stability under lower-order subtraction by equality of quotient
+classes. The oracle uses the ordinary degree filtration on `ℚ[X]` and
+compares the nonzero top classes of `X²-X` and `X²`.
+
+This is the first construction for the localized-filtration repair. The
+paper's particular symbol family, Ore property, degree-controlled fraction
+filtration, and degree-zero inverse membership remain open. No M05 or
+universal release gate is promoted. Review and replay evidence are recorded
+in `docs/symbol-denominator-wave-20260909.json`.
