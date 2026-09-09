@@ -40,6 +40,12 @@ negative-degree matrix boundary, explicit finite block consumers, certified
 nonzero original-U source selection, and indexed support-removal/test-retention
 consumption. These remain conditional utilities and independent boundary
 evidence; the universal M01–M11 producer is still open.
+The latest bounded universal-attempt wave adds checked boundaries for the
+proposition-only M01 labels, the A1 principal-open/power-Ore shortcut, and the
+gap from genuine Ore localization to bounded inverse degrees; it also adds an
+isotypic repeated-division-ring block contract, a source theorem from genuine
+finite top bridges, and a source-dependent support-removal obstruction. These
+commitments sharpen the missing hypotheses without claiming universal closure.
 The general finite-length activated-pencil and universal original-U source
 producer remain open. It deliberately
 does not claim the universal higher-dimensional theorem from the companion

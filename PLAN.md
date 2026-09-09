@@ -71,6 +71,8 @@ data. `SupportDimension`, `RightIdealBridge`, `CharacteristicSupport`,
 `ExplicitBlocks`, `FiniteRemovalRetentionBridge`,
 `SuccessorObstruction`, `SupportRemovalArithmetic`, `DifferentialOreDescent`,
 `OriginalTestProducerBoundary`, `OriginalDivisionProducer`,
+`M01StructuralBoundary`, `PowerOreA1Obstruction`,
+`FullSymbolWeightedBoundary`, `IsotypicBlocks`, `LayerSupportObstruction`,
 `Package/TerminalBoundary`,
 `Package/TerminalObstruction`, and `Package/Opposite` expose explicit
 hypotheses and preserve the same boundary. M01–M11 remain open.
@@ -113,6 +115,19 @@ consumers (`ExplicitBlocks`), certified nonzero original-U source selection
 support-removal/test-retention consumption (`FiniteRemovalRetentionBridge`).
 Each is kernel-checked with an independent oracle; the universal geometric
 constructions and M01–M11 phase gates remain open.
+
+The later bounded universal-attempt wave adds checked boundary evidence:
+`M01StructuralBoundary` and the historical-label/sequence-ring obstruction
+show that the current proposition-only class is not a structural filtered
+algebra; `PowerOreA1Obstruction` gives the coefficient-left A1 counterexample
+to the principal-open-to-power-Ore shortcut; `FullSymbolWeightedBoundary`
+shows actual Ore localization does not by itself provide bounded inverse
+degrees; `IsotypicBlocks` consumes repeated division-ring block data while
+exposing the missing finite bad-set theorem; `OriginalDivisionProducer` now
+derives a single source from genuine finite top bridges; and
+`LayerSupportObstruction` isolates the missing source-dependent strict support
+removal. These are independently checked obstructions or conditional
+consumers, not a universal producer or phase promotion.
 
 The paper candidate is in the sibling `symplectic-stafford` repository at
 commit `502b65a1dea53cac52220a08e321bfba525bc72e`. Its claims remain paper
