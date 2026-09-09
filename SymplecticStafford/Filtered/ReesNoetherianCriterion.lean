@@ -76,8 +76,68 @@ theorem isNoetherianRing (C : ReesNoetherianCertificate A) : IsNoetherianRing A 
 
 end ReesNoetherianCertificate
 
+/-! A module-level version is needed for good Rees subquotients.  It has the
+same strict reduction interface, but ranges over actual `Submodule`s and
+uses additive subtraction in the module. -/
+
+structure ReesModuleNoetherianCertificate (A : Type u) (M : Type u)
+    [Ring A] [AddCommGroup M] [Module A M] where
+  degree : M → Nat
+  generators : ∀ N : Submodule A M, Finset M
+  generators_mem : ∀ (N : Submodule A M) {x : M},
+    x ∈ generators N → x ∈ N
+  /-- One strict filtered reduction for every nonzero submodule element. -/
+  reduce : ∀ (N : Submodule A M) (x : M), x ∈ N → x ≠ 0 →
+    ∃ y : M, y ∈ N ∧ degree y < degree x ∧
+      x - y ∈ Submodule.span A (generators N : Set M)
+
+namespace ReesModuleNoetherianCertificate
+
+variable {A M : Type u} [Ring A] [AddCommGroup M] [Module A M]
+  (C : ReesModuleNoetherianCertificate A M)
+
+private theorem mem_span_of_degree (N : Submodule A M) :
+    ∀ x : M, x ∈ N → x ∈ Submodule.span A (C.generators N : Set M) := by
+  intro x hx
+  induction h : C.degree x using Nat.strong_induction_on generalizing x with
+  | h n ih =>
+      by_cases hzero : x = 0
+      · subst x
+        exact Submodule.zero_mem _
+      · obtain ⟨y, hyN, hyd, hxy⟩ := C.reduce N x hx hzero
+        have hyd' : C.degree y < n := by simpa [h] using hyd
+        have hy : y ∈ Submodule.span A (C.generators N : Set M) :=
+          ih (C.degree y) hyd' y hyN rfl
+        have hxy' : x - y ∈ Submodule.span A (C.generators N : Set M) := hxy
+        have hsum : x = (x - y) + y := by abel
+        rw [hsum]
+        exact (Submodule.span A (C.generators N : Set M)).add_mem hxy' hy
+
+theorem submodule_eq_span_generators (N : Submodule A M) :
+    N = Submodule.span A (C.generators N : Set M) := by
+  apply le_antisymm
+  · intro x hx
+    exact mem_span_of_degree C N x hx
+  · exact Submodule.span_le.2 (fun x hx => C.generators_mem N hx)
+
+theorem submodule_fg (C : ReesModuleNoetherianCertificate A M)
+    (N : Submodule A M) : N.FG := by
+  rw [submodule_eq_span_generators C N]
+  exact Submodule.fg_span (C.generators N).finite_toSet
+
+/-- A strict finite-generator reduction certificate proves Noetherianity of
+the actual module, including every good submodule as a finite module. -/
+theorem isNoetherianModule (C : ReesModuleNoetherianCertificate A M) :
+    IsNoetherian A M := by
+  exact ⟨fun N => submodule_fg C N⟩
+
+end ReesModuleNoetherianCertificate
+
 end SymplecticStafford.Filtered
 
 #print axioms SymplecticStafford.Filtered.ReesNoetherianCertificate.ideal_eq_span_generators
 #print axioms SymplecticStafford.Filtered.ReesNoetherianCertificate.ideal_fg
 #print axioms SymplecticStafford.Filtered.ReesNoetherianCertificate.isNoetherianRing
+#print axioms SymplecticStafford.Filtered.ReesModuleNoetherianCertificate.submodule_eq_span_generators
+#print axioms SymplecticStafford.Filtered.ReesModuleNoetherianCertificate.submodule_fg
+#print axioms SymplecticStafford.Filtered.ReesModuleNoetherianCertificate.isNoetherianModule
