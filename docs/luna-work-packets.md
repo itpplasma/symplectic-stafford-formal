@@ -169,3 +169,16 @@ Sol-low review and the full local Palomar verification script. Full
 checkpoint and behavioral-test results are frozen separately in
 `luna-wave-20260909.json`. These are bounded results; all M01--M11 terminal
 obligations and public release gates remain open.
+
+## Active draft batch — checks deferred by user
+
+Write the complete source batch before the consolidated build/repair pass.
+`SymbolFractionReesMap.lean` is the Luna-xhigh source-map packet: actual
+original Nat-indexed Rees ring into the integer Laurent Rees ring.
+`SymbolFractionReesLocalization.lean` is the separate Luna-xhigh packet:
+combine that map with support_right_clear to reconstruct an original Rees
+numerator after one right homogeneous denominator. Coordinate the map API.
+Neither packet may assume the desired representation or Noetherianity.
+The filtration, Jacobson, Rees units and support-clearance sources have
+independent reviews and targeted kernel evidence. Full-wave verification
+remains deferred; do not infer universal M01–M11 or release closure.

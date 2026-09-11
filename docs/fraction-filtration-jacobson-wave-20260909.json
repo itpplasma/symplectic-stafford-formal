@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-09",
+  "base_commit": "5dace7c4f48c5dd99ca65d02fa1efce063b1b34f",
+  "tracked_binary_patch_sha256": "feb5930fa60061fa4537f288868548dcf9e47217fe189cf59f6935abd50b0d55",
+  "new_source_sha256": {
+    "SymplecticStafford/Filtered/SymbolFractionFiltration.lean": "52d0df16eb6bc4c629c7872250805fea2f8443794fc55b68ae3888d2561648b0",
+    "SymplecticStafford/Filtered/SymbolFractionJacobson.lean": "5ce41a7dc46e29767d005cf839426bccfa2389fc0c1f5f4219352dc1d2ed41e9",
+    "tests/SymbolFractionJacobsonOracle.lean": "976d25c75bd429b1810a258cba43b819c7b0983067a7e88a3fe7c0d9d917c85b",
+    "SymplecticStafford/Filtered/SymbolFractionRees.lean": "12ec233e3aaa2fe8190f1451479bba84e6d2e948f284f7c5e63e74e2e35044b7",
+    "tests/SymbolFractionReesOracle.lean": "4671295738cf4d9c3ae17d1f4f047b079d580bceb42453c8d5061e21bde8c153",
+    "SymplecticStafford/Filtered/SymbolFractionReesClearance.lean": "2ae565f15d2ac923687cbf43a1d90b6e265fb4d03fc6364d2b04db951b79fd40"
+  },
+  "scope": "Actual integer-indexed right-fraction filtration, degree-zero subring, explicit two-sided inverse for one minus a negative-degree element, and degree-minus-one ideal containment in the Jacobson radical. Selected-symbol Ore and layer regularity remain hypotheses. Actual Laurent Rees subring and two-sided homogeneous denominator units. One selected common right homogeneous denominator clears all nonzero Laurent coefficients, preserving the integer degree bound.",
+  "review": "Independent Luna-xhigh PASS for both production files; controller reviewed the independent polynomial oracle. Rees production independently reviewed Luna-xhigh PASS at SHA12ec233e3aaa2fe8190f1451479bba84e6d2e948f284f7c5e63e74e2e35044b7; controller repaired and reviewed the concrete opposite-degree polynomial oracle after worker usage interruption. Independent Luna-xhigh PASS for support_right_clear at SHA2ae565f15d2ac923687cbf43a1d90b6e265fb4d03fc6364d2b04db951b79fd40 and two-term opposite-degree oracle at SHA4671295738cf4d9c3ae17d1f4f047b079d580bceb42453c8d5061e21bde8c153.",
+  "checks": {
+    "targeted_sources_and_root": "PASS direct cached trust=0; final root includes Rees and final named polynomial oracle endpoints checked.",
+    "axiom_closure": "PASS all 20 registered phase-II endpoints foundations only, exact project_lean local-root precedence.",
+    "oracle": "PASS at final tests path; nonzero 1/X, both subtype inverse orientations and Jacobson plus-sign calibration",
+    "dossier": "PASS; all build-manifest input hashes match; 80 link annotations; first page inspected",
+    "full_phase_ii_verifier": "Pending unchanged full gate under 512 MiB/8 GiB watchdog; 173 consumers and 21 registered endpoints required.",
+    "git diff --check": "PASS",
+    "homogeneous_clearance": "PASS direct Lean trust=0 and independent source/oracle review; nonzero support restriction is essential."
+  },
+  "log_sha256": {
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-source.log": "f7c1cd62540d752d27aac38592f3bf333ad805bfa574142fee8800c13c7c6329",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-root.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-axioms.log": "c72a824381155658352d91f2080b06970e3c081923e9da44f07a37616c6601c8",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-oracle.log": "7a88debf6f39aab7fd1e6f55d5e8e2e0f5a115e8b1d6d0ae28a86df16e150bce",
+    ".lake/luna-wave-20260909/fraction-filtration-jacobson-dossier.log": "0890238db5b200ccaf56c3d9a8e9c38fff4d519bff7fd3f88b95bf4d57f08173",
+    ".lake/luna-wave-20260909/SymbolFractionRees-root-replay.log": "9051b8b89b40a4dff853d7b7207ce6403ac206e47cbb2cf7aeb4869ba6f1b56b",
+    ".lake/luna-wave-20260909/SymbolFractionReesOracle-final-replay.log": "1aa9f0337dc9ba8f42940b0a22cb211cd93b9e98f8efc2554771708bbedee661",
+    ".lake/luna-wave-20260909/SymplecticStafford-final-replay.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".lake/luna-wave-20260909/ReesClearance-trust0.log": "0beacb4d96eec6044275dfca29b15cad8bc9e79bfc153d55b6c6b26e3c60cd60"
+  },
+  "nonclaims": "No Noetherian Rees/localization comparison, universal M01-M11 closure, or new submission-readiness claim.",
+  "freeze_note": "Receipt excluded from tracked patch digest. Future ReesClearance worker candidate excluded. Early audit wrapper allowed dependency Solution to shadow local Solution and failed; final replay uses exact project_lean precedence and passes.",
+  "next": "Construct actual homogeneous Rees localization comparison and its Noetherian transfer prerequisites."
+}
