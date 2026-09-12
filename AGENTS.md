@@ -25,3 +25,19 @@ Sol/Astra review stopped at the missing comparison with the paper's
 parameter-quotient/module subquotient: nonzero localized numerators do not by
 themselves survive that quotient. Keep this draft and the bounded M01 consumer
 out of universal readiness claims.
+
+## Proof-source provenance and goal mode
+
+Read `docs/proof-source-provenance.md` before dispatching work. The exact
+all-dimensional paper candidate lives in `itpplasma/symplectic-stafford` at the
+paper commit recorded in its `PLAN.md`. Follow its explicit read order:
+terminal proof index, all-dimensional proof and Parts I–III, current proof
+graph, then closure-decision note. The historical `docs/proof.md` is not the
+terminal proof.
+
+M01–M11 are formalization obligations for that written candidate, not prompts
+for independent theorem search. Implement the first paper-proved missing
+producer on the terminal path exactly as stated. Avoid conditional adapters or
+stronger generalizations unless the paper requires them. After one serious Luna
+failure on a nontrivial paper inference, freeze that exact target and proof
+passage for escalation rather than starting a parallel research programme.
