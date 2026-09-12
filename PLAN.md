@@ -139,6 +139,20 @@ unsupported project bridge remains the paper-specific filtered
 algebra/module-to-homogeneous-localization comparison and faithful homogeneous
 survival; this draft does not promote M01–M11 or either phase gate.
 
+The unimported `Filtered/M05SelectedSourceSurvivalProducer.lean` draft now
+packages the selected-source endpoint supported by the existing carriers: a
+least filtration layer, nonzero associated class, nonzero homogeneous Rees
+lift, nonzero numerator in the actual selected localization, and source-map
+compatibility. Its independent `X^2` polynomial oracle passes. Sol's static
+review found no source-level defect, and Astra's one-shot review identifies the
+exact stop: the draft proves survival only in the localized Rees carrier, not
+after quotienting by the Rees parameter or passing to the paper module
+subquotient. The missing inputs are a paper-compatible homogeneous-localization
+comparison and a nonzero graded quotient-survival theorem; the example
+`k[t,t⁻¹]/(t−1)` shows that the unrestricted inference is false. No further
+escalation is made on this seam; the pinned dependency cache is also absent,
+so neither draft is promoted to replayed evidence.
+
 Dispatch base: `deadec7`.
 
 The symbol-selected denominator, inverse and regular-symbol degree producers are committed and verified. The working-tree continuation constructs the actual integer fraction filtration, degree-zero subring and degree-minus-one Jacobson inclusion; targeted kernel checks and independent reviews passed, with the concrete nonzero polynomial subtype/orientation oracle compiled and full replay still pending. The actual Laurent Rees subring and both homogeneous denominator inverse orientations are now constructed in `SymbolFractionRees.lean`, independently reviewed and kernel checked. The nonzero polynomial Rees oracle checks opposite degrees and both multiplication orders. `SymbolFractionReesClearance.lean` now constructs one common right homogeneous denominator for the finite nonzero coefficient support, with integer degree bounds preserved; independent review and trust-disabled checking passed. The two-term oracle checks the shifted degrees directly. Next prioritize the actual original-Rees source map and homogeneous localization comparison, Noetherianity/strictness and filtered/localized length transfer for M05. In parallel, construct the structural associated-graded/Rees producer needed by that repair. M06–M07 arbitrary division-block activation and M09–M10 original-U source/test retention need separate proofs. Stop recycling conditional interfaces or Weyl calibrations as universal advances.

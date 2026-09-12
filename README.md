@@ -124,6 +124,15 @@ transport. Its companion oracle is included, but the draft is unchecked because
 the pinned dependency cache is absent. It does not supply the paper-specific
 filtered algebra/module comparison or faithful homogeneous survival.
 
+The unimported `Filtered/M05SelectedSourceSurvivalProducer.lean` draft adds
+the selected-source boundary: least-layer selection, a nonzero homogeneous
+Rees lift, a nonzero numerator in the actual selected localization, and exact
+source-map compatibility. Its independent `X^2` oracle passes. It does not
+prove survival after the Rees-parameter quotient or in the paper module
+subquotient; Astra's review records the missing homogeneous-localization
+comparison and graded quotient-survival theorem, with the Laurent
+`k[t,t⁻¹]/(t−1)` counterexample to an unrestricted inference.
+
 The eleventh frontier adds a conditional filtered/localized associated-graded
 chain-transfer bridge, finite algebraic Rees specialization, a finite
 original-coefficient source package, arbitrary outer-monic Weyl division, and
