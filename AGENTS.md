@@ -18,4 +18,7 @@
 M01–M11 and both phase gates remain open. The integrated M05 source-localization
 adapter is conditional; its first missing bridge is the paper-specific
 filtered algebra/module comparison with homogeneous localization and faithful
-homogeneous survival. Keep bounded adapters out of universal readiness claims.
+homogeneous survival. The unimported `M01FiniteHomogeneousReesProducer.lean`
+is a bounded least-layer/Rees-symbol consumer and is currently unchecked behind
+the missing pinned dependency cache. Keep bounded adapters out of universal
+readiness claims.

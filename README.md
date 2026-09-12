@@ -117,6 +117,13 @@ formula. Its oracle retains the concrete opposite-degree Laurent-Rees inverse
 calculation. This is still below the paper-specific filtered
 algebra/module-to-homogeneous-localization comparison and does not close M05.
 
+The unimported `Filtered/M01FiniteHomogeneousReesProducer.lean` draft selects
+the least filtration layer of a nonzero element and exposes its nonzero actual
+associated/Rees symbol together with multiplicative coefficient-symbol
+transport. Its companion oracle is included, but the draft is unchecked because
+the pinned dependency cache is absent. It does not supply the paper-specific
+filtered algebra/module comparison or faithful homogeneous survival.
+
 The eleventh frontier adds a conditional filtered/localized associated-graded
 chain-transfer bridge, finite algebraic Rees specialization, a finite
 original-coefficient source package, arbitrary outer-monic Weyl division, and

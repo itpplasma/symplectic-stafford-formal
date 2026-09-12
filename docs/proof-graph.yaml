@@ -90,9 +90,11 @@
         "SymplecticStafford/Filtered/SymbolFractionFiltration.lean",
         "SymplecticStafford/Filtered/SymbolFractionRees.lean",
         "SymplecticStafford/Filtered/SymbolFractionReesClearance.lean",
-        "SymplecticStafford/Filtered/SymbolFractionJacobson.lean"
+        "SymplecticStafford/Filtered/SymbolFractionJacobson.lean",
+        "SymplecticStafford/Filtered/M01FiniteHomogeneousReesProducer.lean",
+        "tests/M01FiniteHomogeneousReesProducerOracle.lean"
       ],
-      "continuation_scope": "Twelfth-wave conditional finite Rees cofactor assembly, quantitative filtered-chain length, and prime-versus-homogeneous localization boundary, plus thirteenth-wave dependency, bounded slice-algebraization, and concrete Weyl M01 calibration evidence."
+      "continuation_scope": "Twelfth-wave conditional finite Rees cofactor assembly, quantitative filtered-chain length, and prime-versus-homogeneous localization boundary, plus thirteenth-wave dependency, bounded slice-algebraization, and concrete Weyl M01 calibration evidence. The new unimported M01 producer selects a least filtration layer, exposes a nonzero actual homogeneous Rees lift and coefficient-symbol multiplication law, and remains unchecked because the pinned dependency cache is absent; it does not supply the paper-specific filtered algebra/module comparison or faithful homogeneous survival."
     },
     {
       "id": "assembly-scaffold",

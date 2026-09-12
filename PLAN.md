@@ -129,6 +129,16 @@ strictness or faithful homogeneous survival, remains the first unsupported
 M05 bridge. The Luna backend attempt failed before output, so no escalation or
 phase promotion is claimed.
 
+The unimported `Filtered/M01FiniteHomogeneousReesProducer.lean` draft adds the
+next bounded M01 consumer: from an exhaustive additive filtration and a
+nonzero element it selects the least layer, produces a nonzero associated
+class and actual homogeneous Rees lift, and transports its coefficient symbol
+through multiplication. Its companion oracle is present but neither file has
+been kernel-replayed because the pinned dependency cache is absent. The first
+unsupported project bridge remains the paper-specific filtered
+algebra/module-to-homogeneous-localization comparison and faithful homogeneous
+survival; this draft does not promote M01–M11 or either phase gate.
+
 Dispatch base: `deadec7`.
 
 The symbol-selected denominator, inverse and regular-symbol degree producers are committed and verified. The working-tree continuation constructs the actual integer fraction filtration, degree-zero subring and degree-minus-one Jacobson inclusion; targeted kernel checks and independent reviews passed, with the concrete nonzero polynomial subtype/orientation oracle compiled and full replay still pending. The actual Laurent Rees subring and both homogeneous denominator inverse orientations are now constructed in `SymbolFractionRees.lean`, independently reviewed and kernel checked. The nonzero polynomial Rees oracle checks opposite degrees and both multiplication orders. `SymbolFractionReesClearance.lean` now constructs one common right homogeneous denominator for the finite nonzero coefficient support, with integer degree bounds preserved; independent review and trust-disabled checking passed. The two-term oracle checks the shifted degrees directly. Next prioritize the actual original-Rees source map and homogeneous localization comparison, Noetherianity/strictness and filtered/localized length transfer for M05. In parallel, construct the structural associated-graded/Rees producer needed by that repair. M06–M07 arbitrary division-block activation and M09–M10 original-U source/test retention need separate proofs. Stop recycling conditional interfaces or Weyl calibrations as universal advances.
