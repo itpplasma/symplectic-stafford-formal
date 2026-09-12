@@ -12,3 +12,10 @@
   their prerequisites are present.
 - Keep the proof map and README aligned with the current graph source revision;
   report stale receipts rather than treating them as current-tree evidence.
+
+## Current controller pointer
+
+M01–M11 and both phase gates remain open. The integrated M05 source-localization
+adapter is conditional; its first missing bridge is the paper-specific
+filtered algebra/module comparison with homogeneous localization and faithful
+homogeneous survival. Keep bounded adapters out of universal readiness claims.
