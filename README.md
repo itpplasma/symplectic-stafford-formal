@@ -105,7 +105,9 @@ scaffolds rather than producer proofs.
 The current draft wave also contains the unimported bounded length formula
 `Filtered/FiniteFilteredLengthFormula.lean` with its independent oracle. It is
 evidence for finite-layer arithmetic only; the paper-specific M05
-localization/strictness bridge remains open.
+localization/strictness bridge remains open. The companion
+`Filtered/FiniteFilteredStrictMap.lean` records a concrete strict-layer
+boundary and does not supply that paper-specific bridge.
 
 The eleventh frontier adds a conditional filtered/localized associated-graded
 chain-transfer bridge, finite algebraic Rees specialization, a finite
