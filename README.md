@@ -102,6 +102,11 @@ The source-selection, filtered-localization, assembly, and terminal Phase I/II
 gates remain open in `PLAN.md`; the corresponding files are conditional
 scaffolds rather than producer proofs.
 
+The current draft wave also contains the unimported bounded length formula
+`Filtered/FiniteFilteredLengthFormula.lean` with its independent oracle. It is
+evidence for finite-layer arithmetic only; the paper-specific M05
+localization/strictness bridge remains open.
+
 The eleventh frontier adds a conditional filtered/localized associated-graded
 chain-transfer bridge, finite algebraic Rees specialization, a finite
 original-coefficient source package, arbitrary outer-monic Weyl division, and
