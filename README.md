@@ -109,6 +109,14 @@ localization/strictness bridge remains open. The companion
 `Filtered/FiniteFilteredStrictMap.lean` records a concrete strict-layer
 boundary and does not supply that paper-specific bridge.
 
+The current bounded M05 adapter
+`Filtered/M05Luna20260912/SourceLocalizationAdapter.lean` turns the existing
+selected-source localization map into an actual `RingEquiv`, proves unit
+images for the selected denominators, and gives an explicit source-fraction
+formula. Its oracle retains the concrete opposite-degree Laurent-Rees inverse
+calculation. This is still below the paper-specific filtered
+algebra/module-to-homogeneous-localization comparison and does not close M05.
+
 The eleventh frontier adds a conditional filtered/localized associated-graded
 chain-transfer bridge, finite algebraic Rees specialization, a finite
 original-coefficient source package, arbitrary outer-monic Weyl division, and

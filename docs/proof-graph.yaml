@@ -189,13 +189,15 @@
       "id": "length",
       "kind": "NOVEL",
       "label": "Minimal-prime length",
-      "statement": "Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime. FilteredLocalizedGradedBridge packages the exact filtered/localized associated-graded and strict-chain hypotheses needed to transfer finite filtered chains to a localized graded length bound; it remains conditional on those algebraic equivalences and survival witnesses.",
+      "statement": "Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime. FilteredLocalizedGradedBridge packages the exact filtered/localized associated-graded and strict-chain hypotheses needed to transfer finite filtered chains to a localized graded length bound; it remains conditional on those algebraic equivalences and survival witnesses. The M05Luna20260912 source-localization adapter turns the existing selected-source map into a RingEquiv, proves unit images for selected denominators, and exposes an explicit source-fraction formula, but does not identify that carrier with the paper's homogeneous localization or transfer filtered length.",
       "source": "paper part I.5 (M05); SymplecticStafford/FiniteLength/FilteredLocalizedGradedBridge.lean",
       "continuation_sources": [
         "SymplecticStafford/FiniteLength/FilteredChainLengthBound.lean",
-        "SymplecticStafford/FiniteLength/PrimeVsHomogeneousLocalizationBoundary.lean"
+        "SymplecticStafford/FiniteLength/PrimeVsHomogeneousLocalizationBoundary.lean",
+        "SymplecticStafford/Filtered/M05Luna20260912/SourceLocalizationAdapter.lean",
+        "tests/M05Luna20260912/SourceLocalizationAdapterOracle.lean"
       ],
-      "continuation_scope": "Twelfth-wave quantitative filtered-chain length and prime-versus-homogeneous localization boundary evidence.",
+      "continuation_scope": "Twelfth-wave quantitative filtered-chain length and prime-versus-homogeneous localization boundary evidence, plus the selected-source RingEquiv adapter; the paper-specific homogeneous comparison remains open.",
       "depends_on": [
         "local"
       ],

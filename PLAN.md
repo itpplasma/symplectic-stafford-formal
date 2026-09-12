@@ -118,6 +118,17 @@ finite `ℚ² ⊃ ℚ×0 ⊃ 0` model while retaining exact ambient/induced leng
 formulae. It is boundary evidence only; the paper-specific Rees, homogeneous
 localization, and filtered/localized-length comparison remain open.
 
+The bounded M05 continuation `Filtered/M05Luna20260912/SourceLocalizationAdapter.lean`
+packages the existing actual source-localization map as a `RingEquiv`, proves
+that selected source denominators map to units, and exposes the explicit
+source-fraction formula. Its independent oracle transports the concrete
+opposite-degree Laurent-Rees inverse calculation through that equivalence.
+This closes only the selected-source carrier adapter; the paper-specific
+filtered algebra/module comparison with homogeneous localization, including
+strictness or faithful homogeneous survival, remains the first unsupported
+M05 bridge. The Luna backend attempt failed before output, so no escalation or
+phase promotion is claimed.
+
 Dispatch base: `deadec7`.
 
 The symbol-selected denominator, inverse and regular-symbol degree producers are committed and verified. The working-tree continuation constructs the actual integer fraction filtration, degree-zero subring and degree-minus-one Jacobson inclusion; targeted kernel checks and independent reviews passed, with the concrete nonzero polynomial subtype/orientation oracle compiled and full replay still pending. The actual Laurent Rees subring and both homogeneous denominator inverse orientations are now constructed in `SymbolFractionRees.lean`, independently reviewed and kernel checked. The nonzero polynomial Rees oracle checks opposite degrees and both multiplication orders. `SymbolFractionReesClearance.lean` now constructs one common right homogeneous denominator for the finite nonzero coefficient support, with integer degree bounds preserved; independent review and trust-disabled checking passed. The two-term oracle checks the shifted degrees directly. Next prioritize the actual original-Rees source map and homogeneous localization comparison, Noetherianity/strictness and filtered/localized length transfer for M05. In parallel, construct the structural associated-graded/Rees producer needed by that repair. M06–M07 arbitrary division-block activation and M09–M10 original-U source/test retention need separate proofs. Stop recycling conditional interfaces or Weyl calibrations as universal advances.
