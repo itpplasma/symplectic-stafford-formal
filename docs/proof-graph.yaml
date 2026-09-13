@@ -6,9 +6,10 @@
     "paper_commit": "502b65a1dea53cac52220a08e321bfba525bc72e",
     "instructions_commit": "e3c7077d3d51772d97d8e72bb219a8fc36765682",
     "paper_graph": "docs/proof-graph-all-dimensional-2026-09-08.yaml",
-    "formal_repo_commit": "a2a38e3"
+    "formal_repo_commit": "4aec473"
   },
   "status_note": "NOVEL means the complete paper candidate with the bounded Fable/Claude paper-level audit recorded on 2026-09-08; human review and corresponding general Lean proofs remain pending. LEAN nodes record only their explicit utility scope. No paper edge becomes a formal proof by appearing in this map. LEAN-SCAFFOLD nodes prove only conditional projections/consumers of supplied certificates; the 2026-09-09 parallel waves add checked bridges, calibrations, concrete model instances, and independent obstruction/consumer oracles but do not close any universal producer; the later universal-attempt waves add sharp M01/M02/M03/M04/M05/M06/M09 boundaries without changing that status; the third continuation adds structural, Rees, cofactor, weighted-module, finite-central, source-selector, and support-retention bridges, still conditional at the quantum algebraization boundary; the fifth continuation adds associated-spectrum, bounded-layer, finite-assembly, corrected-weighted, minimal-prime activation, retained-test, and finite-index adapters, still conditional; the sixth review corrects calibration evidence and conditions support-removal arithmetic on good scalars; the seventh frontier wave adds a one-way finite-dimensional source selector plus central-field support, repeated-division-block, and torsion-detector boundaries, with exact graded-ring/module assembly and Ore hypotheses still missing; the eighth frontier adds an affine graded-to-Rees presentation and finite-central pencil consumer while exposing the homogeneous-localization/prime-localization length gap; the ninth frontier adds exact one-step graded/filter length, strict-chain, evaluation-action, source-map, and Weyl monicization boundaries, still without a universal producer; the tenth frontier adds a bounded-below strictness criterion, degree-shifted Rees maps, finite-orbit source selection, and bounded Weyl evolutionary/degree-one assembly, still conditional; the eleventh frontier adds a conditional filtered/localized graded-chain transfer, finite algebraic Rees specialization, finite original-coefficient source package, arbitrary outer-monic Weyl division, and fail-closed axiom/dependency audits, still without a universal producer; the thirteenth frontier adds a pinned AlgebraicAnalysis/Stafford38 API audit, concrete Weyl M01 calibration and equivalence transfer, a bounded quantized-slice algebraization consumer interface, a localization-length boundary, and central-eigenvalue independence with trust-disabled oracles; the fourteenth frontier adds exact-support, test-retention, base-producer, activated-pencil, and semantic-label obstruction oracles, all still conditional or boundary evidence; M01–M11 remain open at full paper scope.",
+  "m05_frozen_boundary": "The selected Rees/source localization comparison and quotient-survival claim was reviewed Luna → Sol-low → one Astra attempt (the Astra tool reported unavailable; the direct audit reached the same boundary). The first fatal inference is sourceLocalization C ≃+* ReesRing C ⇒ C.inverse.localization.Localization/paper homogeneous localization; Rees specialization has a t−1 kernel. Independent survival also fails without annihilator/support data. This path is retired after the Astra attempt; no M01–M11 gate is promoted.",
   "nodes": [
     {
       "id": "semantics",
@@ -92,9 +93,11 @@
         "SymplecticStafford/Filtered/SymbolFractionReesClearance.lean",
         "SymplecticStafford/Filtered/SymbolFractionJacobson.lean",
         "SymplecticStafford/Filtered/M01FiniteHomogeneousReesProducer.lean",
-        "tests/M01FiniteHomogeneousReesProducerOracle.lean"
+        "tests/M01FiniteHomogeneousReesProducerOracle.lean",
+        "SymplecticStafford/Filtered/M01FiniteHomogeneousReesProducerKernel.lean",
+        "tests/M01FiniteHomogeneousReesProducerKernelOracle.lean"
       ],
-      "continuation_scope": "Twelfth-wave conditional finite Rees cofactor assembly, quantitative filtered-chain length, and prime-versus-homogeneous localization boundary, plus thirteenth-wave dependency, bounded slice-algebraization, and concrete Weyl M01 calibration evidence. The new unimported M01 producer selects a least filtration layer, exposes a nonzero actual homogeneous Rees lift and coefficient-symbol multiplication law, and remains unchecked because the pinned dependency cache is absent; it does not supply the paper-specific filtered algebra/module comparison or faithful homogeneous survival."
+      "continuation_scope": "Twelfth-wave conditional finite Rees cofactor assembly, quantitative filtered-chain length, and prime-versus-homogeneous localization boundary, plus thirteenth-wave dependency, bounded slice-algebraization, and concrete Weyl M01 calibration evidence. The original unimported M01 producer remains a draft; the checked kernel companion selects a least filtration layer, exposes a nonzero actual homogeneous Rees lift and coefficient-symbol multiplication law, and has an independent ℚ[X] oracle. It remains a bounded consumer and does not supply the paper-specific filtered algebra/module comparison or faithful homogeneous survival."
     },
     {
       "id": "assembly-scaffold",
@@ -191,17 +194,25 @@
       "id": "length",
       "kind": "NOVEL",
       "label": "Minimal-prime length",
-      "statement": "Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime. FilteredLocalizedGradedBridge packages the exact filtered/localized associated-graded and strict-chain hypotheses needed to transfer finite filtered chains to a localized graded length bound; it remains conditional on those algebraic equivalences and survival witnesses. The M05Luna20260912 source-localization adapter turns the existing selected-source map into a RingEquiv, proves unit images for selected denominators, and exposes an explicit source-fraction formula. The unimported M05SelectedSourceSurvivalProducer adds only nonzero least-layer/Rees/numerator survival in the actual selected localization; Sol/Astra review stops before the paper parameter quotient and module subquotient because the homogeneous-localization comparison and graded quotient-survival theorem are missing.",
+      "statement": "Any finite good-filtered module has finite local composition length at a minimal homogeneous characteristic prime. FilteredLocalizedGradedBridge packages the exact filtered/localized associated-graded and strict-chain hypotheses needed to transfer finite filtered chains to a localized graded length bound; it remains conditional on those algebraic equivalences and survival witnesses. The M05Luna20260912 source-localization adapter turns the existing selected-source map into a RingEquiv, proves unit images for selected denominators, and exposes an explicit source-fraction formula; this module and its independent oracle replay under the pinned environment. Its FaithfulModuleAdapter companion conditionally transports nonzero classes and strict submodule inclusions across an additive source-to-homogeneous module equivalence with the exact opposite-ring action law. The unimported M05SelectedSourceSurvivalProducer adds only nonzero least-layer/Rees/numerator survival in the actual selected localization; Sol/Astra review stops before the paper parameter quotient and module subquotient because the homogeneous-localization comparison and graded quotient-survival theorem are missing.",
       "source": "paper part I.5 (M05); SymplecticStafford/FiniteLength/FilteredLocalizedGradedBridge.lean",
       "continuation_sources": [
         "SymplecticStafford/FiniteLength/FilteredChainLengthBound.lean",
         "SymplecticStafford/FiniteLength/PrimeVsHomogeneousLocalizationBoundary.lean",
         "SymplecticStafford/Filtered/M05Luna20260912/SourceLocalizationAdapter.lean",
         "tests/M05Luna20260912/SourceLocalizationAdapterOracle.lean",
+        "SymplecticStafford/Filtered/M05Luna20260912/FaithfulModuleAdapter.lean",
+        "tests/M05Luna20260912/FaithfulModuleAdapterOracle.lean",
+        "SymplecticStafford/Filtered/M05Luna20260912/FiniteStrictChainTransport.lean",
+        "tests/M05Luna20260912/FiniteStrictChainTransportOracle.lean",
+        "SymplecticStafford/Filtered/M05Luna20260912/FaithfulModuleCoverTransport.lean",
+        "tests/M05Luna20260912/FaithfulModuleCoverTransportOracle.lean",
         "SymplecticStafford/Filtered/M05SelectedSourceSurvivalProducer.lean",
-        "tests/M05SelectedSourceSurvivalProducerOracle.lean"
+        "tests/M05SelectedSourceSurvivalProducerOracle.lean",
+        "SymplecticStafford/Filtered/M05SelectedSourceSurvivalProducerKernel.lean",
+        "tests/M05SelectedSourceSurvivalProducerKernelOracle.lean"
       ],
-      "continuation_scope": "Twelfth-wave quantitative filtered-chain length and prime-versus-homogeneous localization boundary evidence, the selected-source RingEquiv adapter, and an unreplayed actual-localization survival producer; the paper-specific homogeneous comparison and quotient-survival bridge remain open, with no further escalation on the identified boundary.",
+      "continuation_scope": "Twelfth-wave quantitative filtered-chain length and prime-versus-homogeneous localization boundary evidence, the selected-source RingEquiv adapter, a checked conditional faithful-module/action adapter, and finite strict-chain transport/reflection with its regular-module oracle, plus an unreplayed actual-localization survival producer; the paper-specific homogeneous comparison and quotient-survival bridge remain open.",
       "depends_on": [
         "local"
       ],

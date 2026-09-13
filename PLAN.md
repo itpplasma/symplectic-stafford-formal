@@ -123,19 +123,41 @@ packages the existing actual source-localization map as a `RingEquiv`, proves
 that selected source denominators map to units, and exposes the explicit
 source-fraction formula. Its independent oracle transports the concrete
 opposite-degree Laurent-Rees inverse calculation through that equivalence.
-This closes only the selected-source carrier adapter; the paper-specific
-filtered algebra/module comparison with homogeneous localization, including
-strictness or faithful homogeneous survival, remains the first unsupported
-M05 bridge. The Luna backend attempt failed before output, so no escalation or
-phase promotion is claimed.
+Controller replay on 2026-09-12 now checks `SourceLocalizationAdapter.lean`
+and its independent oracle under the pinned environment. This closes only the
+selected-source carrier adapter. The checked
+`Filtered/M05Luna20260912/FaithfulModuleAdapter.lean` now supplies the exact
+conditional additive-equivalence/action adapter: it transports nonzero
+classes and strict submodule inclusions across the selected source-to-
+homogeneous ring equivalence, with an independent regular-module oracle.
+The paper-specific filtered algebra/module comparison with homogeneous
+localization, including faithful homogeneous survival and strict filtered-to-
+graded transfer, remains the first unsupported M05 bridge. No phase promotion
+is claimed. The checked
+`Filtered/M05Luna20260912/FiniteStrictChainTransport.lean` continuation packages
+the pointwise strictness result as an iff for every finite indexed chain; its
+independent regular-module oracle is
+`tests/M05Luna20260912/FiniteStrictChainTransportOracle.lean`. This is a
+bounded chain-transport consumer and leaves the paper-specific comparison and
+quotient-survival bridge untouched.
+The checked `Filtered/M05Luna20260912/FaithfulModuleCoverTransport.lean`
+continuation now preserves and reflects `CovBy` composition-series steps under
+the same faithful adapter; its independent concrete oracle is
+`tests/M05Luna20260912/FaithfulModuleCoverTransportOracle.lean`. This is still
+only a selected-localization adapter consequence and does not transfer length
+to the paper's filtered/localized module.
 
-The unimported `Filtered/M01FiniteHomogeneousReesProducer.lean` draft adds the
-next bounded M01 consumer: from an exhaustive additive filtration and a
-nonzero element it selects the least layer, produces a nonzero associated
-class and actual homogeneous Rees lift, and transports its coefficient symbol
-through multiplication. Its companion oracle is present but neither file has
-been kernel-replayed because the pinned dependency cache is absent. The first
-unsupported project bridge remains the paper-specific filtered
+The unimported `Filtered/M01FiniteHomogeneousReesProducer.lean` draft remains
+the original bounded M01 consumer. The checked
+`Filtered/M01FiniteHomogeneousReesProducerKernel.lean` is a separate repaired
+kernel source: from an exhaustive additive filtration and a nonzero element it
+selects the least layer, produces a nonzero associated class and actual
+homogeneous Rees lift, and transports its coefficient symbol through
+multiplication. Its independent
+`tests/M01FiniteHomogeneousReesProducerKernelOracle.lean` uses `ℚ[X]` and
+`X²`; trust-disabled replay reports only standard Lean axioms. This closes a
+bounded finite-layer consumer, not the paper bridge. The first unsupported
+project bridge remains the paper-specific filtered
 algebra/module-to-homogeneous-localization comparison and faithful homogeneous
 survival; this draft does not promote M01–M11 or either phase gate.
 
@@ -152,6 +174,27 @@ comparison and a nonzero graded quotient-survival theorem; the example
 `k[t,t⁻¹]/(t−1)` shows that the unrestricted inference is false. No further
 escalation is made on this seam; the pinned dependency cache is also absent,
 so neither draft is promoted to replayed evidence.
+
+The checked `Filtered/M05SelectedSourceSurvivalProducerKernel.lean` continuation
+repeats the least-layer/nonzero Rees-lift/source-numerator transport using the
+checked M01 kernel producer rather than the older unbuilt draft. Its concrete
+`X^2` oracle and trust-disabled replay pass with standard Lean axioms only. This
+is still selected-source carrier evidence: the paper homogeneous-localization,
+parameter-quotient, module-survival, and faithful filtered-length bridges remain
+open, so M01--M11 and both phase gates are unchanged.
+
+The Luna → Sol-low → one-shot Astra attempt (the Astra tool reported
+unavailable; the direct audit reached the same boundary) of the frozen M05
+universal bridge is now closed. The first fatal inference is trying to identify
+`sourceLocalization C ≃+* ReesRing C` with
+`C.inverse.localization.Localization` or the paper homogeneous localization;
+specialization at the Rees parameter has a `t - 1` kernel in general. A second
+independent obstruction is that nonzero classes need not survive localization
+without an annihilator/support argument (for example `1 ∈ ℤ/2ℤ` dies after
+inverting `2`). The existing APIs provide neither comparison nor survival.
+This path is retired after the Astra failure; future work must start from a
+new paper-specific comparison/support producer rather than redispatching this
+claim.
 
 Dispatch base: `deadec7`.
 
