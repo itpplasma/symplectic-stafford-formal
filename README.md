@@ -259,7 +259,7 @@ The checked M05 kernel continuation also records least-layer survival and
 source-map transport in the selected localization, with an independent `X^2`
 oracle. It does not provide the paper-specific homogeneous-localization,
 parameter-quotient, or faithful module-survival bridge.
-parameter-quotient, or faithful module-survival bridge. The Luna–Sol–Astra
+The Luna–Sol–Astra
 attempt (the Astra tool reported unavailable; the direct audit reached the
 same boundary) on that universal bridge is retired: Rees specialization can have a
 `t−1` kernel, and nonzero localization survival needs missing support data.

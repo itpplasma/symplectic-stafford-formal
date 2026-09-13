@@ -1,7 +1,10 @@
 # Verification checkpoint
 
 The current checkout records a partial, reproducible checkpoint rather than a
-terminal theorem. `PLAN.md` is authoritative for scope. The implemented
+terminal theorem. The machine-readable verification receipt is for snapshot
+`c0e50a39963987c2013ce647f4373bba43f1bfaa`, not the current checkout
+`2409d936c9aab6e2fa8c7d3a86cec3450f311b4b`; the current tree has not been
+replayed against that receipt. `PLAN.md` is authoritative for scope. The implemented
 declarations compile under the exact Lean, Mathlib, AlgebraicAnalysis, and
 Stafford38 pins in `formalization.yaml`; independent consumers exercise the
 semantic/support-boundary/right-ideal bridge, ordered/common-colon and finite
