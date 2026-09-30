@@ -50,7 +50,7 @@ def op : FilteredAlgebraData k Uᵐᵒᵖ G 𝒜 where
       refine ⟨c, ?_⟩
       rw [← hc, Algebra.linearMap_apply, MulOpposite.algebraMap_apply, unop_op]
   finiteDimensional := fun n =>
-    haveI := D.finiteDimensional n
+    have := D.finiteDimensional n
     LinearEquiv.finiteDimensional
       (LinearEquiv.ofBijective (D.opPiece n)
         ⟨fun x y h => Subtype.ext (MulOpposite.unop_injective (congrArg Subtype.val h)),

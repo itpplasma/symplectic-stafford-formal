@@ -253,7 +253,7 @@ noncomputable instance oreSet (p : Ideal G) [p.IsPrime] :
     apply MulOpposite.unop_injective
     simp [hcb]
   choose r' s' hrs using h
-  haveI := D.noZeroDivisors
+  have := D.noZeroDivisors
   exact OreLocalization.oreSetOfNoZeroDivisors r' s' hrs
 
 /-- The actual localization `T_𝔭 = U S_𝔭⁻¹` (paper (3.3)). -/
@@ -272,7 +272,7 @@ lemma locMap_apply (p : Ideal G) [p.IsPrime] (u : U) :
 theorem isRightFractions (p : Ideal G) [p.IsPrime] :
     IsRightFractions (D.denoms p) (D.locMap p) where
   injective := by
-    haveI := D.noZeroDivisors
+    have := D.noZeroDivisors
     intro a b h
     rw [locMap_apply, locMap_apply] at h
     have h' := MulOpposite.op_injective h
@@ -311,14 +311,16 @@ def degLE (ι : U →+* T) (p : Ideal G) [p.IsPrime] (m : ℤ) : Set T :=
 
 variable {D}
 
+omit [IsNoetherianRing G] in
 lemma zero_mem_degLE (m : ℤ) : (0 : T) ∈ D.degLE ι p m :=
   ⟨0, 1, (D.denoms p).one_mem, by simp, Submodule.zero_mem _⟩
 
+omit [IsNoetherianRing G] in
 lemma degLE_mono {m n : ℤ} (h : m ≤ n) : D.degLE ι p m ⊆ D.degLE ι p n := by
   rintro y ⟨a, s, hs, hy, ha⟩
   exact ⟨a, s, hs, hy, D.Fz_mono (by omega) ha⟩
 
-lemma add_mem_degLE (hT : IsRightFractions (D.denoms p) ι) {m : ℤ} {y₁ y₂ : T}
+lemma add_mem_degLE (_hT : IsRightFractions (D.denoms p) ι) {m : ℤ} {y₁ y₂ : T}
     (h₁ : y₁ ∈ D.degLE ι p m) (h₂ : y₂ ∈ D.degLE ι p m) : y₁ + y₂ ∈ D.degLE ι p m := by
   obtain ⟨a₁, s₁, hs₁, hy₁, ha₁⟩ := h₁
   obtain ⟨a₂, s₂, hs₂, hy₂, ha₂⟩ := h₂
@@ -360,6 +362,7 @@ lemma mul_mem_degLE (hT : IsRightFractions (D.denoms p) ι) {m n : ℤ} {y z : T
     have : (D.deg b : ℤ) + D.deg s' = D.deg s + D.deg b' := by exact_mod_cast hdeg
     omega
 
+omit [IsNoetherianRing G] in
 /-- **Lemma Z3(b).**  If `deg y < 0` then `1 - y` has a right inverse of degree
 `≤ 0` (indeed it is a unit). -/
 lemma unit_of_neg (hT : IsRightFractions (D.denoms p) ι) {y : T} (hy : y ∈ D.degLE ι p (-1)) :
@@ -501,6 +504,7 @@ theorem survival (hT : IsRightFractions (D.denoms p) ι) {I₁ I₂ : Submodule 
 
 /-! ### Detection (Z7(b)) and nondivision (Z9) -/
 
+omit [IsDomain G] [IsNoetherianRing G] [p.IsPrime] in
 /-- A homogeneous ideal not contained in `𝔭` contains a homogeneous element
 outside `𝔭`. -/
 lemma exists_homogeneous_not_mem {J : Ideal G} (hJ : J.IsHomogeneous 𝒜) (h : ¬ J ≤ p) :
@@ -508,11 +512,12 @@ lemma exists_homogeneous_not_mem {J : Ideal G} (hJ : J.IsHomogeneous 𝒜) (h : 
   classical
   obtain ⟨g, hgJ, hgp⟩ := Set.not_subset.mp h
   by_contra hc
-  push_neg at hc
+  push Not at hc
   apply hgp
   rw [← sum_support_decompose 𝒜 g]
   exact Ideal.sum_mem _ fun n _ => hc n _ (hJ n hgJ) (decompose 𝒜 g n).2
 
+omit [IsNoetherianRing G] in
 variable (D) in
 /-- `1 ∈ I T_𝔭` iff `𝔭 ∉ Z(U/I) = V(gr I)` (support detection, Z7(b)). -/
 theorem one_mem_extend_iff_not_le (hT : IsRightFractions (D.denoms p) ι)
@@ -530,6 +535,7 @@ theorem one_mem_extend_iff_not_le (hT : IsRightFractions (D.denoms p) ι)
     · rw [h0, grAt_zero] at hne; exact hne rfl
     · rw [← D.grAt_eq_sym huF hne, hug]; exact hgp
 
+omit [IsNoetherianRing G] in
 /-- **Nondivision (Z9).**  If `d ∈ I` is nonzero and `gr I ⊆ 𝔭`, then `ι d` is
 not a unit of `T_𝔭`. -/
 theorem not_isUnit_of_le (hT : IsRightFractions (D.denoms p) ι) {I : Submodule Uᵐᵒᵖ U}
@@ -549,11 +555,11 @@ def pull (ι : U →+* T) (I : Submodule Uᵐᵒᵖ U)
     (W : Submodule Tᵐᵒᵖ (T ⧸ IsRightFractions.extend (ι := ι) I)) : Submodule Uᵐᵒᵖ U where
   carrier := {a | Submodule.Quotient.mk (ι a) ∈ W}
   add_mem' {a b} ha hb := by
-    simp only [Set.mem_setOf_eq, map_add, Submodule.Quotient.mk_add] at ha hb ⊢
+    simp only [Set.mem_ofPred_eq, map_add, Submodule.Quotient.mk_add] at ha hb ⊢
     exact W.add_mem ha hb
   zero_mem' := by simp
   smul_mem' c a ha := by
-    simp only [Set.mem_setOf_eq] at ha ⊢
+    simp only [Set.mem_ofPred_eq] at ha ⊢
     have := W.smul_mem (op (ι (unop c))) ha
     rwa [← Submodule.Quotient.mk_smul, op_smul_eq_mul, ← map_mul, ← smul_eq_mul_unop] at this
 
@@ -569,10 +575,10 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
     rw [Ideal.minimalPrimes_eq_comap] at hp
     obtain ⟨P, hP, rfl⟩ := hp
     exact ⟨P, hP, rfl⟩
-  haveI : P.IsPrime := hP.1.1
+  have : P.IsPrime := hP.1.1
   let A := Localization.AtPrime P
-  haveI : Ring.KrullDimLE 0 A := Ring.KrullDimLE.of_isLocalization P hP A
-  haveI : IsArtinianRing A :=
+  have : Ring.KrullDimLE 0 A := Ring.KrullDimLE.of_isLocalization P hP A
+  have : IsArtinianRing A :=
     isArtinianRing_iff_isNoetherianRing_krullDimLE_zero.mpr
       ⟨(inferInstance : IsNoetherianRing (Localization P.primeCompl)), inferInstance⟩
   let f : G →+* A := (algebraMap (G ⧸ J) A).comp (Ideal.Quotient.mk J)
@@ -657,7 +663,7 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
     set c : G := ∏ g : s₀, cg g
     have hcp : c ∉ p := by
       rw [Ideal.IsPrime.prod_mem_iff]
-      push_neg
+      push Not
       exact fun g _ => hcgp g
     have hcL : L' ≤ Submodule.comap (LinearMap.mulLeft G c) L := by
       rw [← hs₀, Submodule.span_le]
@@ -669,7 +675,7 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
     -- Pass to a homogeneous component of `c`.
     obtain ⟨i, hi⟩ : ∃ i, (decompose 𝒜 c i : G) ∉ p := by
       by_contra hc'
-      push_neg at hc'
+      push Not at hc'
       apply hcp
       rw [← sum_support_decompose 𝒜 c]
       exact Ideal.sum_mem _ fun i _ => hc' i
@@ -691,8 +697,8 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
     have hsS : s ∈ D.denoms p := ⟨fun h0 => by rw [h0, grAt_zero] at hne; exact hne rfl,
       by rw [hsym]; exact hi⟩
     exact survival hT hlt.le (pull_sat W) hsS (fun g hg => by rw [hsym]; exact hkill g hg)
-  haveI : WellFoundedLT (Ideal A) := inferInstance
-  haveI : WellFoundedGT (Ideal A) := inferInstance
+  have : WellFoundedLT (Ideal A) := inferInstance
+  have : WellFoundedGT (Ideal A) := inferInstance
   exact ⟨Φ_strict.wellFoundedLT, isNoetherian_iff'.mpr Φ_strict.wellFoundedGT⟩
 
 end Domain

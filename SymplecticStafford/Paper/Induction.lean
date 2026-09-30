@@ -83,7 +83,7 @@ lemma extend_Id {T : Type*} [Ring T] {ι : U →+* T} (d F : U) :
     rintro _ ⟨x, hx, rfl⟩
     obtain ⟨r, s, rfl⟩ := mem_Id.mp hx
     rw [SetLike.mem_coe, Submodule.mem_span_pair]
-    exact ⟨op (ι r), op (ι s), by simp [op_smul_eq_mul, map_add, map_mul, mul_assoc]⟩
+    exact ⟨op (ι r), op (ι s), by simp [map_add, map_mul, mul_assoc]⟩
   · rw [Submodule.span_le]
     rintro _ (rfl | rfl)
     · exact IsRightFractions.map_mem_extend (d_mem_Id d F)
@@ -101,6 +101,7 @@ noncomputable def δ (I : Submodule Uᵐᵒᵖ U) : WithBot ℕ∞ := ringKrullD
 
 variable [IsDomain G] [IsNoetherianRing G]
 
+omit [IsNoetherianRing G] in
 /-- `gr I = G` forces `1 ∈ I` (the original bounded-below filtration and `F₀U = k`). -/
 lemma one_mem_of_grIdeal_eq_top {I : Submodule Uᵐᵒᵖ U} (h : D.grIdeal I = ⊤) : (1 : U) ∈ I := by
   have h1 : (1 : G) ∈ D.grIdeal I := h ▸ Submodule.mem_top
@@ -120,7 +121,7 @@ variable [IsSimpleRing U]
 /-- `Tloc 𝔭` is a `k`-algebra through `U`, and the localization map is a
 `k`-algebra homomorphism. -/
 noncomputable def locAlgHom (p : Ideal G) [p.IsPrime] : U →ₐ[k] D.Tloc p :=
-  { D.locMap p with commutes' := fun c => rfl }
+  { D.locMap p with commutes' := fun _ => rfl }
 
 /-- The canonical generator of `T ⧸ I T`. -/
 lemma span_mk_one_eq_top {T : Type*} [Ring T] (N : Submodule Tᵐᵒᵖ T) :
@@ -135,8 +136,8 @@ lemma span_mk_one_eq_top {T : Type*} [Ring T] (N : Submodule Tᵐᵒᵖ T) :
 minimal prime `𝔭` (paper (6.2)). -/
 noncomputable def oldTest {d F : U} (hd : d ≠ 0) (b : U) (hb : b ≠ 0) (p : Ideal G)
     (hp : p ∈ (D.grIdeal (Id d F)).minimalPrimes) : Test.{u} k U :=
-  haveI : p.IsPrime := hp.1.1
-  haveI := D.isDomain
+  have : p.IsPrime := hp.1.1
+  have := D.isDomain
   have hT := D.isRightFractions p
   { T := D.Tloc p
     ι := D.locAlgHom p
@@ -167,11 +168,12 @@ def Ph (h : ℕ) : Prop :=
 
 variable [IsSimpleRing U] [Infinite k]
 
+omit [IsNoetherianRing G] in
 /-- **Base.**  `P₀` holds: simultaneous source selection (Proposition 4.6) and
 the trivial bound `δ ≤ dim G`. -/
 theorem Ph_zero : D.Ph 0 := by
   intro d a hd ha B Ω
-  haveI := D.isDomain
+  have := D.isDomain
   obtain ⟨H, hH⟩ := Test.exists_source Ω B a ha
   refine ⟨H, hH, ?_⟩
   unfold δ
@@ -194,15 +196,16 @@ section Successor
 
 variable {D}
 
+omit [IsSimpleRing U] [Infinite k] in
 /-- **Lemma 5.1 (support union).**  Every prime containing `gr J` contains
 `gr I_d(F)` or `gr I_{dL₀}(G₀)`. -/
 theorem support_union {d F G₀ L₀ C₀ : U} (hFd : F * d * L₀ = d * C₀) (q : Ideal G) [q.IsPrime]
     (hq : D.grIdeal (colonJ d F G₀) ≤ q) :
     D.grIdeal (Id d F) ≤ q ∨ D.grIdeal (Id (d * L₀) G₀) ≤ q := by
   by_contra hc
-  push_neg at hc
+  push Not at hc
   obtain ⟨h1, h2⟩ := hc
-  haveI := D.isDomain
+  have := D.isDomain
   have hT := D.isRightFractions q
   set ι := D.locMap q
   have e1 := (D.one_mem_extend_iff_not_le hT (Id d F)).mpr h1
@@ -246,7 +249,7 @@ section
 /-- **The successor step** `P_h → P_{h+1}` (paper §6). -/
 theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
   classical
-  haveI := D.isDomain
+  have := D.isDomain
   intro d a hd ha B Ω
   -- First lower-index call: the old source.
   obtain ⟨H₁, hΩ₁, hδ₁⟩ := hP d a hd ha B Ω
@@ -271,7 +274,7 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
   have hδJ : D.δ J + (h : WithBot ℕ∞) ≤ ringKrullDim G := by
     have hmax := ringKrullDim_quotient_le_max (J := D.grIdeal J) (J₁ := D.grIdeal I)
       (J₂ := D.grIdeal (Id d₁ G₀)) fun q hq => by
-        haveI : q.IsPrime := hq.1.1
+        have : q.IsPrime := hq.1.1
         exact support_union hFd q hq.1.2
     calc D.δ J + (h : WithBot ℕ∞) ≤ max (D.δ I) (D.δ (Id d₁ G₀)) + h :=
           add_le_add_left hmax _
@@ -284,7 +287,7 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
     Ideal.finite_minimalPrimes_of_isNoetherianRing _ _
   -- For each such component, the exceptional scalars are finite.
   let v : ∀ q, q ∈ (D.grIdeal J).minimalPrimes → Set k := fun q hq => by
-    haveI : q.IsPrime := hq.1.1
+    have : q.IsPrime := hq.1.1
     exact {l : k | Submodule.span (D.Tloc q)ᵐᵒᵖ
           {(Submodule.Quotient.mk (D.locMap q (F * d)) :
               D.Tloc q ⧸ IsRightFractions.extend (ι := D.locMap q) J) +
@@ -292,12 +295,12 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
               Submodule.Quotient.mk (D.locMap q (G₀ * d))} ≠ ⊤}
   have hbad : ∀ q (hq : q ∈ (D.grIdeal J).minimalPrimes), (v q hq).Finite := by
     intro q hq
-    haveI : q.IsPrime := hq.1.1
+    have : q.IsPrime := hq.1.1
     have hT := D.isRightFractions q
     set ι := D.locMap q
     set E := IsRightFractions.extend (ι := ι) J
     have hfin := D.finiteLength hT J hq
-    haveI := hfin.1
+    have := hfin.1
     have he : Submodule.span (D.Tloc q)ᵐᵒᵖ {(Submodule.Quotient.mk 1 : D.Tloc q ⧸ E)} = ⊤ :=
       span_mk_one_eq_top E
     have hdE : ι d ∈ E := IsRightFractions.map_mem_extend (d_mem_colonJ d F G₀)
@@ -388,11 +391,11 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
   have hJF' : J ≤ Id d F' := colonJ_le_Id d F G₀ l
   have hmiss : ∀ q ∈ (D.grIdeal J).minimalPrimes, ¬ D.grIdeal (Id d F') ≤ q := by
     intro q hq
-    haveI : q.IsPrime := hq.1.1
+    have : q.IsPrime := hq.1.1
     have hT := D.isRightFractions q
     set ι := D.locMap q
     have hgen := hlJ q hq
-    simp only [v, Set.mem_setOf_eq, not_not] at hgen
+    simp only [v, Set.mem_ofPred_eq, not_not] at hgen
     have hvu : (Submodule.Quotient.mk (ι (F * d)) :
         D.Tloc q ⧸ IsRightFractions.extend (ι := ι) J) +
         algebraMap k (D.Tloc q)ᵐᵒᵖ l • Submodule.Quotient.mk (ι (G₀ * d)) =
@@ -438,7 +441,7 @@ include D in
 `d, a` and every `B` there are `H, R, S` with `1 = d R + (B + H a) d S`. -/
 theorem targetA (hdim : ringKrullDim G < ⊤) (d a : U) (hd : d ≠ 0) (ha : a ≠ 0) (B : U) :
     ∃ H R S : U, 1 = d * R + (B + H * a) * d * S := by
-  haveI := D.isDomain
+  have := D.isDomain
   -- `dim G` is a natural number.
   have hne : ringKrullDim G ≠ ⊥ := by
     have := ringKrullDim_nonneg_of_nontrivial (R := G)

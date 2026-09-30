@@ -59,24 +59,21 @@ cp docs/dossier/symplectic-stafford-description.build-manifest.json "$release_di
 
 ## Palomar
 
-The current `comparator.json` compares
-`SymplecticStaffordChallenge.universalStatement`, now the finite-central
-division-pencil theorem specified in `pencil-submission-scope.md`. The name
-is retained for comparator compatibility. Earlier receipts concern the
-superseded definitional membership claim. Even a fresh passing replay of the
-pencil theorem is bounded evidence and cannot serve as the universal
-Stafford submission configuration. A separate scoped release decision must
-assess its research interest and provenance; the universal release gates
-remain pending.
+`comparator.json` compares `SymplecticStaffordChallenge.universalStatement`,
+which is the affine same-divisor theorem (Target theorem A) with the full
+filtered-class hypotheses; see `target-a-submission-scope.md`. Before
+submission:
 
-Before terminal submission, supply and independently audit the actual
-filtered-algebra statement and its proof, then configure the comparator for
-that exact declaration. Record the declaration, import closure, pinned tools
-and compared source commit in the evidence file. After the repository is
-public and submission is explicitly authorized, submit that selected commit
-under `itpplasma/symplectic-stafford-formal`, project directory `.` (or blank),
-with its audited `comparator.json` and `formalization.yaml`. Retain the returned
-status page. The terminal configuration and submission remain pending.
+1. Replay `scripts/bootstrap-palomar-tools.sh` and `scripts/verify-palomar.sh`
+   from a clean checkout of the selected commit.
+2. Record the replayed declaration, import closure, tool revisions and
+   commit in the evidence file.
+3. Complete the human review of the statement correspondence.
+
+After the repository is public and submission is explicitly authorized,
+submit that commit under `itpplasma/symplectic-stafford-formal`, project
+directory `.` (or blank), with its `comparator.json` and
+`formalization.yaml`, and retain the returned status page.
 
 ## Signed GitHub release
 

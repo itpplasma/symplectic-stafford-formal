@@ -177,3 +177,5 @@ import SymplecticStafford.Filtered.SymbolFractionJacobson
 import SymplecticStafford.Filtered.SymbolFractionRees
 
 import SymplecticStafford.Filtered.SymbolFractionReesClearance
+
+import SymplecticStafford.Paper

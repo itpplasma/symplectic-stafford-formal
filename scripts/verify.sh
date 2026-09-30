@@ -131,4 +131,4 @@ if grep -Eq 'sorryAx|admitAx|Lean\.ofReduceBool|(^|:) error:' .lake/verification
   exit 1
 fi
 
-echo "verify.sh ($mode) passed for the implemented semantic/ordered checkpoint"
+echo "verify.sh ($mode) passed: Target A development, legacy scaffolds, and consumers"

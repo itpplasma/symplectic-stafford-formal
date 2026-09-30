@@ -315,12 +315,14 @@ lemma nontrivial : Nontrivial U := by
   rw [h, grAt_zero] at this
   exact zero_ne_one this
 
+omit [IsDomain G] in
 lemma deg_one : D.deg (1 : U) = 0 := by
   have := D.mem_F_iff.mp (D.one_mem_F 0); omega
 
 lemma sym_one : D.sym (1 : U) = 1 := by
   unfold sym; rw [D.deg_one, D.grAt_zero_one]
 
+omit [IsDomain G] in
 lemma grAt_mul_deg {u v : U} :
     D.grAt (D.deg u + D.deg v) (u * v) = D.sym u * D.sym v :=
   D.grAt_mul (D.mem_F_deg u) (D.mem_F_deg v)
@@ -350,13 +352,13 @@ include D in
 lemma noZeroDivisors : NoZeroDivisors U where
   eq_zero_or_eq_zero_of_mul_eq_zero {u v} h := by
     by_contra hc
-    push_neg at hc
+    push Not at hc
     exact D.mul_ne_zero' hc.1 hc.2 h
 
 include D in
 lemma isDomain : IsDomain U :=
-  haveI := D.nontrivial
-  haveI := D.noZeroDivisors
+  have := D.nontrivial
+  have := D.noZeroDivisors
   NoZeroDivisors.to_isDomain U
 
 lemma sym_pow (u : U) (N : ℕ) : D.sym (u ^ N) = D.sym u ^ N := by
@@ -365,7 +367,7 @@ lemma sym_pow (u : U) (N : ℕ) : D.sym (u ^ N) = D.sym u ^ N := by
   | succ N ih => rw [pow_succ, D.sym_mul, ih, pow_succ]
 
 lemma deg_pow {u : U} (hu : u ≠ 0) (N : ℕ) : D.deg (u ^ N) = N * D.deg u := by
-  haveI := D.noZeroDivisors
+  have := D.noZeroDivisors
   induction N with
   | zero => simp [D.deg_one]
   | succ N ih => rw [pow_succ, D.deg_mul (pow_ne_zero _ hu) hu, ih]; ring
@@ -375,7 +377,7 @@ lemma deg_pow {u : U} (hu : u ≠ 0) (N : ℕ) : D.deg (u ^ N) = N * D.deg u := 
 /-- `S_𝔭 = {s ≠ 0 : σ(s) ∉ 𝔭}`. -/
 def denoms (p : Ideal G) [p.IsPrime] : Submonoid U where
   carrier := {s | s ≠ 0 ∧ D.sym s ∉ p}
-  one_mem' := ⟨haveI := D.nontrivial; one_ne_zero, by
+  one_mem' := ⟨have := D.nontrivial; one_ne_zero, by
     rw [D.sym_one]; exact Ideal.IsPrime.one_notMem ‹_›⟩
   mul_mem' := by
     rintro a b ⟨ha, ha'⟩ ⟨hb, hb'⟩
@@ -434,7 +436,7 @@ noncomputable def grIdeal (I : Submodule Uᵐᵒᵖ U) : Ideal G where
     intro r g hg n
     rw [smul_eq_mul, show r * g = ∑ i ∈ (decompose 𝒜 r).support, (decompose 𝒜 r i : G) * g by
       rw [← Finset.sum_mul, sum_support_decompose]]
-    rw [decompose_sum, DFinsupp.finset_sum_apply, Submodule.coe_sum]
+    rw [decompose_sum, DFinsupp.finsetSum_apply, Submodule.coe_sum]
     refine AddSubgroup.sum_mem _ fun i _ => ?_
     rw [coe_decompose_mul_of_left_mem 𝒜 n (decompose 𝒜 r i).2]
     split_ifs with hin
@@ -531,7 +533,7 @@ theorem descent {I : Submodule Uᵐᵒᵖ U} {ι : Type*} [Fintype ι] (x : ι �
         D.grAt_sum _ _ fun i _ => hterm i]
       have hg : D.grAt n u = (decompose 𝒜 (D.grAt n u) n : G) :=
         (decompose_of_mem_same 𝒜 (D.grAt_mem n u)).symm
-      rw [hg, ← hc, decompose_sum, DFinsupp.finset_sum_apply, Submodule.coe_sum]
+      rw [hg, ← hc, decompose_sum, DFinsupp.finsetSum_apply, Submodule.coe_sum]
       refine Finset.sum_congr rfl fun i _ => ?_
       rw [smul_eq_mul, coe_decompose_mul_of_right_mem 𝒜 n (hy i)]
       simp only [v]

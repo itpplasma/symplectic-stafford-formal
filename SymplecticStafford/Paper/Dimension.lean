@@ -41,9 +41,9 @@ theorem ringKrullDim_quotient_add_one_le {J J' : Ideal R} (hJJ' : J ≤ J')
     rw [krullDim_eq_bot]
     simp
   obtain ⟨⟨P, hP⟩⟩ := hne
-  haveI : Nonempty (PrimeSpectrum.zeroLocus (R := R) J) :=
+  have : Nonempty (PrimeSpectrum.zeroLocus (R := R) J) :=
     ⟨⟨P, fun x hx => hP (hJJ' hx)⟩⟩
-  haveI : Nonempty (PrimeSpectrum.zeroLocus (R := R) J') := ⟨⟨P, hP⟩⟩
+  have : Nonempty (PrimeSpectrum.zeroLocus (R := R) J') := ⟨⟨P, hP⟩⟩
   rw [krullDim_eq_iSup_length, krullDim_eq_iSup_length, ← WithBot.coe_one, ← WithBot.coe_add,
     ENat.iSup_add, WithBot.coe_le_coe, iSup_le_iff]
   intro l
@@ -103,7 +103,7 @@ theorem ringKrullDim_quotient_add_one_le_of_ne_zero [IsDomain R] {J : Ideal R} {
 theorem eq_top_of_ringKrullDim_quotient_eq_bot {J : Ideal R}
     (h : ringKrullDim (R ⧸ J) = ⊥) : J = ⊤ := by
   by_contra hJ
-  haveI : Nontrivial (R ⧸ J) := Ideal.Quotient.nontrivial_iff.mpr hJ
+  have : Nontrivial (R ⧸ J) := Ideal.Quotient.nontrivial_iff.mpr hJ
   have := ringKrullDim_nonneg_of_nontrivial (R := R ⧸ J)
   rw [h] at this
   exact absurd this (by simp)
