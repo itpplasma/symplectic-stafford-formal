@@ -2,17 +2,17 @@
 version: "v0.4"
 
 project:
-  name: "Finite central division pencils (Symplectic Stafford checkpoint)"
+  name: "Symplectic Stafford: the affine same-divisor theorem"
   description: >-
-    The selected Challenge/Solution states that an affine pencil beginning
-    at a linearly independent finite tuple over a division ring has only
-    finitely many bad central scalars, when the division ring is finite
-    dimensional over the infinite central field. Scalar compatibility is
-    explicit. The solution uses the checked finite-spectrum proof in
-    FiniteCentralDivisionLLD. The surrounding repository develops the
-    symplectic Stafford programme; its universal same-divisor theorem and
-    all-dimensional project-owned producers remain open. This bounded
-    comparison does not assert their completion or claim research novelty.
+    A complete Lean 4 proof of Target theorem A of the Symplectic Stafford
+    manuscript. Let U be a simple, infinite-dimensional algebra over a field
+    of characteristic zero, with an exhaustive nonnegative multiplicative
+    filtration by finite-dimensional pieces, F_0 U = k, and associated graded
+    ring a commutative affine domain of finite Krull dimension. Then for all
+    nonzero d, a and every B in U there are H, R, S with
+    1 = dR + (B + Ha)dS. The development also proves the left-handed
+    identity and the module-theoretic consequences of the manuscript's
+    section 7 for U. No novelty or priority claim is made.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -76,27 +76,24 @@ related_formalizations:
       not a mathematical source for the new symplectic proof development.
 
 verification:
-  base_commit: "2d02f41508515390f92880d191be7ef629f37180"
-  report: "docs/pencil-submission-scope.md"
-  machine_readable_report: "docs/luna-wave-20260909.json"
-  statement_correspondence: "docs/pencil-submission-scope.md"
-  source_commit: "502b65a1dea53cac52220a08e321bfba525bc72e"
-  instructions_commit: "e3c7077d3d51772d97d8e72bb219a8fc36765682"
-  phase_instructions: "docs/phase-instructions.md"
+  report: "docs/target-a-submission-scope.md"
+  machine_readable_report: "docs/verification-results.json"
+  statement_correspondence: "docs/target-a-submission-scope.md"
+  source_commit: "b80d925a"
+  source_note: >-
+    Paper repository itpplasma/symplectic-stafford: consolidated manuscript
+    (edition of 30 September 2026), docs/zariskian-local-package-closure-2026-09-30.md
+    and docs/formal-proof-route-2026-09-30.md.
   allowed_axioms: ["propext", "Classical.choice", "Quot.sound"]
 
 status:
   scope: >-
-    Bounded finite-central division-pencil candidate. The new comparison
-    replaces the former definitional right-set-membership checkpoint.
-    Independent Sol-low review and the local statement Comparator, NanoDa,
-    and Lean-kernel replay passed for the new pair. The current wave receipt
-    freezes the base commit and uncommitted patch; historical receipts do
-    not certify this change. Public clean replay and release review remain
-    outstanding.
-    The broader filtered, localization, support, source-selection, and
-    induction interfaces remain conditional as recorded in PLAN.md.
-    The universal M01--M11 obligations and both terminal phases remain open.
+    Target theorem A is formalized unconditionally. The Challenge/Solution
+    pair states it with Mathlib-only definitions of the standing hypotheses.
+    The proof development under SymplecticStafford/Paper imports Mathlib
+    only. Local Comparator, NanoDa and Lean-kernel replays are recorded in
+    docs/verification.md. Public clean replay, independent human review and
+    registration remain release steps.
   sorry_count: 1
   sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
   sorry_in_definitions: 0
@@ -105,21 +102,26 @@ status:
     - "Quot.sound"
     - "Classical.choice"
   main_results:
-    - declaration: "SymplecticStafford.original_membership_extraction"
-      file: "SymplecticStafford/Semantics/Contract.lean"
-      sorry_count: 0
-      axioms: ["propext"]
-      literature_dependencies: []
-    - declaration: "SymplecticStafford.FiniteLength.finite_pencil_exceptions"
-      file: "SymplecticStafford/FiniteLength/Pencil.lean"
-      sorry_count: 0
-      axioms: ["propext", "Classical.choice", "Quot.sound"]
-      literature_dependencies: []
     - declaration: "SymplecticStaffordChallenge.universalStatement"
       file: "Solution.lean"
       sorry_count: 0
       axioms: ["propext", "Classical.choice", "Quot.sound"]
       comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "SymplecticStafford.Paper.FilteredAlgebraData.targetA"
+      file: "SymplecticStafford/Paper/Induction.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      literature_dependencies: []
+    - declaration: "SymplecticStafford.Paper.FilteredAlgebraData.targetA_left"
+      file: "SymplecticStafford/Paper/Opposite.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      literature_dependencies: []
+    - declaration: "SymplecticStafford.Paper.FilteredAlgebraData.cancellation"
+      file: "SymplecticStafford/Paper/ConsequencesForU.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
       literature_dependencies: []
 
 automation:
@@ -156,45 +158,24 @@ automation:
 
 fidelity:
   divergences: >-
-    The formal checkpoint freezes the internal candidate's original-ring
-    right-sided product order but stops before its universal source producer
-    and induction. It records M06/M07/M08-shaped contracts only as conditional
-    consumers. The internal proof source is Markdown, so the TeX dossier is a
-    comparison supplement, not a manuscript transcription.
-    Contract.AdmissibleSymplecticClass is a historical dimension-parametric
-    scaffold with B2 fields and placeholder proposition labels; it is not the
-    final all-dimensional filtered-algebra class. That semantic bridge remains
-    part of M01. Filtered/Localization uses a single-denominator power-clearing
-    contract and therefore is not the candidate's full symbol-set Ore theorem;
-    FullSymbolRightPowerBridge derives that power boundary only from an
-    already supplied right localization. FullSymbolLocalization and
-    ReesNoetherianCriterion expose exact algebraic APIs but still require the
-    candidate's Rees construction and leading-term certificate. WeightedMatrixInverse
-    proves only the finite nilpotent matrix inverse step; strict weighted
-    degree bounds still need to be connected to an original finite inverse.
-    The follow-up `FullSymbolRightLocalization.common_right_clear` theorem
-    consumes, rather than constructs, the supplied right localization;
-    `CentralField` is an explicit interface for the degree-zero field;
-    `WeightedDetectionComposition`, `JacobsonScalarExtension`,
-    `FiniteScalarAvoidance`, and `CharacteristicSupportFiniteProducer` remain
-    conditional consumers of their geometric, top-comparison, finite-set, and
-    indexed-generator hypotheses. `ActualClassSupport`,
-    `FullSymbolFilteredChart`, and `ExplicitBlocks` likewise consume explicit
-    filtered-class, localization, or block data; the sequence-ring module
-    records a genuine obstruction rather than a universal hypothesis.
+    The formal statement encodes the manuscript's section 1.1 hypotheses
+    exactly. The associated graded ring is given by surjective multiplicative
+    symbol maps with the correct kernels. The formal proof shortens several
+    arguments while keeping every statement; see the "Proof-route differences"
+    section of docs/target-a-submission-scope.md. The Zariskian localization
+    package is proved through a survival lemma in U rather than through
+    localized Rees rings. Corollary 4.4 uses a maximal-rank argument in place
+    of the sketched Lemma 4.3. Supports are computed over all primes of G.
+    The legacy scaffolds outside SymplecticStafford/Paper are not used by the
+    proof.
 
 review:
   status: "agent-reviewed"
   reviewers: []
   notes: >-
-    Earlier checkpoint reviews and comparator receipts are historical.
-    The selected finite-central-pencil comparison passed independent Sol-low
-    statement review, its independent behavioral oracle, import-closure
-    checks, Comparator, Lean kernel, and NanoDa locally. The current wave
-    receipt records full checkpoint results separately.
-    Research interest, source attribution, and human release review remain
-    pending. The broader paper has an unresolved homogeneous-localization
-    versus prime-localization length bridge; no universal theorem is claimed.
+    The statement correspondence and proof architecture await independent
+    human review. The comparator result certifies that Solution proves
+    exactly the Challenge statement with the permitted axioms.
 
 alignment:
   namespace: "SymplecticStafford"

@@ -25,12 +25,13 @@ checkout_exact() {
   fi
   if [[ ! -d "$destination/.git" ]]; then
     git clone --filter=blob:none --no-checkout "$url" "$destination"
+  else
+    test -z "$(git -C "$destination" status --porcelain)" || {
+      echo "$name checkout has local changes; clean it before bootstrapping" >&2
+      exit 1
+    }
   fi
   git -C "$destination" remote set-url origin "$url"
-  test -z "$(git -C "$destination" status --porcelain)" || {
-    echo "$name checkout has local changes; clean it before bootstrapping" >&2
-    exit 1
-  }
   git -C "$destination" fetch --tags origin
   git -C "$destination" cat-file -e "$revision^{commit}" 2>/dev/null ||
     git -C "$destination" fetch origin "$revision"
