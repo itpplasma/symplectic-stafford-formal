@@ -154,61 +154,6 @@ lemma exists_grAt_eq {n : ℕ} {g : G} (hg : g ∈ 𝒜 n) : ∃ u ∈ D.F n, D.
 lemma mem_F_of_le {m n : ℕ} (h : m ≤ n) {u : U} (hu : u ∈ D.F m) : u ∈ D.F n :=
   D.mono h hu
 
-/-- The filtration extended by zero to integer indices. -/
-noncomputable def Fz (m : ℤ) : Submodule k U := by
-  classical exact if m < 0 then ⊥ else D.F m.toNat
-
-lemma Fz_of_nonneg {m : ℤ} (h : 0 ≤ m) : D.Fz m = D.F m.toNat := by
-  simp [Fz, not_lt.mpr h]
-
-lemma Fz_of_neg {m : ℤ} (h : m < 0) : D.Fz m = ⊥ := by
-  simp [Fz, h]
-
-@[simp] lemma Fz_natCast (n : ℕ) : D.Fz n = D.F n := by
-  rw [D.Fz_of_nonneg (Int.natCast_nonneg n), Int.toNat_natCast]
-
-lemma Fz_mono : Monotone D.Fz := by
-  intro a b hab
-  by_cases ha : a < 0
-  · rw [D.Fz_of_neg ha]; exact bot_le
-  · rw [D.Fz_of_nonneg (by omega), D.Fz_of_nonneg (by omega)]
-    exact D.mono (by omega)
-
-lemma Fz_mul_mem {i j : ℤ} {u v : U} (hu : u ∈ D.Fz i) (hv : v ∈ D.Fz j) :
-    u * v ∈ D.Fz (i + j) := by
-  by_cases hi : i < 0
-  · rw [D.Fz_of_neg hi, Submodule.mem_bot] at hu; simp [hu]
-  by_cases hj : j < 0
-  · rw [D.Fz_of_neg hj, Submodule.mem_bot] at hv; simp [hv]
-  rw [D.Fz_of_nonneg (show 0 ≤ i by omega)] at hu
-  rw [D.Fz_of_nonneg (show 0 ≤ j by omega)] at hv
-  rw [D.Fz_of_nonneg (show 0 ≤ i + j by omega)]
-  have := D.mul_mem hu hv
-  rwa [show i.toNat + j.toNat = (i + j).toNat by omega] at this
-
-lemma Flow_eq_Fz (n : ℕ) : D.Flow n = D.Fz ((n : ℤ) - 1) := by
-  cases n with
-  | zero => rw [Flow_zero, D.Fz_of_neg (by omega)]
-  | succ n => rw [Flow_succ, D.Fz_of_nonneg (by omega)]; congr 1; omega
-
-lemma mem_Fz_iff {m : ℤ} {u : U} : u ∈ D.Fz m ↔ u = 0 ∨ (D.deg u : ℤ) ≤ m := by
-  by_cases hm : m < 0
-  · rw [D.Fz_of_neg hm, Submodule.mem_bot]
-    constructor
-    · exact Or.inl
-    · rintro (h | h)
-      · exact h
-      · omega
-  · rw [D.Fz_of_nonneg (by omega)]
-    constructor
-    · intro h; right; have := D.mem_F_iff.mp h; omega
-    · rintro (h | h)
-      · subst h; exact Submodule.zero_mem _
-      · exact D.mem_F_iff.mpr (by omega)
-
-lemma mem_Fz_deg (u : U) : u ∈ D.Fz (D.deg u) := by
-  rw [Fz_natCast]; exact D.mem_F_deg u
-
 /-! ### Degree and principal symbol -/
 
 /-- The least filtration degree. -/
@@ -273,6 +218,61 @@ lemma grAt_deg_lt {n : ℕ} {u : U} (h : D.deg u < n) : D.grAt n u = 0 := by
   | zero => omega
   | succ n => exact D.mem_F_iff.mpr (by omega)
 
+/-- The filtration extended by zero to integer indices. -/
+noncomputable def Fz (m : ℤ) : Submodule k U := by
+  classical exact if m < 0 then ⊥ else D.F m.toNat
+
+lemma Fz_of_nonneg {m : ℤ} (h : 0 ≤ m) : D.Fz m = D.F m.toNat := by
+  simp [Fz, not_lt.mpr h]
+
+lemma Fz_of_neg {m : ℤ} (h : m < 0) : D.Fz m = ⊥ := by
+  simp [Fz, h]
+
+@[simp] lemma Fz_natCast (n : ℕ) : D.Fz n = D.F n := by
+  rw [D.Fz_of_nonneg (Int.natCast_nonneg n), Int.toNat_natCast]
+
+lemma Fz_mono : Monotone D.Fz := by
+  intro a b hab
+  by_cases ha : a < 0
+  · rw [D.Fz_of_neg ha]; exact bot_le
+  · rw [D.Fz_of_nonneg (by omega), D.Fz_of_nonneg (by omega)]
+    exact D.mono (by omega)
+
+lemma Fz_mul_mem {i j : ℤ} {u v : U} (hu : u ∈ D.Fz i) (hv : v ∈ D.Fz j) :
+    u * v ∈ D.Fz (i + j) := by
+  by_cases hi : i < 0
+  · rw [D.Fz_of_neg hi, Submodule.mem_bot] at hu; simp [hu]
+  by_cases hj : j < 0
+  · rw [D.Fz_of_neg hj, Submodule.mem_bot] at hv; simp [hv]
+  rw [D.Fz_of_nonneg (show 0 ≤ i by omega)] at hu
+  rw [D.Fz_of_nonneg (show 0 ≤ j by omega)] at hv
+  rw [D.Fz_of_nonneg (show 0 ≤ i + j by omega)]
+  have := D.mul_mem hu hv
+  rwa [show i.toNat + j.toNat = (i + j).toNat by omega] at this
+
+lemma Flow_eq_Fz (n : ℕ) : D.Flow n = D.Fz ((n : ℤ) - 1) := by
+  cases n with
+  | zero => rw [Flow_zero, D.Fz_of_neg (by omega)]
+  | succ n => rw [Flow_succ, D.Fz_of_nonneg (by omega)]; congr 1; omega
+
+lemma mem_Fz_iff {m : ℤ} {u : U} : u ∈ D.Fz m ↔ u = 0 ∨ (D.deg u : ℤ) ≤ m := by
+  by_cases hm : m < 0
+  · rw [D.Fz_of_neg hm, Submodule.mem_bot]
+    constructor
+    · exact Or.inl
+    · rintro (h | h)
+      · exact h
+      · omega
+  · rw [D.Fz_of_nonneg (by omega)]
+    constructor
+    · intro h; right; have := D.mem_F_iff.mp h; omega
+    · rintro (h | h)
+      · subst h; exact Submodule.zero_mem _
+      · exact D.mem_F_iff.mpr (by omega)
+
+lemma mem_Fz_deg (u : U) : u ∈ D.Fz (D.deg u) := by
+  rw [Fz_natCast]; exact D.mem_F_deg u
+
 /-! ### Degree zero -/
 
 lemma mem_F_zero_iff {u : U} : u ∈ D.F 0 ↔ ∃ c : k, algebraMap k U c = u := by
@@ -308,6 +308,7 @@ lemma grAt_zero_one : D.grAt 0 1 = 1 := by
     rw [mul_one, ← D.grAt_mul (D.one_mem_F 0) (D.one_mem_F 0), mul_one]
   exact mul_left_cancel₀ h1 hsq
 
+include D in
 lemma nontrivial : Nontrivial U := by
   refine ⟨⟨1, 0, fun h => ?_⟩⟩
   have := D.grAt_zero_one
@@ -324,6 +325,7 @@ lemma grAt_mul_deg {u v : U} :
     D.grAt (D.deg u + D.deg v) (u * v) = D.sym u * D.sym v :=
   D.grAt_mul (D.mem_F_deg u) (D.mem_F_deg v)
 
+include D in
 lemma mul_ne_zero' {u v : U} (hu : u ≠ 0) (hv : v ≠ 0) : u * v ≠ 0 := by
   intro h
   have := D.grAt_mul_deg (u := u) (v := v)
@@ -344,12 +346,14 @@ lemma sym_mul (u v : U) : D.sym (u * v) = D.sym u * D.sym v := by
   rw [D.deg_mul hu hv]
   exact D.grAt_mul_deg
 
+include D in
 lemma noZeroDivisors : NoZeroDivisors U where
   eq_zero_or_eq_zero_of_mul_eq_zero {u v} h := by
     by_contra hc
     push_neg at hc
     exact D.mul_ne_zero' hc.1 hc.2 h
 
+include D in
 lemma isDomain : IsDomain U :=
   haveI := D.nontrivial
   haveI := D.noZeroDivisors
@@ -361,6 +365,7 @@ lemma sym_pow (u : U) (N : ℕ) : D.sym (u ^ N) = D.sym u ^ N := by
   | succ N ih => rw [pow_succ, D.sym_mul, ih, pow_succ]
 
 lemma deg_pow {u : U} (hu : u ≠ 0) (N : ℕ) : D.deg (u ^ N) = N * D.deg u := by
+  haveI := D.noZeroDivisors
   induction N with
   | zero => simp [D.deg_one]
   | succ N ih => rw [pow_succ, D.deg_mul (pow_ne_zero _ hu) hu, ih]; ring
@@ -370,7 +375,8 @@ lemma deg_pow {u : U} (hu : u ≠ 0) (N : ℕ) : D.deg (u ^ N) = N * D.deg u := 
 /-- `S_𝔭 = {s ≠ 0 : σ(s) ∉ 𝔭}`. -/
 def denoms (p : Ideal G) [p.IsPrime] : Submonoid U where
   carrier := {s | s ≠ 0 ∧ D.sym s ∉ p}
-  one_mem' := ⟨haveI := D.nontrivial; one_ne_zero, by rw [Set.mem_setOf_eq, D.sym_one]; exact Ideal.IsPrime.one_notMem ‹_›⟩
+  one_mem' := ⟨haveI := D.nontrivial; one_ne_zero, by
+    rw [D.sym_one]; exact Ideal.IsPrime.one_notMem ‹_›⟩
   mul_mem' := by
     rintro a b ⟨ha, ha'⟩ ⟨hb, hb'⟩
     refine ⟨D.mul_ne_zero' ha hb, ?_⟩
@@ -426,9 +432,9 @@ noncomputable def grIdeal (I : Submodule Uᵐᵒᵖ U) : Ideal G where
     exact AddSubgroup.zero_mem _
   smul_mem' := by
     intro r g hg n
-    rw [smul_eq_mul]
-    conv_lhs => rw [← sum_support_decompose 𝒜 r]
-    rw [Finset.sum_mul, decompose_sum, DFinsupp.finset_sum_apply, Submodule.coe_sum]
+    rw [smul_eq_mul, show r * g = ∑ i ∈ (decompose 𝒜 r).support, (decompose 𝒜 r i : G) * g by
+      rw [← Finset.sum_mul, sum_support_decompose]]
+    rw [decompose_sum, DFinsupp.finset_sum_apply, Submodule.coe_sum]
     refine AddSubgroup.sum_mem _ fun i _ => ?_
     rw [coe_decompose_mul_of_left_mem 𝒜 n (decompose 𝒜 r i).2]
     split_ifs with hin
@@ -576,7 +582,7 @@ theorem artinRees [IsNoetherianRing G] (I : Submodule Uᵐᵒᵖ U) :
   apply D.descent
   · exact fun i => ⟨hpI _, hpF _⟩
   intro n u hu hun
-  have hmem : D.grAt n u ∈ Ideal.span Sg := Ideal.subset_span ⟨n, u, hu, hun, rfl⟩
+  have hmem : D.grAt n u ∈ Submodule.span G Sg := Submodule.subset_span ⟨n, u, hu, hun, rfl⟩
   rw [hspan] at hmem
   refine (Ideal.span_mono ?_) hmem
   intro y hy

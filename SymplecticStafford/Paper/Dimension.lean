@@ -58,8 +58,12 @@ theorem ringKrullDim_quotient_add_one_le {J J' : Ideal R} (hJJ' : J ≤ J')
     have : q = l.head.1.asIdeal := congrArg (fun x : PrimeSpectrum R => x.asIdeal) (congrArg Subtype.val h)
     rw [this]
     exact l.head.2
-  refine le_trans ?_ (le_iSup _ ((l.map f hf).cons q' hlt))
-  simp
+  have hlt' : q' < (l.map f hf).head := hlt
+  let l' := (l.map f hf).cons q' hlt'
+  have hlen : l'.length = l.length + 1 := by
+    simp only [l', RelSeries.cons_length]; rfl
+  refine le_trans ?_ (le_iSup _ l')
+  rw [hlen]; push_cast; rfl
 
 /-- **Support-union bound.**  If each minimal prime of `J` contains `J₁` or `J₂`,
 then `dim (R ⧸ J) ≤ max (dim (R ⧸ J₁)) (dim (R ⧸ J₂))`. -/

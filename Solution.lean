@@ -45,8 +45,8 @@ def AffineSameDivisorStatement : Prop :=
 
 theorem universalStatement : AffineSameDivisorStatement.{u, v, w} := by
   intro k U G _ _ _ _ _ _ _ _ _ 𝒜 _ _ hdim D d a hd ha B
-  haveI : Infinite k := inferInstance
-  haveI : IsNoetherianRing G := Algebra.FiniteType.isNoetherianRing k G
+  have : Infinite k := Infinite.of_injective (Nat.cast : ℕ → k) Nat.cast_injective
+  have : IsNoetherianRing G := Algebra.FiniteType.isNoetherianRing k G
   let D' : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜 :=
     { F := D.F
       mono := D.mono

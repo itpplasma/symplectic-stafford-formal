@@ -114,7 +114,6 @@ theorem pencil_ker_finite {D Z : Type*} [AddCommGroup D] [Module E D] [Module.Fi
     rw [h2, eq_neg_of_add_eq_zero_right h1, smul_neg, ← neg_smul, ← map_neg]
   have hli : LinearIndependent E x :=
     central_eigenvectors_linearIndependent A μ hμ (fun c a => hκ _ a) x hx0 hA
-  haveI : IsNoetherian E D := IsNoetherian.iff_fg.mpr inferInstance
   have : Finite Bad := hli.finite_of_isNoetherian
   exact Set.toFinite Bad
 
@@ -127,7 +126,7 @@ theorem division_pencil_finite {Z : Type*} [AddCommGroup Z] [Module E Z]
   refine (pencil_ker_finite κ hκ (Finsupp.linearCombination E v)
     (Finsupp.linearCombination E w) hv).subset ?_
   intro c hc
-  simp only [Set.mem_setOf_eq, linearIndependent_iff, not_forall] at hc
+  simp only [Set.mem_ofPred_eq, linearIndependent_iff, not_forall] at hc
   obtain ⟨l, hl, hl0⟩ := hc
   refine ⟨l, hl0, ?_⟩
   rw [← hl, Finsupp.linearCombination_apply, Finsupp.linearCombination_apply,

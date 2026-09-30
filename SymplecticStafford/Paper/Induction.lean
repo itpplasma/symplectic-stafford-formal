@@ -72,7 +72,8 @@ lemma colonJ_le_Id (d F G₀ : U) (l : k) :
   rw [mul_sub, hcomm]; noncomm_ring
 
 lemma colonJ_le_Id_self (d F G₀ : U) : colonJ d F G₀ ≤ Id d F := by
-  simpa using colonJ_le_Id (k := k) d F G₀ 0
+  rintro _ ⟨y, s, c, -, rfl⟩
+  exact mem_Id.mpr ⟨y, s, rfl⟩
 
 /-- The extension of `I_d(F)` to a ring of right fractions. -/
 lemma extend_Id {T : Type*} [Ring T] {ι : U →+* T} (d F : U) :
@@ -81,7 +82,7 @@ lemma extend_Id {T : Type*} [Ring T] {ι : U →+* T} (d F : U) :
   · rw [IsRightFractions.extend, Submodule.span_le]
     rintro _ ⟨x, hx, rfl⟩
     obtain ⟨r, s, rfl⟩ := mem_Id.mp hx
-    rw [Submodule.mem_span_pair]
+    rw [SetLike.mem_coe, Submodule.mem_span_pair]
     exact ⟨op (ι r), op (ι s), by simp [op_smul_eq_mul, map_add, map_mul, mul_assoc]⟩
   · rw [Submodule.span_le]
     rintro _ (rfl | rfl)
@@ -173,7 +174,21 @@ theorem Ph_zero : D.Ph 0 := by
   haveI := D.isDomain
   obtain ⟨H, hH⟩ := Test.exists_source Ω B a ha
   refine ⟨H, hH, ?_⟩
+  unfold δ
   simpa using ringKrullDim_quotient_le (D.grIdeal (Id d (B + H * a)))
+
+/-- **Remark 5.2 (the ordered identity, constant term).**  A free-ring
+identity separating the algebra of (5.8) from the local certificates. -/
+theorem remark52_const {R : Type*} [Ring R] (d a₀ v b₀ C₀ z₀ w L₀ : R) :
+    d * (a₀ + C₀ * z₀ * w * b₀) + v * (b₀ - L₀ * z₀ * w * b₀) - 1 =
+      (d * a₀ + v * b₀ - 1) + (d * C₀ - v * L₀) * z₀ * w * b₀ := by
+  noncomm_ring
+
+/-- **Remark 5.2 (the ordered identity, coefficient of `t`).** -/
+theorem remark52_coeff {R : Type*} [Ring R] (d c₀ w b₀ L₀ z₀ : R) :
+    d * -(c₀ * w * b₀) + w * (b₀ - L₀ * z₀ * w * b₀) =
+      -(d * c₀ + w * L₀ * z₀ - 1) * w * b₀ := by
+  noncomm_ring
 
 section Successor
 
@@ -194,29 +209,17 @@ theorem support_union {d F G₀ L₀ C₀ : U} (hFd : F * d * L₀ = d * C₀) (
   have e2 := (D.one_mem_extend_iff_not_le hT (Id (d * L₀) G₀)).mpr h2
   obtain ⟨a₀, b₀, hab⟩ := mem_extend_Id.mp e1
   obtain ⟨c₀', z₀, hcz⟩ := mem_extend_Id.mp e2
-  set w := ι (G₀ * d)
-  set c₀ := ι L₀ * c₀'
-  -- The two local certificates (5.6).
-  have cert1 : ι d * a₀ + ι (F * d) * b₀ = 1 := hab
-  have cert2 : ι d * c₀ + w * ι L₀ * z₀ = 1 := by
-    rw [← hcz]; simp only [c₀, w, map_mul]; noncomm_ring
   have hrel : ι (F * d) * ι L₀ = ι d * ι C₀ := by rw [← map_mul, hFd, map_mul]
-  -- The coefficients (5.7).
-  set A₀ := a₀ + ι C₀ * z₀ * w * b₀
-  set A₁ := -(c₀ * w * b₀)
-  set S₀ := b₀ - ι L₀ * z₀ * w * b₀
-  have id0 : ι d * A₀ + ι (F * d) * S₀ = 1 := by
-    have : ι d * A₀ + ι (F * d) * S₀ - 1 = (ι d * a₀ + ι (F * d) * b₀ - 1) +
-        (ι d * ι C₀ - ι (F * d) * ι L₀) * z₀ * w * b₀ := by
-      simp only [A₀, S₀]; noncomm_ring
-    rw [cert1, hrel, sub_self, sub_self, zero_mul, zero_mul, zero_mul, add_zero] at this
-    exact sub_eq_zero.mp this
-  have id1 : ι d * A₁ + w * S₀ = 0 := by
-    have : ι d * A₁ + w * S₀ = -(ι d * c₀ + w * ι L₀ * z₀ - 1) * w * b₀ := by
-      simp only [A₁, S₀]; noncomm_ring
-    rw [this, cert2, sub_self, neg_zero, zero_mul, zero_mul]
+  have cert2 : ι d * (ι L₀ * c₀') + ι (G₀ * d) * ι L₀ * z₀ = 1 := by
+    rw [← hcz]; simp only [map_mul, mul_assoc]
+  -- The coefficients (5.7) and the identity (5.8).
+  have id0 := remark52_const (ι d) a₀ (ι (F * d)) b₀ (ι C₀) z₀ (ι (G₀ * d)) (ι L₀)
+  rw [hab, hrel, sub_self, sub_self, zero_mul, zero_mul, zero_mul, add_zero, sub_eq_zero] at id0
+  have id1 := remark52_coeff (ι d) (ι L₀ * c₀') (ι (G₀ * d)) b₀ (ι L₀) z₀
+  rw [cert2, sub_self, neg_zero, zero_mul, zero_mul] at id1
   -- One common right denominator.
-  obtain ⟨s, hs, hcom⟩ := hT.exists_common ![A₀, A₁, S₀]
+  obtain ⟨s, hs, hcom⟩ := hT.exists_common ![a₀ + ι C₀ * z₀ * ι (G₀ * d) * b₀,
+    -(ι L₀ * c₀' * ι (G₀ * d) * b₀), b₀ - ι L₀ * z₀ * ι (G₀ * d) * b₀]
   obtain ⟨α₀, hα₀⟩ := hcom 0
   obtain ⟨α₁, hα₁⟩ := hcom 1
   obtain ⟨σ₀, hσ₀⟩ := hcom 2
@@ -225,24 +228,20 @@ theorem support_union {d F G₀ L₀ C₀ : U} (hFd : F * d * L₀ = d * C₀) (
   have hs1 : s = d * α₀ + F * d * σ₀ := by
     apply hT.injective
     have := congrArg (· * ι s) id0
-    simp only [add_mul, mul_assoc, one_mul] at this
-    rw [hα₀, hσ₀] at this
-    rw [← this]; simp [map_add, map_mul, mul_assoc]
+    rw [add_mul, mul_assoc (ι d), mul_assoc (ι (F * d)), one_mul, hα₀, hσ₀] at this
+    rw [← this, map_add, map_mul ι d α₀, map_mul ι (F * d) σ₀]
   have hs2 : G₀ * d * σ₀ = d * (-α₁) := by
     apply hT.injective
     have := congrArg (· * ι s) id1
-    simp only [add_mul, mul_assoc, zero_mul] at this
-    rw [hα₁, hσ₀] at this
-    rw [map_mul, map_mul, map_mul, map_neg, mul_neg, eq_neg_iff_add_eq_zero, add_comm]
-    simpa [w, mul_assoc] using this
+    rw [add_mul, mul_assoc (ι d), mul_assoc (ι (G₀ * d)), zero_mul, hα₁, hσ₀] at this
+    rw [map_mul ι (G₀ * d) σ₀, map_mul ι d (-α₁), map_neg]
+    exact (eq_neg_of_add_eq_zero_right this).trans (mul_neg (ι d) (ι α₁)).symm
   have hsJ : s ∈ colonJ d F G₀ := ⟨α₀, σ₀, -α₁, hs2, hs1⟩
   exact hs.2 (hq (D.sym_mem_grIdeal hsJ))
 
 end Successor
 
 section
-
-variable [IsSimpleRing U] [Infinite k]
 
 /-- **The successor step** `P_h → P_{h+1}` (paper §6). -/
 theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
@@ -275,7 +274,7 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
         haveI : q.IsPrime := hq.1.1
         exact support_union hFd q hq.1.2
     calc D.δ J + (h : WithBot ℕ∞) ≤ max (D.δ I) (D.δ (Id d₁ G₀)) + h :=
-          add_le_add_right hmax _
+          add_le_add_left hmax _
       _ ≤ ringKrullDim G := by
           rcases le_total (D.δ I) (D.δ (Id d₁ G₀)) with hle | hle
           · rw [max_eq_right hle]; exact hδ₂
@@ -299,10 +298,8 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
     set E := IsRightFractions.extend (ι := ι) J
     have hfin := D.finiteLength hT J hq
     haveI := hfin.1
-    set e : D.Tloc q ⧸ E := Submodule.Quotient.mk 1
-    have he : Submodule.span (D.Tloc q)ᵐᵒᵖ {e} = ⊤ := span_mk_one_eq_top E
-    have hmk : ∀ x : D.Tloc q, (Submodule.Quotient.mk x : D.Tloc q ⧸ E) = op x • e := by
-      intro x; rw [← Submodule.Quotient.mk_smul, op_smul_eq_mul, one_mul]
+    have he : Submodule.span (D.Tloc q)ᵐᵒᵖ {(Submodule.Quotient.mk 1 : D.Tloc q ⧸ E)} = ⊤ :=
+      span_mk_one_eq_top E
     have hdE : ι d ∈ E := IsRightFractions.map_mem_extend (d_mem_colonJ d F G₀)
     show {l : k | _}.Finite
     by_cases hold : D.grIdeal I ≤ q
@@ -315,35 +312,40 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
         simp only [Ωnew, List.mem_map, Finset.mem_toList, Finset.mem_attach, true_and]
         exact ⟨⟨q, (Set.Finite.mem_toFinset _).mpr hqold⟩, rfl⟩
       -- Unpack the test: `1 = d α + F d β + G₀ d L₀ τ` in `T_q`.
-      have hgen : (Submodule.Quotient.mk 1 :
-          D.Tloc q ⧸ IsRightFractions.extend (ι := ι) I) ∈
-          Submodule.span (D.Tloc q)ᵐᵒᵖ {0 + op (ι (G₀ * d₁)) • Submodule.Quotient.mk 1} := by
-        have := htest; unfold Test.Satisfies at this
-        exact this ▸ Submodule.mem_top
+      have htest' : Submodule.span (D.Tloc q)ᵐᵒᵖ
+          {(0 : D.Tloc q ⧸ IsRightFractions.extend (ι := ι) I) +
+            op (ι (G₀ * d₁)) • Submodule.Quotient.mk 1} = ⊤ := htest
+      have hgen : (Submodule.Quotient.mk 1 : D.Tloc q ⧸ IsRightFractions.extend (ι := ι) I) ∈
+          Submodule.span (D.Tloc q)ᵐᵒᵖ {0 + op (ι (G₀ * d₁)) • Submodule.Quotient.mk 1} :=
+        htest' ▸ Submodule.mem_top
       rw [zero_add, Submodule.mem_span_singleton] at hgen
       obtain ⟨τ', hτ'⟩ := hgen
-      rw [← Submodule.Quotient.mk_smul, ← mul_smul, ← Submodule.Quotient.mk_smul,
-        smul_eq_mul_unop, smul_eq_mul_unop, unop_mul, unop_op, one_mul,
-        Submodule.Quotient.eq] at hτ'
-      obtain ⟨α, β, hαβ⟩ := mem_extend_Id.mp hτ'
+      have hx : (Submodule.Quotient.mk (ι (G₀ * d₁) * unop τ') :
+          D.Tloc q ⧸ IsRightFractions.extend (ι := ι) I) = Submodule.Quotient.mk 1 := by
+        rw [← hτ', ← Submodule.Quotient.mk_smul, ← Submodule.Quotient.mk_smul, op_smul_eq_mul,
+          one_mul, smul_eq_mul_unop]
+      rw [Submodule.Quotient.eq] at hx
+      have hx' := Submodule.neg_mem _ hx
+      rw [neg_sub] at hx'
+      obtain ⟨α, β, hαβ⟩ := mem_extend_Id.mp hx'
       set τ := unop τ'
-      set L := ι L₀ * τ
       refine activated_pencil_finite (k := k) (A := (D.Tloc q)ᵐᵒᵖ) he
-        (B := op β) (L := op L) ?_ ?_
-      · rw [← hmk, ← Submodule.Quotient.mk_smul, op_smul_eq_mul,
-          Submodule.Quotient.mk_eq_zero]
-        have : ι (F * d) * L = ι d * (ι C₀ * τ) := by
-          simp only [L, ← mul_assoc, ← map_mul, hFd]
+        (B := op β) (L := op (ι L₀ * τ)) ?_ ?_
+      · rw [← Submodule.Quotient.mk_smul, op_smul_eq_mul, Submodule.Quotient.mk_eq_zero]
+        have : ι (F * d) * (ι L₀ * τ) = ι d * (ι C₀ * τ) := by
+          rw [← mul_assoc, ← map_mul, hFd, map_mul, mul_assoc]
         rw [this]
         have := E.smul_mem (op (ι C₀ * τ)) hdE
         rwa [op_smul_eq_mul] at this
-      · rw [← hmk, ← hmk, ← Submodule.Quotient.mk_smul, ← Submodule.Quotient.mk_smul,
+      · rw [← Submodule.Quotient.mk_smul, ← Submodule.Quotient.mk_smul,
           op_smul_eq_mul, op_smul_eq_mul, ← Submodule.Quotient.mk_add, eq_comm,
           Submodule.Quotient.eq]
-        have hkey : ι (F * d) * β + ι (G₀ * d) * L - 1 = -(ι d * α) := by
-          have h2 : ι (G₀ * d₁) = ι (G₀ * d) * ι L₀ := by simp [d₁, mul_assoc]
-          rw [h2] at hαβ
-          rw [← hαβ]; simp only [L]; noncomm_ring
+        have h2 : ι (G₀ * d₁) = ι (G₀ * d) * ι L₀ := by
+          rw [show G₀ * d₁ = G₀ * d * L₀ from (mul_assoc _ _ _).symm, map_mul]
+        have hkey : ι (F * d) * β + ι (G₀ * d) * (ι L₀ * τ) - 1 = -(ι d * α) := by
+          rw [← mul_assoc, ← h2]
+          have : ι (F * d) * β = 1 - ι (G₀ * d₁) * τ - ι d * α := by rw [← hαβ]; abel
+          rw [this]; abel
         rw [hkey]
         refine E.neg_mem ?_
         have := E.smul_mem (op α) hdE
@@ -422,7 +424,7 @@ theorem Ph_succ {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1) := by
   have hdrop := ringKrullDim_quotient_add_one_le (D.grIdeal_mono hJF') hmiss
   calc D.δ (Id d F') + ((h + 1 : ℕ) : WithBot ℕ∞)
       = (D.δ (Id d F') + 1) + (h : WithBot ℕ∞) := by push_cast; ring
-    _ ≤ D.δ J + (h : WithBot ℕ∞) := add_le_add_right hdrop _
+    _ ≤ D.δ J + (h : WithBot ℕ∞) := add_le_add_left hdrop _
     _ ≤ ringKrullDim G := hδJ
 
 /-- `P_h` for every `h`. -/
@@ -431,6 +433,7 @@ theorem Ph_all (h : ℕ) : D.Ph h := by
   | zero => exact D.Ph_zero
   | succ h ih => exact D.Ph_succ ih
 
+include D in
 /-- **Target theorem A (affine same-divisor statement).**  For all nonzero
 `d, a` and every `B` there are `H, R, S` with `1 = d R + (B + H a) d S`. -/
 theorem targetA (hdim : ringKrullDim G < ⊤) (d a : U) (hd : d ≠ 0) (ha : a ≠ 0) (B : U) :
@@ -449,13 +452,13 @@ theorem targetA (hdim : ringKrullDim G < ⊤) (d a : U) (hd : d ≠ 0) (ha : a �
     rw [← hx] at hδ
     rcases hδv : D.δ (Id d (B + H * a)) with _ | y
     · rfl
-    · rw [hδv] at hδ
-      exfalso
-      have : ((y + ((n + 1 : ℕ) : ℕ∞) : ℕ∞) : WithBot ℕ∞) ≤ ((n : ℕ∞) : WithBot ℕ∞) := by
-        simpa using hδ
-      rw [WithBot.coe_le_coe] at this
-      have hy : ((n + 1 : ℕ) : ℕ∞) ≤ n := le_trans le_add_self this
-      norm_cast at hy
+    · exfalso
+      rw [hδv] at hδ
+      have h2 : ((y + ((n + 1 : ℕ) : ℕ∞) : ℕ∞) : WithBot ℕ∞) ≤ ((n : ℕ∞) : WithBot ℕ∞) := by
+        rw [WithBot.coe_add]; exact hδ
+      rw [WithBot.coe_le_coe] at h2
+      have h3 : ((n + 1 : ℕ) : ℕ∞) ≤ n := le_trans le_add_self h2
+      norm_cast at h3
       omega
   have htop := eq_top_of_ringKrullDim_quotient_eq_bot hbot
   have h1 := D.one_mem_of_grIdeal_eq_top htop

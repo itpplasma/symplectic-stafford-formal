@@ -32,6 +32,10 @@ def opPiece (n : ℕ) : D.opF n →ₗ[k] D.F n :=
 
 lemma opPiece_apply {n : ℕ} (x : D.opF n) : (D.opPiece n x : U) = unop (x : Uᵐᵒᵖ) := rfl
 
+lemma gr_opPiece {n : ℕ} (z : D.opF n) :
+    ((D.gr n (D.opPiece n z) : 𝒜 n) : G) = D.grAt n (unop (z : Uᵐᵒᵖ)) :=
+  (D.grAt_of_mem z.2).symm
+
 /-- **The opposite filtered algebra** (paper §7.7). -/
 def op : FilteredAlgebraData k Uᵐᵒᵖ G 𝒜 where
   F := D.opF
@@ -46,6 +50,7 @@ def op : FilteredAlgebraData k Uᵐᵒᵖ G 𝒜 where
       refine ⟨c, ?_⟩
       rw [← hc, Algebra.linearMap_apply, MulOpposite.algebraMap_apply, unop_op]
   finiteDimensional := fun n =>
+    haveI := D.finiteDimensional n
     LinearEquiv.finiteDimensional
       (LinearEquiv.ofBijective (D.opPiece n)
         ⟨fun x y h => Subtype.ext (MulOpposite.unop_injective (congrArg Subtype.val h)),
@@ -56,31 +61,32 @@ def op : FilteredAlgebraData k Uᵐᵒᵖ G 𝒜 where
   gr := fun n => (D.gr n).comp (D.opPiece n)
   gr_surjective := fun n y => by
     obtain ⟨x, hx⟩ := D.gr_surjective n y
-    exact ⟨⟨MulOpposite.op (x : U), by simp [mem_opF]⟩, by simpa using hx⟩
+    refine ⟨⟨MulOpposite.op (x : U), x.2⟩, ?_⟩
+    rw [LinearMap.comp_apply, show D.opPiece n ⟨MulOpposite.op (x : U), x.2⟩ = x from
+      Subtype.ext rfl]
+    exact hx
   gr_zero_eq_zero_iff := fun x => by
     rw [LinearMap.comp_apply, D.gr_zero_eq_zero_iff]
     constructor
-    · intro h; exact Subtype.ext (MulOpposite.unop_injective (by simpa [opPiece_apply] using
-        congrArg Subtype.val h))
-    · rintro rfl; simp
+    · intro h
+      apply Subtype.ext
+      apply MulOpposite.unop_injective
+      have := congrArg Subtype.val h
+      simpa [opPiece_apply] using this
+    · rintro rfl; rw [map_zero]
   gr_succ_eq_zero_iff := fun n x => by
     rw [LinearMap.comp_apply, D.gr_succ_eq_zero_iff]; rfl
   gr_mul := fun {i j} x y => by
     simp only [LinearMap.comp_apply]
-    have hx : (x : Uᵐᵒᵖ).unop ∈ D.F i := x.2
-    have hy : (y : Uᵐᵒᵖ).unop ∈ D.F j := y.2
-    have h1 := D.grAt_of_mem hx
-    have h2 := D.grAt_of_mem hy
-    have h3 := D.grAt_of_mem (D.mul_mem hy hx)
-    have h4 := D.grAt_mul' (add_comm j i) hy hx
-    rw [D.grAt_of_mem (show unop ((x : Uᵐᵒᵖ) * y) ∈ D.F (i + j) by
-      rw [unop_mul, add_comm]; exact D.mul_mem hy hx)] at h4
-    change ((D.gr (i + j) ⟨unop ((x : Uᵐᵒᵖ) * y), _⟩ : 𝒜 (i + j)) : G) =
-      (D.gr i ⟨unop (x : Uᵐᵒᵖ), hx⟩ : G) * (D.gr j ⟨unop (y : Uᵐᵒᵖ), hy⟩ : G)
-    rw [h4, D.grAt_of_mem hy, D.grAt_of_mem hx, mul_comm]
+    rw [D.gr_opPiece, D.gr_opPiece, D.gr_opPiece]
+    change D.grAt (i + j) (unop ((x : Uᵐᵒᵖ) * y)) = _
+    have hx : unop (x : Uᵐᵒᵖ) ∈ D.F i := x.2
+    have hy : unop (y : Uᵐᵒᵖ) ∈ D.F j := y.2
+    rw [unop_mul, D.grAt_mul' (add_comm j i) hy hx, mul_comm]
 
 variable [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U] [Infinite k]
 
+include D in
 /-- **The left-handed same-divisor identity** `1 = R d + S d F` in `U`,
 from the affine theorem in the opposite algebra. -/
 theorem targetA_left (hdim : ringKrullDim G < ⊤) (d : U) (hd : d ≠ 0) :

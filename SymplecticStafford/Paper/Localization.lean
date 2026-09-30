@@ -6,6 +6,11 @@ import Mathlib.RingTheory.KrullDimension.Zero
 import Mathlib.RingTheory.Ideal.MinimalPrime.Localization
 import Mathlib.RingTheory.Localization.AtPrime.Basic
 import Mathlib.RingTheory.Localization.Ideal
+import Mathlib.RingTheory.Localization.Submodule
+import Mathlib.RingTheory.Ideal.Quotient.Noetherian
+import Mathlib.Tactic.NoncommRing
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 
 /-!
 # The local support package (paper §3; closure note Z1–Z9)
@@ -58,17 +63,16 @@ theorem nakayama_rows {R : Type*} [Ring R] (N O : Set R)
   | zero => intro m y _ _ j; exact j.elim0
   | succ n ih =>
     intro m y hy hm
-    set L := Fin.last n
-    obtain ⟨w, hwO, hw⟩ := hinv _ (hy L L)
-    -- Solve for `m L`.
-    have hmL : m L = ∑ i : Fin n, op (y i.castSucc L * w) • m i.castSucc := by
-      have h := hm L
+    obtain ⟨w, hwO, hw⟩ := hinv _ (hy (Fin.last n) (Fin.last n))
+    -- Solve for `m (Fin.last n)`.
+    have hmL : m (Fin.last n) = ∑ i : Fin n, op (y i.castSucc (Fin.last n) * w) • m i.castSucc := by
+      have h := hm (Fin.last n)
       rw [Fin.sum_univ_castSucc] at h
-      have h2 : op (1 - y L L) • m L = ∑ i : Fin n, op (y i.castSucc L) • m i.castSucc := by
+      have h2 : op (1 - y (Fin.last n) (Fin.last n)) • m (Fin.last n) = ∑ i : Fin n, op (y i.castSucc (Fin.last n)) • m i.castSucc := by
         rw [op_sub, op_one, sub_smul, one_smul]
-        conv_lhs => rw [h]
+        nth_rewrite 1 [h]
         abel
-      calc m L = op w • op (1 - y L L) • m L := by
+      calc m (Fin.last n) = op w • op (1 - y (Fin.last n) (Fin.last n)) • m (Fin.last n) := by
               rw [← mul_smul, ← op_mul, hw, op_one, one_smul]
         _ = _ := by
               rw [h2, Finset.smul_sum]
@@ -76,7 +80,7 @@ theorem nakayama_rows {R : Type*} [Ring R] (N O : Set R)
               rw [← mul_smul, ← op_mul]
     -- New relations among the first `n` elements.
     set y' : Fin n → Fin n → R :=
-      fun i j => y i.castSucc j.castSucc + y i.castSucc L * w * y L j.castSucc
+      fun i j => y i.castSucc j.castSucc + y i.castSucc (Fin.last n) * w * y (Fin.last n) j.castSucc
     have hy' : ∀ i j, y' i j ∈ N := fun i j =>
       hN _ (hy _ _) _ (hNO _ (hNO _ (hy _ _) _ hwO) _ (hNsub (hy _ _)))
     have hm' : ∀ j : Fin n, m j.castSucc = ∑ i, op (y' i j) • m i.castSucc := by
@@ -249,6 +253,7 @@ noncomputable instance oreSet (p : Ideal G) [p.IsPrime] :
     apply MulOpposite.unop_injective
     simp [hcb]
   choose r' s' hrs using h
+  haveI := D.noZeroDivisors
   exact OreLocalization.oreSetOfNoZeroDivisors r' s' hrs
 
 /-- The actual localization `T_𝔭 = U S_𝔭⁻¹` (paper (3.3)). -/
@@ -267,6 +272,7 @@ lemma locMap_apply (p : Ideal G) [p.IsPrime] (u : U) :
 theorem isRightFractions (p : Ideal G) [p.IsPrime] :
     IsRightFractions (D.denoms p) (D.locMap p) where
   injective := by
+    haveI := D.noZeroDivisors
     intro a b h
     rw [locMap_apply, locMap_apply] at h
     have h' := MulOpposite.op_injective h
@@ -426,9 +432,11 @@ theorem survival (hT : IsRightFractions (D.denoms p) ι) {I₁ I₂ : Submodule 
       refine ⟨y * s + y', I₁.add_mem ?_ hy'I, ?_, ?_⟩
       · have := I₁.smul_mem (op s) hyI; rwa [op_smul_eq_mul] at this
       · convert hr2' using 1; rw [pow_succ]; noncomm_ring
-      · convert hrF' using 1
-        · rw [pow_succ]; noncomm_ring
-        · push_cast; ring
+      · have e1 : x * s ^ (N + 1) - (y * s + y') = (x * s ^ N - y) * s - y' := by
+          rw [pow_succ]; noncomm_ring
+        have e2 : m + ((N + 1 : ℕ) : ℤ) * ((d : ℤ) - 1) = m + N * ((d : ℤ) - 1) + d - 1 := by
+          push_cast; ring
+        rw [e1, e2]; exact hrF'
   -- Artin–Rees for `I₂`.
   obtain ⟨M0, xs, kk, hxs, hdec⟩ := D.artinReesZ I₂
   set K : ℕ := ∑ i, kk i
@@ -536,7 +544,6 @@ theorem not_isUnit_of_le (hT : IsRightFractions (D.denoms p) ι) {I : Submodule 
 
 /-! ### Z8: finite length at minimal primes -/
 
-variable (D) in
 /-- Pull back a submodule of `T ⧸ I T` to a right ideal of `U`. -/
 def pull (ι : U →+* T) (I : Submodule Uᵐᵒᵖ U)
     (W : Submodule Tᵐᵒᵖ (T ⧸ IsRightFractions.extend (ι := ι) I)) : Submodule Uᵐᵒᵖ U where
@@ -566,26 +573,27 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
   let A := Localization.AtPrime P
   haveI : Ring.KrullDimLE 0 A := Ring.KrullDimLE.of_isLocalization P hP A
   haveI : IsArtinianRing A :=
-    isArtinianRing_iff_isNoetherianRing_krullDimLE_zero.mpr ⟨inferInstance, inferInstance⟩
+    isArtinianRing_iff_isNoetherianRing_krullDimLE_zero.mpr
+      ⟨(inferInstance : IsNoetherianRing (Localization P.primeCompl)), inferInstance⟩
   let f : G →+* A := (algebraMap (G ⧸ J) A).comp (Ideal.Quotient.mk J)
-  let Φ : Submodule Tᵐᵒᵖ (T ⧸ E) → Ideal A := fun W => Ideal.map f (D.grIdeal (D.pull ι I W))
+  let Φ : Submodule Tᵐᵒᵖ (T ⧸ E) → Ideal A := fun W => Ideal.map f (D.grIdeal (pull ι I W))
   -- Basic properties of `pull`.
-  have pull_mono : Monotone (D.pull ι I) := fun W W' h a ha => h ha
-  have pull_sat : ∀ W a, ∀ s ∈ D.denoms p, a * s ∈ D.pull ι I W → a ∈ D.pull ι I W := by
+  have pull_mono : Monotone (pull ι I) := fun W W' h a ha => h ha
+  have pull_sat : ∀ W a, ∀ s ∈ D.denoms p, a * s ∈ pull ι I W → a ∈ pull ι I W := by
     intro W a s hs has
     obtain ⟨u, hu⟩ := hT.isUnit s hs
     change Submodule.Quotient.mk (ι a) ∈ W
     have := W.smul_mem (op (↑u⁻¹ : T)) has
     rwa [← Submodule.Quotient.mk_smul, op_smul_eq_mul, map_mul, ← hu, mul_assoc,
       Units.mul_inv, mul_one] at this
-  have pull_strict : StrictMono (D.pull ι I) := by
+  have pull_strict : StrictMono (pull ι I) := by
     refine pull_mono.strictMono_of_injective fun W W' h => ?_
     ext v
     obtain ⟨τ, rfl⟩ := Submodule.Quotient.mk_surjective E v
     obtain ⟨a, s, hs, hτ⟩ := hT.surj τ
     obtain ⟨u, hu⟩ := hT.isUnit s hs
     have key : ∀ W : Submodule Tᵐᵒᵖ (T ⧸ E),
-        Submodule.Quotient.mk τ ∈ W ↔ a ∈ D.pull ι I W := by
+        Submodule.Quotient.mk τ ∈ W ↔ a ∈ pull ι I W := by
       intro W
       change _ ↔ Submodule.Quotient.mk (ι a) ∈ W
       constructor
@@ -597,7 +605,7 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
         rwa [← Submodule.Quotient.mk_smul, op_smul_eq_mul, ← hτ, ← hu, mul_assoc,
           Units.mul_inv, mul_one] at this
     rw [key W, key W', h]
-  have I_le_pull : ∀ W, I ≤ D.pull ι I W := by
+  have I_le_pull : ∀ W, I ≤ pull ι I W := by
     intro W a ha
     change Submodule.Quotient.mk (ι a) ∈ W
     rw [(Submodule.Quotient.mk_eq_zero E).mpr (IsRightFractions.map_mem_extend ha)]
@@ -610,35 +618,36 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
     apply hlt.ne'
     apply le_antisymm _ hlt.le
     -- Find `c ∉ 𝔭` with `c · gr(pull W') ⊆ gr(pull W)`.
-    set L := D.grIdeal (D.pull ι I W)
-    set L' := D.grIdeal (D.pull ι I W')
+    set L := D.grIdeal (pull ι I W)
+    set L' := D.grIdeal (pull ι I W')
     have hJL : J ≤ L := D.grIdeal_mono (I_le_pull W)
     have hloc : ∀ g ∈ L', ∃ c, c ∉ p ∧ c * g ∈ L := by
       intro g hg
-      have hmem : f g ∈ Ideal.map f L := by rw [← heq]; exact Ideal.mem_map_of_mem f hg
+      have hmem : f g ∈ Ideal.map f L :=
+        (show Ideal.map f L' = Ideal.map f L from heq.symm) ▸ Ideal.mem_map_of_mem f hg
       rw [show f = (algebraMap (G ⧸ J) A).comp (Ideal.Quotient.mk J) from rfl,
         ← Ideal.map_map] at hmem
       obtain ⟨⟨⟨a, ha⟩, ⟨m, hm⟩⟩, hx⟩ :=
         (IsLocalization.mem_map_algebraMap_iff P.primeCompl A).mp hmem
       simp only [RingHom.comp_apply, ← map_mul] at hx
       obtain ⟨⟨c, hc⟩, hceq⟩ := (IsLocalization.eq_iff_exists P.primeCompl A).mp hx
-      obtain ⟨ã, hã, rfl⟩ := (Ideal.mem_map_iff_of_surjective _ Ideal.Quotient.mk_surjective).mp ha
-      obtain ⟨m̃, rfl⟩ := Ideal.Quotient.mk_surjective m
-      obtain ⟨c̃, rfl⟩ := Ideal.Quotient.mk_surjective c
-      refine ⟨c̃ * m̃, ?_, ?_⟩
+      obtain ⟨a₁, ha₁, rfl⟩ := (Ideal.mem_map_iff_of_surjective _ Ideal.Quotient.mk_surjective).mp ha
+      obtain ⟨m₁, rfl⟩ := Ideal.Quotient.mk_surjective m
+      obtain ⟨c₁, rfl⟩ := Ideal.Quotient.mk_surjective c
+      refine ⟨c₁ * m₁, ?_, ?_⟩
       · intro hcm
-        have : Ideal.Quotient.mk J (c̃ * m̃) ∈ P := by
+        have : Ideal.Quotient.mk J (c₁ * m₁) ∈ P := by
           rw [← hPp] at hcm; exact hcm
         rw [map_mul] at this
         rcases hP.1.1.mem_or_mem this with h | h
         · exact hc h
         · exact hm h
-      · have h0 : Ideal.Quotient.mk J (c̃ * m̃ * g - c̃ * ã) = 0 := by
+      · have h0 : Ideal.Quotient.mk J (c₁ * m₁ * g - c₁ * a₁) = 0 := by
           rw [map_sub, map_mul, map_mul, map_mul]
           rw [mul_comm (Ideal.Quotient.mk J g)] at hceq
           rw [sub_eq_zero, mul_assoc, hceq]
         rw [Ideal.Quotient.eq_zero_iff_mem] at h0
-        have := L.add_mem (hJL h0) (L.mul_mem_left c̃ hã)
+        have := L.add_mem (hJL h0) (L.mul_mem_left c₁ ha₁)
         simpa using this
     -- A single denominator for a finite generating set.
     obtain ⟨s₀, hs₀⟩ := (IsNoetherian.noetherian L' : L'.FG)
@@ -650,7 +659,7 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
       rw [Ideal.IsPrime.prod_mem_iff]
       push_neg
       exact fun g _ => hcgp g
-    have hcL : L' ≤ L.comap (LinearMap.mulLeft G c) := by
+    have hcL : L' ≤ Submodule.comap (LinearMap.mulLeft G c) L := by
       rw [← hs₀, Submodule.span_le]
       intro g hg
       change c * g ∈ L
@@ -664,9 +673,9 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
       apply hcp
       rw [← sum_support_decompose 𝒜 c]
       exact Ideal.sum_mem _ fun i _ => hc' i
-    set ci : G := decompose 𝒜 c i
-    have hLhom := D.grIdeal_isHomogeneous (D.pull ι I W)
-    have hL'hom := D.grIdeal_isHomogeneous (D.pull ι I W')
+    set ci : G := ((decompose 𝒜 c i : 𝒜 i) : G)
+    have hLhom := D.grIdeal_isHomogeneous (pull ι I W)
+    have hL'hom := D.grIdeal_isHomogeneous (pull ι I W')
     have hkill_hom : ∀ e g, g ∈ L' → g ∈ 𝒜 e → ci * g ∈ L := by
       intro e g hg hge
       have hcg : c * g ∈ L := hcL hg
@@ -677,14 +686,14 @@ theorem finiteLength (hT : IsRightFractions (D.denoms p) ι) (I : Submodule Uᵐ
       rw [← sum_support_decompose 𝒜 g, Finset.mul_sum]
       exact Ideal.sum_mem _ fun e _ => hkill_hom e _ (hL'hom e hg) (decompose 𝒜 g e).2
     obtain ⟨s, hsF, hsg⟩ := D.exists_grAt_eq (decompose 𝒜 c i).2
-    have hne : D.grAt i s ≠ 0 := by rw [hsg]; rintro h; exact hi (h ▸ p.zero_mem)
+    have hne : D.grAt i s ≠ 0 := by rw [hsg]; intro h; apply hi; change ((decompose 𝒜 c i : 𝒜 i) : G) ∈ p; rw [h]; exact p.zero_mem
     have hsym : D.sym s = ci := by rw [← D.grAt_eq_sym hsF hne, hsg]
     have hsS : s ∈ D.denoms p := ⟨fun h0 => by rw [h0, grAt_zero] at hne; exact hne rfl,
       by rw [hsym]; exact hi⟩
     exact survival hT hlt.le (pull_sat W) hsS (fun g hg => by rw [hsym]; exact hkill g hg)
   haveI : WellFoundedLT (Ideal A) := inferInstance
   haveI : WellFoundedGT (Ideal A) := inferInstance
-  exact ⟨Φ_strict.wellFoundedLT, (isNoetherian_iff' _ _).mpr Φ_strict.wellFoundedGT⟩
+  exact ⟨Φ_strict.wellFoundedLT, isNoetherian_iff'.mpr Φ_strict.wellFoundedGT⟩
 
 end Domain
 

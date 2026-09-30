@@ -62,14 +62,14 @@ lemma op_algebraMap_mul_smul (τ : Test.{w} k U) (l : k) (x : τ.T) (v : τ.V) :
 in the successor step, (6.8)). -/
 lemma satisfies_pencil_finite (τ : Test.{w} k U) {F : U} (hF : τ.Satisfies F) (G₀ : U) :
     {l : k | ¬ τ.Satisfies (F + algebraMap k U l * G₀)}.Finite := by
-  haveI := τ.artinian
+  have := τ.artinian
   refine (generator_pencil_finite (k := k) hF (op (τ.ι (G₀ * τ.b)) • τ.e)).subset ?_
   intro l hl
   refine fun h => hl ?_
   unfold Satisfies
-  convert h using 3
-  rw [add_mul, map_add, op_add, add_smul, mul_assoc, map_mul, AlgHom.commutes,
-    op_algebraMap_mul_smul, add_assoc]
+  rw [add_mul, map_add, op_add, add_smul, mul_assoc, map_mul τ.ι (algebraMap k U l),
+    AlgHom.commutes, op_algebraMap_mul_smul, ← add_assoc]
+  exact h
 
 end Test
 

@@ -2,6 +2,8 @@ import Mathlib.Algebra.Polynomial.AlgebraMap
 import Mathlib.Algebra.Polynomial.Div
 import Mathlib.RingTheory.Artinian.Module
 import Mathlib.Order.OrderIsoNat
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Central-parameter pencils in Artinian modules (paper §4.5)
@@ -59,7 +61,8 @@ theorem chain_bad_finite [IsArtinian A M] (x : M) (c : A) (N : k → Submodule A
     have hsplit : P m = (∏ j ∈ (Finset.range m).erase i, (1 + C (lam j) * X)) *
         (1 + C (lam i) * X) := by
       simp only [P]
-      rw [mul_comm, Finset.mul_prod_erase _ _ hi]
+      rw [mul_comm]
+      exact (Finset.mul_prod_erase _ (fun j => 1 + C (lam j) * X) hi).symm
     rw [hsplit, map_mul, aeval_one_add_C_mul_X, mul_smul]
     exact Submodule.smul_mem _ _ (lam_mem i)
   -- but not in `N (λ m)`.
@@ -78,7 +81,7 @@ theorem chain_bad_finite [IsArtinian A M] (x : M) (c : A) (N : k → Submodule A
       apply lam_inj
       have hm0 := lam_ne m
       field_simp at h0
-      linear_combination h0
+      linear_combination -h0
     have hroot : IsRoot (P m - C r) a := by
       simp [IsRoot, r]
     have hdiv := (mul_divByMonic_eq_iff_isRoot (p := P m - C r) (a := a)).mpr hroot

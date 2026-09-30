@@ -6,6 +6,7 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.LinearAlgebra.Isomorphisms
 import Mathlib.Algebra.Module.Projective
+import Mathlib.Algebra.Group.Units.Opposite
 
 /-!
 # No finite-rank trap (paper Lemma 4.2 and Corollary 4.4)
@@ -29,7 +30,7 @@ Right `T`-modules are `Tᵐᵒᵖ`-modules: `x · τ` is `op τ • x`.
 
 namespace SymplecticStafford.Paper
 
-open MulOpposite Module
+open MulOpposite Module Pointwise
 
 section RightAction
 
@@ -83,11 +84,11 @@ def centralEnd : k →+* Module.End Tᵐᵒᵖ M where
     rw [map_add, op_add, add_smul]
 
 lemma centralEnd_apply (c : k) (x : M) :
-    centralEnd (M := M) k c x = op (algebraMap k T c) • x := rfl
+    centralEnd (T := T) (M := M) k c x = op (algebraMap k T c) • x := rfl
 
 /-- The central scalars are central in `End_T(M)`. -/
 lemma centralEnd_comm (c : k) (f : Module.End Tᵐᵒᵖ M) :
-    centralEnd k c * f = f * centralEnd k c := by
+    centralEnd (T := T) (M := M) k c * f = f * centralEnd k c := by
   ext x
   exact end_smul_comm f _ x
 
@@ -95,11 +96,11 @@ lemma centralEnd_comm (c : k) (f : Module.End Tᵐᵒᵖ M) :
 lemma rmul_pencil {U : Type*} [Ring U] [Algebra k U] (ι : U →ₐ[k] T) (u₀ u b : U) (l : k)
     (x : M) :
     op (ι ((u₀ + algebraMap k U l * u) * b)) • x =
-      op (ι (u₀ * b)) • x + centralEnd k l • (op (ι (u * b)) • x) := by
+      op (ι (u₀ * b)) • x + centralEnd (T := T) (M := M) k l • (op (ι (u * b)) • x) := by
   simp only [add_mul, map_add, op_add, add_smul, mul_assoc]
   rw [map_mul ι (algebraMap k U l), AlgHom.commutes]
   congr 1
-  show _ = op (algebraMap k T l) • _
+  show op (algebraMap k T l * ι (u * b)) • x = op (algebraMap k T l) • op (ι (u * b)) • x
   rw [← mul_smul, ← op_mul, Algebra.commutes]
 
 end RightAction
@@ -178,7 +179,7 @@ theorem density (s : Finset M) :
         rw [hbot, Submodule.mem_bot] at hmem
         exact hmem
       by_contra hcon
-      push_neg at hcon
+      push Not at hcon
       have hle : LinearMap.ker (annEval X x) ≤ LinearMap.ker (annEval X y) := by
         intro τ hτ
         rw [LinearMap.mem_ker] at hτ ⊢
@@ -210,7 +211,7 @@ theorem exists_right_annihilator {ι : Type*} [Finite ι] (x : ι → M) (y : M)
     (hy : y ∉ Submodule.span (Module.End Tᵐᵒᵖ M) (Set.range x)) :
     ∃ τ : T, (∀ i, op τ • x i = 0) ∧ op τ • y ≠ 0 := by
   classical
-  haveI := Fintype.ofFinite ι
+  have := Fintype.ofFinite ι
   have hs : ((Finset.univ.image x : Finset M) : Set M) = Set.range x := by
     rw [Finset.coe_image, Finset.coe_univ, Set.image_univ]
   rw [← hs] at hy
@@ -220,7 +221,7 @@ theorem exists_right_annihilator {ι : Type*} [Finite ι] (x : ι → M) (y : M)
 
 /-- A simple ring acts faithfully on a nonzero module. -/
 lemma faithful [IsSimpleRing T] {τ : T} (h : ∀ m : M, op τ • m = 0) : τ = 0 := by
-  haveI := IsSimpleModule.nontrivial Tᵐᵒᵖ M
+  have := IsSimpleModule.nontrivial Tᵐᵒᵖ M
   by_contra hτ
   let I : TwoSidedIdeal T := TwoSidedIdeal.mk' {σ | ∀ m : M, op σ • m = 0}
     (fun m => by rw [op_zero, zero_smul])
@@ -237,10 +238,10 @@ lemma faithful [IsSimpleRing T] {τ : T} (h : ∀ m : M, op τ • m = 0) : τ =
 
 /-- In a simple module over a nondivision domain every vector has a nonzero
 annihilator. -/
-lemma exists_ann [IsDomain T] (hnd : ∃ τ : T, τ ≠ 0 ∧ ¬ IsUnit τ) {y : M} (hy : y ≠ 0) :
+lemma exists_ann [IsDomain T] (hnd : ∃ τ : T, τ ≠ 0 ∧ ¬ IsUnit τ) {y : M} (_hy : y ≠ 0) :
     ∃ σ : T, σ ≠ 0 ∧ op σ • y = 0 := by
   by_contra hcon
-  push_neg at hcon
+  push Not at hcon
   obtain ⟨τ₀, hτ₀, hnu⟩ := hnd
   have hne : op τ₀ • y ≠ 0 := hcon τ₀ hτ₀
   have hspan := IsSimpleModule.span_singleton_eq_top Tᵐᵒᵖ hne
@@ -263,7 +264,7 @@ theorem not_finite_end [IsSimpleRing T] [IsDomain T] (hnd : ∃ τ : T, τ ≠ 0
     ¬ Module.Finite (Module.End Tᵐᵒᵖ M) M := by
   classical
   intro hfin
-  haveI := IsSimpleModule.nontrivial Tᵐᵒᵖ M
+  have := IsSimpleModule.nontrivial Tᵐᵒᵖ M
   have hex : ∃ n, ∃ s : Finset M, s.card = n ∧
       Submodule.span (Module.End Tᵐᵒᵖ M) (s : Set M) = ⊤ := by
     obtain ⟨s, hs⟩ := hfin.fg_top
@@ -359,7 +360,7 @@ theorem no_finite_rank_trap [IsSimpleRing U] [IsSimpleRing T] [IsDomain T]
   have hWle : W ≤ W₁ := Submodule.span_le.mpr (by
     rintro _ ⟨u, rfl⟩
     simpa using hW₁g u)
-  haveI : Module.Finite (Module.End Tᵐᵒᵖ M) W := Submodule.finiteDimensional_of_le hWle
+  have : Module.Finite (Module.End Tᵐᵒᵖ M) W := Submodule.finiteDimensional_of_le hWle
   -- (ii) `W` is stable under `ι U`, then under all of `T`.
   have hWu : ∀ u : U, ∀ w ∈ W, op (ι u) • w ∈ W := by
     intro u
@@ -371,7 +372,7 @@ theorem no_finite_rank_trap [IsSimpleRing U] [IsSimpleRing T] [IsDomain T]
   have hWT : ∀ τ : T, ∀ w ∈ W, op τ • w ∈ W := by
     intro τ w hw
     obtain ⟨a, s, hs, hτ⟩ := hfrac.surj τ
-    have hunit : IsUnit (op (ι s)) := (hfrac.isUnit s hs).op
+    have hunit : IsUnit (op (ι s)) := IsUnit.op (hfrac.isUnit s hs)
     let r : W →ₗ[Module.End Tᵐᵒᵖ M] W := (rmul (ι s)).restrict (fun w hw => hWu s w hw)
     have hrinj : Function.Injective r := by
       intro w₁ w₂ h
@@ -414,7 +415,7 @@ theorem exists_injective_rmul [Infinite k] [IsSimpleRing U] [IsSimpleRing T] [Is
     ∃ u : U, Function.Injective ((rmul (ι (u * b))).comp P) := by
   classical
   by_contra hcon
-  push_neg at hcon
+  push Not at hcon
   let Q : U → D →ₗ[Module.End Tᵐᵒᵖ M] M := fun u => (rmul (ι (u * b))).comp P
   let ρ : U → ℕ := fun u => finrank (Module.End Tᵐᵒᵖ M) (LinearMap.range (Q u))
   have hbound : ∀ u, ρ u ≤ finrank (Module.End Tᵐᵒᵖ M) D := fun u => LinearMap.finrank_range_le _
@@ -423,13 +424,13 @@ theorem exists_injective_rmul [Infinite k] [IsSimpleRing U] [IsSimpleRing T] [Is
     obtain ⟨d₀, hd₀Q, hd₀⟩ : ∃ d₀, Q u₀ d₀ = 0 ∧ d₀ ≠ 0 := by
       have := hcon u₀
       rw [injective_iff_map_eq_zero] at this
-      push_neg at this
+      push Not at this
       exact this
     have hg : P d₀ ≠ 0 := fun h => hd₀ (hP (by rw [map_zero]; exact h))
     set Y₀ := LinearMap.range (Q u₀) with hY₀
     obtain ⟨u, hu⟩ : ∃ u, op (ι (u * b)) • P d₀ ∉ Y₀ := by
       by_contra h
-      push_neg at h
+      push Not at h
       exact no_finite_rank_trap hnd (ι : U →+* T) hfrac hg hb Y₀ h
     set hv := op (ι (u * b)) • P d₀ with hhv
     obtain ⟨s₀, hs₀⟩ := (Q u₀).rangeRestrict.exists_rightInverse_of_surjective
@@ -454,28 +455,28 @@ theorem exists_injective_rmul [Infinite k] [IsSimpleRing U] [IsSimpleRing T] [Is
         have : hv = a⁻¹ • -(y : M) := by
           calc hv = a⁻¹ • (a • hv) := by rw [smul_smul, inv_mul_cancel₀ ha, one_smul]
             _ = a⁻¹ • -(y : M) := by rw [eq_neg_of_add_eq_zero_right hya']
-        rw [← hhv, this]
+        rw [this]
         exact Y₀.smul_mem _ (Y₀.neg_mem y.2)
-    have hfin := pencil_ker_finite (centralEnd k) (centralEnd_comm k) P' W' hP'
+    have hfin := pencil_ker_finite (centralEnd (T := T) (M := M) k) (centralEnd_comm k) P' W' hP'
     obtain ⟨l, hl⟩ := (hfin.union (Set.finite_singleton (0 : k))).exists_notMem
     have hl0 : l ≠ 0 := fun h0 => hl (Or.inr h0)
-    have hlB : ¬ ∃ d, d ≠ 0 ∧ P' d + centralEnd k l • W' d = 0 := fun h => hl (Or.inl h)
+    have hlB : ¬ ∃ d, d ≠ 0 ∧ P' d + centralEnd (T := T) (M := M) k l • W' d = 0 := fun h => hl (Or.inl h)
     refine ⟨u₀ + algebraMap k U l * u, ?_⟩
     set u' := u₀ + algebraMap k U l * u
-    have hQ' : ∀ d, Q u' d = Q u₀ d + centralEnd k l • Q u d := fun d =>
+    have hQ' : ∀ d, Q u' d = Q u₀ d + centralEnd (T := T) (M := M) k l • Q u d := fun d =>
       rmul_pencil k ι u₀ u b l (P d)
     let L : Y₀ × Module.End Tᵐᵒᵖ M →ₗ[Module.End Tᵐᵒᵖ M] D :=
       s₀.comp (LinearMap.fst _ Y₀ (Module.End Tᵐᵒᵖ M)) +
-        (LinearMap.toSpanSingleton _ D (centralEnd k (l⁻¹) • d₀)).comp
+        (LinearMap.toSpanSingleton _ D (centralEnd (T := T) (M := M) k (l⁻¹) • d₀)).comp
           (LinearMap.snd _ Y₀ (Module.End Tᵐᵒᵖ M))
     let F := (Q u').comp L
-    have hF : ∀ p, F p = P' p + centralEnd k l • W' p := by
+    have hF : ∀ p, F p = P' p + centralEnd (T := T) (M := M) k l • W' p := by
       rintro ⟨y, a⟩
-      have e1 : Q u' (s₀ y) = y + centralEnd k l • Q u (s₀ y) := by rw [hQ', hs₀']
-      have e2 : Q u' d₀ = centralEnd k l • hv := by rw [hQ', hd₀Q, zero_add]; rfl
-      show Q u' (s₀ y + a • (centralEnd k (l⁻¹) • d₀)) =
-        ((y : M) + a • hv) + centralEnd k l • Q u (s₀ y)
-      rw [map_add, map_smul, map_smul, e1, e2, smul_smul (centralEnd k (l⁻¹)), ← map_mul,
+      have e1 : Q u' (s₀ y) = y + centralEnd (T := T) (M := M) k l • Q u (s₀ y) := by rw [hQ', hs₀']
+      have e2 : Q u' d₀ = centralEnd (T := T) (M := M) k l • hv := by rw [hQ', hd₀Q, zero_add]; rfl
+      show Q u' (s₀ y + a • (centralEnd (T := T) (M := M) k (l⁻¹) • d₀)) =
+        ((y : M) + a • hv) + centralEnd (T := T) (M := M) k l • Q u (s₀ y)
+      rw [map_add, map_smul, map_smul, e1, e2, smul_smul (centralEnd (T := T) (M := M) k (l⁻¹)), ← map_mul,
         inv_mul_cancel₀ hl0, map_one, one_smul]
       abel
     have hFinj : Function.Injective F := by

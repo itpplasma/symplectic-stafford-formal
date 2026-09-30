@@ -2,6 +2,7 @@ import Mathlib.RingTheory.SimpleRing.Basic
 import Mathlib.RingTheory.TwoSidedIdeal.Operations
 import Mathlib.Algebra.Algebra.Opposite
 import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.Data.Fin.VecNotation
 
 /-!
 # Rings of right fractions
@@ -158,14 +159,14 @@ lemma isDomain [IsDomain U] : IsDomain T :=
 
 /-- The fraction ring of a simple ring is simple (paper Lemma Z9). -/
 lemma isSimpleRing [IsSimpleRing U] : IsSimpleRing T := by
-  haveI := h.nontrivial
+  have := h.nontrivial
   refine IsSimpleRing.of_eq_bot_or_eq_top fun J => ?_
   by_cases hJ : J = ⊥
   · exact Or.inl hJ
   right
   obtain ⟨x, hxJ, hx0⟩ := SetLike.exists_of_lt (bot_lt_iff_ne_bot.mpr hJ)
   have hx0 : x ≠ 0 := by
-    intro e; apply hx0; rw [e]; exact (J.zero_mem : (0 : T) ∈ (⊥ : TwoSidedIdeal T))
+    intro e; apply hx0; rw [e]; exact (⊥ : TwoSidedIdeal T).zero_mem
   obtain ⟨a, s, hs, hxa⟩ := h.surj x
   have ha : a ≠ 0 := by
     rintro rfl
