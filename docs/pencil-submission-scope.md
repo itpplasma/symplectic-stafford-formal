@@ -1,5 +1,9 @@
 # Finite central division-pencil submission scope
 
+> **Superseded.** The Challenge/Solution pair now states Target theorem A;
+> see `target-a-submission-scope.md`. This note records the earlier bounded
+> comparison only.
+
 The Palomar challenge is the following bounded statement. Let `K` be an
 infinite field, let `E` be a division ring that is finite-dimensional as a
 `K`-vector space, and let `V` carry compatible `K`- and `E`-module structures.

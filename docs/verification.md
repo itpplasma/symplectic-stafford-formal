@@ -1,59 +1,31 @@
-# Verification checkpoint
+# Verification record
 
-The current checkout records a partial, reproducible checkpoint rather than a
-terminal theorem. The machine-readable verification receipt is for snapshot
-`c0e50a39963987c2013ce647f4373bba43f1bfaa`, not the current checkout
-`2409d936c9aab6e2fa8c7d3a86cec3450f311b4b`; the current tree has not been
-replayed against that receipt. `PLAN.md` is authoritative for scope. The implemented
-declarations compile under the exact Lean, Mathlib, AlgebraicAnalysis, and
-Stafford38 pins in `formalization.yaml`; independent consumers exercise the
-semantic/support-boundary/right-ideal bridge, ordered/common-colon and finite
-generation, algebraic bounded Rees and quotient-module actions, explicit
-power-Ore fractions, finite associated-top and matrix-pencil detection,
-finite bounded-generator filtrations, finite power-Ore normal forms, a finite
-associated-layer support proxy, explicit right-module composition filtrations,
-and Jacobson-top generation reflection,
-finite-index/constructive successor, original-affine source selection,
-conditional support union, terminal zero-quotient extraction, explicit
-opposite transport, and a differential-Ore finite-cover boundary. Conditional
-original-U finite-test and activated-pencil bridge contracts are also checked.
-They do not yet prove arbitrary finite-length activated pencils or a universal
-original-U simultaneous source selection.
+## Palomar comparison of Target A (local run, 30 September 2026)
 
-The localization, divisor-indexed assembly and strong-P_h files are
-conditional scaffold checkpoints. Their checks verify the stated consumers;
-the newly added spectrum-support, full-symbol, Noetherianity, local-length,
-list-indexed division-LLD and activated-pencil files make their missing
-hypotheses explicit but do not construct them. Concrete full-symbol
-localization, actual local-test semantics, source/chart algebraization,
-characteristic-support-driven support union and final producer-derived
-cofactor extraction remain open M02–M11 obligations.
-The proof map labels these nodes LEAN-SCAFFOLD.
+Source commit: `f8e97fc20e62699a96e46bd4091f16b4b210b797` (branch `claude/kind-bell-rk5gmv`). The
+Challenge/Solution sources at that commit are the compared pair.
 
-Run the checks sequentially from the repository root:
+| Check | Result |
+| --- | --- |
+| `lake env lean Challenge.lean` | compiles; only the deliberate `sorry` |
+| `lake env lean --trust=0 Solution.lean` | compiles |
+| `#print axioms SymplecticStaffordChallenge.universalStatement` | `propext, Classical.choice, Quot.sound` |
+| `scripts/check-import-closure.sh Challenge` | 3108 modules, Lean/Mathlib only |
+| `scripts/check-import-closure.sh Solution` | 3535 modules, no `Challenge` import |
+| Comparator `5756749` with lean4export `15f6055`, NanoDa `68d5ca9`, Landrun `811cfff` | "nanoda kernel accepts the solution", "Lean default kernel accepts the solution", "Your solution is okay!" |
+| `lake env lean --trust=0 tests/PaperTargetAOracle.lean` | passes; the main theorems report only the three standard axioms |
 
-```sh
-./scripts/check-resources.sh
-./scripts/verify.sh --phase-i
-./scripts/verify.sh --phase-ii
-./scripts/verify-palomar.sh
-```
+The project was compiled and exported with Lean 4.33.0 and Mathlib
+`db584cd`. The comparator executable is built with `leanprover/lean4:v4.34.0-rc1`,
+the toolchain pinned by the comparator repository at that revision.
 
-The phase-I command is meaningful for the current C01--C03/P01--P03
-checkpoint, not a completed SS-all Phase I. The final-paper M01–M11
-obligations and exact target are in `docs/phase-instructions.md`. The
-checkpoint Phase-II command and the Palomar comparator now pass for the
-displayed semantic challenge (the comparator run is recorded in
-`.lake/verification/comparator.log`), but they are not phase-completion or
-publication evidence; only
-`check-release-readiness.sh` enforces the release gates. The complete
-source-selection/assembly endpoints and evidence files do not yet exist.
-This is intentional: a successful Lean build of a semantic contract is not
-evidence for the paper's universal source producer.
+The comparator run used `comparator.json` unchanged:
 
-The source audit permits exactly one `sorry`, in `Challenge.lean`, and forbids
-project `axiom` declarations and native proof shortcuts. `Solution.lean` does
-not import `Challenge.lean`; the import-closure audit checks that separation.
-Endpoint axiom reports may use only `propext`, `Classical.choice`, and
-`Quot.sound`. Human mathematical review and paper/Lean statement correspondence
-remain independent release gates.
+- theorem `SymplecticStaffordChallenge.universalStatement`;
+- permitted axioms `propext`, `Quot.sound` and `Classical.choice`;
+- NanoDa enabled.
+
+This is a local replay in the development container. The release runbook's
+clean-checkout replay, human review and registration remain separate steps.
+
+Earlier checkpoint records are archived in `docs/history/`.
