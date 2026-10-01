@@ -1,11 +1,15 @@
 {
   "schema": "symplectic-stafford-verification/v2",
-  "date": "2026-09-30",
-  "source_commit": "f8e97fc20e62699a96e46bd4091f16b4b210b797",
+  "date": "2026-10-01",
+  "source_commit": "75b286cf01673abd9a33e104aa66480a91b90be5",
   "lean": "leanprover/lean4:v4.33.0",
   "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "compared_theorem": "SymplecticStaffordChallenge.universalStatement",
-  "axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "tools": {
     "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
     "comparator_lean": "leanprover/lean4:v4.34.0-rc1",
@@ -19,7 +23,10 @@
     "comparator": "pass",
     "nanoda-kernel": "pass",
     "lean-default-kernel": "pass",
-    "oracle-tests/PaperTargetAOracle.lean": "pass"
+    "oracle-tests/PaperTargetAOracle.lean": "pass",
+    "oracle-tests/WeylNonVacuityOracle.lean": "pass",
+    "verify.sh-full": "pass",
+    "verify-palomar.sh": "pass"
   },
   "scope": "local replay; clean-checkout replay and human review pending"
 }
