@@ -27,3 +27,8 @@ roots = ["Challenge"]
 [[lean_lib]]
 name = "Solution"
 roots = ["Solution"]
+
+# Shared fixtures imported by other oracle files in tests/.
+[[lean_lib]]
+name = "OracleFixtures"
+roots = ["tests.SymbolFractionReesOracle"]

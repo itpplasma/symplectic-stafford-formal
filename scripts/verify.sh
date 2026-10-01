@@ -122,6 +122,7 @@ if [[ "$mode" == "--phase-ii" ]]; then
   python3 scripts/check-axiom-closure.py --phase-ii .lake/verification/axioms.log
 fi
 
+lake build OracleFixtures > .lake/verification/fixtures-build.log 2>&1
 : > .lake/verification/consumers.log
 for source in tests/*.lean; do
   project_lean --trust=0 "$source" >> .lake/verification/consumers.log 2>&1
