@@ -28,8 +28,11 @@ in `U`. With `B = 0` and `a = 1` this is Stafford's identity
 | `SymplecticStafford.Paper.FilteredAlgebraData.targetA_left` (`1 = R d + S d F`) | `SymplecticStafford/Paper/Opposite.lean` |
 | §7 consequences for `U`: cyclic torsion modules, stable range ≤ 2, stably free ⇒ free, cancellation | `SymplecticStafford/Paper/ConsequencesForU.lean` |
 | `SymplecticStaffordChallenge.universalStatement` (Palomar form) | `Challenge.lean`, `Solution.lean` |
+| Non-vacuity: the Weyl algebra `Aₙ(k)` satisfies the hypotheses; Stafford 3.8 (`Stafford38.UniversalStatement`) as a corollary | `SymplecticStafford/Examples/WeylInstance.lean` |
 
-- The development in `SymplecticStafford/Paper/` imports Mathlib only.
+- The development in `SymplecticStafford/Paper/` imports Mathlib only. The Weyl
+  example additionally uses the PBW normal form and Bernstein symbols of the
+  pinned Stafford38 dependency.
 - It contains no `sorry` and no project axioms.
 - The main theorems depend only on `propext`, `Classical.choice` and
   `Quot.sound`.
@@ -61,6 +64,7 @@ depend on them.
 lake build SymplecticStafford.Paper Challenge
 lake env lean Solution.lean
 lake env lean tests/PaperTargetAOracle.lean
+lake build SymplecticStafford.Examples.WeylInstance && lake env lean tests/WeylNonVacuityOracle.lean
 ./scripts/verify-palomar.sh      # after scripts/bootstrap-palomar-tools.sh
 ```
 
@@ -76,6 +80,9 @@ pinned tools:
 
 - The universal theorem is proved in Lean, as are all of the manuscript's
   §7 consequences.
+- The hypotheses are non-vacuous: the Bernstein-filtered Weyl algebra
+  `Aₙ(k)`, `char k = 0`, is proved simple and an instance, and Stafford's
+  Theorem 3.8 for every `n` follows from Target A.
 - Palomar comparator, NanoDa and Lean-kernel checks run locally;
   `docs/verification.md` has the results.
 - Still outstanding: independent human review of the paper and of the

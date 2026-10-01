@@ -78,7 +78,9 @@ theorem exists_minimal_layer_homogeneous_symbol
   have hx : (x : R) ≠ 0 := by
     intro hxzero
     apply hq
-    rw [← hxclass, hxzero]
+    have hx0 : x = 0 := Subtype.ext hxzero
+    rw [← hxclass]
+    simp only [hx0]
     exact ReesNoetherianTransfer.associatedClass_zero F n
   have hpcoeff :
       ((p : ReesPolynomial R).coeff n) = (x : R) := by

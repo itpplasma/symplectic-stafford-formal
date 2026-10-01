@@ -120,9 +120,7 @@ theorem length_carrier_eq_sum_layerLength :
             exact add_comm _ _
           _ = ∑ k ∈ Finset.Ico n F.height, F.layerLength k := by
             rw [← Finset.insert_Ico_add_one_left_eq_Ico hnlt]
-            rw [Finset.sum_insert]
-            · rfl
-            · simp
+            rw [Finset.sum_insert (by simp)]
 
 /-- The finite filtered module itself is obtained by summing all its actual
 successive quotient layers. -/

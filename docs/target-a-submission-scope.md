@@ -93,6 +93,22 @@ each fully proved in Lean:
 7. The induction starts at `P_0` (source selection and `δ ≤ D`) instead of
    `P_1`. Lemma 5.1 holds at every prime containing `gr J`.
 
+## Non-vacuity
+
+`SymplecticStafford/Examples/WeylInstance.lean` instantiates the hypotheses
+with the Weyl algebra `Aₙ(k)`, `char k = 0`:
+
+- `weylFilteredAlgebraData`: the Bernstein filtration (every generator of
+  weight one), with `gr Aₙ(k) ≅ k[x₁,…,xₙ,ξ₁,…,ξₙ]` graded by total degree;
+- `isSimpleRing`: commutators with the newest pair act on PBW normal forms
+  as `−∂/∂ξ₀` and `∂/∂x₀`, which strips that pair from a nonzero element of a
+  two-sided ideal; induction on `n` ends in `A₀ = k`;
+- `stafford38_universalStatement`: Target A with `B = 0`, `a = 1` proves the
+  pinned `Stafford38.UniversalStatement` for every `n`.
+
+The example is outside the compared Challenge/Solution pair and is checked by
+`tests/WeylNonVacuityOracle.lean`.
+
 ## Evidence
 
 Local results are recorded in `docs/verification.md`. The local check
