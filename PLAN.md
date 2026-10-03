@@ -33,6 +33,14 @@ hypotheses. Every earlier project obligation M01–M11 is discharged by the
 
 ## Remaining release steps
 
+The 3 October 2026 synchronization brings both canonical host checkouts to
+the shared `main`. Target A and section 7 sources are in
+`SymplecticStafford/Paper/`. Four legacy boundary/probe files from the research
+checkout are preserved separately in `itpplasma/symplectic-stafford` on
+`wip/sync-20261003/local/symplectic-stafford` (`636f3479c458`); that repository's
+PLAN lists their exact paths and unverified status. They are not a replacement
+for this canonical proof. No new proof replay or release is claimed by sync.
+
 1. Independent human review:
    - of the manuscript, including the Zariskian closure note and the
      formal-route corrections in the research repository;
