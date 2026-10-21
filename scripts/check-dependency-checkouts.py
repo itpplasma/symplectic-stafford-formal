@@ -46,7 +46,7 @@ def main() -> int:
             raise SystemExit(f"{name}: origin URL does not match lakefile")
 
     # Lake also resolves transitive git packages.  Verify their checked-out
-    # trees against the lock rather than trusting only the three direct pins.
+    # trees against the lock rather than trusting only the direct Mathlib pin.
     for package in packages.values():
         if package.get("type") != "git":
             continue

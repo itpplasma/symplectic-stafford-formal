@@ -73,9 +73,11 @@ related_formalizations:
     url: "https://github.com/itpplasma/stafford38-formal"
     relationship: "builds-on"
     note: >-
-      Pinned dependency of the historical scaffolds and a model for release
+      Former dependency of the retired historical scaffolds and a model for release
       provenance and paper/Lean correspondence. The Target A proof imports
-      Mathlib only and does not use the Stafford38 theorem. The related
+      Mathlib only, has exactly one current direct dependency (Mathlib), and
+      does not use the Stafford38 theorem. Retired scaffolds replay at the
+      frozen checkout documented in docs/history/legacy-build-environment.md. The related
       registered entry is PALOMAR-2026-09-05-000007, version 3, checked source
       0bb3aa929b931bf5d82d90f62d7508d3ae1dccc1; this is not a registration
       identifier for Symplectic Stafford.
@@ -99,7 +101,9 @@ status:
     The proof development under SymplecticStafford/Paper imports Mathlib
     only. The 30 September local replay is historical evidence for its
     recorded source and pins; it does not certify the current compatibility
-    migration. Fresh replay and registration are tracked separately from
+    migration or subsequent active-dependency removal. Fresh native build, CI
+    and complete official preflight are required for the dependency-pruned
+    checkout. Replay and registration are tracked separately from
     pending independent human mathematical review.
   sorry_count: 0
   sorry_note: >-
@@ -175,9 +179,10 @@ fidelity:
   divergences: >-
     The formal statement encodes the manuscript's section 1.1 hypotheses
     exactly. The associated graded ring is given by surjective multiplicative
-    symbol maps with the correct kernels. The formal proof shortens several
-    arguments while keeping every statement; see the "Proof-route differences"
-    section of docs/target-a-submission-scope.md. The Zariskian localization
+    symbol maps with the correct kernels. The formal proof establishes Target A and the recorded section 7
+    consequences. It bypasses some intermediate manuscript claims rather than
+    formalizing every manuscript lemma; see the claim-by-claim map and the
+    "Proof-route differences" section of docs/target-a-submission-scope.md. The Zariskian localization
     package is proved through a survival lemma in U rather than through
     localized Rees rings. Corollary 4.4 uses a maximal-rank argument in place
     of the sketched Lemma 4.3. Supports are computed over all primes of G.
@@ -223,7 +228,7 @@ alignment:
         and the paper/Lean correspondence are recorded in the submission scope.
 
 acknowledgements: >-
-  The workspace builds on Lean, Mathlib, AlgebraicAnalysis, and the pinned
-  Stafford38 formal project. Comparator, lean4export, NanoDa, and Landrun
-  provide the independent submission-checking path for the complete Target A
-  endpoint.
+  The active package builds on Lean and Mathlib, its only direct dependency.
+  Retired scaffolds used AlgebraicAnalysis and Stafford38 in their frozen
+  historical environment. The bundled Comparator tools provide the independent
+  submission-checking path for the complete Target A endpoint.

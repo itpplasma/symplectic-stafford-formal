@@ -31,6 +31,17 @@ hypotheses. Every earlier project obligation M01–M11 is discharged by the
 | M10 two-call successor, termination | `Induction.lean` (`Ph_succ`, `Ph_all`) |
 | M11 original cofactors, opposite, package | `Induction.lean` (`targetA`), `Opposite.lean`, `Consequences*.lean` |
 
+## Active build scope
+
+The current package has exactly one direct dependency, Mathlib. Target A, the
+Challenge/Solution pair and their native consumers form the release build.
+AlgebraicAnalysis and Stafford38 requirements were removed after official
+preflight detected a shadowing dependency Challenge module. Retired scaffolds
+replay only at the [frozen historical checkout](docs/history/legacy-build-environment.md);
+the active verifier has no historical-scaffold replay mode. Recorded local
+and CI passes apply to their exact source snapshots. The dependency-pruned
+checkout needs fresh native, CI and complete official preflight checks.
+
 ## Remaining release steps
 
 The 3 October 2026 synchronization brings both canonical host checkouts to

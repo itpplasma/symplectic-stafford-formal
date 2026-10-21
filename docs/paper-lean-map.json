@@ -123,15 +123,15 @@
         },
         {
           "path": "dependency-pins.json",
-          "sha256": "edfc39d9b7f17e7c85d3a37192b8607c34e6cbd7cd43ee94fe7ab8e299ef544f"
+          "sha256": "ecef01b3e3cdb5ec84bb61d92443b6f442e25ad102cd0e8f68d83038c5668a7a"
         },
         {
           "path": "lake-manifest.json",
-          "sha256": "8c7cc9494ca4b31a72c0cc5c24799c9a58d98765f7a3724f931aac885ea37395"
+          "sha256": "88099190cd510868d2c8c0efb73696e061995e535244ca55da34f4ab04553496"
         },
         {
           "path": "lakefile.toml",
-          "sha256": "0336e5395dff9f9e2ca94a4f6d7d848b737088bf01fff9e02bd1add2e67cae24"
+          "sha256": "7645b4f7351510d2285694de88a3f1785c13ae5b8cd7ebb300a720f7b8bbbd95"
         },
         {
           "path": "lean-toolchain",

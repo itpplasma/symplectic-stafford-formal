@@ -18,9 +18,12 @@ conditional scaffolds are historical.
 
 The research repository and a future manuscript repository are not Lean build
 inputs. The formal proof in `SymplecticStafford/Paper/` imports Mathlib only.
+The active package has exactly one direct dependency, Mathlib.
 AlgebraicAnalysis and [Stafford38](https://github.com/itpplasma/stafford38-formal)
-are pinned dependencies of the historical scaffolds, not mathematical inputs
-to Target A.
+were dependencies of the retired scaffolds; they are not current package
+requirements or mathematical inputs to Target A. Their exact historical pins
+and native replay scope are retained in the
+[frozen build environment](history/legacy-build-environment.md).
 
 ## Source and statement correspondence
 

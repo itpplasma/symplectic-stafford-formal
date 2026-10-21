@@ -11,7 +11,13 @@ human-readable manuscript is a separate later deliverable.
 The submission is the complete affine same-divisor theorem, Target A, not an
 earlier finite-pencil checkpoint. The Challenge must import Mathlib only;
 the Solution must not import the Challenge. Preserve the pinned Lean and
-Mathlib revisions and the three permitted axioms.
+Mathlib revisions and the three permitted axioms. The active package has
+exactly one direct dependency, Mathlib. Replay retired scaffolds only from
+the [frozen historical checkout](history/legacy-build-environment.md), not
+by restoring their dependencies to the submission package. Their former
+Stafford38 dependency shadowed the root Challenge in official preflight.
+Any earlier local or CI pass applies only to its named snapshot; dependency
+removal requires a fresh native build, CI and complete official preflight.
 
 Use a clean immutable source commit. Run the required checks from a fresh
 checkout with fixed dependencies:
@@ -25,7 +31,7 @@ bash scripts/verify-palomar.sh
 The full repository source audit must also meet Palomar's source-format
 requirements, including every tracked Lean file. Retain command exit statuses,
 logs and their hashes, endpoint axiom reports, import audits, and the
-Comparator log with both NanoDa and Lean-kernel acceptance. Record the exact
+Comparator log with NanoDa, con-ron and Lean-kernel acceptance. Record the exact
 source commit and tool revisions in `docs/verification-results.json` and the
 evidence files named in `release-gates.yaml`.
 
@@ -80,8 +86,23 @@ statement. After the selected snapshot is public and the replay is complete,
 submit the full 40-character commit from
 [symplectic-stafford-formal](https://github.com/itpplasma/symplectic-stafford-formal),
 project directory `.` (or blank), using `comparator.json` and
-`formalization.yaml`. Check current Palomar submission requirements before
-sending; local acceptance is not a registration receipt.
+`formalization.yaml`.
+
+Run the complete reusable `palomar-preflight.yml` workflow in `mode: full`
+against that exact public commit, using the pinned pipeline revision and
+`palomar-standard-v1` profile. Retain its actual `mechanical-report.json`
+with `status: pass`; a local build or comparator pass does not replace this
+preflight. Project CI must also pass the trust-disabled consumers and map
+checks on a clean runner.
+
+Follow [Palomar's agent protocol](https://submit.palomar-registry.org/llms.txt).
+Before intake, present the exact repository, full commit, Comparator path
+and responsible-author/maintainer relationship to the author for agreement.
+After mechanical verification and automated review, show the actual private
+review and explain what registration will permanently publish. Register
+only after the author's decision on that review. These are service protocol
+requirements, separate from independent human mathematical peer review.
+Local acceptance or a preflight report is not a registration receipt.
 
 Retain the submitted commit, submission timestamp, returned status URL and
 registry identifier. Update repository metadata only from that actual

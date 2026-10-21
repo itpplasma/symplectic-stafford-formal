@@ -3,30 +3,6 @@
   "packagesDir": ".lake/packages",
   "packages": [
     {
-      "url": "https://github.com/itpplasma/stafford38-formal.git",
-      "type": "git",
-      "subDir": null,
-      "scope": "",
-      "rev": "213ae2073030c8a897087152a616b8f8c1292df2",
-      "name": "stafford38Formal",
-      "manifestFile": "lake-manifest.json",
-      "inputRev": "213ae2073030c8a897087152a616b8f8c1292df2",
-      "inherited": false,
-      "configFile": "lakefile.toml"
-    },
-    {
-      "url": "https://github.com/itpplasma/algebraic-analysis.git",
-      "type": "git",
-      "subDir": null,
-      "scope": "",
-      "rev": "add0a80d865c88fe9cbc6901bda08a636ce188f9",
-      "name": "algebraicAnalysis",
-      "manifestFile": "lake-manifest.json",
-      "inputRev": "add0a80d865c88fe9cbc6901bda08a636ce188f9",
-      "inherited": false,
-      "configFile": "lakefile.toml"
-    },
-    {
       "url": "https://github.com/leanprover-community/mathlib4",
       "type": "git",
       "subDir": null,

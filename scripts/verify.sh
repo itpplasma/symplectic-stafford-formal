@@ -5,8 +5,8 @@ repo_root=$(cd -- "$(dirname -- "$0")/.." && pwd)
 cd "$repo_root"
 mode=${1:-full}
 case "$mode" in
-  --phase-i|--phase-ii|full|--legacy) ;;
-  *) echo "usage: $0 [--phase-i|--phase-ii|full|--legacy]" >&2; exit 2 ;;
+  --phase-i|--phase-ii|full) ;;
+  *) echo "usage: $0 [--phase-i|--phase-ii|full]" >&2; exit 2 ;;
 esac
 
 project_lean() {
@@ -28,14 +28,9 @@ if [[ -n "${PAPER_REPO:-}" ]]; then map_args=(); fi
 python3 scripts/check-paper-lean-map.py "${map_args[@]}" --lean-audit .lake/verification/PaperLeanMapAudit.lean
 
 # The release authority is the Mathlib-only Paper development. Historical
-# scaffolds and their fixtures can be replayed explicitly with --legacy.
-build_target=SymplecticStafford.Paper
+# scaffolds and fixtures belong to the frozen checkout recorded in docs/history/legacy-replay.md.
 endpoint_file=docs/endpoints.txt
-if [[ "$mode" == "--legacy" ]]; then
-  build_target=SymplecticStafford
-  endpoint_file=docs/legacy-endpoints.txt
-fi
-lake build "$build_target" > .lake/verification/build.log 2>&1
+lake build SymplecticStafford.Paper > .lake/verification/build.log 2>&1
 lake build Challenge > .lake/verification/challenge-build.log 2>&1
 project_lean --trust=0 -o .lake/build/lib/lean/Solution.olean \
   Solution.lean > .lake/verification/solution-build.log 2>&1
@@ -49,7 +44,6 @@ project_lean --trust=0 .lake/verification/PaperLeanMapAudit.challenge.lean \
 {
   echo 'module'
   echo 'import SymplecticStafford.Paper'
-  [[ "$mode" == "--legacy" ]] && echo 'import SymplecticStafford'
   echo 'import Solution'
   sed 's/^/#print axioms /' "$endpoint_file"
 } > .lake/verification/AxiomAudit.lean
@@ -57,7 +51,6 @@ project_lean --trust=0 .lake/verification/AxiomAudit.lean > .lake/verification/a
 python3 scripts/check-axiom-closure.py --endpoints "$endpoint_file" .lake/verification/axioms.log
 
 consumers=(tests/PaperTargetAOracle.lean)
-if [[ "$mode" == "--legacy" ]]; then consumers=(tests/*.lean); fi
 : > .lake/verification/consumers.log
 for source in "${consumers[@]}"; do
   project_lean --trust=0 "$source" >> .lake/verification/consumers.log 2>&1
