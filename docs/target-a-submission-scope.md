@@ -116,9 +116,7 @@ preflight must pass for the selected source. Independent human mathematical
 review and registration are separate from mechanical acceptance; see the
 [release runbook](release-runbook.md).
 
-## Non-claims
+## Review
 
-The proof was produced within the private research development. Its
-originality and priority are not asserted here. Independent mathematical
-review of the paper and of the formal statement's correspondence remains a
-human release step.
+Independent mathematical review of the paper and of the formal statement's
+correspondence remains a human release step.

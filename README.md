@@ -108,4 +108,3 @@ certify the exact checked source and selected theorem.
 - Independent human mathematical review remains pending. The final
   human-readable manuscript is a separate later deliverable; the research
   exposition and its corrections supply the current paper correspondence.
-- No novelty or priority claim is made here.
