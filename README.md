@@ -81,20 +81,27 @@ after the required d4e41c1 workflow fix.
 The 30 September Lean 4.33.0 and standalone-tool results in
 `docs/verification.md` are historical checks of their recorded snapshot.
 They and subsequent local/CI passes certify only their recorded snapshots.
-The current dependency-pruned checkout requires a fresh build, statement
-comparison and independent kernel replay before submission;
-results are recorded for the exact checked source.
+The dependency-pruned source has passed the native verifier and clean Linux
+CI at the commit recorded below. Complete official statement comparison and
+independent kernel replay also pass for Target A at that snapshot; results
+certify the exact checked source and selected theorem.
 
 ## Status
 
 - The universal theorem is proved in Lean, as are all of the manuscript's
   §7 consequences.
-- The recorded local migration replay passed the supported-toolchain build,
-  all 18 endpoint axiom checks, the 96 mapped declarations and the Target A
-  oracle at fc39ccadbfbc77940c2298a447374dacdadb55f9. Those results and later CI
-  results remain scoped to their named snapshots. The dependency-pruned
-  checkout requires fresh native, CI and complete Palomar preflight checks;
-  `docs/verification.md` and its machine-readable report retain the evidence.
+- Native verification with the full private-source map and
+  [clean Linux CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875) pass at
+  8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3. The checks include 18 endpoint
+  axiom reports, 96 mapped declarations, the Target A oracle and six verifier
+  regression tests. The source inventory records 414 files.
+- The [complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
+  passes for that snapshot and the selected Target A theorem. Comparator,
+  con-ron, NanoDa and Lean acceptance are retained in
+  `evidence/palomar-mechanical-report.json`. This checks Target A; it does not
+  register the section 7 consequences. Intake and registration remain pending.
+- The final metadata commit requires its own complete official preflight
+  before intake; `docs/verification.md` retains the source-scoped evidence.
 - Release preparation and Palomar submission were authorized on 21 October
   2026. Fresh replay, the exact submitted commit and the registration receipt
   are tracked separately in `docs/release-runbook.md` and `release-gates.yaml`.

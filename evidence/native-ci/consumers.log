@@ -1,0 +1,3 @@
+'SymplecticStafford.Paper.FilteredAlgebraData.targetA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.targetA_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.Test.exists_source' depends on axioms: [propext, Classical.choice, Quot.sound]

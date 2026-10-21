@@ -1,37 +1,59 @@
 # Verification record
 
-## Target A release migration (local run, 21 October 2026)
+## Current Target A release replay (21 October 2026)
 
-Checked proof/configuration source: fc39ccadbfbc77940c2298a447374dacdadb55f9. The later release records may
-change metadata; the map fingerprints identify the exact proof inputs.
+Checked source: 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3. The protected
+[source inventory](../evidence/source-inventory.json) covers all 414 tracked
+Lean, verifier, consumer, workflow and root build/license inputs. The release
+gate checks those hashes against both this Git commit and the working tree;
+metadata-only successors cannot silently change the checked sources.
+
 Lean is v4.35.0-rc3 and Mathlib is
-c55e6e786f49471c72fbddbec5415808896aec1e. The earlier toolchain's results
-below remain historical evidence of their own snapshot.
+c55e6e786f49471c72fbddbec5415808896aec1e, the sole direct dependency.
+The native macOS replay with `PAPER_REPO` and the
+[clean Linux project CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875)
+both pass. Native replay also checks the nine immutable private research
+sources at c495a2c4c702c25cdb236034273c71cf94e86476. Public CI explicitly
+uses the formal-only map check and makes no private-source check claim.
 
-The native build of `SymplecticStafford.Paper`, `Challenge` and `Solution`
-passes. `scripts/verify.sh full`, with the private research checkout supplied
-through `PAPER_REPO`, passes:
+The full proof contract verifies:
 
-- all 18 current endpoint axiom reports contain only the three standard axioms;
+- all 18 endpoint axiom reports use only `propext`, `Classical.choice` and `Quot.sound`;
 - Challenge, Solution and Paper load 3142, 3577 and 3584 modules, respectively,
   with Mathlib-only external imports and no Challenge import in Solution;
-- the source audit checks all 392 Lean files, including unused historical files;
-- the 34-card map checks nine immutable paper sources, 22 formal inputs and
-  96 compiled declaration references with their actual owning modules;
+- all 392 Lean files pass the source audit, including unused historical files;
+- the 34-card map fingerprints 22 formal inputs and checks 96 compiled
+  declaration references with their actual owning modules;
 - `PaperTargetAOracle.lean` passes with `--trust=0`;
-- four verification-guard regression tests pass.
+- all six verification-guard regression tests pass.
 
-The theorem statements and proof bodies are unchanged. The migration adds
-module/public visibility and two explicit Mathlib imports. The independent
-source-level terminal audit found no hidden premise or handedness mismatch;
-its scope is the statement, filtered-data encoding and terminal composition,
-not a second audit of every internal lemma. The correspondence map records
-the dimension convention and omitted/generalized manuscript assertions.
+The [CI receipt and log hashes](../evidence/native-ci/run.json) retain the
+actual clean-run evidence. The theorem statements and mathematical proof
+bodies are unchanged by the toolchain migration: module/public visibility
+and two explicit Mathlib imports changed. Unused historical dependencies
+were then removed after they shadowed the root Challenge in official preflight.
+They remain reproducible at the documented frozen historical revision.
 
-This is a local macOS replay. The public CI replay and the complete pinned
-Palomar Linux workflow must finish before registration. Bundled Comparator,
-NanoDa, con-ron and Lean-kernel acceptance are not inferred from this build.
-Independent human mathematical review remains pending.
+The independent source-level terminal audit found no hidden premise or
+handedness mismatch. Its scope is the statement, filtered-data encoding and
+terminal composition, not a second audit of every internal lemma. The map
+records route substitutions, omitted manuscript assertions and the dimension
+convention. Independent human mathematical review remains pending, and the
+final typeset paper is deferred.
+
+The [complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
+passes for the exact checked source under `palomar-standard-v1`, pinned pipeline
+d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44. The retained
+[mechanical report](../evidence/palomar-mechanical-report.json) has `status: pass`,
+`stage: complete`, and no errors or warnings. It confirms exact statement
+comparison and acceptance of the selected Target A export by con-ron (19,824
+declarations), NanoDa and Lean's default kernel. It does not separately
+register every section 7 theorem. Tool digests, resource use and canonical
+Challenge provenance are retained in that report and the [run receipt](../evidence/palomar-run.json).
+
+The mechanical release gates pass. Palomar intake and its permanent
+registration decision still require the author-agreement steps in the runbook;
+there is no registration receipt yet.
 
 ## Palomar comparison of Target A (local run, 30 September 2026)
 

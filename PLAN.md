@@ -40,7 +40,14 @@ preflight detected a shadowing dependency Challenge module. Retired scaffolds
 replay only at the [frozen historical checkout](docs/history/legacy-build-environment.md);
 the active verifier has no historical-scaffold replay mode. Recorded local
 and CI passes apply to their exact source snapshots. The dependency-pruned
-checkout needs fresh native, CI and complete official preflight checks.
+source at 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3 passes native full
+private-source verification and [clean Linux CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875),
+including six verifier regression tests and its 414-file source inventory.
+[Complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
+passes for that same source and the selected Target A theorem, with con-ron,
+NanoDa and Lean acceptance. The actual mechanical report is retained in
+`evidence/palomar-mechanical-report.json`. Section 7 is proved in Lean but is
+not independently registered by this Target A comparison.
 
 ## Remaining release steps
 
@@ -56,9 +63,10 @@ for this canonical proof. No new proof replay or release is claimed by sync.
    - of the manuscript, including the Zariskian closure note and the
      formal-route corrections in the research repository;
    - of the statement correspondence in `docs/target-a-submission-scope.md`.
-2. Fresh clean replay from the selected source snapshot using
-   `scripts/verify.sh` and `scripts/verify-palomar.sh`; retain the evidence
-   files named in `release-gates.yaml`. Phase I now records Target A proof
+2. Replay complete official Palomar preflight for the final metadata commit
+   before intake. Native full verification, clean Linux CI and official
+   preflight already pass at the source commit above. Retain the evidence
+   files named in `release-gates.yaml`. Phase I records Target A proof
    closure, and Phase II records the independent replay of that complete
    theorem; their historical names do not reopen discharged scaffolding.
 3. Palomar submission and its exact commit and registration receipt, following

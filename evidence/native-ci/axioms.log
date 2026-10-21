@@ -1,0 +1,22 @@
+'SymplecticStafford.Paper.FilteredAlgebraData.targetA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.targetA_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.Ph_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.ore_condition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.isRightFractions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.survival' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.finiteLength' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.one_mem_extend_iff_not_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.support_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.artinRees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.Test.exists_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.activated_pencil_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.generator_pencil_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.torsion_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.stable_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.stably_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStafford.Paper.FilteredAlgebraData.cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SymplecticStaffordChallenge.universalStatement' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,25 @@
+schema: symplectic-stafford-phase-evidence/v1
+phase: palomar
+result: pass
+source_commit: 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3
+paper_commit: c495a2c4c702c25cdb236034273c71cf94e86476
+checks:
+  terminal-statement-comparison: pass
+  compatibility-build: pass
+  compatibility-tests: pass
+  independent-kernel-replay: pass
+evidence:
+  terminal-statement-comparison: Official bundled Comparator accepts SymplecticStaffordChallenge.universalStatement
+    against a canonical Challenge closure.
+  compatibility-build: Full official pipeline passes on Lean v4.35.0-rc3, pinned Mathlib and palomar-standard-v1,
+    including source and dependency provenance.
+  compatibility-tests: Comparator emits Your solution is okay!; native CI and independent consumer evidence
+    retained separately.
+  independent-kernel-replay: Official report contains acceptance markers for con-ron, NanoDa and Lean
+    default kernel.
+receipts:
+  native_ci: evidence/native-ci/run.json
+  palomar: evidence/palomar-run.json
+  source_inventory: evidence/source-inventory.json
+human_mathematical_review: pending
+registration: not-submitted

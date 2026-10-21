@@ -1,0 +1,30 @@
+schema: symplectic-stafford-phase-evidence/v1
+phase: phase_i
+result: pass
+source_commit: 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3
+paper_commit: c495a2c4c702c25cdb236034273c71cf94e86476
+checks:
+  terminal-statement-correspondence: pass
+  project-owned-obligation-closure: pass
+  literature-leaf-audit: pass
+  clean-independent-replay: pass
+  lean-build: pass
+  independent-behavioral-tests: pass
+evidence:
+  terminal-statement-correspondence: Independent agent audit of terminal hypotheses, symbol data, handedness
+    and composition, plus the 34-card map; not human peer review.
+  project-owned-obligation-closure: M01–M11 are discharged by Paper/; 18 compiled endpoint reports and
+    mapped declarations, not legacy scaffolds.
+  literature-leaf-audit: Mathlib-only import closure, no Stafford theorem or added project axiom; 18 endpoints
+    use only the three standard axioms.
+  clean-independent-replay: Clean GitHub Linux runner, native CI receipt and logs retained. Independent
+    means environment/replay, not human mathematical approval.
+  lean-build: Full Paper, Challenge, trust-zero Solution and the compiled declaration map pass.
+  independent-behavioral-tests: Existing Target A consumer checks terminal use and source selection with
+    --trust=0; six behavioral guard regressions pass.
+receipts:
+  native_ci: evidence/native-ci/run.json
+  palomar: evidence/palomar-run.json
+  source_inventory: evidence/source-inventory.json
+human_mathematical_review: pending
+registration: not-submitted

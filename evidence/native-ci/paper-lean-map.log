@@ -1,0 +1,367 @@
+SymplecticStaffordChallenge.AffineSameDivisorStatement.{u, v, w} : Prop
+SymplecticStaffordChallenge.universalStatement.{u, v, w} : SymplecticStaffordChallenge.AffineSameDivisorStatement
+SymplecticStafford.Paper.FilteredAlgebraData.cancellation.{u_1, u_2, u_3, u_4, u_5, u_6} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (hdim : ringKrullDim G < ⊤) [OreLocalization.OreSet (nonZeroDivisors Uᵐᵒᵖ)] {M : Type u_4} {N : Type u_5}
+  {P : Type u_6} [AddCommGroup M] [Module Uᵐᵒᵖ M] [Module.Finite Uᵐᵒᵖ M] [AddCommGroup N] [Module Uᵐᵒᵖ N]
+  [AddCommGroup P] [Module Uᵐᵒᵖ P] [Module.Finite Uᵐᵒᵖ P] [Module.Projective Uᵐᵒᵖ P]
+  (hM : 2 ≤ SymplecticStafford.Paper.oreRank U M) (e : (M × P) ≃ₗ[Uᵐᵒᵖ] N × P) : Nonempty (M ≃ₗ[Uᵐᵒᵖ] N)
+SymplecticStafford.Paper.FilteredAlgebraData.stable_range.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (hdim : ringKrullDim G < ⊤) {a b c : U} (h : Submodule.span Uᵐᵒᵖ {a, b, c} = ⊤) :
+  ∃ f g, Submodule.span Uᵐᵒᵖ {a + c * f, b + c * g} = ⊤
+SymplecticStafford.Paper.FilteredAlgebraData.stably_free.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (hdim : ringKrullDim G < ⊤) {M : Type u_4} [AddCommGroup M] [Module Uᵐᵒᵖ M] (m n : ℕ) (hmn : m + 2 ≤ n)
+  (e : (M × (Fin m → U)) ≃ₗ[Uᵐᵒᵖ] Fin n → U) : Nonempty (M ≃ₗ[Uᵐᵒᵖ] Fin (n - m) → U)
+SymplecticStafford.Paper.FilteredAlgebraData.torsion_cyclic.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (hdim : ringKrullDim G < ⊤) {M : Type u_4} [AddCommGroup M] [Module Uᵐᵒᵖ M] [Module.Finite Uᵐᵒᵖ M]
+  (hM : ∀ (x : M), SymplecticStafford.Paper.IsRightTorsion U x) : ∃ z, Uᵐᵒᵖ ∙ z = ⊤
+SymplecticStafford.Paper.exists_comp_eq_proj.{u_1, u_2} {Λ : Type u_1} [Ring Λ] {ι : Type u_2} [Fintype ι]
+  [DecidableEq ι] [IsDomain Λ] (hR : SymplecticStafford.Paper.RightOre Λ) (hL : SymplecticStafford.Paper.LeftOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) (hι : 3 ≤ Fintype.card ι) (ψ : (ι → Λ) →ₗ[Λᵐᵒᵖ] Λ)
+  (hψ : Function.Surjective ⇑ψ) : ∃ j E, ψ ∘ₗ ↑E = LinearMap.proj j
+SymplecticStafford.Paper.exists_eq_span_pair.{u_1} {Λ : Type u_1} [Ring Λ] [IsDomain Λ] [IsNoetherian Λᵐᵒᵖ Λ]
+  (hO : SymplecticStafford.Paper.RightOre Λ) (hS : SymplecticStafford.Paper.S38 Λ) (I : Submodule Λᵐᵒᵖ Λ) {a : Λ}
+  (ha : a ≠ 0) (haI : a ∈ I) : ∃ b ∈ I, I = Submodule.span Λᵐᵒᵖ {a, b}
+SymplecticStafford.Paper.exists_span_insert_eq_pair.{u_1} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  (hO : SymplecticStafford.Paper.RightOre Λ) (hS : SymplecticStafford.Paper.S38 Λ) {a : Λ} (ha : a ≠ 0) (T : Finset Λ) :
+  ∃ b, Submodule.span Λᵐᵒᵖ (insert a ↑T) = Submodule.span Λᵐᵒᵖ {a, b}
+SymplecticStafford.Paper.isCyclic_of_forall_isRightTorsion.{u_1, u_2} {Λ : Type u_1} [Ring Λ] {M : Type u_2}
+  [AddCommGroup M] [Module Λᵐᵒᵖ M] [IsDomain Λ] (hO : SymplecticStafford.Paper.RightOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) [Module.Finite Λᵐᵒᵖ M]
+  (hM : ∀ (x : M), SymplecticStafford.Paper.IsRightTorsion Λ x) : ∃ z, Λᵐᵒᵖ ∙ z = ⊤
+SymplecticStafford.Paper.residual_splitting.{u_1, u_2} {Λ : Type u_1} [Ring Λ] {N : Type u_2} [AddCommGroup N]
+  [Module Λᵐᵒᵖ N] [IsDomain Λ] (hR : SymplecticStafford.Paper.RightOre Λ) (hS : SymplecticStafford.Paper.S38 Λ)
+  (M : Submodule Λᵐᵒᵖ N) {x₁ x₂ : N} (hx₁ : x₁ ∈ M) (hx₂ : x₂ ∈ M) (φ₁ φ₂ : N →ₗ[Λᵐᵒᵖ] Λ) (h₁₂ : φ₁ x₂ = 0)
+  (h₂₁ : φ₂ x₁ = 0) (hd₁ : φ₁ x₁ ≠ 0) (hd₂ : φ₂ x₂ ≠ 0) :
+  ∃ x ∈ M, ∃ ψ, ψ x = 1 ∧ IsCompl (Λᵐᵒᵖ ∙ x) ψ.ker ∧ Λᵐᵒᵖ ∙ x ⊔ M ⊓ ψ.ker = M ∧ Λᵐᵒᵖ ∙ x ⊓ (M ⊓ ψ.ker) = ⊥
+SymplecticStafford.Paper.span_triple_eq_span_pair.{u_1} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  (hO : SymplecticStafford.Paper.RightOre Λ) (hS : SymplecticStafford.Paper.S38 Λ) {a : Λ} (ha : a ≠ 0) (b c : Λ)
+  {t : Λ} (ht : t ≠ 0) : ∃ H, Submodule.span Λᵐᵒᵖ {a, b, c} = Submodule.span Λᵐᵒᵖ {a, b + c * H * t}
+SymplecticStafford.Paper.stable_range_two.{u_1} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  (hR : SymplecticStafford.Paper.RightOre Λ) (hL : SymplecticStafford.Paper.LeftOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) {a b c : Λ} (h : Submodule.span Λᵐᵒᵖ {a, b, c} = ⊤) :
+  ∃ f g, Submodule.span Λᵐᵒᵖ {a + c * f, b + c * g} = ⊤
+SymplecticStafford.Paper.stably_free_is_free.{u_1, u_3} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  (hR : SymplecticStafford.Paper.RightOre Λ) (hL : SymplecticStafford.Paper.LeftOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) {M : Type u_3} [AddCommGroup M] [Module Λᵐᵒᵖ M] (m n : ℕ) :
+  m + 2 ≤ n → ∀ (a✝ : (M × (Fin m → Λ)) ≃ₗ[Λᵐᵒᵖ] Fin n → Λ), Nonempty (M ≃ₗ[Λᵐᵒᵖ] Fin (n - m) → Λ)
+SymplecticStafford.Paper.triple_prescribed_tails.{u_1} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  (hR : SymplecticStafford.Paper.RightOre Λ) (hL : SymplecticStafford.Paper.LeftOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) (a b c : Λ) {t₁ t₂ : Λ} (ht₁ : t₁ ≠ 0) (ht₂ : t₂ ≠ 0) :
+  ∃ f g, Submodule.span Λᵐᵒᵖ {a, b, c} = Submodule.span Λᵐᵒᵖ {a + c * f * t₁, b + c * g * t₂}
+SymplecticStafford.Paper.two_source_identity.{u_1} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  (hR : SymplecticStafford.Paper.RightOre Λ) (hS : SymplecticStafford.Paper.S38 Λ) {d₁ d₂ : Λ} (hd₁ : d₁ ≠ 0)
+  (hd₂ : d₂ ≠ 0) : ∃ f₁ f₂ u₁ u₂, 1 = f₁ * d₁ * u₁ + f₂ * d₂ * u₂
+SymplecticStafford.Paper.two_torsion_eq_span_singleton.{u_1, u_2} {Λ : Type u_1} [Ring Λ] {M : Type u_2}
+  [AddCommGroup M] [Module Λᵐᵒᵖ M] [IsDomain Λ] (hO : SymplecticStafford.Paper.RightOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) {x y : M} (hx : SymplecticStafford.Paper.IsRightTorsion Λ x)
+  (hy : SymplecticStafford.Paper.IsRightTorsion Λ y) {t : Λ} (ht : t ≠ 0) :
+  ∃ H, Submodule.span Λᵐᵒᵖ {x, y} = Λᵐᵒᵖ ∙ (x + MulOpposite.op (H * t) • y)
+SymplecticStafford.Paper.Loc.{u_1, u_2} (Λ : Type u_1) [Ring Λ] [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)]
+  (M : Type u_2) [AddCommGroup M] [Module Λᵐᵒᵖ M] : Type (max u_1 u_2)
+SymplecticStafford.Paper.QΛ.{u_1} (Λ : Type u_1) [Ring Λ] [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] : Type u_1
+SymplecticStafford.Paper.cancellation_free.{u_1, u_2, u_3} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} {N : Type u_3} [AddCommGroup M] [Module Λᵐᵒᵖ M]
+  [AddCommGroup N] [Module Λᵐᵒᵖ N] (hL : SymplecticStafford.Paper.LeftOre Λ) (hSop : SymplecticStafford.Paper.S38 Λᵐᵒᵖ)
+  [Module.Finite Λᵐᵒᵖ M] (hM : 2 ≤ SymplecticStafford.Paper.oreRank Λ M) (e : (M × Λ) ≃ₗ[Λᵐᵒᵖ] N × Λ) :
+  Nonempty (M ≃ₗ[Λᵐᵒᵖ] N)
+SymplecticStafford.Paper.cancellation_free_pow.{u_1, u_2, u_3} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} {N : Type u_3} [AddCommGroup M] [Module Λᵐᵒᵖ M]
+  [AddCommGroup N] [Module Λᵐᵒᵖ N] (hL : SymplecticStafford.Paper.LeftOre Λ) (hSop : SymplecticStafford.Paper.S38 Λᵐᵒᵖ)
+  [Module.Finite Λᵐᵒᵖ M] (hM : 2 ≤ SymplecticStafford.Paper.oreRank Λ M) (n : ℕ) :
+  ∀ (a : (M × (Fin n → Λ)) ≃ₗ[Λᵐᵒᵖ] N × (Fin n → Λ)), Nonempty (M ≃ₗ[Λᵐᵒᵖ] N)
+SymplecticStafford.Paper.cancellation_projective.{u_1, u_2, u_3, u_4} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} {N : Type u_3} [AddCommGroup M] [Module Λᵐᵒᵖ M]
+  [AddCommGroup N] [Module Λᵐᵒᵖ N] (hL : SymplecticStafford.Paper.LeftOre Λ) (hSop : SymplecticStafford.Paper.S38 Λᵐᵒᵖ)
+  [Module.Finite Λᵐᵒᵖ M] (hM : 2 ≤ SymplecticStafford.Paper.oreRank Λ M) {P : Type u_4} [AddCommGroup P] [Module Λᵐᵒᵖ P]
+  [Module.Finite Λᵐᵒᵖ P] [Module.Projective Λᵐᵒᵖ P] (e : (M × P) ≃ₗ[Λᵐᵒᵖ] N × P) : Nonempty (M ≃ₗ[Λᵐᵒᵖ] N)
+SymplecticStafford.Paper.combo_injective.{u_1, u_2, u_3} {Λ : Type u_1} [Ring Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} [AddCommGroup M] [Module Λᵐᵒᵖ M] {ι : Type u_3}
+  [Fintype ι] (x : ι → M)
+  (hx : LinearIndependent (SymplecticStafford.Paper.QΛ Λ) (⇑(SymplecticStafford.Paper.toLoc Λ M) ∘ x)) :
+  Function.Injective ⇑(SymplecticStafford.Paper.combo x)
+SymplecticStafford.Paper.exists_diagonal_functionals.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {N : Type u_2} [AddCommGroup N] [Module Λᵐᵒᵖ N]
+  (hL : SymplecticStafford.Paper.LeftOre Λ) [Module.Finite Λᵐᵒᵖ N] (M : Submodule Λᵐᵒᵖ N)
+  (hM : 2 ≤ SymplecticStafford.Paper.oreRank Λ ↥M) :
+  ∃ x₁ ∈ M, ∃ x₂ ∈ M, ∃ φ₁ φ₂, φ₁ x₂ = 0 ∧ φ₂ x₁ = 0 ∧ φ₁ x₁ ≠ 0 ∧ φ₂ x₂ ≠ 0
+SymplecticStafford.Paper.exists_generating_card_le.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} [AddCommGroup M] [Module Λᵐᵒᵖ M]
+  (hS : SymplecticStafford.Paper.S38 Λ) [Module.Finite Λᵐᵒᵖ M] :
+  ∃ s, s.card ≤ SymplecticStafford.Paper.oreRank Λ M + 1 ∧ Submodule.span Λᵐᵒᵖ ↑s = ⊤
+SymplecticStafford.Paper.exists_generator_retaining.{u_1, u_2, u_3} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} [AddCommGroup M] [Module Λᵐᵒᵖ M]
+  (hS : SymplecticStafford.Paper.S38 Λ) [Module.Finite Λᵐᵒᵖ M] {ι : Type u_3} (x : ι → M)
+  (hx : Submodule.span (SymplecticStafford.Paper.QΛ Λ) (Set.range (⇑(SymplecticStafford.Paper.toLoc Λ M) ∘ x)) = ⊤) :
+  ∃ z, Submodule.span Λᵐᵒᵖ (Set.range x) ⊔ Λᵐᵒᵖ ∙ z = ⊤
+SymplecticStafford.Paper.exists_split_free_of_oreRank.{u_1, u_3} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] (hL : SymplecticStafford.Paper.LeftOre Λ)
+  (hS : SymplecticStafford.Paper.S38 Λ) (r : ℕ) (N : Type u_3) [AddCommGroup N] [Module Λᵐᵒᵖ N] [Module.Finite Λᵐᵒᵖ N] :
+  SymplecticStafford.Paper.oreRank Λ N = r + 1 →
+    ∃ N₁, Module.Finite Λᵐᵒᵖ ↥N₁ ∧ SymplecticStafford.Paper.oreRank Λ ↥N₁ = 1 ∧ Nonempty (N ≃ₗ[Λᵐᵒᵖ] (Fin r → Λ) × ↥N₁)
+SymplecticStafford.Paper.exists_split_ideal_of_torsionFree.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {N : Type u_2} [AddCommGroup N] [Module Λᵐᵒᵖ N]
+  (hL : SymplecticStafford.Paper.LeftOre Λ) (hS : SymplecticStafford.Paper.S38 Λ) (r : ℕ) [Module.Finite Λᵐᵒᵖ N]
+  (hN : SymplecticStafford.Paper.oreRank Λ N = r + 1)
+  (htf : ∀ (n : N), SymplecticStafford.Paper.IsRightTorsion Λ n → n = 0) :
+  ∃ I, I ≠ ⊥ ∧ Nonempty (N ≃ₗ[Λᵐᵒᵖ] (Fin r → Λ) × ↥I)
+SymplecticStafford.Paper.exists_unimodular_of_two_le_oreRank.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {N : Type u_2} [AddCommGroup N] [Module Λᵐᵒᵖ N]
+  (hL : SymplecticStafford.Paper.LeftOre Λ) (hS : SymplecticStafford.Paper.S38 Λ) [Module.Finite Λᵐᵒᵖ N]
+  (M : Submodule Λᵐᵒᵖ N) (hM : 2 ≤ SymplecticStafford.Paper.oreRank Λ ↥M) :
+  ∃ x ∈ M, ∃ ψ, ψ x = 1 ∧ IsCompl (Λᵐᵒᵖ ∙ x) ψ.ker ∧ Λᵐᵒᵖ ∙ x ⊔ M ⊓ ψ.ker = M ∧ Λᵐᵒᵖ ∙ x ⊓ (M ⊓ ψ.ker) = ⊥
+SymplecticStafford.Paper.free_of_generating_card_eq.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} [AddCommGroup M] [Module Λᵐᵒᵖ M] [Module.Finite Λᵐᵒᵖ M]
+  (x : Fin (SymplecticStafford.Paper.oreRank Λ M) → M) (hx : Submodule.span Λᵐᵒᵖ (Set.range x) = ⊤) :
+  Nonempty (M ≃ₗ[Λᵐᵒᵖ] Fin (SymplecticStafford.Paper.oreRank Λ M) → Λ)
+SymplecticStafford.Paper.oreRank.{u_1, u_2} (Λ : Type u_1) [Ring Λ] [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)]
+  (M : Type u_2) [AddCommGroup M] [Module Λᵐᵒᵖ M] : ℕ
+SymplecticStafford.Paper.oreRank_le_card.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} [AddCommGroup M] [Module Λᵐᵒᵖ M] (s : Finset M)
+  (hs : Submodule.span Λᵐᵒᵖ ↑s = ⊤) : SymplecticStafford.Paper.oreRank Λ M ≤ s.card
+SymplecticStafford.Paper.unimodular_correction.{u_1, u_2} {Λ : Type u_1} [Ring Λ] [IsDomain Λ]
+  [OreLocalization.OreSet (nonZeroDivisors Λᵐᵒᵖ)] {M : Type u_2} [AddCommGroup M] [Module Λᵐᵒᵖ M]
+  (hL : SymplecticStafford.Paper.LeftOre Λ) (hSop : SymplecticStafford.Paper.S38 Λᵐᵒᵖ) [Module.Finite Λᵐᵒᵖ M]
+  (hM : 2 ≤ SymplecticStafford.Paper.oreRank Λ M) (a : M) (t : Λ) (χ : M →ₗ[Λᵐᵒᵖ] Λ) (q : Λ) (h : χ a + q * t = 1) :
+  ∃ u ψ, ψ (a + MulOpposite.op t • u) = 1
+SymplecticStafford.Paper.eq_top_of_ringKrullDim_quotient_eq_bot.{u_1} {R : Type u_1} [CommRing R] {J : Ideal R}
+  (h : ringKrullDim (R ⧸ J) = ⊥) : J = ⊤
+SymplecticStafford.Paper.ringKrullDim_quotient_add_one_le.{u_1} {R : Type u_1} [CommRing R] {J J' : Ideal R}
+  (hJJ' : J ≤ J') (hmin : ∀ q ∈ J.minimalPrimes, ¬J' ≤ q) : ringKrullDim (R ⧸ J') + 1 ≤ ringKrullDim (R ⧸ J)
+SymplecticStafford.Paper.ringKrullDim_quotient_le_max.{u_1} {R : Type u_1} [CommRing R] {J J₁ J₂ : Ideal R}
+  (h : ∀ q ∈ J.minimalPrimes, J₁ ≤ q ∨ J₂ ≤ q) :
+  ringKrullDim (R ⧸ J) ≤ max (ringKrullDim (R ⧸ J₁)) (ringKrullDim (R ⧸ J₂))
+SymplecticStafford.Paper.division_pencil_finite.{u_1, u_2, u_3, u_4} {k : Type u_1} [Field k] {E : Type u_2}
+  [DivisionRing E] (κ : k →+* E) (hκ : ∀ (c : k) (a : E), κ c * a = a * κ c) {Z : Type u_3} [AddCommGroup Z]
+  [Module E Z] {ι : Type u_4} [Finite ι] (v w : ι → Z) (hv : LinearIndependent E v) :
+  {c | ¬LinearIndependent E fun i => v i + κ c • w i}.Finite
+SymplecticStafford.Paper.pencil_ker_finite.{u_1, u_2, u_3, u_4} {k : Type u_1} [Field k] {E : Type u_2} [DivisionRing E]
+  (κ : k →+* E) (hκ : ∀ (c : k) (a : E), κ c * a = a * κ c) {D : Type u_3} {Z : Type u_4} [AddCommGroup D] [Module E D]
+  [Module.Finite E D] [AddCommGroup Z] [Module E Z] (P W : D →ₗ[E] Z) (hP : Function.Injective ⇑P) :
+  {c | ∃ d, d ≠ 0 ∧ P d + κ c • W d = 0}.Finite
+SymplecticStafford.Paper.FilteredAlgebraData.Id.{u} {U : Type u} [Ring U] (d F : U) : Submodule Uᵐᵒᵖ U
+SymplecticStafford.Paper.FilteredAlgebraData.Ph.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k] [Ring U]
+  [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) (h : ℕ) : Prop
+SymplecticStafford.Paper.FilteredAlgebraData.Ph_all.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (h : ℕ) : D.Ph h
+SymplecticStafford.Paper.FilteredAlgebraData.Ph_succ.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] {h : ℕ} (hP : D.Ph h) : D.Ph (h + 1)
+SymplecticStafford.Paper.FilteredAlgebraData.Ph_zero.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsSimpleRing U] [Infinite k] : D.Ph 0
+SymplecticStafford.Paper.FilteredAlgebraData.colonJ.{u} {U : Type u} [Ring U] (d F G₀ : U) : Submodule Uᵐᵒᵖ U
+SymplecticStafford.Paper.FilteredAlgebraData.colonJ_le_Id.{uk, u} {k : Type uk} {U : Type u} [Field k] [Ring U]
+  [Algebra k U] (d F G₀ : U) (l : k) :
+  SymplecticStafford.Paper.FilteredAlgebraData.colonJ d F G₀ ≤
+    SymplecticStafford.Paper.FilteredAlgebraData.Id d (F + (algebraMap k U) l * G₀)
+SymplecticStafford.Paper.FilteredAlgebraData.oldTest.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  {d F : U} (hd : d ≠ 0) (b : U) (hb : b ≠ 0) (p : Ideal G)
+  (hp : p ∈ (D.grIdeal (SymplecticStafford.Paper.FilteredAlgebraData.Id d F)).minimalPrimes) :
+  SymplecticStafford.Paper.Test k U
+SymplecticStafford.Paper.FilteredAlgebraData.support_union.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  {D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜} [IsDomain G] [IsNoetherianRing G] {d F G₀ L₀ C₀ : U}
+  (hFd : F * d * L₀ = d * C₀) (q : Ideal G) [q.IsPrime]
+  (hq : D.grIdeal (SymplecticStafford.Paper.FilteredAlgebraData.colonJ d F G₀) ≤ q) :
+  D.grIdeal (SymplecticStafford.Paper.FilteredAlgebraData.Id d F) ≤ q ∨
+    D.grIdeal (SymplecticStafford.Paper.FilteredAlgebraData.Id (d * L₀) G₀) ≤ q
+SymplecticStafford.Paper.FilteredAlgebraData.targetA.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (hdim : ringKrullDim G < ⊤) (d a : U) (hd : d ≠ 0) (ha : a ≠ 0) (B : U) :
+  ∃ H R S, 1 = d * R + (B + H * a) * d * S
+SymplecticStafford.Paper.FilteredAlgebraData.δ.{uk, u, uG} {k : Type uk} {U : Type u} {G : Type uG} [Field k] [Ring U]
+  [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) (I : Submodule Uᵐᵒᵖ U) : WithBot ℕ∞
+SymplecticStafford.Paper.FilteredAlgebraData.Tloc.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] (p : Ideal G)
+  [p.IsPrime] : Type u_2
+SymplecticStafford.Paper.FilteredAlgebraData.degLE.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] {T : Type u_4} [Ring T] (ι : U →+* T)
+  (p : Ideal G) [p.IsPrime] (m : ℤ) : Set T
+SymplecticStafford.Paper.FilteredAlgebraData.finiteLength.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  {D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜} [IsDomain G] [IsNoetherianRing G] {T : Type u_4} [Ring T]
+  {ι : U →+* T} {p : Ideal G} [p.IsPrime] (hT : SymplecticStafford.Paper.IsRightFractions (D.denoms p) ι)
+  (I : Submodule Uᵐᵒᵖ U) (hp : p ∈ (D.grIdeal I).minimalPrimes) :
+  IsArtinian Tᵐᵒᵖ (T ⧸ SymplecticStafford.Paper.IsRightFractions.extend I) ∧
+    IsNoetherian Tᵐᵒᵖ (T ⧸ SymplecticStafford.Paper.IsRightFractions.extend I)
+SymplecticStafford.Paper.FilteredAlgebraData.isRightFractions.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] (p : Ideal G)
+  [p.IsPrime] : SymplecticStafford.Paper.IsRightFractions (D.denoms p) (D.locMap p)
+SymplecticStafford.Paper.FilteredAlgebraData.locMap.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] (p : Ideal G)
+  [p.IsPrime] : U →+* D.Tloc p
+SymplecticStafford.Paper.FilteredAlgebraData.not_isUnit_of_le.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  {D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜} [IsDomain G] {T : Type u_4} [Ring T] {ι : U →+* T}
+  {p : Ideal G} [p.IsPrime] (hT : SymplecticStafford.Paper.IsRightFractions (D.denoms p) ι) {I : Submodule Uᵐᵒᵖ U}
+  (hle : D.grIdeal I ≤ p) {d : U} (hdI : d ∈ I) : ¬IsUnit (ι d)
+SymplecticStafford.Paper.FilteredAlgebraData.one_mem_extend_iff_not_le.{u_1, u_2, u_3, u_4} {k : Type u_1}
+  {U : Type u_2} {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G}
+  [GradedAlgebra 𝒜] (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] {T : Type u_4} [Ring T]
+  {ι : U →+* T} {p : Ideal G} [p.IsPrime] (hT : SymplecticStafford.Paper.IsRightFractions (D.denoms p) ι)
+  (I : Submodule Uᵐᵒᵖ U) : 1 ∈ SymplecticStafford.Paper.IsRightFractions.extend I ↔ ¬D.grIdeal I ≤ p
+SymplecticStafford.Paper.FilteredAlgebraData.ore_condition.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] (p : Ideal G) [p.IsPrime]
+  (c : U) {s : U} (hs : s ∈ D.denoms p) : ∃ t ∈ D.denoms p, ∃ b, c * t = s * b
+SymplecticStafford.Paper.FilteredAlgebraData.pull.{u_2, u_4} {U : Type u_2} [Ring U] {T : Type u_4} [Ring T]
+  (ι : U →+* T) (I : Submodule Uᵐᵒᵖ U) (W : Submodule Tᵐᵒᵖ (T ⧸ SymplecticStafford.Paper.IsRightFractions.extend I)) :
+  Submodule Uᵐᵒᵖ U
+SymplecticStafford.Paper.FilteredAlgebraData.survival.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  {D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜} [IsDomain G] [IsNoetherianRing G] {T : Type u_4} [Ring T]
+  {ι : U →+* T} {p : Ideal G} [p.IsPrime] (hT : SymplecticStafford.Paper.IsRightFractions (D.denoms p) ι)
+  {I₁ I₂ : Submodule Uᵐᵒᵖ U} (h12 : I₁ ≤ I₂) (hsat : ∀ (a s : U), s ∈ D.denoms p → a * s ∈ I₁ → a ∈ I₁) {s : U}
+  (hs : s ∈ D.denoms p) (hkill : ∀ g ∈ D.grIdeal I₂, D.sym s * g ∈ D.grIdeal I₁) : I₂ ≤ I₁
+SymplecticStafford.Paper.FilteredAlgebraData.unit_of_neg.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  {D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜} [IsDomain G] {T : Type u_4} [Ring T] {ι : U →+* T}
+  {p : Ideal G} [p.IsPrime] (hT : SymplecticStafford.Paper.IsRightFractions (D.denoms p) ι) {y : T}
+  (hy : y ∈ D.degLE ι p (-1)) : ∃ w ∈ D.degLE ι p 0, (1 - y) * w = 1
+SymplecticStafford.Paper.nakayama_rows.{u_1, u_2} {R : Type u_1} [Ring R] (N O : Set R)
+  (hN : ∀ x ∈ N, ∀ y ∈ N, x + y ∈ N) (hNO : ∀ x ∈ N, ∀ y ∈ O, x * y ∈ N) (hNsub : N ⊆ O)
+  (hinv : ∀ y ∈ N, ∃ w ∈ O, (1 - y) * w = 1) {M : Type u_2} [AddCommGroup M] [Module Rᵐᵒᵖ M] (n : ℕ) (m : Fin n → M)
+  (y : Fin n → Fin n → R) :
+  (∀ (i j : Fin n), y i j ∈ N) → (∀ (j : Fin n), m j = ∑ i, MulOpposite.op (y i j) • m i) → ∀ (j : Fin n), m j = 0
+SymplecticStafford.Paper.density.{u_1, u_2} {T : Type u_1} [Ring T] {M : Type u_2} [AddCommGroup M] [Module Tᵐᵒᵖ M]
+  [IsSimpleModule Tᵐᵒᵖ M] (s : Finset M) (y : M) :
+  y ∉ Submodule.span (Module.End Tᵐᵒᵖ M) ↑s →
+    ∃ τ ∈ SymplecticStafford.Paper.annR (Submodule.span (Module.End Tᵐᵒᵖ M) ↑s), MulOpposite.op τ • y ≠ 0
+SymplecticStafford.Paper.exists_injective_rmul.{u_1, u_2, u_3, u_4, u_5} {U : Type u_1} [Ring U] {T : Type u_2} [Ring T]
+  {M : Type u_3} [AddCommGroup M] [Module Tᵐᵒᵖ M] [IsSimpleModule Tᵐᵒᵖ M] {k : Type u_4} [Field k] [Algebra k U]
+  [Algebra k T] [Infinite k] [IsSimpleRing U] [IsSimpleRing T] [IsDomain T] (hnd : ∃ τ, τ ≠ 0 ∧ ¬IsUnit τ)
+  (ι : U →ₐ[k] T) {S : Submonoid U} (hfrac : SymplecticStafford.Paper.IsRightFractions S ↑ι) {D : Type u_5}
+  [AddCommGroup D] [Module (Module.End Tᵐᵒᵖ M) D] [Module.Finite (Module.End Tᵐᵒᵖ M) D] (P : D →ₗ[Module.End Tᵐᵒᵖ M] M)
+  (hP : Function.Injective ⇑P) {b : U} (hb : b ≠ 0) :
+  ∃ u, Function.Injective ⇑(SymplecticStafford.Paper.rmul (ι (u * b)) ∘ₗ P)
+SymplecticStafford.Paper.exists_linearIndependent_rmul.{u_1, u_2, u_3, u_4, u_5} {U : Type u_1} [Ring U] {T : Type u_2}
+  [Ring T] {M : Type u_3} [AddCommGroup M] [Module Tᵐᵒᵖ M] [IsSimpleModule Tᵐᵒᵖ M] {k : Type u_4} [Field k]
+  [Algebra k U] [Algebra k T] [Infinite k] [IsSimpleRing U] [IsSimpleRing T] [IsDomain T] (hnd : ∃ τ, τ ≠ 0 ∧ ¬IsUnit τ)
+  (ι : U →ₐ[k] T) {S : Submonoid U} (hfrac : SymplecticStafford.Paper.IsRightFractions S ↑ι) {n : Type u_5} [Finite n]
+  (v : n → M) (hv : LinearIndependent (Module.End Tᵐᵒᵖ M) v) {b : U} (hb : b ≠ 0) :
+  ∃ u, LinearIndependent (Module.End Tᵐᵒᵖ M) fun i => MulOpposite.op (ι (u * b)) • v i
+SymplecticStafford.Paper.exists_right_annihilator.{u_1, u_2, u_3} {T : Type u_1} [Ring T] {M : Type u_2}
+  [AddCommGroup M] [Module Tᵐᵒᵖ M] [IsSimpleModule Tᵐᵒᵖ M] {ι : Type u_3} [Finite ι] (x : ι → M) (y : M)
+  (hy : y ∉ Submodule.span (Module.End Tᵐᵒᵖ M) (Set.range x)) :
+  ∃ τ, (∀ (i : ι), MulOpposite.op τ • x i = 0) ∧ MulOpposite.op τ • y ≠ 0
+SymplecticStafford.Paper.no_finite_rank_trap.{u_1, u_2, u_3} {U : Type u_1} [Ring U] {T : Type u_2} [Ring T]
+  {M : Type u_3} [AddCommGroup M] [Module Tᵐᵒᵖ M] [IsSimpleModule Tᵐᵒᵖ M] [IsSimpleRing U] [IsSimpleRing T] [IsDomain T]
+  (hnd : ∃ τ, τ ≠ 0 ∧ ¬IsUnit τ) (ι : U →+* T) {S : Submonoid U} (hfrac : SymplecticStafford.Paper.IsRightFractions S ι)
+  {g : M} (hg : g ≠ 0) {b : U} (hb : b ≠ 0) (Y : Submodule (Module.End Tᵐᵒᵖ M) M)
+  [Module.Finite (Module.End Tᵐᵒᵖ M) ↥Y] : ¬∀ (u : U), MulOpposite.op (ι (u * b)) • g ∈ Y
+SymplecticStafford.Paper.not_finite_end.{u_1, u_2} {T : Type u_1} [Ring T] {M : Type u_2} [AddCommGroup M]
+  [Module Tᵐᵒᵖ M] [IsSimpleModule Tᵐᵒᵖ M] [IsSimpleRing T] [IsDomain T] (hnd : ∃ τ, τ ≠ 0 ∧ ¬IsUnit τ) :
+  ¬Module.Finite (Module.End Tᵐᵒᵖ M) M
+SymplecticStafford.Paper.FilteredAlgebraData.op.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3} [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) : SymplecticStafford.Paper.FilteredAlgebraData k Uᵐᵒᵖ G 𝒜
+SymplecticStafford.Paper.FilteredAlgebraData.targetA_left.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] [IsNoetherianRing G] [IsSimpleRing U]
+  [Infinite k] (hdim : ringKrullDim G < ⊤) (d : U) (hd : d ≠ 0) : ∃ F R S, 1 = R * d + S * d * F
+SymplecticStafford.Paper.activated_pencil_finite.{u_1, u_2, u_3} {k : Type u_1} [Field k] {A : Type u_2} [Ring A]
+  [Algebra k A] {M : Type u_3} [AddCommGroup M] [Module A M] [IsArtinian A M] {e v u : M} {B L : A} (he : A ∙ e = ⊤)
+  (hvL : L • v = 0) (heq : e = B • v + L • u) : {l | A ∙ (v + (algebraMap k A) l • u) ≠ ⊤}.Finite
+SymplecticStafford.Paper.chain_bad_finite.{u_1, u_2, u_3} {k : Type u_1} [Field k] {A : Type u_2} [Ring A] [Algebra k A]
+  {M : Type u_3} [AddCommGroup M] [Module A M] [IsArtinian A M] (x : M) (c : A) (N : k → Submodule A M) :
+  {l | (1 + (algebraMap k A) l * c) • x ∈ N l ∧ x ∉ N l}.Finite
+SymplecticStafford.Paper.generator_pencil_finite.{u_1, u_2, u_3} {k : Type u_1} [Field k] {A : Type u_2} [Ring A]
+  [Algebra k A] {M : Type u_3} [AddCommGroup M] [Module A M] [IsArtinian A M] {x : M} (hx : A ∙ x = ⊤) (y : M) :
+  {l | A ∙ (x + (algebraMap k A) l • y) ≠ ⊤}.Finite
+SymplecticStafford.Paper.IsRightFractions.{u_1, u_2} {U : Type u_1} {T : Type u_2} [Ring U] [Ring T] (S : Submonoid U)
+  (ι : U →+* T) : Prop
+SymplecticStafford.Paper.IsRightFractions.clear.{u_1, u_2} {U : Type u_1} {T : Type u_2} [Ring U] [Ring T]
+  {S : Submonoid U} {ι : U →+* T} (h : SymplecticStafford.Paper.IsRightFractions S ι) {I : Submodule Uᵐᵒᵖ U} {x : T}
+  (hx : x ∈ SymplecticStafford.Paper.IsRightFractions.extend I) : ∃ s ∈ S, ∃ a ∈ I, x * ι s = ι a
+SymplecticStafford.Paper.IsRightFractions.exists_common.{u_1, u_2} {U : Type u_1} {T : Type u_2} [Ring U] [Ring T]
+  {S : Submonoid U} {ι : U →+* T} (h : SymplecticStafford.Paper.IsRightFractions S ι) {n : ℕ} (τ : Fin n → T) :
+  ∃ s ∈ S, ∀ (i : Fin n), ∃ a, τ i * ι s = ι a
+SymplecticStafford.Paper.IsRightFractions.isDomain.{u_1, u_2} {U : Type u_1} {T : Type u_2} [Ring U] [Ring T]
+  {S : Submonoid U} {ι : U →+* T} (h : SymplecticStafford.Paper.IsRightFractions S ι) [IsDomain U] : IsDomain T
+SymplecticStafford.Paper.IsRightFractions.isSimpleRing.{u_1, u_2} {U : Type u_1} {T : Type u_2} [Ring U] [Ring T]
+  {S : Submonoid U} {ι : U →+* T} (h : SymplecticStafford.Paper.IsRightFractions S ι) [IsSimpleRing U] : IsSimpleRing T
+SymplecticStafford.Paper.IsRightFractions.saturate.{u_1, u_2} {U : Type u_1} {T : Type u_2} [Ring U] [Ring T]
+  {S : Submonoid U} {ι : U →+* T} (h : SymplecticStafford.Paper.IsRightFractions S ι) {I : Submodule Uᵐᵒᵖ U} {a : U}
+  (ha : ι a ∈ SymplecticStafford.Paper.IsRightFractions.extend I) : ∃ s ∈ S, a * s ∈ I
+SymplecticStafford.Paper.FilteredAlgebraData.{u_1, u_2, u_3} (k : Type u_1) (U : Type u_2) (G : Type u_3) [Field k]
+  [Ring U] [Algebra k U] [CommRing G] [Algebra k G] (𝒜 : ℕ → Submodule k G) [GradedAlgebra 𝒜] : Type (max u_2 u_3)
+SymplecticStafford.Paper.FilteredAlgebraData.artinRees.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsNoetherianRing G] (I : Submodule Uᵐᵒᵖ U) :
+  ∃ m x kk,
+    (∀ (i : Fin m), x i ∈ I ∧ x i ∈ D.F (kk i)) ∧
+      ∀ (n : ℕ),
+        ∀ u ∈ I, u ∈ D.F n → ∃ v, (∀ (i : Fin m), v i ∈ D.F (n - kk i) ∧ (n < kk i → v i = 0)) ∧ u = ∑ i, x i * v i
+SymplecticStafford.Paper.FilteredAlgebraData.deg_mul.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] {u v : U} (hu : u ≠ 0) (hv : v ≠ 0) :
+  D.deg (u * v) = D.deg u + D.deg v
+SymplecticStafford.Paper.FilteredAlgebraData.denoms.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] (p : Ideal G) [p.IsPrime] : Submonoid U
+SymplecticStafford.Paper.FilteredAlgebraData.descent.{u_1, u_2, u_3, u_4} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) {I : Submodule Uᵐᵒᵖ U} {ι : Type u_4} [Fintype ι]
+  (x : ι → U) (kk : ι → ℕ) (hx : ∀ (i : ι), x i ∈ I ∧ x i ∈ D.F (kk i))
+  (hgen : ∀ (n : ℕ), ∀ u ∈ I, u ∈ D.F n → D.grAt n u ∈ Ideal.span (Set.range fun i => D.grAt (kk i) (x i))) (n : ℕ)
+  (u : U) : u ∈ I → u ∈ D.F n → ∃ v, (∀ (i : ι), v i ∈ D.F (n - kk i) ∧ (n < kk i → v i = 0)) ∧ u = ∑ i, x i * v i
+SymplecticStafford.Paper.FilteredAlgebraData.grIdeal.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) (I : Submodule Uᵐᵒᵖ U) : Ideal G
+SymplecticStafford.Paper.FilteredAlgebraData.grIdeal_isHomogeneous.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2}
+  {G : Type u_3} [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) (I : Submodule Uᵐᵒᵖ U) :
+  Ideal.IsHomogeneous 𝒜 (D.grIdeal I)
+SymplecticStafford.Paper.FilteredAlgebraData.isDomain.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] : IsDomain U
+SymplecticStafford.Paper.FilteredAlgebraData.sym_mul.{u_1, u_2, u_3} {k : Type u_1} {U : Type u_2} {G : Type u_3}
+  [Field k] [Ring U] [Algebra k U] [CommRing G] [Algebra k G] {𝒜 : ℕ → Submodule k G} [GradedAlgebra 𝒜]
+  (D : SymplecticStafford.Paper.FilteredAlgebraData k U G 𝒜) [IsDomain G] (u v : U) : D.sym (u * v) = D.sym u * D.sym v
+SymplecticStafford.Paper.Test.exists_source.{w, u_1, u_2} {k : Type u_1} {U : Type u_2} [Field k] [Ring U] [Algebra k U]
+  [Infinite k] [IsSimpleRing U] [IsDomain U] (Ω : List (SymplecticStafford.Paper.Test k U)) (B a : U) (ha : a ≠ 0) :
+  ∃ H, ∀ τ ∈ Ω, τ.Satisfies (B + H * a)
+SymplecticStafford.Paper.exists_generating_multiple.{u_1, u_2, u_3, u_4} {k : Type u_1} [Field k] {U : Type u_2}
+  [Ring U] [Algebra k U] {T : Type u_3} [Ring T] [Algebra k T] {V : Type u_4} [AddCommGroup V] [Module Tᵐᵒᵖ V]
+  [Infinite k] [IsSimpleRing U] [IsSimpleRing T] [IsDomain T] (hnd : ∃ τ, τ ≠ 0 ∧ ¬IsUnit τ) (ι : U →ₐ[k] T)
+  {S : Submonoid U} (hfrac : SymplecticStafford.Paper.IsRightFractions S ↑ι) [IsArtinian Tᵐᵒᵖ V] [IsNoetherian Tᵐᵒᵖ V]
+  {e : V} (he : Tᵐᵒᵖ ∙ e = ⊤) {t : U} (ht : t ≠ 0) : ∃ H, Tᵐᵒᵖ ∙ MulOpposite.op (ι (H * t)) • e = ⊤
+SymplecticStafford.Paper.finite_hom_of_isFiniteLength.{u_1, u_2, u_3} {R : Type u_1} [Ring R] {Q : Type u_2}
+  [AddCommGroup Q] [Module R Q] [IsSimpleModule R Q] {V : Type u_3} [AddCommGroup V] [Module R V]
+  (h : IsFiniteLength R V) : Module.Finite (Module.End R Q) (V →ₗ[R] Q)
+SymplecticStafford.Paper.source_reduction.{u_1, u_2, u_3, u_4} {k : Type u_1} [Field k] {U : Type u_2} [Ring U]
+  [Algebra k U] {T : Type u_3} [Ring T] [Algebra k T] {V : Type u_4} [AddCommGroup V] [Module Tᵐᵒᵖ V] [Infinite k]
+  [IsSimpleRing U] [IsSimpleRing T] [IsDomain T] (hnd : ∃ τ, τ ≠ 0 ∧ ¬IsUnit τ) (ι : U →ₐ[k] T) {S : Submonoid U}
+  (hfrac : SymplecticStafford.Paper.IsRightFractions S ↑ι) [IsArtinian Tᵐᵒᵖ V] [IsNoetherian Tᵐᵒᵖ V] {e : V}
+  (he : Tᵐᵒᵖ ∙ e = ⊤) {t : U} (ht : t ≠ 0) {K M : Submodule Tᵐᵒᵖ V} {H : U}
+  (hH : Tᵐᵒᵖ ∙ MulOpposite.op (ι (H * t)) • e ⊔ K = ⊤) (hM : IsCoatom M) (hKM : ¬K ≤ M) :
+  ∃ H', Tᵐᵒᵖ ∙ MulOpposite.op (ι (H' * t)) • e ⊔ K ⊓ M = ⊤
+SymplecticStafford.Paper.Test.{w, u_1, u_2} (k : Type u_1) (U : Type u_2) [Field k] [Ring U] [Algebra k U] :
+  Type (max (max u_1 u_2) (w + 1))
+SymplecticStafford.Paper.Test.Satisfies.{w, u_1, u_2} {k : Type u_1} {U : Type u_2} [Field k] [Ring U] [Algebra k U]
+  (τ : SymplecticStafford.Paper.Test k U) (F : U) : Prop
+SymplecticStafford.Paper.Test.satisfies_pencil_finite.{w, u_1, u_2} {k : Type u_1} {U : Type u_2} [Field k] [Ring U]
+  [Algebra k U] (τ : SymplecticStafford.Paper.Test k U) {F : U} (hF : τ.Satisfies F) (G₀ : U) :
+  {l | ¬τ.Satisfies (F + (algebraMap k U) l * G₀)}.Finite
+SymplecticStaffordChallenge.AffineSameDivisorStatement.{u, v, w} : Prop
+SymplecticStaffordChallenge.universalStatement.{u, v, w} : SymplecticStaffordChallenge.AffineSameDivisorStatement

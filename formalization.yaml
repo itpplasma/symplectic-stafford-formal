@@ -86,12 +86,16 @@ verification:
   report: "docs/verification.md"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/paper-lean-correspondence.md"
-  source_commit: "fc39ccadbfbc77940c2298a447374dacdadb55f9"
+  source_commit: "8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3"
   paper_source_commit: "c495a2c4c702c25cdb236034273c71cf94e86476"
   source_note: >-
     Paper repository itpplasma/symplectic-stafford: consolidated manuscript
     (edition of 30 September 2026), docs/zariskian-local-package-closure-2026-09-30.md
     and docs/formal-proof-route-2026-09-30.md.
+  native_replay: "pass"
+  clean_ci_run: "https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875"
+  official_preflight_run: "https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284"
+  official_preflight_status: "pass"
   allowed_axioms: ["propext", "Classical.choice", "Quot.sound"]
 
 status:
@@ -99,12 +103,15 @@ status:
     Target theorem A is formalized unconditionally. The Challenge/Solution
     pair states it with Mathlib-only definitions of the standing hypotheses.
     The proof development under SymplecticStafford/Paper imports Mathlib
-    only. The 30 September local replay is historical evidence for its
-    recorded source and pins; it does not certify the current compatibility
-    migration or subsequent active-dependency removal. Fresh native build, CI
-    and complete official preflight are required for the dependency-pruned
-    checkout. Replay and registration are tracked separately from
-    pending independent human mathematical review.
+    only. The dependency-pruned source 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3
+    passes native full private-source verification and clean Linux CI,
+    including six verifier regressions, 18 endpoint axiom reports and 96
+    mapped declarations. The source inventory records 414 files. Complete
+    official Palomar preflight passes for that source and the selected Target A
+    theorem, including con-ron, NanoDa and Lean acceptance. Section 7 is not
+    separately registered by that comparison. The final metadata commit needs
+    its own official preflight before intake. Intake, registration, independent
+    human review and a final human-readable paper remain pending.
   sorry_count: 0
   sorry_note: >-
     Proved declarations contain no sorry. Challenge.lean has one deliberate
