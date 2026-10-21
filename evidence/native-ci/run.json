@@ -1,0 +1,20 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-10-21T09:35:20Z",
+  "event": "push",
+  "headSha": "8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3",
+  "status": "completed",
+  "updatedAt": "2026-10-21T09:38:03Z",
+  "url": "https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875",
+  "files": {
+    "build.log": "312f60d2d76e92833ddc5258ea3182d696dd29b36449db566a8924c3ffe5e33f",
+    "challenge-build.log": "ee0cb30b418fbd6aa8cd2e1decd3d6a9c4f60ad33d6bf8a2c8eab89de12082b0",
+    "solution-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "axioms.log": "60541a4d84166ff205a54738c9385bdf3fb8094dc78a49ec3de4a13646595b55",
+    "consumers.log": "10105643daad74f9575f9bcd627de50b5ada0ac127fef38747034718843ff41f",
+    "paper-lean-map.log": "6eb5645e0cf345cde212d770be5aceebc18ccee179eee1c7b1bc17d19cb40f75",
+    "Challenge-imports.log": "4baebaeb1605b36c64302e0650d821eaf03d09fef29bd5634753c9d9bc7edfeb",
+    "Solution-imports.log": "86837d9a7af4a12af3a6bd2014796b8923f5350363fa1e9f7c3f1fa7725df2bd",
+    "SymplecticStafford.Paper-imports.log": "2847a94d0673a6dca01b29244d0b17bc59b032c20be0927bd918d590d86a3d0b"
+  }
+}

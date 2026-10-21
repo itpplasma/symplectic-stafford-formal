@@ -33,5 +33,16 @@ Formal code and documentation are Apache-2.0. Exact Lean/Mathlib pins and
 verification-tool revisions are retained in the repository. The active package
 has exactly one direct dependency, Mathlib; retired scaffolds replay only in
 the [frozen pre-migration environment](history/legacy-build-environment.md).
-Earlier local and CI passes remain evidence for their named snapshots; the
-dependency-pruned checkout requires a fresh build and complete preflight.
+The dependency-pruned source 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3 passes
+native full private-source verification and
+[clean Linux CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875). The checks include
+18 endpoint axiom reports, 96 mapped declarations, the Target A oracle and six
+verifier regression tests; the source inventory covers 414 files. The
+[complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
+passes for that exact source and the selected Target A theorem, with no errors
+or warnings. The retained mechanical report records con-ron acceptance of
+19,824 declarations, NanoDa and Lean acceptance, and Comparator success.
+This Target A comparison does not register the section 7 consequences.
+The final metadata commit requires its own official preflight before intake;
+intake and registration remain pending. Earlier passes remain evidence for
+their named snapshots.
