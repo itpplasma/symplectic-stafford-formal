@@ -103,18 +103,18 @@ certified by proving their consumers through another route. The maintained
 
 ## Evidence
 
-Local results are recorded in `docs/verification.md`. The local check
-compiles the full development and compares the statement with the pinned
-tools: Comparator `5756749`, lean4export `15f6055`, NanoDa `68d5ca9` and
-Landrun `811cfff`.
+The active package uses Lean 4.35.0-rc3 and its bundled Comparator,
+leanexport, leanchecker, NanoDa and con-ron tools. Mathlib is the sole direct
+dependency. The full native verifier covers Target A, the section 7 consumers,
+the allowed axiom closure and the compiled correspondence map. Exact source
+revisions and results are retained in [the verification record](verification.md)
+and its machine-readable report. The earlier Lean 4.33.0 and standalone-tool
+results there apply only to their historical snapshot.
 
-- Lean 4.33.0 compiles and exports the project.
-- The comparator tool itself is built with the `v4.34.0-rc1` toolchain
-  pinned by its own repository.
-
-These are local results. They do not constitute public clean replay,
-independent human review or a registration decision. Those remain release
-steps in `release-runbook.md`.
+A clean Linux project replay and complete official Palomar mechanical
+preflight must pass for the selected source. Independent human mathematical
+review and registration are separate from mechanical acceptance; see the
+[release runbook](release-runbook.md).
 
 ## Non-claims
 

@@ -30,5 +30,8 @@ steps. A prepared release note is not a Palomar registration receipt. Retain
 the actual registration URL and submitted commit after submission.
 
 Formal code and documentation are Apache-2.0. Exact Lean/Mathlib pins and
-verification-tool revisions are retained in the repository; historical
-scaffolds are outside the Target A proof's import closure.
+verification-tool revisions are retained in the repository. The active package
+has exactly one direct dependency, Mathlib; retired scaffolds replay only in
+the [frozen pre-migration environment](history/legacy-build-environment.md).
+Earlier local and CI passes remain evidence for their named snapshots; the
+dependency-pruned checkout requires a fresh build and complete preflight.

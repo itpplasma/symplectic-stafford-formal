@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install the pinned Lean toolchain
         shell: bash
         run: |
@@ -31,13 +33,12 @@ jobs:
         run: ./scripts/check-resources.sh
       - name: Fetch the pinned Mathlib cache
         run: lake exe cache get
+      - name: Install release metadata parser
+        run: python3 -m pip install PyYAML
       - name: Check verification guard regressions
         run: python3 -m unittest discover -s tests/python -p 'test_*.py'
       - name: Replay complete current Target A contract
         run: ./scripts/verify.sh full
-      - name: Install release metadata parser
-        if: startsWith(github.ref, 'refs/tags/')
-        run: python3 -m pip install PyYAML
       - name: Print verification diagnostics on failure
         if: failure()
         shell: bash

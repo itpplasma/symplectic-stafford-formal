@@ -59,8 +59,8 @@ archived in `docs/history/`.
 The release migration pins Lean `v4.35.0-rc3` and Mathlib
 `c55e6e786f49471c72fbddbec5415808896aec1e`. Exact dependencies and replay tools
 are recorded in the repository configuration and verification evidence. The
-Target A proof imports Mathlib only; historical scaffolds use additional
-pinned dependencies.
+active package has exactly one direct dependency, Mathlib. The retired
+scaffolds replay only in the [frozen historical environment](docs/history/legacy-build-environment.md).
 
 ```sh
 bash scripts/verify.sh
@@ -69,9 +69,9 @@ bash scripts/verify-palomar.sh
 ```
 
 The default verifier builds the Mathlib-only proof, checks its 18 endpoints,
-and runs the Target A oracle and declaration map checks. `--legacy` selects
-the historical scaffolds separately; their compatibility with the new
-toolchain is not claimed.
+and runs the Target A oracle and declaration map checks. Retired scaffolds
+and their additional dependencies are excluded from the current package;
+replay them from the frozen pre-migration checkout.
 
 The current Comparator uses the bundled `leanexport`, `leanchecker`,
 `nanoda_bin` and `con-ron` tools. Its protected local replay requires Linux
@@ -80,19 +80,21 @@ after the required d4e41c1 workflow fix.
 
 The 30 September Lean 4.33.0 and standalone-tool results in
 `docs/verification.md` are historical checks of their recorded snapshot.
-They do not certify the current toolchain migration. Fresh build, statement
-comparison and independent kernel replay must complete before submission;
+They and subsequent local/CI passes certify only their recorded snapshots.
+The current dependency-pruned checkout requires a fresh build, statement
+comparison and independent kernel replay before submission;
 results are recorded for the exact checked source.
 
 ## Status
 
 - The universal theorem is proved in Lean, as are all of the manuscript's
   §7 consequences.
-- The supported-toolchain build, all 18 endpoint axiom checks, the 96 mapped
-  declaration references and the Target A oracle pass locally. The complete
-  clean Linux and Palomar replay is in progress;
-  `docs/verification.md` and the machine-readable report identify checked
-  snapshots.
+- The recorded local migration replay passed the supported-toolchain build,
+  all 18 endpoint axiom checks, the 96 mapped declarations and the Target A
+  oracle at fc39ccadbfbc77940c2298a447374dacdadb55f9. Those results and later CI
+  results remain scoped to their named snapshots. The dependency-pruned
+  checkout requires fresh native, CI and complete Palomar preflight checks;
+  `docs/verification.md` and its machine-readable report retain the evidence.
 - Release preparation and Palomar submission were authorized on 21 October
   2026. Fresh replay, the exact submitted commit and the registration receipt
   are tracked separately in `docs/release-runbook.md` and `release-gates.yaml`.
