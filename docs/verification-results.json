@@ -1,25 +1,64 @@
 {
-  "schema": "symplectic-stafford-verification/v2",
-  "date": "2026-09-30",
-  "source_commit": "f8e97fc20e62699a96e46bd4091f16b4b210b797",
-  "lean": "leanprover/lean4:v4.33.0",
-  "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "schema": "symplectic-stafford-verification/v3",
+  "date": "2026-10-21",
+  "source_commit": "fc39ccadbfbc77940c2298a447374dacdadb55f9",
+  "paper_commit": "c495a2c4c702c25cdb236034273c71cf94e86476",
+  "proof_inputs_sha256": "d19bb59d21b178b0dd60a93ddde59d52fc80239ff2a18244abfa4a33e85234e1",
+  "lean": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib": "c55e6e786f49471c72fbddbec5415808896aec1e",
   "compared_theorem": "SymplecticStaffordChallenge.universalStatement",
-  "axioms": ["propext", "Classical.choice", "Quot.sound"],
-  "tools": {
-    "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
-    "comparator_lean": "leanprover/lean4:v4.34.0-rc1",
-    "lean4export": "15f6055e299ad5b89345e533cc2192f4cc00f659",
-    "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
-    "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
-  },
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "checks": {
+    "current-target-a-build": "pass",
+    "challenge-build": "pass",
+    "solution-trust-zero": "pass",
+    "allowed-axioms-18-endpoints": "pass",
     "challenge-import-closure": "pass",
     "solution-import-closure": "pass",
-    "comparator": "pass",
-    "nanoda-kernel": "pass",
-    "lean-default-kernel": "pass",
-    "oracle-tests/PaperTargetAOracle.lean": "pass"
+    "paper-import-closure": "pass",
+    "source-module-and-hole-policy": "pass",
+    "paper-lean-map-private-source-hashes-and-anchors": "pass",
+    "paper-lean-map-96-declaration-references": "pass",
+    "oracle-tests/PaperTargetAOracle.lean": "pass",
+    "verification-guard-regressions": "pass"
   },
-  "scope": "local replay; clean-checkout replay and human review pending"
+  "import_counts": {
+    "Challenge": 3142,
+    "Solution": 3577,
+    "SymplecticStafford.Paper": 3584
+  },
+  "scope": "Local native replay on macOS; clean Linux CI replay and official full Palomar mechanical preflight pending. Mathematical bodies unchanged from f8e97fc; module visibility and two direct Mathlib imports changed. No human review or registration claimed.",
+  "historical_verification": {
+    "schema": "symplectic-stafford-verification/v2",
+    "date": "2026-09-30",
+    "source_commit": "f8e97fc20e62699a96e46bd4091f16b4b210b797",
+    "lean": "leanprover/lean4:v4.33.0",
+    "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "compared_theorem": "SymplecticStaffordChallenge.universalStatement",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "tools": {
+      "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+      "comparator_lean": "leanprover/lean4:v4.34.0-rc1",
+      "lean4export": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+      "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+      "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+    },
+    "checks": {
+      "challenge-import-closure": "pass",
+      "solution-import-closure": "pass",
+      "comparator": "pass",
+      "nanoda-kernel": "pass",
+      "lean-default-kernel": "pass",
+      "oracle-tests/PaperTargetAOracle.lean": "pass"
+    },
+    "scope": "local replay; clean-checkout replay and human review pending"
+  }
 }

@@ -84,7 +84,8 @@ verification:
   report: "docs/verification.md"
   machine_readable_report: "docs/verification-results.json"
   statement_correspondence: "docs/paper-lean-correspondence.md"
-  source_commit: "c495a2c4c702c25cdb236034273c71cf94e86476"
+  source_commit: "fc39ccadbfbc77940c2298a447374dacdadb55f9"
+  paper_source_commit: "c495a2c4c702c25cdb236034273c71cf94e86476"
   source_note: >-
     Paper repository itpplasma/symplectic-stafford: consolidated manuscript
     (edition of 30 September 2026), docs/zariskian-local-package-closure-2026-09-30.md
