@@ -63,11 +63,16 @@ and applies `FilteredAlgebraData.targetA`. The development under
 | `Induction.lean` | (5.2)–(5.4), Lemma 5.1, Remark 5.2, `P_h`, the successor, Target A |
 | `Opposite.lean` | §7.7: the opposite algebra and `1 = R d + S d F` |
 | `ConsequencesGeneration.lean` | §7.1–7.8, 7.10 |
+| `ConsequencesRank.lean` | Ore rank, §7.4–7.5, 7.9–7.13 |
+| `ConsequencesForU.lean` | Instantiates the general §7 results for the standing filtered algebra |
 
 ## Proof-route differences from the manuscript
 
-The formal proof keeps every statement. It uses the following shorter routes,
-each fully proved in Lean:
+The formal proof proves the principal statements through the following routes.
+Unused intermediate assertions, including Lemma 4.3 and Z4–Z7(a), are not
+certified by proving their consumers through another route. The maintained
+[declaration map](paper-lean-map.json) and
+[correspondence notes](paper-lean-correspondence.md) record the exact scope:
 
 1. **Pencils (4.7, 4.8).** A single chain lemma for Artinian modules over a
    `k`-algebra. Distinct bad scalars give a strictly decreasing chain of
@@ -91,26 +96,27 @@ each fully proved in Lean:
    `δ(U/I) = dim(G/gr I)`. Localizations are taken at every prime, so no
    homogeneity argument for minimal primes is required.
 7. The induction starts at `P_0` (source selection and `δ ≤ D`) instead of
-   `P_1`. Lemma 5.1 holds at every prime containing `gr J`.
+   `P_1`. Lemma 5.1 holds at every prime containing `gr J`. Lean uses
+   `δ(0) = ⊥` with absorbing addition; the paper uses `δ(0) = −1` on
+   `1 ≤ h ≤ D + 1`. The induction bounds agree in that range. See the
+   correspondence notes for the precise convention translation.
 
 ## Evidence
 
-Local results are recorded in `docs/verification.md`. The local check
-compiles the full development and compares the statement with the pinned
-tools: Comparator `5756749`, lean4export `15f6055`, NanoDa `68d5ca9` and
-Landrun `811cfff`.
+The active package uses Lean 4.35.0-rc3 and its bundled Comparator,
+leanexport, leanchecker, NanoDa and con-ron tools. Mathlib is the sole direct
+dependency. The full native verifier covers Target A, the section 7 consumers,
+the allowed axiom closure and the compiled correspondence map. Exact source
+revisions and results are retained in [the verification record](verification.md)
+and its machine-readable report. The earlier Lean 4.33.0 and standalone-tool
+results there apply only to their historical snapshot.
 
-- Lean 4.33.0 compiles and exports the project.
-- The comparator tool itself is built with the `v4.34.0-rc1` toolchain
-  pinned by its own repository.
+A clean Linux project replay and complete official Palomar mechanical
+preflight must pass for the selected source. Independent human mathematical
+review and registration are separate from mechanical acceptance; see the
+[release runbook](release-runbook.md).
 
-These are local results. They do not constitute public clean replay,
-independent human review or a registration decision. Those remain release
-steps in `release-runbook.md`.
+## Review
 
-## Non-claims
-
-The proof was produced within the private research development. Its
-originality and priority are not asserted here. Independent mathematical
-review of the paper and of the formal statement's correspondence remains a
-human release step.
+Independent mathematical review of the paper and of the formal statement's
+correspondence remains a human release step.

@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.FiniteFilteredLengthFormula
-import SymplecticStafford.Filtered.StrictFiniteGradedChain
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.FiniteFilteredLengthFormula
+public import SymplecticStafford.Filtered.StrictFiniteGradedChain
+
+@[expose] public section
 
 /-!
 # A bounded strict filtered-map witness

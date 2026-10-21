@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolRightPowerBridge
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.FullSymbolRightPowerBridge
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent behavioral oracle for the right-power bridge.  The chart is an
    actual Mathlib right Ore localization of ℚ at the powers of 2.  Its inverse,

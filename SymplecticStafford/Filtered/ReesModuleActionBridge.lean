@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.ReesNoetherianTransfer
+module
+
+public import SymplecticStafford.Filtered.ReesNoetherianTransfer
+
+@[expose] public section
 
 /-!
 # An actual bounded-Rees module action

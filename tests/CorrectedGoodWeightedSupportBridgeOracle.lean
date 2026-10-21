@@ -1,7 +1,11 @@
-import Mathlib.Tactic
-import Mathlib.Data.Matrix.Basis
-import SymplecticStafford.Filtered.CorrectedGoodWeightedSupportBridge
-import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+module
+
+public import Mathlib.Tactic
+public import Mathlib.Data.Matrix.Basis
+public import SymplecticStafford.Filtered.CorrectedGoodWeightedSupportBridge
+public import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+
+@[expose] public section
 
 /- Independent noncommutative calibration for the correction-aware bridge.
    The filtered ring is the noncommutative matrix ring Mat₂(ℚ), while the

@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M01PolynomialFiltrationBoundary
+module
+
+public import SymplecticStafford.Filtered.M01PolynomialFiltrationBoundary
+
+@[expose] public section
 
 /-! Independent oracle for the concrete polynomial filtration boundary. -/
 

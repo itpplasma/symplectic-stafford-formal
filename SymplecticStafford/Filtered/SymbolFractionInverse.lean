@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.SymbolDenominatorSubmonoid
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
+module
+
+public import SymplecticStafford.Filtered.SymbolDenominatorSubmonoid
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+
+@[expose] public section
 
 /-!
 # Lower perturbations and a degree-zero fraction witness

@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.TwoCallDescentProducer
+module
+
+public import SymplecticStafford.Induction.TwoCallDescentProducer
+
+@[expose] public section
 
 /-!
 # A concrete non-vacuous two-call support-removal step

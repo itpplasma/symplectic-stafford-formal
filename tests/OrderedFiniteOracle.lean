@@ -1,8 +1,12 @@
-import SymplecticStafford.Ordered.Affine
-import SymplecticStafford.Ordered.RightClear
-import SymplecticStafford.FiniteLength.Pencil
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Ordered.Affine
+public import SymplecticStafford.Ordered.RightClear
+public import SymplecticStafford.FiniteLength.Pencil
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 Independent concrete consumers for the ordered and finite-length checkpoint.

@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.NoncommRing
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Tactic.NoncommRing
+
+@[expose] public section
 
 /-! Ordered affine identities, with all noncommutative factor order explicit. -/
 

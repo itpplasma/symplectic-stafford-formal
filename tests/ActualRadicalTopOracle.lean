@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Tactic
-import SymplecticStafford.FiniteLength.ActualRadicalTop
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Tactic
+public import SymplecticStafford.FiniteLength.ActualRadicalTop
+
+@[expose] public section
 
 /-! Independent oracle for the finite-length-to-radical-top extraction. -/
 

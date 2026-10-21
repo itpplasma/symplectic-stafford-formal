@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M01AssociatedGradedBoundary
+module
+
+public import SymplecticStafford.Filtered.M01AssociatedGradedBoundary
+
+@[expose] public section
 
 /-! Independent oracle for the noncommutative constant-filtration boundary. -/
 

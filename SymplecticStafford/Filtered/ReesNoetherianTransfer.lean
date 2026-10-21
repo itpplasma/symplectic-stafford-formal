@@ -1,11 +1,15 @@
-import SymplecticStafford.Filtered.ReesNoetherianProducer
-import SymplecticStafford.Filtered.RightPolynomialNoetherian
-import SymplecticStafford.Filtered.BoundedReesBridge
-import SymplecticStafford.Filtered.ReesGoodSubquotient
-import Mathlib.RingTheory.FiniteType
-import Mathlib.RingTheory.GradedAlgebra.Basic
-import Mathlib.Algebra.MonoidAlgebra.ToDirectSum
-import Mathlib.LinearAlgebra.Quotient.Basic
+module
+
+public import SymplecticStafford.Filtered.ReesNoetherianProducer
+public import SymplecticStafford.Filtered.RightPolynomialNoetherian
+public import SymplecticStafford.Filtered.BoundedReesBridge
+public import SymplecticStafford.Filtered.ReesGoodSubquotient
+public import Mathlib.RingTheory.FiniteType
+public import Mathlib.RingTheory.GradedAlgebra.Basic
+public import Mathlib.Algebra.MonoidAlgebra.ToDirectSum
+public import Mathlib.LinearAlgebra.Quotient.Basic
+
+@[expose] public section
 
 /-!
 # Exact coefficient symbols for the Rees filtration

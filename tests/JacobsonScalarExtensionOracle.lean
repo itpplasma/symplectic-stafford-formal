@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.JacobsonScalarExtension
-import Mathlib.FieldTheory.RatFunc.AsPolynomial
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.JacobsonScalarExtension
+public import Mathlib.FieldTheory.RatFunc.AsPolynomial
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the Jacobson/auxiliary-field M05--M07 bridge

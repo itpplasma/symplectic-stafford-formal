@@ -1,4 +1,8 @@
-import SymplecticStafford.Source.FiniteDimensionalAssembly
+module
+
+public import SymplecticStafford.Source.FiniteDimensionalAssembly
+
+@[expose] public section
 
 /-!
 # Retained finite-test assembly

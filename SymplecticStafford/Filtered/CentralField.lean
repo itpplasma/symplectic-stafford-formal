@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Algebra.Field.Defs
-import SymplecticStafford.Filtered.AssociatedLayerRing
+module
+
+public import Mathlib.Algebra.Algebra.Basic
+public import Mathlib.Algebra.Field.Basic
+public import Mathlib.Algebra.Field.Defs
+public import SymplecticStafford.Filtered.AssociatedLayerRing
+
+@[expose] public section
 
 /-!
 # A concrete central-field filtered-algebra boundary

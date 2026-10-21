@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Field.Rat
-import SymplecticStafford.Package.FilteredOpposite
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import SymplecticStafford.Package.FilteredOpposite
+
+@[expose] public section
 
 /- Independent oracle for concrete opposite transport of the M01 filtered
 algebra data.  The filtration is the exhaustive constant filtration on the

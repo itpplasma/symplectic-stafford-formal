@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.RingTheory.FiniteLength
-import SymplecticStafford.Source.OriginalDivisionProducer
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.RingTheory.FiniteLength
+public import SymplecticStafford.Source.OriginalDivisionProducer
+
+@[expose] public section
 
 /-!
 # Finite length does not produce an original-U source map

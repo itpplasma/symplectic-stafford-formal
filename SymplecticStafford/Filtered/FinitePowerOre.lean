@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.PowerOre
-import SymplecticStafford.Filtered.ReesAlgebra
+module
+
+public import SymplecticStafford.Filtered.PowerOre
+public import SymplecticStafford.Filtered.ReesAlgebra
+
+@[expose] public section
 
 /-!
 # Finite algebraic symbol/fraction normal forms

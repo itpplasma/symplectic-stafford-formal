@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.WeightedInverseBoundary
+module
+
+public import SymplecticStafford.Filtered.WeightedInverseBoundary
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered.WeightedInverseBoundaryOracle
 

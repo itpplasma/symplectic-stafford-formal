@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.FiniteLength
-import SymplecticStafford.Filtered.ActualClassSupport
+module
+
+public import Mathlib.RingTheory.FiniteLength
+public import SymplecticStafford.Filtered.ActualClassSupport
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered
 

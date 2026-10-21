@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.InfiniteMultiplicityBoundary
+module
+
+public import SymplecticStafford.FiniteLength.InfiniteMultiplicityBoundary
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength.InfiniteMultiplicityBoundaryOracle
 

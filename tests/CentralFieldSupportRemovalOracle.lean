@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Induction.CentralFieldSupportRemoval
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Induction.CentralFieldSupportRemoval
+
+@[expose] public section
 
 /-!
 # Independent central-field support-removal oracle

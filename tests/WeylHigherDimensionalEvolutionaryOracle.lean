@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import Stafford38.Weyl.IteratedEquivalence
-import SymplecticStafford.Source.WeylHigherDimensionalEvolutionary
+module
+
+public import Mathlib.Tactic
+public import Stafford38.Weyl.IteratedEquivalence
+public import SymplecticStafford.Source.WeylHigherDimensionalEvolutionary
+
+@[expose] public section
 
 /-! Independent consumer for the higher-rank finite-potential calibration.
 

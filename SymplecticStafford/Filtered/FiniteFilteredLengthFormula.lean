@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.Length
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.ActualClassSupport
+module
+
+public import Mathlib.RingTheory.Length
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.ActualClassSupport
+
+@[expose] public section
 
 /-!
 # Exact length accounting for a finite filtered module

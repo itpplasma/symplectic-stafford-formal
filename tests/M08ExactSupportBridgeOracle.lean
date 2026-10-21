@@ -1,4 +1,8 @@
-import SymplecticStafford.Ordered.M08ExactSupportBridge
+module
+
+public import SymplecticStafford.Ordered.M08ExactSupportBridge
+
+@[expose] public section
 
 /-!
 Independent trust-disabled oracle for the M08 exact-support bridge and its

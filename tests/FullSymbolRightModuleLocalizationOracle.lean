@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.FullSymbolRightModuleLocalization
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.FullSymbolRightModuleLocalization
+
+@[expose] public section
 
 /- Independent behavioral oracle: a finite family of localized rational
 modules over the powers of 2 has one denominator in the original ring. -/

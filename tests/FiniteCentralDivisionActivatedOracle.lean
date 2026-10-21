@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionActivated
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionActivated
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for finite-central activated blocks

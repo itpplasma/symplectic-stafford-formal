@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.GoodWeightedSupportBridge
+module
+
+public import SymplecticStafford.Filtered.GoodWeightedSupportBridge
+
+@[expose] public section
 
 /-!
 # Corrected weighted detection at an associated layer

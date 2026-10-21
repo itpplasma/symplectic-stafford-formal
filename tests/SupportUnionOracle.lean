@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Ordered.SupportUnion
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Ordered.SupportUnion
+
+@[expose] public section
 
 /-!
 Independent consumers for the M08 finite-generator/support-union interface.

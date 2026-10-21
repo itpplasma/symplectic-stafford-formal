@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Noetherian.Basic
-import Mathlib.Algebra.Ring.Basic
+module
+
+public import Mathlib.RingTheory.Noetherian.Basic
+public import Mathlib.Algebra.Ring.Basic
+
+@[expose] public section
 
 /-!
 # Noetherianity from a terminating filtered lift

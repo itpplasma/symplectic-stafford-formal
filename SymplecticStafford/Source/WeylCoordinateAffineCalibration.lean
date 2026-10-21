@@ -1,8 +1,12 @@
-import Stafford38.EvolutionaryCorollary
-import Stafford38.Weyl.MonicNormalization
-import SymplecticStafford.Source.WeylA1Calibration
-import SymplecticStafford.Source.WeylHigherDimensionalEvolutionary
-import SymplecticStafford.Source.WeylHigherDimensionalMonicization
+module
+
+public import Stafford38.EvolutionaryCorollary
+public import Stafford38.Weyl.MonicNormalization
+public import SymplecticStafford.Source.WeylA1Calibration
+public import SymplecticStafford.Source.WeylHigherDimensionalEvolutionary
+public import SymplecticStafford.Source.WeylHigherDimensionalMonicization
+
+@[expose] public section
 
 /-!
 # Coordinate-affine higher-rank Weyl calibration

@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Support
-import SymplecticStafford.Ordered.CommonColonProducer
+module
+
+public import Mathlib.RingTheory.Support
+public import SymplecticStafford.Ordered.CommonColonProducer
+
+@[expose] public section
 
 /-!
 # Actual characteristic-support consumption for M08

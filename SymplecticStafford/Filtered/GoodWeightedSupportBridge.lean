@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.GoodWeightedModule
-import SymplecticStafford.Filtered.SpecCharacteristicSupport
+module
+
+public import SymplecticStafford.Filtered.GoodWeightedModule
+public import SymplecticStafford.Filtered.SpecCharacteristicSupport
+
+@[expose] public section
 
 /-!
 # Good-module weighted detection at an associated layer

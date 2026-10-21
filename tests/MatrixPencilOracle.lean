@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.MatrixPencil
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.MatrixPencil
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! The oracle uses two explicit 2-by-2 repeated blocks over `ℚ`, with
 nontrivial off-diagonal pencil terms.  It checks determinant-polynomial

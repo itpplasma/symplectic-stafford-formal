@@ -1,54 +1,48 @@
-# Symplectic Stafford formalization
+# Symplectic Stafford formalization v0.1.0
 
-This prepared checkpoint contains the checked semantic/right-ideal bridge and
-support-boundary, ordered/common-colon/finite-generation and conditional
-support-union, raw and algebraic filtered/Rees plus quotient-module and
-power-Ore boundaries, finite-support and matrix-pencil, original-affine
-source-selection, constructive finite-index/successor, differential-Ore
-finite-cover, terminal zero-quotient/cofactor, and explicit opposite-transport
-slices together with their Lean oracles, the Palomar-shaped Challenge/Solution
-pair, and the companion proof-map dossier. The exact theorem scope and the
-remaining universal source-producer and theorem gates are recorded in `PLAN.md` and
-`formalization.yaml`.
+This release candidate proves Target theorem A of the
+[Symplectic Stafford](https://github.com/itpplasma/symplectic-stafford)
+exposition. For a simple, infinite-dimensional characteristic-zero algebra
+with an exhaustive nonnegative multiplicative filtration by finite-dimensional
+pieces, `F₀U = k`, and commutative affine domain associated graded ring of
+finite Krull dimension, it proves
 
-The source archive is Apache-2.0. The dossier PDF is a generated companion
-artifact; its SHA-256 is listed in `SHA256SUMS` when a release is prepared.
+```text
+∀ d ≠ 0, ∀ a ≠ 0, ∀ B, ∃ H R S, 1 = d R + (B + H a) d S.
+```
 
-The latest formalization replay adds checked degree-zero, Rees-subquotient,
-polynomial full-symbol, weighted-faithful, division-pencil, source-selection
-and base/two-call assembly consumers. These are recorded as checkpoint
-evidence only; Phase I/II and publication remain disabled until the universal
-M01--M11 producer is proved.
+All factors lie in the original algebra, in the displayed order. The
+Mathlib-only proof is in `SymplecticStafford/Paper/`; it also proves the
+left-handed identity and the module-theoretic consequences in section 7.
+The main results use only `propext`, `Classical.choice` and `Quot.sound`.
+The independently stated `Challenge.lean` and `Solution.lean` pair compares
+Target A through `comparator.json`.
 
-The second continuation replay additionally checks polynomial filtration and
-Rees-Noetherian calibrations, finite actual-Ore clearing, a good polynomial
-module with negative-weight detection, split central finite pencils, a Weyl A₁
-original-ring identity, and a concrete support-removal successor. These remain
-scoped model evidence rather than universal phase completion.
+The [submission scope](target-a-submission-scope.md) records the hypotheses,
+paper correspondence and proof-route changes. The research exposition and
+formal development share an internal research history; no novelty, priority,
+independent human review or journal acceptance is claimed. A final
+human-readable manuscript is a separate later deliverable.
 
-The third continuation replay adds an additive structural filtered-ring class,
-finite homogeneous Rees decomposition, localized-to-original cofactor
-recombination, generic weighted good-module detection, finite-central
-division-block pencils, a split finite-dimensional original-U source selector,
-and central-field support-removal/test-retention bridges. These remain checked
-conditional interfaces and finite-model consumers; the universal producer and
-publication gates stay disabled.
+The [verification record](verification.md), machine-readable replay report and
+[release gates](../release-gates.yaml) identify checked snapshots and pending
+steps. A prepared release note is not a Palomar registration receipt. Retain
+the actual registration URL and submitted commit after submission.
 
-The fourth continuation replay composes the preceding interfaces into an
-associated-graded support bridge, a Rees Noetherian transfer criterion,
-localized-to-original divisor assembly, weighted detection-to-support linkage,
-finite-central activated pencils, finite-dimensional same-divisor assembly,
-and a central-field two-call successor. Their local, chart, and coefficient
-hypotheses remain explicit; no universal phase or publication gate is enabled.
-
-The fifth continuation adds an M01 associated-spectrum adapter, bounded-layer
-support/dimension/defect invariance, finite localized assembly with one common
-denominator, correction-aware weighted support detection, minimal-prime
-finite-central activation, retained finite-test assembly, and a central-field
-finite-index endpoint adapter. These conditional consumers pass independent
-trust-disabled replay; universal phase and publication gates remain disabled.
-
-The sixth review wave corrected the bounded-layer calibration text, added
-negative retained-test checks, strengthened the activated-block oracle, and
-conditioned central-field support-removal arithmetic on non-exceptional
-scalars. The root replay still passes; no phase or publication gate changes.
+Formal code and documentation are Apache-2.0. Exact Lean/Mathlib pins and
+verification-tool revisions are retained in the repository. The active package
+has exactly one direct dependency, Mathlib; retired scaffolds replay only in
+the [frozen pre-migration environment](history/legacy-build-environment.md).
+The dependency-pruned source 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3 passes
+native full private-source verification and
+[clean Linux CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875). The checks include
+18 endpoint axiom reports, 96 mapped declarations, the Target A oracle and six
+verifier regression tests; the source inventory covers 414 files. The
+[complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
+passes for that exact source and the selected Target A theorem, with no errors
+or warnings. The retained mechanical report records con-ron acceptance of
+19,824 declarations, NanoDa and Lean acceptance, and Comparator success.
+This Target A comparison does not register the section 7 consequences.
+The final metadata commit requires its own official preflight before intake;
+intake and registration remain pending. Earlier passes remain evidence for
+their named snapshots.

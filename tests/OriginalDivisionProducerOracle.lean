@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import SymplecticStafford.Source.OriginalDivisionProducer
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import SymplecticStafford.Source.OriginalDivisionProducer
+
+@[expose] public section
 
 /-!
 # Independent oracle for the bridged original-`U` M06 producer

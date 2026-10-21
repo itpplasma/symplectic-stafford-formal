@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.Polynomial.Degree.Operations
-import SymplecticStafford.Filtered.AssociatedGradedSpecBridge
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Polynomial.Degree.Operations
+public import SymplecticStafford.Filtered.AssociatedGradedSpecBridge
+
+@[expose] public section
 
 /-! Independent polynomial oracle for the actual associated-layer/spec bridge. -/
 

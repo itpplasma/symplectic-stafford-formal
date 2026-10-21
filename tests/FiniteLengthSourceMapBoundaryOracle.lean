@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.RingTheory.FiniteLength
-import SymplecticStafford.Source.FiniteLengthSourceMapBoundary
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.RingTheory.FiniteLength
+public import SymplecticStafford.Source.FiniteLengthSourceMapBoundary
+
+@[expose] public section
 
 /- Independent behavioral oracle for the source-map boundary. -/
 

@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.MinimalPrimeLength
-import Mathlib.Algebra.Field.Rat
+module
+
+public import SymplecticStafford.FiniteLength.MinimalPrimeLength
+public import Mathlib.Algebra.Field.Rat
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength.Oracle
 

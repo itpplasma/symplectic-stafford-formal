@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Defs
-import SymplecticStafford.Ordered.FiniteGenerationBridge
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Finset.Basic
+public import Mathlib.Data.Set.Defs
+public import SymplecticStafford.Ordered.FiniteGenerationBridge
+
+@[expose] public section
 
 /-!
 # A finite-generator characteristic-support union

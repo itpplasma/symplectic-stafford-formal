@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.CentralEigenPencil
+module
+
+public import SymplecticStafford.FiniteLength.CentralEigenPencil
+
+@[expose] public section
 
 /-!
 # Independent oracle for the central eigenvalue pencil

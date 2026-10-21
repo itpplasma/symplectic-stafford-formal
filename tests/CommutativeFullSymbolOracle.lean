@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.CommutativeFullSymbol
+module
+
+public import SymplecticStafford.Filtered.CommutativeFullSymbol
+
+@[expose] public section
 
 /- Independent calibration of full-symbol fractions over `ℤ`, using the
    saturated regular-element submonoid rather than powers of one element. -/

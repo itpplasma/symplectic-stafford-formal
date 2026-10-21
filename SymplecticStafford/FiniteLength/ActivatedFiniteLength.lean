@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.ActivatedPencil
-import SymplecticStafford.FiniteLength.RightFiltration
-import SymplecticStafford.FiniteLength.JacobsonTop
+module
+
+public import SymplecticStafford.FiniteLength.ActivatedPencil
+public import SymplecticStafford.FiniteLength.RightFiltration
+public import SymplecticStafford.FiniteLength.JacobsonTop
+
+@[expose] public section
 
 /-!
 # Activated pencils from an actual finite-length module

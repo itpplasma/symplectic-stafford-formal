@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
-import Mathlib.LinearAlgebra.Eigenspace.Minpoly
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
+public import Mathlib.LinearAlgebra.Eigenspace.Minpoly
+
+@[expose] public section
 
 /-!
 # A determinant-free finite-central division-block pencil

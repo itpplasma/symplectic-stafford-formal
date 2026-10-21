@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.FullSymbolFilteredChart
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.FullSymbolFilteredChart
+
+@[expose] public section
 
 /-!
 Independent behavioral consumer for the finite full-symbol chart-control

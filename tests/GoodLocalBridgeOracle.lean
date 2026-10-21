@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.GoodLocalBridge
-import Mathlib.Algebra.Field.Rat
+module
+
+public import SymplecticStafford.FiniteLength.GoodLocalBridge
+public import Mathlib.Algebra.Field.Rat
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength.GoodLocalBridgeOracle
 

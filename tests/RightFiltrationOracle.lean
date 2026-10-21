@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.RightFiltration
+module
+
+public import SymplecticStafford.FiniteLength.RightFiltration
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength.RightFiltrationOracle
 

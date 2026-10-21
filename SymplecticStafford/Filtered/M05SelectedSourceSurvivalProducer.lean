@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.M01FiniteHomogeneousReesProducer
-import SymplecticStafford.Filtered.SymbolFractionReesLocalization
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.M01FiniteHomogeneousReesProducer
+public import SymplecticStafford.Filtered.SymbolFractionReesLocalization
+
+@[expose] public section
 
 /-!
 # A selected-source M01/M05 survival producer

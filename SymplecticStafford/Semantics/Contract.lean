@@ -1,5 +1,9 @@
-import SymplecticStafford.Semantics.S1Consequences
-import Mathlib.RingTheory.Finiteness.Defs
+module
+
+public import SymplecticStafford.Semantics.S1Consequences
+public import Mathlib.RingTheory.Finiteness.Defs
+
+@[expose] public section
 
 /-!
 # Phase-I semantic contract

@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.NoetherianBoundary
+module
+
+public import SymplecticStafford.Filtered.NoetherianBoundary
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered
 

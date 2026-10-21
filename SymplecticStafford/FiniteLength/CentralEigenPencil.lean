@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
-import Mathlib.LinearAlgebra.Dimension.Finite
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
+public import Mathlib.LinearAlgebra.Dimension.Finite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Central eigenvalue separation over a division ring

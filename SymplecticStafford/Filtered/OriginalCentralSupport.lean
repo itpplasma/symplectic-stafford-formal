@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Ring.Subring.Basic
-import Mathlib.RingTheory.Support
-import Mathlib.LinearAlgebra.Quotient.Defs
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Semantics.SupportDimension
+module
+
+public import Mathlib.Algebra.Ring.Subring.Basic
+public import Mathlib.RingTheory.Support
+public import Mathlib.LinearAlgebra.Quotient.Defs
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Semantics.SupportDimension
+
+@[expose] public section
 
 /-!
 # Original-ring central characteristic support

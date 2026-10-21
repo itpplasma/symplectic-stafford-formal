@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.StrongPh
+module
+
+public import SymplecticStafford.Induction.StrongPh
+
+@[expose] public section
 
 /-!
 # Finite-index induction for the strong `P_h` contract

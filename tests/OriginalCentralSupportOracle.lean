@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.OriginalCentralSupport
+module
+
+public import SymplecticStafford.Filtered.OriginalCentralSupport
+
+@[expose] public section
 
 /-!
 # Independent oracle for the original-central support bridge

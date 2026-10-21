@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.CentralFieldFiltrationBoundary
+module
+
+public import SymplecticStafford.Filtered.CentralFieldFiltrationBoundary
+
+@[expose] public section
 
 /- Independent oracle for the degree-zero/right-submodule incompatibility. -/
 namespace SymplecticStaffordTest.CentralFieldFiltrationBoundary

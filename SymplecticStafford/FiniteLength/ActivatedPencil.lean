@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.PencilBridge
-import SymplecticStafford.FiniteLength.MatrixPencil
-import SymplecticStafford.FiniteLength.RadicalLift
+module
+
+public import SymplecticStafford.FiniteLength.PencilBridge
+public import SymplecticStafford.FiniteLength.MatrixPencil
+public import SymplecticStafford.FiniteLength.RadicalLift
+
+@[expose] public section
 
 /-!
 # Simultaneous finite-length top pencils

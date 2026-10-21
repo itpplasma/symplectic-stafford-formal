@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.DivisionEigenBoundary
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.DivisionEigenBoundary
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the division-ring pencil boundary

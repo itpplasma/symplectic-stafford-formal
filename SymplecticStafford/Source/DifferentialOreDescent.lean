@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.List.Basic
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Filtered.Localization
-import SymplecticStafford.Semantics.Contract
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.List.Basic
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Filtered.Localization
+public import SymplecticStafford.Semantics.Contract
+
+@[expose] public section
 
 /-!
 # Differential--Ore source descent boundary

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic.NoncommRing
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Tactic.NoncommRing
+
+@[expose] public section
 
 /-!
 # A finite original-ring inverse certificate

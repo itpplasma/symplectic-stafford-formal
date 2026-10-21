@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.FullSymbolWeightedBoundary
-import Mathlib.Algebra.Polynomial.Degree.Units
-import Mathlib.Algebra.Polynomial.Monic
+module
+
+public import SymplecticStafford.Filtered.FullSymbolWeightedBoundary
+public import Mathlib.Algebra.Polynomial.Degree.Units
+public import Mathlib.Algebra.Polynomial.Monic
+
+@[expose] public section
 
 /- Independent oracle for the M03-to-M04 boundary: actual Ore/right-clearing
    data alone does not make a strict negative correction invertible. -/

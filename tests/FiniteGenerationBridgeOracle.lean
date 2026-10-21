@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Ordered.FiniteGenerationBridge
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Ordered.FiniteGenerationBridge
+
+@[expose] public section
 
 /-!
 Independent oracle for the finite-generation bridge.  The integer instance

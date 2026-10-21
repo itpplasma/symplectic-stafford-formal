@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.LinearAlgebra.Dual.Lemmas
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 Central scalar roots of a nonzero polynomial over an arbitrary algebra.

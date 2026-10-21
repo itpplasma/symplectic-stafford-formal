@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
-import SymplecticStafford.Source.FiniteDimensionalAssembly
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.FiniteDimensionalAssembly
+
+@[expose] public section
 
 /-!
 # Independent oracle for divisor-indexed finite-dimensional assembly

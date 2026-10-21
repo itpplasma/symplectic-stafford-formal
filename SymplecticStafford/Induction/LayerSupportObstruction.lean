@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.CharacteristicSupport
+module
+
+public import SymplecticStafford.Filtered.CharacteristicSupport
+
+@[expose] public section
 
 /-!
 # Boundary of the finite-layer support interface

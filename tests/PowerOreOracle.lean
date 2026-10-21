@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.PowerOre
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.PowerOre
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStaffordTest.PowerOre
 

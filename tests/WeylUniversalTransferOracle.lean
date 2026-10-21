@@ -1,4 +1,8 @@
-import SymplecticStafford.Source.WeylUniversalTransfer
+module
+
+public import SymplecticStafford.Source.WeylUniversalTransfer
+
+@[expose] public section
 
 /-! Independent consumer checks for the all-rank Weyl-equivalence transfer. -/
 

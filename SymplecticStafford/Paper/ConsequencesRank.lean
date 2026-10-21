@@ -1,17 +1,21 @@
-import SymplecticStafford.Paper.ConsequencesGeneration
-import Mathlib.RingTheory.OreLocalization.Ring
-import Mathlib.RingTheory.OreLocalization.NonZeroDivisors
-import Mathlib.RingTheory.OreLocalization.OreSet
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
-import Mathlib.LinearAlgebra.Dimension.OrzechProperty
-import Mathlib.RingTheory.Finiteness.Projective
-import Mathlib.RingTheory.Finiteness.Cardinality
-import Mathlib.RingTheory.Finiteness.Prod
-import Mathlib.Tactic.NoncommRing
+module
+
+public import SymplecticStafford.Paper.ConsequencesGeneration
+public import Mathlib.RingTheory.OreLocalization.Ring
+public import Mathlib.RingTheory.OreLocalization.NonZeroDivisors
+public import Mathlib.RingTheory.OreLocalization.OreSet
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
+public import Mathlib.LinearAlgebra.Dimension.Constructions
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
+public import Mathlib.LinearAlgebra.Dimension.OrzechProperty
+public import Mathlib.RingTheory.Finiteness.Projective
+public import Mathlib.RingTheory.Finiteness.Cardinality
+public import Mathlib.RingTheory.Finiteness.Prod
+public import Mathlib.Tactic.NoncommRing
+
+@[expose] public section
 
 /-!
 # Rank, splitting and cancellation (paper §7, part II)

@@ -1,5 +1,9 @@
-import Stafford38.EvolutionaryCorollary
-import Stafford38.Weyl.IteratedEquivalence
+module
+
+public import Stafford38.EvolutionaryCorollary
+public import Stafford38.Weyl.IteratedEquivalence
+
+@[expose] public section
 
 /-!
 # Higher-rank original-ring Weyl evolutionary calibration

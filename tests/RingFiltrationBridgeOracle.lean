@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.RingFiltrationBridge
+module
+
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+
+@[expose] public section
 
 /-!
 # Independent oracle for the first filtered/Rees producer boundary

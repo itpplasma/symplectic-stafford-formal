@@ -1,16 +1,20 @@
-import SymplecticStafford.Paper.Setting
-import SymplecticStafford.Paper.RightFraction
-import Mathlib.RingTheory.OreLocalization.Ring
-import Mathlib.RingTheory.HopkinsLevitzki
-import Mathlib.RingTheory.KrullDimension.Zero
-import Mathlib.RingTheory.Ideal.MinimalPrime.Localization
-import Mathlib.RingTheory.Localization.AtPrime.Basic
-import Mathlib.RingTheory.Localization.Ideal
-import Mathlib.RingTheory.Localization.Submodule
-import Mathlib.RingTheory.Ideal.Quotient.Noetherian
-import Mathlib.Tactic.NoncommRing
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
+module
+
+public import SymplecticStafford.Paper.Setting
+public import SymplecticStafford.Paper.RightFraction
+public import Mathlib.RingTheory.OreLocalization.Ring
+public import Mathlib.RingTheory.HopkinsLevitzki
+public import Mathlib.RingTheory.KrullDimension.Zero
+public import Mathlib.RingTheory.Ideal.MinimalPrime.Localization
+public import Mathlib.RingTheory.Localization.AtPrime.Basic
+public import Mathlib.RingTheory.Localization.Ideal
+public import Mathlib.RingTheory.Localization.Submodule
+public import Mathlib.RingTheory.Ideal.Quotient.Noetherian
+public import Mathlib.Tactic.NoncommRing
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-!
 # The local support package (paper §3; closure note Z1–Z9)

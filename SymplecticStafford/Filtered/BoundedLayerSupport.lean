@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ActualClassSupport
-import SymplecticStafford.Filtered.CharacteristicSupport
+module
+
+public import SymplecticStafford.Filtered.ActualClassSupport
+public import SymplecticStafford.Filtered.CharacteristicSupport
+
+@[expose] public section
 
 /-!
 # Bounded layer reindexing and support independence

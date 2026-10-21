@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.JacobsonTop
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.JacobsonTop
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 Independent behavioral oracles for actual radical lifting.  Multiplication

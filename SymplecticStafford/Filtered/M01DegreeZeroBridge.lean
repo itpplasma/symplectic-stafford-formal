@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.CentralField
+module
+
+public import SymplecticStafford.Filtered.CentralField
+
+@[expose] public section
 
 /-!
 # Actual M01 degree-zero bridge

@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Ordered.CommonColon
+module
+
+public import Mathlib.Algebra.Algebra.Basic
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Ordered.CommonColon
+
+@[expose] public section
 
 /-!
 # The ordered common-colon producer

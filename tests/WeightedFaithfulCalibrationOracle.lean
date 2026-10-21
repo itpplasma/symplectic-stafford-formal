@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+
+@[expose] public section
 
 /- Independent oracle: a finite free detector with an explicitly negative
    weight remains faithful after a concrete nilpotent right correction. -/

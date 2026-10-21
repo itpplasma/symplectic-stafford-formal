@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Filtered.RingFiltrationBridge
+module
+
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+
+@[expose] public section
 
 /-!
 # Multiplication on the actual associated layers

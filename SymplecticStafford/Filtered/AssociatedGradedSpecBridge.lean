@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Support
-import SymplecticStafford.Filtered.M01StructuralClass
+module
+
+public import Mathlib.RingTheory.Support
+public import SymplecticStafford.Filtered.M01StructuralClass
+
+@[expose] public section
 
 /-!
 # Actual associated-graded/spec support bridge

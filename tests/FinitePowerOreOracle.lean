@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FinitePowerOre
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.FinitePowerOre
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStaffordTest.FinitePowerOre
 

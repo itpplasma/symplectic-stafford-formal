@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
-import SymplecticStafford.Source.OriginalDivisionProducer
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.OriginalDivisionProducer
+
+@[expose] public section
 
 /-!
 Independent oracle for the strengthened M06 selector.  The three tests have

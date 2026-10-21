@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.WeylM01Calibration
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.WeylM01Calibration
+
+@[expose] public section
 
 /-! Independent oracle for the concrete Stafford38 Weyl M01 calibration.
 

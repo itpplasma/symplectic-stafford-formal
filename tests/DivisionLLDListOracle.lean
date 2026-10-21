@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
-import SymplecticStafford.Source.DivisionLLDList
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.DivisionLLDList
+
+@[expose] public section
 
 /-! Independent behavioral oracle for the list-indexed M06 source theorem. -/
 

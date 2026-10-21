@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.SymbolFractionInverse
-import Mathlib.Algebra.Polynomial.Degree.Defs
+module
+
+public import SymplecticStafford.Filtered.SymbolFractionInverse
+public import Mathlib.Algebra.Polynomial.Degree.Defs
+
+@[expose] public section
 
 /- Independent oracle for the lower-perturbation inverse.  The concrete
    calibration uses the degree filtration on `ℚ[X]`; selected symbols are the

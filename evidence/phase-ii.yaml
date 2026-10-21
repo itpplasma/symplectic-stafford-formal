@@ -1,0 +1,27 @@
+schema: symplectic-stafford-phase-evidence/v1
+phase: phase_ii
+result: pass
+source_commit: 8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3
+paper_commit: c495a2c4c702c25cdb236034273c71cf94e86476
+checks:
+  terminal-statement-correspondence: pass
+  allowed-axiom-closure: pass
+  clean-independent-replay: pass
+  lean-build: pass
+  independent-behavioral-tests: pass
+  independent-kernel-replay: pass
+evidence:
+  terminal-statement-correspondence: Mapped terminal theorem and official exact Challenge/Solution comparison.
+  allowed-axiom-closure: All 18 release endpoints report only propext, Classical.choice and Quot.sound.
+  clean-independent-replay: Public clean Linux CI plus the separate official full preflight; private paper
+    blob/anchor checks replayed locally.
+  lean-build: Full Paper development and trust-zero consumers, including section 7, pass project CI.
+  independent-behavioral-tests: Target A consumer and six guard regressions pass.
+  independent-kernel-replay: The selected Target A export is accepted by con-ron, NanoDa and Lean. This
+    does not independently register or export all section 7 declarations.
+receipts:
+  native_ci: evidence/native-ci/run.json
+  palomar: evidence/palomar-run.json
+  source_inventory: evidence/source-inventory.json
+human_mathematical_review: pending
+registration: not-submitted

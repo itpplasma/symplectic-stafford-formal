@@ -1,8 +1,12 @@
-import SymplecticStafford.FiniteLength.DerivedOrbitPencil
-import SymplecticStafford.FiniteLength.RightFiltration
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.DerivedOrbitPencil
+public import SymplecticStafford.FiniteLength.RightFiltration
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the derived finite-dimensional activated pencil

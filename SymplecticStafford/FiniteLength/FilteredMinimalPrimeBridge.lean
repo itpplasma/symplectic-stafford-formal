@@ -1,7 +1,11 @@
-import Mathlib.RingTheory.KrullDimension.Module
-import Mathlib.RingTheory.HopkinsLevitzki
-import Mathlib.RingTheory.FiniteLength
-import SymplecticStafford.FiniteLength.MinimalPrimeLocalTheorem
+module
+
+public import Mathlib.RingTheory.KrullDimension.Module
+public import Mathlib.RingTheory.HopkinsLevitzki
+public import Mathlib.RingTheory.FiniteLength
+public import SymplecticStafford.FiniteLength.MinimalPrimeLocalTheorem
+
+@[expose] public section
 
 /-!
 # Filtered/localized bridge to minimal-prime finite length

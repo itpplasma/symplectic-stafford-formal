@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.AdmissibleLabelsFalsePositive
+module
+
+public import SymplecticStafford.Filtered.AdmissibleLabelsFalsePositive
+
+@[expose] public section
 
 /-!
 # Independent oracle for the semantic false positive

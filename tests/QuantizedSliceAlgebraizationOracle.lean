@@ -1,6 +1,10 @@
-import SymplecticStafford.Source.QuantizedSliceAlgebraization
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Data.Rat.Defs
+module
+
+public import SymplecticStafford.Source.QuantizedSliceAlgebraization
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Data.Rat.Defs
+
+@[expose] public section
 
 /- Independent oracle for the bounded formal-to-original reflection theorem. -/
 namespace SymplecticStaffordTest.QuantizedSliceAlgebraization

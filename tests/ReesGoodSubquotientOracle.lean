@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.ReesGoodSubquotient
-import Mathlib.RingTheory.PrincipalIdealDomain
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesGoodSubquotient
+public import Mathlib.RingTheory.PrincipalIdealDomain
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent oracle for the downstream finite-good-module consumer. -/
 namespace SymplecticStaffordTest.ReesGoodSubquotient

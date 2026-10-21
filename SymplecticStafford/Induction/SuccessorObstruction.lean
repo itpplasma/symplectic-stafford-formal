@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.ConstructiveSuccessor
+module
+
+public import SymplecticStafford.Induction.ConstructiveSuccessor
+
+@[expose] public section
 
 /-!
 # A sharp obstruction to deriving the successor from the lower contract

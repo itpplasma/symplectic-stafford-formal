@@ -1,6 +1,10 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.FinCases
-import SymplecticStafford.Source.OriginalTestContract
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Tactic.FinCases
+public import SymplecticStafford.Source.OriginalTestContract
+
+@[expose] public section
 
 /-!
 # Independent oracle for the original-`U` local-test contract

@@ -1,5 +1,9 @@
-import tests.SymbolFractionReesOracle
-import SymplecticStafford.Filtered.M05SelectedSourceSurvivalProducerKernel
+module
+
+public import tests.SymbolFractionReesOracle
+public import SymplecticStafford.Filtered.M05SelectedSourceSurvivalProducerKernel
+
+@[expose] public section
 
 /-!
 # Independent oracle for the kernel-checked selected-source producer

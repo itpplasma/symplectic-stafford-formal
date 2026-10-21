@@ -1,6 +1,10 @@
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.AssociatedLayerRing
+module
+
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.AssociatedLayerRing
+
+@[expose] public section
 
 /-!
 # M01 obstruction: filtered multiplication does not imply a commutative graded ring

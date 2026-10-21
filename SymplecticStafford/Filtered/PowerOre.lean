@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Set.Defs
-import SymplecticStafford.Filtered.Localization
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Set.Defs
+public import SymplecticStafford.Filtered.Localization
+
+@[expose] public section
 
 /-!
 # An algebraic power-Ore/fraction boundary

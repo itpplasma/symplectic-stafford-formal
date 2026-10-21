@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.WeightedDetectionComposition
+module
+
+public import SymplecticStafford.Filtered.WeightedDetectionComposition
+
+@[expose] public section
 
 /-!
 # Concrete finite faithful calibration for weighted detection

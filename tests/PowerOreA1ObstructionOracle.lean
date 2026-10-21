@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.PowerOreA1Obstruction
+module
+
+public import SymplecticStafford.Filtered.PowerOreA1Obstruction
+
+@[expose] public section
 
 /-!
 Independent consumer for the fixed A₁ obstruction.  The oracle asks for the

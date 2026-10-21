@@ -42,11 +42,11 @@ def main() -> int:
             raise SystemExit(f"{name}: checkout HEAD does not match pinned revision")
         if git(checkout, "status", "--porcelain"):
             raise SystemExit(f"{name}: checkout has local modifications")
-        if git(checkout, "remote", "get-url", "origin") != expected_url:
+        if git(checkout, "config", "--get", "remote.origin.url") != expected_url:
             raise SystemExit(f"{name}: origin URL does not match lakefile")
 
     # Lake also resolves transitive git packages.  Verify their checked-out
-    # trees against the lock rather than trusting only the three direct pins.
+    # trees against the lock rather than trusting only the direct Mathlib pin.
     for package in packages.values():
         if package.get("type") != "git":
             continue
@@ -62,7 +62,7 @@ def main() -> int:
             raise SystemExit(f"{name}: checkout HEAD does not match pinned revision")
         if git(checkout, "status", "--porcelain"):
             raise SystemExit(f"{name}: checkout has local modifications")
-        if git(checkout, "remote", "get-url", "origin") != expected_url:
+        if git(checkout, "config", "--get", "remote.origin.url") != expected_url:
             raise SystemExit(f"{name}: origin URL does not match lakefile")
 
     print(f"dependency checkouts: verified {len(requires)} pinned clean worktree(s)")

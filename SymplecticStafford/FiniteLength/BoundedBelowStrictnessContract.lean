@@ -1,4 +1,8 @@
-import Mathlib.LinearAlgebra.Dimension.Finite
+module
+
+public import Mathlib.LinearAlgebra.Dimension.Finite
+
+@[expose] public section
 
 /-!
 # A sufficient strictness contract for filtered chains

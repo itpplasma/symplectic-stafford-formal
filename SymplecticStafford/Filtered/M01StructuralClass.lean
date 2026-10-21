@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Module.Submodule.Lattice
-import Mathlib.Algebra.Ring.Subring.Basic
-import Mathlib.LinearAlgebra.Quotient.Defs
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Filtered.ReesRing
+module
+
+public import Mathlib.Algebra.Module.Submodule.Lattice
+public import Mathlib.Algebra.Ring.Subring.Basic
+public import Mathlib.LinearAlgebra.Quotient.Defs
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Filtered.ReesRing
+
+@[expose] public section
 
 /-!
 # Structural M01 filtered-algebra interface

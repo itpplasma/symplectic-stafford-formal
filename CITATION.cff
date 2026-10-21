@@ -2,7 +2,7 @@ cff-version: 1.2.0
 title: Symplectic Stafford formalization
 message: >-
   If you use this formalization, please cite the repository and the
-  accompanying Symplectic Stafford paper.
+  accompanying Symplectic Stafford exposition when available.
 type: software
 authors:
   - family-names: Albert
@@ -12,9 +12,9 @@ repository-code: https://github.com/itpplasma/symplectic-stafford-formal
 license: Apache-2.0
 version: 0.1.0
 abstract: >-
-  Lean 4 formalization of the ordered semantic, filtered, and symplectic
-  interfaces for the same-divisor programme. This development checkpoint
-  does not claim the universal higher-dimensional theorem.
+  Lean 4 proof of the affine same-divisor theorem for simple filtered
+  algebras with commutative affine domain associated graded ring, together
+  with its left-handed identity and section 7 module-theoretic consequences.
 keywords:
   - symplectic quantization
   - Stafford conjecture

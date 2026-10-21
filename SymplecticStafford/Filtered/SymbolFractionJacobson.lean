@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.Jacobson.Ideal
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.SymbolFractionFiltration
+module
+
+public import Mathlib.RingTheory.Jacobson.Ideal
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.SymbolFractionFiltration
+
+@[expose] public section
 
 /-!
 # The degree `-1` layer and the Jacobson radical of degree zero

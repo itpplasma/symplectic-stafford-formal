@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import Stafford38.Weyl.EulerRemainder
-import SymplecticStafford.Source.WeylHigherDimensionalMonicization
+module
+
+public import Mathlib.Tactic
+public import Stafford38.Weyl.EulerRemainder
+public import SymplecticStafford.Source.WeylHigherDimensionalMonicization
+
+@[expose] public section
 
 /-! Independent oracle for the higher-dimensional Weyl monicization adapter.
 

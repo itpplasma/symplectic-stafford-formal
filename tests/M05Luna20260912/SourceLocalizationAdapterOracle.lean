@@ -1,5 +1,9 @@
-import tests.SymbolFractionReesOracle
-import SymplecticStafford.Filtered.M05Luna20260912.SourceLocalizationAdapter
+module
+
+public import tests.SymbolFractionReesOracle
+public import SymplecticStafford.Filtered.M05Luna20260912.SourceLocalizationAdapter
+
+@[expose] public section
 
 /-!
 Independent behavioral oracle for the M05 adapter. The concrete polynomial

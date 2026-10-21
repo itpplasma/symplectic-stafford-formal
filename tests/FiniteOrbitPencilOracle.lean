@@ -1,8 +1,12 @@
-import SymplecticStafford.FiniteLength.FiniteOrbitPencil
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.FiniteOrbitPencil
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the finite-orbit M07 lane

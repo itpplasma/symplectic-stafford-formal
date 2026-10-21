@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.PencilBridge
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.PencilBridge
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Explicit finite top lifting and activated relations

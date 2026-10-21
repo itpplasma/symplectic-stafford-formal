@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M01DegreeZeroBridge
+module
+
+public import SymplecticStafford.Filtered.M01DegreeZeroBridge
+
+@[expose] public section
 
 /-! Independent oracle for the concrete degree-zero quotient equivalence. -/
 
