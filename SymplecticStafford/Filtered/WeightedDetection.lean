@@ -1,8 +1,12 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.NoZeroSMulDivisors.Defs
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Finset.Max
-import Mathlib.Data.Int.Basic
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Algebra.NoZeroSMulDivisors.Defs
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Data.Int.Basic
+
+@[expose] public section
 
 /-!
 # Weighted-top detection for finite triangular actions

@@ -1,7 +1,11 @@
-import Mathlib.RingTheory.FiniteLength
-import Mathlib.RingTheory.Length
-import SymplecticStafford.Filtered.RingFiltrationBridge
-import SymplecticStafford.FiniteLength.FilteredMinimalPrimeBridge
+module
+
+public import Mathlib.RingTheory.FiniteLength
+public import Mathlib.RingTheory.Length
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+public import SymplecticStafford.FiniteLength.FilteredMinimalPrimeBridge
+
+@[expose] public section
 
 /-!
 # Conditional filtered/localized associated-graded bridge

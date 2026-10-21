@@ -1,6 +1,10 @@
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
-import SymplecticStafford.Ordered.M08SupportUnion
+module
+
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+public import SymplecticStafford.Ordered.M08SupportUnion
+
+@[expose] public section
 
 /-!
 Independent oracle for the finite-generator characteristic-support union.

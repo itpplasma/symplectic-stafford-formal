@@ -1,6 +1,11 @@
-import Mathlib.LinearAlgebra.Basis.VectorSpace
-import Mathlib.LinearAlgebra.FiniteDimensional.Defs
-import Mathlib.RingTheory.Noetherian.Basic
+module
+
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+public import Mathlib.LinearAlgebra.FiniteDimensional.Defs
+public import Mathlib.RingTheory.Noetherian.Basic
+public import Mathlib.RingTheory.SimpleRing.Basic
+
+@[expose] public section
 
 /-!
 # Central pencils over a division ring (paper Lemma 4.5)

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.Data.Finset.Basic
-import SymplecticStafford.Ordered.SupportUnion
+module
+
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import Mathlib.Data.Finset.Basic
+public import SymplecticStafford.Ordered.SupportUnion
+
+@[expose] public section
 
 /-!
 # The finite-generation bridge for the ordered common-colon ideal

@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Length
-import Mathlib.RingTheory.FiniteLength
+module
+
+public import Mathlib.RingTheory.Length
+public import Mathlib.RingTheory.FiniteLength
+
+@[expose] public section
 
 /-!
 # An exact graded-length to filtered-extension bridge

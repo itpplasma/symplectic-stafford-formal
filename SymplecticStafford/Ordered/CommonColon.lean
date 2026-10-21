@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Set.Defs
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Semantics.S1Consequences
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Set.Defs
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Semantics.S1Consequences
+
+@[expose] public section
 
 /-!
 # The ordered common-colon algebra

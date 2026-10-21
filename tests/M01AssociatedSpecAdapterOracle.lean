@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M01AssociatedSpecAdapter
+module
+
+public import SymplecticStafford.Filtered.M01AssociatedSpecAdapter
+
+@[expose] public section
 
 /-! Independent oracle for the structural-to-spectrum M01 adapter. -/
 

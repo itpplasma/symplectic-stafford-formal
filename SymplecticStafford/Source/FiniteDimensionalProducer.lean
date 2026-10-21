@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.CentralFinitePencil
-import SymplecticStafford.Source.DivisionLLDList
-import SymplecticStafford.Source.OriginalTestContract
+module
+
+public import SymplecticStafford.FiniteLength.CentralFinitePencil
+public import SymplecticStafford.Source.DivisionLLDList
+public import SymplecticStafford.Source.OriginalTestContract
+
+@[expose] public section
 
 /-!
 # Finite-dimensional source selection from split pencils

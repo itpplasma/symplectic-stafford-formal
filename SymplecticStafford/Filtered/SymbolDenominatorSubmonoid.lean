@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.M01StructuralClass
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.M01StructuralClass
+
+@[expose] public section
 
 /-!
 # Denominators selected by actual associated symbols

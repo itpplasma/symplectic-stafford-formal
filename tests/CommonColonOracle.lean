@@ -1,5 +1,9 @@
-import SymplecticStafford.Ordered.CommonColon
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Ordered.CommonColon
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 Independent concrete consumers for the M08 common-colon checkpoint.

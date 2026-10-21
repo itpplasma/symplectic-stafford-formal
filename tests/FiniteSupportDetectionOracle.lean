@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.FiniteSupportDetection
-import Mathlib.Data.Int.Basic
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.FiniteSupportDetection
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered.FiniteSupportDetectionOracle
 

@@ -1,4 +1,8 @@
-import SymplecticStafford.Semantics.SupportDimension
+module
+
+public import SymplecticStafford.Semantics.SupportDimension
+
+@[expose] public section
 
 /-!
 # Bridge from the displayed semiring generator to the ring quotient

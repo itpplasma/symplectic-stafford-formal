@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.ReesModuleNoetherianBoundary
+module
+
+public import SymplecticStafford.Filtered.ReesModuleNoetherianBoundary
+
+@[expose] public section
 
 /- Independent oracle for the sequence-ring obstruction. -/
 namespace SymplecticStaffordTest.ReesModuleNoetherianBoundary

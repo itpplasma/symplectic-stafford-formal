@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Noetherian.Defs
-import SymplecticStafford.Filtered.Localization
+module
+
+public import Mathlib.RingTheory.Noetherian.Defs
+public import SymplecticStafford.Filtered.Localization
+
+@[expose] public section
 
 /-!
 # The exact M02 boundary exposed by the raw filtration contract

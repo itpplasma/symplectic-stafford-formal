@@ -47,5 +47,5 @@ if errors:
     print("release gate: publication is NOT ready")
     for error in errors: print(f" - {error}")
     raise SystemExit(1)
-print("release gate: Phase I, Phase II, and Palomar evidence verified")
+print("release gate: Target A closure, independent replay, and Palomar evidence verified")
 PY

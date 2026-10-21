@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.FiniteScalarAvoidance
+module
+
+public import SymplecticStafford.Induction.FiniteScalarAvoidance
+
+@[expose] public section
 
 /-!
 # Component/test finite-exception bridge for the two-call successor

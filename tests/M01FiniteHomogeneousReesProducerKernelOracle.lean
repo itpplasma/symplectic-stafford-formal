@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.M01FiniteHomogeneousReesProducerKernel
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.M01FiniteHomogeneousReesProducerKernel
+
+@[expose] public section
 
 /-!
 # Independent oracle for the kernel-checked M01 producer

@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.Pencil
-import Mathlib.Algebra.Module.Opposite
-import Mathlib.Data.Set.Finite.Basic
+module
+
+public import SymplecticStafford.FiniteLength.Pencil
+public import Mathlib.Algebra.Module.Opposite
+public import Mathlib.Data.Set.Finite.Basic
+
+@[expose] public section
 
 /-!
 A conditional bridge from the coordinate pencil to cyclic right modules.

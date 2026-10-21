@@ -1,7 +1,11 @@
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.RingTheory.Support
-import SymplecticStafford.Ordered.ActualM08Producer
-import SymplecticStafford.Ordered.CharacteristicSupportProducer
+module
+
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import Mathlib.RingTheory.Support
+public import SymplecticStafford.Ordered.ActualM08Producer
+public import SymplecticStafford.Ordered.CharacteristicSupportProducer
+
+@[expose] public section
 
 /-!
 # Finite-colon characteristic-support consumption

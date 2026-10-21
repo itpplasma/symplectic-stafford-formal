@@ -1,7 +1,11 @@
-import SymplecticStafford.Filtered.WeightedDetection
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Tactic
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.WeightedDetection
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Tactic
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered.WeightedDetectionOracle
 

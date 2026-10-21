@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.CentralField
+module
+
+public import SymplecticStafford.Filtered.CentralField
+
+@[expose] public section
 
 /-!
 # Boundary in the current central-field filtration interface

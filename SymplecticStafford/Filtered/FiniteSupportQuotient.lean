@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Module.Submodule.Lattice
-import Mathlib.LinearAlgebra.Quotient.Defs
-import SymplecticStafford.Filtered.FiniteSupportDetection
+module
+
+public import Mathlib.Algebra.Module.Submodule.Lattice
+public import Mathlib.LinearAlgebra.Quotient.Defs
+public import SymplecticStafford.Filtered.FiniteSupportDetection
+
+@[expose] public section
 
 /-!
 # Finite support witnesses in actual module quotients

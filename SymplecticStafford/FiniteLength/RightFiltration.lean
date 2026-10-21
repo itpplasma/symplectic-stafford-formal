@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.MinimalPrimeLength
+module
+
+public import SymplecticStafford.FiniteLength.MinimalPrimeLength
+
+@[expose] public section
 
 /-!
 # Explicit right-module finite-length filtrations

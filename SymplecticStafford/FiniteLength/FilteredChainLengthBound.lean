@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.FilteredLocalizedGradedBridge
-import SymplecticStafford.FiniteLength.GradedFilteredLength
-import SymplecticStafford.FiniteLength.BoundedBelowStrictnessContract
-import SymplecticStafford.Filtered.StrictFiniteGradedChain
+module
+
+public import SymplecticStafford.FiniteLength.FilteredLocalizedGradedBridge
+public import SymplecticStafford.FiniteLength.GradedFilteredLength
+public import SymplecticStafford.FiniteLength.BoundedBelowStrictnessContract
+public import SymplecticStafford.Filtered.StrictFiniteGradedChain
+
+@[expose] public section
 
 /-!
 # Quantitative conditional filtered-chain bound

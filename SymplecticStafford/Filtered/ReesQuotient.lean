@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.ReesBasic
+module
+
+public import SymplecticStafford.Filtered.ReesBasic
+
+@[expose] public section
 
 /-!
 # The value quotient of raw Rees terms

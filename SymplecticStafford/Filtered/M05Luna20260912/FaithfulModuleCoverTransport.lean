@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleAdapter
+module
+
+public import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleAdapter
+
+@[expose] public section
 
 /-!
 # M05: cover transport for the faithful module adapter

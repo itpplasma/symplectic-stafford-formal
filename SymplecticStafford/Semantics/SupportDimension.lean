@@ -1,5 +1,9 @@
-import SymplecticStafford.Semantics.Contract
-import Mathlib.Order.WithBot
+module
+
+public import SymplecticStafford.Semantics.Contract
+public import Mathlib.Order.WithBot
+
+@[expose] public section
 
 /-!
 # Support-dimension boundary for original right quotients

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.Polynomial.Degree.Operations
-import SymplecticStafford.Filtered.RegularSymbolDegree
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Polynomial.Degree.Operations
+public import SymplecticStafford.Filtered.RegularSymbolDegree
+
+@[expose] public section
 
 /-! Independent ordinary-degree calibration for regular-symbol cancellation. -/
 

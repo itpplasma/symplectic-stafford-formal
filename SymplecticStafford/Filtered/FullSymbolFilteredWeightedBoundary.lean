@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolFilteredChart
-import SymplecticStafford.Filtered.FullSymbolWeightedBoundary
+module
+
+public import SymplecticStafford.Filtered.FullSymbolFilteredChart
+public import SymplecticStafford.Filtered.FullSymbolWeightedBoundary
+
+@[expose] public section
 
 /-!
 # Filtered-chart boundary for negative weighted pivots

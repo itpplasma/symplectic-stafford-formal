@@ -1,5 +1,9 @@
-import SymplecticStafford.Paper.Opposite
-import SymplecticStafford.Paper.ConsequencesRank
+module
+
+public import SymplecticStafford.Paper.Opposite
+public import SymplecticStafford.Paper.ConsequencesRank
+
+@[expose] public section
 
 /-!
 # Module-theoretic consequences for the filtered class (paper §7 applied to `U`)

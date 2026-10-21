@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.ActivatedPencilBoundary
-import Mathlib.LinearAlgebra.StdBasis
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.ActivatedPencilBoundary
+public import Mathlib.LinearAlgebra.StdBasis
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the unstructured M07 boundary

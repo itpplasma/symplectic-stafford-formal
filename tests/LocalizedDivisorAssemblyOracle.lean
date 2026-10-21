@@ -1,7 +1,11 @@
-import Mathlib.Tactic.NoncommRing
-import Mathlib.Data.Matrix.Basic
-import SymplecticStafford.Source.LocalizedDivisorAssembly
-import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+module
+
+public import Mathlib.Tactic.NoncommRing
+public import Mathlib.Data.Matrix.Basic
+public import SymplecticStafford.Source.LocalizedDivisorAssembly
+public import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+
+@[expose] public section
 
 /- Independent trust-disabled consumers for localized-to-original assembly.
    The first uses an arbitrary matrix unit and retains the ordered `f * d`

@@ -1,6 +1,10 @@
-import SymplecticStafford.Induction.TwoCallDescentProducer
-import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.Induction.TwoCallDescentProducer
+public import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the descent-level successor constructor

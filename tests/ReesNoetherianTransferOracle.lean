@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.Polynomial.Degree.Operations
-import SymplecticStafford.Filtered.ReesNoetherianTransfer
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Polynomial.Degree.Operations
+public import SymplecticStafford.Filtered.ReesNoetherianTransfer
+
+@[expose] public section
 
 /-!
 # Polynomial-chart oracle for the filtered-to-Rees transfer

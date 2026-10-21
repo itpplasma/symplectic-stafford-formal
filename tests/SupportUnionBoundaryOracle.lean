@@ -1,5 +1,9 @@
-import Mathlib.Data.ZMod.Basic
-import SymplecticStafford.Ordered.SupportUnionBoundary
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import SymplecticStafford.Ordered.SupportUnionBoundary
+
+@[expose] public section
 
 /-! Independent oracle for the M08 producer boundary.  The matrix ring is
 finite and noncommutative, so finite generation is proved constructively; the

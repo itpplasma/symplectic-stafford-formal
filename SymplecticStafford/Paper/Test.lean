@@ -1,5 +1,9 @@
-import SymplecticStafford.Paper.RightFraction
-import SymplecticStafford.Paper.Pencil
+module
+
+public import SymplecticStafford.Paper.RightFraction
+public import SymplecticStafford.Paper.Pencil
+
+@[expose] public section
 
 /-!
 # Admissible local tests (paper Definition 1.1)

@@ -1,5 +1,9 @@
-import Mathlib.LinearAlgebra.Quotient.Basic
-import SymplecticStafford.Filtered.ActualClassSupport
+module
+
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import SymplecticStafford.Filtered.ActualClassSupport
+
+@[expose] public section
 
 /-!
 # Strictness for a finite filtered submodule

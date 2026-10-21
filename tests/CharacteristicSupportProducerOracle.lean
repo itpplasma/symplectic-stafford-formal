@@ -1,7 +1,11 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.RingTheory.Support
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Ordered.CharacteristicSupportProducer
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.RingTheory.Support
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Ordered.CharacteristicSupportProducer
+
+@[expose] public section
 
 /-!
 Independent oracle for the actual `Module.support` M08 consumer.  All three

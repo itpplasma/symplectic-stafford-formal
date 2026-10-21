@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolFilteredChart
-import SymplecticStafford.Source.LocalizedDivisorAssembly
+module
+
+public import SymplecticStafford.Filtered.FullSymbolFilteredChart
+public import SymplecticStafford.Source.LocalizedDivisorAssembly
+
+@[expose] public section
 
 /-!
 # Finite full-symbol identities with one original denominator

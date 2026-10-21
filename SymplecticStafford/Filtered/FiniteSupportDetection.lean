@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Finset.Max
-import Mathlib.Data.Set.Defs
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Data.Set.Defs
+
+@[expose] public section
 
 /-!
 # Finite associated-top detection

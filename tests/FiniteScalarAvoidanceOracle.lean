@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.FiniteScalarAvoidance
+module
+
+public import SymplecticStafford.Induction.FiniteScalarAvoidance
+
+@[expose] public section
 
 /-!
 Independent behavioral oracle for finite scalar avoidance.

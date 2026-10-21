@@ -1,0 +1,1280 @@
+{
+  "schema_version": 1,
+  "title": "Symplectic Stafford: paper and Lean correspondence",
+  "sources": {
+    "paper": {
+      "repository": "itpplasma/symplectic-stafford",
+      "commit": "c495a2c4c702c25cdb236034273c71cf94e86476",
+      "files": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "sha256": "2883a0749cc26e9c75513821ae395debc0581c9381f2af1f52546543ffa0729c"
+        },
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-I-2026-09-08.md",
+          "sha256": "2e585f575d1abae6141ab9f6835417d197ab7ffc237165374067dcddc07cd114"
+        },
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-II-2026-09-08.md",
+          "sha256": "8601d3a8bbea8859bec8202b61b4b6d4f2e9edc269e29cc5b69122caa2fa70eb"
+        },
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-III-2026-09-08.md",
+          "sha256": "6b1c5bf1b59ff98a260fb0d8b8d0da098589a0857d2df8fee0e01a6f040e26a1"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "sha256": "503e2d3793453487a1a5f0126e04e2a99a81d1868a7279e82a1d9040b6610b13"
+        },
+        {
+          "path": "docs/rank-splitting-and-cancellation-2026-09-07.md",
+          "sha256": "e92630c27d9d98e5d6b0e5736ed3847b9bbe15b71514cd11ca1c6551410add00"
+        },
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "sha256": "8c6a5bbde142afe2cca45018827c5159c1fc9c26e69611202e96fb310eb30ecc"
+        },
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "sha256": "ebd268c95a17abf4d3dbe03c8bbd75206b800bf4a20a02d557bfe0176d854e2e"
+        },
+        {
+          "path": "paper/manuscript-revision-2026-09-30.md",
+          "sha256": "32f75bbb1f5ee1b02b66f9c006f037ad1d0cab93599b143709085e44be0801c0"
+        }
+      ],
+      "access": "Private research repository: full source hashes/headings verified locally; public formal-only replay does not fetch or publish private sources."
+    },
+    "formal": {
+      "repository": "itpplasma/symplectic-stafford-formal",
+      "revision": "working-tree; exact file fingerprints below are authoritative until release commit is frozen",
+      "files": [
+        {
+          "path": "Challenge.lean",
+          "sha256": "a3faf36cbf47056c2722cece39c46d89341b3926ee020bb9a034c9ae56419fda"
+        },
+        {
+          "path": "Solution.lean",
+          "sha256": "1b90865838ff19ccd18359b387609e568827a63673c67130c97d25755be5d1ef"
+        },
+        {
+          "path": "SymplecticStafford/Paper.lean",
+          "sha256": "e7adb24bfa1a585e00c7884bbbe206266310f981419768f1a3290ec39039fac8"
+        },
+        {
+          "path": "SymplecticStafford/Paper/ConsequencesForU.lean",
+          "sha256": "edb62b408b0df2bc4060191865122cf79ddb12cfa23be8ef33eff418a9e2eab5"
+        },
+        {
+          "path": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "sha256": "9259546d120b7648b13d4390990f82c6993023a7151a1b9c7f43a69e51756bfc"
+        },
+        {
+          "path": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "sha256": "3eac5b437ccfc8379dd5d08e00cc2b6cc981424dd7e20201dcfc06901d96d9aa"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Dimension.lean",
+          "sha256": "509349b26096c4ea05558da51ca223fb152f358e10a23369e0f668feb73c69a9"
+        },
+        {
+          "path": "SymplecticStafford/Paper/DivisionPencil.lean",
+          "sha256": "e21e99d3de88dd62ec9ab831fb4cf2574748b5f93dda2ef743501c73b5c35f47"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Induction.lean",
+          "sha256": "f7e56e62e7af718c8b7bba5ba10e9ff9733aa80076154044d54452e666b2cf64"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Localization.lean",
+          "sha256": "9b5ac468c25a87c5b7f8c7ab8b308078d6e905f00a19910eb409351e8002c03b"
+        },
+        {
+          "path": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "sha256": "29a742b7714d3c9923abdf3bf673b882a53bbe1ec0870353febb2af2279a9e5c"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Opposite.lean",
+          "sha256": "b8a9d81ae7aaaef3999e651ce3f14bff35608dc6b9dce8ace451a8c163172b07"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Pencil.lean",
+          "sha256": "d6eb8516827cb74a18b6feba5168593a4a33b4b6134eea952c572d3f61e758c7"
+        },
+        {
+          "path": "SymplecticStafford/Paper/RightFraction.lean",
+          "sha256": "4a4f5d8ca83231bded327b9fed49af643ec70163666951aa536799b24383f2c7"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Setting.lean",
+          "sha256": "1428aed87d911c090da60f6db66e3ad8c65a8b3cd49490c5356e55a39d9cb75b"
+        },
+        {
+          "path": "SymplecticStafford/Paper/SourceSelection.lean",
+          "sha256": "4a89233d866096d377de1838602f177de9ff66f7187404cf973e6e527aad4d91"
+        },
+        {
+          "path": "SymplecticStafford/Paper/Test.lean",
+          "sha256": "a7da9407f5aeacd55fd682bf12f31adedf42658a67f81ad5541f76d1ca1bdeb7"
+        },
+        {
+          "path": "comparator.json",
+          "sha256": "a676d84fd45281cc38c98f458480d403947a4729286217199eed67cc965349e0"
+        },
+        {
+          "path": "dependency-pins.json",
+          "sha256": "edfc39d9b7f17e7c85d3a37192b8607c34e6cbd7cd43ee94fe7ab8e299ef544f"
+        },
+        {
+          "path": "lake-manifest.json",
+          "sha256": "8c7cc9494ca4b31a72c0cc5c24799c9a58d98765f7a3724f931aac885ea37395"
+        },
+        {
+          "path": "lakefile.toml",
+          "sha256": "0336e5395dff9f9e2ca94a4f6d7d848b737088bf01fff9e02bd1add2e67cae24"
+        },
+        {
+          "path": "lean-toolchain",
+          "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+        }
+      ]
+    }
+  },
+  "precedent": {
+    "repository": "itpplasma/stafford38-formal",
+    "commit": "746952ede40ac5dd22ac57201883da7ef7a42dfb",
+    "path": "tools/paper_lean_audit/paper-lean-map.json",
+    "adaptation": "Separate statement/route relations, pinned sources, explicit scope limitations; no copied manuscript or renderer."
+  },
+  "vocabulary": {
+    "statement_relation": [
+      "exact",
+      "equivalent",
+      "equivalent-in-paper-range",
+      "lean-stronger",
+      "partial",
+      "lean-only"
+    ],
+    "route_relation": [
+      "same",
+      "similar",
+      "different",
+      "repaired",
+      "wrapper",
+      "n/a"
+    ]
+  },
+  "critical_endpoints": [
+    "SymplecticStafford.Paper.FilteredAlgebraData.targetA",
+    "SymplecticStafford.Paper.FilteredAlgebraData.targetA_left",
+    "SymplecticStafford.Paper.FilteredAlgebraData.Ph_all",
+    "SymplecticStafford.Paper.FilteredAlgebraData.ore_condition",
+    "SymplecticStafford.Paper.FilteredAlgebraData.isRightFractions",
+    "SymplecticStafford.Paper.FilteredAlgebraData.survival",
+    "SymplecticStafford.Paper.FilteredAlgebraData.finiteLength",
+    "SymplecticStafford.Paper.FilteredAlgebraData.one_mem_extend_iff_not_le",
+    "SymplecticStafford.Paper.FilteredAlgebraData.support_union",
+    "SymplecticStafford.Paper.FilteredAlgebraData.artinRees",
+    "SymplecticStafford.Paper.FilteredAlgebraData.torsion_cyclic",
+    "SymplecticStafford.Paper.FilteredAlgebraData.stable_range",
+    "SymplecticStafford.Paper.FilteredAlgebraData.stably_free",
+    "SymplecticStafford.Paper.FilteredAlgebraData.cancellation",
+    "SymplecticStafford.Paper.Test.exists_source",
+    "SymplecticStafford.Paper.activated_pencil_finite",
+    "SymplecticStafford.Paper.generator_pencil_finite",
+    "SymplecticStaffordChallenge.universalStatement"
+  ],
+  "items": [
+    {
+      "id": "setting",
+      "title": "Standing filtered-algebra hypotheses (manuscript §1.1)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 0. Original-algebra theorem and the strengthened induction statement"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "n/a",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData"
+        }
+      ],
+      "depends_on": [],
+      "notes": "Surjective multiplicative symbol maps with precisely the lower-piece kernel encode gr U ≃ G. Characteristic zero implies Infinite k; finite type gives Noetherian G. The internal theorem only needs Infinite k and Noetherian G and does not require U infinite-dimensional. The challenge retains the manuscript hypotheses. Nonnegative filtration extends by zero at negative indices."
+    },
+    {
+      "id": "symbols",
+      "title": "Degrees, symbols, domain and graded right ideals (§2)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-I-2026-09-08.md",
+          "anchor": "## I.1 Positive filtered foundations and radical support"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.deg_mul"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.sym_mul"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.isDomain"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.grIdeal"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.grIdeal_isHomogeneous"
+        }
+      ],
+      "depends_on": [
+        "setting"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "artin-rees",
+      "title": "Artin–Rees lifting in U (Lemma 2.1)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-I-2026-09-08.md",
+          "anchor": "## I.1 Positive filtered foundations and radical support"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 1. Section 3 and the closure note (Z1–Z9)"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.descent"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.artinRees"
+        }
+      ],
+      "depends_on": [
+        "symbols"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "ore",
+      "title": "Full-symbol right Ore localization (Z1)",
+      "paper": [
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 2. Lemma Z1 (Ore condition and common denominators)"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "different",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Setting.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.denoms"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.ore_condition"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.Tloc"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.locMap"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.isRightFractions"
+        }
+      ],
+      "depends_on": [
+        "artin-rees"
+      ],
+      "notes": "Ore is derived directly from original-U Artin–Rees and the commutator degree drop. Lemma 2.2 is bypassed. Tloc uses the opposite of Mathlib left Ore localization; its literal fractions have denominators on the right."
+    },
+    {
+      "id": "fractions",
+      "title": "Right denominator clearing and localization structure (Z1, Z9)",
+      "paper": [
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 2. Lemma Z1 (Ore condition and common denominators)"
+        },
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 10. Lemma Z9 (admissibility of the local tests)"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/RightFraction.lean",
+          "name": "SymplecticStafford.Paper.IsRightFractions"
+        },
+        {
+          "file": "SymplecticStafford/Paper/RightFraction.lean",
+          "name": "SymplecticStafford.Paper.IsRightFractions.exists_common"
+        },
+        {
+          "file": "SymplecticStafford/Paper/RightFraction.lean",
+          "name": "SymplecticStafford.Paper.IsRightFractions.clear"
+        },
+        {
+          "file": "SymplecticStafford/Paper/RightFraction.lean",
+          "name": "SymplecticStafford.Paper.IsRightFractions.saturate"
+        },
+        {
+          "file": "SymplecticStafford/Paper/RightFraction.lean",
+          "name": "SymplecticStafford.Paper.IsRightFractions.isDomain"
+        },
+        {
+          "file": "SymplecticStafford/Paper/RightFraction.lean",
+          "name": "SymplecticStafford.Paper.IsRightFractions.isSimpleRing"
+        }
+      ],
+      "depends_on": [
+        "ore"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "negative-units",
+      "title": "Negative-degree unit property and Nakayama elimination (Z3)",
+      "paper": [
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 4. Lemma Z3 (the missing Zariskian property)"
+        }
+      ],
+      "statement_relation": "partial",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.degLE"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.unit_of_neg"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.nakayama_rows"
+        }
+      ],
+      "depends_on": [
+        "fractions"
+      ],
+      "notes": "unit_of_neg supplies the degree-zero right inverse needed for elimination. No claim here formalizes the entire local Rees/Zariskian package or a general separatedness theorem for arbitrary good modules."
+    },
+    {
+      "id": "survival",
+      "title": "Survival of saturated right-ideal inclusions (substitute for Z4–Z7(a))",
+      "paper": [
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 1. Section 3 and the closure note (Z1–Z9)"
+        }
+      ],
+      "statement_relation": "lean-only",
+      "route_relation": "different",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.survival"
+        }
+      ],
+      "depends_on": [
+        "artin-rees",
+        "negative-units"
+      ],
+      "notes": "A saturated I₁ ⊆ I₂ with σ(s) gr I₂ ⊆ gr I₁ for s in S_p has I₁=I₂. This proves the cyclic-quotient facts used downstream without the manuscript localized Rees construction."
+    },
+    {
+      "id": "detection",
+      "title": "Cyclic-quotient support detection (Z7(b))",
+      "paper": [
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 8. Lemma Z7 (localized Rees comparison and support detection)"
+        }
+      ],
+      "statement_relation": "partial",
+      "route_relation": "different",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.one_mem_extend_iff_not_le"
+        }
+      ],
+      "depends_on": [
+        "fractions",
+        "symbols"
+      ],
+      "notes": "Precisely 1 ∈ I T_p iff gr I is not contained in p. This is the cyclic case required by the induction, not the full comparison statement (gr N)_Σ ≃ gr(N_p)."
+    },
+    {
+      "id": "length",
+      "title": "Finite length at minimal characteristic primes (Z8)",
+      "paper": [
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 9. Lemma Z8 (length at a minimal characteristic prime)"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "different",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.pull"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.finiteLength"
+        }
+      ],
+      "depends_on": [
+        "survival",
+        "detection"
+      ],
+      "notes": "Pull back submodules to saturated U-right ideals, compare their graded localizations in the Artinian commutative quotient. No graded associated-prime theorem is needed."
+    },
+    {
+      "id": "nondivision",
+      "title": "Nondivision and admissibility of local tests (Z9)",
+      "paper": [
+        {
+          "path": "docs/zariskian-local-package-closure-2026-09-30.md",
+          "anchor": "## 10. Lemma Z9 (admissibility of the local tests)"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Localization.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.not_isUnit_of_le"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.oldTest"
+        }
+      ],
+      "depends_on": [
+        "fractions",
+        "length",
+        "detection"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "density",
+      "title": "Explicit Jacobson density step and no finite-rank trap (Lemma 4.2)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-II-2026-09-08.md",
+          "anchor": "## II.2 No finite-rank trap for ORIGINAL source multipliers"
+        },
+        {
+          "path": "paper/manuscript-revision-2026-09-30.md",
+          "anchor": "### 8.2 Lemma 4.2: replace \"finite Jacobson density\" by an explicit step"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "repaired",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "name": "SymplecticStafford.Paper.density"
+        },
+        {
+          "file": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "name": "SymplecticStafford.Paper.exists_right_annihilator"
+        },
+        {
+          "file": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "name": "SymplecticStafford.Paper.not_finite_end"
+        },
+        {
+          "file": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "name": "SymplecticStafford.Paper.no_finite_rank_trap"
+        }
+      ],
+      "depends_on": [
+        "fractions"
+      ],
+      "notes": "Repairs the insufficiently justified passage from finite End(S)-dimension to a full matrix algebra. Explicit annihilators and faithfulness contradict the nondivision domain property."
+    },
+    {
+      "id": "division-pencil",
+      "title": "Finite central exceptions over a division ring (Lemma 4.5)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-II-2026-09-08.md",
+          "anchor": "## II.4 Finite central exceptions, and simultaneous affine source tests"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/DivisionPencil.lean",
+          "name": "SymplecticStafford.Paper.pencil_ker_finite"
+        },
+        {
+          "file": "SymplecticStafford/Paper/DivisionPencil.lean",
+          "name": "SymplecticStafford.Paper.division_pencil_finite"
+        }
+      ],
+      "depends_on": [],
+      "notes": ""
+    },
+    {
+      "id": "rank-maximization",
+      "title": "Original-U independent source selection (Corollary 4.4)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-II-2026-09-08.md",
+          "anchor": "## II.3 Division-coefficient local linear dependence"
+        },
+        {
+          "path": "paper/manuscript-revision-2026-09-30.md",
+          "anchor": "### 8.1 Corollary 4.4: replace the dependence on Lemma 4.3"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "repaired",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "name": "SymplecticStafford.Paper.exists_injective_rmul"
+        },
+        {
+          "file": "SymplecticStafford/Paper/NoFiniteRank.lean",
+          "name": "SymplecticStafford.Paper.exists_linearIndependent_rmul"
+        }
+      ],
+      "depends_on": [
+        "density",
+        "division-pencil"
+      ],
+      "notes": "Uses maximal rank and Lemma 4.5 instead of the sketched E(t) elimination in Lemma 4.3. Lemma 4.3 itself has no asserted formal counterpart."
+    },
+    {
+      "id": "pencils",
+      "title": "Activated and generating pencils (Proposition 4.7, Corollary 4.8)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-II-2026-09-08.md",
+          "anchor": "## II.5 Activated pencils in any fixed finite-length quotient"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 2. Section 4"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "different",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Pencil.lean",
+          "name": "SymplecticStafford.Paper.chain_bad_finite"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Pencil.lean",
+          "name": "SymplecticStafford.Paper.activated_pencil_finite"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Pencil.lean",
+          "name": "SymplecticStafford.Paper.generator_pencil_finite"
+        }
+      ],
+      "depends_on": [],
+      "notes": "One Artinian-chain argument suffices. The top/isotypic-block reduction of Lemma 4.1 is unused."
+    },
+    {
+      "id": "tests",
+      "title": "Finite admissible tests (Definition 1.1) and retention (6.8)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 0. Original-algebra theorem and the strengthened induction statement"
+        },
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 4. Select one scalar for every old, new, and carried test component"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Test.lean",
+          "name": "SymplecticStafford.Paper.Test"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Test.lean",
+          "name": "SymplecticStafford.Paper.Test.Satisfies"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Test.lean",
+          "name": "SymplecticStafford.Paper.Test.satisfies_pencil_finite"
+        }
+      ],
+      "depends_on": [
+        "fractions",
+        "pencils"
+      ],
+      "notes": "A right module over T is represented as a left module over Tᵐᵒᵖ. Test includes actual right fractions, finite length, cyclicity, nondivision, nonzero tail and offset, not unproved existence of a source."
+    },
+    {
+      "id": "source-selection",
+      "title": "Simultaneous original-affine source selection (Proposition 4.6)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-part-II-2026-09-08.md",
+          "anchor": "## II.4 Finite central exceptions, and simultaneous affine source tests"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 2. Section 4"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "different",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/SourceSelection.lean",
+          "name": "SymplecticStafford.Paper.finite_hom_of_isFiniteLength"
+        },
+        {
+          "file": "SymplecticStafford/Paper/SourceSelection.lean",
+          "name": "SymplecticStafford.Paper.source_reduction"
+        },
+        {
+          "file": "SymplecticStafford/Paper/SourceSelection.lean",
+          "name": "SymplecticStafford.Paper.exists_generating_multiple"
+        },
+        {
+          "file": "SymplecticStafford/Paper/SourceSelection.lean",
+          "name": "SymplecticStafford.Paper.Test.exists_source"
+        }
+      ],
+      "depends_on": [
+        "rank-maximization",
+        "tests",
+        "pencils"
+      ],
+      "notes": "Uses a minimal submodule K admitting a source and finiteness of Hom(V,S) over End(S); repeatedly reduces K using one central pencil."
+    },
+    {
+      "id": "colon",
+      "title": "Literal common colon ideal and pencil containment ((5.2)–(5.4))",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 1. Exact algebraic control of a whole source pencil"
+        }
+      ],
+      "statement_relation": "exact",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.Id"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.colonJ"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.colonJ_le_Id"
+        }
+      ],
+      "depends_on": [
+        "setting"
+      ],
+      "notes": "J consists of actual x=d y+F d s with G₀ d s=d c. Each element has a right cofactor. The factor order is literal throughout."
+    },
+    {
+      "id": "support-union",
+      "title": "Common-colon support union (Lemma 5.1)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 1. Exact algebraic control of a whole source pencil"
+        }
+      ],
+      "statement_relation": "lean-stronger",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.support_union"
+        }
+      ],
+      "depends_on": [
+        "colon",
+        "fractions",
+        "detection"
+      ],
+      "notes": "Works at any prime, not only minimal characteristic primes; common right denominator clearing is explicit."
+    },
+    {
+      "id": "dimension",
+      "title": "Support dimension, union bound and strict drop ((6.4), (6.10))",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 4. Select one scalar for every old, new, and carried test component"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 3. Sections 5 and 6"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.δ"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Dimension.lean",
+          "name": "SymplecticStafford.Paper.ringKrullDim_quotient_le_max"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Dimension.lean",
+          "name": "SymplecticStafford.Paper.ringKrullDim_quotient_add_one_le"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Dimension.lean",
+          "name": "SymplecticStafford.Paper.eq_top_of_ringKrullDim_quotient_eq_bot"
+        }
+      ],
+      "depends_on": [
+        "symbols"
+      ],
+      "notes": "Uses all primes and δ(I)=ringKrullDim(G/gr I) in WithBot ℕ∞. The zero quotient has δ=⊥, absorbing under addition. Compare paper δ(0)=−1 only on 0≤h≤D+1; do not equate unbounded arithmetic predicates."
+    },
+    {
+      "id": "induction",
+      "title": "Controlled codimension induction (Target B, §6)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 0. Original-algebra theorem and the strengthened induction statement"
+        },
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 3. The step h -> h+1: both recursive calls have smaller index"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 3. Sections 5 and 6"
+        }
+      ],
+      "statement_relation": "equivalent-in-paper-range",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.Ph"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.Ph_zero"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.Ph_succ"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.Ph_all"
+        }
+      ],
+      "depends_on": [
+        "source-selection",
+        "nondivision",
+        "colon",
+        "support-union",
+        "dimension",
+        "tests",
+        "pencils"
+      ],
+      "notes": "Starts at P₀. Both recursive calls in Ph_succ use Ph h, the second at dL₀, and carry old tests. Ph_all is stated for every natural h; the paper theorem only uses h≤D+1. Its extra indices do not have a literal δ(0)=−1 arithmetic reading."
+    },
+    {
+      "id": "target-a",
+      "title": "Affine original-algebra identity (Target A, (1.4))",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 0. Original-algebra theorem and the strengthened induction statement"
+        },
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 5. Finite termination and the final right cofactors"
+        }
+      ],
+      "statement_relation": "lean-stronger",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Induction.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.targetA"
+        }
+      ],
+      "depends_on": [
+        "induction",
+        "dimension"
+      ],
+      "notes": "Internal theorem uses Infinite k and Noetherian G, with no infinite-dimensionality premise. The public challenge specializes to the manuscript class. All H,R,S and both occurrences of d lie in the original U, with 1=dR+(B+Ha)dS."
+    },
+    {
+      "id": "opposite",
+      "title": "Opposite filtered data and left identity (§7.7)",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 6. Opposite ring, the Stafford package, and exact scope"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/Opposite.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.op"
+        },
+        {
+          "file": "SymplecticStafford/Paper/Opposite.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.targetA_left"
+        }
+      ],
+      "depends_on": [
+        "target-a"
+      ],
+      "notes": "The opposite algebra carries the same commutative associated graded data. The displayed left endpoint is 1=R d+S d F; no separate opposite hypothesis is introduced for U."
+    },
+    {
+      "id": "torsion",
+      "title": "Torsion compression and cyclicity (Theorem 7.1)",
+      "paper": [
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "anchor": "## 1. Prescribed-tail torsion compression"
+        },
+        {
+          "path": "docs/formal-proof-route-2026-09-30.md",
+          "anchor": "## 4. Section 7"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.two_torsion_eq_span_singleton"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.isCyclic_of_forall_isRightTorsion"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesForU.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.torsion_cyclic"
+        }
+      ],
+      "depends_on": [
+        "target-a"
+      ],
+      "notes": "General theorem assumes a right Ore domain with S38; the for-U wrapper derives both conditions from the standing data."
+    },
+    {
+      "id": "ideals",
+      "title": "Retained first generator and two-generation (Corollary 7.2)",
+      "paper": [
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "anchor": "## 2. Keep any nonzero first ideal generator"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.span_triple_eq_span_pair"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.exists_span_insert_eq_pair"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.exists_eq_span_pair"
+        }
+      ],
+      "depends_on": [
+        "torsion"
+      ],
+      "notes": "Noetherianity is needed only for unrestricted right ideals; finite generating families are treated directly."
+    },
+    {
+      "id": "tails",
+      "title": "Full prescribed-tail relative triple (Theorem 7.3)",
+      "paper": [
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "anchor": "## 3. Full prescribed-tail relative triple refinement"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.triple_prescribed_tails"
+        }
+      ],
+      "depends_on": [
+        "ideals"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "rank-generation",
+      "title": "Ore rank and rank-plus-one generation (Theorem 7.4, Corollary 7.5)",
+      "paper": [
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "anchor": "## 4. Rank-plus-one generators for every finite module"
+        }
+      ],
+      "statement_relation": "partial",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.QΛ"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.Loc"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.oreRank"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.exists_generator_retaining"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.combo_injective"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.oreRank_le_card"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.exists_generating_card_le"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.free_of_generating_card_eq"
+        }
+      ],
+      "depends_on": [
+        "torsion"
+      ],
+      "notes": "Ore localization is the base-change model for M⊗Q(Λ), represented over Λᵐᵒᵖ. Finitely generated modules have finite-dimensional localization. The proof uses no right Noetherianity beyond any independently required finite-generation premise. The banked note states rank generation from S3 alone; this mapped Lean theorem takes S38, which supplies torsion cyclicity. Thus it proves the original filtered-U consequence, not the independently abstracted S3-only implication."
+    },
+    {
+      "id": "stable-range",
+      "title": "Stable range at most two (Theorem 7.6)",
+      "paper": [
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "anchor": "## 5. Stable range two and stably free modules"
+        }
+      ],
+      "statement_relation": "partial",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.stable_range_two"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesForU.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.stable_range"
+        }
+      ],
+      "depends_on": [
+        "tails"
+      ],
+      "notes": " The banked note states a right-Ore-only implication; the mapped Lean route assumes both left and right Ore. Both are proved for the standing filtered U, so its numbered manuscript consequence is obtained. The broader right-Ore-only abstraction is not asserted as separately formalized."
+    },
+    {
+      "id": "stably-free",
+      "title": "Unimodular row completion and stably free freeness (Corollary 7.7)",
+      "paper": [
+        {
+          "path": "docs/same-divisor-consequences.md",
+          "anchor": "## 5. Stable range two and stably free modules"
+        }
+      ],
+      "statement_relation": "partial",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.exists_comp_eq_proj"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.stably_free_is_free"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesForU.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.stably_free"
+        }
+      ],
+      "depends_on": [
+        "stable-range"
+      ],
+      "notes": "Only stable rank at least two. No freeness of every projective or rank-one cancellation is asserted. The banked note states a right-Ore-only implication; the mapped Lean route assumes both left and right Ore. Both are proved for the standing filtered U, so its numbered manuscript consequence is obtained. The broader right-Ore-only abstraction is not asserted as separately formalized."
+    },
+    {
+      "id": "two-source",
+      "title": "Two-source identity (Lemma 7.8)",
+      "paper": [
+        {
+          "path": "docs/rank-splitting-and-cancellation-2026-09-07.md",
+          "anchor": "## 1. The two-source identity"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.two_source_identity"
+        }
+      ],
+      "depends_on": [
+        "target-a"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "diagonal",
+      "title": "Integral diagonal functionals (Lemma 7.9)",
+      "paper": [
+        {
+          "path": "docs/rank-splitting-and-cancellation-2026-09-07.md",
+          "anchor": "## 2. Integral diagonal functionals"
+        }
+      ],
+      "statement_relation": "lean-stronger",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.exists_diagonal_functionals"
+        }
+      ],
+      "depends_on": [
+        "rank-generation"
+      ],
+      "notes": "Only left and right Ore domain conditions are needed, not Noetherianity or S38."
+    },
+    {
+      "id": "splitting",
+      "title": "Rank-two unimodular element and free-plus-ideal splitting (Theorem 7.10, Corollary 7.11)",
+      "paper": [
+        {
+          "path": "docs/rank-splitting-and-cancellation-2026-09-07.md",
+          "anchor": "## 3. Rank two supplies a free summand"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesGeneration.lean",
+          "name": "SymplecticStafford.Paper.residual_splitting"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.exists_unimodular_of_two_le_oreRank"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.exists_split_free_of_oreRank"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.exists_split_ideal_of_torsionFree"
+        }
+      ],
+      "depends_on": [
+        "two-source",
+        "diagonal"
+      ],
+      "notes": "Finite modules of rank r≥1 split as Λ^(r−1) plus a rank-one residual; the torsion-free residual is isomorphic to an actual right ideal."
+    },
+    {
+      "id": "correction",
+      "title": "Unimodular correction (Lemma 7.12)",
+      "paper": [
+        {
+          "path": "docs/rank-splitting-and-cancellation-2026-09-07.md",
+          "anchor": "## 4. The precise correction lemma for cancellation"
+        }
+      ],
+      "statement_relation": "lean-stronger",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.unimodular_correction"
+        }
+      ],
+      "depends_on": [
+        "opposite",
+        "diagonal"
+      ],
+      "notes": "Needs only the opposite S38 property together with the Ore/domain and finite-generation conditions; both S38 sides are available for the original U."
+    },
+    {
+      "id": "cancellation",
+      "title": "Rank-at-least-two cancellation (Theorem 7.13)",
+      "paper": [
+        {
+          "path": "docs/rank-splitting-and-cancellation-2026-09-07.md",
+          "anchor": "## 5. Free and projective cancellation"
+        }
+      ],
+      "statement_relation": "lean-stronger",
+      "route_relation": "similar",
+      "lean": [
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.cancellation_free"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.cancellation_free_pow"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesRank.lean",
+          "name": "SymplecticStafford.Paper.cancellation_projective"
+        },
+        {
+          "file": "SymplecticStafford/Paper/ConsequencesForU.lean",
+          "name": "SymplecticStafford.Paper.FilteredAlgebraData.cancellation"
+        }
+      ],
+      "depends_on": [
+        "correction"
+      ],
+      "notes": "Cancels finitely generated projective stabilizers for finitely generated right modules of Ore rank at least two. S38 is required only for the opposite ring; no rank-one cancellation or arbitrary projective freeness."
+    },
+    {
+      "id": "palomar",
+      "title": "Palomar Challenge/Solution specialization",
+      "paper": [
+        {
+          "path": "docs/all-dimensional-symplectic-stafford-2026-09-08.md",
+          "anchor": "## 0. Original-algebra theorem and the strengthened induction statement"
+        }
+      ],
+      "statement_relation": "equivalent",
+      "route_relation": "wrapper",
+      "lean": [
+        {
+          "file": "Challenge.lean",
+          "name": "SymplecticStaffordChallenge.AffineSameDivisorStatement"
+        },
+        {
+          "file": "Challenge.lean",
+          "name": "SymplecticStaffordChallenge.universalStatement"
+        },
+        {
+          "file": "Solution.lean",
+          "name": "SymplecticStaffordChallenge.AffineSameDivisorStatement"
+        },
+        {
+          "file": "Solution.lean",
+          "name": "SymplecticStaffordChallenge.universalStatement"
+        }
+      ],
+      "depends_on": [
+        "target-a"
+      ],
+      "notes": "File identity disambiguates duplicate names in independent challenge and solution environments. Only Challenge contains the deliberate theorem hole. Comparator checks equality of propositions and allowed axioms, not paper-proof equivalence. The registered target covers A; auxiliary §7 theorems need separate evidence and are not silently added to that registration."
+    }
+  ],
+  "omitted_paper_claims": [
+    {
+      "reference": "Lemma 2.2: independence of radical annihilators for arbitrary good filtrations",
+      "status": "not asserted as separately formalized",
+      "reason": "Original-U Artin–Rees and induced quotient symbols suffice for this proof."
+    },
+    {
+      "reference": "Z2 full associated-graded localization identification; Z4, Z5, Z6, Z7(a)",
+      "status": "bypassed",
+      "reason": "The formal development proves degree-set, unit, survival, cyclic-detection and minimal-prime-length facts directly. It does not certify every general local Rees/good-filtration assertion in the written route."
+    },
+    {
+      "reference": "Lemma 4.1: top/isotypic-block reduction",
+      "status": "bypassed",
+      "reason": "The Artinian-chain pencil and minimal-submodule source arguments avoid it."
+    },
+    {
+      "reference": "Lemma 4.3: division-coefficient local linear dependence over E(t)",
+      "status": "not formalized as a separate theorem",
+      "reason": "Its written proof is sketched. Corollary 4.4 is repaired by the maximal-rank route from 4.2 and 4.5. Delete 4.3 or present it as unused exposition until separately proved."
+    },
+    {
+      "reference": "Final typeset manuscript and PDF page/excerpt correspondence",
+      "status": "deferred by user",
+      "reason": "No manuscript TeX source is present in symplectic-stafford; this map pins the existing Markdown mathematical candidate and correction instructions, not an unavailable PDF."
+    },
+    {
+      "reference": "Historical scaffold graphs, conditional tests, literature/history and physical applicability",
+      "status": "outside the Target A proof",
+      "reason": "docs/proof-graph.yaml and docs/dossier describe the superseded September 9 scaffold checkpoint. They do not certify the current proof or concrete physical models."
+    }
+  ],
+  "verification_boundary": "Source fingerprints and declaration checks detect changes and broken anchors; they do not establish semantic equivalence to paper prose or independent human mathematical approval."
+}

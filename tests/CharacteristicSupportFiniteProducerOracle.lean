@@ -1,7 +1,11 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.RingTheory.Support
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Ordered.CharacteristicSupportFiniteProducer
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.RingTheory.Support
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Ordered.CharacteristicSupportFiniteProducer
+
+@[expose] public section
 
 /-!
 Independent trust-disabled consumer for the finite-colon M08 bridge.  The

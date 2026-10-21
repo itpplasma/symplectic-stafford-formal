@@ -1,9 +1,13 @@
-import SymplecticStafford.Filtered.Localization
-import SymplecticStafford.Source.Assembly
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic.NormNum
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.FinCases
+module
+
+public import SymplecticStafford.Filtered.Localization
+public import SymplecticStafford.Source.Assembly
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 namespace SymplecticStafford.FilteredSourceOracle
 

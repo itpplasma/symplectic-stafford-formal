@@ -1,6 +1,10 @@
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Filtered.FullSymbolFiniteAssembly
+module
+
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Filtered.FullSymbolFiniteAssembly
+
+@[expose] public section
 
 /- Independent trust-disabled oracle: two noncommutative matrix identities
    share one actual right-Ore chart denominator, retain chart bounds, and

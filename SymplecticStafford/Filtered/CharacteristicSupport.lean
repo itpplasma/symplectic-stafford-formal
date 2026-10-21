@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Module.Submodule.Lattice
-import Mathlib.Data.Fintype.Card
-import Mathlib.Order.WithBot
-import SymplecticStafford.Filtered.FiniteSupportQuotient
-import SymplecticStafford.Semantics.SupportDimension
+module
+
+public import Mathlib.Algebra.Module.Submodule.Lattice
+public import Mathlib.Data.Fintype.Card
+public import Mathlib.Order.WithBot
+public import SymplecticStafford.Filtered.FiniteSupportQuotient
+public import SymplecticStafford.Semantics.SupportDimension
+
+@[expose] public section
 
 /-!
 # Characteristic support of a finite filtered module

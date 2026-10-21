@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.WeightedDetectionComposition
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.WeightedDetectionComposition
+
+@[expose] public section
 
 /- Independent behavioral oracle for the composition theorem.  The matrix is
   an explicit 2-by-2 rational nilpotent correction; both products are in the

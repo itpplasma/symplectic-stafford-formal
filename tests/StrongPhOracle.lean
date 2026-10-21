@@ -1,6 +1,10 @@
-import SymplecticStafford.Induction.StrongPh
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.FinCases
+module
+
+public import SymplecticStafford.Induction.StrongPh
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 /-!
 # Independent oracle checks for the M09--M10 contract

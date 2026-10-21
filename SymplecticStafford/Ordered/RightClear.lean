@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Finset.Basic
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Finset.Basic
+
+@[expose] public section
 
 /-! Constant right denominator clearing in a noncommutative ambient monoid. -/
 

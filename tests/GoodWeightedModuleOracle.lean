@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.GoodWeightedModule
-import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.GoodWeightedModule
+public import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+
+@[expose] public section
 
 /- Independent behavioral oracle for the generic finite good-module/M04
    bridge.  This uses a constant filtered rational ring and a rank-one module,

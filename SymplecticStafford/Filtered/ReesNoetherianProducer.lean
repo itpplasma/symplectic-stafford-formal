@@ -1,8 +1,12 @@
-import Mathlib.Algebra.DirectSum.Ring
-import Mathlib.RingTheory.Noetherian.Basic
-import SymplecticStafford.Filtered.M01StructuralClass
-import SymplecticStafford.Filtered.RingFiltrationBridge
-import SymplecticStafford.Filtered.ReesRing
+module
+
+public import Mathlib.Algebra.DirectSum.Ring
+public import Mathlib.RingTheory.Noetherian.Basic
+public import SymplecticStafford.Filtered.M01StructuralClass
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+public import SymplecticStafford.Filtered.ReesRing
+
+@[expose] public section
 
 /-!
 # The actual associated graded ring and its right homogeneous ideals

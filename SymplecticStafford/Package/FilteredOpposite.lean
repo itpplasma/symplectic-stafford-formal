@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Algebra.Opposite
-import SymplecticStafford.Filtered.M01StructuralClass
+module
+
+public import Mathlib.Algebra.Algebra.Opposite
+public import SymplecticStafford.Filtered.M01StructuralClass
+
+@[expose] public section
 
 /-!
 # Opposite of a concrete filtered algebra

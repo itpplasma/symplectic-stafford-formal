@@ -1,6 +1,10 @@
-import SymplecticStafford.Paper.NoFiniteRank
-import SymplecticStafford.Paper.Test
-import Mathlib.RingTheory.FiniteLength
+module
+
+public import SymplecticStafford.Paper.NoFiniteRank
+public import SymplecticStafford.Paper.Test
+public import Mathlib.RingTheory.FiniteLength
+
+@[expose] public section
 
 /-!
 # Source selection (paper Proposition 4.6)

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.Polynomial.Degree.Operations
-import SymplecticStafford.Filtered.M01StructuralClass
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Polynomial.Degree.Operations
+public import SymplecticStafford.Filtered.M01StructuralClass
+
+@[expose] public section
 
 /-! Independent oracle for the structural M01 interface. -/
 

@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Module.Basic
-import SymplecticStafford.Filtered.ReesQuotient
+module
+
+public import Mathlib.Algebra.Module.Basic
+public import SymplecticStafford.Filtered.ReesQuotient
+
+@[expose] public section
 
 /-!
 # Bounded Rees module terms

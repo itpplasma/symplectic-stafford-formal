@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Order.Basic
-import SymplecticStafford.Filtered.Localization
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Order.Basic
+public import SymplecticStafford.Filtered.Localization
+
+@[expose] public section
 
 /-!
 # Elementary algebraic Rees terms

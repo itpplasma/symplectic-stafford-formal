@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.ActivatedFiniteLength
-import Mathlib.LinearAlgebra.Determinant
-import Mathlib.LinearAlgebra.Basis.VectorSpace
+module
+
+public import SymplecticStafford.FiniteLength.ActivatedFiniteLength
+public import Mathlib.LinearAlgebra.Determinant
+public import Mathlib.LinearAlgebra.Basis.VectorSpace
+
+@[expose] public section
 
 /-!
 # Finite-orbit pencils for a finite-length top

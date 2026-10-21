@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.SpecCharacteristicSupport
-import SymplecticStafford.Filtered.OriginalCentralSupport
+module
+
+public import SymplecticStafford.Filtered.SpecCharacteristicSupport
+public import SymplecticStafford.Filtered.OriginalCentralSupport
+
+@[expose] public section
 
 /-!
 # An actual filtered-class map and its support boundary

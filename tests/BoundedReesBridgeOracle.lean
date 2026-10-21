@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.BoundedReesBridge
+module
+
+public import SymplecticStafford.Filtered.BoundedReesBridge
+
+@[expose] public section
 
 /-!
 # Independent oracle for the bounded Rees bridge

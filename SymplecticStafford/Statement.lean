@@ -1,4 +1,8 @@
-import AlgebraicAnalysis.RingTheory.TwoGeneratorIdentity
+module
+
+public import AlgebraicAnalysis.RingTheory.TwoGeneratorIdentity
+
+@[expose] public section
 
 /-!
 # Same-divisor statement

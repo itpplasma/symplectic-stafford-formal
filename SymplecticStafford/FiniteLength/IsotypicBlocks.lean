@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.JacobsonTop
-import SymplecticStafford.FiniteLength.RadicalLift
-import SymplecticStafford.FiniteLength.RightFiltration
+module
+
+public import SymplecticStafford.FiniteLength.JacobsonTop
+public import SymplecticStafford.FiniteLength.RadicalLift
+public import SymplecticStafford.FiniteLength.RightFiltration
+
+@[expose] public section
 
 /-!
 # Repeated simple-factor blocks over division rings

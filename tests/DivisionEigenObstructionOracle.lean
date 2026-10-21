@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.DivisionEigenObstruction
-import Mathlib.Data.Rat.Defs
+module
+
+public import SymplecticStafford.FiniteLength.DivisionEigenObstruction
+public import Mathlib.Data.Rat.Defs
+
+@[expose] public section
 
 /-!
 # Independent oracle for the zero-pencil obstruction

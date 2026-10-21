@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.RingTheory.Support
-import SymplecticStafford.Ordered.M08ExactSupportBridge
+module
+
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.RingTheory.Support
+public import SymplecticStafford.Ordered.M08ExactSupportBridge
+
+@[expose] public section
 
 /-!
 # The actual ideal-quotient exact sequence for M08

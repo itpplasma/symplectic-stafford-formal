@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.ReesNoetherianTransfer
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.ReesNoetherianTransfer
+
+@[expose] public section
 
 /-!
 # A bounded M01 homogeneous-symbol producer

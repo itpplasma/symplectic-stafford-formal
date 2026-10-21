@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Ring.Subring.Basic
-import SymplecticStafford.Source.OriginalDivisionProducer
+module
+
+public import Mathlib.Algebra.Ring.Subring.Basic
+public import SymplecticStafford.Source.OriginalDivisionProducer
+
+@[expose] public section
 
 /-!
 # Finite original-coefficient source packages

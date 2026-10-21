@@ -1,4 +1,8 @@
-import SymplecticStafford.Paper.Induction
+module
+
+public import SymplecticStafford.Paper.Induction
+
+@[expose] public section
 
 /-!
 # Solution of the affine same-divisor challenge

@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.SupportRemovalArithmetic
+module
+
+public import SymplecticStafford.Induction.SupportRemovalArithmetic
+
+@[expose] public section
 
 open SymplecticStafford.Induction
 

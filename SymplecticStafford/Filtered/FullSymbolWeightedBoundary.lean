@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
-import SymplecticStafford.Filtered.WeightedInverseBoundary
+module
+
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+public import SymplecticStafford.Filtered.WeightedInverseBoundary
+
+@[expose] public section
 
 /-!
 # The full-symbol/Ore interface does not imply M04 bounded detection

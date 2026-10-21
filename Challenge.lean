@@ -1,9 +1,13 @@
-import Mathlib.RingTheory.GradedAlgebra.Basic
-import Mathlib.RingTheory.KrullDimension.Basic
-import Mathlib.RingTheory.SimpleRing.Basic
-import Mathlib.RingTheory.FiniteType
-import Mathlib.LinearAlgebra.FiniteDimensional.Defs
-import Mathlib.Algebra.Algebra.Opposite
+module
+
+public import Mathlib.RingTheory.GradedAlgebra.Basic
+public import Mathlib.RingTheory.KrullDimension.Basic
+public import Mathlib.RingTheory.SimpleRing.Basic
+public import Mathlib.RingTheory.FiniteType
+public import Mathlib.LinearAlgebra.FiniteDimensional.Defs
+public import Mathlib.Algebra.Algebra.Opposite
+
+@[expose] public section
 
 /-!
 # The affine same-divisor theorem (Symplectic Stafford, Target theorem A)

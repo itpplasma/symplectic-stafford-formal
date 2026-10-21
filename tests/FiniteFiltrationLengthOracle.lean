@@ -1,5 +1,9 @@
-import Mathlib.LinearAlgebra.Pi
-import SymplecticStafford.Filtered.FiniteFiltrationLength
+module
+
+public import Mathlib.LinearAlgebra.Pi
+public import SymplecticStafford.Filtered.FiniteFiltrationLength
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered
 

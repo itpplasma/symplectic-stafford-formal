@@ -1,5 +1,9 @@
-import tests.SymbolFractionReesOracle
-import SymplecticStafford.Filtered.M05Luna20260912.FiniteStrictChainTransport
+module
+
+public import tests.SymbolFractionReesOracle
+public import SymplecticStafford.Filtered.M05Luna20260912.FiniteStrictChainTransport
+
+@[expose] public section
 
 /-!
 # Independent oracle for finite strict-chain transport

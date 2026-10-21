@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.AssociatedLayerRing
+module
+
+public import SymplecticStafford.Filtered.AssociatedLayerRing
+
+@[expose] public section
 
 /-! Independent checks for multiplication on the actual associated layers. -/
 

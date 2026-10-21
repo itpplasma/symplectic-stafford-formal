@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
-import SymplecticStafford.FiniteLength.ExplicitBlocks
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
+public import SymplecticStafford.FiniteLength.ExplicitBlocks
+
+@[expose] public section
 
 /-!
 # Activated pencils for finite-central isotypic blocks

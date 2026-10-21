@@ -1,7 +1,11 @@
-import Mathlib.RingTheory.Noetherian.Defs
-import SymplecticStafford.Semantics.Contract
-import SymplecticStafford.Filtered.ReesNoetherianCriterion
-import SymplecticStafford.Filtered.ReesRing
+module
+
+public import Mathlib.RingTheory.Noetherian.Defs
+public import SymplecticStafford.Semantics.Contract
+public import SymplecticStafford.Filtered.ReesNoetherianCriterion
+public import SymplecticStafford.Filtered.ReesRing
+
+@[expose] public section
 
 /-!
 # Boundary for the filtered module Noetherian consumer

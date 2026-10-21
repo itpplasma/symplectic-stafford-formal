@@ -1,4 +1,8 @@
-import SymplecticStafford.Dependency.AlgebraicAnalysisStafford38Bridge
+module
+
+public import SymplecticStafford.Dependency.AlgebraicAnalysisStafford38Bridge
+
+@[expose] public section
 
 /-!
 # Independent oracle for the pinned dependency bridge

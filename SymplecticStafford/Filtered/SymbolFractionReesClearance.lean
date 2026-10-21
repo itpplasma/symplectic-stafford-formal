@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.SymbolFractionRees
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.SymbolFractionRees
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered.SymbolFractionRees
 

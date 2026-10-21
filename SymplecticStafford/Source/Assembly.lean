@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Data.Finset.Basic
-import SymplecticStafford.Semantics.S1Consequences
+module
+
+public import Mathlib.Algebra.Ring.Defs
+public import Mathlib.Algebra.Field.Defs
+public import Mathlib.Data.Finset.Basic
+public import SymplecticStafford.Semantics.S1Consequences
+
+@[expose] public section
 
 /-!
 # Original-ring source selection and assembly contract scaffolds

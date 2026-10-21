@@ -1,5 +1,9 @@
-import tests.M05Luna20260912.FaithfulModuleAdapterOracle
-import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleCoverTransport
+module
+
+public import tests.M05Luna20260912.FaithfulModuleAdapterOracle
+public import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleCoverTransport
+
+@[expose] public section
 
 /-!
 # Independent oracle for M05 cover transport

@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionLLD
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionLLD
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+
+@[expose] public section
 
 /-!
 Independent behavioral oracle for the determinant-free finite-central block

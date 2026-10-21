@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.CentralFieldSupportRemoval
-import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
+module
+
+public import SymplecticStafford.Induction.CentralFieldSupportRemoval
+public import SymplecticStafford.Induction.FiniteRemovalRetentionBridge
+
+@[expose] public section
 
 /-!
 # Central-field polynomial two-call successor

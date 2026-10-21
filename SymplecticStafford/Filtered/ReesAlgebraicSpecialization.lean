@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.ReesModuleActionBridge
-import SymplecticStafford.Filtered.ReesModuleShift
-import SymplecticStafford.Semantics.S1Consequences
+module
+
+public import SymplecticStafford.Filtered.ReesModuleActionBridge
+public import SymplecticStafford.Filtered.ReesModuleShift
+public import SymplecticStafford.Semantics.S1Consequences
+
+@[expose] public section
 
 /-!
 # Finite algebraic Rees specialization

@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.SpecCharacteristicSupport
+module
+
+public import SymplecticStafford.Filtered.SpecCharacteristicSupport
+
+@[expose] public section
 
 /- An independent concrete oracle: the identity class on the one-step
    filtration of Z has a nonzero class, so its actual Spec-support cannot be

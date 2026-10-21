@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.WeightedMatrixInverse
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.Filtered.WeightedMatrixInverse
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /- Independent behavioral oracle: the finite inverse is checked in a
    noncommutative matrix ring, with both left and right products. -/

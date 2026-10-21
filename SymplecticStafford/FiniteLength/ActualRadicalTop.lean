@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.RightFiltration
-import SymplecticStafford.FiniteLength.JacobsonTop
+module
+
+public import SymplecticStafford.FiniteLength.RightFiltration
+public import SymplecticStafford.FiniteLength.JacobsonTop
+
+@[expose] public section
 
 /-!
 # The finite-length output available before division-ring coordinates

@@ -1,4 +1,8 @@
-import SymplecticStafford.Package.TerminalObstruction
+module
+
+public import SymplecticStafford.Package.TerminalObstruction
+
+@[expose] public section
 
 /- Independent oracle for the M11 boundary: terminal arithmetic can hold while
    the original-U cofactor is false. -/

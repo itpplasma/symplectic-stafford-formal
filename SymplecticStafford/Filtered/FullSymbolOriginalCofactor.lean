@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
+module
+
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+
+@[expose] public section
 
 /-!
 # Recombining a localized two-generator certificate in the original ring

@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.ConstructiveSuccessor
+module
+
+public import SymplecticStafford.Induction.ConstructiveSuccessor
+
+@[expose] public section
 
 /-!
 # Constructive source and test output for a two-call successor

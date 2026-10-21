@@ -1,8 +1,12 @@
-import Mathlib.RingTheory.GradedAlgebra.Homogeneous.Ideal
-import Mathlib.LinearAlgebra.FiniteDimensional.Defs
-import Mathlib.LinearAlgebra.Finsupp.LinearCombination
-import Mathlib.RingTheory.Noetherian.Basic
-import Mathlib.Algebra.Algebra.Opposite
+module
+
+public import Mathlib.RingTheory.GradedAlgebra.Homogeneous.Ideal
+public import Mathlib.LinearAlgebra.FiniteDimensional.Defs
+public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
+public import Mathlib.RingTheory.Noetherian.Basic
+public import Mathlib.Algebra.Algebra.Opposite
+
+@[expose] public section
 
 /-!
 # The standing filtered setting (paper §1.1 and §2)

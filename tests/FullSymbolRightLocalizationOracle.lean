@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+
+@[expose] public section
 
 /- Independent oracle for the right-sided full-symbol interface.  The
   denominator set is an arbitrary submonoid (here all powers of `2`) and the

@@ -1,11 +1,11 @@
 name = "symplecticStaffordFormal"
 version = "0.1.0"
-defaultTargets = ["SymplecticStafford", "Challenge", "Solution"]
+defaultTargets = ["SymplecticStafford.Paper", "Challenge", "Solution"]
 
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
+rev = "c55e6e786f49471c72fbddbec5415808896aec1e"
 
 [[require]]
 name = "algebraicAnalysis"

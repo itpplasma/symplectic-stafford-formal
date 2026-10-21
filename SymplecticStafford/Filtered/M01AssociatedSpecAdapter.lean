@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.AssociatedGradedSpecBridge
+module
+
+public import SymplecticStafford.Filtered.AssociatedGradedSpecBridge
+
+@[expose] public section
 
 /-!
 # Conditional adapter from the structural M01 class to spectrum support
