@@ -88,8 +88,9 @@ results are recorded for the exact checked source.
 
 - The universal theorem is proved in Lean, as are all of the manuscript's
   §7 consequences.
-- Historical local Comparator, NanoDa and Lean-kernel checks passed for the
-  30 September source. Fresh replay of the release migration is in progress;
+- The supported-toolchain build, all 18 endpoint axiom checks, the 96 mapped
+  declaration references and the Target A oracle pass locally. The complete
+  clean Linux and Palomar replay is in progress;
   `docs/verification.md` and the machine-readable report identify checked
   snapshots.
 - Release preparation and Palomar submission were authorized on 21 October
