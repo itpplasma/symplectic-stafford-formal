@@ -4,15 +4,14 @@ version: "v0.4"
 project:
   name: "Symplectic Stafford: the affine same-divisor theorem"
   description: >-
-    A complete Lean 4 proof of Target theorem A of the Symplectic Stafford
-    manuscript. Let U be a simple, infinite-dimensional algebra over a field
-    of characteristic zero, with an exhaustive nonnegative multiplicative
-    filtration by finite-dimensional pieces, F_0 U = k, and associated graded
-    ring a commutative affine domain of finite Krull dimension. Then for all
-    nonzero d, a and every B in U there are H, R, S with
-    1 = dR + (B + Ha)dS. The development also proves the left-handed
-    identity and the module-theoretic consequences of the manuscript's
-    section 7 for U. No novelty or priority claim is made.
+    Let k be a field of characteristic zero and U a simple, infinite-dimensional
+    k-algebra with an exhaustive nonnegative multiplicative filtration by
+    finite-dimensional k-subspaces. Suppose F_0 U = k and the associated
+    graded algebra is a commutative affine domain of finite Krull dimension.
+    Then for every nonzero d, a in U and every B in U there exist H, R, S in U
+    such that 1 = dR + (B + Ha)dS. The Lean 4 development proves this theorem,
+    its left-handed form, and module generation, stable range and cancellation
+    results for U.
   authors:
     - name: "Christopher Albert"
       orcid: "0000-0003-4773-416X"
@@ -51,8 +50,7 @@ sources:
       are records of the same internal research development. The exposition is
       not a separately published or presented prior source being formalized.
       Its dated chronology is retained for provenance and mathematical review.
-      The formal development proves Target theorem A. No publication or
-      priority claim is inferred from the chronology.
+      The formal development proves Target theorem A.
     license: "unknown"
     author_endorsement: "participated"
   - title: "Module structure of Weyl algebras"

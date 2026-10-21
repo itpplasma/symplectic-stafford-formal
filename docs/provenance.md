@@ -61,7 +61,7 @@ project record. Assistance does not assign authorship of an idea.
 The author authorized release preparation and Palomar submission on 21 October
 2026. Independent human mathematical review remains pending. Kernel replay,
 agent audits, Palomar review, journal review and publication are distinct
-records; none is inferred from another. No novelty or priority claim is made.
+records; none is inferred from another.
 
 Formal code and documentation are Apache-2.0; dependency attributions retain
 their own licenses. No license for a future separate manuscript is assigned
