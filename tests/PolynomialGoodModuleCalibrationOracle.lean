@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.PolynomialGoodModuleCalibration
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.PolynomialGoodModuleCalibration
+
+@[expose] public section
 
 /- Independent oracle for an actual nat-degree-filtered good module over
    `ℚ[X]`, including a negative weighted slot and right correction. -/

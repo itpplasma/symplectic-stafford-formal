@@ -1,9 +1,13 @@
-import SymplecticStafford.FiniteLength.PencilBridge
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
+module
+
+public import SymplecticStafford.FiniteLength.PencilBridge
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 Concrete independent oracle: in the regular right rational module the pencil

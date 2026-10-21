@@ -1,6 +1,10 @@
-import Mathlib.Data.Matrix.Basic
-import SymplecticStafford.Filtered.WeightedFaithfulBoundary
-import SymplecticStafford.Filtered.WeightedMatrixInverse
+module
+
+public import Mathlib.Data.Matrix.Basic
+public import SymplecticStafford.Filtered.WeightedFaithfulBoundary
+public import SymplecticStafford.Filtered.WeightedMatrixInverse
+
+@[expose] public section
 
 /-!
 # Weighted detection after a finite correction

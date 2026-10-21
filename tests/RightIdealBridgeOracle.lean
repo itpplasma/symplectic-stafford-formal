@@ -1,7 +1,11 @@
-import SymplecticStafford.Semantics.RightIdealBridge
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Semantics.RightIdealBridge
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-! Independent M01 checks for the semiring-to-ring right-ideal bridge. -/
 

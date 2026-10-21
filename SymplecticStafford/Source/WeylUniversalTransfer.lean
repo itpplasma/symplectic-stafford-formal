@@ -1,6 +1,10 @@
-import Stafford38.FoundationClosure
-import SymplecticStafford.Semantics.S1Consequences
-import SymplecticStafford.Semantics.Contract
+module
+
+public import Stafford38.FoundationClosure
+public import SymplecticStafford.Semantics.S1Consequences
+public import SymplecticStafford.Semantics.Contract
+
+@[expose] public section
 
 /-!
 # Transfer of the all-rank Weyl endpoint through an actual algebra equivalence

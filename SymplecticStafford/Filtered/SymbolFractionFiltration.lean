@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.SymbolFractionInverse
-import SymplecticStafford.Filtered.RegularSymbolDegree
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.SymbolFractionInverse
+public import SymplecticStafford.Filtered.RegularSymbolDegree
+
+@[expose] public section
 
 /-!
 # The degree-controlled filtration on a selected right localization

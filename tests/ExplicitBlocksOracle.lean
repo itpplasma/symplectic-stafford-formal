@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.ExplicitBlocks
-import SymplecticStafford.FiniteLength.IsotypicBlocks
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.ExplicitBlocks
+public import SymplecticStafford.FiniteLength.IsotypicBlocks
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for explicit composition/block bridges

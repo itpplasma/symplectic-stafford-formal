@@ -1,4 +1,8 @@
-import SymplecticStafford.Source.FiniteDimensionalProducer
+module
+
+public import SymplecticStafford.Source.FiniteDimensionalProducer
+
+@[expose] public section
 
 /-!
 # One-way finite-dimensional source selection

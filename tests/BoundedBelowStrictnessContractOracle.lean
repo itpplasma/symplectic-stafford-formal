@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.BoundedBelowStrictnessContract
+module
+
+public import SymplecticStafford.FiniteLength.BoundedBelowStrictnessContract
+
+@[expose] public section
 
 /- Independent oracle for the bounded-below strictness contract. -/
 namespace SymplecticStaffordTest.BoundedBelowStrictnessContract

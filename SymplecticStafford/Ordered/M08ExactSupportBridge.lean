@@ -1,6 +1,10 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.RingTheory.Support
-import SymplecticStafford.Filtered.SpecCharacteristicSupport
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.RingTheory.Support
+public import SymplecticStafford.Filtered.SpecCharacteristicSupport
+
+@[expose] public section
 
 /-!
 # Exact characteristic-support bridge for M08

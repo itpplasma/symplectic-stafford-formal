@@ -1,6 +1,10 @@
-import SymplecticStafford.Package.TerminalBoundary
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.ZMod.Basic
+module
+
+public import SymplecticStafford.Package.TerminalBoundary
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-! Independent checks for the M11 terminal boundary. -/
 

@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.OreLocalization.Ring
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.FullSymbolLocalization
+module
+
+public import Mathlib.RingTheory.OreLocalization.Ring
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.FullSymbolLocalization
+
+@[expose] public section
 
 /- Independent consumer for the full-symbol localization boundary.  The
   denominator set is the whole submonoid of powers of `2`; no single chosen

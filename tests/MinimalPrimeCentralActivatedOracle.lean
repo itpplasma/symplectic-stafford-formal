@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.MinimalPrimeCentralActivated
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.MinimalPrimeCentralActivated
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the minimal-prime local activated bridge

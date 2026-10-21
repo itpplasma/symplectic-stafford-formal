@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.SymbolFractionReesLocalization
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.SymbolFractionReesLocalization
+
+@[expose] public section
 
 /-!
 # M05: faithful module transport across the selected localization comparison

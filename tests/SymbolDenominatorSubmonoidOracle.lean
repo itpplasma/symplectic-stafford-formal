@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.Polynomial.Degree.Operations
-import SymplecticStafford.Filtered.SymbolDenominatorSubmonoid
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Polynomial.Degree.Operations
+public import SymplecticStafford.Filtered.SymbolDenominatorSubmonoid
+
+@[expose] public section
 
 /-!
 Independent oracle for the actual symbol-denominator construction.

@@ -1,6 +1,10 @@
-import AlgebraicAnalysis.RingTheory.TwoGeneratorIdentity
-import AlgebraicAnalysis.Module.MinimalPrimeFiniteLengthLocalization
-import Stafford38.LocalizationCorollaries
+module
+
+public import AlgebraicAnalysis.RingTheory.TwoGeneratorIdentity
+public import AlgebraicAnalysis.Module.MinimalPrimeFiniteLengthLocalization
+public import Stafford38.LocalizationCorollaries
+
+@[expose] public section
 
 /-!
 # Pinned dependency bridge

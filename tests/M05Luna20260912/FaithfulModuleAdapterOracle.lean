@@ -1,5 +1,9 @@
-import tests.SymbolFractionReesOracle
-import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleAdapter
+module
+
+public import tests.SymbolFractionReesOracle
+public import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleAdapter
+
+@[expose] public section
 
 /-!
 # Independent oracle for the faithful M05 module adapter

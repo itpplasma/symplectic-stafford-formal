@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Module.Submodule.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.RingTheory.Noetherian.Basic
-import SymplecticStafford.Ordered.M08SupportUnion
+module
+
+public import Mathlib.Algebra.Module.Submodule.Basic
+public import Mathlib.Data.Finset.Basic
+public import Mathlib.RingTheory.Noetherian.Basic
+public import SymplecticStafford.Ordered.M08SupportUnion
+
+@[expose] public section
 
 /-!
 # The actual finite-generation part of M08

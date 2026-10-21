@@ -1,6 +1,10 @@
-import SymplecticStafford.Semantics.Contract
-import Mathlib.Algebra.Ring.Nat
-import Mathlib.Algebra.Ring.Int.Defs
+module
+
+public import SymplecticStafford.Semantics.Contract
+public import Mathlib.Algebra.Ring.Nat
+public import Mathlib.Algebra.Ring.Int.Defs
+
+@[expose] public section
 
 /-! Independent concrete checks for the literal certificate API. -/
 

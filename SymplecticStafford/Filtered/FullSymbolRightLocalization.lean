@@ -1,5 +1,9 @@
-import AlgebraicAnalysis.Ore.RightLocalization
-import Mathlib.Algebra.Ring.NonZeroDivisors
+module
+
+public import AlgebraicAnalysis.Ore.RightLocalization
+public import Mathlib.Algebra.Ring.NonZeroDivisors
+
+@[expose] public section
 
 /-!
 # Full-symbol localization with original right denominators

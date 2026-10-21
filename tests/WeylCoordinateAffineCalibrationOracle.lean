@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import Stafford38.Weyl.IteratedEquivalence
+module
+
+public import Mathlib.Tactic
+public import Stafford38.Weyl.IteratedEquivalence
+
+@[expose] public section
 
 /-! Independent behavioral oracle for the coordinate-affine calibration.
 

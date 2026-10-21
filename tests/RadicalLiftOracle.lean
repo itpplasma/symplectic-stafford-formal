@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.RadicalLift
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.RadicalLift
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Independent checks for the finite top-lifting and activated-relation
 interfaces.  These examples instantiate the abstract hypotheses over `ℚ`;

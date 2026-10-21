@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.KrullDimension.Module
-import Mathlib.RingTheory.KrullDimension.Field
-import SymplecticStafford.FiniteLength.FilteredMinimalPrimeBridge
+module
+
+public import Mathlib.RingTheory.KrullDimension.Module
+public import Mathlib.RingTheory.KrullDimension.Field
+public import SymplecticStafford.FiniteLength.FilteredMinimalPrimeBridge
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength.FilteredMinimalPrimeBridgeOracle
 

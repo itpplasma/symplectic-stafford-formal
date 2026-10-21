@@ -24,11 +24,11 @@ project:
 repository:
   role: "substantive-development"
   url: "https://github.com/itpplasma/symplectic-stafford-formal"
-  registration_status: "private-development-not-registered"
+  registration_status: "not-registered"
   note: >-
-    This is a development checkpoint. Visibility, Palomar submission, and
-    any Zenodo deposit are separate human release decisions after the gates in
-    release-gates.yaml pass.
+    Release preparation and Palomar submission were authorized by the author
+    on 21 October 2026. No registration receipt is retained yet. Publication
+    status is recorded separately from independent human mathematical review.
 
 classification:
   arxiv:
@@ -45,14 +45,14 @@ sources:
         orcid: "0000-0003-4773-416X"
     type: "original-proof"
     relationship: "other"
-    location: "itpplasma/symplectic-stafford, commit 502b65a1dea53cac52220a08e321bfba525bc72e"
+    location: "https://github.com/itpplasma/symplectic-stafford/tree/c495a2c4c702c25cdb236034273c71cf94e86476"
     note: >-
       The private Markdown exposition, working notes, and this Lean checkpoint
       are records of the same internal research development. The exposition is
       not a separately published or presented prior source being formalized.
       Its dated chronology is retained for provenance and mathematical review.
-      This checkpoint makes no publication or priority claim and does not yet
-      establish the universal theorem.
+      The formal development proves Target theorem A. No publication or
+      priority claim is inferred from the chronology.
     license: "unknown"
     author_endorsement: "participated"
   - title: "Module structure of Weyl algebras"
@@ -69,17 +69,22 @@ sources:
 
 related_formalizations:
   - name: "Stafford 3.8"
+    id: "https://palomar-registry.org/entry?id=PALOMAR-2026-09-05-000007&version=3"
     url: "https://github.com/itpplasma/stafford38-formal"
     relationship: "builds-on"
     note: >-
-      Pinned public formal dependency used for the shared environment; it is
-      not a mathematical source for the new symplectic proof development.
+      Pinned dependency of the historical scaffolds and a model for release
+      provenance and paper/Lean correspondence. The Target A proof imports
+      Mathlib only and does not use the Stafford38 theorem. The related
+      registered entry is PALOMAR-2026-09-05-000007, version 3, checked source
+      0bb3aa929b931bf5d82d90f62d7508d3ae1dccc1; this is not a registration
+      identifier for Symplectic Stafford.
 
 verification:
-  report: "docs/target-a-submission-scope.md"
+  report: "docs/verification.md"
   machine_readable_report: "docs/verification-results.json"
-  statement_correspondence: "docs/target-a-submission-scope.md"
-  source_commit: "b80d925a"
+  statement_correspondence: "docs/paper-lean-correspondence.md"
+  source_commit: "c495a2c4c702c25cdb236034273c71cf94e86476"
   source_note: >-
     Paper repository itpplasma/symplectic-stafford: consolidated manuscript
     (edition of 30 September 2026), docs/zariskian-local-package-closure-2026-09-30.md
@@ -91,11 +96,14 @@ status:
     Target theorem A is formalized unconditionally. The Challenge/Solution
     pair states it with Mathlib-only definitions of the standing hypotheses.
     The proof development under SymplecticStafford/Paper imports Mathlib
-    only. Local Comparator, NanoDa and Lean-kernel replays are recorded in
-    docs/verification.md. Public clean replay, independent human review and
-    registration remain release steps.
-  sorry_count: 1
-  sorry_note: "The single sorry is the statement-only placeholder in Challenge.lean."
+    only. The 30 September local replay is historical evidence for its
+    recorded source and pins; it does not certify the current compatibility
+    migration. Fresh replay and registration are tracked separately from
+    pending independent human mathematical review.
+  sorry_count: 0
+  sorry_note: >-
+    Proved declarations contain no sorry. Challenge.lean has one deliberate
+    statement-only placeholder, excluded from this proved-declaration count.
   sorry_in_definitions: 0
   axioms:
     - "propext"
@@ -129,9 +137,10 @@ automation:
     - method: "manual"
       framework: "Lean 4 and Mathlib"
       tool_setup: >-
-        Human controller owns the plan, source comparison, integration, and
-        release decision; Lean performs kernel checking and replay scripts
-        provide independent behavioral consumers.
+        Human mathematical direction and release authorization guide the
+        work. Lean performs kernel checking, and replay scripts provide
+        independent behavioral consumers. Codex coordinates the current
+        release preparation and integrates checked worker changes.
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
@@ -142,17 +151,22 @@ automation:
         - "gpt-5.6-luna"
         - "gpt-5.6-sol"
         - "gpt-6-astra"
+        - "GPT-6 (release preparation)"
       framework: "Codex"
       tool_setup: >-
-        Bounded parallel agents supplied disjoint proof slices and audits; the
-        controller integrated only checked changes.
+        Bounded managed parallel agents supplied disjoint proof slices and
+        audits. Release agents prepare the toolchain migration, statement
+        audit, paper/Lean map, verifier contract and submission metadata.
+        Project-local skills supply relevant writing and proof-audit guidance;
+        executable checks remain the verification authority.
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
         hardware: "local workstation"
       prompting_notes: >-
-        Workers returned evidence; they did not promote phase status or release
-        metadata.
+        Workers return evidence and edit only their assigned scope. The
+        controller owns integration and release-status promotion; agents do
+        not supply independent human mathematical review.
   spend_usd: "not tracked"
   notes: "Automation assistance does not assign authorship of mathematical ideas."
 
@@ -180,24 +194,35 @@ review:
 alignment:
   namespace: "SymplecticStafford"
   statements:
-    - source: "Internal proof target: ordered same-divisor certificate"
-      lean: "SymplecticStafford.SameDivisorIdentity"
-      module: "SymplecticStafford.Statement"
-      status: "target-only"
-      note: "The target is declared; no universal producer theorem is claimed."
-    - source: "Semantic contract C01--C03"
-      lean: "SymplecticStafford.original_membership_extraction"
-      module: "SymplecticStafford.Semantics.Contract"
+    - source: "Target theorem A, equation (1.4), standing hypotheses of section 1.1"
+      lean: "SymplecticStafford.Paper.FilteredAlgebraData.targetA"
+      module: "SymplecticStafford.Paper.Induction"
       status: "proved"
-      note: "Original-ring membership and one-generation equivalences."
-    - source: "Finite central division-pencil theorem"
+      note: >-
+        For nonzero d and a and every B, proves 1 = dR + (B + Ha)dS
+        in the original algebra, with no localization or source-selection premise.
+    - source: "Target theorem A, independently stated Palomar comparison"
       lean: "SymplecticStaffordChallenge.universalStatement"
       module: "Solution"
       status: "proved"
-      note: "Finite bad central parameters for an initially independent tuple; bounded comparison, not the universal Stafford theorem."
+      note: >-
+        The Mathlib-only Challenge states the full filtered-class theorem.
+        Solution repeats its definitions independently and transports targetA.
+    - source: "Section 7, left-handed identity"
+      lean: "SymplecticStafford.Paper.FilteredAlgebraData.targetA_left"
+      module: "SymplecticStafford.Paper.Opposite"
+      status: "proved"
+      note: "Proves 1 = R d + S d F by applying Target A to the opposite algebra."
+    - source: "Section 7, cancellation"
+      lean: "SymplecticStafford.Paper.FilteredAlgebraData.cancellation"
+      module: "SymplecticStafford.Paper.ConsequencesForU"
+      status: "proved"
+      note: >-
+        Section 7 consequences are exported for U; their precise hypotheses
+        and the paper/Lean correspondence are recorded in the submission scope.
 
 acknowledgements: >-
   The workspace builds on Lean, Mathlib, AlgebraicAnalysis, and the pinned
   Stafford38 formal project. Comparator, lean4export, NanoDa, and Landrun
-  provide the independent submission-checking path when the complete endpoint
-  exists.
+  provide the independent submission-checking path for the complete Target A
+  endpoint.

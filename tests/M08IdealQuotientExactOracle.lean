@@ -1,5 +1,9 @@
-import Mathlib.Data.Nat.Prime.Int
-import SymplecticStafford.Ordered.M08IdealQuotientExact
+module
+
+public import Mathlib.Data.Nat.Prime.Int
+public import SymplecticStafford.Ordered.M08IdealQuotientExact
+
+@[expose] public section
 
 /-!
 Independent trust-disabled oracle for the actual commutative ideal-chain

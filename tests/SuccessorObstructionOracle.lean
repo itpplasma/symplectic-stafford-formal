@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.SuccessorObstruction
-import Mathlib.Data.ZMod.Basic
+module
+
+public import SymplecticStafford.Induction.SuccessorObstruction
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the M10 obstruction

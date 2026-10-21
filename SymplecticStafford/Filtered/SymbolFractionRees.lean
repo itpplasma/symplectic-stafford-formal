@@ -1,6 +1,10 @@
-import Mathlib.Algebra.MonoidAlgebra.Basic
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.SymbolFractionFiltration
+module
+
+public import Mathlib.Algebra.MonoidAlgebra.Basic
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.SymbolFractionFiltration
+
+@[expose] public section
 
 /-!
 # The Laurent Rees subring of a selected symbol localization

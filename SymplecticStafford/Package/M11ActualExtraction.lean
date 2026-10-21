@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.OriginalCentralSupport
-import SymplecticStafford.Package.TerminalBoundary
+module
+
+public import SymplecticStafford.Filtered.OriginalCentralSupport
+public import SymplecticStafford.Package.TerminalBoundary
+
+@[expose] public section
 
 /-!
 # Actual M11 extraction from original quotient support

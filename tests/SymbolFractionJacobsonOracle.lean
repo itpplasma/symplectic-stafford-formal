@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import Mathlib.Algebra.Polynomial.Degree.Defs
-import SymplecticStafford.Filtered.SymbolFractionFiltration
+module
+
+public import Mathlib.Tactic
+public import Mathlib.Algebra.Polynomial.Degree.Defs
+public import SymplecticStafford.Filtered.SymbolFractionFiltration
+
+@[expose] public section
 
 /-!
 Independent concrete boundary oracle for the degree-zero subtype step in

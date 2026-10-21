@@ -1,5 +1,9 @@
-import Stafford38.EvolutionaryCorollary
-import SymplecticStafford.Source.Assembly
+module
+
+public import Stafford38.EvolutionaryCorollary
+public import SymplecticStafford.Source.Assembly
+
+@[expose] public section
 
 /-!
 # A concrete original-ring calibration for M06

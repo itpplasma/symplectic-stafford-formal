@@ -1,6 +1,10 @@
-import SymplecticStafford.Induction.FiniteIndex
-import SymplecticStafford.Induction.TestRetention
-import Mathlib.Tactic.Ring
+module
+
+public import SymplecticStafford.Induction.FiniteIndex
+public import SymplecticStafford.Induction.TestRetention
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # Constructive base and successor interfaces

@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.FilteredLocalizedGradedBridge
+module
+
+public import SymplecticStafford.FiniteLength.FilteredLocalizedGradedBridge
+
+@[expose] public section
 
 /-!
 Independent trust-disabled checks for the conditional Part I.5 bridge.

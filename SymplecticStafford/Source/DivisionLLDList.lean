@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Set.Finite.Lattice
-import Mathlib.Tactic.NoncommRing
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Set.Finite.Lattice
+public import Mathlib.Tactic.NoncommRing
+
+@[expose] public section
 
 /-!
 # List-indexed division-coefficient LLD

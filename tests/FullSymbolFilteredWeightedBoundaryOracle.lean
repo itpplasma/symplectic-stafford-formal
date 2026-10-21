@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.FullSymbolFilteredWeightedBoundary
+module
+
+public import SymplecticStafford.Filtered.FullSymbolFilteredWeightedBoundary
+
+@[expose] public section
 
 /- Independent oracle for the filtered/full-symbol M04 boundary. -/
 namespace SymplecticStafford.Filtered.FullSymbolFilteredWeightedBoundaryOracle

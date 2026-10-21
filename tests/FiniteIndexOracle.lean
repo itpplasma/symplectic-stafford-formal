@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.FiniteIndex
-import Mathlib.Data.ZMod.Basic
+module
+
+public import SymplecticStafford.Induction.FiniteIndex
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-!
 # Independent oracle checks for finite-index M09--M10 composition

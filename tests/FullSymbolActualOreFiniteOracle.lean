@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolActualOreFinite
-import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+module
+
+public import SymplecticStafford.Filtered.FullSymbolActualOreFinite
+public import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+
+@[expose] public section
 
 /- Independent behavioral consumer: finite original-ring values are cleared
    in the actual polynomial Ore chart, with the multiplication order retained. -/

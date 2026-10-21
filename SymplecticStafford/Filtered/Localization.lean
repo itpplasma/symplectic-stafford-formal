@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Ring.Hom.Defs
-import Mathlib.Data.Set.Defs
-import SymplecticStafford.Ordered.RightClear
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Algebra.Ring.Hom.Defs
+public import Mathlib.Data.Set.Defs
+public import SymplecticStafford.Ordered.RightClear
+
+@[expose] public section
 
 /-!
 # Filtered localization contract scaffold

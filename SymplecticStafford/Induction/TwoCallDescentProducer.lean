@@ -1,6 +1,10 @@
-import SymplecticStafford.Induction.TwoCallAffineProducer
-import SymplecticStafford.Induction.SupportRemovalArithmetic
-import Mathlib.Data.Set.Finite.Basic
+module
+
+public import SymplecticStafford.Induction.TwoCallAffineProducer
+public import SymplecticStafford.Induction.SupportRemovalArithmetic
+public import Mathlib.Data.Set.Finite.Basic
+
+@[expose] public section
 
 /-!
 # A descent-level two-call producer

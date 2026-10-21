@@ -1,8 +1,12 @@
-import Mathlib.Data.Fintype.Order
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic
-import SymplecticStafford.Ordered.M08SupportUnion
+module
+
+public import Mathlib.Data.Fintype.Order
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Tactic
+public import SymplecticStafford.Ordered.M08SupportUnion
+
+@[expose] public section
 
 /-!
 # Boundary for the M08 support-union producer

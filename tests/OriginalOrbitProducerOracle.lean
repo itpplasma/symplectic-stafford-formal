@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import SymplecticStafford.Source.OriginalOrbitProducer
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import SymplecticStafford.Source.OriginalOrbitProducer
+
+@[expose] public section
 
 /- Independent behavioral oracle for the original-U finite-orbit selector. -/
 

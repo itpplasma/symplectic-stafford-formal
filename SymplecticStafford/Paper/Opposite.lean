@@ -1,5 +1,9 @@
-import SymplecticStafford.Paper.Induction
-import Mathlib.Algebra.Module.Equiv.Opposite
+module
+
+public import SymplecticStafford.Paper.Induction
+public import Mathlib.Algebra.Module.Equiv.Opposite
+
+@[expose] public section
 
 /-!
 # Opposite transport (paper §7.7)

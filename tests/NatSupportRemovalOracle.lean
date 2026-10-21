@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Induction.NatSupportRemoval
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Induction.NatSupportRemoval
+
+@[expose] public section
 
 /-!
 # Independent oracle for the concrete non-vacuous two-call step

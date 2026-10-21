@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.GoodFiltration
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.GoodFiltration
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent behavioral oracle for the finite good-filtration construction. -/
 namespace SymplecticStafford.Filtered.GoodFiltrationOracle

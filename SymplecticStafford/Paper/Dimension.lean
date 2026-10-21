@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.KrullDimension.NonZeroDivisors
-import Mathlib.RingTheory.Ideal.MinimalPrime.Basic
+module
+
+public import Mathlib.RingTheory.KrullDimension.NonZeroDivisors
+public import Mathlib.RingTheory.Ideal.MinimalPrime.Basic
+
+@[expose] public section
 
 /-!
 # Dimension bookkeeping for the codimension induction (paper §6)

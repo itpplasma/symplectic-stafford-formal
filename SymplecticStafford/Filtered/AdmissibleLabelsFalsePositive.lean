@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.M01StructuralClass
-import SymplecticStafford.Semantics.Contract
+module
+
+public import SymplecticStafford.Filtered.M01StructuralClass
+public import SymplecticStafford.Semantics.Contract
+
+@[expose] public section
 
 /-!
 # A nontrivial semantic false positive for the historical class

@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleAdapter
+module
+
+public import SymplecticStafford.Filtered.M05Luna20260912.FaithfulModuleAdapter
+
+@[expose] public section
 
 /-!
 # M05: finite strict-chain transport for the selected localization adapter

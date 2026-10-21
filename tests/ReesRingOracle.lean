@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.ReesRing
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.ReesRing
+
+@[expose] public section
 
 /- Independent behavioral checks for the actual ring-valued Rees object.  The
    all-degree filtration on `ℤ` makes the ring closure executable while still

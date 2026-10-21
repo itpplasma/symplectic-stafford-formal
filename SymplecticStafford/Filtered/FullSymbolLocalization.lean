@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.OreLocalization.Ring
-import Mathlib.Algebra.Ring.NonZeroDivisors
+module
+
+public import Mathlib.RingTheory.OreLocalization.Ring
+public import Mathlib.Algebra.Ring.NonZeroDivisors
+
+@[expose] public section
 
 /-!
 # Full algebraic symbol localization

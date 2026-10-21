@@ -1,9 +1,13 @@
-import Mathlib.Tactic
-import Mathlib.Algebra.Ring.NonZeroDivisors
-import Mathlib.RingTheory.OreLocalization.Ring
-import AlgebraicAnalysis.Ore.RightLocalization
-import SymplecticStafford.Filtered.SymbolFractionReesClearance
-import SymplecticStafford.Filtered.SymbolFractionReesMap
+module
+
+public import Mathlib.Tactic
+public import Mathlib.Algebra.Ring.NonZeroDivisors
+public import Mathlib.RingTheory.OreLocalization.Ring
+public import AlgebraicAnalysis.Ore.RightLocalization
+public import SymplecticStafford.Filtered.SymbolFractionReesClearance
+public import SymplecticStafford.Filtered.SymbolFractionReesMap
+
+@[expose] public section
 
 /-!
 # Finite comparison with the selected Laurent Rees ring

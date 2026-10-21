@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.StrongPh
-import Mathlib
+module
+
+public import SymplecticStafford.Induction.StrongPh
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # M11 obstruction: a terminal defect bound is not a cofactor

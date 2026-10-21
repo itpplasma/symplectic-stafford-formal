@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Noetherian.Basic
-import SymplecticStafford.Filtered.ReesNoetherianCriterion
+module
+
+public import Mathlib.RingTheory.Noetherian.Basic
+public import SymplecticStafford.Filtered.ReesNoetherianCriterion
+
+@[expose] public section
 
 /-!
 # Noetherian Rees modules and good subquotients

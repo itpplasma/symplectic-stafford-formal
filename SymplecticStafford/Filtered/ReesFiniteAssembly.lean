@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.ReesAlgebraicSpecialization
-import SymplecticStafford.Filtered.FullSymbolFiniteAssembly
-import SymplecticStafford.Filtered.FullSymbolOriginalCofactor
+module
+
+public import SymplecticStafford.Filtered.ReesAlgebraicSpecialization
+public import SymplecticStafford.Filtered.FullSymbolFiniteAssembly
+public import SymplecticStafford.Filtered.FullSymbolOriginalCofactor
+
+@[expose] public section
 
 /-!
 # Finite Rees-to-original assembly

@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.Finsupp.VectorSpace
-import Mathlib.LinearAlgebra.Dimension.Finite
-import Mathlib.RingTheory.FiniteLength
-import Mathlib.RingTheory.Noetherian.Basic
+module
+
+public import Mathlib.LinearAlgebra.Finsupp.VectorSpace
+public import Mathlib.LinearAlgebra.Dimension.Finite
+public import Mathlib.RingTheory.FiniteLength
+public import Mathlib.RingTheory.Noetherian.Basic
+
+@[expose] public section
 
 /-!
 # The finite-generation boundary in the minimal-prime length step

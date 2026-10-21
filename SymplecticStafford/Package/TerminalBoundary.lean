@@ -1,6 +1,10 @@
-import SymplecticStafford.Package.Opposite
-import SymplecticStafford.Semantics.SupportDimension
-import SymplecticStafford.Induction.StrongPh
+module
+
+public import SymplecticStafford.Package.Opposite
+public import SymplecticStafford.Semantics.SupportDimension
+public import SymplecticStafford.Induction.StrongPh
+
+@[expose] public section
 
 /-!
 # M11 terminal boundary

@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Source.DifferentialOreDescent
+module
+
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Source.DifferentialOreDescent
+
+@[expose] public section
 
 /-!
 # Bounded algebraization of a formal quantum slice

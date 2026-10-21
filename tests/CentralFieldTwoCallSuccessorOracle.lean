@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Induction.CentralFieldTwoCallSuccessor
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Induction.CentralFieldTwoCallSuccessor
+
+@[expose] public section
 
 /-!
 # Independent central-field two-call successor oracle

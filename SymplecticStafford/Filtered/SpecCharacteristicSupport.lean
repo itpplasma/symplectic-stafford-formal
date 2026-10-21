@@ -1,5 +1,9 @@
-import Mathlib.RingTheory.Support
-import SymplecticStafford.Filtered.FiniteSupportQuotient
+module
+
+public import Mathlib.RingTheory.Support
+public import SymplecticStafford.Filtered.FiniteSupportQuotient
+
+@[expose] public section
 
 /-!
 # Spectrum support for an actual associated module

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Data.List.Basic
-import SymplecticStafford.Source.Assembly
+module
+
+public import Mathlib.Algebra.Ring.Defs
+public import Mathlib.Data.List.Basic
+public import SymplecticStafford.Source.Assembly
+
+@[expose] public section
 
 /-!
 # Original-`U` finite local-test contract

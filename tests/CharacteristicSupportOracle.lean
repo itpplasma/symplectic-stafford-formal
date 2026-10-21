@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.CharacteristicSupport
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.CharacteristicSupport
+
+@[expose] public section
 
 /-!
 # Independent characteristic-support oracle

@@ -1,6 +1,10 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.FinCases
-import SymplecticStafford.Semantics.SupportDimension
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Tactic.FinCases
+public import SymplecticStafford.Semantics.SupportDimension
+
+@[expose] public section
 
 /-!
 # Independent M01 support/quotient oracle

@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import Stafford38.Weyl.IteratedEquivalence
-import SymplecticStafford.Source.WeylA1Calibration
+module
+
+public import Mathlib.Tactic
+public import Stafford38.Weyl.IteratedEquivalence
+public import SymplecticStafford.Source.WeylA1Calibration
+
+@[expose] public section
 
 /-! Independent literal oracle for the A1 calibration.
 

@@ -1,4 +1,8 @@
-import SymplecticStafford.Statement
+module
+
+public import SymplecticStafford.Statement
+
+@[expose] public section
 
 /-! A tiny independent consumer for the scaffold's ordered statement. -/
 

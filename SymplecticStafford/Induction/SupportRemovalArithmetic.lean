@@ -1,5 +1,9 @@
-import Mathlib
-import SymplecticStafford.Induction.TestRetention
+module
+
+public import Mathlib
+public import SymplecticStafford.Induction.TestRetention
+
+@[expose] public section
 
 /-!
 # Finite-support arithmetic for the M10 successor

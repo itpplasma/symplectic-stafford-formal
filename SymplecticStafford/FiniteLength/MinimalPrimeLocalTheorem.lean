@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Module.Torsion.Basic
-import Mathlib.RingTheory.FiniteLength
-import Mathlib.RingTheory.Ideal.KrullsHeightTheorem
+module
+
+public import Mathlib.Algebra.Module.Torsion.Basic
+public import Mathlib.RingTheory.FiniteLength
+public import Mathlib.RingTheory.Ideal.KrullsHeightTheorem
+
+@[expose] public section
 
 /-!
 # Minimal-prime local length from the actual annihilator support

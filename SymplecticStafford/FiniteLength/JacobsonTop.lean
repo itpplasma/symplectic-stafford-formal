@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.PencilBridge
-import Mathlib.RingTheory.Artinian.Module
+module
+
+public import SymplecticStafford.FiniteLength.PencilBridge
+public import Mathlib.RingTheory.Artinian.Module
+
+@[expose] public section
 
 /-!
 # Actual radical quotients detect right-module generation

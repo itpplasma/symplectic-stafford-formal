@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolOre
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.FullSymbolOre
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent oracle for the full-symbol boundary.  The example uses the
    identity chart on ℚ, so all source/chart and original-U data are concrete. -/

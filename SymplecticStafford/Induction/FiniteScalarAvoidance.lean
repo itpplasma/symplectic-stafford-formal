@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.TwoCallDescentProducer
+module
+
+public import SymplecticStafford.Induction.TwoCallDescentProducer
+
+@[expose] public section
 
 /-!
 # One scalar for all finite successor obstructions

@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+module
+
+public import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+
+@[expose] public section
 
 /- Independent behavioral consumer for the concrete polynomial calibration.
    The source is an actual polynomial ring and the denominator is the genuine

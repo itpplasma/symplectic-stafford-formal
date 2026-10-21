@@ -1,5 +1,9 @@
-import Mathlib.Data.ZMod.Basic
-import SymplecticStafford.Filtered.ReesNoetherianCriterion
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import SymplecticStafford.Filtered.ReesNoetherianCriterion
+
+@[expose] public section
 
 /- Independent oracle for the module strict-reduction consumer.  The
 one-element module makes the reduction branch vacuous while checking the

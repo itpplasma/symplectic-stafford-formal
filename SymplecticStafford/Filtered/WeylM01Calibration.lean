@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.M01StructuralClass
-import Stafford38.Weyl.MonicNormalization
-import Stafford38.Weyl.GradedAlgebra
+module
+
+public import SymplecticStafford.Filtered.M01StructuralClass
+public import Stafford38.Weyl.MonicNormalization
+public import Stafford38.Weyl.GradedAlgebra
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered
 

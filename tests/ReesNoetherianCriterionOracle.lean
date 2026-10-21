@@ -1,5 +1,9 @@
-import Mathlib.Data.ZMod.Basic
-import SymplecticStafford.Filtered.ReesNoetherianCriterion
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import SymplecticStafford.Filtered.ReesNoetherianCriterion
+
+@[expose] public section
 
 /- Independent oracle for the strict filtered-reduction theorem.  The
   one-element ring makes the reduction branch vacuous, while still checking

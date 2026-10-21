@@ -1,8 +1,12 @@
-import Mathlib.Algebra.SkewPolynomial.Basic
-import Mathlib.Algebra.Ring.Subsemiring.Basic
-import Mathlib.Data.Finset.Fold
-import SymplecticStafford.Filtered.ReesBasic
-import SymplecticStafford.Filtered.ReesQuotient
+module
+
+public import Mathlib.Algebra.SkewPolynomial.Basic
+public import Mathlib.Algebra.Ring.Subsemiring.Basic
+public import Mathlib.Data.Finset.Fold
+public import SymplecticStafford.Filtered.ReesBasic
+public import SymplecticStafford.Filtered.ReesQuotient
+
+@[expose] public section
 
 /-!
 # An algebraic Rees-like subobject

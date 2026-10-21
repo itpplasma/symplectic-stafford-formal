@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.FiniteOrbitPencil
-import SymplecticStafford.Source.OriginalDivisionProducer
+module
+
+public import SymplecticStafford.FiniteLength.FiniteOrbitPencil
+public import SymplecticStafford.Source.OriginalDivisionProducer
+
+@[expose] public section
 
 /-!
 # Original-​`U` source selection from finite orbit data

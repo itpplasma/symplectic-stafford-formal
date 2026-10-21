@@ -1,6 +1,10 @@
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Ordered.CommonColonProducer
+module
+
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Ordered.CommonColonProducer
+
+@[expose] public section
 
 /-!
 Independent oracle for the ordered common-colon producer.  The first example

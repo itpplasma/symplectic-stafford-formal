@@ -1,5 +1,9 @@
-import SymplecticStafford.Source.FiniteTestFamilyAssembly
-import SymplecticStafford.Source.OriginalFiniteCoefficientSource
+module
+
+public import SymplecticStafford.Source.FiniteTestFamilyAssembly
+public import SymplecticStafford.Source.OriginalFiniteCoefficientSource
+
+@[expose] public section
 
 /-!
 # Divisor-indexed assembly of finite original-coefficient sources

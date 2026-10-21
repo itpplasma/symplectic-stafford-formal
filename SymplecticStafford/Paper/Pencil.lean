@@ -1,9 +1,13 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.Polynomial.Div
-import Mathlib.RingTheory.Artinian.Module
-import Mathlib.Order.OrderIsoNat
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.LinearCombination
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Polynomial.Div
+public import Mathlib.RingTheory.Artinian.Module
+public import Mathlib.Order.OrderIsoNat
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.LinearCombination
+
+@[expose] public section
 
 /-!
 # Central-parameter pencils in Artinian modules (paper §4.5)

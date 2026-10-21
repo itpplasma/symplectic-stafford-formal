@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.ReesRing
-import SymplecticStafford.Filtered.SymbolFractionRees
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.ReesRing
+public import SymplecticStafford.Filtered.SymbolFractionRees
+
+@[expose] public section
 
 /-!
 # The original Rees ring maps into the Laurent fraction Rees ring

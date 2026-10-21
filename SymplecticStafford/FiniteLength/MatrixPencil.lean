@@ -1,6 +1,10 @@
-import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
-import Mathlib.RingTheory.MatrixPolynomialAlgebra
-import Mathlib.Algebra.Polynomial.Roots
+module
+
+public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
+public import Mathlib.RingTheory.MatrixPolynomialAlgebra
+public import Mathlib.Algebra.Polynomial.Roots
+
+@[expose] public section
 
 /-!
 # Central-field matrix blocks

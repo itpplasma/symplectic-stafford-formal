@@ -1,6 +1,10 @@
-import Stafford38.Weyl.EulerRemainder
-import Stafford38.Characteristic.CanonicalMonicSaturation
-import SymplecticStafford.Source.Assembly
+module
+
+public import Stafford38.Weyl.EulerRemainder
+public import Stafford38.Characteristic.CanonicalMonicSaturation
+public import SymplecticStafford.Source.Assembly
+
+@[expose] public section
 
 /-!
 # Higher-dimensional Weyl monicization

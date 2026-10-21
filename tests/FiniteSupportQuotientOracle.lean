@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.FiniteSupportQuotient
-import Mathlib.Algebra.Module.Submodule.Lattice
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.FiniteSupportQuotient
+public import Mathlib.Algebra.Module.Submodule.Lattice
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered.FiniteSupportQuotientOracle
 

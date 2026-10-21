@@ -1,5 +1,9 @@
-import SymplecticStafford.Source.FiniteDimensionalProducer
-import SymplecticStafford.Source.Assembly
+module
+
+public import SymplecticStafford.Source.FiniteDimensionalProducer
+public import SymplecticStafford.Source.Assembly
+
+@[expose] public section
 
 /-!
 # Divisor-indexed assembly from finite-dimensional source tests

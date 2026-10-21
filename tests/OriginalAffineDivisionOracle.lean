@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic.FinCases
-import SymplecticStafford.Source.OriginalTestContract
-import SymplecticStafford.Source.DivisionLLD
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic.FinCases
+public import SymplecticStafford.Source.OriginalTestContract
+public import SymplecticStafford.Source.DivisionLLD
+
+@[expose] public section
 
 /-!
 # Independent oracle for the concrete original-ring finite source theorem

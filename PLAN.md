@@ -10,7 +10,7 @@ public_release: false
 palomar_registration: not-submitted
 ```
 
-## Status (30 September 2026)
+## Mathematical status
 
 Target theorem A of the manuscript is proved in Lean from the standing
 hypotheses of §1.1 alone, with no localization, source-selection or support
@@ -45,11 +45,18 @@ for this canonical proof. No new proof replay or release is claimed by sync.
    - of the manuscript, including the Zariskian closure note and the
      formal-route corrections in the research repository;
    - of the statement correspondence in `docs/target-a-submission-scope.md`.
-2. Public clean replay from a fresh checkout using `scripts/verify.sh` and
-   `scripts/verify-palomar.sh`; record the evidence files named in
-   `release-gates.yaml`.
-3. The human decisions on repository visibility, Palomar registration and a
-   Zenodo release, following `docs/release-runbook.md`.
+2. Fresh clean replay from the selected source snapshot using
+   `scripts/verify.sh` and `scripts/verify-palomar.sh`; retain the evidence
+   files named in `release-gates.yaml`. Phase I now records Target A proof
+   closure, and Phase II records the independent replay of that complete
+   theorem; their historical names do not reopen discharged scaffolding.
+3. Palomar submission and its exact commit and registration receipt, following
+   `docs/release-runbook.md`. The author authorized release preparation and
+   Palomar submission on 21 October 2026. No receipt is retained yet.
+4. A final human-readable manuscript and any signed GitHub/Zenodo release are
+   separate deliverables. Keep the manuscript synchronized with the formal
+   correspondence map and the research corrections. No final typeset paper
+   or independent human review is claimed by agent completion.
 
 The previous plan and its wave-by-wave history are archived in
 `docs/history/PLAN-before-target-a-2026-09-30.md`.

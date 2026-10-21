@@ -63,11 +63,16 @@ and applies `FilteredAlgebraData.targetA`. The development under
 | `Induction.lean` | (5.2)–(5.4), Lemma 5.1, Remark 5.2, `P_h`, the successor, Target A |
 | `Opposite.lean` | §7.7: the opposite algebra and `1 = R d + S d F` |
 | `ConsequencesGeneration.lean` | §7.1–7.8, 7.10 |
+| `ConsequencesRank.lean` | Ore rank, §7.4–7.5, 7.9–7.13 |
+| `ConsequencesForU.lean` | Instantiates the general §7 results for the standing filtered algebra |
 
 ## Proof-route differences from the manuscript
 
-The formal proof keeps every statement. It uses the following shorter routes,
-each fully proved in Lean:
+The formal proof proves the principal statements through the following routes.
+Unused intermediate assertions, including Lemma 4.3 and Z4–Z7(a), are not
+certified by proving their consumers through another route. The maintained
+[declaration map](paper-lean-map.json) and
+[correspondence notes](paper-lean-correspondence.md) record the exact scope:
 
 1. **Pencils (4.7, 4.8).** A single chain lemma for Artinian modules over a
    `k`-algebra. Distinct bad scalars give a strictly decreasing chain of
@@ -91,7 +96,10 @@ each fully proved in Lean:
    `δ(U/I) = dim(G/gr I)`. Localizations are taken at every prime, so no
    homogeneity argument for minimal primes is required.
 7. The induction starts at `P_0` (source selection and `δ ≤ D`) instead of
-   `P_1`. Lemma 5.1 holds at every prime containing `gr J`.
+   `P_1`. Lemma 5.1 holds at every prime containing `gr J`. Lean uses
+   `δ(0) = ⊥` with absorbing addition; the paper uses `δ(0) = −1` on
+   `1 ≤ h ≤ D + 1`. The induction bounds agree in that range. See the
+   correspondence notes for the precise convention translation.
 
 ## Evidence
 

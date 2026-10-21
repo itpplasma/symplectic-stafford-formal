@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.MinimalPrimeLocalTheorem
+module
+
+public import SymplecticStafford.FiniteLength.MinimalPrimeLocalTheorem
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength.MinimalPrimeLocalTheoremOracle
 

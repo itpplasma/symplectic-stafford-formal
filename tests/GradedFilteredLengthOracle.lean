@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.GradedFilteredLength
-import Mathlib.Algebra.Field.Rat
+module
+
+public import SymplecticStafford.FiniteLength.GradedFilteredLength
+public import Mathlib.Algebra.Field.Rat
+
+@[expose] public section
 
 /-!
 # Independent oracle for the exact graded/filtered extension bridge

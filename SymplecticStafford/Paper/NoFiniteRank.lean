@@ -1,12 +1,16 @@
-import SymplecticStafford.Paper.RightFraction
-import SymplecticStafford.Paper.DivisionPencil
-import Mathlib.RingTheory.SimpleModule.Basic
-import Mathlib.RingTheory.TwoSidedIdeal.Operations
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.LinearAlgebra.Isomorphisms
-import Mathlib.Algebra.Module.Projective
-import Mathlib.Algebra.Group.Units.Opposite
+module
+
+public import SymplecticStafford.Paper.RightFraction
+public import SymplecticStafford.Paper.DivisionPencil
+public import Mathlib.RingTheory.SimpleModule.Basic
+public import Mathlib.RingTheory.TwoSidedIdeal.Operations
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.LinearAlgebra.Dimension.Constructions
+public import Mathlib.LinearAlgebra.Isomorphisms
+public import Mathlib.Algebra.Module.Projective
+public import Mathlib.Algebra.Group.Units.Opposite
+
+@[expose] public section
 
 /-!
 # No finite-rank trap (paper Lemma 4.2 and Corollary 4.4)

@@ -1,9 +1,13 @@
-import Mathlib.Data.ZMod.Basic
-import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.GoodFiltration
-import SymplecticStafford.Filtered.RingFiltrationBridge
-import SymplecticStafford.Filtered.GoodWeightedModule
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.GoodFiltration
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+public import SymplecticStafford.Filtered.GoodWeightedModule
+
+@[expose] public section
 
 /-!
 # A finite-generation boundary for integer weighted detectors

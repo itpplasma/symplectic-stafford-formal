@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ReesBasic
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesBasic
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered.ReesBasicOracle
 

@@ -1,5 +1,9 @@
-import SymplecticStafford.Ordered.ActualM08Producer
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.Ordered.ActualM08Producer
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 Independent executable consumers for the actual M08 finite-generation

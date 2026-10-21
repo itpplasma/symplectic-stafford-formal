@@ -1,4 +1,8 @@
-import SymplecticStafford.Paper
+module
+
+public import SymplecticStafford.Paper
+
+@[expose] public section
 
 /-!
 # Independent consumers of the formal Target A development

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.RingFiltrationBridge
+module
+
+public import Mathlib.Algebra.Polynomial.Basic
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+
+@[expose] public section
 
 /-!
 # Polynomial M01 boundary: base-field layers are not right ideals

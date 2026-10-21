@@ -1,9 +1,13 @@
-import SymplecticStafford.Paper.Localization
-import SymplecticStafford.Paper.Dimension
-import SymplecticStafford.Paper.Test
-import SymplecticStafford.Paper.SourceSelection
-import Mathlib.RingTheory.Ideal.MinimalPrime.Noetherian
-import Mathlib.RingTheory.FiniteType
+module
+
+public import SymplecticStafford.Paper.Localization
+public import SymplecticStafford.Paper.Dimension
+public import SymplecticStafford.Paper.Test
+public import SymplecticStafford.Paper.SourceSelection
+public import Mathlib.RingTheory.Ideal.MinimalPrime.Noetherian
+public import Mathlib.RingTheory.FiniteType
+
+@[expose] public section
 
 /-!
 # The controlled codimension induction (paper §§5–6)
