@@ -33,6 +33,22 @@ jobs:
         run: lake exe cache get
       - name: Replay implemented checkpoint
         run: ./scripts/verify.sh --phase-i
+      - name: Print verification diagnostics on failure
+        if: failure()
+        shell: bash
+        run: |
+          for log in .lake/verification/*.log; do
+            [[ -f "$log" ]] || continue
+            echo "::group::$log"
+            tail -n 40 "$log"
+            echo "::endgroup::"
+          done
+      - name: Retain verification diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-logs
+          path: .lake/verification/
       - name: Check publication evidence (fail closed)
         if: startsWith(github.ref, 'refs/tags/')
         run: ./scripts/check-release-readiness.sh
