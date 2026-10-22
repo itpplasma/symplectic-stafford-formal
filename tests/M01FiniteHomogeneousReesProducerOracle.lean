@@ -41,7 +41,9 @@ def polynomialFiltration : AdditiveFilteredRingData (Polynomial ℚ) where
     exact hp.trans hij
   exhaustive := by
     intro p
-    exact ⟨p.natDegree, le_rfl⟩
+    exact ⟨p.natDegree, by
+      change p.natDegree ≤ p.natDegree
+      exact le_rfl⟩
 
 def degreeOneMem : Polynomial.X ∈ polynomialFiltration.carrier 1 := by
   change Polynomial.X.natDegree ≤ 1

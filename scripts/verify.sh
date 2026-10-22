@@ -122,6 +122,9 @@ if [[ "$mode" == "--phase-ii" ]]; then
   python3 scripts/check-axiom-closure.py --phase-ii .lake/verification/axioms.log
 fi
 
+# Consumers import shared test fixtures, so let Lake build their dependency
+# graph before independently replaying each source with trust disabled.
+lake build tests > .lake/verification/consumer-build.log 2>&1
 : > .lake/verification/consumers.log
 for source in tests/*.lean; do
   project_lean --trust=0 "$source" >> .lake/verification/consumers.log 2>&1

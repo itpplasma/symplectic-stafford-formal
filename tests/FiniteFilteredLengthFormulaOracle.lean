@@ -21,9 +21,12 @@ def axis : Submodule ℚ (ℚ × ℚ) where
   zero_mem' := by simp
   add_mem' := by
     intro x y hx hy
+    change x.2 = 0 at hx
+    change y.2 = 0 at hy
     simp [hx, hy]
   smul_mem' := by
     intro c x hx
+    change x.2 = 0 at hx
     simp [hx]
 
 def planeFiltration : FiniteFilteredModule (R := ℚ) (M := ℚ × ℚ) where

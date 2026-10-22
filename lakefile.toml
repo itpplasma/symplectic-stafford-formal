@@ -19,6 +19,7 @@ rev = "213ae2073030c8a897087152a616b8f8c1292df2"
 
 [[lean_lib]]
 name = "SymplecticStafford"
+globs = ["SymplecticStafford.*"]
 
 [[lean_lib]]
 name = "Challenge"
@@ -27,3 +28,7 @@ roots = ["Challenge"]
 [[lean_lib]]
 name = "Solution"
 roots = ["Solution"]
+
+[[lean_lib]]
+name = "tests"
+globs = ["tests.+"]

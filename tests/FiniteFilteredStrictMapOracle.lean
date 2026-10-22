@@ -17,15 +17,19 @@ noncomputable section
 
 open SymplecticStafford.Filtered
 open FiniteFilteredStrictMap
+open StrictFiniteGradedChain
 
 def axis : Submodule ℚ (ℚ × ℚ) where
   carrier := {x | x.2 = 0}
   zero_mem' := by simp
   add_mem' := by
     intro x y hx hy
+    change x.2 = 0 at hx
+    change y.2 = 0 at hy
     simp [hx, hy]
   smul_mem' := by
     intro c x hx
+    change x.2 = 0 at hx
     simp [hx]
 
 def planeFiltration : FiniteFilteredModule (R := ℚ) (M := ℚ × ℚ) where
@@ -66,9 +70,9 @@ theorem zeroth_layer_has_unlifted_class :
           ⟨(0, 1), by simp [planeFiltration]⟩ = 0 := by
     simpa [q] using hq
   have hmem : ((0, 1) : ℚ × ℚ) ∈ planeFiltration.carrier 1 := by
-    apply (filteredLayerQuotient_mk_eq_zero_iff_mem
-      planeFiltration ⟨0, by decide⟩).mp
-    exact hq'
+    exact (filteredLayerQuotient_mk_eq_zero_iff_mem
+      planeFiltration ⟨0, by decide⟩
+        ⟨(0, 1), by simp [planeFiltration]⟩).mp hq'
   simpa [planeFiltration, axis] using hmem
 
 theorem zeroth_layer_map_misses_explicit_class :
@@ -93,17 +97,13 @@ theorem zeroth_layer_map_misses_explicit_class :
     simpa [k, planeFiltration, axis, x₀] using hmem
   refine ⟨q, hq_ne_zero, ?_⟩
   intro p
-  obtain ⟨x, rfl⟩ := Quotient.exists_rep p
-  have hxnext :
-      ((x : (inducedFiltration planeFiltration axis).carrier k.1) : ℚ × ℚ)
-        ∈ planeFiltration.carrier (k.1 + 1) := by
-    simpa [k, planeFiltration, axis] using x.1.property
-  have hzero :
-      layerMap planeFiltration axis k
-        (Submodule.Quotient.mk
-          (p := filteredLayerSubmodule
-            (inducedFiltration planeFiltration axis) k) x) = 0 := by
-    rw [layerMap_mk]
+  have hzero : layerMap planeFiltration axis k p = 0 := by
+    obtain ⟨x, rfl⟩ := Quotient.exists_rep p
+    have hxnext :
+        ((x : (inducedFiltration planeFiltration axis).carrier k.1) : ℚ × ℚ)
+          ∈ planeFiltration.carrier (k.1 + 1) := by
+      simpa [k, planeFiltration, axis] using x.1.property
+    erw [layerMap_mk planeFiltration axis k x]
     exact (filteredLayerQuotient_mk_eq_zero_iff_mem planeFiltration k _).mpr
       hxnext
   intro hq
