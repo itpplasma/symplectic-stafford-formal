@@ -114,14 +114,29 @@ The current bounded M05 adapter
 selected-source localization map into an actual `RingEquiv`, proves unit
 images for the selected denominators, and gives an explicit source-fraction
 formula. Its oracle retains the concrete opposite-degree Laurent-Rees inverse
-calculation. This is still below the paper-specific filtered
-algebra/module-to-homogeneous-localization comparison and does not close M05.
+calculation; the controller replayed both this module and its oracle under the
+pinned environment on 2026-09-12. The companion `FaithfulModuleAdapter.lean` conditionally
+transports nonzero classes and strict submodule inclusions through an explicit
+additive module equivalence with the exact opposite-ring action law; its
+regular-module oracle passes. This remains below the paper-specific
+filtered algebra/module-to-homogeneous-localization comparison and does not
+close M05.
 
-The unimported `Filtered/M01FiniteHomogeneousReesProducer.lean` draft selects
-the least filtration layer of a nonzero element and exposes its nonzero actual
-associated/Rees symbol together with multiplicative coefficient-symbol
-transport. Its companion oracle is included, but the draft is unchecked because
-the pinned dependency cache is absent. It does not supply the paper-specific
+`FiniteStrictChainTransport.lean` packages the same strictness
+preservation/reflection for every finite indexed chain; its independent
+regular-module oracle is trust-disabled checked. This remains a bounded
+consumer, not the missing filtered-to-graded bridge.
+
+`FaithfulModuleCoverTransport.lean` packages the corresponding preservation
+and reflection of `CovBy` composition-series steps, with a trust-disabled
+concrete oracle. It remains an adapter consequence and does not close the
+paper-specific filtered/localized-length comparison.
+
+The original `Filtered/M01FiniteHomogeneousReesProducer.lean` remains an
+unchecked draft. The separate checked
+`Filtered/M01FiniteHomogeneousReesProducerKernel.lean` and its independent
+`tests/M01FiniteHomogeneousReesProducerKernelOracle.lean` repair that bounded
+least-layer/Rees-symbol consumer. It does not supply the paper-specific
 filtered algebra/module comparison or faithful homogeneous survival.
 
 The unimported `Filtered/M05SelectedSourceSurvivalProducer.lean` draft adds
@@ -239,6 +254,15 @@ The exact bounded claim and pending replay are described in
 [the submission scope](docs/pencil-submission-scope.md). The former definitional
 membership comparison and its receipts do not verify this new pair. The
 universal Stafford theorem remains open.
+
+The checked M05 kernel continuation also records least-layer survival and
+source-map transport in the selected localization, with an independent `X^2`
+oracle. It does not provide the paper-specific homogeneous-localization,
+parameter-quotient, or faithful module-survival bridge.
+parameter-quotient, or faithful module-survival bridge. The Luna–Sol–Astra
+attempt (the Astra tool reported unavailable; the direct audit reached the
+same boundary) on that universal bridge is retired: Rees specialization can have a
+`t−1` kernel, and nonzero localization survival needs missing support data.
 
 The exact Zenodo/Palomar procedure is documented in
 [`docs/release-runbook.md`](docs/release-runbook.md). The repository carries

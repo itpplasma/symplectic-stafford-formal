@@ -16,12 +16,29 @@
 ## Current controller pointer
 
 M01–M11 and both phase gates remain open. The integrated M05 source-localization
-adapter is conditional; its first missing bridge is the paper-specific
+adapter is conditional; its source-fraction compatibility module and oracle
+were replayed successfully under the pinned environment on 2026-09-12. Its
+first missing bridge is the paper-specific
 filtered algebra/module comparison with homogeneous localization and faithful
-homogeneous survival. The unimported
+homogeneous survival. `FaithfulModuleAdapter.lean` now records the exact
+conditional action-preserving module transport and strictness consequence;
+it is not the missing comparison itself. The unimported
 `M05SelectedSourceSurvivalProducer.lean` now supplies only a nonzero numerator
 in the selected actual localization, with its independent polynomial oracle.
 Sol/Astra review stopped at the missing comparison with the paper's
 parameter-quotient/module subquotient: nonzero localized numerators do not by
 themselves survive that quotient. Keep this draft and the bounded M01 consumer
 out of universal readiness claims.
+
+The checked `Filtered/M01FiniteHomogeneousReesProducerKernel.lean` is a
+separate axiom-clean finite-layer/Rees-symbol producer with its independent
+`tests/M01FiniteHomogeneousReesProducerKernelOracle.lean`. It closes only the
+least-layer bounded consumer; M01--M11 and the paper comparison remain open.
+
+The verified `FiniteStrictChainTransport.lean` continuation packages the
+checked M05 strictness adapter as an iff for every finite indexed strict
+submodule chain; its regular-module oracle passes with trust disabled. This is
+a chain-transport consumer only and does not close the paper-specific bridge.
+The verified `FaithfulModuleCoverTransport.lean` continuation additionally
+preserves and reflects `CovBy` composition-series steps, with a concrete
+regular-module oracle; it remains only an adapter consequence.

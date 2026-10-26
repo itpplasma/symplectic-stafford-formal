@@ -108,12 +108,14 @@ theorem sourceLocalizationEquiv_sourceFraction
         (SymbolFractionReesLocalization.sourceFraction C a s) =
         sourceLocalizationEquiv C
           (SymbolFractionReesLocalization.sourceFraction C a s) * 1 :=
-      (mul_one _).symm
+      (mul_one
+        (sourceLocalizationEquiv C
+          (SymbolFractionReesLocalization.sourceFraction C a s))).symm
     _ = sourceLocalizationEquiv C
           (SymbolFractionReesLocalization.sourceFraction C a s) *
           ((u : SymbolFractionRees.ReesRing C) *
             (u.inv : SymbolFractionRees.ReesRing C)) := by
-      rw [Units.mul_inv]
+      rw [u.val_inv]
     _ = (sourceLocalizationEquiv C
           (SymbolFractionReesLocalization.sourceFraction C a s) *
           (u : SymbolFractionRees.ReesRing C)) *
