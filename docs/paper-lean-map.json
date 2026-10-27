@@ -47,7 +47,7 @@
     },
     "formal": {
       "repository": "itpplasma/symplectic-stafford-formal",
-      "revision": "8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3",
+      "revision": "adab7d68fa7ad78e73b1376efb887c9ee29cb316",
       "files": [
         {
           "path": "Challenge.lean",
