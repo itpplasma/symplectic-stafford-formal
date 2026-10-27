@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.List.Basic
-import Mathlib.Tactic.NormNum
+module
+
+public import Mathlib.Algebra.Ring.Defs
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Data.List.Basic
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Conditional strong finite-test induction contracts

@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.StrictFiniteGradedChain
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.StrictFiniteGradedChain
+
+@[expose] public section
 
 /-!
 # Independent oracle for the finite strict graded-chain bridge

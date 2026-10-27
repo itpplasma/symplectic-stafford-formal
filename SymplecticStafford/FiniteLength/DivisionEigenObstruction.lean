@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.DivisionEigenBoundary
+module
+
+public import SymplecticStafford.FiniteLength.DivisionEigenBoundary
+
+@[expose] public section
 
 /-!
 # Minimal obstruction to an unconditional pencil-finiteness lemma

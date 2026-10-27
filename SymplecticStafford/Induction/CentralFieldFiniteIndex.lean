@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.CentralFieldTwoCallSuccessor
-import SymplecticStafford.Induction.BaseTwoCallAssembly
+module
+
+public import SymplecticStafford.Induction.CentralFieldTwoCallSuccessor
+public import SymplecticStafford.Induction.BaseTwoCallAssembly
+
+@[expose] public section
 
 /-!
 # Finite-index endpoint adapter for central-field two-call steps

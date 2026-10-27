@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.CentralFinitePencil
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.CentralFinitePencil
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Non-vacuous oracle for split central-field pencils

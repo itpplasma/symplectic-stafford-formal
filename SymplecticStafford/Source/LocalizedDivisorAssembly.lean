@@ -1,6 +1,10 @@
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.Filtered.FullSymbolOriginalCofactor
-import SymplecticStafford.Source.Assembly
+module
+
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.Filtered.FullSymbolOriginalCofactor
+public import SymplecticStafford.Source.Assembly
+
+@[expose] public section
 
 /-!
 # Descent of localized divisor certificates to original assembly

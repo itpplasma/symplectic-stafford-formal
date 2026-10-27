@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.CentralField
+module
+
+public import SymplecticStafford.Filtered.CentralField
+
+@[expose] public section
 
 /-! Independent trust-disabled checks for the concrete M01 central-field API. -/
 

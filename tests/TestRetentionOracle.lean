@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.TestRetention
-import Mathlib.Data.Int.Basic
+module
+
+public import SymplecticStafford.Induction.TestRetention
+public import Mathlib.Data.Int.Basic
+
+@[expose] public section
 
 /-!
 # Independent oracle for finite-test retention and M09--M10 arithmetic

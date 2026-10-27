@@ -1,7 +1,11 @@
-import Mathlib.LinearAlgebra.StdBasis
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
+module
+
+public import Mathlib.LinearAlgebra.StdBasis
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Boundary for an unstructured finite-length activated pencil

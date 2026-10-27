@@ -1,6 +1,10 @@
-import SymplecticStafford.Source.DifferentialOreDescent
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Data.Rat.Defs
+module
+
+public import SymplecticStafford.Source.DifferentialOreDescent
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Data.Rat.Defs
+
+@[expose] public section
 
 /-! Independent oracle for the original-ring finite-cover consumer. -/
 

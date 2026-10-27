@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.FullSymbolFilteredChart
-import SymplecticStafford.Filtered.FullSymbolOre
-import Mathlib.Algebra.Polynomial.Derivative
+module
+
+public import SymplecticStafford.Filtered.FullSymbolFilteredChart
+public import SymplecticStafford.Filtered.FullSymbolOre
+public import Mathlib.Algebra.Polynomial.Derivative
+
+@[expose] public section
 
 /-!
 # An actual algebraic full-symbol calibration

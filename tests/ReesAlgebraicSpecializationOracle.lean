@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ReesAlgebraicSpecialization
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesAlgebraicSpecialization
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent behavioral oracle for finite algebraic Rees specialization. -/
 namespace SymplecticStaffordTest.ReesAlgebraicSpecialization

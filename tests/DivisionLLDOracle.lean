@@ -1,7 +1,11 @@
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import SymplecticStafford.Source.DivisionLLD
+module
+
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import SymplecticStafford.Source.DivisionLLD
+
+@[expose] public section
 
 /-! Independent concrete oracle for the conditional M06 affine selector. -/
 

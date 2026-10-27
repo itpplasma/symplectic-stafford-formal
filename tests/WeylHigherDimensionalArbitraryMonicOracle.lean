@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import Stafford38.Weyl.EulerRemainder
-import SymplecticStafford.Source.WeylHigherDimensionalArbitraryMonic
+module
+
+public import Mathlib.Tactic
+public import Stafford38.Weyl.EulerRemainder
+public import SymplecticStafford.Source.WeylHigherDimensionalArbitraryMonic
+
+@[expose] public section
 
 /-!
 # Independent oracle for arbitrary outer-monic division

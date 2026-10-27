@@ -1,4 +1,8 @@
-import SymplecticStafford.Semantics.S1Consequences
+module
+
+public import SymplecticStafford.Semantics.S1Consequences
+
+@[expose] public section
 
 /-!
 # Opposite-ring package boundary

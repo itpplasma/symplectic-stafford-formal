@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Induction.LayerSupportObstruction
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Induction.LayerSupportObstruction
+
+@[expose] public section
 
 /-!
 # Independent oracle for the finite-layer support obstruction

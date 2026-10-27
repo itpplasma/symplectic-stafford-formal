@@ -1,10 +1,14 @@
-import Mathlib.Algebra.MonoidAlgebra.Basic
-import Mathlib.Algebra.Module.Equiv.Opposite
-import Mathlib.Algebra.SkewPolynomial.Basic
-import Mathlib.RingTheory.Noetherian.Basic
-import Mathlib.RingTheory.Polynomial.Basic
-import Mathlib.RingTheory.Polynomial.Opposites
-import SymplecticStafford.Filtered.ReesAlgebra
+module
+
+public import Mathlib.Algebra.MonoidAlgebra.Basic
+public import Mathlib.Algebra.Module.Equiv.Opposite
+public import Mathlib.Algebra.SkewPolynomial.Basic
+public import Mathlib.RingTheory.Noetherian.Basic
+public import Mathlib.RingTheory.Polynomial.Basic
+public import Mathlib.RingTheory.Polynomial.Opposites
+public import SymplecticStafford.Filtered.ReesAlgebra
+
+@[expose] public section
 
 /-!
 # Right Noetherianity of the central Rees polynomial ambient ring

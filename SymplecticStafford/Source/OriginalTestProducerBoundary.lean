@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Source.OriginalTestContract
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.OriginalTestContract
+
+@[expose] public section
 
 /-!
 # Exact boundary of the abstract original-test producer

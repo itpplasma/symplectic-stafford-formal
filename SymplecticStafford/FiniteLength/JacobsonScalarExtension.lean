@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.FiniteOrbitPencil
-import SymplecticStafford.FiniteLength.JacobsonTop
-import SymplecticStafford.FiniteLength.RightFiltration
+module
+
+public import SymplecticStafford.FiniteLength.FiniteOrbitPencil
+public import SymplecticStafford.FiniteLength.JacobsonTop
+public import SymplecticStafford.FiniteLength.RightFiltration
+
+@[expose] public section
 
 /-!
 # Jacobson-top bridge for auxiliary scalar fields

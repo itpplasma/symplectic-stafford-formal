@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Induction.CentralFieldSupportObstruction
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Induction.CentralFieldSupportObstruction
+
+@[expose] public section
 
 /-!
 # Independent oracle for the central-field support obstruction

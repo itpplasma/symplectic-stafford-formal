@@ -1,14 +1,18 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Algebra.NoZeroSMulDivisors.Defs
-import Mathlib.Algebra.Module.LinearMap.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Fin.Basic
-import Mathlib.Data.Fintype.Basic
-import Mathlib.Data.Fin.Tuple.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Tactic.FinCases
-import SymplecticStafford.Filtered.WeightedDetection
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Algebra.NoZeroSMulDivisors.Defs
+public import Mathlib.Algebra.Module.LinearMap.Basic
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Fin.Basic
+public import Mathlib.Data.Fintype.Basic
+public import Mathlib.Data.Fin.Tuple.Basic
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Tactic.FinCases
+public import SymplecticStafford.Filtered.WeightedDetection
+
+@[expose] public section
 
 /-!
 # Faithful weighted detection and its exact boundary

@@ -1,0 +1,37 @@
+name: Palomar mechanical preflight
+run-name: Palomar preflight for ${{ inputs.commit || github.sha }}
+
+on:
+  merge_group:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Full immutable public source commit to verify
+        required: true
+        type: string
+      authorization_relationship:
+        description: The dispatching person's relationship to the formalization
+        required: true
+        type: choice
+        default: I am a responsible author or maintainer
+        options:
+          - I am a responsible author or maintainer
+          - I have approval from a responsible author or maintainer
+
+permissions:
+  contents: read
+
+# This exact full pipeline is a mechanical preflight, not registry intake.
+# The called workflow retains mechanical-report.json evidence for 90 days.
+jobs:
+  verify:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ inputs.commit || github.sha }}
+      pipeline_commit: d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+      request_id: sympstafford
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: >-
+        {"comparator_config_path":"comparator.json","authorization_relationship":"${{ inputs.authorization_relationship || 'I am a responsible author or maintainer' }}"}

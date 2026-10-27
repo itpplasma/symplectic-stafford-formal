@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.ReesModuleActionBridge
+module
+
+public import SymplecticStafford.Filtered.ReesModuleActionBridge
+
+@[expose] public section
 
 /-!
 Independent checks for the concrete action bridge.  The examples use the

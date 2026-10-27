@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.CentralField
-import SymplecticStafford.Semantics.Contract
-import Mathlib.Data.ZMod.Basic
+module
+
+public import SymplecticStafford.Filtered.CentralField
+public import SymplecticStafford.Semantics.Contract
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-!
 # First missing M01 structural bridge

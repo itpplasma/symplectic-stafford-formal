@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.FiniteOrbitPencil
-import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
+module
+
+public import SymplecticStafford.FiniteLength.FiniteOrbitPencil
+public import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
+
+@[expose] public section
 
 /-!
 # Activated pencils from finite-dimensional central modules

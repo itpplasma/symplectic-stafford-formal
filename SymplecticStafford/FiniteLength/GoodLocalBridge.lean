@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.FiniteLength
-import Mathlib.RingTheory.Noetherian.Basic
-import SymplecticStafford.FiniteLength.MinimalPrimeLength
+module
+
+public import Mathlib.RingTheory.FiniteLength
+public import Mathlib.RingTheory.Noetherian.Basic
+public import SymplecticStafford.FiniteLength.MinimalPrimeLength
+
+@[expose] public section
 
 /-!
 # Good-module to local finite-length bridge

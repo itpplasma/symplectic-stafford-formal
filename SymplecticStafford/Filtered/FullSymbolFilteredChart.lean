@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
-import SymplecticStafford.Filtered.ReesBasic
+module
+
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+public import SymplecticStafford.Filtered.ReesBasic
+
+@[expose] public section
 
 /-!
 # Finite algebraic control for a full-symbol chart

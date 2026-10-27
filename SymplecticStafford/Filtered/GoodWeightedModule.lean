@@ -1,7 +1,11 @@
-import SymplecticStafford.Filtered.GoodFiltration
-import SymplecticStafford.Filtered.RingFiltrationBridge
-import SymplecticStafford.Filtered.WeightedDetectionComposition
-import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+module
+
+public import SymplecticStafford.Filtered.GoodFiltration
+public import SymplecticStafford.Filtered.RingFiltrationBridge
+public import SymplecticStafford.Filtered.WeightedDetectionComposition
+public import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+
+@[expose] public section
 
 /-!
 # Finite good modules with weighted detection

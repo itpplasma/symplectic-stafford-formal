@@ -1,5 +1,9 @@
-import Mathlib.Data.ZMod.Basic
-import SymplecticStafford.Filtered.FiniteCoordinateDetectorBoundary
+module
+
+public import Mathlib.Data.ZMod.Basic
+public import SymplecticStafford.Filtered.FiniteCoordinateDetectorBoundary
+
+@[expose] public section
 
 /- Independent behavioral oracle for the finite-coordinate detector boundary. -/
 namespace SymplecticStafford.Filtered.FiniteCoordinateDetectorBoundaryOracle

@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.PrimeVsHomogeneousLocalizationBoundary
+module
+
+public import SymplecticStafford.FiniteLength.PrimeVsHomogeneousLocalizationBoundary
+
+@[expose] public section
 
 /- Independent oracle for the ordinary-prime/homogeneous-localization boundary. -/
 namespace SymplecticStaffordTest.PrimeVsHomogeneousLocalizationBoundary

@@ -1,25 +1,105 @@
 {
-  "schema": "symplectic-stafford-verification/v2",
-  "date": "2026-09-30",
-  "source_commit": "f8e97fc20e62699a96e46bd4091f16b4b210b797",
-  "lean": "leanprover/lean4:v4.33.0",
-  "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "schema": "symplectic-stafford-verification/v3",
+  "date": "2026-10-21",
+  "source_commit": "8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3",
+  "paper_commit": "c495a2c4c702c25cdb236034273c71cf94e86476",
+  "proof_inputs_sha256": "934169759cbc471d3f59bf63d7babfd50d4b160f6350866646c0ad2fc5d9c812",
+  "lean": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib": "c55e6e786f49471c72fbddbec5415808896aec1e",
   "compared_theorem": "SymplecticStaffordChallenge.universalStatement",
-  "axioms": ["propext", "Classical.choice", "Quot.sound"],
-  "tools": {
-    "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
-    "comparator_lean": "leanprover/lean4:v4.34.0-rc1",
-    "lean4export": "15f6055e299ad5b89345e533cc2192f4cc00f659",
-    "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
-    "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
-  },
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "checks": {
+    "current-target-a-build": "pass",
+    "challenge-build": "pass",
+    "solution-trust-zero": "pass",
+    "allowed-axioms-18-endpoints": "pass",
     "challenge-import-closure": "pass",
     "solution-import-closure": "pass",
+    "paper-import-closure": "pass",
+    "source-module-and-hole-policy": "pass",
+    "paper-lean-map-private-source-hashes-and-anchors": "pass",
+    "paper-lean-map-96-declaration-references": "pass",
+    "oracle-tests/PaperTargetAOracle.lean": "pass",
+    "verification-guard-regressions": "pass",
+    "clean-linux-project-ci": "pass",
+    "official-full-palomar-preflight": "pass",
     "comparator": "pass",
+    "con-ron-kernel": "pass",
     "nanoda-kernel": "pass",
-    "lean-default-kernel": "pass",
-    "oracle-tests/PaperTargetAOracle.lean": "pass"
+    "lean-default-kernel": "pass"
   },
-  "scope": "local replay; clean-checkout replay and human review pending"
+  "import_counts": {
+    "Challenge": 3142,
+    "Solution": 3577,
+    "SymplecticStafford.Paper": 3584
+  },
+  "scope": "Native macOS replay includes pinned private paper blobs and anchors; clean Linux project CI uses the public formal-only map check. Complete official Palomar preflight passes exact checked source with bundled Comparator, con-ron, NanoDa and Lean kernel acceptance for Target A. Section 7 is covered by full native/CI Lean verification, not separately registered. Metadata-only successors must match the protected source inventory. Independent human mathematical review and registry intake/registration remain pending.",
+  "historical_verification": {
+    "schema": "symplectic-stafford-verification/v2",
+    "date": "2026-09-30",
+    "source_commit": "f8e97fc20e62699a96e46bd4091f16b4b210b797",
+    "lean": "leanprover/lean4:v4.33.0",
+    "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "compared_theorem": "SymplecticStaffordChallenge.universalStatement",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "tools": {
+      "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+      "comparator_lean": "leanprover/lean4:v4.34.0-rc1",
+      "lean4export": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+      "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+      "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+    },
+    "checks": {
+      "challenge-import-closure": "pass",
+      "solution-import-closure": "pass",
+      "comparator": "pass",
+      "nanoda-kernel": "pass",
+      "lean-default-kernel": "pass",
+      "oracle-tests/PaperTargetAOracle.lean": "pass"
+    },
+    "scope": "local replay; clean-checkout replay and human review pending"
+  },
+  "source_inventory": "evidence/source-inventory.json",
+  "source_inventory_sha256": "3b346ef61984d4834564fa99770dbce2b20f73502a1277064ab08847de0d8b20",
+  "native_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-10-21T09:35:20Z",
+    "event": "push",
+    "headSha": "8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3",
+    "status": "completed",
+    "updatedAt": "2026-10-21T09:38:03Z",
+    "url": "https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875",
+    "files": {
+      "build.log": "312f60d2d76e92833ddc5258ea3182d696dd29b36449db566a8924c3ffe5e33f",
+      "challenge-build.log": "ee0cb30b418fbd6aa8cd2e1decd3d6a9c4f60ad33d6bf8a2c8eab89de12082b0",
+      "solution-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms.log": "60541a4d84166ff205a54738c9385bdf3fb8094dc78a49ec3de4a13646595b55",
+      "consumers.log": "10105643daad74f9575f9bcd627de50b5ada0ac127fef38747034718843ff41f",
+      "paper-lean-map.log": "6eb5645e0cf345cde212d770be5aceebc18ccee179eee1c7b1bc17d19cb40f75",
+      "Challenge-imports.log": "4baebaeb1605b36c64302e0650d821eaf03d09fef29bd5634753c9d9bc7edfeb",
+      "Solution-imports.log": "86837d9a7af4a12af3a6bd2014796b8923f5350363fa1e9f7c3f1fa7725df2bd",
+      "SymplecticStafford.Paper-imports.log": "2847a94d0673a6dca01b29244d0b17bc59b032c20be0927bd918d590d86a3d0b"
+    }
+  },
+  "verification_guard_tests": 6,
+  "palomar_preflight": {
+    "conclusion": "success",
+    "createdAt": "2026-10-21T09:35:20Z",
+    "event": "push",
+    "headSha": "8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3",
+    "status": "completed",
+    "updatedAt": "2026-10-21T09:43:41Z",
+    "url": "https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284",
+    "pipeline_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+    "report": "evidence/palomar-mechanical-report.json",
+    "report_sha256": "9d6bb509097b11ca6bfae8f9f854995b7a0f1c3b9c2a16e6156ac9277bb74a80"
+  }
 }

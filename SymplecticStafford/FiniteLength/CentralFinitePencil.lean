@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.IsotypicBlocks
-import SymplecticStafford.FiniteLength.MatrixPencil
-import Mathlib.LinearAlgebra.Determinant
+module
+
+public import SymplecticStafford.FiniteLength.IsotypicBlocks
+public import SymplecticStafford.FiniteLength.MatrixPencil
+public import Mathlib.LinearAlgebra.Determinant
+
+@[expose] public section
 
 /-!
 # A positive finite-dimensional central-field pencil theorem

@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Polynomial.Degree.Units
-import Mathlib.Algebra.Polynomial.Monic
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Polynomial.Degree.Units
+public import Mathlib.Algebra.Polynomial.Monic
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # A strict-negative-degree inverse boundary

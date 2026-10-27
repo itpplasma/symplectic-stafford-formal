@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.RingTheory.Localization.FractionRing
-import Mathlib.RingTheory.HopkinsLevitzki
-import Mathlib.RingTheory.Length
+module
+
+public import Mathlib.Algebra.Polynomial.Laurent
+public import Mathlib.RingTheory.Localization.FractionRing
+public import Mathlib.RingTheory.HopkinsLevitzki
+public import Mathlib.RingTheory.Length
+
+@[expose] public section
 
 /-!
 # Ordinary-prime versus homogeneous-symbol localization

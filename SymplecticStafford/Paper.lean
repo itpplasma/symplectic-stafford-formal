@@ -1,17 +1,21 @@
-import SymplecticStafford.Paper.Setting
-import SymplecticStafford.Paper.RightFraction
-import SymplecticStafford.Paper.Localization
-import SymplecticStafford.Paper.Pencil
-import SymplecticStafford.Paper.DivisionPencil
-import SymplecticStafford.Paper.NoFiniteRank
-import SymplecticStafford.Paper.Test
-import SymplecticStafford.Paper.SourceSelection
-import SymplecticStafford.Paper.Dimension
-import SymplecticStafford.Paper.Induction
-import SymplecticStafford.Paper.Opposite
-import SymplecticStafford.Paper.ConsequencesGeneration
-import SymplecticStafford.Paper.ConsequencesRank
-import SymplecticStafford.Paper.ConsequencesForU
+module
+
+public import SymplecticStafford.Paper.Setting
+public import SymplecticStafford.Paper.RightFraction
+public import SymplecticStafford.Paper.Localization
+public import SymplecticStafford.Paper.Pencil
+public import SymplecticStafford.Paper.DivisionPencil
+public import SymplecticStafford.Paper.NoFiniteRank
+public import SymplecticStafford.Paper.Test
+public import SymplecticStafford.Paper.SourceSelection
+public import SymplecticStafford.Paper.Dimension
+public import SymplecticStafford.Paper.Induction
+public import SymplecticStafford.Paper.Opposite
+public import SymplecticStafford.Paper.ConsequencesGeneration
+public import SymplecticStafford.Paper.ConsequencesRank
+public import SymplecticStafford.Paper.ConsequencesForU
+
+@[expose] public section
 
 /-!
 # The formal proof of the Symplectic Stafford theorem

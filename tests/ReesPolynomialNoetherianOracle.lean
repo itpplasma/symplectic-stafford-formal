@@ -1,6 +1,10 @@
-import Mathlib.RingTheory.PrincipalIdealDomain
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.ReesPolynomialNoetherian
+module
+
+public import Mathlib.RingTheory.PrincipalIdealDomain
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.ReesPolynomialNoetherian
+
+@[expose] public section
 
 /- Independent oracle for the concrete Mathlib Rees chart and its bridge to
    `ReesNoetherianCriterion`. -/

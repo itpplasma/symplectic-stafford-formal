@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import Mathlib.Algebra.Polynomial.Degree.Defs
-import SymplecticStafford.Filtered.SymbolFractionRees
+module
+
+public import Mathlib.Tactic
+public import Mathlib.Algebra.Polynomial.Degree.Defs
+public import SymplecticStafford.Filtered.SymbolFractionRees
+
+@[expose] public section
 
 /-!
 Independent polynomial oracle for the Laurent Rees grading. The actual

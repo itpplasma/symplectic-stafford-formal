@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.TwoCallDescentProducer
-import SymplecticStafford.Induction.ConstructiveSuccessor
+module
+
+public import SymplecticStafford.Induction.TwoCallDescentProducer
+public import SymplecticStafford.Induction.ConstructiveSuccessor
+
+@[expose] public section
 
 /-!
 # Base-to-endpoint assembly without a hidden base witness

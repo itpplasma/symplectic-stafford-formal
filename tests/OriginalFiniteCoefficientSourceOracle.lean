@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
-import SymplecticStafford.Source.OriginalFiniteCoefficientSource
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.OriginalFiniteCoefficientSource
+
+@[expose] public section
 
 /-!
 # Independent oracle for the finite original-coefficient source package

@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
+module
+
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+
+@[expose] public section
 
 /-!
 # Finite common denominators for right-localized modules

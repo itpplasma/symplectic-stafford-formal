@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.ActualClassSupport
+module
+
+public import SymplecticStafford.Filtered.ActualClassSupport
+
+@[expose] public section
 
 /-!
 # Independent oracle for the actual filtered-class support bridge

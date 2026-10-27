@@ -1,6 +1,10 @@
-import SymplecticStafford.Filtered.CharacteristicSupport
-import SymplecticStafford.Induction.StrongPh
-import Mathlib.Algebra.Polynomial.Roots
+module
+
+public import SymplecticStafford.Filtered.CharacteristicSupport
+public import SymplecticStafford.Induction.StrongPh
+public import Mathlib.Algebra.Polynomial.Roots
+
+@[expose] public section
 
 /-!
 # Central-field support-removal obstruction

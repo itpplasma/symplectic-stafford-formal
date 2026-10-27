@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
-import SymplecticStafford.Source.FiniteDimensionalOneWayProducer
+module
+
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.FiniteDimensionalOneWayProducer
+
+@[expose] public section
 
 /-!
 # Independent oracle for the one-way finite-dimensional bridge

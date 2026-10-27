@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.WeightedFaithfulBoundary
+module
+
+public import SymplecticStafford.Filtered.WeightedFaithfulBoundary
+
+@[expose] public section
 
 namespace SymplecticStafford.Filtered
 

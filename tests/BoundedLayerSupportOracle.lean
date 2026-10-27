@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import SymplecticStafford.Filtered.BoundedLayerSupport
+module
+
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import SymplecticStafford.Filtered.BoundedLayerSupport
+
+@[expose] public section
 
 /-!
 # Q[X] oracle for bounded layer support transport

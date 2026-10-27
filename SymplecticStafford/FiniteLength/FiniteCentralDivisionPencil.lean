@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.CentralFinitePencil
-import Mathlib.LinearAlgebra.Dimension.Finite
+module
+
+public import SymplecticStafford.FiniteLength.CentralFinitePencil
+public import Mathlib.LinearAlgebra.Dimension.Finite
+
+@[expose] public section
 
 /-!
 # Finite-dimensional-over-the-center division blocks

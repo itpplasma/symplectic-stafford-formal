@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.FiniteFilteredLengthFormula
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.FiniteFilteredLengthFormula
+
+@[expose] public section
 
 /-!
 # Independent oracle for exact finite-filtered length accounting

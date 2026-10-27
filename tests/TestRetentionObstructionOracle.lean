@@ -1,4 +1,8 @@
-import SymplecticStafford.Induction.TestRetentionObstruction
+module
+
+public import SymplecticStafford.Induction.TestRetentionObstruction
+
+@[expose] public section
 
 /-!
 # Independent oracle for the source-dependent retention boundary

@@ -1,25 +1,26 @@
 # Proof-source provenance
 
-## Status boundary
+The authoritative mathematical source is the
+[Symplectic Stafford research repository](https://github.com/itpplasma/symplectic-stafford).
+Target A and the numbered §7 consequences are formally proved in the
+Mathlib-only `SymplecticStafford/Paper/` development. The historical M01–M11
+scaffolds are outside that proof.
 
-The linked research repository records an all-dimensional Stafford theorem as a complete self-audited paper candidate. Independent mathematical review, human review, Phase I and Phase II formalization remain pending. Do not promote the candidate beyond that status.
+The maintained source boundary is [paper-lean-map.json](paper-lean-map.json),
+which pins the research candidate and correction notes at an immutable
+revision and fingerprints the formal sources. Read
+[paper-lean-correspondence.md](paper-lean-correspondence.md) for hypotheses,
+route substitutions, omitted intermediate assertions and the dimension
+convention. The research repository is a mathematical/provenance source,
+not a build dependency.
 
-## Authoritative upstream proof
+The original written proof is the 8 September all-dimensional candidate and
+Parts I–III, supplemented by the 30 September Zariskian closure and formal
+proof route. The two written-proof repairs are supplied in the manuscript
+revision instructions. A final typeset manuscript is deferred; no unavailable
+TeX or PDF is claimed as checked correspondence evidence.
 
-Research/paper repository: `itpplasma/symplectic-stafford`.
-
-The live research `PLAN.md` records paper commit `502b65a1dea53cac52220a08e321bfba525bc72e` and gives the exact proof read order:
-
-1. `docs/terminal-proof-index-2026-09-08.md`;
-2. `docs/all-dimensional-symplectic-stafford-2026-09-08.md`;
-3. its Parts I, II and III referenced by that index;
-4. `docs/proof-graph-all-dimensional-2026-09-08.yaml`;
-5. `notes/all-dimensional-closure-decision-2026-09-08.md`.
-
-The historical `docs/proof.md` is not the current terminal proof.
-
-## Agent rule
-
-Formalize the exact all-dimensional candidate in its paper dependency order. M01–M11 should be interpreted against the proof files above, not solved as independent research problems. The first missing paper-proved producer on the terminal path owns the critical path. Avoid stronger abstractions and conditional adapters unless required by the exact paper proof.
-
-The research repository is a specification/provenance source, not a build dependency.
+Kernel/comparator replay, independent human review and registration are
+distinct evidence. Consult the current verification and release records for
+their exact revisions and status. A source map does not provide human approval
+or register every auxiliary theorem with Palomar.

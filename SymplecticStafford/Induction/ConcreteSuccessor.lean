@@ -1,6 +1,10 @@
-import SymplecticStafford.Induction.TestRetention
-import Mathlib.Data.Fin.Basic
-import Mathlib.Data.List.Basic
+module
+
+public import SymplecticStafford.Induction.TestRetention
+public import Mathlib.Data.Fin.Basic
+public import Mathlib.Data.List.Basic
+
+@[expose] public section
 
 /-!
 # Concrete conditional two-call successor contract

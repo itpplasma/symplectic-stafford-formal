@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.ActivatedPencil
-import SymplecticStafford.FiniteLength.JacobsonTop
-import SymplecticStafford.FiniteLength.RightFiltration
-import SymplecticStafford.FiniteLength.MatrixPencil
+module
+
+public import SymplecticStafford.FiniteLength.ActivatedPencil
+public import SymplecticStafford.FiniteLength.JacobsonTop
+public import SymplecticStafford.FiniteLength.RightFiltration
+public import SymplecticStafford.FiniteLength.MatrixPencil
+
+@[expose] public section
 
 /-!
 # Explicit finite-composition block bridges

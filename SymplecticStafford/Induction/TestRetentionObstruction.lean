@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.TestRetention
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Induction.TestRetention
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Boundary for source-dependent test retention

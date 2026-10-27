@@ -1,7 +1,12 @@
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.Algebra.Module.Opposite
-import Mathlib.RingTheory.Noetherian.Defs
-import Mathlib.RingTheory.Finiteness.Defs
+module
+
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.Algebra.Module.Opposite
+public import Mathlib.RingTheory.Noetherian.Defs
+public import Mathlib.RingTheory.Finiteness.Defs
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+
+@[expose] public section
 
 /-!
 # Module-theoretic consequences of the same-divisor theorem (paper §7, part I)

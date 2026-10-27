@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.ConcreteSuccessor
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Induction.ConcreteSuccessor
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Independent oracle for the concrete two-call successor contract

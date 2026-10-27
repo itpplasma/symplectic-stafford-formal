@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.TwoCallAffineProducer
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Induction.TwoCallAffineProducer
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent non-vacuous oracle for the two-call source constructor. -/
 

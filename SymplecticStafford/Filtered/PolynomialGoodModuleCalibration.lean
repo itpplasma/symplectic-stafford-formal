@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Polynomial.Degree.Defs
-import Mathlib.Data.Fin.Tuple.Basic
-import SymplecticStafford.Filtered.GoodFiltration
-import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+module
+
+public import Mathlib.Algebra.Polynomial.Degree.Defs
+public import Mathlib.Data.Fin.Tuple.Basic
+public import SymplecticStafford.Filtered.GoodFiltration
+public import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+
+@[expose] public section
 
 /-!
 # An actual good filtered module calibration

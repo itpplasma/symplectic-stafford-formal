@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.GradedLengthFilteredChainBoundary
+module
+
+public import SymplecticStafford.FiniteLength.GradedLengthFilteredChainBoundary
+
+@[expose] public section
 
 /- Independent oracle for the strict filtered-chain boundary. -/
 namespace SymplecticStaffordTest.GradedLengthFilteredChainBoundary

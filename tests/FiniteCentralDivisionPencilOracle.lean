@@ -1,6 +1,10 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
-import Mathlib.Data.Rat.Defs
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionPencil
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for finite-central division blocks

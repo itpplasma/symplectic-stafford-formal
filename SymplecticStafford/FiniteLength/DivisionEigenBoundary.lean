@@ -1,5 +1,9 @@
-import SymplecticStafford.FiniteLength.IsotypicBlocks
-import Mathlib.RingTheory.Noetherian.Basic
+module
+
+public import SymplecticStafford.FiniteLength.IsotypicBlocks
+public import Mathlib.RingTheory.Noetherian.Basic
+
+@[expose] public section
 
 /-!
 # Sharp boundary for division-ring pencil finiteness

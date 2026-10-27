@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.FiniteCentralDivisionActivated
+module
+
+public import SymplecticStafford.FiniteLength.FiniteCentralDivisionActivated
+
+@[expose] public section
 
 /-!
 # Minimal-prime local finite-length input for activated division blocks

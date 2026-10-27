@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.ReesModule
+module
+
+public import SymplecticStafford.Filtered.ReesModule
+
+@[expose] public section
 
 /-!
 # Degree-shifted maps of bounded filtered modules

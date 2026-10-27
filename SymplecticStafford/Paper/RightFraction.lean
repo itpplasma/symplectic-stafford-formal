@@ -1,8 +1,12 @@
-import Mathlib.RingTheory.SimpleRing.Basic
-import Mathlib.RingTheory.TwoSidedIdeal.Operations
-import Mathlib.Algebra.Algebra.Opposite
-import Mathlib.LinearAlgebra.Span.Basic
-import Mathlib.Data.Fin.VecNotation
+module
+
+public import Mathlib.RingTheory.SimpleRing.Basic
+public import Mathlib.RingTheory.TwoSidedIdeal.Operations
+public import Mathlib.Algebra.Algebra.Opposite
+public import Mathlib.LinearAlgebra.Span.Basic
+public import Mathlib.Data.Fin.VecNotation
+
+@[expose] public section
 
 /-!
 # Rings of right fractions

@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.ActivatedPencil
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.FiniteLength.ActivatedPencil
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace SymplecticStafford.FiniteLength
 

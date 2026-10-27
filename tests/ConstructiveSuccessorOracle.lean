@@ -1,5 +1,9 @@
-import SymplecticStafford.Induction.ConstructiveSuccessor
-import Mathlib.Data.ZMod.Basic
+module
+
+public import SymplecticStafford.Induction.ConstructiveSuccessor
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-!
 # Independent oracle for constructive base/successor assembly

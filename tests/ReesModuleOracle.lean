@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ReesModule
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesModule
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent behavioral checks for the filtered module quotient. -/
 namespace SymplecticStafford.Filtered.ReesModuleOracle

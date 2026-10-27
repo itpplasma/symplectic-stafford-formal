@@ -1,11 +1,15 @@
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Group.Defs
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Group.Opposite
-import Mathlib.Algebra.Ring.Opposite
-import Mathlib.Data.Set.Defs
-import Mathlib.Tactic.Basic
-import Mathlib.Tactic.Ext
+module
+
+public import Mathlib.Algebra.Ring.Defs
+public import Mathlib.Algebra.Group.Defs
+public import Mathlib.Algebra.Group.Basic
+public import Mathlib.Algebra.Group.Opposite
+public import Mathlib.Algebra.Ring.Opposite
+public import Mathlib.Data.Set.Defs
+public import Mathlib.Tactic.Basic
+public import Mathlib.Tactic.Ext
+
+@[expose] public section
 
 /-!
 # The literal right-certificate semantics of S1

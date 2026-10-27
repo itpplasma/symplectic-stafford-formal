@@ -1,9 +1,13 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Defs
-import SymplecticStafford.Ordered.CommonColon
-import SymplecticStafford.Ordered.RightClear
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import Mathlib.Data.Finset.Basic
+public import Mathlib.Data.Set.Defs
+public import SymplecticStafford.Ordered.CommonColon
+public import SymplecticStafford.Ordered.RightClear
+
+@[expose] public section
 
 /-!
 # Finite generators and the conditional M08 support-union interface

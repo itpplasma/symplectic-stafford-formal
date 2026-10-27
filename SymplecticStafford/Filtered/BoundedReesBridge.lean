@@ -1,6 +1,10 @@
-import Mathlib.Algebra.SkewPolynomial.Basic
-import Mathlib.RingTheory.Noetherian.Basic
-import SymplecticStafford.Filtered.ReesRing
+module
+
+public import Mathlib.Algebra.SkewPolynomial.Basic
+public import Mathlib.RingTheory.Noetherian.Basic
+public import SymplecticStafford.Filtered.ReesRing
+
+@[expose] public section
 
 /-!
 # The bounded homogeneous Rees bridge

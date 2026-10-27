@@ -37,10 +37,14 @@ in `U`. With `B = 0` and `a = 1` this is Stafford's identity
 - `docs/target-a-submission-scope.md` explains how the formal statement
   matches the manuscript's §1.1 hypotheses. It also maps each Lean file to its
   paper section and lists where the formal proof route differs from the
-  written one.
+  written one. The [paper/Lean correspondence](docs/paper-lean-correspondence.md)
+  and [machine-readable map](docs/paper-lean-map.json) pin the research source
+  and declarations so subsequent changes can be checked for drift. Public
+  verification checks the formal side; full source correspondence also
+  requires the pinned private research snapshot via `PAPER_REPO`.
 
 The paper proof is in the companion research repository
-`itpplasma/symplectic-stafford`. Its Section 3 localization gap was closed by
+[symplectic-stafford](https://github.com/itpplasma/symplectic-stafford). Its Section 3 localization gap was closed by
 `docs/zariskian-local-package-closure-2026-09-30.md`. Corrections and
 simplifications found during formalization are recorded in
 `docs/formal-proof-route-2026-09-30.md` there.
@@ -52,33 +56,55 @@ archived in `docs/history/`.
 
 ## Build and check
 
-The workspace pins Lean `v4.33.0` and Mathlib
-`db584cd6d46c92f209a44c0f1c829460d327499d`. The legacy scaffolds also use
-AlgebraicAnalysis v0.3.1 and Stafford38 v1.1.1; the Target A proof does not
-depend on them.
+The release migration pins Lean `v4.35.0-rc3` and Mathlib
+`c55e6e786f49471c72fbddbec5415808896aec1e`. Exact dependencies and replay tools
+are recorded in the repository configuration and verification evidence. The
+active package has exactly one direct dependency, Mathlib. The retired
+scaffolds replay only in the [frozen historical environment](docs/history/legacy-build-environment.md).
 
 ```sh
-lake build SymplecticStafford.Paper Challenge
-lake env lean Solution.lean
-lake env lean tests/PaperTargetAOracle.lean
-./scripts/verify-palomar.sh      # after scripts/bootstrap-palomar-tools.sh
+bash scripts/verify.sh
+bash scripts/bootstrap-palomar-tools.sh
+bash scripts/verify-palomar.sh
 ```
 
-`verify-palomar.sh` checks `Solution.lean` against `Challenge.lean` with the
-pinned tools:
+The default verifier builds the Mathlib-only proof, checks its 18 endpoints,
+and runs the Target A oracle and declaration map checks. Retired scaffolds
+and their additional dependencies are excluded from the current package;
+replay them from the frozen pre-migration checkout.
 
-- Comparator `5756749`, lean4export `15f6055`, NanoDa `68d5ca9`, Landrun `811cfff`.
-- The project is compiled and exported with Lean 4.33.0.
-- The comparator executable itself is built with the `v4.34.0-rc1` toolchain
-  that its own repository pins.
+The current Comparator uses the bundled `leanexport`, `leanchecker`,
+`nanoda_bin` and `con-ron` tools. Its protected local replay requires Linux
+and `bwrap`. The official Palomar CI preflight is pinned to a revision at or
+after the required d4e41c1 workflow fix.
+
+The 30 September Lean 4.33.0 and standalone-tool results in
+`docs/verification.md` are historical checks of their recorded snapshot.
+They and subsequent local/CI passes certify only their recorded snapshots.
+The dependency-pruned source has passed the native verifier and clean Linux
+CI at the commit recorded below. Complete official statement comparison and
+independent kernel replay also pass for Target A at that snapshot; results
+certify the exact checked source and selected theorem.
 
 ## Status
 
 - The universal theorem is proved in Lean, as are all of the manuscript's
   §7 consequences.
-- Palomar comparator, NanoDa and Lean-kernel checks run locally;
-  `docs/verification.md` has the results.
-- Still outstanding: independent human review of the paper and of the
-  statement correspondence, public clean replay, registration and release.
-  See `docs/release-runbook.md` and `release-gates.yaml`.
-- No novelty or priority claim is made here.
+- Native verification with the full private-source map and
+  [clean Linux CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875) pass at
+  8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3. The checks include 18 endpoint
+  axiom reports, 96 mapped declarations, the Target A oracle and six verifier
+  regression tests. The source inventory records 414 files.
+- The [complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
+  passes for that snapshot and the selected Target A theorem. Comparator,
+  con-ron, NanoDa and Lean acceptance are retained in
+  `evidence/palomar-mechanical-report.json`. This checks Target A; it does not
+  register the section 7 consequences. Intake and registration remain pending.
+- The final metadata commit requires its own complete official preflight
+  before intake; `docs/verification.md` retains the source-scoped evidence.
+- Release preparation and Palomar submission were authorized on 21 October
+  2026. Fresh replay, the exact submitted commit and the registration receipt
+  are tracked separately in `docs/release-runbook.md` and `release-gates.yaml`.
+- Independent human mathematical review remains pending. The final
+  human-readable manuscript is a separate later deliverable; the research
+  exposition and its corrections supply the current paper correspondence.

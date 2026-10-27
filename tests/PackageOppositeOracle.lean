@@ -1,7 +1,11 @@
-import Mathlib.Data.Rat.Defs
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Algebra.Field.Rat
-import SymplecticStafford.Package.Opposite
+module
+
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Algebra.Field.Rat
+public import SymplecticStafford.Package.Opposite
+
+@[expose] public section
 
 /-!
 # Independent opposite-ring package oracle

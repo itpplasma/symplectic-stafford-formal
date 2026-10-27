@@ -1,0 +1,58 @@
+⚠ [2082/2106] Built SymplecticStafford.Paper.RightFraction (2.5s)
+warning: SymplecticStafford/Paper/RightFraction.lean:171:26: `SetLike.exists_of_lt` has been deprecated: Use `IsConcreteLE.exists_of_lt` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.exists_of_lt` to `IsConcreteLE.exists_of_lt x`).
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵L̵i̵k̵e̵.̵e̵x̵i̵s̵t̵s̵_̵o̵f̵_̵l̵t̵I̲s̲C̲o̲n̲c̲r̲e̲t̲e̲L̲E̲.̲e̲x̲i̲s̲t̲s̲_̲o̲f̲_̲l̲t̲
+✔ [2098/2109] Built SymplecticStafford.Paper.DivisionPencil (3.5s)
+✔ [2099/2109] Built SymplecticStafford.Paper.Pencil (4.4s)
+✔ [2100/2109] Built SymplecticStafford.Paper.Dimension (3.4s)
+✔ [2101/2110] Built SymplecticStafford.Paper.Setting (7.8s)
+✔ [2102/2111] Built SymplecticStafford.Paper.Test (2.9s)
+⚠ [2107/2115] Built SymplecticStafford.Paper.ConsequencesGeneration (6.9s)
+warning: SymplecticStafford/Paper/ConsequencesGeneration.lean:374:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: SymplecticStafford/Paper/ConsequencesGeneration.lean:429:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: SymplecticStafford/Paper/ConsequencesGeneration.lean:552:13: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: SymplecticStafford/Paper/ConsequencesGeneration.lean:585:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [2108/2115] Built SymplecticStafford.Paper.NoFiniteRank (8.4s)
+⚠ [2109/2115] Built SymplecticStafford.Paper.Localization (9.4s)
+warning: SymplecticStafford/Paper/Localization.lean:706:33: `isNoetherian_iff'` has been deprecated: Use `isNoetherian_iff` instead
+
+Hint: Replace the deprecated name:
+  isNoetherian_iff'̵
+✔ [2110/2115] Built SymplecticStafford.Paper.SourceSelection (5.9s)
+⚠ [2111/2115] Built SymplecticStafford.Paper.ConsequencesRank (15s)
+warning: SymplecticStafford/Paper/ConsequencesRank.lean:624:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: SymplecticStafford/Paper/ConsequencesRank.lean:625:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: SymplecticStafford/Paper/ConsequencesRank.lean:626:29: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: SymplecticStafford/Paper/ConsequencesRank.lean:627:29: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [2112/2115] Built SymplecticStafford.Paper.Induction (12s)
+✔ [2113/2115] Built SymplecticStafford.Paper.Opposite (1.9s)
+✔ [2114/2115] Built SymplecticStafford.Paper.ConsequencesForU (1.4s)
+✔ [2115/2115] Built SymplecticStafford.Paper (1.1s)
+Build completed successfully (2115 jobs).

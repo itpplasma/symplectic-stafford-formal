@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Induction.CentralFieldFiniteIndex
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Induction.CentralFieldFiniteIndex
+
+@[expose] public section
 
 /-!
 # Independent central-field finite-index oracle

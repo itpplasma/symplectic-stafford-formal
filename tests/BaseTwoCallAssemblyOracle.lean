@@ -1,5 +1,9 @@
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Induction.BaseTwoCallAssembly
+module
+
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Induction.BaseTwoCallAssembly
+
+@[expose] public section
 
 /-!
 # Independent oracle for base/two-call endpoint assembly

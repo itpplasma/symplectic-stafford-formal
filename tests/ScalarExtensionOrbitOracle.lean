@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.FiniteOrbitPencil
-import Mathlib.FieldTheory.RatFunc.AsPolynomial
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Tactic
+module
+
+public import SymplecticStafford.FiniteLength.FiniteOrbitPencil
+public import Mathlib.FieldTheory.RatFunc.AsPolynomial
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Independent oracle for the scalar-extension M07 lane

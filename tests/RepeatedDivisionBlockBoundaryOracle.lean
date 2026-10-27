@@ -1,7 +1,11 @@
-import SymplecticStafford.FiniteLength.RepeatedDivisionBlockBoundary
-import Mathlib.Algebra.CharZero.Infinite
-import Mathlib.Algebra.Field.Rat
-import Mathlib.Data.Rat.Defs
+module
+
+public import SymplecticStafford.FiniteLength.RepeatedDivisionBlockBoundary
+public import Mathlib.Algebra.CharZero.Infinite
+public import Mathlib.Algebra.Field.Rat
+public import Mathlib.Data.Rat.Defs
+
+@[expose] public section
 
 /-!
 # Independent oracle for the repeated-block boundary

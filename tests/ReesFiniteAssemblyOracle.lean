@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ReesFiniteAssembly
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesFiniteAssembly
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent concrete oracle for the finite Rees-to-original assembly. -/
 namespace SymplecticStaffordTest.ReesFiniteAssembly

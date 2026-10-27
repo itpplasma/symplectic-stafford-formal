@@ -1,4 +1,8 @@
-import SymplecticStafford.Package.M11ActualExtraction
+module
+
+public import SymplecticStafford.Package.M11ActualExtraction
+
+@[expose] public section
 
 /-!
 Independent trust-disabled oracle for actual M11 extraction.  The unit

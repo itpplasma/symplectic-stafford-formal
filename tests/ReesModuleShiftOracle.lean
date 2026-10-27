@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ReesModuleShift
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesModuleShift
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent oracle for the degree-shifted, kernel-checked quotient map. -/
 namespace SymplecticStaffordTest.ReesModuleShift

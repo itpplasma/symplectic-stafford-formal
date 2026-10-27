@@ -1,8 +1,12 @@
-import SymplecticStafford.Induction.StrongPh
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.List.Basic
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
+module
+
+public import SymplecticStafford.Induction.StrongPh
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Data.List.Basic
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # Finite-test retention for the two-call successor interface

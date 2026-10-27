@@ -1,10 +1,14 @@
-import Mathlib.Algebra.Ring.Subring.Basic
-import Mathlib.Algebra.Module.Opposite
-import Mathlib.Algebra.Module.Submodule.Lattice
-import Mathlib.Algebra.Module.Submodule.Map
-import Mathlib.LinearAlgebra.Quotient.Defs
-import Mathlib.Tactic.NormNum
-import SymplecticStafford.Filtered.Localization
+module
+
+public import Mathlib.Algebra.Ring.Subring.Basic
+public import Mathlib.Algebra.Module.Opposite
+public import Mathlib.Algebra.Module.Submodule.Lattice
+public import Mathlib.Algebra.Module.Submodule.Map
+public import Mathlib.LinearAlgebra.Quotient.Defs
+public import Mathlib.Tactic.NormNum
+public import SymplecticStafford.Filtered.Localization
+
+@[expose] public section
 
 /-!
 # The first filtered/Rees producer boundary

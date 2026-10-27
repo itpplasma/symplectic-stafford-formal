@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Ring.Subring.Basic
-import Mathlib.Algebra.SkewPolynomial.Basic
-import SymplecticStafford.Filtered.ReesAlgebra
+module
+
+public import Mathlib.Algebra.Ring.Subring.Basic
+public import Mathlib.Algebra.SkewPolynomial.Basic
+public import SymplecticStafford.Filtered.ReesAlgebra
+
+@[expose] public section
 
 /-!
 # The algebraic Rees ring for a ring filtration

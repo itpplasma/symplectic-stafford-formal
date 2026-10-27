@@ -1,6 +1,10 @@
-import Mathlib.Algebra.Group.Submonoid.Membership
-import Mathlib.LinearAlgebra.Span.Basic
-import SymplecticStafford.Filtered.ReesModule
+module
+
+public import Mathlib.Algebra.Group.Submonoid.Membership
+public import Mathlib.LinearAlgebra.Span.Basic
+public import SymplecticStafford.Filtered.ReesModule
+
+@[expose] public section
 
 /-!
 # Finite good filtrations generated in bounded degrees

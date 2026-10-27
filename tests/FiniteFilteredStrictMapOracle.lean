@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.FiniteFilteredStrictMap
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.FiniteFilteredStrictMap
+
+@[expose] public section
 
 /-!
 # Independent oracle for the bounded strict filtered-map witness

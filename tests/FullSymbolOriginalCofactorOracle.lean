@@ -1,7 +1,11 @@
-import SymplecticStafford.Filtered.FullSymbolOriginalCofactor
-import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic.NoncommRing
+module
+
+public import SymplecticStafford.Filtered.FullSymbolOriginalCofactor
+public import SymplecticStafford.Filtered.FullSymbolPolynomialCalibration
+public import Mathlib.Data.Matrix.Basic
+public import Mathlib.Tactic.NoncommRing
+
+@[expose] public section
 
 /- Independent behavioral consumer: a localized two-generator identity is
    recombined after one common RIGHT denominator, preserving the

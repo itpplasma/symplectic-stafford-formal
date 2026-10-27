@@ -1,5 +1,9 @@
-import Stafford38.Weyl.EulerRemainder
-import Stafford38.Weyl.IteratedEquivalence
+module
+
+public import Stafford38.Weyl.EulerRemainder
+public import Stafford38.Weyl.IteratedEquivalence
+
+@[expose] public section
 
 /-!
 # Original-ring division by an arbitrary outer monic polynomial

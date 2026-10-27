@@ -1,6 +1,10 @@
-import AlgebraicAnalysis.Ore.Associativity
-import Mathlib.Algebra.Polynomial.Derivative
-import SymplecticStafford.Filtered.FullSymbolRightLocalization
+module
+
+public import AlgebraicAnalysis.Ore.Associativity
+public import Mathlib.Algebra.Polynomial.Derivative
+public import SymplecticStafford.Filtered.FullSymbolRightLocalization
+
+@[expose] public section
 
 /-!
 # The fixed A₁ power-localization obstruction

@@ -1,7 +1,11 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Set.Finite.Lattice
-import Mathlib.Tactic.NoncommRing
-import SymplecticStafford.FiniteLength.Pencil
+module
+
+public import Mathlib.Algebra.Ring.Basic
+public import Mathlib.Data.Set.Finite.Lattice
+public import Mathlib.Tactic.NoncommRing
+public import SymplecticStafford.FiniteLength.Pencil
+
+@[expose] public section
 
 /-!
 # Conditional division-coefficient LLD and finite affine tests

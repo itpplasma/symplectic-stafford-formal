@@ -1,4 +1,8 @@
-import SymplecticStafford.FiniteLength.FilteredChainLengthBound
+module
+
+public import SymplecticStafford.FiniteLength.FilteredChainLengthBound
+
+@[expose] public section
 
 /-! Independent trust-disabled consumers for the quantitative M05 bound. -/
 

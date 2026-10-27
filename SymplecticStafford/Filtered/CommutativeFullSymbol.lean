@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Ring.NonZeroDivisors
-import SymplecticStafford.Filtered.FullSymbolLocalization
+module
+
+public import Mathlib.Algebra.Ring.NonZeroDivisors
+public import SymplecticStafford.Filtered.FullSymbolLocalization
+
+@[expose] public section
 
 /-!
 # An unconditional commutative full-symbol instance

@@ -1,6 +1,10 @@
-import SymplecticStafford.Source.DivisionLLDList
-import SymplecticStafford.Source.OriginalTestContract
-import SymplecticStafford.FiniteLength.PencilBridge
+module
+
+public import SymplecticStafford.Source.DivisionLLDList
+public import SymplecticStafford.Source.OriginalTestContract
+public import SymplecticStafford.FiniteLength.PencilBridge
+
+@[expose] public section
 
 /-!
 # Original-`U` source production from bridged division tests

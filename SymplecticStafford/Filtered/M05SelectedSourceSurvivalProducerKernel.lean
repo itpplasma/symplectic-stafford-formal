@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.M01FiniteHomogeneousReesProducerKernel
-import SymplecticStafford.Filtered.SymbolFractionReesLocalization
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.M01FiniteHomogeneousReesProducerKernel
+public import SymplecticStafford.Filtered.SymbolFractionReesLocalization
+
+@[expose] public section
 
 /-!
 # Kernel-checked selected-source survival producer

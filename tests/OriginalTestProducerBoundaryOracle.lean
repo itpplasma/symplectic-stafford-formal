@@ -1,5 +1,9 @@
-import Mathlib.Tactic
-import SymplecticStafford.Source.OriginalTestProducerBoundary
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Source.OriginalTestProducerBoundary
+
+@[expose] public section
 
 /-!
 # Independent oracle for the M06 producer boundary

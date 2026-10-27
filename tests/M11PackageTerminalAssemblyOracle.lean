@@ -1,5 +1,9 @@
-import SymplecticStafford.Package.TerminalBoundary
-import Mathlib.Data.ZMod.Basic
+module
+
+public import SymplecticStafford.Package.TerminalBoundary
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-! Independent `--trust=0` checks for the M11 terminal assembly bridge. -/
 

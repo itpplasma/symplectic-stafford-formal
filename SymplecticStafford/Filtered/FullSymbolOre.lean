@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.FinitePowerOre
+module
+
+public import SymplecticStafford.Filtered.FinitePowerOre
+
+@[expose] public section
 
 /-!
 # Full-symbol algebraic localization boundary

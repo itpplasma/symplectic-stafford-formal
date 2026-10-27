@@ -1,4 +1,8 @@
-import SymplecticStafford.Filtered.M01StructuralBoundary
+module
+
+public import SymplecticStafford.Filtered.M01StructuralBoundary
+
+@[expose] public section
 
 /-!
 # Independent oracle for the first M01 structural gap

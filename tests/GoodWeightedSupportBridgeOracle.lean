@@ -1,6 +1,10 @@
-import Mathlib.Tactic
-import SymplecticStafford.Filtered.GoodWeightedSupportBridge
-import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+module
+
+public import Mathlib.Tactic
+public import SymplecticStafford.Filtered.GoodWeightedSupportBridge
+public import SymplecticStafford.Filtered.WeightedFaithfulCalibration
+
+@[expose] public section
 
 /- Independent oracle for the good-module/associated-layer bridge.  The
    selected finite layer is concrete, and the class map is checked to factor

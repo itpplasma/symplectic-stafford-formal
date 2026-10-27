@@ -1,5 +1,9 @@
-import SymplecticStafford.Filtered.ReesAlgebra
-import Mathlib.Tactic.NormNum
+module
+
+public import SymplecticStafford.Filtered.ReesAlgebra
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /- Independent behavioral checks for the bounded Rees-like subobject. -/
 namespace SymplecticStafford.Filtered.ReesAlgebraOracle
