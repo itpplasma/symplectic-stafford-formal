@@ -21,10 +21,13 @@ for directory in directories:
         continue
     seen.add(resolved)
     available_bytes = shutil.disk_usage(path).free
-    available_inodes = os.statvfs(path).f_favail
+    inode_stats = os.statvfs(path)
+    available_inodes = inode_stats.f_favail
     if available_bytes < minimum_bytes:
         raise SystemExit(f"resource check: less than {minimum_bytes} free bytes on {directory}")
-    if available_inodes < minimum_inodes:
+    # Btrfs has no fixed inode table and reports both inode counts as zero.
+    if inode_stats.f_files != 0 and available_inodes < minimum_inodes:
         raise SystemExit(f"resource check: less than {minimum_inodes} free inodes on {directory}")
-    print(f"resource check: {directory} has {available_bytes} free bytes and {available_inodes} free inodes")
+    inode_headroom = f"{available_inodes} free inodes" if inode_stats.f_files else "dynamic inodes"
+    print(f"resource check: {directory} has {available_bytes} free bytes and {inode_headroom}")
 PYTHON

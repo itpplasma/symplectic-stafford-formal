@@ -2,8 +2,7 @@ name: Palomar mechanical preflight
 run-name: Palomar preflight for ${{ inputs.commit || github.sha }}
 
 on:
-  push:
-    branches: [release/palomar-target-a]
+  merge_group:
   workflow_dispatch:
     inputs:
       commit:

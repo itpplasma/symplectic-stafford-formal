@@ -127,6 +127,36 @@ class VerificationGuards(unittest.TestCase):
             self.assertNotEqual(result.returncode, 0)
             self.assertIn('phase_ii: evidence source_commit differs', result.stdout)
 
+    def test_resource_guard_handles_dynamic_inodes_and_finite_exhaustion(self):
+        import os
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'sitecustomize.py').write_text(
+                'import os, shutil\n'
+                'from types import SimpleNamespace\n'
+                'from unittest.mock import patch\n'
+                'patch("os.statvfs", return_value=SimpleNamespace(\n'
+                '    f_files=int(os.environ["TEST_TOTAL_INODES"]),\n'
+                '    f_favail=int(os.environ["TEST_FREE_INODES"]))).start()\n'
+                'patch("shutil.disk_usage", return_value=SimpleNamespace(\n'
+                '    free=int(os.environ["TEST_FREE_BYTES"]))).start()\n')
+            for total, free, size, accepted in [
+                (0, 0, 2**31, True),
+                (20000, 10000, 2**31, True),
+                (20000, 9999, 2**31, False),
+                (20000, 0, 2**31, False),
+                (0, 0, 2**30 - 1, False),
+            ]:
+                with self.subTest(total=total, free=free, size=size):
+                    env = dict(os.environ, PYTHONPATH=directory,
+                               TEST_TOTAL_INODES=str(total), TEST_FREE_INODES=str(free),
+                               TEST_FREE_BYTES=str(size), MIN_FREE_BYTES=str(2**30),
+                               MIN_FREE_INODES='10000')
+                    result = subprocess.run(['bash', str(ROOT / 'scripts/check-resources.sh')],
+                                            cwd=root, env=env, capture_output=True, text=True)
+                    self.assertEqual(result.returncode == 0, accepted,
+                                     result.stdout + result.stderr)
+
     def test_map_fingerprint_rejects_changed_source(self):
         spec = importlib.util.spec_from_file_location('paper_map_guard', ROOT / 'scripts/check-paper-lean-map.py')
         module = importlib.util.module_from_spec(spec)

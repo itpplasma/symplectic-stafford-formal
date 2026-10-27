@@ -131,7 +131,7 @@
         },
         {
           "path": "lakefile.toml",
-          "sha256": "7645b4f7351510d2285694de88a3f1785c13ae5b8cd7ebb300a720f7b8bbbd95"
+          "sha256": "2d086bb1ab415ff16466f1a2215a66bcd70d69fdad88ea1f949a8ba62b054910"
         },
         {
           "path": "lean-toolchain",
