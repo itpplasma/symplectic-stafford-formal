@@ -1,110 +1,95 @@
 # Symplectic Stafford formalization
 
-This repository contains a complete Lean 4 proof of the affine same-divisor
-theorem for simple filtered algebras. That theorem is Target theorem A of the
-manuscript *Symplectic Stafford. Same-divisor identities for simple filtered
-algebras*.
+A Lean 4 and Mathlib proof of the affine same-divisor theorem for simple
+filtered algebras (Target theorem A of the manuscript *Symplectic Stafford.
+Same-divisor identities for simple filtered algebras*), together with the
+manuscript's section 7 consequences.
 
-**Theorem.** Let `k` be a field of characteristic zero. Let `U` be a simple,
+Status: the proof is complete in Lean; independent human review of the
+mathematics and the final manuscript are still pending.
+
+## The theorem
+
+Let `k` be a field of characteristic zero and `U` a simple,
 infinite-dimensional `k`-algebra with an exhaustive, nonnegative,
 multiplicative filtration `F₀U = k ⊆ F₁U ⊆ ⋯` by finite-dimensional
-subspaces. Suppose its associated graded ring is a commutative affine domain
-of finite Krull dimension. Then for all nonzero `d, a ∈ U` and every `B ∈ U`
+subspaces, whose associated graded ring is a commutative affine domain of
+finite Krull dimension. Then for all nonzero `d, a ∈ U` and every `B ∈ U`
 there are `H, R, S ∈ U` with
 
 ```text
 1 = d R + (B + H a) d S.
 ```
 
-The noncommutative factor order is exactly as displayed, and all factors lie
-in `U`. With `B = 0` and `a = 1` this is Stafford's identity
-`1 = d R + F d S`.
+The factor order is as displayed. With `B = 0` and `a = 1` this is
+Stafford's identity `1 = d R + F d S`.
 
-## Where the proof lives
+## What is formalized
 
-| Declaration | File |
-| --- | --- |
-| `SymplecticStafford.Paper.FilteredAlgebraData.targetA` | `SymplecticStafford/Paper/Induction.lean` |
-| `SymplecticStafford.Paper.FilteredAlgebraData.targetA_left` (`1 = R d + S d F`) | `SymplecticStafford/Paper/Opposite.lean` |
-| §7 consequences for `U`: cyclic torsion modules, stable range ≤ 2, stably free ⇒ free, cancellation | `SymplecticStafford/Paper/ConsequencesForU.lean` |
-| `SymplecticStaffordChallenge.universalStatement` (Palomar form) | `Challenge.lean`, `Solution.lean` |
+- `SymplecticStafford.Paper.FilteredAlgebraData.targetA`
+  (`SymplecticStafford/Paper/Induction.lean`): the theorem above.
+- `...targetA_left` (`Paper/Opposite.lean`): the left-handed identity
+  `1 = R d + S d F`.
+- `Paper/ConsequencesForU.lean`: cyclic torsion modules, stable range at most
+  2, stably free implies free, and cancellation.
+- `Challenge.lean` / `Solution.lean`: the statement in a Mathlib-only form
+  (`SymplecticStaffordChallenge.universalStatement`) and its proof, for
+  independent statement comparison.
 
-- The development in `SymplecticStafford/Paper/` imports Mathlib only.
-- It contains no `sorry` and no project axioms.
-- The main theorems depend only on `propext`, `Classical.choice` and
-  `Quot.sound`.
-- `SymplecticStafford/Paper.lean` imports all of it.
-- `docs/target-a-submission-scope.md` explains how the formal statement
-  matches the manuscript's §1.1 hypotheses. It also maps each Lean file to its
-  paper section and lists where the formal proof route differs from the
-  written one. The [paper/Lean correspondence](docs/paper-lean-correspondence.md)
-  and [machine-readable map](docs/paper-lean-map.json) pin the research source
-  and declarations so subsequent changes can be checked for drift. Public
-  verification checks the formal side; full source correspondence also
-  requires the pinned private research snapshot via `PAPER_REPO`.
+The `Paper/` development imports only Mathlib, contains no `sorry` and
+declares no axioms; the 18 endpoints listed in `docs/endpoints.txt` depend
+only on `propext`, `Classical.choice` and `Quot.sound`. The only `sorry` in
+the repository is the intentional placeholder in `Challenge.lean`, which is
+the statement to be proved. How the Lean hypotheses encode the manuscript's
+section 1.1, and where the formal proof route differs from the written one,
+is described in [docs/target-a-submission-scope.md](docs/target-a-submission-scope.md).
 
-The paper proof is in the companion research repository
-[symplectic-stafford](https://github.com/itpplasma/symplectic-stafford). Its Section 3 localization gap was closed by
-`docs/zariskian-local-package-closure-2026-09-30.md`. Corrections and
-simplifications found during formalization are recorded in
-`docs/formal-proof-route-2026-09-30.md` there.
+The directories `SymplecticStafford/{Semantics, Filtered, FiniteLength,
+Ordered, Source, Induction, Package, Dependency}` hold older conditional
+scaffolds. They are not used by the Target A proof, are not built by default,
+and only build in the [frozen historical environment](docs/history/legacy-build-environment.md).
 
-The older conditional scaffolds under `SymplecticStafford/{Semantics,
-Filtered, FiniteLength, Ordered, Source, Induction, Package}` are retained as
-history. The Target A proof does not use them. Their earlier status notes are
-archived in `docs/history/`.
+## Building and checking
 
-## Build and check
-
-The release migration pins Lean `v4.35.0-rc3` and Mathlib
-`c55e6e786f49471c72fbddbec5415808896aec1e`. Exact dependencies and replay tools
-are recorded in the repository configuration and verification evidence. The
-active package has exactly one direct dependency, Mathlib. The retired
-scaffolds replay only in the [frozen historical environment](docs/history/legacy-build-environment.md).
+Requires [elan](https://github.com/leanprover/elan); the toolchain
+(`leanprover/lean4:v4.35.0-rc3`) and the single dependency (Mathlib, pinned in
+`lakefile.toml`) are fetched automatically.
 
 ```sh
+lake exe cache get
+lake build
 bash scripts/verify.sh
-bash scripts/bootstrap-palomar-tools.sh
-bash scripts/verify-palomar.sh
 ```
 
-The default verifier builds the Mathlib-only proof, checks its 18 endpoints,
-and runs the Target A oracle and declaration map checks. Retired scaffolds
-and their additional dependencies are excluded from the current package;
-replay them from the frozen pre-migration checkout.
+`lake build` builds the default targets (`SymplecticStafford.Paper`,
+`Challenge`, `Solution`). `scripts/verify.sh` additionally checks the
+import closure, prints and checks the axioms of every endpoint, runs the
+paper/Lean declaration map check and replays `tests/PaperTargetAOracle.lean`
+with `--trust=0`. See [docs/building.md](docs/building.md) for the
+comparator replay and further options.
 
-The current Comparator uses the bundled `leanexport`, `leanchecker`,
-`nanoda_bin` and `con-ron` tools. Its protected local replay requires Linux
-and `bwrap`. The official Palomar CI preflight is pinned to a revision at or
-after the required d4e41c1 workflow fix.
+## Documentation
 
-The 30 September Lean 4.33.0 and standalone-tool results in
-`docs/verification.md` are historical checks of their recorded snapshot.
-They and subsequent local/CI passes certify only their recorded snapshots.
-The dependency-pruned source has passed the native verifier and clean Linux
-CI at the commit recorded below. Complete official statement comparison and
-independent kernel replay also pass for Target A at that snapshot; results
-certify the exact checked source and selected theorem.
+- [docs/target-a-submission-scope.md](docs/target-a-submission-scope.md):
+  formal statement versus manuscript, and file-to-section map.
+- [docs/paper-lean-correspondence.md](docs/paper-lean-correspondence.md) and
+  [docs/paper-lean-map.json](docs/paper-lean-map.json): declaration-level
+  correspondence with the paper source.
+- [docs/building.md](docs/building.md): build, verification and comparator
+  replay.
+- [docs/verification.md](docs/verification.md): record of verification runs.
+- [docs/release-runbook.md](docs/release-runbook.md): release steps.
 
-## Status
+The paper proof is developed in the companion repository
+`itpplasma/symplectic-stafford`.
 
-- The universal theorem is proved in Lean, as are all of the manuscript's
-  §7 consequences.
-- Native verification with the full private-source map and
-  [clean Linux CI](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578127875) pass at
-  8b94e4a2c9114a63a44a7e057e3b03fcafbb95f3. The checks include 18 endpoint
-  axiom reports, 96 mapped declarations, the Target A oracle and six verifier
-  regression tests. The source inventory records 414 files.
-- The [complete official Palomar preflight](https://github.com/itpplasma/symplectic-stafford-formal/actions/runs/39578128284)
-  passes for that snapshot and the selected Target A theorem. Comparator,
-  con-ron, NanoDa and Lean acceptance are retained in
-  `evidence/palomar-mechanical-report.json`. This checks Target A; it does not
-  register the section 7 consequences. Intake and registration remain pending.
-- The final metadata commit requires its own complete official preflight
-  before intake; `docs/verification.md` retains the source-scoped evidence.
-- Release preparation and Palomar submission were authorized on 21 October
-  2026. Fresh replay, the exact submitted commit and the registration receipt
-  are tracked separately in `docs/release-runbook.md` and `release-gates.yaml`.
-- Independent human mathematical review remains pending. The final
-  human-readable manuscript is a separate later deliverable; the research
-  exposition and its corrections supply the current paper correspondence.
+## Related projects
+
+- [stafford38-formal](https://github.com/itpplasma/stafford38-formal) and
+  [algebraic-analysis](https://github.com/itpplasma/algebraic-analysis):
+  dependencies of the historical scaffolds only.
+
+## Citing and license
+
+Citation metadata is in [CITATION.cff](CITATION.cff). Licensed under the
+Apache License 2.0; see [LICENSE](LICENSE) and [NOTICE](NOTICE).
